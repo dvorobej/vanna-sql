@@ -1,0 +1,194 @@
+{
+  "btm_cst": {
+    "source_table": "BANK_CUST",
+    "columns": {
+      "c01": {
+        "source_column": "customer_id",
+        "type": "INTEGER"
+      },
+      "c02": {
+        "source_column": "customer_name",
+        "type": "TEXT"
+      },
+      "c03": {
+        "source_column": "Address",
+        "type": "TEXT"
+      },
+      "c04": {
+        "source_column": "state_code",
+        "type": "TEXT"
+      },
+      "c05": {
+        "source_column": "Telephone",
+        "type": "TEXT"
+      }
+    }
+  },
+  "btm_cex": {
+    "source_table": "BANK_CUSTOMER_EXPORT",
+    "columns": {
+      "x01": {
+        "source_column": "customer_id",
+        "type": "TEXT"
+      },
+      "x02": {
+        "source_column": "customer_name",
+        "type": "TEXT"
+      },
+      "x03": {
+        "source_column": "Address",
+        "type": "TEXT"
+      },
+      "x04": {
+        "source_column": "state_code",
+        "type": "TEXT"
+      },
+      "x05": {
+        "source_column": "Telephone",
+        "type": "TEXT"
+      }
+    }
+  },
+  "btm_accd": {
+    "source_table": "BANK_ACC_DELS",
+    "columns": {
+      "a01": {
+        "source_column": "customer_id",
+        "type": "INTEGER"
+      },
+      "a02": {
+        "source_column": "Account_number",
+        "type": "TEXT"
+      },
+      "a03": {
+        "source_column": "Account_type",
+        "type": "TEXT"
+      },
+      "a04": {
+        "source_column": "Balance_amount",
+        "type": "INTEGER"
+      },
+      "a05": {
+        "source_column": "Account_status",
+        "type": "TEXT"
+      },
+      "a06": {
+        "source_column": "Relationship_type",
+        "type": "TEXT"
+      }
+    }
+  },
+  "btm_accs": {
+    "source_table": "BANK_ACCOU",
+    "columns": {
+      "s01": {
+        "source_column": "Customer_id",
+        "type": "INTEGER"
+      },
+      "s02": {
+        "source_column": "Account_Number",
+        "type": "TEXT"
+      },
+      "s03": {
+        "source_column": "Account_type",
+        "type": "TEXT"
+      },
+      "s04": {
+        "source_column": "Balance_amount",
+        "type": "INTEGER"
+      },
+      "s05": {
+        "source_column": "Account_status",
+        "type": "TEXT"
+      },
+      "s06": {
+        "source_column": "Relation_ship",
+        "type": "TEXT"
+      }
+    }
+  },
+  "btm_rel": {
+    "source_table": "Bank_Account_Relationship_Details",
+    "columns": {
+      "r01": {
+        "source_column": "Customer_id",
+        "type": "INTEGER"
+      },
+      "r02": {
+        "source_column": "Account_Number",
+        "type": "TEXT"
+      },
+      "r03": {
+        "source_column": "Account_type",
+        "type": "TEXT"
+      },
+      "r04": {
+        "source_column": "Linking_Account_Number",
+        "type": "TEXT"
+      }
+    }
+  },
+  "btm_trn": {
+    "source_table": "BANK_ACC_TRAN",
+    "columns": {
+      "t01": {
+        "source_column": "Account_Number",
+        "type": "TEXT"
+      },
+      "t02": {
+        "source_column": "Transaction_amount",
+        "type": "REAL"
+      },
+      "t03": {
+        "source_column": "Transaction_channel",
+        "type": "TEXT"
+      },
+      "t04": {
+        "source_column": "Province",
+        "type": "TEXT"
+      },
+      "t05": {
+        "source_column": "Transaction_Date",
+        "type": "TEXT"
+      }
+    }
+  },
+  "btm_msg": {
+    "source_table": "BANK_CUSTOMER_MSG",
+    "columns": {
+      "m01": {
+        "source_column": "Event",
+        "type": "TEXT"
+      },
+      "m02": {
+        "source_column": "Customer_message",
+        "type": "TEXT"
+      },
+      "m03": {
+        "source_column": "Notice_delivery_mode",
+        "type": "TEXT"
+      }
+    }
+  },
+  "btm_rate": {
+    "source_table": "BANK_INTEREST_RATE",
+    "columns": {
+      "i01": {
+        "source_column": "account_type",
+        "type": "TEXT"
+      },
+      "i02": {
+        "source_column": "interest_rate",
+        "type": "REAL"
+      },
+      "i03": {
+        "source_column": "month",
+        "type": "TEXT"
+      },
+      "i04": {
+        "source_column": "year",
+        "type": "TEXT"
+      }
+    }
+  }
+}

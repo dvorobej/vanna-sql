@@ -1,0 +1,51 @@
+m01,m02,m03
+Adhoc,All bank branches are closed due to a national strike announcement #1,mobile
+Transaction Limit,Only limited withdrawals per card are allowed from ATM machines #2,mobile
+Card Security,Confirm recent card activity if the transaction was not yours #3,sms
+Balance Alert,Your account balance crossed the configured monitoring threshold #4,email
+Rate Update,Interest rate has been updated for selected deposit products #5,email
+KYC Reminder,Please update identification documents before the due date #6,mobile
+Dormant Account,Your inactive account may require confirmation to remain open #7,letter
+Fraud Review,A transaction was routed to additional fraud monitoring #8,sms
+Adhoc,All bank branches are closed due to a national strike announcement #9,mobile
+Transaction Limit,Only limited withdrawals per card are allowed from ATM machines #10,mobile
+Card Security,Confirm recent card activity if the transaction was not yours #11,sms
+Balance Alert,Your account balance crossed the configured monitoring threshold #12,email
+Rate Update,Interest rate has been updated for selected deposit products #13,email
+KYC Reminder,Please update identification documents before the due date #14,mobile
+Dormant Account,Your inactive account may require confirmation to remain open #15,letter
+Fraud Review,A transaction was routed to additional fraud monitoring #16,sms
+Adhoc,All bank branches are closed due to a national strike announcement #17,mobile
+Transaction Limit,Only limited withdrawals per card are allowed from ATM machines #18,mobile
+Card Security,Confirm recent card activity if the transaction was not yours #19,sms
+Balance Alert,Your account balance crossed the configured monitoring threshold #20,email
+Rate Update,Interest rate has been updated for selected deposit products #21,email
+KYC Reminder,Please update identification documents before the due date #22,mobile
+Dormant Account,Your inactive account may require confirmation to remain open #23,letter
+Fraud Review,A transaction was routed to additional fraud monitoring #24,sms
+Adhoc,All bank branches are closed due to a national strike announcement #25,mobile
+Transaction Limit,Only limited withdrawals per card are allowed from ATM machines #26,mobile
+Card Security,Confirm recent card activity if the transaction was not yours #27,sms
+Balance Alert,Your account balance crossed the configured monitoring threshold #28,email
+Rate Update,Interest rate has been updated for selected deposit products #29,email
+KYC Reminder,Please update identification documents before the due date #30,mobile
+Dormant Account,Your inactive account may require confirmation to remain open #31,letter
+Fraud Review,A transaction was routed to additional fraud monitoring #32,sms
+Adhoc,All bank branches are closed due to a national strike announcement #33,mobile
+Transaction Limit,Only limited withdrawals per card are allowed from ATM machines #34,mobile
+Card Security,Confirm recent card activity if the transaction was not yours #35,sms
+Balance Alert,Your account balance crossed the configured monitoring threshold #36,email
+Rate Update,Interest rate has been updated for selected deposit products #37,email
+KYC Reminder,Please update identification documents before the due date #38,mobile
+Dormant Account,Your inactive account may require confirmation to remain open #39,letter
+Fraud Review,A transaction was routed to additional fraud monitoring #40,sms
+Adhoc,All bank branches are closed due to a national strike announcement #41,mobile
+Transaction Limit,Only limited withdrawals per card are allowed from ATM machines #42,mobile
+Card Security,Confirm recent card activity if the transaction was not yours #43,sms
+Balance Alert,Your account balance crossed the configured monitoring threshold #44,email
+Rate Update,Interest rate has been updated for selected deposit products #45,email
+KYC Reminder,Please update identification documents before the due date #46,mobile
+Dormant Account,Your inactive account may require confirmation to remain open #47,letter
+Fraud Review,A transaction was routed to additional fraud monitoring #48,sms
+Adhoc,All bank branches are closed due to a national strike announcement #49,mobile
+Transaction Limit,Only limited withdrawals per card are allowed from ATM machines #50,mobile

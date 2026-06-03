@@ -16,3 +16,4 @@ typer
 vanna==2.0.2
 sentence-transformers
 qdrant-client
+-e .
