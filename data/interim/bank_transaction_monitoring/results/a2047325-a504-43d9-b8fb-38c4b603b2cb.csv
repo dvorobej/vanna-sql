@@ -1,0 +1,2 @@
+customer_id,customer_name,customer_state,out_of_state_txn_count,outgoing_txn_amount,outgoing_txn_count
+123033,Ryan,CA,1,11500.0,1

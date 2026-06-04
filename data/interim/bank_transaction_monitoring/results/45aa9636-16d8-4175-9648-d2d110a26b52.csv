@@ -1,0 +1,6 @@
+balance_share,client_id,client_name,client_state,main_account,month_2020,most_frequent_txn_state,outgoing_count,outgoing_sum
+0.106569,123020,James,TX,4000-1919-3019,02,CA,2,36500.0
+0.123596,123004,Jack,TX,4000-1903-3003,02,NY,2,27500.0
+0.125862,123013,Lucas,WA,4000-1912-3012,05,AZ,2,36500.0
+0.145652,123005,Jacob,WA,4000-1904-3004,02,IL,2,33500.0
+0.152795,123028,Chloe,TX,4000-1927-3027,05,MN,3,61500.0

@@ -1,0 +1,9 @@
+client_id,client_name,out_of_state_share,outgoing_transaction_count,total_outgoing_amount
+123005,Jacob,0.0,1,16000.0
+123006,Noah,1.0,1,19000.0
+123020,James,1.0,1,17500.0
+123021,Henry,1.0,1,20500.0
+123033,Ryan,1.0,1,11500.0
+123035,Nora,0.0,1,19000.0
+123036,Zoe,1.0,1,22000.0
+123037,Sarah,1.0,1,25000.0

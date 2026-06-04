@@ -1,0 +1,6 @@
+account_number,client_id,client_name,client_state,out_of_state_transaction_share,total_credits,total_debits,transaction_count
+4000-1908-3008,123009,Amelia,CA,1.0,0.0,4000.0,1
+4000-1916-3016,123017,Ava,CA,0.0,0.0,7000.0,1
+4000-1924-3024,123025,Emily,CA,1.0,0.0,8500.0,1
+4000-1932-3032,123033,Ryan,CA,1.0,0.0,11500.0,1
+4000-1940-3040,123041,David,CA,0.0,14500.0,0.0,1

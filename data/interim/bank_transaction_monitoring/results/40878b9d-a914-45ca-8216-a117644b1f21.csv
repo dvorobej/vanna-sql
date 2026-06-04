@@ -1,0 +1,6 @@
+avg_debit_operation_amount,client_id,client_name,operation_count,total_debit_amount
+11500.0,123033,Ryan,1,11500.0
+4000.0,123009,Amelia,1,4000.0
+7000.0,123017,Ava,1,7000.0
+8500.0,123025,Emily,1,8500.0
+,123041,David,0,0.0

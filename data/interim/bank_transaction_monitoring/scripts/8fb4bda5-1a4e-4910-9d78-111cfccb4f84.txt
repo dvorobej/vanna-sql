@@ -1,0 +1,8 @@
+SELECT
+  t01,
+  t02,
+  t03,
+  t05
+FROM btm_trn
+WHERE t02 < 0
+ORDER BY t05 ASC;

@@ -1,0 +1,4 @@
+account_number,current_balance,customer_id,customer_name,customer_state,operation_count,out_of_home_state_share,state_turnover_rank,total_outgoing_turnover
+4000-1934-3034,455000,123035,Nora,NY,1,0.0,2,19000.0
+4000-1938-3038,485000,123039,Max,AZ,1,1.0,1,7000.0
+4000-1942-3042,515000,123043,Julia,NY,1,1.0,1,20500.0

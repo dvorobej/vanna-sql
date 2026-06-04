@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import csv
+import io
 import json
 from pathlib import Path
 import re
@@ -8,6 +9,7 @@ import sqlite3
 from typing import Any
 
 from src.config import PROJECT_ROOT
+from src.prompts import build_query_description_rewrite_prompt
 
 BANK_DATASET_NAME = "bank_transaction_monitoring"
 BANK_RAW_DIR = PROJECT_ROOT / "data" / "raw" / BANK_DATASET_NAME
@@ -50,6 +52,17 @@ def get_schema_template_path(database_name: str = BANK_DATASET_NAME) -> Path:
 
 def get_schema_mapping_path(database_name: str = BANK_DATASET_NAME) -> Path:
     return get_database_raw_dir(database_name) / "schema_mapping.json"
+
+
+def get_sqlite_database_path(
+    database_name: str = BANK_DATASET_NAME,
+    comment_style: str = "inline",
+    comment_variant: str = "short",
+) -> Path:
+    normalized_style = _normalize_comment_style(comment_style)
+    normalized_variant = comment_variant.lower()
+    filename = f"{database_name}_{normalized_style}_{normalized_variant}.sqlite.db"
+    return get_database_processed_dir(database_name) / filename
 
 
 def _normalize_comment_style(comment_style: str) -> str:
@@ -156,6 +169,178 @@ def render_table_ddls(
     return scripts
 
 
+def _extract_table_name_from_ddl(ddl: str) -> str | None:
+    match = re.search(r"\bCREATE\s+TABLE\s+([A-Za-z_][A-Za-z0-9_]*)", ddl, flags=re.IGNORECASE)
+    if not match:
+        return None
+    return match.group(1)
+
+
+def _format_sample_rows(columns: list[str], rows: list[tuple[Any, ...]]) -> str:
+    buffer = io.StringIO()
+    writer = csv.writer(buffer)
+    writer.writerow(columns)
+    writer.writerows(rows)
+    return buffer.getvalue().strip()
+
+
+def build_schema_description_with_samples(
+    comment_style: str = "inline",
+    comment_variant: str = "short",
+    database_name: str = BANK_DATASET_NAME,
+    sample_rows: int = 5,
+) -> tuple[str, Path]:
+    """Combine rendered table DDLs with sample rows from the matching SQLite database."""
+    normalized_style = _normalize_comment_style(comment_style)
+    normalized_variant = comment_variant.lower()
+    db_path = get_sqlite_database_path(
+        database_name=database_name,
+        comment_style=normalized_style,
+        comment_variant=normalized_variant,
+    )
+    if not db_path.exists():
+        db_path = build_database(
+            comment_style=normalized_style,
+            comment_variant=normalized_variant,
+            database_name=database_name,
+        )
+
+    schema_mapping = _load_schema_mapping(database_name)
+    table_ddls = render_table_ddls(
+        database_name=database_name,
+        comment_style=normalized_style,
+        comment_variant=normalized_variant,
+    )
+    ddls_by_table = {
+        table_name: ddl
+        for ddl in table_ddls
+        if (table_name := _extract_table_name_from_ddl(ddl)) is not None
+    }
+
+    blocks: list[str] = []
+    matched_tables: set[str] = set()
+
+    with sqlite3.connect(db_path) as connection:
+        for table_name in schema_mapping:
+            ddl = ddls_by_table.get(table_name)
+            if ddl is None:
+                continue
+
+            matched_tables.add(table_name)
+            cursor = connection.execute(f"SELECT * FROM {table_name} LIMIT ?", (sample_rows,))
+            rows = cursor.fetchall()
+            columns = [description[0] for description in cursor.description]
+            sample_text = _format_sample_rows(columns, rows)
+
+            blocks.append(
+                "\n".join(
+                    [
+                        f"DDL script for table {table_name}",
+                        ddl,
+                        "",
+                        f"Output of the first {sample_rows} rows of table {table_name}",
+                        sample_text,
+                    ]
+                )
+            )
+
+    unmatched_ddls = [
+        ddl
+        for ddl in table_ddls
+        if (table_name := _extract_table_name_from_ddl(ddl)) is None or table_name not in matched_tables
+    ]
+    if unmatched_ddls:
+        blocks.append("Other DDL scripts without matching tables\n" + "\n\n".join(unmatched_ddls))
+
+    return "\n\n".join(blocks), db_path
+
+
+def rewrite_query_descriptions_csv(
+    descriptions_csv_path: str | Path,
+    client: Any,
+    model: str,
+    schema_description_path: str | Path | None = None,
+    rewrite_styles: tuple[str, ...] = ("short", "business", "technical"),
+    source_column: str = "query",
+    temperature: float = 0.9,
+    output_path: str | Path | None = None,
+) -> Path:
+    """Rewrite query descriptions into multiple formats and save an augmented CSV."""
+    descriptions_csv_path = Path(descriptions_csv_path)
+    schema_description_path = (
+        Path(schema_description_path)
+        if schema_description_path is not None
+        else _latest_schema_description_path(descriptions_csv_path.parent)
+    )
+    output_path = (
+        Path(output_path)
+        if output_path is not None
+        else descriptions_csv_path.with_name(f"{descriptions_csv_path.stem}_rewritten.csv")
+    )
+
+    schema_description = schema_description_path.read_text(encoding="utf-8")
+    with descriptions_csv_path.open(newline="", encoding="utf-8") as file:
+        rows = list(csv.DictReader(file))
+        fieldnames = list(file.seek(0) or csv.DictReader(file).fieldnames or [])
+
+    if not rows:
+        raise ValueError(f"No rows found in {descriptions_csv_path}.")
+    if source_column not in rows[0]:
+        raise ValueError(f"Column {source_column!r} was not found in {descriptions_csv_path}.")
+
+    rewrite_columns = [f"{source_column}_{style}" for style in rewrite_styles]
+    output_fieldnames = [*fieldnames, *[column for column in rewrite_columns if column not in fieldnames]]
+
+    for row in rows:
+        difficulty = row.get("difficulty")
+        for style, column in zip(rewrite_styles, rewrite_columns, strict=True):
+            messages = build_query_description_rewrite_prompt(
+                schema_description=schema_description,
+                query_description=row[source_column],
+                rewrite_style=style,
+                difficulty=difficulty,
+            )
+            response = client.chat.completions.create(
+                model=model,
+                messages=messages,
+                temperature=temperature,
+            )
+            row[column] = _extract_openai_response_text(response).strip()
+
+    with output_path.open("w", newline="", encoding="utf-8") as file:
+        writer = csv.DictWriter(file, fieldnames=output_fieldnames)
+        writer.writeheader()
+        writer.writerows(rows)
+
+    return output_path
+
+
+def _latest_schema_description_path(directory: Path) -> Path:
+    matches = sorted(
+        directory.glob("schema_description_*.txt"),
+        key=lambda path: path.stat().st_mtime,
+        reverse=True,
+    )
+    if not matches:
+        raise FileNotFoundError(f"No schema_description_*.txt files were found in {directory}.")
+    return matches[0]
+
+
+def _extract_openai_response_text(response: Any) -> str:
+    choice = response.choices[0]
+    if isinstance(choice, dict):
+        message = choice.get("message", {})
+        return str(message.get("content", choice.get("text", "")))
+
+    if hasattr(choice, "message") and hasattr(choice.message, "content"):
+        return str(choice.message.content)
+
+    if hasattr(choice, "text"):
+        return str(choice.text)
+
+    raise ValueError("Could not extract text from OpenAI-compatible response.")
+
+
 def create_database(
     comment_style: str = "inline",
     comment_variant: str = "short",
@@ -173,8 +358,11 @@ def create_database(
     )
 
     if output_path is None:
-        filename = f"{database_name}_{normalized_style}_{normalized_variant}.sqlite.db"
-        db_path = get_database_processed_dir(database_name) / filename
+        db_path = get_sqlite_database_path(
+            database_name=database_name,
+            comment_style=normalized_style,
+            comment_variant=normalized_variant,
+        )
     else:
         db_path = Path(output_path)
 

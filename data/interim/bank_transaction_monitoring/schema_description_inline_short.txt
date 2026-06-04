@@ -1,0 +1,133 @@
+DDL script for table btm_cst
+CREATE TABLE btm_cst ( -- Клиенты банка.
+    c01 INTEGER, -- Идентификатор клиента.
+    c02 TEXT   , -- Имя клиента.
+    c03 TEXT   , -- Адрес клиента.
+    c04 TEXT   , -- Код штата клиента.
+    c05 TEXT     -- Телефон клиента.
+);
+
+Output of the first 5 rows of table btm_cst
+c01,c02,c03,c04,c05
+123001,Oliver,"200-1, Emeryville",CA,1897614000
+123002,George,"201-2, New Brighton",MN,1897614137
+123003,Harry,"202-3, Walnut Creek",NY,1897614274
+123004,Jack,"203-4, Concord",TX,1897614411
+123005,Jacob,"204-5, Mission Dist",WA,1897614548
+
+DDL script for table btm_cex
+CREATE TABLE btm_cex ( -- Экспортная копия клиентов.
+    x01 TEXT   , -- Идентификатор клиента в выгрузке.
+    x02 TEXT   , -- Имя клиента в выгрузке.
+    x03 TEXT   , -- Адрес клиента в выгрузке.
+    x04 TEXT   , -- Код штата в выгрузке.
+    x05 TEXT     -- Телефон в выгрузке.
+);
+
+Output of the first 5 rows of table btm_cex
+x01,x02,x03,x04,x05
+123001,Oliver,"200-1, Emeryville",CA,1897614000
+123002,George,"201-2, New Brighton",MN,1897614137
+123003,Harry,"202-3, Walnut Creek",NY,1897614274
+123004,Jack,"203-4, Concord",TX,1897614411
+123005,Jacob,"204-5, Mission Dist",WA,1897614548
+
+DDL script for table btm_accd
+CREATE TABLE btm_accd ( -- Детали банковских счетов.
+    a01 INTEGER, -- Идентификатор владельца счета.
+    a02 TEXT   , -- Номер счета.
+    a03 TEXT   , -- Тип счета.
+    a04 INTEGER, -- Баланс счета.
+    a05 TEXT   , -- Статус счета.
+    a06 TEXT     -- Тип связи клиента со счетом.
+);
+
+Output of the first 5 rows of table btm_accd
+a01,a02,a03,a04,a05,a06
+123001,4000-1900-3000,SAVINGS,200000,INACTIVE,P
+123001,5000-1700-5000,RECURRING DEPOSITS,5000000,ACTIVE,S
+123001,9000-1700-7000-4300,Credit Card,0,INACTIVE,P
+123002,4000-1901-3001,SAVINGS,207500,ACTIVE,P
+123002,5000-1701-5001,RECURRING DEPOSITS,5065000,ACTIVE,S
+
+DDL script for table btm_accs
+CREATE TABLE btm_accs ( -- Срез банковских счетов.
+    s01 INTEGER, -- Идентификатор клиента.
+    s02 TEXT   , -- Номер счета.
+    s03 TEXT   , -- Тип счета.
+    s04 INTEGER, -- Текущий баланс.
+    s05 TEXT   , -- Статус счета.
+    s06 TEXT     -- Роль клиента по счету.
+);
+
+Output of the first 5 rows of table btm_accs
+s01,s02,s03,s04,s05,s06
+123001,4000-1900-3000,SAVINGS,200000,INACTIVE,P
+123001,5000-1700-5000,RECURRING DEPOSITS,5000000,ACTIVE,S
+123001,9000-1700-7000-4300,CREDITCARD,0,INACTIVE,P
+123002,4000-1901-3001,SAVINGS,207500,ACTIVE,P
+123002,5000-1701-5001,RECURRING DEPOSITS,5065000,ACTIVE,S
+
+DDL script for table btm_rel
+CREATE TABLE btm_rel ( -- Связи между счетами.
+    r01 INTEGER, -- Идентификатор клиента.
+    r02 TEXT   , -- Номер дочернего или связанного счета.
+    r03 TEXT   , -- Тип связанного счета.
+    r04 TEXT     -- Номер основного счета.
+);
+
+Output of the first 5 rows of table btm_rel
+r01,r02,r03,r04
+123001,4000-1900-3000,SAVINGS,
+123001,5000-1700-5000,RECURRING DEPOSITS,4000-1900-3000
+,9000-1700-7000-4300,Credit Card,4000-1900-3000
+123002,4000-1901-3001,SAVINGS,
+123002,5000-1701-5001,RECURRING DEPOSITS,4000-1901-3001
+
+DDL script for table btm_trn
+CREATE TABLE btm_trn ( -- Операции по счетам.
+    t01 TEXT   , -- Номер счета операции.
+    t02 REAL   , -- Сумма операции.
+    t03 TEXT   , -- Канал операции.
+    t04 TEXT   , -- Штат проведения операции.
+    t05 TEXT     -- Дата операции.
+);
+
+Output of the first 5 rows of table btm_trn
+t01,t02,t03,t04,t05
+4000-1900-3000,-1000.0,ATM withdrawal,NY,2020-01-05
+5000-1700-5000,-2500.0,POS-Walmart,TX,2020-01-10
+9000-1700-7000-4300,-4000.0,UPI transfer,WA,2020-01-15
+4000-1901-3001,-5500.0,Bankers cheque,IL,2020-01-20
+5000-1701-5001,7000.0,Net banking,AZ,2020-01-25
+
+DDL script for table btm_msg
+CREATE TABLE btm_msg ( -- Шаблоны клиентских уведомлений.
+    m01 TEXT   , -- Событие уведомления.
+    m02 TEXT   , -- Текст уведомления.
+    m03 TEXT     -- Канал доставки уведомления.
+);
+
+Output of the first 5 rows of table btm_msg
+m01,m02,m03
+Adhoc,All bank branches are closed due to a national strike announcement #1,mobile
+Transaction Limit,Only limited withdrawals per card are allowed from ATM machines #2,mobile
+Card Security,Confirm recent card activity if the transaction was not yours #3,sms
+Balance Alert,Your account balance crossed the configured monitoring threshold #4,email
+Rate Update,Interest rate has been updated for selected deposit products #5,email
+
+DDL script for table btm_rate
+CREATE TABLE btm_rate ( -- Процентные ставки по продуктам.
+    i01 TEXT   , -- Тип банковского продукта.
+    i02 REAL   , -- Процентная ставка.
+    i03 TEXT   , -- Месяц действия ставки.
+    i04 TEXT     -- Год действия ставки.
+);
+
+Output of the first 5 rows of table btm_rate
+i01,i02,i03,i04
+SAVINGS,0.036,01,2020
+RECURRING DEPOSITS,0.051,01,2020
+PRIVILEGED_INTEREST_RATE,0.066,01,2020
+Credit Card,0.081,01,2020
+SAVINGS,0.037,02,2020

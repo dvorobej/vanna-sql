@@ -1,0 +1,2 @@
+account_type,credit_amount,customer_id,customer_name,debit_amount,total_transaction_volume,transaction_count
+SAVINGS,0,123033,Ryan,11500.0,11500.0,1

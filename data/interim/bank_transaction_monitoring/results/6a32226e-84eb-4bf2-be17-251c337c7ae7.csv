@@ -1,0 +1,6 @@
+account_type,client_id,client_name,client_state,out_of_state_transaction_share,total_credits,total_debits,transaction_count
+RECURRING DEPOSITS,123001,Oliver,CA,1.0,0.0,2500.0,1
+RECURRING DEPOSITS,123017,Ava,CA,1.0,0.0,8500.0,1
+RECURRING DEPOSITS,123033,Ryan,CA,1.0,13000.0,0.0,1
+SAVINGS,123017,Ava,CA,0.0,0.0,7000.0,1
+SAVINGS,123033,Ryan,CA,1.0,0.0,11500.0,1

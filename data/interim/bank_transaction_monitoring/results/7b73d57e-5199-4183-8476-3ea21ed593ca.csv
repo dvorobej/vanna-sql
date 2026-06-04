@@ -1,0 +1,7 @@
+account_type,client_id,client_name,out_of_state_transaction_share,total_debits,transaction_count
+RECURRING DEPOSITS,123021,Henry,1.0,22000.0,1
+RECURRING DEPOSITS,123035,Nora,1.0,20500.0,1
+RECURRING DEPOSITS,123036,Zoe,1.0,23500.0,1
+SAVINGS,123021,Henry,1.0,20500.0,1
+SAVINGS,123036,Zoe,1.0,22000.0,1
+SAVINGS,123037,Sarah,1.0,25000.0,1

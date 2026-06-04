@@ -10,6 +10,7 @@ from vanna.legacy.qdrant.qdrant import Qdrant_VectorStore
 from vanna.legacy.openai.openai_chat import OpenAI_Chat
 from vanna.legacy.utils import deterministic_uuid
 from sentence_transformers import SentenceTransformer
+import httpx
 
 
 class QdrantVectorStore(Qdrant_VectorStore):
@@ -156,6 +157,7 @@ class VannaClient(QdrantVectorStore, OpenAI_Chat):
             openai_client = OpenAI(
                 api_key=openai_settings.get("api_key"),
                 base_url=openai_settings["base_url"],
+                http_client=httpx.Client(verify=False)
             )
 
         OpenAI_Chat.__init__(self, client=openai_client, config=openai_settings)
@@ -175,7 +177,6 @@ DATABASE_CONNECTORS = {
     "mysql": "connect_to_mysql",
     "oracle": "connect_to_oracle",
     "postgres": "connect_to_postgres",
-    "postgresql": "connect_to_postgres",
     "presto": "connect_to_presto",
     "snowflake": "connect_to_snowflake",
     "sqlite": "connect_to_sqlite",

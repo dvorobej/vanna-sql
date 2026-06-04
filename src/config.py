@@ -27,5 +27,6 @@ DENSE_EMBEDDING_MODEL_PATH = os.path.join(MODELS_DIR, DENSE_EMBEDDING_MODEL)
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 OPENAI_API_URL = os.getenv("OPENAI_API_URL", "https://openrouter.ai/api/v1")
 OPENAI_MODEL = os.getenv("OPENAI_MODEL", "openai/gpt-5.5")
+OPENAI_MODEL_MINI = os.getenv("OPENAI_MODEL_MINI", "openai/gpt-5.4-mini")
 
 DEVICE = os.getenv("DEVICE", "cpu")

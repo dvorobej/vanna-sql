@@ -1,0 +1,9 @@
+client_id,client_name,outgoing_transaction_amount,total_transaction_amount,total_transactions,transaction_state
+123005,Jacob,16000.0,-16000.0,1,WA
+123006,Noah,19000.0,-19000.0,1,AZ
+123020,James,17500.0,-17500.0,1,FL
+123021,Henry,20500.0,-20500.0,1,MN
+123033,Ryan,11500.0,-11500.0,1,IL
+123035,Nora,19000.0,-19000.0,1,NY
+123036,Zoe,22000.0,-22000.0,1,WA
+123037,Sarah,25000.0,-25000.0,1,AZ

@@ -1,0 +1,11 @@
+account_type,client_state,out_of_state_transaction_share,total_credits,total_debits,transaction_count,unique_clients
+Credit Card,AZ,1.0,0.0,7000.0,1,1
+Credit Card,CA,1.0,0.0,4000.0,1,1
+Credit Card,FL,0.0,0.0,5500.0,1,1
+RECURRING DEPOSITS,CA,1.0,13000.0,11000.0,3,3
+RECURRING DEPOSITS,FL,1.0,0.0,14000.0,2,2
+RECURRING DEPOSITS,MN,1.0,18500.0,0.0,2,2
+SAVINGS,CA,0.6666666666666666,0.0,19500.0,3,3
+SAVINGS,FL,1.0,0.0,8500.0,1,1
+SAVINGS,MN,1.0,24500.0,5500.0,3,3
+SAVINGS,NY,1.0,8500.0,0.0,1,1
