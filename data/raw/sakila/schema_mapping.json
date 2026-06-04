@@ -1,0 +1,438 @@
+{
+  "act": {
+    "source_table": "actor",
+    "columns": {
+      "a01": {
+        "source_column": "actor_id",
+        "type": "INTEGER"
+      },
+      "a02": {
+        "source_column": "first_name",
+        "type": "TEXT"
+      },
+      "a03": {
+        "source_column": "last_name",
+        "type": "TEXT"
+      },
+      "a04": {
+        "source_column": "last_update",
+        "type": "TEXT"
+      }
+    }
+  },
+  "cnt": {
+    "source_table": "country",
+    "columns": {
+      "c01": {
+        "source_column": "country_id",
+        "type": "INTEGER"
+      },
+      "c02": {
+        "source_column": "country",
+        "type": "TEXT"
+      },
+      "c03": {
+        "source_column": "last_update",
+        "type": "TEXT"
+      }
+    }
+  },
+  "cty": {
+    "source_table": "city",
+    "columns": {
+      "d01": {
+        "source_column": "city_id",
+        "type": "INTEGER"
+      },
+      "d02": {
+        "source_column": "city",
+        "type": "TEXT"
+      },
+      "d03": {
+        "source_column": "country_id",
+        "type": "INTEGER"
+      },
+      "d04": {
+        "source_column": "last_update",
+        "type": "TEXT"
+      }
+    }
+  },
+  "adr": {
+    "source_table": "address",
+    "columns": {
+      "e01": {
+        "source_column": "address_id",
+        "type": "INTEGER"
+      },
+      "e02": {
+        "source_column": "address",
+        "type": "TEXT"
+      },
+      "e03": {
+        "source_column": "address2",
+        "type": "TEXT"
+      },
+      "e04": {
+        "source_column": "district",
+        "type": "TEXT"
+      },
+      "e05": {
+        "source_column": "city_id",
+        "type": "INTEGER"
+      },
+      "e06": {
+        "source_column": "postal_code",
+        "type": "TEXT"
+      },
+      "e07": {
+        "source_column": "phone",
+        "type": "TEXT"
+      },
+      "e08": {
+        "source_column": "last_update",
+        "type": "TEXT"
+      }
+    }
+  },
+  "lng": {
+    "source_table": "language",
+    "columns": {
+      "f01": {
+        "source_column": "language_id",
+        "type": "INTEGER"
+      },
+      "f02": {
+        "source_column": "name",
+        "type": "TEXT"
+      },
+      "f03": {
+        "source_column": "last_update",
+        "type": "TEXT"
+      }
+    }
+  },
+  "cat": {
+    "source_table": "category",
+    "columns": {
+      "g01": {
+        "source_column": "category_id",
+        "type": "INTEGER"
+      },
+      "g02": {
+        "source_column": "name",
+        "type": "TEXT"
+      },
+      "g03": {
+        "source_column": "last_update",
+        "type": "TEXT"
+      }
+    }
+  },
+  "cus": {
+    "source_table": "customer",
+    "columns": {
+      "h01": {
+        "source_column": "customer_id",
+        "type": "INTEGER"
+      },
+      "h02": {
+        "source_column": "store_id",
+        "type": "INTEGER"
+      },
+      "h03": {
+        "source_column": "first_name",
+        "type": "TEXT"
+      },
+      "h04": {
+        "source_column": "last_name",
+        "type": "TEXT"
+      },
+      "h05": {
+        "source_column": "email",
+        "type": "TEXT"
+      },
+      "h06": {
+        "source_column": "address_id",
+        "type": "INTEGER"
+      },
+      "h07": {
+        "source_column": "active",
+        "type": "TEXT"
+      },
+      "h08": {
+        "source_column": "create_date",
+        "type": "TEXT"
+      },
+      "h09": {
+        "source_column": "last_update",
+        "type": "TEXT"
+      }
+    }
+  },
+  "flm": {
+    "source_table": "film",
+    "columns": {
+      "i01": {
+        "source_column": "film_id",
+        "type": "INTEGER"
+      },
+      "i02": {
+        "source_column": "title",
+        "type": "TEXT"
+      },
+      "i03": {
+        "source_column": "description",
+        "type": "BLOB"
+      },
+      "i04": {
+        "source_column": "release_year",
+        "type": "TEXT"
+      },
+      "i05": {
+        "source_column": "language_id",
+        "type": "INTEGER"
+      },
+      "i06": {
+        "source_column": "original_language_id",
+        "type": "INTEGER"
+      },
+      "i07": {
+        "source_column": "rental_duration",
+        "type": "INTEGER"
+      },
+      "i08": {
+        "source_column": "rental_rate",
+        "type": "REAL"
+      },
+      "i09": {
+        "source_column": "length",
+        "type": "INTEGER"
+      },
+      "i10": {
+        "source_column": "replacement_cost",
+        "type": "REAL"
+      },
+      "i11": {
+        "source_column": "rating",
+        "type": "TEXT"
+      },
+      "i12": {
+        "source_column": "special_features",
+        "type": "TEXT"
+      },
+      "i13": {
+        "source_column": "last_update",
+        "type": "TEXT"
+      }
+    }
+  },
+  "fla": {
+    "source_table": "film_actor",
+    "columns": {
+      "k01": {
+        "source_column": "actor_id",
+        "type": "INTEGER"
+      },
+      "k02": {
+        "source_column": "film_id",
+        "type": "INTEGER"
+      },
+      "k03": {
+        "source_column": "last_update",
+        "type": "TEXT"
+      }
+    }
+  },
+  "flc": {
+    "source_table": "film_category",
+    "columns": {
+      "l01": {
+        "source_column": "film_id",
+        "type": "INTEGER"
+      },
+      "l02": {
+        "source_column": "category_id",
+        "type": "INTEGER"
+      },
+      "l03": {
+        "source_column": "last_update",
+        "type": "TEXT"
+      }
+    }
+  },
+  "flt": {
+    "source_table": "film_text",
+    "columns": {
+      "m01": {
+        "source_column": "film_id",
+        "type": "INTEGER"
+      },
+      "m02": {
+        "source_column": "title",
+        "type": "TEXT"
+      },
+      "m03": {
+        "source_column": "description",
+        "type": "BLOB"
+      }
+    }
+  },
+  "inv": {
+    "source_table": "inventory",
+    "columns": {
+      "n01": {
+        "source_column": "inventory_id",
+        "type": "INTEGER"
+      },
+      "n02": {
+        "source_column": "film_id",
+        "type": "INTEGER"
+      },
+      "n03": {
+        "source_column": "store_id",
+        "type": "INTEGER"
+      },
+      "n04": {
+        "source_column": "last_update",
+        "type": "TEXT"
+      }
+    }
+  },
+  "stf": {
+    "source_table": "staff",
+    "columns": {
+      "o01": {
+        "source_column": "staff_id",
+        "type": "INTEGER"
+      },
+      "o02": {
+        "source_column": "first_name",
+        "type": "TEXT"
+      },
+      "o03": {
+        "source_column": "last_name",
+        "type": "TEXT"
+      },
+      "o04": {
+        "source_column": "address_id",
+        "type": "INTEGER"
+      },
+      "o05": {
+        "source_column": "picture",
+        "type": "BLOB"
+      },
+      "o06": {
+        "source_column": "email",
+        "type": "TEXT"
+      },
+      "o07": {
+        "source_column": "store_id",
+        "type": "INTEGER"
+      },
+      "o08": {
+        "source_column": "active",
+        "type": "INTEGER"
+      },
+      "o09": {
+        "source_column": "username",
+        "type": "TEXT"
+      },
+      "o10": {
+        "source_column": "password",
+        "type": "TEXT"
+      },
+      "o11": {
+        "source_column": "last_update",
+        "type": "TEXT"
+      }
+    }
+  },
+  "sto": {
+    "source_table": "store",
+    "columns": {
+      "j01": {
+        "source_column": "store_id",
+        "type": "INTEGER"
+      },
+      "j02": {
+        "source_column": "manager_staff_id",
+        "type": "INTEGER"
+      },
+      "j03": {
+        "source_column": "address_id",
+        "type": "INTEGER"
+      },
+      "j04": {
+        "source_column": "last_update",
+        "type": "TEXT"
+      }
+    }
+  },
+  "pay": {
+    "source_table": "payment",
+    "columns": {
+      "p01": {
+        "source_column": "payment_id",
+        "type": "INTEGER"
+      },
+      "p02": {
+        "source_column": "customer_id",
+        "type": "INTEGER"
+      },
+      "p03": {
+        "source_column": "staff_id",
+        "type": "INTEGER"
+      },
+      "p04": {
+        "source_column": "rental_id",
+        "type": "INTEGER"
+      },
+      "p05": {
+        "source_column": "amount",
+        "type": "REAL"
+      },
+      "p06": {
+        "source_column": "payment_date",
+        "type": "TEXT"
+      },
+      "p07": {
+        "source_column": "last_update",
+        "type": "TEXT"
+      }
+    }
+  },
+  "ren": {
+    "source_table": "rental",
+    "columns": {
+      "q01": {
+        "source_column": "rental_id",
+        "type": "INTEGER"
+      },
+      "q02": {
+        "source_column": "rental_date",
+        "type": "TEXT"
+      },
+      "q03": {
+        "source_column": "inventory_id",
+        "type": "INTEGER"
+      },
+      "q04": {
+        "source_column": "customer_id",
+        "type": "INTEGER"
+      },
+      "q05": {
+        "source_column": "return_date",
+        "type": "TEXT"
+      },
+      "q06": {
+        "source_column": "staff_id",
+        "type": "INTEGER"
+      },
+      "q07": {
+        "source_column": "last_update",
+        "type": "TEXT"
+      }
+    }
+  }
+}
