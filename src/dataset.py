@@ -2,12 +2,12 @@ from __future__ import annotations
 
 import csv
 import json
+from pathlib import Path
 import re
 import sqlite3
-from pathlib import Path
 from typing import Any
-from src.config import PROJECT_ROOT
 
+from src.config import PROJECT_ROOT
 
 BANK_DATASET_NAME = "bank_transaction_monitoring"
 BANK_RAW_DIR = PROJECT_ROOT / "data" / "raw" / BANK_DATASET_NAME
@@ -32,6 +32,26 @@ COMMENT_VARIANTS = {
 PLACEHOLDER_PATTERN = re.compile(r"\{\{([A-Za-z0-9_.]+)\}\}")
 
 
+def get_database_raw_dir(database_name: str = BANK_DATASET_NAME) -> Path:
+    return PROJECT_ROOT / "data" / "raw" / database_name
+
+
+def get_database_external_dir(database_name: str = BANK_DATASET_NAME) -> Path:
+    return PROJECT_ROOT / "data" / "external" / database_name
+
+
+def get_database_processed_dir(database_name: str = BANK_DATASET_NAME) -> Path:
+    return PROJECT_ROOT / "data" / "processed" / database_name
+
+
+def get_schema_template_path(database_name: str = BANK_DATASET_NAME) -> Path:
+    return get_database_raw_dir(database_name) / "schema_template.sql"
+
+
+def get_schema_mapping_path(database_name: str = BANK_DATASET_NAME) -> Path:
+    return get_database_raw_dir(database_name) / "schema_mapping.json"
+
+
 def _normalize_comment_style(comment_style: str) -> str:
     try:
         return COMMENT_STYLE_ALIASES[comment_style.lower()]
@@ -40,17 +60,23 @@ def _normalize_comment_style(comment_style: str) -> str:
         raise ValueError(f"Unknown comment_style={comment_style!r}. Supported: {supported}.") from exc
 
 
-def _comment_variant_path(comment_variant: str) -> Path:
+def _comment_variant_path(
+    comment_variant: str,
+    database_name: str = BANK_DATASET_NAME,
+) -> Path:
     try:
         filename = COMMENT_VARIANTS[comment_variant.lower()]
     except KeyError as exc:
         supported = ", ".join(sorted(COMMENT_VARIANTS))
         raise ValueError(f"Unknown comment_variant={comment_variant!r}. Supported: {supported}.") from exc
-    return BANK_EXTERNAL_DIR / filename
+    return get_database_external_dir(database_name) / filename
 
 
-def _load_placeholders(comment_variant: str) -> dict[str, str]:
-    variant_path = _comment_variant_path(comment_variant)
+def _load_placeholders(
+    comment_variant: str,
+    database_name: str = BANK_DATASET_NAME,
+) -> dict[str, str]:
+    variant_path = _comment_variant_path(comment_variant, database_name)
     with variant_path.open(encoding="utf-8") as file:
         payload = json.load(file)
 
@@ -91,37 +117,64 @@ def _render_placeholders(template: str, placeholders: dict[str, str]) -> str:
     return rendered
 
 
-def _load_schema_mapping() -> dict[str, Any]:
-    with BANK_SCHEMA_MAPPING_PATH.open(encoding="utf-8") as file:
+def _load_schema_mapping(database_name: str = BANK_DATASET_NAME) -> dict[str, Any]:
+    with get_schema_mapping_path(database_name).open(encoding="utf-8") as file:
         return json.load(file)
 
 
-def render_bank_monitoring_ddl(
+def render_ddl(
     comment_style: str,
     comment_variant: str,
+    database_name: str = BANK_DATASET_NAME,
 ) -> str:
     """Render bank monitoring DDL with the selected comment form and Russian descriptions."""
     normalized_style = _normalize_comment_style(comment_style)
-    placeholders = _load_placeholders(comment_variant)
-    template = BANK_SCHEMA_TEMPLATE_PATH.read_text(encoding="utf-8")
+    placeholders = _load_placeholders(comment_variant, database_name)
+    template = get_schema_template_path(database_name).read_text(encoding="utf-8")
     style_section = _extract_comment_style_section(template, normalized_style)
     return _render_placeholders(style_section, placeholders)
 
 
-def create_bank_monitoring_database(
+def render_table_ddls(
+    database_name: str = BANK_DATASET_NAME,
+    comment_style: str = "inline",
+    comment_variant: str = "short",
+) -> list[str]:
+    """Render one filled DDL script per table for Vanna training."""
+    ddl = render_ddl(
+        comment_style=comment_style,
+        comment_variant=comment_variant,
+        database_name=database_name,
+    )
+    table_pattern = re.compile(
+        r"(?ms)(?:(?<=\A)|(?<=\n\n))"
+        r"(?P<script>(?:(?:--[^\n]*\n)+)?CREATE\s+TABLE\b.*?;\s*)",
+    )
+    scripts = [match.group("script").strip() for match in table_pattern.finditer(ddl)]
+    if not scripts:
+        raise ValueError("No CREATE TABLE statements were found in the rendered DDL.")
+    return scripts
+
+
+def create_database(
     comment_style: str = "inline",
     comment_variant: str = "short",
     output_path: str | Path | None = None,
     overwrite: bool = True,
+    database_name: str = BANK_DATASET_NAME,
 ) -> Path:
     """Create an empty SQLite database from a rendered bank monitoring DDL template."""
     normalized_style = _normalize_comment_style(comment_style)
     normalized_variant = comment_variant.lower()
-    ddl = render_bank_monitoring_ddl(normalized_style, normalized_variant)
+    ddl = render_ddl(
+        comment_style=normalized_style,
+        comment_variant=normalized_variant,
+        database_name=database_name,
+    )
 
     if output_path is None:
-        filename = f"{BANK_DATASET_NAME}_{normalized_style}_{normalized_variant}.sqlite.db"
-        db_path = BANK_PROCESSED_DIR / filename
+        filename = f"{database_name}_{normalized_style}_{normalized_variant}.sqlite.db"
+        db_path = get_database_processed_dir(database_name) / filename
     else:
         db_path = Path(output_path)
 
@@ -138,14 +191,15 @@ def create_bank_monitoring_database(
     return db_path
 
 
-def load_bank_monitoring_csv_data(
+def load_csv_data(
     db_path: str | Path,
-    raw_dir: str | Path = BANK_RAW_DIR,
+    database_name: str = BANK_DATASET_NAME,
+    raw_dir: str | Path | None = None,
 ) -> dict[str, int]:
     """Load schema-aligned CSV files into a created bank monitoring SQLite database."""
     db_path = Path(db_path)
-    raw_dir = Path(raw_dir)
-    schema_mapping = _load_schema_mapping()
+    raw_dir = get_database_raw_dir(database_name) if raw_dir is None else Path(raw_dir)
+    schema_mapping = _load_schema_mapping(database_name)
     inserted_counts: dict[str, int] = {}
 
     with sqlite3.connect(db_path) as connection:
@@ -171,22 +225,24 @@ def load_bank_monitoring_csv_data(
     return inserted_counts
 
 
-def build_bank_monitoring_database(
+def build_database(
     comment_style: str = "inline",
     comment_variant: str = "short",
     output_path: str | Path | None = None,
     overwrite: bool = True,
+    database_name: str = BANK_DATASET_NAME,
 ) -> Path:
     """Create and fill the bank monitoring SQLite database in one pipeline step."""
-    db_path = create_bank_monitoring_database(
+    db_path = create_database(
         comment_style=comment_style,
         comment_variant=comment_variant,
         output_path=output_path,
         overwrite=overwrite,
+        database_name=database_name,
     )
-    load_bank_monitoring_csv_data(db_path)
+    load_csv_data(db_path, database_name=database_name)
     return db_path
 
 
 if __name__ == "__main__":
-    build_bank_monitoring_database()
+    build_database()

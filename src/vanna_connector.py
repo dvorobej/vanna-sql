@@ -162,6 +162,7 @@ class VannaClient(QdrantVectorStore, OpenAI_Chat):
 
         self.qdrant_config = qdrant_settings
         self.openai_config = openai_settings
+        self.config = {**qdrant_settings, **openai_settings}
         self.database_connection_config: dict[str, Any] | None = None
 
 
