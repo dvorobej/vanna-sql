@@ -16,4 +16,5 @@ typer
 vanna==2.0.2
 sentence-transformers==5.5.1
 qdrant-client==1.18.0
+openai==2.41.0
 -e .

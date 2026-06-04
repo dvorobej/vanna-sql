@@ -18,7 +18,14 @@ MODELS_DIR = PROJECT_ROOT / "models"
 REPORTS_DIR = PROJECT_ROOT / "reports"
 FIGURES_DIR = REPORTS_DIR / "figures"
 
-DENSE_EMBEDDING_MODEL = os.path.join(MODELS_DIR, "e5_large")
+QDRANT_URL = os.getenv("QDRANT_URL")
+QDRANT_API_KEY = os.getenv("QDRANT_API_KEY")
+
+DENSE_EMBEDDING_MODEL = os.getenv("DENSE_EMBEDDING_MODEL")
+DENSE_EMBEDDING_MODEL_PATH = os.path.join(MODELS_DIR, DENSE_EMBEDDING_MODEL)
+
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 OPENAI_API_URL = os.getenv("OPENAI_API_URL", "https://openrouter.ai/api/v1")
 OPENAI_MODEL = os.getenv("OPENAI_MODEL", "openai/gpt-5.5")
+
+DEVICE = os.getenv("DEVICE", "cpu")
