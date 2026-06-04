@@ -39,22 +39,31 @@ Vanna AI based search and generation of SQL scripts
 │
 ├── setup.cfg          <- Configuration file for flake8
 │
-└── src   <- Source code for use in this project.
+└── src   <- Source code for dataset preparation, Vanna integration, and SQL generation.
     │
-    ├── __init__.py             <- Makes src a Python module
+    ├── __init__.py             <- Makes src a Python module.
     │
-    ├── config.py               <- Store useful variables and configuration
+    ├── config.py               <- Project paths and environment-based settings for Qdrant,
+    │                              OpenAI-compatible APIs, embedding models, and devices.
     │
-    ├── dataset.py              <- Scripts to download or generate data
+    ├── dataset.py              <- Dataset and SQLite helpers: render DDL templates with
+    │                              Russian comments, split table DDLs, build/fill SQLite
+    │                              databases, create schema descriptions with sample rows,
+    │                              and rewrite query descriptions into several styles.
     │
-    ├── features.py             <- Code to create features for modeling
+    ├── prompts.py              <- Prompt builders for generating Russian query descriptions,
+    │                              SQL scripts, and alternate description formats
+    │                              (short, business, technical).
     │
-    ├── modeling                
-    │   ├── __init__.py 
-    │   ├── predict.py          <- Code to run model inference with trained models          
-    │   └── train.py            <- Code to train models
+    ├── script_generator.py     <- LLM-driven data generation utilities: create query
+    │                              description CSV files, generate SQL scripts from those
+    │                              descriptions, execute valid read-only SQL, and save
+    │                              result datasets for evaluation.
     │
-    └── plots.py                <- Code to create visualizations
+    └── vanna_connector.py      <- Custom Vanna client that combines Qdrant vector storage
+    │                              with OpenAI-compatible chat, embeds SQL examples by
+    │                              question/description text, connects to databases, and
+    │                              guards intermediate SQL execution.
 ```
 
 --------
