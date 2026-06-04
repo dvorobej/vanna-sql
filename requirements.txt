@@ -14,6 +14,6 @@ scikit-learn
 tqdm
 typer
 vanna==2.0.2
-sentence-transformers
-qdrant-client
+sentence-transformers==5.5.1
+qdrant-client==1.18.0
 -e .
