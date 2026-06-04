@@ -47,6 +47,19 @@ class QdrantVectorStore(Qdrant_VectorStore):
 
         return self._format_point_id(id, self.sql_collection_name)
 
+
+    def get_similar_question_sql(self, question: str, n_results: int | None = None, **kwargs) -> list:
+        n_results = n_results or self.n_results
+        results = self._client.query_points(
+            self.sql_collection_name,
+            query=self.generate_embedding(question),
+            limit=n_results,
+            with_payload=True,
+        ).points
+
+        return [dict(result.payload) for result in results]
+
+
     def is_sql_read_only_code(self, sql: str) -> bool:
         """Return True only for read-only SELECT-style SQL accepted by Vanna."""
         if not sql or not sql.strip():
