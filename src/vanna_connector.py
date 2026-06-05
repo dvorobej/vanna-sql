@@ -36,7 +36,7 @@ class QdrantVectorStore(Qdrant_VectorStore):
             points=[
                 models.PointStruct(
                     id=id,
-                    vector=self.generate_embedding(question),
+                    vector=self.generate_embedding(question_answer),
                     payload={
                         "question": question,
                         "sql": sql,
