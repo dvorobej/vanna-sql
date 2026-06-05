@@ -8,6 +8,8 @@ import re
 import sqlite3
 from typing import Any
 
+from tqdm import tqdm
+
 from src.config import PROJECT_ROOT
 from src.prompts import build_query_description_rewrite_prompt
 
@@ -291,21 +293,24 @@ def rewrite_query_descriptions_csv(
     rewrite_columns = [f"{source_column}_{style}" for style in rewrite_styles]
     output_fieldnames = [*fieldnames, *[column for column in rewrite_columns if column not in fieldnames]]
 
-    for row in rows:
-        difficulty = row.get("difficulty")
-        for style, column in zip(rewrite_styles, rewrite_columns, strict=True):
-            messages = build_query_description_rewrite_prompt(
-                schema_description=schema_description,
-                query_description=row[source_column],
-                rewrite_style=style,
-                difficulty=difficulty,
-            )
-            response = client.chat.completions.create(
-                model=model,
-                messages=messages,
-                temperature=temperature,
-            )
-            row[column] = _extract_openai_response_text(response).strip()
+    total = len(rows) * len(rewrite_styles)
+    with tqdm(total=total, desc="Rewriting query descriptions") as progress:
+        for row in rows:
+            difficulty = row.get("difficulty")
+            for style, column in zip(rewrite_styles, rewrite_columns, strict=True):
+                messages = build_query_description_rewrite_prompt(
+                    schema_description=schema_description,
+                    query_description=row[source_column],
+                    rewrite_style=style,
+                    difficulty=difficulty,
+                )
+                response = client.chat.completions.create(
+                    model=model,
+                    messages=messages,
+                    temperature=temperature,
+                )
+                row[column] = _extract_openai_response_text(response).strip()
+                progress.update(1)
 
     with output_path.open("w", newline="", encoding="utf-8") as file:
         writer = csv.DictWriter(file, fieldnames=output_fieldnames)

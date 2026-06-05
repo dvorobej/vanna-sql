@@ -8,6 +8,7 @@ from typing import Any
 from uuid import uuid4
 
 import pandas as pd
+from tqdm import tqdm
 
 from src.config import INTERIM_DATA_DIR
 from src.dataset import BANK_DATASET_NAME, build_schema_description_with_samples
@@ -55,27 +56,30 @@ def generate_query_descriptions(
         )
         writer.writeheader()
 
-        for difficulty, count in counts.items():
-            for _ in range(count):
-                messages = build_query_description_prompt(
-                    schema_description=schema_description,
-                    difficulty=difficulty,
-                    database_name=database_name,
-                )
-                query = _call_openai_chat(
-                    client=client,
-                    model=model,
-                    messages=messages,
-                    temperature=temperature,
-                ).strip()
-                writer.writerow(
-                    {
-                        "database_name": database_name,
-                        "query": query,
-                        "difficulty": difficulty,
-                        "uuid": str(uuid4()),
-                    }
-                )
+        total = sum(counts.values())
+        with tqdm(total=total, desc="Generating query descriptions") as progress:
+            for difficulty, count in counts.items():
+                for _ in range(count):
+                    messages = build_query_description_prompt(
+                        schema_description=schema_description,
+                        difficulty=difficulty,
+                        database_name=database_name,
+                    )
+                    query = _call_openai_chat(
+                        client=client,
+                        model=model,
+                        messages=messages,
+                        temperature=temperature,
+                    ).strip()
+                    writer.writerow(
+                        {
+                            "database_name": database_name,
+                            "query": query,
+                            "difficulty": difficulty,
+                            "uuid": str(uuid4()),
+                        }
+                    )
+                    progress.update(1)
 
     return descriptions_csv_path, schema_description_path, sqlite_db_path
 
@@ -121,7 +125,7 @@ def generate_sql_scripts_and_results(
         rows = list(csv.DictReader(file))
 
     with sqlite3.connect(sqlite_db_path) as connection:
-        for row in rows:
+        for row in tqdm(rows, desc="Generating SQL scripts and results"):
             counters["total"] += 1
             messages = build_sql_generation_prompt(
                 schema_description=schema_description,

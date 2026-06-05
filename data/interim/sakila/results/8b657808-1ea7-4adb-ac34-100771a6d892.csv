@@ -1,0 +1,2 @@
+country_avg_amount,country_customer_count,country_name,customer_id,customer_prev3_avg_amount,distinct_staff_count,distinct_store_count,email,first_name,last_name,payment_amount,payment_count,payment_month,ratio_to_country_avg,ratio_to_customer_prev3
+30.7,9,United Kingdom,512,17.29,2,2,CECIL.VINES@sakilacustomer.org,CECIL,VINES,62.87,13,2005-08-01,2.05,3.64

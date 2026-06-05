@@ -1,0 +1,61 @@
+city,country,customer_day_amount_rank,customer_id,customer_name,day_amount,dominant_staff_id,dominant_staff_name,email,payment_count,payment_date,store_id,top_category,unique_rented_films
+Allappuzha (Alleppey),India,1,175,ANNETTE OLSON,16.96,1,Mike Hillyer,ANNETTE.OLSON@sakilacustomer.org,4,2005-07-29,1,Games,4
+Athenai,Greece,1,3,LINDA WILLIAMS,24.96,2,Jon Stephens,LINDA.WILLIAMS@sakilacustomer.org,4,2005-07-28,2,Animation,4
+Baicheng,China,1,538,TED BREAUX,18.97,2,Jon Stephens,TED.BREAUX@sakilacustomer.org,3,2005-07-31,2,Documentary,3
+Bayugan,Philippines,1,188,MELANIE ARMSTRONG,16.96,2,Jon Stephens,MELANIE.ARMSTRONG@sakilacustomer.org,4,2005-08-01,2,Horror,4
+Brest,France,1,402,LUIS YANEZ,16.97,2,Jon Stephens,LUIS.YANEZ@sakilacustomer.org,3,2005-07-06,2,Music,3
+Bucuresti,Romania,1,563,KEN PREWITT,29.93,2,Jon Stephens,KEN.PREWITT@sakilacustomer.org,7,2005-07-08,2,Horror,7
+Cavite,Philippines,1,388,CRAIG MORRELL,17.96,2,Jon Stephens,CRAIG.MORRELL@sakilacustomer.org,4,2005-08-18,2,Games,4
+Chapra,India,1,509,RAUL FORTIER,21.97,1,Mike Hillyer,RAUL.FORTIER@sakilacustomer.org,3,2005-07-28,1,Sci-Fi,3
+Dundee,United Kingdom,1,142,APRIL BURNS,16.97,1,Mike Hillyer,APRIL.BURNS@sakilacustomer.org,3,2005-07-30,1,Children,3
+El Fuerte,Mexico,1,451,JIM REA,19.96,2,Jon Stephens,JIM.REA@sakilacustomer.org,4,2005-08-02,2,Family,4
+El Monte,United States,1,420,JACOB LANCE,20.97,2,Jon Stephens,JACOB.LANCE@sakilacustomer.org,3,2005-08-01,2,Games,3
+Elista,Russian Federation,1,17,DONNA THOMPSON,21.96,2,Jon Stephens,DONNA.THOMPSON@sakilacustomer.org,4,2005-07-30,2,Children,4
+Fengshan,Taiwan,1,576,MORRIS MCCARTER,21.95,2,Jon Stephens,MORRIS.MCCARTER@sakilacustomer.org,5,2005-07-31,2,Animation,5
+Firozabad,India,1,192,LAURIE LAWRENCE,24.96,2,Jon Stephens,LAURIE.LAWRENCE@sakilacustomer.org,4,2005-08-21,2,Horror,4
+Gandhinagar,India,1,117,EDITH MCDONALD,17.96,1,Mike Hillyer,EDITH.MCDONALD@sakilacustomer.org,4,2005-08-18,1,Children,4
+Gatineau,Canada,1,476,DERRICK BOURQUE,21.97,1,Mike Hillyer,DERRICK.BOURQUE@sakilacustomer.org,3,2005-08-01,1,Family,3
+Goinia,Brazil,1,92,TINA SIMMONS,23.96,2,Jon Stephens,TINA.SIMMONS@sakilacustomer.org,4,2005-07-10,2,Horror,4
+Ikerre,Nigeria,1,198,ELSIE KELLEY,22.94,1,Mike Hillyer,ELSIE.KELLEY@sakilacustomer.org,6,2005-08-17,1,Family,6
+Isesaki,Japan,1,519,RON DELUCA,23.95,2,Jon Stephens,RON.DELUCA@sakilacustomer.org,5,2005-07-31,2,Children,5
+Iwaki,Japan,1,240,MARLENE WELCH,18.97,1,Mike Hillyer,MARLENE.WELCH@sakilacustomer.org,3,2005-07-27,1,New,3
+Kanchrapara,India,1,492,LESTER KRAUS,18.97,2,Jon Stephens,LESTER.KRAUS@sakilacustomer.org,3,2005-07-07,2,Family,3
+Klerksdorp,South Africa,1,109,EDNA WEST,15.97,1,Mike Hillyer,EDNA.WEST@sakilacustomer.org,3,2005-05-31,1,Games,3
+Korolev,Russian Federation,1,393,PHILIP CAUSEY,22.97,2,Jon Stephens,PHILIP.CAUSEY@sakilacustomer.org,3,2005-07-08,2,Foreign,3
+Ktahya,Turkey,1,124,SHEILA WELLS,14.97,2,Jon Stephens,SHEILA.WELLS@sakilacustomer.org,3,2005-05-31,2,Documentary,3
+Manchester,United States,1,382,VICTOR BARKLEY,21.97,1,Mike Hillyer,VICTOR.BARKLEY@sakilacustomer.org,3,2005-07-30,1,Documentary,3
+Munger (Monghyr),India,1,28,CYNTHIA YOUNG,15.96,2,Jon Stephens,CYNTHIA.YOUNG@sakilacustomer.org,4,2005-07-31,2,Action,4
+Nakhon Sawan,Thailand,1,390,SHAWN HEATON,27.94,2,Jon Stephens,SHAWN.HEATON@sakilacustomer.org,6,2005-08-20,2,Music,6
+Novi Sad,Yugoslavia,1,553,MAX PITT,22.95,2,Jon Stephens,MAX.PITT@sakilacustomer.org,5,2005-07-06,2,Drama,5
+Nuuk,Greenland,1,207,GERTRUDE CASTILLO,25.96,2,Jon Stephens,GERTRUDE.CASTILLO@sakilacustomer.org,4,2005-08-20,2,Games,4
+Omdurman,Sudan,1,50,DIANE COLLINS,26.95,2,Jon Stephens,DIANE.COLLINS@sakilacustomer.org,5,2005-07-31,2,Documentary,5
+Omiya,Japan,1,404,STANLEY SCROGGINS,27.95,2,Jon Stephens,STANLEY.SCROGGINS@sakilacustomer.org,5,2005-08-22,2,Foreign,5
+Parbhani,India,1,300,JOHN FARNSWORTH,18.97,1,Mike Hillyer,JOHN.FARNSWORTH@sakilacustomer.org,3,2005-07-28,1,Action,3
+Pavlodar,Kazakstan,1,76,IRENE PRICE,13.97,2,Jon Stephens,IRENE.PRICE@sakilacustomer.org,3,2005-07-29,2,Drama,3
+Pontianak,Indonesia,1,506,LESLIE SEWARD,23.97,2,Jon Stephens,LESLIE.SEWARD@sakilacustomer.org,3,2005-07-08,2,Children,3
+Poos de Caldas,Brazil,1,254,MAXINE SILVA,19.96,1,Mike Hillyer,MAXINE.SILVA@sakilacustomer.org,4,2005-07-10,1,Games,4
+Qalyub,Egypt,1,134,EMMA BOYD,20.96,1,Mike Hillyer,EMMA.BOYD@sakilacustomer.org,4,2005-08-02,1,Animation,4
+Qomsheh,Iran,1,459,TOMMY COLLAZO,29.95,1,Mike Hillyer,TOMMY.COLLAZO@sakilacustomer.org,5,2005-07-28,1,Comedy,5
+Rustenburg,South Africa,1,407,DALE RATCLIFF,22.96,1,Mike Hillyer,DALE.RATCLIFF@sakilacustomer.org,4,2005-07-28,1,Drama,4
+Salala,Oman,1,498,GENE SANBORN,16.97,1,Mike Hillyer,GENE.SANBORN@sakilacustomer.org,3,2005-07-27,1,Documentary,3
+San Bernardino,United States,1,2,PATRICIA JOHNSON,30.95,2,Jon Stephens,PATRICIA.JOHNSON@sakilacustomer.org,5,2005-07-30,2,Travel,5
+Santa F,Argentina,1,331,ERIC ROBERT,21.97,1,Mike Hillyer,ERIC.ROBERT@sakilacustomer.org,3,2005-07-07,1,Music,3
+Santa Rosa,Philippines,1,522,ARNOLD HAVENS,29.95,1,Mike Hillyer,ARNOLD.HAVENS@sakilacustomer.org,5,2005-07-30,1,Classics,5
+Santo Andr,Brazil,1,354,JUSTIN NGO,18.97,2,Jon Stephens,JUSTIN.NGO@sakilacustomer.org,3,2005-07-29,2,Games,3
+Sanya,China,1,546,KELLY KNOTT,19.97,2,Jon Stephens,KELLY.KNOTT@sakilacustomer.org,3,2005-07-12,2,Animation,3
+Shanwei,China,1,424,KYLE SPURLOCK,20.97,1,Mike Hillyer,KYLE.SPURLOCK@sakilacustomer.org,3,2005-07-31,1,Drama,3
+Simferopol,Ukraine,1,82,KATHRYN COLEMAN,19.97,1,Mike Hillyer,KATHRYN.COLEMAN@sakilacustomer.org,3,2005-07-30,1,Action,3
+Songkhla,Thailand,1,86,JACQUELINE LONG,20.97,2,Jon Stephens,JACQUELINE.LONG@sakilacustomer.org,3,2005-08-01,2,Sports,3
+Soshanguve,South Africa,1,145,LUCILLE HOLMES,20.97,2,Jon Stephens,LUCILLE.HOLMES@sakilacustomer.org,3,2005-07-07,2,Animation,3
+Sullana,Peru,1,597,FREDDIE DUGGAN,16.96,2,Jon Stephens,FREDDIE.DUGGAN@sakilacustomer.org,4,2005-08-02,2,Travel,4
+Sumy,Ukraine,1,187,BRITTANY RILEY,26.97,2,Jon Stephens,BRITTANY.RILEY@sakilacustomer.org,3,2005-08-18,2,Classics,3
+Tabora,Tanzania,1,190,YOLANDA WEAVER,24.96,2,Jon Stephens,YOLANDA.WEAVER@sakilacustomer.org,4,2005-08-02,2,Animation,4
+Tabriz,Iran,1,279,DIANNE SHELTON,20.97,1,Mike Hillyer,DIANNE.SHELTON@sakilacustomer.org,3,2005-07-09,1,Comedy,3
+Tangail,Bangladesh,1,21,MICHELLE CLARK,32.96,1,Mike Hillyer,MICHELLE.CLARK@sakilacustomer.org,4,2005-08-20,1,Documentary,4
+Teboksary,Russian Federation,1,350,JUAN FRALEY,14.97,2,Jon Stephens,JUAN.FRALEY@sakilacustomer.org,3,2005-08-17,2,Action,3
+Touliu,Taiwan,1,139,AMBER DIXON,21.95,1,Mike Hillyer,AMBER.DIXON@sakilacustomer.org,5,2005-08-22,1,Horror,5
+Uruapan,Mexico,1,454,ALEX GRESHAM,27.96,2,Jon Stephens,ALEX.GRESHAM@sakilacustomer.org,4,2005-08-20,2,Sports,4
+Vitria de Santo Anto,Brazil,1,374,JEREMY HURTADO,20.96,2,Jon Stephens,JEREMY.HURTADO@sakilacustomer.org,4,2005-08-22,2,Sci-Fi,4
+Yaound,Cameroon,1,361,LAWRENCE LAWTON,15.96,2,Jon Stephens,LAWRENCE.LAWTON@sakilacustomer.org,4,2005-08-02,2,Children,4
+Zalantun,China,1,93,PHYLLIS FOSTER,19.96,1,Mike Hillyer,PHYLLIS.FOSTER@sakilacustomer.org,4,2005-08-20,1,Music,4
+Zhezqazghan,Kazakstan,1,573,BYRON BOX,24.96,2,Jon Stephens,BYRON.BOX@sakilacustomer.org,4,2005-07-31,2,Horror,4
