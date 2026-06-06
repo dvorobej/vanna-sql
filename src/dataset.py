@@ -11,6 +11,7 @@ from typing import Any
 from tqdm import tqdm
 
 from src.config import PROJECT_ROOT
+from src.llm_client import call_openai_chat_with_retries
 from src.prompts import build_query_description_rewrite_prompt
 
 BANK_DATASET_NAME = "bank_transaction_monitoring"
@@ -304,12 +305,12 @@ def rewrite_query_descriptions_csv(
                     rewrite_style=style,
                     difficulty=difficulty,
                 )
-                response = client.chat.completions.create(
+                row[column] = call_openai_chat_with_retries(
+                    client=client,
                     model=model,
                     messages=messages,
                     temperature=temperature,
                 )
-                row[column] = _extract_openai_response_text(response).strip()
                 progress.update(1)
 
     with output_path.open("w", newline="", encoding="utf-8") as file:
@@ -329,21 +330,6 @@ def _latest_schema_description_path(directory: Path) -> Path:
     if not matches:
         raise FileNotFoundError(f"No schema_description_*.txt files were found in {directory}.")
     return matches[0]
-
-
-def _extract_openai_response_text(response: Any) -> str:
-    choice = response.choices[0]
-    if isinstance(choice, dict):
-        message = choice.get("message", {})
-        return str(message.get("content", choice.get("text", "")))
-
-    if hasattr(choice, "message") and hasattr(choice.message, "content"):
-        return str(choice.message.content)
-
-    if hasattr(choice, "text"):
-        return str(choice.text)
-
-    raise ValueError("Could not extract text from OpenAI-compatible response.")
 
 
 def create_database(

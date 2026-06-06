@@ -12,6 +12,7 @@ from tqdm import tqdm
 
 from src.config import INTERIM_DATA_DIR
 from src.dataset import BANK_DATASET_NAME, build_schema_description_with_samples
+from src.llm_client import call_openai_chat_with_retries
 from src.prompts import (
     build_query_description_prompt,
     build_related_query_description_prompt,
@@ -286,27 +287,12 @@ def _call_openai_chat(
     messages: list[dict[str, str]],
     temperature: float,
 ) -> str:
-    response = client.chat.completions.create(
+    return call_openai_chat_with_retries(
+        client=client,
         model=model,
         messages=messages,
         temperature=temperature,
     )
-    return _extract_response_text(response)
-
-
-def _extract_response_text(response: Any) -> str:
-    choice = response.choices[0]
-    if isinstance(choice, dict):
-        message = choice.get("message", {})
-        return str(message.get("content", choice.get("text", "")))
-
-    if hasattr(choice, "message") and hasattr(choice.message, "content"):
-        return str(choice.message.content)
-
-    if hasattr(choice, "text"):
-        return str(choice.text)
-
-    raise ValueError("Could not extract text from OpenAI-compatible response.")
 
 
 def _latest_matching_file(directory: Path, pattern: str) -> Path:

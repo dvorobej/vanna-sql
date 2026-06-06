@@ -57,7 +57,11 @@ class QdrantVectorStore(Qdrant_VectorStore):
             with_payload=True,
         ).points
 
-        return [dict(result.payload) | {"id": result.id} for result in results]
+        return [
+            dict(result.payload)
+            | {"id": self._format_point_id(str(result.id), self.sql_collection_name)}
+            for result in results
+        ]
 
 
     def is_sql_read_only_code(self, sql: str) -> bool:
