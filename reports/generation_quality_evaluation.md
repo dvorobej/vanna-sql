@@ -32,12 +32,12 @@ Total combos per run: `len(models) × len(comment_styles) × len(description_sty
 | Artifact | Typical path | Role |
 |----------|--------------|------|
 | Descriptions CSV | `data/interim/{database}/query_descriptions_*_rewritten.csv` | Query text and difficulty per uuid |
-| Ground-truth SQL | `data/interim/{database}/scripts/{uuid}.txt` | Reference SQL (used for training folds) |
+| Ground-truth SQL | `data/interim/{database}/scripts/{uuid}.sql` | Reference SQL (used for training folds) |
 | Ground-truth results | `data/interim/{database}/results/{uuid}.csv` | Reference query output |
 
 The pipeline:
 
-1. Keeps only rows with an existing `scripts/{uuid}.txt`.
+1. Keeps only rows with an existing `scripts/{uuid}.sql`.
 2. Dedupes unique `(uuid, description, sql)` corpus pairs.
 3. Builds one eval row per uuid: `uuid`, `query` (description text), `difficulty`.
 
@@ -67,7 +67,7 @@ For each model_key in models:
 ### Per test query
 
 1. `generate_sql(query)` produces SQL text.
-2. SQL is saved to `generation/prediction_scripts/{combo}/{uuid}.txt` regardless of validity.
+2. SQL is saved to `generation/prediction_scripts/{combo}/{uuid}.sql` regardless of validity.
 3. If SQL passes read-only validation (`SELECT` / `WITH` only), it is executed via `client.run_sql`.
 4. On success with a non-empty result, the dataframe is normalized and saved to `generation/prediction_results/{combo}/{uuid}.csv`.
 
@@ -85,7 +85,7 @@ This makes row order and column order irrelevant during comparison.
 
 ```
 data/interim/{database}/generation/
-  prediction_scripts/{combo}/{uuid}.txt
+  prediction_scripts/{combo}/{uuid}.sql
   prediction_results/{combo}/{uuid}.csv
   metrics/{combo}.csv
 ```
@@ -110,10 +110,16 @@ Labels are assigned in priority order:
 | **Not matching number of rows and cols** | Both row count and column count differ from ground truth |
 | **Not matching number of rows** | Only row count differs |
 | **Not matching number of columns** | Only column count differs |
-| **Not matching values** | Same shape, but cell values differ after string conversion |
-| **Everything matches** | Same shape and all values equal as strings |
+| **Not matching values** | Same shape, but no full one-to-one column match exists |
+| **Everything matches** | Same shape and each predicted column fully matches a distinct ground-truth column |
 
-Value comparison uses `dataframe.astype(str).equals(...)` on normalized dataframes.
+Value comparison (when row and column counts match) uses column-order-agnostic matching on normalized dataframes:
+
+1. Convert all cell values to strings.
+2. For each predicted column (in order), find an unused ground-truth column whose values fully match row-by-row (`Series.equals`).
+3. If every predicted column finds a match, label as **Everything matches**; otherwise **Not matching values**.
+
+Column names and column order are ignored; row order still matters because values are compared at the same row index.
 
 ### Output
 

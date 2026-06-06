@@ -289,7 +289,7 @@ def _filter_rows_with_scripts(rows: list[dict[str, str]], scripts_dir: Path) -> 
     return [
         row
         for row in rows
-        if (scripts_dir / f"{row['uuid']}.txt").exists()
+        if (scripts_dir / f"{row['uuid']}.sql").exists()
     ]
 
 
@@ -304,7 +304,7 @@ def _dedupe_corpus_pairs(
     for row in rows:
         row_uuid = row["uuid"]
         description = row[description_column].strip()
-        sql = (scripts_dir / f"{row_uuid}.txt").read_text(encoding="utf-8").strip()
+        sql = (scripts_dir / f"{row_uuid}.sql").read_text(encoding="utf-8").strip()
         key = (row_uuid, description, sql)
         if key in seen:
             continue

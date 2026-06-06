@@ -145,7 +145,7 @@ def run_generation_evaluation_pipeline(
                         query = test_row["query"]
                         row_uuid = test_row["uuid"]
                         sql = client.generate_sql(query).strip()
-                        (scripts_subdir / f"{row_uuid}.txt").write_text(sql, encoding="utf-8")
+                        (scripts_subdir / f"{row_uuid}.sql").write_text(sql, encoding="utf-8")
 
                         if not _is_read_only_sql(sql):
                             continue
@@ -315,11 +315,32 @@ def _compare_result_label(ground_truth_df: pd.DataFrame, predicted_df: pd.DataFr
     if not cols_match:
         return LABEL_NOT_MATCHING_COLS
 
-    gt_values = ground_truth_df.astype(str)
-    pred_values = predicted_df.astype(str)
-    if gt_values.equals(pred_values):
+    if _columns_match_by_values(predicted_df, ground_truth_df):
         return LABEL_EVERYTHING_MATCHES
     return LABEL_NOT_MATCHING_VALUES
+
+
+def _columns_match_by_values(
+    predicted_df: pd.DataFrame,
+    ground_truth_df: pd.DataFrame,
+) -> bool:
+    predicted_values = predicted_df.astype(str)
+    ground_truth_values = ground_truth_df.astype(str)
+    used_ground_truth_columns: set[str] = set()
+
+    for predicted_column in predicted_values.columns:
+        predicted_series = predicted_values[predicted_column]
+        matched = False
+        for ground_truth_column in ground_truth_values.columns:
+            if ground_truth_column in used_ground_truth_columns:
+                continue
+            if predicted_series.equals(ground_truth_values[ground_truth_column]):
+                used_ground_truth_columns.add(ground_truth_column)
+                matched = True
+                break
+        if not matched:
+            return False
+    return True
 
 
 def _write_metrics_label_csv(path: Path, rows: list[dict[str, str]]) -> None:

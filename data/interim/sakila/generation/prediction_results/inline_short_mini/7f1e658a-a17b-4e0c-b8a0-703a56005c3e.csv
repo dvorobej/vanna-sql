@@ -1,0 +1,2 @@
+average_payment,customer_id,first_name,last_name,payment_count,payments_ge_8,suspicious_activity,total_amount
+5.29,454,ALEX,GRESHAM,10,1,1,52.9

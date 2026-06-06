@@ -1,0 +1,577 @@
+avg_daily_sum,city_name,country_name,customer_id,daily_sum,day_sum_rank,dominant_category,dominant_staff_id,dominant_staff_share,dominant_store_id,email,first_name,last_name,payment_count,payment_day,unique_rented_films
+0.99,Botshabelo,South Africa,132,21.94,8,Foreign,1,1.0,1,ESTHER.CRAWFORD@sakilacustomer.org,ESTHER,CRAWFORD,6,2005-06-18,2
+0.99,Juiz de Fora,Brazil,591,54.85,5,,2,1.0,2,KENT.ARSENAULT@sakilacustomer.org,KENT,ARSENAULT,15,2005-06-21,2
+0.99,Ourense (Orense),Spain,469,41.94,8,Animation,2,1.0,2,WESLEY.BULL@sakilacustomer.org,WESLEY,BULL,6,2005-05-28,2
+0.99,Shenzhen,China,378,62.88,1,Action,2,0.7142,2,EUGENE.CULPEPPER@sakilacustomer.org,EUGENE,CULPEPPER,12,2005-06-16,2
+1.98,Ashqelon,Israel,478,24.95,7,,2,1.0,2,LEWIS.LYMAN@sakilacustomer.org,LEWIS,LYMAN,5,2005-06-18,1
+1.98,Skikda,Algeria,176,48.93,8,New,2,1.0,2,JUNE.CARROLL@sakilacustomer.org,JUNE,CARROLL,7,2005-05-27,1
+1.99,Songkhla,Thailand,86,24.91,14,Foreign,2,1.0,2,JACQUELINE.LONG@sakilacustomer.org,JACQUELINE,LONG,9,2005-06-16,2
+10.21,Dadu,Pakistan,416,39.92,8,Games,1,1.0,1,JEFFERY.PINSON@sakilacustomer.org,JEFFERY,PINSON,8,2005-06-15,1
+10.28,Ezeiza,Argentina,530,66.83,2,Comedy,2,1.0,2,DARRYL.ASHCRAFT@sakilacustomer.org,DARRYL,ASHCRAFT,17,2005-07-06,2
+10.28,Niznekamsk,Russian Federation,48,69.93,2,,2,1.0,2,ANN.EVANS@sakilacustomer.org,ANN,EVANS,7,2005-06-16,1
+10.46,Kanchrapara,India,492,64.87,2,,2,1.0,2,LESTER.KRAUS@sakilacustomer.org,LESTER,KRAUS,13,2005-06-17,2
+10.47,Ciparay,Indonesia,328,55.92,2,,2,1.0,2,JEFFREY.SPEAR@sakilacustomer.org,JEFFREY,SPEAR,8,2005-06-17,1
+10.62,Ziguinchor,Senegal,456,76.88,1,Animation,2,1.0,2,RONNIE.RICKETTS@sakilacustomer.org,RONNIE,RICKETTS,12,2005-06-17,2
+10.95,Hunuco,Peru,565,34.93,6,,2,1.0,2,JAIME.NETTLES@sakilacustomer.org,JAIME,NETTLES,7,2005-06-15,1
+10.97,Okayama,Japan,489,44.9,4,Travel,1,1.0,1,RICARDO.MEADOR@sakilacustomer.org,RICARDO,MEADOR,10,2005-06-18,2
+11.27,Nabereznyje Telny,Russian Federation,447,38.91,4,Travel,1,0.7695,1,CLIFFORD.BOWENS@sakilacustomer.org,CLIFFORD,BOWENS,9,2005-06-17,2
+11.44,Mit Ghamr,Egypt,491,46.89,7,Action,1,0.7449,1,RICK.MATTOX@sakilacustomer.org,RICK,MATTOX,11,2005-06-15,2
+11.44,Santiago de los Caballeros,Dominican Republic,258,62.93,4,,2,1.0,2,MYRTLE.FLEMING@sakilacustomer.org,MYRTLE,FLEMING,7,2005-06-20,1
+11.45,Bergamo,Italy,439,49.95,7,,1,1.0,1,ALEXANDER.FENNELL@sakilacustomer.org,ALEXANDER,FENNELL,5,2005-05-29,1
+11.46,El Monte,United States,420,34.93,5,,1,1.0,1,JACOB.LANCE@sakilacustomer.org,JACOB,LANCE,7,2005-07-07,1
+11.63,Kanazawa,Japan,547,44.95,3,,2,1.0,2,KURT.EMMONS@sakilacustomer.org,KURT,EMMONS,5,2005-06-17,1
+11.69,Pavlodar,Kazakstan,76,39.92,3,Sci-Fi,2,1.0,2,IRENE.PRICE@sakilacustomer.org,IRENE,PRICE,8,2005-07-07,1
+11.95,Vicente Lpez,Argentina,219,37.9,7,Comedy,2,1.0,2,WILLIE.HOWELL@sakilacustomer.org,WILLIE,HOWELL,10,2005-07-08,2
+11.96,Chatsworth,South Africa,555,63.92,2,,2,1.0,2,DWIGHT.LOMBARDI@sakilacustomer.org,DWIGHT,LOMBARDI,8,2005-07-31,2
+11.96,Touliu,Taiwan,139,46.88,4,Children,2,0.8522,2,AMBER.DIXON@sakilacustomer.org,AMBER,DIXON,12,2005-06-19,2
+11.96,guas Lindas de Gois,Brazil,130,38.87,3,Comedy,2,1.0,2,CHARLOTTE.HUNTER@sakilacustomer.org,CHARLOTTE,HUNTER,13,2005-06-17,2
+11.97,Surakarta,Indonesia,450,41.86,5,,2,0.8344,2,JAY.ROBB@sakilacustomer.org,JAY,ROBB,14,2005-06-16,2
+11.97,Witten,Germany,201,41.94,6,,1,1.0,1,VICKI.FIELDS@sakilacustomer.org,VICKI,FIELDS,6,2005-05-28,1
+11.98,Kursk,Russian Federation,311,55.92,3,Comedy,2,1.0,2,PAUL.TROUT@sakilacustomer.org,PAUL,TROUT,8,2005-05-28,1
+11.98,Yuncheng,China,154,87.87,2,,2,1.0,2,MICHELE.GRANT@sakilacustomer.org,MICHELE,GRANT,13,2005-05-30,2
+12.16,Hubli-Dharwad,India,136,53.94,3,,1,1.0,1,ANITA.MORALES@sakilacustomer.org,ANITA,MORALES,6,2005-07-12,1
+12.2,Buenaventura,Colombia,235,47.9,2,Travel,1,0.8752,1,JACKIE.LYNCH@sakilacustomer.org,JACKIE,LYNCH,10,2005-07-06,3
+12.34,Lancaster,United States,112,44.91,6,New,2,1.0,2,ROSA.REYNOLDS@sakilacustomer.org,ROSA,REYNOLDS,9,2005-07-28,2
+12.43,Kabul,Afghanistan,218,41.94,5,,1,1.0,1,VERA.MCCOY@sakilacustomer.org,VERA,MCCOY,6,2005-07-08,1
+12.46,Daxian,China,64,63.86,2,Travel,2,0.8442,2,JUDITH.COX@sakilacustomer.org,JUDITH,COX,14,2005-07-08,3
+12.46,Mandaluyong,Philippines,263,53.94,5,Games,2,1.0,2,HILDA.HOPKINS@sakilacustomer.org,HILDA,HOPKINS,6,2005-06-17,1
+12.46,Soshanguve,South Africa,145,90.87,2,Drama,2,0.7803,2,LUCILLE.HOLMES@sakilacustomer.org,LUCILLE,HOLMES,13,2005-07-07,3
+12.46,Vilnius,Lithuania,557,81.87,1,Games,2,0.8538,2,FELIX.GAFFNEY@sakilacustomer.org,FELIX,GAFFNEY,13,2005-06-20,2
+12.51,Hohhot,China,138,41.88,5,Music,1,1.0,1,HAZEL.WARREN@sakilacustomer.org,HAZEL,WARREN,12,2005-07-10,2
+12.57,Arak,Iran,36,70.83,1,,2,0.9301,2,KATHLEEN.ADAMS@sakilacustomer.org,KATHLEEN,ADAMS,17,2005-07-28,3
+12.62,Gorontalo,Indonesia,203,47.94,4,,2,1.0,2,TARA.RYAN@sakilacustomer.org,TARA,RYAN,6,2005-06-20,1
+12.94,Huejutla de Reyes,Mexico,582,47.94,5,,1,1.0,1,ANDY.VANHORN@sakilacustomer.org,ANDY,VANHORN,6,2005-06-18,1
+12.94,Tambaram,India,287,39.95,6,,1,1.0,1,BECKY.MILES@sakilacustomer.org,BECKY,MILES,5,2005-06-15,1
+12.95,Shahr-e Kord,Iran,185,64.87,2,Comedy,1,1.0,1,ROBERTA.HARPER@sakilacustomer.org,ROBERTA,HARPER,13,2005-06-21,2
+12.96,Salamanca,Mexico,273,50.91,6,Family,2,1.0,2,PRISCILLA.LOWE@sakilacustomer.org,PRISCILLA,LOWE,9,2005-06-16,2
+13.11,A Corua (La Corua),Spain,52,46.83,3,,2,0.852,2,JULIE.SANCHEZ@sakilacustomer.org,JULIE,SANCHEZ,17,2005-07-09,2
+13.2,Haining,China,552,63.92,3,Animation,1,1.0,1,HUGH.WALDROP@sakilacustomer.org,HUGH,WALDROP,8,2005-07-09,1
+13.21,Arecibo,Puerto Rico,360,56.88,6,Action,2,1.0,2,RALPH.MADRIGAL@sakilacustomer.org,RALPH,MADRIGAL,12,2005-06-19,2
+13.21,Pavlodar,Kazakstan,76,100.78,1,,2,1.0,2,IRENE.PRICE@sakilacustomer.org,IRENE,PRICE,22,2005-07-29,3
+13.22,Sungai Petani,Malaysia,306,41.94,6,Music,1,1.0,1,CHARLES.KOWALSKI@sakilacustomer.org,CHARLES,KOWALSKI,6,2005-07-06,1
+13.46,Allappuzha (Alleppey),India,175,98.76,1,Children,1,1.0,1,ANNETTE.OLSON@sakilacustomer.org,ANNETTE,OLSON,24,2005-07-29,4
+13.47,Ashqelon,Israel,478,71.9,1,,2,0.7083,2,LEWIS.LYMAN@sakilacustomer.org,LEWIS,LYMAN,10,2005-06-19,3
+13.61,Aden,Yemen,210,49.9,7,Comedy,2,1.0,2,ELLA.OLIVER@sakilacustomer.org,ELLA,OLIVER,10,2005-07-06,2
+13.7,Beira,Mozambique,257,44.91,9,Drama,2,1.0,2,MARSHA.DOUGLAS@sakilacustomer.org,MARSHA,DOUGLAS,9,2005-06-20,1
+13.7,Katihar,India,419,65.89,1,Classics,2,1.0,2,CHAD.CARBONE@sakilacustomer.org,CHAD,CARBONE,11,2005-07-09,1
+13.76,Nam Dinh,Vietnam,472,48.93,4,,2,1.0,2,GREG.ROBINS@sakilacustomer.org,GREG,ROBINS,7,2005-06-16,1
+13.76,Pudukkottai,India,421,55.93,3,Classics,1,1.0,1,LEE.HAWKS@sakilacustomer.org,LEE,HAWKS,7,2005-07-05,1
+13.93,Ueda,Japan,503,47.92,2,,1,1.0,1,ANGEL.BARCLAY@sakilacustomer.org,ANGEL,BARCLAY,8,2005-05-27,1
+13.94,El Fuerte,Mexico,451,47.82,6,Animation,1,1.0,1,JIM.REA@sakilacustomer.org,JIM,REA,18,2005-06-17,2
+13.96,Ourense (Orense),Spain,469,49.95,4,Children,1,1.0,1,WESLEY.BULL@sakilacustomer.org,WESLEY,BULL,5,2005-06-16,1
+14.22,Quilmes,Argentina,585,89.9,1,Documentary,1,0.889,1,PERRY.SWAFFORD@sakilacustomer.org,PERRY,SWAFFORD,10,2005-07-08,2
+14.33,Santo Andr,Brazil,354,50.89,4,Children,1,0.9416,1,JUSTIN.NGO@sakilacustomer.org,JUSTIN,NGO,11,2005-07-07,2
+14.44,Munger (Monghyr),India,28,45.86,3,,2,1.0,2,CYNTHIA.YOUNG@sakilacustomer.org,CYNTHIA,YOUNG,14,2005-07-08,2
+14.47,Baku,Azerbaijan,333,48.93,4,,1,1.0,1,ANDREW.PURDY@sakilacustomer.org,ANDREW,PURDY,7,2005-06-17,1
+14.55,Mwanza,Tanzania,481,84.8,1,Foreign,1,1.0,1,HERMAN.DEVORE@sakilacustomer.org,HERMAN,DEVORE,20,2005-07-08,4
+14.62,Patras,Greece,596,80.85,1,,1,1.0,1,ENRIQUE.FORSYTHE@sakilacustomer.org,ENRIQUE,FORSYTHE,15,2005-05-30,2
+14.65,Xiangfan,China,241,53.84,2,,1,0.7223,1,HEIDI.LARSON@sakilacustomer.org,HEIDI,LARSON,16,2005-07-09,3
+14.79,Tama,Japan,385,76.89,2,Music,1,1.0,1,PHILLIP.HOLM@sakilacustomer.org,PHILLIP,HOLM,11,2005-07-08,1
+14.91,Nezahualcyotl,Mexico,115,46.79,6,Classics,2,1.0,2,WENDY.HARRISON@sakilacustomer.org,WENDY,HARRISON,21,2005-06-15,2
+14.93,Cuman,Venezuela,113,114.79,1,,1,0.931,1,CINDY.FISHER@sakilacustomer.org,CINDY,FISHER,21,2005-06-20,3
+14.94,Taizz,Yemen,213,48.93,5,,2,1.0,2,GINA.WILLIAMSON@sakilacustomer.org,GINA,WILLIAMSON,7,2005-06-19,1
+14.95,Ivanovo,Russian Federation,106,44.91,6,Horror,1,1.0,1,CONNIE.WALLACE@sakilacustomer.org,CONNIE,WALLACE,9,2005-06-20,1
+14.95,Mardan,Pakistan,20,48.88,5,,2,1.0,2,SHARON.ROBINSON@sakilacustomer.org,SHARON,ROBINSON,12,2005-05-28,2
+14.95,Purwakarta,Indonesia,524,65.89,2,,1,1.0,1,JARED.ELY@sakilacustomer.org,JARED,ELY,11,2005-07-07,1
+14.95,Qomsheh,Iran,459,68.75,6,Animation,2,1.0,2,TOMMY.COLLAZO@sakilacustomer.org,TOMMY,COLLAZO,25,2005-06-17,3
+14.95,Stockport,United Kingdom,477,48.93,4,,1,1.0,1,DAN.PAINE@sakilacustomer.org,DAN,PAINE,7,2005-06-16,1
+14.95,Tanza,Philippines,236,53.86,7,,2,0.8897,2,MARCIA.DEAN@sakilacustomer.org,MARCIA,DEAN,14,2005-06-15,2
+14.96,Wroclaw,Poland,558,44.91,6,,2,1.0,2,JIMMIE.EGGLESTON@sakilacustomer.org,JIMMIE,EGGLESTON,9,2005-06-19,1
+14.97,Jining,China,594,80.91,3,Sci-Fi,1,1.0,1,EDUARDO.HIATT@sakilacustomer.org,EDUARDO,HIATT,9,2005-05-27,1
+14.97,Stara Zagora,Bulgaria,215,44.91,4,Sci-Fi,2,1.0,2,JESSIE.BANKS@sakilacustomer.org,JESSIE,BANKS,9,2005-05-31,1
+14.97,Tanauan,Philippines,373,55.92,6,,1,1.0,1,LOUIS.LEONE@sakilacustomer.org,LOUIS,LEONE,8,2005-06-15,1
+14.97,Tsaotun,Taiwan,586,53.94,1,,1,1.0,1,KIRK.STCLAIR@sakilacustomer.org,KIRK,STCLAIR,6,2005-05-30,1
+15.06,Luzinia,Brazil,183,89.82,1,Action,1,1.0,1,IDA.ANDREWS@sakilacustomer.org,IDA,ANDREWS,18,2005-07-12,2
+15.14,Kabul,Afghanistan,218,63.92,2,,1,0.8439,1,VERA.MCCOY@sakilacustomer.org,VERA,MCCOY,8,2005-07-27,2
+15.21,Tabriz,Iran,279,56.83,5,Comedy,1,1.0,1,DIANNE.SHELTON@sakilacustomer.org,DIANNE,SHELTON,17,2005-06-21,3
+15.28,Konotop,Ukraine,545,62.92,2,,2,0.7144,2,JULIO.NOLAND@sakilacustomer.org,JULIO,NOLAND,8,2005-07-06,2
+15.3,Kalisz,Poland,270,67.89,3,,1,1.0,1,LEAH.CURTIS@sakilacustomer.org,LEAH,CURTIS,11,2005-06-17,2
+15.33,London,United Kingdom,252,53.91,1,Horror,1,1.0,1,MATTIE.HOFFMAN@sakilacustomer.org,MATTIE,HOFFMAN,9,2005-07-29,1
+15.44,Halle/Saale,Germany,251,56.85,3,New,2,0.7367,2,VICKIE.BREWER@sakilacustomer.org,VICKIE,BREWER,15,2005-05-31,3
+15.45,Sousse,Tunisia,335,102.77,1,Comedy,1,0.7191,1,GREGORY.MAULDIN@sakilacustomer.org,GREGORY,MAULDIN,23,2005-07-07,4
+15.46,Cavite,Philippines,388,79.85,2,Games,1,1.0,1,CRAIG.MORRELL@sakilacustomer.org,CRAIG,MORRELL,15,2005-06-19,2
+15.57,Hagonoy,Philippines,255,76.89,1,Music,1,1.0,1,IRMA.PEARSON@sakilacustomer.org,IRMA,PEARSON,11,2005-07-30,1
+15.61,Matsue,Japan,355,62.9,2,,1,1.0,1,TERRY.GRISSOM@sakilacustomer.org,TERRY,GRISSOM,10,2005-07-06,2
+15.62,Aurora,United States,537,62.93,2,,1,1.0,1,CLINTON.BUFORD@sakilacustomer.org,CLINTON,BUFORD,7,2005-06-19,1
+15.66,Monywa,Myanmar,256,56.91,3,Foreign,1,0.737,1,MABEL.HOLLAND@sakilacustomer.org,MABEL,HOLLAND,9,2005-06-18,2
+15.76,Yinchuan,China,484,90.83,2,Children,1,1.0,1,ROBERTO.VU@sakilacustomer.org,ROBERTO,VU,17,2005-06-17,2
+15.79,s-Hertogenbosch,Netherlands,184,77.86,1,,2,1.0,2,VIVIAN.RUIZ@sakilacustomer.org,VIVIAN,RUIZ,14,2005-07-12,2
+15.92,Laohekou,China,422,56.89,5,,1,0.8423,1,MELVIN.ELLINGTON@sakilacustomer.org,MELVIN,ELLINGTON,11,2005-06-19,2
+15.92,Zeleznogorsk,Russian Federation,351,59.9,2,Action,2,1.0,2,JACK.FOUST@sakilacustomer.org,JACK,FOUST,10,2005-06-16,1
+15.96,Dhaka,Bangladesh,332,48.93,6,New,1,1.0,1,STEPHEN.QUALLS@sakilacustomer.org,STEPHEN,QUALLS,7,2005-05-31,1
+16.29,Halifax,Canada,463,51.88,4,Classics,1,1.0,1,DARRELL.POWER@sakilacustomer.org,DARRELL,POWER,12,2005-06-21,2
+16.34,Changzhou,China,197,54.81,7,,1,1.0,1,SUE.PETERS@sakilacustomer.org,SUE,PETERS,19,2005-05-30,2
+16.35,Araatuba,Brazil,77,60.91,2,,2,0.738,2,JANE.BENNETT@sakilacustomer.org,JANE,BENNETT,9,2005-06-18,2
+16.44,Botosani,Romania,230,53.94,3,,2,1.0,2,JOY.GEORGE@sakilacustomer.org,JOY,GEORGE,6,2005-06-18,1
+16.45,Adoni,India,367,63.84,4,Classics,2,1.0,2,ADAM.GOOCH@sakilacustomer.org,ADAM,GOOCH,16,2005-07-10,3
+16.45,Botshabelo,South Africa,132,53.84,2,Drama,1,0.8713,1,ESTHER.CRAWFORD@sakilacustomer.org,ESTHER,CRAWFORD,16,2005-07-08,3
+16.5,Escobar,Argentina,445,62.93,4,,1,1.0,1,MICHEAL.FORMAN@sakilacustomer.org,MICHEAL,FORMAN,7,2005-07-29,1
+16.57,Bhimavaram,India,529,49.9,5,,1,1.0,1,ERIK.GUILLEN@sakilacustomer.org,ERIK,GUILLEN,10,2005-07-11,1
+16.58,Hubli-Dharwad,India,136,54.95,2,New,2,1.0,2,ANITA.MORALES@sakilacustomer.org,ANITA,MORALES,5,2005-08-17,1
+16.63,Jhansi,India,32,75.84,2,,2,1.0,2,AMY.LOPEZ@sakilacustomer.org,AMY,LOPEZ,16,2005-06-17,2
+16.73,Shimoga,India,238,74.83,1,,1,1.0,1,NELLIE.GARRETT@sakilacustomer.org,NELLIE,GARRETT,17,2005-07-29,3
+16.76,Vitria de Santo Anto,Brazil,374,63.92,2,,2,1.0,2,JEREMY.HURTADO@sakilacustomer.org,JEREMY,HURTADO,8,2005-07-29,1
+16.93,Athenai,Greece,3,79.9,3,Horror,1,1.0,1,LINDA.WILLIAMS@sakilacustomer.org,LINDA,WILLIAMS,10,2005-06-16,2
+16.93,Balurghat,India,208,59.9,1,Children,1,1.0,1,LUCY.WHEELER@sakilacustomer.org,LUCY,WHEELER,10,2005-07-07,1
+16.95,Usak,Turkey,204,55.93,5,Sports,1,1.0,1,ROSEMARY.SCHMIDT@sakilacustomer.org,ROSEMARY,SCHMIDT,7,2005-06-16,1
+16.96,Bchar,Algeria,69,62.93,2,,1,1.0,1,JUDY.GRAY@sakilacustomer.org,JUDY,GRAY,7,2005-07-06,1
+16.96,Denizli,Turkey,483,53.94,3,,1,1.0,1,VERNON.CHAPA@sakilacustomer.org,VERNON,CHAPA,6,2005-06-21,1
+16.96,Hino,Japan,194,63.92,2,Family,2,1.0,2,KRISTEN.CHAVEZ@sakilacustomer.org,KRISTEN,CHAVEZ,8,2005-07-07,1
+16.96,La Romana,Dominican Republic,437,59.9,2,Children,2,1.0,2,RANDALL.NEUMANN@sakilacustomer.org,RANDALL,NEUMANN,10,2005-06-18,1
+17.01,Linz,Austria,159,53.94,1,,2,1.0,2,JILL.HAWKINS@sakilacustomer.org,JILL,HAWKINS,6,2005-08-21,1
+17.19,Battambang,Cambodia,516,54.95,4,,1,1.0,1,ELMER.NOE@sakilacustomer.org,ELMER,NOE,5,2005-06-16,1
+17.29,Masqat,Oman,9,55.93,1,Sci-Fi,2,1.0,2,MARGARET.MOORE@sakilacustomer.org,MARGARET,MOORE,7,2005-06-20,1
+17.45,Yantai,China,272,69.84,2,Horror,1,1.0,1,KAY.CALDWELL@sakilacustomer.org,KAY,CALDWELL,16,2005-05-31,2
+17.46,Ciomas,Indonesia,239,55.9,6,Sci-Fi,1,1.0,1,MINNIE.ROMERO@sakilacustomer.org,MINNIE,ROMERO,10,2005-05-28,2
+17.52,Jinchang,China,168,53.91,5,Horror,1,1.0,1,REGINA.BERRY@sakilacustomer.org,REGINA,BERRY,9,2005-07-10,1
+17.68,Munger (Monghyr),India,28,59.94,2,Foreign,1,1.0,1,CYNTHIA.YOUNG@sakilacustomer.org,CYNTHIA,YOUNG,6,2005-07-27,1
+17.68,Udaipur,India,170,53.94,5,,2,1.0,2,BEATRICE.ARNOLD@sakilacustomer.org,BEATRICE,ARNOLD,6,2005-06-18,1
+17.7,Sanaa,Yemen,303,62.93,1,,1,1.0,1,WILLIAM.SATTERFIELD@sakilacustomer.org,WILLIAM,SATTERFIELD,7,2005-06-18,1
+17.75,Gandhinagar,India,117,74.83,1,Music,1,1.0,1,EDITH.MCDONALD@sakilacustomer.org,EDITH,MCDONALD,17,2005-08-18,4
+17.78,Hohhot,China,138,77.85,2,Sci-Fi,1,1.0,1,HAZEL.WARREN@sakilacustomer.org,HAZEL,WARREN,15,2005-07-31,3
+17.81,Chiayi,Taiwan,73,77.88,1,Sports,1,1.0,1,BEVERLY.BROOKS@sakilacustomer.org,BEVERLY,BROOKS,12,2005-07-12,2
+17.85,Kaliningrad,Russian Federation,301,88.73,1,Children,2,1.0,2,ROBERT.BAUGHMAN@sakilacustomer.org,ROBERT,BAUGHMAN,27,2005-07-10,3
+17.94,Fuzhou,China,281,53.91,1,,2,1.0,2,LEONA.OBRIEN@sakilacustomer.org,LEONA,OBRIEN,9,2005-06-15,1
+17.94,Poos de Caldas,Brazil,254,65.89,3,Animation,1,1.0,1,MAXINE.SILVA@sakilacustomer.org,MAXINE,SILVA,11,2005-05-31,1
+17.94,Sullana,Peru,597,71.92,2,Animation,2,1.0,2,FREDDIE.DUGGAN@sakilacustomer.org,FREDDIE,DUGGAN,8,2005-05-28,1
+17.96,Dos Quebradas,Colombia,120,59.86,3,Comedy,1,0.7503,1,SYLVIA.ORTIZ@sakilacustomer.org,SYLVIA,ORTIZ,14,2005-06-17,2
+17.97,Hiroshima,Japan,299,62.93,5,,2,1.0,2,JAMES.GANNON@sakilacustomer.org,JAMES,GANNON,7,2005-05-28,1
+17.97,Shivapuri,India,68,62.93,3,Travel,2,1.0,2,NICOLE.PETERSON@sakilacustomer.org,NICOLE,PETERSON,7,2005-06-17,1
+18.39,Lipetsk,Russian Federation,44,59.94,3,,2,1.0,2,MARIE.TURNER@sakilacustomer.org,MARIE,TURNER,6,2005-07-08,1
+18.46,Osmaniye,Turkey,13,59.92,5,,1,1.0,1,KAREN.JACKSON@sakilacustomer.org,KAREN,JACKSON,8,2005-06-20,2
+18.55,Yangor,Nauru,513,107.74,1,Drama,2,1.0,2,DUANE.TUBBS@sakilacustomer.org,DUANE,TUBBS,26,2005-07-07,3
+18.6,A Corua (La Corua),Spain,52,57.87,1,,2,1.0,2,JULIE.SANCHEZ@sakilacustomer.org,JULIE,SANCHEZ,13,2005-07-27,2
+18.6,Augusta-Richmond County,United States,96,69.72,1,Action,1,1.0,1,DIANA.ALEXANDER@sakilacustomer.org,DIANA,ALEXANDER,28,2005-07-10,3
+18.6,Mogiljov,Belarus,527,120.78,1,Children,1,0.8188,1,CORY.MEEHAN@sakilacustomer.org,CORY,MEEHAN,22,2005-07-27,2
+18.82,Smolensk,Russian Federation,127,68.89,3,,2,0.7103,2,ELAINE.STEVENS@sakilacustomer.org,ELAINE,STEVENS,11,2005-07-28,2
+18.84,Cayenne,French Guiana,65,62.91,3,,1,1.0,1,ROSE.HOWARD@sakilacustomer.org,ROSE,HOWARD,9,2005-07-28,1
+18.94,Ahmadnagar,India,297,87.86,1,Music,1,0.8864,1,SHERRI.RHODES@sakilacustomer.org,SHERRI,RHODES,14,2005-06-18,3
+18.94,Halifax,Canada,463,58.8,3,Comedy,1,0.8821,1,DARRELL.POWER@sakilacustomer.org,DARRELL,POWER,20,2005-08-01,2
+18.94,Hodeida,Yemen,470,89.83,2,Music,1,1.0,1,GORDON.ALLARD@sakilacustomer.org,GORDON,ALLARD,17,2005-07-06,3
+18.96,Sungai Petani,Malaysia,306,57.87,4,,2,1.0,2,CHARLES.KOWALSKI@sakilacustomer.org,CHARLES,KOWALSKI,13,2005-07-08,2
+19.12,Inegl,Turkey,278,62.93,2,,2,1.0,2,BILLIE.HORTON@sakilacustomer.org,BILLIE,HORTON,7,2005-07-08,1
+19.15,Cam Ranh,Vietnam,532,90.85,2,,1,0.7036,1,NEIL.RENNER@sakilacustomer.org,NEIL,RENNER,15,2005-07-09,3
+19.21,Citt del Vaticano,Holy See (Vatican City State),26,69.93,4,Music,1,1.0,1,JESSICA.HALL@sakilacustomer.org,JESSICA,HALL,7,2005-06-17,1
+19.22,Compton,United States,182,72.87,1,Horror,2,1.0,2,RENEE.LANE@sakilacustomer.org,RENEE,LANE,13,2005-07-28,3
+19.35,Faaa,French Polynesia,43,64.87,1,,1,1.0,1,CHRISTINE.ROBERTS@sakilacustomer.org,CHRISTINE,ROBERTS,13,2005-07-09,2
+19.44,Basel,Switzerland,61,81.86,1,Games,2,1.0,2,KATHERINE.RIVERA@sakilacustomer.org,KATHERINE,RIVERA,14,2005-07-28,2
+19.44,Qalyub,Egypt,134,116.79,1,Animation,1,0.7009,1,EMMA.BOYD@sakilacustomer.org,EMMA,BOYD,21,2005-08-02,4
+19.44,So Bernardo do Campo,Brazil,544,67.93,4,Sci-Fi,2,0.9707,2,CODY.NOLEN@sakilacustomer.org,CODY,NOLEN,7,2005-06-15,2
+19.6,Urawa,Japan,147,89.89,2,Family,1,0.8,1,JOANNE.ROBERTSON@sakilacustomer.org,JOANNE,ROBERTSON,11,2005-08-01,2
+19.62,Usolje-Sibirskoje,Russian Federation,462,69.93,5,,2,1.0,2,WARREN.SHERROD@sakilacustomer.org,WARREN,SHERROD,7,2005-06-17,1
+19.63,Tanshui,Taiwan,577,65.86,3,New,2,1.0,2,CLIFTON.MALCOLM@sakilacustomer.org,CLIFTON,MALCOLM,14,2005-06-21,2
+19.69,Bhusawal,India,202,83.72,1,Classics,1,1.0,1,CARLA.GUTIERREZ@sakilacustomer.org,CARLA,GUTIERREZ,28,2005-07-29,3
+19.72,Binzhou,China,533,80.85,3,Travel,2,1.0,2,JESSIE.MILAM@sakilacustomer.org,JESSIE,MILAM,15,2005-07-12,3
+19.75,ostka,Ukraine,475,90.73,1,Foreign,2,0.9236,2,PEDRO.CHESTNUT@sakilacustomer.org,PEDRO,CHESTNUT,27,2005-07-09,4
+19.77,Aparecida de Goinia,Brazil,216,84.89,1,,2,0.753,2,NATALIE.MEYER@sakilacustomer.org,NATALIE,MEYER,11,2005-07-11,2
+19.93,Dzerzinsk,Russian Federation,430,69.86,1,New,1,1.0,1,RAY.HOULE@sakilacustomer.org,RAY,HOULE,14,2005-06-16,2
+19.94,Beira,Mozambique,257,76.87,4,Family,2,1.0,2,MARSHA.DOUGLAS@sakilacustomer.org,MARSHA,DOUGLAS,13,2005-07-08,2
+19.94,Grand Prairie,United States,118,67.9,2,Travel,2,0.8237,2,KIM.CRUZ@sakilacustomer.org,KIM,CRUZ,10,2005-07-29,2
+19.94,Huejutla de Reyes,Mexico,582,138.74,1,Classics,2,0.8491,2,ANDY.VANHORN@sakilacustomer.org,ANDY,VANHORN,26,2005-07-27,4
+19.95,Gorontalo,Indonesia,203,74.85,1,Foreign,2,0.9339,2,TARA.RYAN@sakilacustomer.org,TARA,RYAN,15,2005-07-28,2
+19.95,Qalyub,Egypt,134,63.84,2,Travel,1,0.8759,1,EMMA.BOYD@sakilacustomer.org,EMMA,BOYD,16,2005-05-29,2
+19.96,Ourense (Orense),Spain,469,106.87,1,Drama,1,0.7198,1,WESLEY.BULL@sakilacustomer.org,WESLEY,BULL,13,2005-07-06,2
+2.48,Pudukkottai,India,421,34.93,6,,1,1.0,1,LEE.HAWKS@sakilacustomer.org,LEE,HAWKS,7,2005-06-16,1
+2.97,Atlixco,Mexico,84,72.89,4,Family,1,1.0,1,SARA.PERRY@sakilacustomer.org,SARA,PERRY,11,2005-05-29,2
+2.97,Donostia-San Sebastin,Spain,293,14.97,18,,1,1.0,1,MAE.FLETCHER@sakilacustomer.org,MAE,FLETCHER,3,2005-05-30,1
+2.97,Ezeiza,Argentina,530,12.92,10,Classics,2,0.7701,2,DARRYL.ASHCRAFT@sakilacustomer.org,DARRYL,ASHCRAFT,8,2005-06-15,2
+2.97,Kurgan,Russian Federation,376,9.9,13,Documentary,2,1.0,2,RANDY.GAITHER@sakilacustomer.org,RANDY,GAITHER,10,2005-06-15,1
+2.97,Lancaster,United States,112,11.96,13,,2,1.0,2,ROSA.REYNOLDS@sakilacustomer.org,ROSA,REYNOLDS,4,2005-05-29,1
+2.97,Lincoln,United States,63,35.96,7,,2,1.0,2,ASHLEY.RICHARDSON@sakilacustomer.org,ASHLEY,RICHARDSON,4,2005-07-06,1
+2.97,Mahajanga,Madagascar,81,47.88,5,,1,1.0,1,ANDREA.HENDERSON@sakilacustomer.org,ANDREA,HENDERSON,12,2005-06-19,2
+2.97,Smolensk,Russian Federation,127,9.9,16,Sci-Fi,1,1.0,1,ELAINE.STEVENS@sakilacustomer.org,ELAINE,STEVENS,10,2005-05-29,1
+2.97,South Hill,Anguilla,381,26.91,10,,2,1.0,2,BOBBY.BOUDREAU@sakilacustomer.org,BOBBY,BOUDREAU,9,2005-05-27,1
+2.97,Usak,Turkey,204,39.92,11,,2,1.0,2,ROSEMARY.SCHMIDT@sakilacustomer.org,ROSEMARY,SCHMIDT,8,2005-05-27,1
+2.97,Vicente Lpez,Argentina,219,27.93,10,New,2,1.0,2,WILLIE.HOWELL@sakilacustomer.org,WILLIE,HOWELL,7,2005-06-18,1
+2.97,Vitria de Santo Anto,Brazil,374,28.87,6,Comedy,2,1.0,2,JEREMY.HURTADO@sakilacustomer.org,JEREMY,HURTADO,13,2005-05-30,2
+2.99,Antofagasta,Chile,45,44.91,5,,1,1.0,1,JANET.PHILLIPS@sakilacustomer.org,JANET,PHILLIPS,9,2005-06-16,1
+2.99,Bislig,Philippines,94,14.97,8,,2,1.0,2,NORMA.GONZALES@sakilacustomer.org,NORMA,GONZALES,3,2005-05-28,1
+2.99,Ciparay,Indonesia,328,17.94,11,,2,1.0,2,JEFFREY.SPEAR@sakilacustomer.org,JEFFREY,SPEAR,6,2005-06-16,1
+2.99,Hubli-Dharwad,India,136,14.95,9,,2,1.0,2,ANITA.MORALES@sakilacustomer.org,ANITA,MORALES,5,2005-06-17,1
+20.11,Toulon,France,104,97.84,1,,2,1.0,2,RITA.GRAHAM@sakilacustomer.org,RITA,GRAHAM,16,2005-07-07,2
+20.18,Valencia,Venezuela,539,73.9,2,,2,1.0,2,MATHEW.BOLIN@sakilacustomer.org,MATHEW,BOLIN,10,2005-07-09,2
+20.23,Caracas,Venezuela,111,69.9,2,Horror,2,0.7146,2,CARMEN.OWENS@sakilacustomer.org,CARMEN,OWENS,10,2005-07-06,2
+20.27,Munger (Monghyr),India,28,77.78,1,Documentary,2,1.0,2,CYNTHIA.YOUNG@sakilacustomer.org,CYNTHIA,YOUNG,22,2005-07-31,4
+20.33,Jhansi,India,32,86.87,1,Comedy,1,1.0,1,AMY.LOPEZ@sakilacustomer.org,AMY,LOPEZ,13,2005-07-27,2
+20.37,Baicheng,China,538,99.84,2,Games,2,0.7001,2,TED.BREAUX@sakilacustomer.org,TED,BREAUX,16,2005-07-31,3
+20.37,Sivas,Turkey,518,64.82,3,Sci-Fi,2,0.8155,2,GABRIEL.HARDER@sakilacustomer.org,GABRIEL,HARDER,18,2005-07-27,4
+20.43,Addis Abeba,Ethiopia,392,83.88,1,Family,2,0.9528,2,SEAN.DOUGLASS@sakilacustomer.org,SEAN,DOUGLASS,12,2005-07-29,2
+20.45,Juiz de Fora,Brazil,591,62.91,4,,1,1.0,1,KENT.ARSENAULT@sakilacustomer.org,KENT,ARSENAULT,9,2005-07-08,1
+20.49,Ikerre,Nigeria,198,62.82,3,,1,1.0,1,ELSIE.KELLEY@sakilacustomer.org,ELSIE,KELLEY,18,2005-07-27,3
+20.5,South Hill,Anguilla,381,64.85,1,Children,2,1.0,2,BOBBY.BOUDREAU@sakilacustomer.org,BOBBY,BOUDREAU,15,2005-08-18,2
+20.59,Korla,China,283,102.75,1,Documentary,1,0.7772,1,FELICIA.SUTTON@sakilacustomer.org,FELICIA,SUTTON,25,2005-07-06,4
+20.62,Brescia,Italy,309,139.8,1,Sci-Fi,2,1.0,2,CHRISTOPHER.GRECO@sakilacustomer.org,CHRISTOPHER,GRECO,20,2005-06-19,3
+20.64,Vitria de Santo Anto,Brazil,374,85.82,1,,2,0.7561,2,JEREMY.HURTADO@sakilacustomer.org,JEREMY,HURTADO,18,2005-08-22,4
+20.87,Bislig,Philippines,94,70.77,1,Children,1,0.8875,1,NORMA.GONZALES@sakilacustomer.org,NORMA,GONZALES,23,2005-08-22,3
+20.93,Shaoguan,China,485,89.86,1,Family,1,0.8004,1,CLYDE.TOBIAS@sakilacustomer.org,CLYDE,TOBIAS,14,2005-06-16,2
+20.94,Chandrapur,India,167,75.76,2,Foreign,1,0.9085,1,SALLY.PIERCE@sakilacustomer.org,SALLY,PIERCE,24,2005-07-09,4
+20.97,Gulbarga,India,370,63.92,3,,2,1.0,2,WAYNE.TRUONG@sakilacustomer.org,WAYNE,TRUONG,8,2005-07-07,1
+20.97,Trshavn,Faroe Islands,317,62.91,4,,2,1.0,2,EDWARD.BAUGH@sakilacustomer.org,EDWARD,BAUGH,9,2005-06-18,1
+21.05,Alvorada,Brazil,551,69.93,2,Animation,2,1.0,2,CLAYTON.BARBEE@sakilacustomer.org,CLAYTON,BARBEE,7,2005-07-27,1
+21.05,Pjatigorsk,Russian Federation,487,100.81,2,Drama,1,0.7924,1,HECTOR.POINDEXTER@sakilacustomer.org,HECTOR,POINDEXTER,19,2005-07-30,3
+21.07,Oyo,Nigeria,250,67.88,1,Action,1,0.706,1,JO.FOWLER@sakilacustomer.org,JO,FOWLER,12,2005-08-21,2
+21.15,Sterling Heights,United States,146,117.83,2,Horror,1,0.822,1,JAMIE.RICE@sakilacustomer.org,JAMIE,RICE,17,2005-07-11,3
+21.17,Okayama,Japan,489,89.91,2,Horror,2,1.0,2,RICARDO.MEADOR@sakilacustomer.org,RICARDO,MEADOR,9,2005-08-02,1
+21.18,Chisinau,Moldova,38,63.87,3,,1,0.9065,1,MARTHA.GONZALEZ@sakilacustomer.org,MARTHA,GONZALEZ,13,2005-07-07,3
+21.21,Banjul,Gambia,584,83.88,2,Documentary,2,1.0,2,SALVADOR.TEEL@sakilacustomer.org,SALVADOR,TEEL,12,2005-06-21,1
+21.23,Hsichuh,Taiwan,348,180.67,1,Documentary,2,0.7019,2,ROGER.QUINTANILLA@sakilacustomer.org,ROGER,QUINTANILLA,33,2005-07-08,4
+21.24,Higashiosaka,Japan,264,79.8,1,Animation,1,0.9008,1,GWENDOLYN.MAY@sakilacustomer.org,GWENDOLYN,MAY,20,2005-07-11,3
+21.28,Qinhuangdao,China,242,74.85,2,Comedy,1,0.7333,1,GLENDA.FRAZIER@sakilacustomer.org,GLENDA,FRAZIER,15,2005-06-15,3
+21.38,Syktyvkar,Russian Federation,428,67.88,2,Children,1,1.0,1,HERBERT.KRUGER@sakilacustomer.org,HERBERT,KRUGER,12,2005-07-28,2
+21.39,Bayugan,Philippines,188,68.82,1,,2,0.9137,2,MELANIE.ARMSTRONG@sakilacustomer.org,MELANIE,ARMSTRONG,18,2005-08-01,4
+21.42,Dadu,Pakistan,416,95.88,2,Drama,1,1.0,1,JEFFERY.PINSON@sakilacustomer.org,JEFFERY,PINSON,12,2005-07-12,1
+21.44,Gatineau,Canada,476,90.86,1,,1,1.0,1,DERRICK.BOURQUE@sakilacustomer.org,DERRICK,BOURQUE,14,2005-08-01,3
+21.5,Oulu,Finland,298,80.91,1,Animation,1,1.0,1,ERIKA.PENA@sakilacustomer.org,ERIKA,PENA,9,2005-08-18,1
+21.51,Kuching,Malaysia,58,68.88,2,Foreign,1,1.0,1,JEAN.BELL@sakilacustomer.org,JEAN,BELL,12,2005-08-19,2
+21.6,Benguela,Angola,528,71.86,1,Games,2,1.0,2,CLAUDE.HERZOG@sakilacustomer.org,CLAUDE,HERZOG,14,2005-05-29,2
+21.64,Tabuk,Saudi Arabia,312,85.86,2,New,1,1.0,1,MARK.RINEHART@sakilacustomer.org,MARK,RINEHART,14,2005-07-29,2
+21.67,Grand Prairie,United States,118,75.89,1,Documentary,2,1.0,2,KIM.CRUZ@sakilacustomer.org,KIM,CRUZ,11,2005-08-21,2
+21.68,Celaya,Mexico,587,80.91,2,,1,1.0,1,SERGIO.STANFIELD@sakilacustomer.org,SERGIO,STANFIELD,9,2005-07-27,1
+21.7,Chapra,India,509,148.8,1,Music,1,1.0,1,RAUL.FORTIER@sakilacustomer.org,RAUL,FORTIER,20,2005-07-28,3
+21.93,Halifax,Canada,463,71.91,1,Games,2,1.0,2,DARRELL.POWER@sakilacustomer.org,DARRELL,POWER,9,2005-08-17,1
+21.94,Rustenburg,South Africa,407,149.73,1,New,1,0.7001,1,DALE.RATCLIFF@sakilacustomer.org,DALE,RATCLIFF,27,2005-07-28,4
+21.94,al-Manama,Bahrain,590,94.89,1,Travel,1,1.0,1,SETH.HANNON@sakilacustomer.org,SETH,HANNON,11,2005-06-20,2
+21.95,Ambattur,India,225,71.91,3,Sci-Fi,2,1.0,2,ARLENE.HARVEY@sakilacustomer.org,ARLENE,HARVEY,9,2005-06-18,1
+21.95,Eskisehir,Turkey,507,66.83,2,Games,1,1.0,1,EDGAR.RHOADS@sakilacustomer.org,EDGAR,RHOADS,17,2005-07-06,2
+22.0,Santo Andr,Brazil,354,117.82,1,,2,0.7459,2,JUSTIN.NGO@sakilacustomer.org,JUSTIN,NGO,18,2005-07-29,3
+22.15,Tuguegarao,Philippines,261,100.83,2,Children,2,0.7624,2,DEANNA.BYRD@sakilacustomer.org,DEANNA,BYRD,17,2005-06-17,3
+22.16,Teboksary,Russian Federation,350,70.83,2,Travel,2,0.8882,2,JUAN.FRALEY@sakilacustomer.org,JUAN,FRALEY,17,2005-08-17,3
+22.21,Ueda,Japan,503,73.77,1,Children,1,1.0,1,ANGEL.BARCLAY@sakilacustomer.org,ANGEL,BARCLAY,23,2005-08-23,4
+22.27,Moscow,Russian Federation,46,87.88,2,,2,1.0,2,CATHERINE.CAMPBELL@sakilacustomer.org,CATHERINE,CAMPBELL,12,2005-06-20,2
+22.31,Firozabad,India,192,141.78,1,Classics,2,0.8592,2,LAURIE.LAWRENCE@sakilacustomer.org,LAURIE,LAWRENCE,22,2005-08-21,4
+22.31,Parbhani,India,300,91.86,2,Children,1,1.0,1,JOHN.FARNSWORTH@sakilacustomer.org,JOHN,FARNSWORTH,14,2005-07-28,3
+22.31,Sanya,China,546,181.74,1,Documentary,2,0.8519,2,KELLY.KNOTT@sakilacustomer.org,KELLY,KNOTT,26,2005-07-12,3
+22.43,Manchester,United States,382,81.73,2,Classics,1,1.0,1,VICTOR.BARKLEY@sakilacustomer.org,VICTOR,BARKLEY,27,2005-06-18,4
+22.67,Lhokseumawe,Indonesia,473,69.86,3,Comedy,2,1.0,2,JORGE.OLIVARES@sakilacustomer.org,JORGE,OLIVARES,14,2005-07-28,2
+22.73,Meixian,China,90,78.9,1,Foreign,2,1.0,2,RUBY.WASHINGTON@sakilacustomer.org,RUBY,WASHINGTON,10,2005-07-30,2
+22.79,Salala,Oman,498,108.81,1,,1,1.0,1,GENE.SANBORN@sakilacustomer.org,GENE,SANBORN,19,2005-07-27,3
+22.82,Coatzacoalcos,Mexico,482,113.84,1,Classics,2,1.0,2,MAURICE.CRAWLEY@sakilacustomer.org,MAURICE,CRAWLEY,16,2005-07-10,2
+22.84,Ezeiza,Argentina,530,93.78,1,Games,1,1.0,1,DARRYL.ASHCRAFT@sakilacustomer.org,DARRYL,ASHCRAFT,22,2005-08-18,3
+22.93,Korolev,Russian Federation,393,147.8,1,,2,1.0,2,PHILIP.CAUSEY@sakilacustomer.org,PHILIP,CAUSEY,20,2005-07-08,3
+22.94,Nam Dinh,Vietnam,472,93.85,2,,1,0.7447,1,GREG.ROBINS@sakilacustomer.org,GREG,ROBINS,15,2005-07-11,3
+22.95,Lengshuijiang,China,267,124.79,1,Animation,2,0.7759,2,MARGIE.WADE@sakilacustomer.org,MARGIE,WADE,21,2005-06-19,4
+23.0,Daxian,China,64,116.77,1,Horror,1,1.0,1,JUDITH.COX@sakilacustomer.org,JUDITH,COX,23,2005-07-31,3
+23.02,Sullana,Peru,597,132.7,1,Travel,2,0.8423,2,FREDDIE.DUGGAN@sakilacustomer.org,FREDDIE,DUGGAN,30,2005-08-02,4
+23.33,Bilbays,Egypt,559,73.86,1,Drama,2,0.8922,2,EVERETT.BANDA@sakilacustomer.org,EVERETT,BANDA,14,2005-08-19,3
+23.33,Shahr-e Kord,Iran,185,89.91,1,,1,1.0,1,ROBERTA.HARPER@sakilacustomer.org,ROBERTA,HARPER,9,2005-07-07,1
+23.39,Iwakuni,Japan,54,72.89,2,Animation,1,1.0,1,TERESA.ROGERS@sakilacustomer.org,TERESA,ROGERS,11,2005-07-11,2
+23.39,Kanazawa,Japan,547,84.81,1,Games,1,1.0,1,KURT.EMMONS@sakilacustomer.org,KURT,EMMONS,19,2005-07-28,2
+23.4,Palghat (Palakkad),India,268,78.87,1,Action,2,0.8104,2,NINA.SOTO@sakilacustomer.org,NINA,SOTO,13,2005-07-30,2
+23.45,Usak,Turkey,204,83.88,2,Animation,2,0.762,2,ROSEMARY.SCHMIDT@sakilacustomer.org,ROSEMARY,SCHMIDT,12,2005-06-17,2
+23.49,Chisinau,Moldova,38,78.82,1,Games,2,0.9372,2,MARTHA.GONZALEZ@sakilacustomer.org,MARTHA,GONZALEZ,18,2005-07-27,4
+23.57,Graz,Austria,173,110.81,1,Animation,2,1.0,2,AUDREY.RAY@sakilacustomer.org,AUDREY,RAY,19,2005-07-29,3
+23.59,El Fuerte,Mexico,451,110.81,1,Travel,1,0.7298,1,JIM.REA@sakilacustomer.org,JIM,REA,19,2005-07-08,3
+23.63,Caracas,Venezuela,111,86.79,1,,2,0.7125,2,CARMEN.OWENS@sakilacustomer.org,CARMEN,OWENS,21,2005-08-02,3
+23.65,Balikesir,Turkey,366,81.86,2,Children,1,1.0,1,BRANDON.HUEY@sakilacustomer.org,BRANDON,HUEY,14,2005-07-11,2
+23.68,Bucuresti,Romania,563,182.56,1,Comedy,2,0.8638,2,KEN.PREWITT@sakilacustomer.org,KEN,PREWITT,44,2005-07-08,7
+23.69,Mahajanga,Madagascar,81,78.84,2,Animation,2,0.887,2,ANDREA.HENDERSON@sakilacustomer.org,ANDREA,HENDERSON,16,2005-07-09,2
+23.7,Pune,India,135,84.89,1,Animation,2,0.753,2,JUANITA.MASON@sakilacustomer.org,JUANITA,MASON,11,2005-07-30,2
+23.71,al-Qadarif,Sudan,395,106.81,1,,1,1.0,1,JOHNNY.TURPIN@sakilacustomer.org,JOHNNY,TURPIN,19,2005-07-07,2
+23.72,Zapopan,Mexico,465,98.83,2,,2,0.8485,2,FLOYD.GANDY@sakilacustomer.org,FLOYD,GANDY,17,2005-08-17,3
+23.84,Haldia,India,186,71.9,3,Drama,1,1.0,1,HOLLY.FOX@sakilacustomer.org,HOLLY,FOX,10,2005-08-18,2
+23.86,Tama,Japan,385,74.79,3,Comedy,1,1.0,1,PHILLIP.HOLM@sakilacustomer.org,PHILLIP,HOLM,21,2005-08-01,3
+23.92,Dongying,China,466,95.88,1,,2,1.0,2,LEO.EBERT@sakilacustomer.org,LEO,EBERT,12,2005-06-16,1
+23.92,Salala,Oman,498,80.91,2,Action,1,1.0,1,GENE.SANBORN@sakilacustomer.org,GENE,SANBORN,9,2005-05-27,1
+23.93,Imus,Philippines,349,119.86,2,,1,0.825,1,JOE.GILLILAND@sakilacustomer.org,JOE,GILLILAND,14,2005-06-20,2
+23.93,San Lorenzo,Paraguay,345,71.92,2,Documentary,2,1.0,2,CARL.ARTIS@sakilacustomer.org,CARL,ARTIS,8,2005-07-29,1
+23.93,Soshanguve,South Africa,145,124.71,1,Animation,2,0.744,2,LUCILLE.HOLMES@sakilacustomer.org,LUCILLE,HOLMES,29,2005-08-19,4
+23.94,Boksburg,South Africa,125,72.81,3,New,1,0.8357,1,ETHEL.WEBB@sakilacustomer.org,ETHEL,WEBB,19,2005-07-29,3
+23.94,Clarksville,United States,140,84.88,1,,1,1.0,1,EVA.RAMOS@sakilacustomer.org,EVA,RAMOS,12,2005-07-11,2
+23.96,Donostia-San Sebastin,Spain,293,113.87,1,Horror,1,1.0,1,MAE.FLETCHER@sakilacustomer.org,MAE,FLETCHER,13,2005-06-16,2
+23.97,Czestochowa,Poland,572,111.78,1,Animation,2,0.8849,2,SIDNEY.BURLESON@sakilacustomer.org,SIDNEY,BURLESON,22,2005-06-17,2
+24.03,Niznekamsk,Russian Federation,48,95.88,1,,1,1.0,1,ANN.EVANS@sakilacustomer.org,ANN,EVANS,12,2005-07-30,1
+24.07,Mexicali,Mexico,343,87.89,1,Children,1,1.0,1,DOUGLAS.GRAF@sakilacustomer.org,DOUGLAS,GRAF,11,2005-07-08,1
+24.11,Valparai,India,403,82.86,4,Horror,1,0.7592,1,MIKE.WAY@sakilacustomer.org,MIKE,WAY,14,2005-07-06,2
+24.14,Simferopol,Ukraine,82,107.88,1,Documentary,1,1.0,1,KATHRYN.COLEMAN@sakilacustomer.org,KATHRYN,COLEMAN,12,2005-06-19,1
+24.15,Bandar Seri Begawan,Brunei,91,93.74,1,Action,2,0.9049,2,LOIS.BUTLER@sakilacustomer.org,LOIS,BUTLER,26,2005-08-19,3
+24.16,Udaipur,India,170,124.78,1,Sports,2,0.7201,2,BEATRICE.ARNOLD@sakilacustomer.org,BEATRICE,ARNOLD,22,2005-07-10,3
+24.22,Baiyin,China,495,103.78,1,Music,1,1.0,1,CHARLIE.BESS@sakilacustomer.org,CHARLIE,BESS,22,2005-07-29,3
+24.32,Pingxiang,China,169,89.87,2,Comedy,2,1.0,2,ERICA.MATTHEWS@sakilacustomer.org,ERICA,MATTHEWS,13,2005-07-12,2
+24.33,Siliguri (Shiliguri),India,502,95.84,1,Documentary,1,0.7504,1,BRETT.CORNWELL@sakilacustomer.org,BRETT,CORNWELL,16,2005-07-12,2
+24.38,Nha Trang,Vietnam,520,106.85,1,Action,1,0.7665,1,MITCHELL.WESTMORELAND@sakilacustomer.org,MITCHELL,WESTMORELAND,15,2005-07-10,3
+24.38,Smolensk,Russian Federation,127,83.88,1,Documentary,1,1.0,1,ELAINE.STEVENS@sakilacustomer.org,ELAINE,STEVENS,12,2005-07-31,1
+24.43,Kilis,Turkey,143,93.83,1,New,1,0.9367,1,LESLIE.GORDON@sakilacustomer.org,LESLIE,GORDON,17,2005-07-07,2
+24.47,Lubumbashi,"Congo, The Democratic Republic of the",387,82.85,2,Animation,1,0.8917,1,JESSE.SCHILLING@sakilacustomer.org,JESSE,SCHILLING,15,2005-08-19,3
+24.47,Pemalang,Indonesia,116,75.87,1,,2,0.9478,2,VICTORIA.GIBSON@sakilacustomer.org,VICTORIA,GIBSON,13,2005-08-19,2
+24.49,Mardan,Pakistan,20,78.83,3,Music,2,1.0,2,SHARON.ROBINSON@sakilacustomer.org,SHARON,ROBINSON,17,2005-07-30,2
+24.55,Fukuyama,Japan,141,77.82,3,Action,1,1.0,1,DEBBIE.REYES@sakilacustomer.org,DEBBIE,REYES,18,2005-08-01,3
+24.66,Matamoros,Mexico,177,101.87,1,Music,2,0.8826,2,SAMANTHA.DUNCAN@sakilacustomer.org,SAMANTHA,DUNCAN,13,2005-07-11,2
+24.69,Brindisi,Italy,499,88.79,2,New,1,0.719,1,MARC.OUTLAW@sakilacustomer.org,MARC,OUTLAW,21,2005-07-28,4
+24.69,Kisumu,Kenya,193,88.85,2,,2,1.0,2,KATIE.ELLIOTT@sakilacustomer.org,KATIE,ELLIOTT,15,2005-06-19,2
+24.76,Kaliningrad,Russian Federation,301,75.89,2,Sports,1,1.0,1,ROBERT.BAUGHMAN@sakilacustomer.org,ROBERT,BAUGHMAN,11,2005-08-22,2
+24.84,Daugavpils,Latvia,347,119.72,1,Horror,2,0.9587,2,RYAN.SALISBURY@sakilacustomer.org,RYAN,SALISBURY,28,2005-07-28,4
+24.84,Yaound,Cameroon,361,125.69,1,Sports,2,0.8811,2,LAWRENCE.LAWTON@sakilacustomer.org,LAWRENCE,LAWTON,31,2005-08-02,4
+24.93,Koriyama,Japan,401,86.81,1,Horror,1,0.7933,1,TONY.CARRANZA@sakilacustomer.org,TONY,CARRANZA,19,2005-07-29,3
+24.95,Balaiha,Russian Federation,55,93.78,2,,1,1.0,1,DORIS.REED@sakilacustomer.org,DORIS,REED,22,2005-06-20,3
+25.01,Taguig,Philippines,72,99.72,1,Sci-Fi,1,0.7601,1,THERESA.WATSON@sakilacustomer.org,THERESA,WATSON,28,2005-08-17,4
+25.03,Arecibo,Puerto Rico,360,87.87,1,,2,0.7958,2,RALPH.MADRIGAL@sakilacustomer.org,RALPH,MADRIGAL,13,2005-07-27,2
+25.18,Tonghae,South Korea,536,101.84,1,Sci-Fi,1,1.0,1,FERNANDO.CHURCHILL@sakilacustomer.org,FERNANDO,CHURCHILL,16,2005-07-30,2
+25.2,Kabul,Afghanistan,218,113.81,1,Animation,2,1.0,2,VERA.MCCOY@sakilacustomer.org,VERA,MCCOY,19,2005-08-20,2
+25.23,Cabuyao,Philippines,371,94.85,1,,1,1.0,1,BILLY.POULIN@sakilacustomer.org,BILLY,POULIN,15,2005-07-30,2
+25.34,Allappuzha (Alleppey),India,175,83.88,2,Action,2,1.0,2,ANNETTE.OLSON@sakilacustomer.org,ANNETTE,OLSON,12,2005-08-20,2
+25.35,So Leopoldo,Brazil,443,103.89,1,,1,1.0,1,FRANCISCO.SKIDMORE@sakilacustomer.org,FRANCISCO,SKIDMORE,11,2005-07-28,2
+25.35,Zhezqazghan,Kazakstan,573,146.8,1,Sci-Fi,2,1.0,2,BYRON.BOX@sakilacustomer.org,BYRON,BOX,20,2005-07-31,4
+25.41,Benin City,Nigeria,284,88.87,2,Animation,1,1.0,1,SONIA.GREGORY@sakilacustomer.org,SONIA,GREGORY,13,2005-08-01,2
+25.46,Rockford,United States,457,115.88,1,,2,0.7587,2,BILL.GAVIN@sakilacustomer.org,BILL,GAVIN,12,2005-08-21,2
+25.55,Kaduna,Nigeria,18,99.8,1,Drama,2,1.0,2,CAROL.GARCIA@sakilacustomer.org,CAROL,GARCIA,20,2005-08-02,2
+25.63,Teboksary,Russian Federation,350,77.86,1,Action,2,1.0,2,JUAN.FRALEY@sakilacustomer.org,JUAN,FRALEY,14,2005-08-18,2
+25.65,Monclova,Mexico,570,79.83,1,,1,0.7378,1,IVAN.CROMWELL@sakilacustomer.org,IVAN,CROMWELL,17,2005-07-30,3
+25.68,Valencia,Venezuela,539,77.88,1,,2,1.0,2,MATHEW.BOLIN@sakilacustomer.org,MATHEW,BOLIN,12,2005-07-29,2
+25.7,Zhoushan,China,550,118.89,1,Music,1,0.8319,1,GUY.BROWNLEE@sakilacustomer.org,GUY,BROWNLEE,11,2005-06-21,2
+25.74,Abu Dhabi,United Arab Emirates,452,100.8,1,,2,0.911,2,TOM.MILNER@sakilacustomer.org,TOM,MILNER,20,2005-07-06,3
+25.74,Tama,Japan,385,95.84,1,Documentary,2,1.0,2,PHILLIP.HOLM@sakilacustomer.org,PHILLIP,HOLM,16,2005-08-18,2
+25.76,Binzhou,China,533,119.82,1,Sci-Fi,1,0.8253,1,JESSIE.MILAM@sakilacustomer.org,JESSIE,MILAM,18,2005-07-28,2
+25.77,Molodetno,Belarus,144,82.86,4,Action,1,0.7592,1,CLARA.SHAW@sakilacustomer.org,CLARA,SHAW,14,2005-07-08,2
+25.79,Denizli,Turkey,483,99.87,1,Travel,2,1.0,2,VERNON.CHAPA@sakilacustomer.org,VERNON,CHAPA,13,2005-07-12,2
+25.79,Hunuco,Peru,565,93.81,1,Sci-Fi,2,0.8724,2,JAIME.NETTLES@sakilacustomer.org,JAIME,NETTLES,19,2005-08-02,3
+25.83,Suihua,China,511,80.85,1,,1,1.0,1,CHESTER.BENNER@sakilacustomer.org,CHESTER,BENNER,15,2005-07-30,2
+25.87,Ashgabat,Turkmenistan,200,128.86,1,Sci-Fi,1,1.0,1,JEANNE.LAWSON@sakilacustomer.org,JEANNE,LAWSON,14,2005-08-20,2
+26.01,Amroha,India,534,120.73,1,Animation,2,0.918,2,CHRISTIAN.JUNG@sakilacustomer.org,CHRISTIAN,JUNG,27,2005-08-01,3
+26.04,Dundee,United Kingdom,142,115.8,1,Sci-Fi,1,1.0,1,APRIL.BURNS@sakilacustomer.org,APRIL,BURNS,20,2005-07-30,3
+26.15,Atinsk,Russian Federation,397,83.88,2,Animation,1,1.0,1,JIMMY.SCHRADER@sakilacustomer.org,JIMMY,SCHRADER,12,2005-08-22,2
+26.17,Zalantun,China,93,97.78,1,Family,1,0.8471,1,PHYLLIS.FOSTER@sakilacustomer.org,PHYLLIS,FOSTER,22,2005-08-20,4
+26.27,Iligan,Philippines,580,94.85,1,,1,1.0,1,ROSS.GREY@sakilacustomer.org,ROSS,GREY,15,2005-08-23,2
+26.28,Cape Coral,United States,526,82.74,5,Action,2,0.8193,2,KARL.SEAL@sakilacustomer.org,KARL,SEAL,26,2005-06-17,4
+26.31,Qomsheh,Iran,459,170.72,1,Music,1,0.9123,1,TOMMY.COLLAZO@sakilacustomer.org,TOMMY,COLLAZO,28,2005-07-28,5
+26.44,Ibirit,Brazil,310,87.92,1,,2,1.0,2,DANIEL.CABRAL@sakilacustomer.org,DANIEL,CABRAL,8,2005-07-06,1
+26.45,San Juan Bautista Tuxtepec,Mexico,425,154.76,1,Travel,1,0.8257,1,FRANCIS.SIKES@sakilacustomer.org,FRANCIS,SIKES,24,2005-07-08,4
+26.49,Surakarta,Indonesia,450,108.83,1,Animation,1,1.0,1,JAY.ROBB@sakilacustomer.org,JAY,ROBB,17,2005-07-11,2
+26.56,Jaipur,India,60,82.81,1,Sports,1,1.0,1,MILDRED.BAILEY@sakilacustomer.org,MILDRED,BAILEY,19,2005-08-23,3
+26.57,Elista,Russian Federation,17,86.85,1,,2,0.7246,2,DONNA.THOMPSON@sakilacustomer.org,DONNA,THOMPSON,15,2005-07-28,2
+26.62,Kowloon and New Kowloon,Hong Kong,289,97.86,1,Action,2,1.0,2,VIOLET.RODRIQUEZ@sakilacustomer.org,VIOLET,RODRIQUEZ,14,2005-06-20,2
+26.65,Hami,China,165,85.86,1,Children,2,1.0,2,LORRAINE.STEPHENS@sakilacustomer.org,LORRAINE,STEPHENS,14,2005-07-10,2
+26.65,Toulouse,France,35,84.84,1,Comedy,1,1.0,1,VIRGINIA.GREEN@sakilacustomer.org,VIRGINIA,GREEN,16,2005-07-11,2
+26.73,Cuautla,Mexico,323,86.86,1,Animation,2,1.0,2,MATTHEW.MAHAN@sakilacustomer.org,MATTHEW,MAHAN,14,2005-07-27,2
+26.74,Adoni,India,367,96.79,2,Drama,2,0.8453,2,ADAM.GOOCH@sakilacustomer.org,ADAM,GOOCH,21,2005-08-18,3
+26.76,San Felipe del Progreso,Mexico,319,102.77,1,Horror,1,0.8254,1,RONALD.WEINER@sakilacustomer.org,RONALD,WEINER,23,2005-07-11,3
+26.79,Bratislava,Slovakia,357,91.74,2,Family,1,0.7615,1,KEITH.RICO@sakilacustomer.org,KEITH,RICO,26,2005-08-01,4
+26.8,Cavite,Philippines,388,93.82,1,,2,0.8407,2,CRAIG.MORRELL@sakilacustomer.org,CRAIG,MORRELL,18,2005-08-18,4
+26.85,Battambang,Cambodia,516,80.84,1,,2,1.0,2,ELMER.NOE@sakilacustomer.org,ELMER,NOE,16,2005-07-29,3
+26.85,Iwaki,Japan,240,132.79,1,Drama,1,0.8121,1,MARLENE.WELCH@sakilacustomer.org,MARLENE,WELCH,21,2005-07-27,3
+26.85,Okayama,Japan,489,139.8,1,,2,0.75,2,RICARDO.MEADOR@sakilacustomer.org,RICARDO,MEADOR,20,2005-08-18,2
+26.92,Zaria,Nigeria,232,89.9,1,,1,1.0,1,CONSTANCE.REID@sakilacustomer.org,CONSTANCE,REID,10,2005-06-19,1
+27.1,Tabriz,Iran,279,126.82,1,,1,0.8821,1,DIANNE.SHELTON@sakilacustomer.org,DIANNE,SHELTON,18,2005-07-09,3
+27.32,Sterling Heights,United States,146,101.78,3,Family,2,0.8531,2,JAMIE.RICE@sakilacustomer.org,JAMIE,RICE,22,2005-08-02,4
+27.37,Nador,Morocco,40,87.83,1,New,2,0.932,2,AMANDA.CARTER@sakilacustomer.org,AMANDA,CARTER,17,2005-07-31,3
+27.38,Qinhuangdao,China,242,114.84,1,Drama,1,1.0,1,GLENDA.FRAZIER@sakilacustomer.org,GLENDA,FRAZIER,16,2005-08-19,2
+27.43,Yuncheng,China,154,94.81,1,Horror,1,0.7368,1,MICHELE.GRANT@sakilacustomer.org,MICHELE,GRANT,19,2005-07-27,3
+27.48,Tabuk,Saudi Arabia,312,90.84,1,Horror,1,1.0,1,MARK.RINEHART@sakilacustomer.org,MARK,RINEHART,16,2005-07-30,2
+27.51,Manchester,United States,382,88.88,1,,1,1.0,1,VICTOR.BARKLEY@sakilacustomer.org,VICTOR,BARKLEY,12,2005-07-30,3
+27.64,Cianjur,Indonesia,411,83.83,1,Music,1,0.786,1,NORMAN.CURRIER@sakilacustomer.org,NORMAN,CURRIER,17,2005-08-21,2
+27.83,Celaya,Mexico,587,110.81,1,Sci-Fi,2,1.0,2,SERGIO.STANFIELD@sakilacustomer.org,SERGIO,STANFIELD,19,2005-07-31,3
+27.93,Cabuyao,Philippines,371,87.92,4,,1,1.0,1,BILLY.POULIN@sakilacustomer.org,BILLY,POULIN,8,2005-08-02,1
+27.93,Ruse,Bulgaria,540,85.78,2,Animation,2,0.756,2,TYRONE.ASHER@sakilacustomer.org,TYRONE,ASHER,22,2005-07-11,3
+28.12,Escobar,Argentina,445,84.85,1,Children,1,1.0,1,MICHEAL.FORMAN@sakilacustomer.org,MICHEAL,FORMAN,15,2005-08-22,3
+28.18,Ashdod,Israel,102,108.82,1,Children,1,1.0,1,CRYSTAL.FORD@sakilacustomer.org,CRYSTAL,FORD,18,2005-07-09,3
+28.25,Sungai Petani,Malaysia,306,90.77,1,Animation,1,0.736,1,CHARLES.KOWALSKI@sakilacustomer.org,CHARLES,KOWALSKI,23,2005-08-20,4
+28.29,San Miguel de Tucumn,Argentina,243,87.81,1,Drama,2,1.0,2,LYDIA.BURKE@sakilacustomer.org,LYDIA,BURKE,19,2005-07-31,3
+28.43,Malm,Sweden,66,94.81,2,,2,0.7368,2,JANICE.WARD@sakilacustomer.org,JANICE,WARD,19,2005-07-07,3
+28.46,Witten,Germany,201,113.79,1,,2,1.0,2,VICKI.FIELDS@sakilacustomer.org,VICKI,FIELDS,21,2005-08-20,3
+28.51,Parbhani,India,300,99.89,1,,1,1.0,1,JOHN.FARNSWORTH@sakilacustomer.org,JOHN,FARNSWORTH,11,2005-08-21,2
+28.6,Sokoto,Nigeria,562,100.85,1,,2,1.0,2,WALLACE.SLONE@sakilacustomer.org,WALLACE,SLONE,15,2005-08-19,2
+28.66,Ourense (Orense),Spain,469,103.74,2,Sci-Fi,1,1.0,1,WESLEY.BULL@sakilacustomer.org,WESLEY,BULL,26,2005-08-01,4
+28.68,Atlixco,Mexico,84,95.79,3,Action,1,1.0,1,SARA.PERRY@sakilacustomer.org,SARA,PERRY,21,2005-07-09,2
+28.69,Wroclaw,Poland,558,98.91,2,Sci-Fi,2,1.0,2,JIMMIE.EGGLESTON@sakilacustomer.org,JIMMIE,EGGLESTON,9,2005-06-21,1
+28.76,Kingstown,Saint Vincent and the Grenadines,326,98.8,1,Action,1,0.8789,1,JOSE.ANDREW@sakilacustomer.org,JOSE,ANDREW,20,2005-07-29,3
+29.02,Mardan,Pakistan,20,101.85,1,Music,1,0.706,1,SHARON.ROBINSON@sakilacustomer.org,SHARON,ROBINSON,15,2005-08-01,2
+29.07,Kamyin,Russian Federation,510,92.87,2,Sports,2,1.0,2,BEN.EASTER@sakilacustomer.org,BEN,EASTER,13,2005-06-21,2
+29.07,So Bernardo do Campo,Brazil,544,89.89,2,,1,1.0,1,CODY.NOLEN@sakilacustomer.org,CODY,NOLEN,11,2005-07-30,2
+29.27,Bellevue,United States,212,127.81,1,New,2,1.0,2,WILMA.RICHARDS@sakilacustomer.org,WILMA,RICHARDS,19,2005-07-08,3
+29.34,San Lorenzo,Paraguay,345,131.88,1,Documentary,1,1.0,1,CARL.ARTIS@sakilacustomer.org,CARL,ARTIS,12,2005-08-21,1
+29.4,Songkhla,Thailand,86,110.85,1,Documentary,2,1.0,2,JACQUELINE.LONG@sakilacustomer.org,JACQUELINE,LONG,15,2005-08-01,3
+29.41,Tychy,Poland,380,109.72,1,Comedy,2,1.0,2,RUSSELL.BRINSON@sakilacustomer.org,RUSSELL,BRINSON,28,2005-07-27,4
+29.43,Touliu,Taiwan,139,90.79,1,Sci-Fi,1,0.8683,1,AMBER.DIXON@sakilacustomer.org,AMBER,DIXON,21,2005-08-22,5
+29.46,Naju,South Korea,237,96.89,2,Foreign,2,1.0,2,TANYA.GILBERT@sakilacustomer.org,TANYA,GILBERT,11,2005-08-02,2
+29.62,Patiala,India,296,96.72,1,Horror,1,0.8145,1,RAMONA.HALE@sakilacustomer.org,RAMONA,HALE,28,2005-08-20,4
+29.63,Tabora,Tanzania,190,138.78,1,Music,2,0.8705,2,YOLANDA.WEAVER@sakilacustomer.org,YOLANDA,WEAVER,22,2005-08-02,4
+29.66,Nha Trang,Vietnam,520,98.83,2,,1,1.0,1,MITCHELL.WESTMORELAND@sakilacustomer.org,MITCHELL,WESTMORELAND,17,2005-08-18,3
+29.69,Owo,Nigeria,280,103.84,1,Sci-Fi,1,0.7114,1,TRACEY.BARRETT@sakilacustomer.org,TRACEY,BARRETT,16,2005-08-19,3
+29.7,Shanwei,China,424,115.84,1,Family,1,0.7415,1,KYLE.SPURLOCK@sakilacustomer.org,KYLE,SPURLOCK,16,2005-07-31,3
+29.74,Warren,United States,276,152.69,1,Children,1,1.0,1,BRANDY.GRAVES@sakilacustomer.org,BRANDY,GRAVES,31,2005-07-30,4
+29.86,Fukuyama,Japan,141,95.78,1,,1,0.7501,1,DEBBIE.REYES@sakilacustomer.org,DEBBIE,REYES,22,2005-08-17,3
+29.9,Valle de la Pascua,Venezuela,290,131.82,1,Animation,2,0.7349,2,KRISTINA.CHAMBERS@sakilacustomer.org,KRISTINA,CHAMBERS,18,2005-06-15,3
+29.93,Batman,Turkey,172,111.74,1,Sci-Fi,1,0.9465,1,BERNICE.WILLIS@sakilacustomer.org,BERNICE,WILLIS,26,2005-07-27,4
+29.93,Jining,China,594,89.82,2,,1,1.0,1,EDUARDO.HIATT@sakilacustomer.org,EDUARDO,HIATT,18,2005-07-07,2
+29.93,San Bernardino,United States,2,108.81,3,Family,1,1.0,1,PATRICIA.JOHNSON@sakilacustomer.org,PATRICIA,JOHNSON,19,2005-07-10,2
+29.93,So Bernardo do Campo,Brazil,544,92.87,1,Comedy,2,0.7313,2,CODY.NOLEN@sakilacustomer.org,CODY,NOLEN,13,2005-08-21,3
+29.94,Gaziantep,Turkey,480,109.81,1,Animation,2,1.0,2,COREY.HAUSER@sakilacustomer.org,COREY,HAUSER,19,2005-08-19,3
+3.96,Arecibo,Puerto Rico,360,24.95,13,,2,1.0,2,RALPH.MADRIGAL@sakilacustomer.org,RALPH,MADRIGAL,5,2005-05-29,1
+3.96,Carmen,Mexico,578,34.95,6,Music,2,1.0,2,WILLARD.LUMPKIN@sakilacustomer.org,WILLARD,LUMPKIN,5,2005-06-16,1
+3.96,El Fuerte,Mexico,451,20.93,16,Drama,2,1.0,2,JIM.REA@sakilacustomer.org,JIM,REA,7,2005-05-27,1
+3.96,Ibirit,Brazil,310,14.97,11,,2,1.0,2,DANIEL.CABRAL@sakilacustomer.org,DANIEL,CABRAL,3,2005-06-14,1
+3.96,Meixian,China,90,20.97,9,New,2,1.0,2,RUBY.WASHINGTON@sakilacustomer.org,RUBY,WASHINGTON,3,2005-06-19,1
+3.96,Paarl,South Africa,338,14.97,17,,2,1.0,2,DENNIS.GILMAN@sakilacustomer.org,DENNIS,GILMAN,3,2005-06-15,1
+3.96,Parbhani,India,300,23.94,13,Sci-Fi,1,1.0,1,JOHN.FARNSWORTH@sakilacustomer.org,JOHN,FARNSWORTH,6,2005-05-29,1
+3.96,Zapopan,Mexico,465,14.95,7,Foreign,1,1.0,1,FLOYD.GANDY@sakilacustomer.org,FLOYD,GANDY,5,2005-06-15,1
+3.98,Halifax,Canada,463,14.95,12,,1,1.0,1,DARRELL.POWER@sakilacustomer.org,DARRELL,POWER,5,2005-06-15,1
+30.01,Lapu-Lapu,Philippines,244,98.81,1,,1,0.7475,1,VIOLA.HANSON@sakilacustomer.org,VIOLA,HANSON,19,2005-07-31,3
+30.05,Johannesburg,South Africa,471,100.8,1,Children,1,0.8517,1,DEAN.SAUER@sakilacustomer.org,DEAN,SAUER,20,2005-08-21,3
+30.11,Carmen,Mexico,578,114.8,1,Children,1,0.7656,1,WILLARD.LUMPKIN@sakilacustomer.org,WILLARD,LUMPKIN,20,2005-08-01,2
+30.24,Shimonoseki,Japan,29,120.89,2,,2,1.0,2,ANGELA.HERNANDEZ@sakilacustomer.org,ANGELA,HERNANDEZ,11,2005-07-09,1
+30.35,Iwatsuki,Japan,396,100.78,1,New,1,0.7028,1,EARL.SHANKS@sakilacustomer.org,EARL,SHANKS,22,2005-08-21,3
+30.41,Omiya,Japan,404,150.71,1,Documentary,2,1.0,2,STANLEY.SCROGGINS@sakilacustomer.org,STANLEY,SCROGGINS,29,2005-08-22,5
+30.57,Nakhon Sawan,Thailand,390,170.61,1,,2,0.7138,2,SHAWN.HEATON@sakilacustomer.org,SHAWN,HEATON,39,2005-08-20,6
+30.69,Talavera,Philippines,505,114.85,1,Animation,2,1.0,2,RAFAEL.ABNEY@sakilacustomer.org,RAFAEL,ABNEY,15,2005-07-11,2
+30.79,Cuernavaca,Mexico,575,115.84,1,Action,2,0.7241,2,ISAAC.OGLESBY@sakilacustomer.org,ISAAC,OGLESBY,16,2005-08-18,3
+30.81,Sumy,Ukraine,187,141.84,1,New,2,0.7183,2,BRITTANY.RILEY@sakilacustomer.org,BRITTANY,RILEY,16,2005-08-18,3
+30.82,Emeishan,China,389,119.86,1,Music,2,0.7501,2,ALAN.KAHN@sakilacustomer.org,ALAN,KAHN,14,2005-08-23,2
+30.83,Mannheim,Germany,196,95.8,2,New,2,1.0,2,ALMA.AUSTIN@sakilacustomer.org,ALMA,AUSTIN,20,2005-07-09,3
+30.85,Maikop,Russian Federation,346,113.79,1,Sci-Fi,2,0.8771,2,ARTHUR.SIMPKINS@sakilacustomer.org,ARTHUR,SIMPKINS,21,2005-07-29,4
+30.92,Yangor,Nauru,513,96.86,2,Horror,2,0.7218,2,DUANE.TUBBS@sakilacustomer.org,DUANE,TUBBS,14,2005-07-29,4
+31.11,Baybay,Philippines,71,124.69,1,Comedy,1,1.0,1,KATHY.JAMES@sakilacustomer.org,KATHY,JAMES,31,2005-07-29,5
+31.22,Ourense (Orense),Spain,469,98.82,3,,1,1.0,1,WESLEY.BULL@sakilacustomer.org,WESLEY,BULL,18,2005-08-23,3
+31.24,Naju,South Korea,237,132.81,1,Classics,2,1.0,2,TANYA.GILBERT@sakilacustomer.org,TANYA,GILBERT,19,2005-08-20,3
+31.36,Lancaster,United States,112,113.84,1,,2,1.0,2,ROSA.REYNOLDS@sakilacustomer.org,ROSA,REYNOLDS,16,2005-08-20,3
+31.4,Uluberia,India,446,127.74,2,Foreign,2,0.7656,2,THEODORE.CULP@sakilacustomer.org,THEODORE,CULP,26,2005-07-29,4
+31.44,Kanchrapara,India,492,163.72,1,Sports,2,0.7991,2,LESTER.KRAUS@sakilacustomer.org,LESTER,KRAUS,28,2005-07-07,3
+31.59,Coacalco de Berriozbal,Mexico,247,152.76,1,Children,1,0.7713,1,STELLA.MORENO@sakilacustomer.org,STELLA,MORENO,24,2005-08-18,3
+31.71,Aden,Yemen,210,97.84,2,,1,1.0,1,ELLA.OLIVER@sakilacustomer.org,ELLA,OLIVER,16,2005-07-08,3
+31.77,Siegen,Germany,195,95.92,1,Family,2,1.0,2,VANESSA.SIMS@sakilacustomer.org,VANESSA,SIMS,8,2005-08-23,1
+31.85,Sivas,Turkey,518,97.86,1,Family,1,1.0,1,GABRIEL.HARDER@sakilacustomer.org,GABRIEL,HARDER,14,2005-08-20,2
+32.04,Belm,Brazil,362,150.78,1,Drama,1,0.7155,1,NICHOLAS.BARFIELD@sakilacustomer.org,NICHOLAS,BARFIELD,22,2005-08-21,4
+32.05,Brockton,United States,149,113.86,1,Sci-Fi,1,1.0,1,VALERIE.BLACK@sakilacustomer.org,VALERIE,BLACK,14,2005-07-09,2
+32.21,Tuguegarao,Philippines,261,119.76,1,Comedy,1,0.75,1,DEANNA.BYRD@sakilacustomer.org,DEANNA,BYRD,24,2005-07-31,3
+32.27,Duisburg,Germany,114,102.89,1,,1,0.8545,1,GRACE.ELLIS@sakilacustomer.org,GRACE,ELLIS,11,2005-07-29,2
+32.31,Arlington,United States,305,121.75,1,Children,2,0.8281,2,RICHARD.MCCRARY@sakilacustomer.org,RICHARD,MCCRARY,25,2005-08-02,3
+32.44,Vila Velha,Brazil,39,169.78,1,Documentary,2,1.0,2,DEBRA.NELSON@sakilacustomer.org,DEBRA,NELSON,22,2005-07-08,3
+32.51,Usak,Turkey,204,109.83,1,Sci-Fi,2,0.7642,2,ROSEMARY.SCHMIDT@sakilacustomer.org,ROSEMARY,SCHMIDT,17,2005-08-22,3
+32.59,Banjul,Gambia,584,104.82,1,Sports,2,1.0,2,SALVADOR.TEEL@sakilacustomer.org,SALVADOR,TEEL,18,2005-08-18,3
+32.64,Sterling Heights,United States,146,118.81,1,,1,1.0,1,JAMIE.RICE@sakilacustomer.org,JAMIE,RICE,19,2005-08-17,3
+32.69,Leshan,China,569,98.83,1,,1,1.0,1,DAVE.GARDINER@sakilacustomer.org,DAVE,GARDINER,17,2005-08-22,2
+32.77,Changzhou,China,197,99.71,2,Games,2,0.7601,2,SUE.PETERS@sakilacustomer.org,SUE,PETERS,29,2005-08-01,4
+32.93,Vancouver,Canada,436,99.78,1,,2,0.7603,2,TROY.QUIGLEY@sakilacustomer.org,TROY,QUIGLEY,22,2005-08-17,3
+33.14,Malm,Sweden,66,110.81,1,,1,0.7297,1,JANICE.WARD@sakilacustomer.org,JANICE,WARD,19,2005-07-11,3
+33.28,Salamanca,Mexico,273,143.79,1,Action,1,1.0,1,PRISCILLA.LOWE@sakilacustomer.org,PRISCILLA,LOWE,21,2005-08-01,3
+33.38,Sal,Morocco,22,108.81,1,Documentary,1,1.0,1,LAURA.RODRIGUEZ@sakilacustomer.org,LAURA,RODRIGUEZ,19,2005-08-23,3
+33.42,Omdurman,Sudan,50,134.82,1,Sci-Fi,2,0.7408,2,DIANE.COLLINS@sakilacustomer.org,DIANE,COLLINS,18,2005-07-10,3
+33.56,El Fuerte,Mexico,451,110.75,2,Animation,2,0.757,2,JIM.REA@sakilacustomer.org,JIM,REA,25,2005-08-02,4
+33.67,Allende,Mexico,414,112.72,1,Foreign,1,0.7344,1,VINCENT.RALSTON@sakilacustomer.org,VINCENT,RALSTON,28,2005-08-19,5
+33.69,Nuuk,Greenland,207,133.78,1,Family,2,1.0,2,GERTRUDE.CASTILLO@sakilacustomer.org,GERTRUDE,CASTILLO,22,2005-08-20,4
+33.72,Effon-Alaiye,Nigeria,286,102.82,1,Comedy,2,0.7573,2,VELMA.LUCAS@sakilacustomer.org,VELMA,LUCAS,18,2005-08-20,2
+33.75,Greensboro,United States,158,146.71,1,Games,1,1.0,1,VERONICA.STONE@sakilacustomer.org,VERONICA,STONE,29,2005-08-23,3
+33.79,Ponce,Puerto Rico,282,110.85,1,Drama,2,0.9732,2,JENNY.CASTRO@sakilacustomer.org,JENNY,CASTRO,15,2005-07-09,2
+33.82,Stockport,United Kingdom,477,117.78,1,,1,0.8223,1,DAN.PAINE@sakilacustomer.org,DAN,PAINE,22,2005-07-29,3
+33.87,Tanza,Philippines,236,118.77,2,Games,1,1.0,1,MARCIA.DEAN@sakilacustomer.org,MARCIA,DEAN,23,2005-08-19,3
+33.92,Molodetno,Belarus,144,119.82,1,Games,2,1.0,2,CLARA.SHAW@sakilacustomer.org,CLARA,SHAW,18,2005-07-09,3
+33.94,Bhilwara,India,209,104.79,2,,1,1.0,1,TONYA.CHAPMAN@sakilacustomer.org,TONYA,CHAPMAN,21,2005-06-19,2
+34.07,Osmaniye,Turkey,13,122.83,1,Family,2,0.7809,2,KAREN.JACKSON@sakilacustomer.org,KAREN,JACKSON,17,2005-07-29,2
+34.26,Apeldoorn,Netherlands,137,106.81,2,Foreign,2,0.7197,2,RHONDA.KENNEDY@sakilacustomer.org,RHONDA,KENNEDY,19,2005-07-30,4
+34.28,Tabriz,Iran,279,122.73,2,,1,0.7807,1,DIANNE.SHELTON@sakilacustomer.org,DIANNE,SHELTON,27,2005-08-19,4
+34.37,Beira,Mozambique,257,103.73,2,Games,2,0.7695,2,MARSHA.DOUGLAS@sakilacustomer.org,MARSHA,DOUGLAS,27,2005-07-27,5
+34.44,Athenai,Greece,3,118.79,1,Family,2,0.748,2,LINDA.WILLIAMS@sakilacustomer.org,LINDA,WILLIAMS,21,2005-07-28,4
+34.71,Asuncin,Paraguay,226,139.69,1,Action,1,0.893,1,MAUREEN.LITTLE@sakilacustomer.org,MAUREEN,LITTLE,31,2005-08-23,4
+34.85,Imus,Philippines,349,112.83,3,,2,0.7346,2,JOE.GILLILAND@sakilacustomer.org,JOE,GILLILAND,17,2005-08-02,3
+35.46,Datong,China,260,106.83,1,,1,0.7201,1,CHRISTY.VARGAS@sakilacustomer.org,CHRISTY,VARGAS,17,2005-06-17,3
+35.48,Tiefa,China,302,129.8,1,Music,1,0.8388,1,MICHAEL.SILVERMAN@sakilacustomer.org,MICHAEL,SILVERMAN,20,2005-07-30,3
+35.52,Aden,Yemen,210,107.88,1,Drama,2,1.0,2,ELLA.OLIVER@sakilacustomer.org,ELLA,OLIVER,12,2005-08-18,1
+35.68,Adoni,India,367,187.8,1,Documentary,1,1.0,1,ADAM.GOOCH@sakilacustomer.org,ADAM,GOOCH,20,2005-08-21,2
+36.22,Santa Brbara dOeste,Brazil,178,118.81,1,,1,1.0,1,MARION.SNYDER@sakilacustomer.org,MARION,SNYDER,19,2005-07-09,3
+38.04,Imus,Philippines,349,146.79,1,,2,1.0,2,JOE.GILLILAND@sakilacustomer.org,JOE,GILLILAND,21,2005-08-21,2
+38.1,Olomouc,Czech Republic,265,117.83,1,Classics,2,0.7459,2,JENNIE.TERRY@sakilacustomer.org,JENNIE,TERRY,17,2005-07-09,2
+38.17,Uruapan,Mexico,454,141.78,1,Classics,2,0.8028,2,ALEX.GRESHAM@sakilacustomer.org,ALEX,GRESHAM,22,2005-08-20,4
+38.24,Sunnyvale,United States,214,121.78,1,Family,2,0.8036,2,KRISTIN.JOHNSTON@sakilacustomer.org,KRISTIN,JOHNSTON,22,2005-08-19,3
+38.41,Hanoi,Vietnam,340,170.63,1,Classics,1,0.8129,1,PATRICK.NEWSOM@sakilacustomer.org,PATRICK,NEWSOM,37,2005-08-01,4
+38.5,Citt del Vaticano,Holy See (Vatican City State),26,127.72,2,Comedy,1,0.9612,1,JESSICA.HALL@sakilacustomer.org,JESSICA,HALL,28,2005-07-07,5
+38.89,Dhaka,Bangladesh,332,159.73,1,Horror,2,1.0,2,STEPHEN.QUALLS@sakilacustomer.org,STEPHEN,QUALLS,27,2005-07-27,4
+39.17,Pontianak,Indonesia,506,167.79,1,Sci-Fi,2,1.0,2,LESLIE.SEWARD@sakilacustomer.org,LESLIE,SEWARD,21,2005-07-08,3
+39.5,Robamba,Ecuador,494,133.82,2,Sports,2,0.9553,2,RAMON.CHOATE@sakilacustomer.org,RAMON,CHOATE,18,2005-07-31,3
+39.54,Mukateve,Ukraine,131,147.82,1,,1,1.0,1,MONICA.HICKS@sakilacustomer.org,MONICA,HICKS,18,2005-07-29,2
+4.21,Santo Andr,Brazil,354,34.93,9,Classics,1,1.0,1,JUSTIN.NGO@sakilacustomer.org,JUSTIN,NGO,7,2005-06-18,1
+4.46,Arak,Iran,36,49.9,4,,2,1.0,2,KATHLEEN.ADAMS@sakilacustomer.org,KATHLEEN,ADAMS,10,2005-07-08,2
+4.95,A Corua (La Corua),Spain,52,24.95,9,,1,1.0,1,JULIE.SANCHEZ@sakilacustomer.org,JULIE,SANCHEZ,5,2005-06-15,1
+4.95,Adoni,India,367,17.94,11,,1,1.0,1,ADAM.GOOCH@sakilacustomer.org,ADAM,GOOCH,6,2005-05-31,1
+4.95,Akishima,Japan,574,46.83,5,Sports,2,0.7675,2,JULIAN.VEST@sakilacustomer.org,JULIAN,VEST,17,2005-06-16,3
+4.95,Basel,Switzerland,61,33.92,3,,1,0.7067,1,KATHERINE.RIVERA@sakilacustomer.org,KATHERINE,RIVERA,8,2005-07-27,2
+4.95,Blumenau,Brazil,206,47.92,7,,2,1.0,2,TERRI.VASQUEZ@sakilacustomer.org,TERRI,VASQUEZ,8,2005-06-18,1
+4.95,Citrus Heights,United States,14,49.95,6,,1,1.0,1,BETTY.WHITE@sakilacustomer.org,BETTY,WHITE,5,2005-05-27,1
+4.95,Eskisehir,Turkey,507,19.96,14,,2,1.0,2,EDGAR.RHOADS@sakilacustomer.org,EDGAR,RHOADS,4,2005-05-29,1
+4.95,Hoshiarpur,India,412,24.95,8,Music,1,1.0,1,ALLEN.BUTTERFIELD@sakilacustomer.org,ALLEN,BUTTERFIELD,5,2005-05-27,1
+4.95,Hsichuh,Taiwan,348,14.95,14,Sci-Fi,1,1.0,1,ROGER.QUINTANILLA@sakilacustomer.org,ROGER,QUINTANILLA,5,2005-06-16,1
+4.95,Huejutla de Reyes,Mexico,582,20.93,11,,1,1.0,1,ANDY.VANHORN@sakilacustomer.org,ANDY,VANHORN,7,2005-06-16,1
+4.95,Jakarta,Indonesia,153,92.83,1,,1,1.0,1,SUZANNE.NICHOLS@sakilacustomer.org,SUZANNE,NICHOLS,17,2005-06-20,2
+4.95,Jinchang,China,168,29.94,9,,1,1.0,1,REGINA.BERRY@sakilacustomer.org,REGINA,BERRY,6,2005-05-28,1
+4.95,Konotop,Ukraine,545,19.95,8,,2,1.0,2,JULIO.NOLAND@sakilacustomer.org,JULIO,NOLAND,5,2005-05-29,1
+4.95,Ktahya,Turkey,124,87.82,1,Children,2,1.0,2,SHEILA.WELLS@sakilacustomer.org,SHEILA,WELLS,18,2005-05-31,3
+4.95,Nam Dinh,Vietnam,472,17.94,16,Games,2,1.0,2,GREG.ROBINS@sakilacustomer.org,GREG,ROBINS,6,2005-05-26,1
+4.95,Namibe,Angola,383,44.95,3,,1,1.0,1,MARTIN.BALES@sakilacustomer.org,MARTIN,BALES,5,2005-05-29,1
+4.95,Nantou,Taiwan,5,39.9,5,,1,1.0,1,ELIZABETH.BROWN@sakilacustomer.org,ELIZABETH,BROWN,10,2005-05-31,2
+4.95,Nanyang,China,37,29.9,9,,1,1.0,1,PAMELA.BAKER@sakilacustomer.org,PAMELA,BAKER,10,2005-05-30,1
+4.95,San Lorenzo,Paraguay,345,39.84,7,Action,1,0.7515,1,CARL.ARTIS@sakilacustomer.org,CARL,ARTIS,16,2005-06-15,2
+4.95,Soshanguve,South Africa,145,29.94,8,,2,1.0,2,LUCILLE.HOLMES@sakilacustomer.org,LUCILLE,HOLMES,6,2005-06-18,1
+4.95,Southport,United Kingdom,556,29.95,7,Comedy,2,1.0,2,ARMANDO.GRUBER@sakilacustomer.org,ARMANDO,GRUBER,5,2005-05-29,1
+4.95,Yingkou,China,521,28.87,8,Games,2,1.0,2,ROLAND.SOUTH@sakilacustomer.org,ROLAND,SOUTH,13,2005-07-07,2
+4.99,Roanoke,United States,291,24.95,6,Foreign,2,1.0,2,TONI.HOLT@sakilacustomer.org,TONI,HOLT,5,2005-05-29,1
+40.91,Blumenau,Brazil,206,123.82,1,,2,0.7179,2,TERRI.VASQUEZ@sakilacustomer.org,TERRI,VASQUEZ,18,2005-08-19,3
+41.78,Atlixco,Mexico,84,129.71,2,Children,2,0.7925,2,SARA.PERRY@sakilacustomer.org,SARA,PERRY,29,2005-08-02,4
+42.6,Halisahar,India,259,128.78,1,Classics,1,0.9845,1,LENA.JENSEN@sakilacustomer.org,LENA,JENSEN,22,2005-08-23,3
+42.9,Robamba,Ecuador,494,150.78,1,,2,0.7616,2,RAMON.CHOATE@sakilacustomer.org,RAMON,CHOATE,22,2005-08-22,4
+44.91,Funafuti,Tuvalu,105,185.67,1,Documentary,2,1.0,2,DAWN.SULLIVAN@sakilacustomer.org,DAWN,SULLIVAN,33,2005-07-30,4
+45.8,Usolje-Sibirskoje,Russian Federation,462,143.72,1,Comedy,1,0.9168,1,WARREN.SHERROD@sakilacustomer.org,WARREN,SHERROD,28,2005-07-28,4
+48.18,Santa Rosa,Philippines,522,196.64,1,Animation,1,0.7562,1,ARNOLD.HAVENS@sakilacustomer.org,ARNOLD,HAVENS,36,2005-07-30,5
+5.28,Kurgan,Russian Federation,376,17.94,12,Games,2,1.0,2,RANDY.GAITHER@sakilacustomer.org,RANDY,GAITHER,6,2005-07-06,1
+5.45,Benguela,Angola,528,53.91,3,Horror,1,1.0,1,CLAUDE.HERZOG@sakilacustomer.org,CLAUDE,HERZOG,9,2005-05-28,1
+5.45,Iligan,Philippines,580,17.91,13,,2,1.0,2,ROSS.GREY@sakilacustomer.org,ROSS,GREY,9,2005-07-06,2
+5.45,Urawa,Japan,147,62.85,4,Comedy,1,1.0,1,JOANNE.ROBERTSON@sakilacustomer.org,JOANNE,ROBERTSON,15,2005-06-18,2
+5.94,Ahmadnagar,India,297,27.93,11,,1,1.0,1,SHERRI.RHODES@sakilacustomer.org,SHERRI,RHODES,7,2005-05-30,1
+5.94,Benin City,Nigeria,284,20.97,11,Games,1,1.0,1,SONIA.GREGORY@sakilacustomer.org,SONIA,GREGORY,3,2005-05-31,1
+5.94,Gorontalo,Indonesia,203,19.96,10,,1,1.0,1,TARA.RYAN@sakilacustomer.org,TARA,RYAN,4,2005-06-15,1
+5.94,Haining,China,552,19.96,11,,2,1.0,2,HUGH.WALDROP@sakilacustomer.org,HUGH,WALDROP,4,2005-06-21,1
+5.94,Purwakarta,Indonesia,524,29.94,6,,1,1.0,1,JARED.ELY@sakilacustomer.org,JARED,ELY,6,2005-05-30,1
+5.94,Shubra al-Khayma,Egypt,119,17.97,17,,1,1.0,1,SHERRY.MARSHALL@sakilacustomer.org,SHERRY,MARSHALL,3,2005-05-26,1
+5.94,Tonghae,South Korea,536,34.95,9,Family,1,1.0,1,FERNANDO.CHURCHILL@sakilacustomer.org,FERNANDO,CHURCHILL,5,2005-05-30,1
+5.98,Apeldoorn,Netherlands,137,34.95,13,Foreign,1,1.0,1,RHONDA.KENNEDY@sakilacustomer.org,RHONDA,KENNEDY,5,2005-06-18,1
+5.98,Avellaneda,Argentina,560,39.92,7,,1,1.0,1,JORDAN.ARCHULETA@sakilacustomer.org,JORDAN,ARCHULETA,8,2005-06-15,1
+52.29,Saint-Denis,Runion,148,200.68,1,Drama,2,1.0,2,ELEANOR.HUNT@sakilacustomer.org,ELEANOR,HUNT,32,2005-08-22,4
+6.44,Luzinia,Brazil,183,43.88,4,Sports,2,1.0,2,IDA.ANDREWS@sakilacustomer.org,IDA,ANDREWS,12,2005-06-18,2
+6.44,Nuuk,Greenland,207,62.91,4,,2,1.0,2,GERTRUDE.CASTILLO@sakilacustomer.org,GERTRUDE,CASTILLO,9,2005-05-29,1
+6.47,Salinas,United States,269,20.97,14,,2,1.0,2,CASSANDRA.WALTERS@sakilacustomer.org,CASSANDRA,WALTERS,3,2005-05-28,1
+6.49,Okayama,Japan,489,19.95,10,,2,1.0,2,RICARDO.MEADOR@sakilacustomer.org,RICARDO,MEADOR,5,2005-06-16,1
+6.93,Laohekou,China,422,24.91,11,Drama,1,1.0,1,MELVIN.ELLINGTON@sakilacustomer.org,MELVIN,ELLINGTON,9,2005-06-17,2
+6.93,Lima,Peru,122,24.95,13,Children,2,1.0,2,THELMA.MURRAY@sakilacustomer.org,THELMA,MURRAY,5,2005-05-31,1
+6.93,Naju,South Korea,237,24.95,10,,1,1.0,1,TANYA.GILBERT@sakilacustomer.org,TANYA,GILBERT,5,2005-05-26,1
+6.93,Sharja,United Arab Emirates,292,39.9,7,Animation,1,1.0,1,MISTY.LAMBERT@sakilacustomer.org,MISTY,LAMBERT,10,2005-06-17,1
+6.93,Springs,South Africa,83,30.85,9,Animation,2,1.0,2,LOUISE.JENKINS@sakilacustomer.org,LOUISE,JENKINS,15,2005-05-30,2
+6.93,Yantai,China,272,27.96,6,,1,1.0,1,KAY.CALDWELL@sakilacustomer.org,KAY,CALDWELL,4,2005-05-27,1
+6.97,Tabriz,Iran,279,39.92,9,,1,1.0,1,DIANNE.SHELTON@sakilacustomer.org,DIANNE,SHELTON,8,2005-06-17,1
+7.46,La Plata,Argentina,89,23.96,12,,1,1.0,1,JULIA.FLORES@sakilacustomer.org,JULIA,FLORES,4,2005-05-29,1
+7.47,Changzhou,China,197,23.92,15,,1,1.0,1,SUE.PETERS@sakilacustomer.org,SUE,PETERS,8,2005-05-27,1
+7.48,Vijayawada,India,508,24.95,11,,2,1.0,2,MILTON.HOWLAND@sakilacustomer.org,MILTON,HOWLAND,5,2005-06-16,1
+7.92,Olomouc,Czech Republic,265,71.91,3,Horror,2,1.0,2,JENNIE.TERRY@sakilacustomer.org,JENNIE,TERRY,9,2005-06-17,1
+7.92,Purnea (Purnia),India,426,106.86,1,,1,1.0,1,BRADLEY.MOTLEY@sakilacustomer.org,BRADLEY,MOTLEY,14,2005-06-16,2
+7.92,Santa F,Argentina,331,23.92,10,,1,1.0,1,ERIC.ROBERT@sakilacustomer.org,ERIC,ROBERT,8,2005-05-31,1
+7.95,NDjamna,Chad,535,27.93,9,Horror,1,1.0,1,JAVIER.ELROD@sakilacustomer.org,JAVIER,ELROD,7,2005-05-29,1
+7.96,Shimonoseki,Japan,29,92.7,4,,1,0.8387,1,ANGELA.HERNANDEZ@sakilacustomer.org,ANGELA,HERNANDEZ,30,2005-06-19,5
+7.98,Jaffna,Sri Lanka,408,29.95,8,Drama,2,1.0,2,MANUEL.MURRELL@sakilacustomer.org,MANUEL,MURRELL,5,2005-05-25,1
+7.98,al-Ayn,United Arab Emirates,98,23.94,11,,1,1.0,1,LILLIAN.GRIFFIN@sakilacustomer.org,LILLIAN,GRIFFIN,6,2005-06-15,1
+8.28,Hsichuh,Taiwan,348,71.92,5,Drama,1,1.0,1,ROGER.QUINTANILLA@sakilacustomer.org,ROGER,QUINTANILLA,8,2005-06-17,1
+8.3,Ibirit,Brazil,310,79.86,2,Documentary,2,1.0,2,DANIEL.CABRAL@sakilacustomer.org,DANIEL,CABRAL,14,2005-06-17,2
+8.36,Mogiljov,Belarus,527,69.82,2,Drama,2,0.7859,2,CORY.MEEHAN@sakilacustomer.org,CORY,MEEHAN,18,2005-07-11,3
+8.46,Kisumu,Kenya,193,39.92,7,,1,1.0,1,KATIE.ELLIOTT@sakilacustomer.org,KATIE,ELLIOTT,8,2005-06-15,1
+8.91,al-Qadarif,Sudan,395,44.91,3,,1,1.0,1,JOHNNY.TURPIN@sakilacustomer.org,JOHNNY,TURPIN,9,2005-06-20,1
+8.94,Bellevue,United States,212,69.93,2,,2,1.0,2,WILMA.RICHARDS@sakilacustomer.org,WILMA,RICHARDS,7,2005-06-19,1
+8.95,Taizz,Yemen,213,32.92,8,,1,1.0,1,GINA.WILLIAMSON@sakilacustomer.org,GINA,WILLIAMSON,8,2005-06-18,2
+8.97,Bhopal,India,15,28.91,13,,1,0.8288,1,HELEN.HARRIS@sakilacustomer.org,HELEN,HARRIS,9,2005-06-20,2
+8.97,Donostia-San Sebastin,Spain,293,53.94,6,Family,2,1.0,2,MAE.FLETCHER@sakilacustomer.org,MAE,FLETCHER,6,2005-05-31,1
+8.97,Fukuyama,Japan,141,47.94,6,Family,2,1.0,2,DEBBIE.REYES@sakilacustomer.org,DEBBIE,REYES,6,2005-06-15,1
+8.97,Johannesburg,South Africa,471,49.88,4,,1,0.7003,1,DEAN.SAUER@sakilacustomer.org,DEAN,SAUER,12,2005-06-15,2
+8.97,Siliguri (Shiliguri),India,502,36.79,11,Travel,1,0.8116,1,BRETT.CORNWELL@sakilacustomer.org,BRETT,CORNWELL,21,2005-05-30,3
+9.09,El Alto,Bolivia,455,89.86,1,,1,1.0,1,JON.WILES@sakilacustomer.org,JON,WILES,14,2005-07-08,2
+9.2,Gandhinagar,India,117,28.91,4,,2,0.8288,2,EDITH.MCDONALD@sakilacustomer.org,EDITH,MCDONALD,9,2005-07-10,2
+9.3,Tarsus,Turkey,164,80.91,1,Horror,1,1.0,1,JOANN.GARDNER@sakilacustomer.org,JOANN,GARDNER,9,2005-06-20,1
+9.45,Bamenda,Cameroon,352,79.84,2,Animation,1,1.0,1,ALBERT.CROUSE@sakilacustomer.org,ALBERT,CROUSE,16,2005-06-16,3
+9.45,Benin City,Nigeria,284,34.95,8,Action,2,1.0,2,SONIA.GREGORY@sakilacustomer.org,SONIA,GREGORY,5,2005-06-19,1
+9.46,Zapopan,Mexico,465,113.86,1,New,1,1.0,1,FLOYD.GANDY@sakilacustomer.org,FLOYD,GANDY,14,2005-06-17,2
+9.47,Halifax,Canada,463,29.94,7,,2,1.0,2,DARRELL.POWER@sakilacustomer.org,DARRELL,POWER,6,2005-06-19,1
+9.47,Paarl,South Africa,338,41.93,5,,1,1.0,1,DENNIS.GILMAN@sakilacustomer.org,DENNIS,GILMAN,7,2005-06-16,1
+9.47,Tabuk,Saudi Arabia,312,45.92,4,Horror,2,1.0,2,MARK.RINEHART@sakilacustomer.org,MARK,RINEHART,8,2005-05-31,2
+9.71,Klerksdorp,South Africa,109,100.79,1,Classics,1,1.0,1,EDNA.WEST@sakilacustomer.org,EDNA,WEST,21,2005-05-31,3
+9.71,Nam Dinh,Vietnam,472,29.94,10,,1,1.0,1,GREG.ROBINS@sakilacustomer.org,GREG,ROBINS,6,2005-06-15,1
+9.77,Allappuzha (Alleppey),India,175,31.96,5,,2,1.0,2,ANNETTE.OLSON@sakilacustomer.org,ANNETTE,OLSON,4,2005-07-12,1
+9.9,Kimchon,South Korea,99,34.93,6,Games,1,1.0,1,EMILY.DIAZ@sakilacustomer.org,EMILY,DIAZ,7,2005-06-17,1
+9.9,Kirovo-Tepetsk,Russian Federation,179,41.94,9,New,1,1.0,1,DANA.HART@sakilacustomer.org,DANA,HART,6,2005-05-29,1
+9.94,Adoni,India,367,35.96,6,,1,1.0,1,ADAM.GOOCH@sakilacustomer.org,ADAM,GOOCH,4,2005-07-07,1
+9.95,Ponce,Puerto Rico,282,62.91,3,Action,2,1.0,2,JENNY.CASTRO@sakilacustomer.org,JENNY,CASTRO,9,2005-05-26,1
+9.96,Korolev,Russian Federation,393,41.94,7,,1,1.0,1,PHILIP.CAUSEY@sakilacustomer.org,PHILIP,CAUSEY,6,2005-06-16,1
+9.96,Valencia,Venezuela,539,54.82,4,Travel,2,0.8736,2,MATHEW.BOLIN@sakilacustomer.org,MATHEW,BOLIN,18,2005-06-15,3
+9.98,Izumisano,Japan,391,59.87,4,,1,1.0,1,CLARENCE.GAMEZ@sakilacustomer.org,CLARENCE,GAMEZ,13,2005-05-26,2
+9.98,Maikop,Russian Federation,346,29.95,10,,1,1.0,1,ARTHUR.SIMPKINS@sakilacustomer.org,ARTHUR,SIMPKINS,5,2005-06-17,1

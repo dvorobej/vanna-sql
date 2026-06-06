@@ -162,7 +162,7 @@ def generate_sql_scripts_and_results(
 
             result = _normalize_result(result)
             query_uuid = row["uuid"]
-            (scripts_dir / f"{query_uuid}.txt").write_text(sql, encoding="utf-8")
+            (scripts_dir / f"{query_uuid}.sql").write_text(sql, encoding="utf-8")
             result.to_csv(results_dir / f"{query_uuid}.csv", index=False)
             counters["saved"] += 1
 
