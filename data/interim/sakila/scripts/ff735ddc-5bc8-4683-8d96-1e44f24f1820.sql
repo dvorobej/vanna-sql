@@ -1,0 +1,11 @@
+SELECT
+  p01,
+  p02,
+  p03,
+  p05,
+  p06
+FROM pay
+WHERE p06 >= '2005-07-01'
+  AND p06 < '2005-08-01'
+ORDER BY p05 DESC
+LIMIT 20;

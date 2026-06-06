@@ -1,0 +1,203 @@
+DDL script for table btm_cst
+-- table: btm_cst
+-- source_table: BANK_CUST
+-- description: Таблица измерения клиентов; ключ соединения с таблицами счетов хранится в поле c01.
+-- columns:
+--   c01: Целочисленный идентификатор клиента; используется как внешний ключ в a01 и s01.  # source: customer_id
+--   c02: Текстовое имя клиента без фамилии; пример значения: Oliver.  # source: customer_name
+--   c03: Текстовый адрес клиента, обычно строка с номером дома и городом.  # source: Address
+--   c04: Трехсимвольный региональный код; типовые значения: CA, MN, NY, SFO.  # source: state_code
+--   c05: Телефон в виде строки из цифр, чтобы сохранять ведущие нули и формат исходной системы.  # source: Telephone
+CREATE TABLE btm_cst (
+    c01 INTEGER,
+    c02 TEXT,
+    c03 TEXT,
+    c04 TEXT,
+    c05 TEXT
+);
+
+Output of the first 5 rows of table btm_cst
+c01,c02,c03,c04,c05
+123001,Oliver,"200-1, Emeryville",CA,1897614000
+123002,George,"201-2, New Brighton",MN,1897614137
+123003,Harry,"202-3, Walnut Creek",NY,1897614274
+123004,Jack,"203-4, Concord",TX,1897614411
+123005,Jacob,"204-5, Mission Dist",WA,1897614548
+
+DDL script for table btm_cex
+-- table: btm_cex
+-- source_table: BANK_CUSTOMER_EXPORT
+-- description: Таблица контрольной выгрузки клиентов с текстовыми типами, близкая по структуре к btm_cst.
+-- columns:
+--   x01: Идентификатор клиента в текстовом формате; логически соответствует btm_cst.c01.  # source: customer_id
+--   x02: Имя клиента из экспортной системы.  # source: customer_name
+--   x03: Адрес клиента из экспортной системы.  # source: Address
+--   x04: Код штата или региона из экспортной системы.  # source: state_code
+--   x05: Телефон клиента из экспортной системы.  # source: Telephone
+CREATE TABLE btm_cex (
+    x01 TEXT,
+    x02 TEXT,
+    x03 TEXT,
+    x04 TEXT,
+    x05 TEXT
+);
+
+Output of the first 5 rows of table btm_cex
+x01,x02,x03,x04,x05
+123001,Oliver,"200-1, Emeryville",CA,1897614000
+123002,George,"201-2, New Brighton",MN,1897614137
+123003,Harry,"202-3, Walnut Creek",NY,1897614274
+123004,Jack,"203-4, Concord",TX,1897614411
+123005,Jacob,"204-5, Mission Dist",WA,1897614548
+
+DDL script for table btm_accd
+-- table: btm_accd
+-- source_table: BANK_ACC_DELS
+-- description: Таблица деталей счетов; основной ключ для соединения с транзакциями находится в a02.
+-- columns:
+--   a01: Идентификатор клиента; может соединяться с btm_cst.c01.  # source: customer_id
+--   a02: Номер счета или карты как TEXT; соединяется с btm_trn.t01 и btm_rel.r02.  # source: Account_number
+--   a03: Категория продукта; примеры: SAVINGS, RECURRING DEPOSITS, Credit Card.  # source: Account_type
+--   a04: Числовой остаток по счету; для карточных продуктов часто равен 0.  # source: Balance_amount
+--   a05: Статус записи счета; ожидаемые значения ACTIVE или INACTIVE.  # source: Account_status
+--   a06: Однобуквенный тип отношения: P означает основной, S означает вторичный.  # source: Relationship_type
+CREATE TABLE btm_accd (
+    a01 INTEGER,
+    a02 TEXT,
+    a03 TEXT,
+    a04 INTEGER,
+    a05 TEXT,
+    a06 TEXT
+);
+
+Output of the first 5 rows of table btm_accd
+a01,a02,a03,a04,a05,a06
+123001,4000-1900-3000,SAVINGS,200000,INACTIVE,P
+123001,5000-1700-5000,RECURRING DEPOSITS,5000000,ACTIVE,S
+123001,9000-1700-7000-4300,Credit Card,0,INACTIVE,P
+123002,4000-1901-3001,SAVINGS,207500,ACTIVE,P
+123002,5000-1701-5001,RECURRING DEPOSITS,5065000,ACTIVE,S
+
+DDL script for table btm_accs
+-- table: btm_accs
+-- source_table: BANK_ACCOU
+-- description: Аналитическая копия счетов с похожими полями на btm_accd, но отдельным источником из ноутбука.
+-- columns:
+--   s01: Идентификатор клиента для соединения с btm_cst.c01.  # source: Customer_id
+--   s02: Номер счета для соединения с btm_trn.t01.  # source: Account_Number
+--   s03: Тип продукта; возможны варианты регистра для кредитных карт.  # source: Account_type
+--   s04: Остаток по счету; допускается NULL для отдельных счетов.  # source: Balance_amount
+--   s05: Статус счета: ACTIVE или INACTIVE.  # source: Account_status
+--   s06: Признак роли клиента по счету: P или S.  # source: Relation_ship
+CREATE TABLE btm_accs (
+    s01 INTEGER,
+    s02 TEXT,
+    s03 TEXT,
+    s04 INTEGER,
+    s05 TEXT,
+    s06 TEXT
+);
+
+Output of the first 5 rows of table btm_accs
+s01,s02,s03,s04,s05,s06
+123001,4000-1900-3000,SAVINGS,200000,INACTIVE,P
+123001,5000-1700-5000,RECURRING DEPOSITS,5000000,ACTIVE,S
+123001,9000-1700-7000-4300,CREDITCARD,0,INACTIVE,P
+123002,4000-1901-3001,SAVINGS,207500,ACTIVE,P
+123002,5000-1701-5001,RECURRING DEPOSITS,5065000,ACTIVE,S
+
+DDL script for table btm_rel
+-- table: btm_rel
+-- source_table: Bank_Account_Relationship_Details
+-- description: Таблица отношений счетов, где r02 указывает связанный счет, а r04 указывает родительский счет.
+-- columns:
+--   r01: Идентификатор клиента; допускается NULL для связей по картам без прямого клиента.  # source: Customer_id
+--   r02: Номер связанного счета или карты.  # source: Account_Number
+--   r03: Тип связанного продукта.  # source: Account_type
+--   r04: Номер родительского счета; пустая строка означает отсутствие родителя.  # source: Linking_Account_Number
+CREATE TABLE btm_rel (
+    r01 INTEGER,
+    r02 TEXT,
+    r03 TEXT,
+    r04 TEXT
+);
+
+Output of the first 5 rows of table btm_rel
+r01,r02,r03,r04
+123001,4000-1900-3000,SAVINGS,
+123001,5000-1700-5000,RECURRING DEPOSITS,4000-1900-3000
+,9000-1700-7000-4300,Credit Card,4000-1900-3000
+123002,4000-1901-3001,SAVINGS,
+123002,5000-1701-5001,RECURRING DEPOSITS,4000-1901-3001
+
+DDL script for table btm_trn
+-- table: btm_trn
+-- source_table: BANK_ACC_TRAN
+-- description: Таблица фактов транзакций; одна строка соответствует одной операции по счету.
+-- columns:
+--   t01: Номер счета операции; внешний ключ по смыслу к a02 или s02.  # source: Account_Number
+--   t02: Сумма REAL; отрицательные значения обозначают расход, положительные обозначают приход.  # source: Transaction_amount
+--   t03: Канал операции; примеры: ATM withdrawal, POS-Walmart, ECS transfer.  # source: Transaction_channel
+--   t04: Код региона операции; используется для фильтрации по географии.  # source: Province
+--   t05: Дата операции как ISO-строка YYYY-MM-DD, удобная для BETWEEN в SQLite.  # source: Transaction_Date
+CREATE TABLE btm_trn (
+    t01 TEXT,
+    t02 REAL,
+    t03 TEXT,
+    t04 TEXT,
+    t05 TEXT
+);
+
+Output of the first 5 rows of table btm_trn
+t01,t02,t03,t04,t05
+4000-1900-3000,-1000.0,ATM withdrawal,NY,2020-01-05
+5000-1700-5000,-2500.0,POS-Walmart,TX,2020-01-10
+9000-1700-7000-4300,-4000.0,UPI transfer,WA,2020-01-15
+4000-1901-3001,-5500.0,Bankers cheque,IL,2020-01-20
+5000-1701-5001,7000.0,Net banking,AZ,2020-01-25
+
+DDL script for table btm_msg
+-- table: btm_msg
+-- source_table: BANK_CUSTOMER_MSG
+-- description: Малый справочник сообщений, соединяется с запросами по событию, а не по внешнему ключу.
+-- columns:
+--   m01: Код или название события уведомления, например Adhoc или Transaction Limit.  # source: Event
+--   m02: Полный текст сообщения, выводимый клиенту.  # source: Customer_message
+--   m03: Канал доставки; примеры: mobile, email, sms, letter.  # source: Notice_delivery_mode
+CREATE TABLE btm_msg (
+    m01 TEXT,
+    m02 TEXT,
+    m03 TEXT
+);
+
+Output of the first 5 rows of table btm_msg
+m01,m02,m03
+Adhoc,All bank branches are closed due to a national strike announcement #1,mobile
+Transaction Limit,Only limited withdrawals per card are allowed from ATM machines #2,mobile
+Card Security,Confirm recent card activity if the transaction was not yours #3,sms
+Balance Alert,Your account balance crossed the configured monitoring threshold #4,email
+Rate Update,Interest rate has been updated for selected deposit products #5,email
+
+DDL script for table btm_rate
+-- table: btm_rate
+-- source_table: BANK_INTEREST_RATE
+-- description: Справочник ставок с периодом действия, тип продукта находится в i01.
+-- columns:
+--   i01: Тип счета или продукта, к которому относится ставка.  # source: account_type
+--   i02: Ставка REAL в долях единицы; 0.07 соответствует 7%.  # source: interest_rate
+--   i03: Месяц действия ставки двумя цифрами.  # source: month
+--   i04: Год действия ставки четырьмя цифрами.  # source: year
+CREATE TABLE btm_rate (
+    i01 TEXT,
+    i02 REAL,
+    i03 TEXT,
+    i04 TEXT
+);
+
+Output of the first 5 rows of table btm_rate
+i01,i02,i03,i04
+SAVINGS,0.036,01,2020
+RECURRING DEPOSITS,0.051,01,2020
+PRIVILEGED_INTEREST_RATE,0.066,01,2020
+Credit Card,0.081,01,2020
+SAVINGS,0.037,02,2020

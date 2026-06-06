@@ -1,3 +1,0 @@
-1. Function rewrite_query_descriptions_csv need to be changed, 
-so that it receives not just style, but also a respecting schema in that style, from what I see now, descriptions of queries are too similar.
-2. The same goes to generate_related_query_descriptions_csv. We can also think about generating related queries not from just a base query, but also from respecting description (use difference source columns for different styles).

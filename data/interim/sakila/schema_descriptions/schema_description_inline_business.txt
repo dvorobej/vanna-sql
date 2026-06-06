@@ -1,0 +1,309 @@
+DDL script for table act
+CREATE TABLE act ( -- Справочник актёров, участвующих в фильмах. Одна запись — один актёр с уникальным идентификатором, именем и фамилией.
+  a01 numeric NOT NULL, -- Уникальный идентификатор актёра. Используется для связи с фильмами через таблицу film_actor.
+  a02 VARCHAR(45) NOT NULL, -- Имя актёра. Используется в отчётах по фильмам и подборках актёрского состава.
+  a03 VARCHAR(45) NOT NULL, -- Фамилия актёра. Необходима для поиска и сортировки в каталоге актёров.
+  a04 TIMESTAMP NOT NULL, -- Дата и время последнего изменения записи об актёре. Заполняется автоматически триггером.
+  PRIMARY KEY (a01)
+);
+
+Output of the first 5 rows of table act
+a01,a02,a03,a04
+1,PENELOPE,GUINESS,2026-06-06 20:40:00
+2,NICK,WAHLBERG,2026-06-06 20:40:00
+3,ED,CHASE,2026-06-06 20:40:00
+4,JENNIFER,DAVIS,2026-06-06 20:40:00
+5,JOHNNY,LOLLOBRIGIDA,2026-06-06 20:40:00
+
+DDL script for table cnt
+CREATE TABLE cnt ( -- Справочник стран, в которых находятся города и адреса клиентов, магазинов и сотрудников.
+  c01 SMALLINT NOT NULL, -- Уникальный идентификатор страны. Используется для связи с таблицей city.
+  c02 VARCHAR(50) NOT NULL, -- Название страны. Применяется в географических отчётах и адресных формах.
+  c03 TIMESTAMP, -- Дата и время последнего изменения записи о стране. Управляется триггерами.
+  PRIMARY KEY (c01)
+);
+
+Output of the first 5 rows of table cnt
+c01,c02,c03
+1,Afghanistan,2026-06-06 20:40:00
+2,Algeria,2026-06-06 20:40:00
+3,American Samoa,2026-06-06 20:40:00
+4,Angola,2026-06-06 20:40:00
+5,Anguilla,2026-06-06 20:40:00
+
+DDL script for table cty
+CREATE TABLE cty ( -- Справочник городов, привязанных к странам. Используется для построения адресов.
+  d01 int NOT NULL, -- Уникальный идентификатор города. Связывается с таблицей address.
+  d02 VARCHAR(50) NOT NULL, -- Название города. Влияет на региональную аналитику продаж.
+  d03 SMALLINT NOT NULL, -- Идентификатор страны, к которой относится город. Внешний ключ к cnt.
+  d04 TIMESTAMP NOT NULL, -- Время последнего обновления записи о городе. Заполняется автоматически.
+  PRIMARY KEY (d01),
+  CONSTRAINT fk_cty_cnt FOREIGN KEY (d03) REFERENCES cnt (c01) ON DELETE NO ACTION ON UPDATE CASCADE
+);
+
+Output of the first 5 rows of table cty
+d01,d02,d03,d04
+1,A Corua (La Corua),87,2026-06-06 20:40:00
+2,Abha,82,2026-06-06 20:40:00
+3,Abu Dhabi,101,2026-06-06 20:40:00
+4,Acua,60,2026-06-06 20:40:00
+5,Adana,97,2026-06-06 20:40:00
+
+DDL script for table adr
+CREATE TABLE adr ( -- Таблица адресов клиентов, магазинов и сотрудников. Включает улицу, район, телефон и почтовый индекс.
+  e01 int NOT NULL, -- Уникальный идентификатор адреса. Ссылается из таблиц customer, staff, store.
+  e02 VARCHAR(50) NOT NULL, -- Основная строка адреса (улица, дом). Используется в доставке и коммуникациях.
+  e03 VARCHAR(50) DEFAULT NULL, -- Дополнительная строка адреса (корпус, строение). Может быть пустой.
+  e04 VARCHAR(20) NOT NULL, -- Район или округ. Полезен для региональной аналитики.
+  e05 INT NOT NULL, -- Идентификатор города. Внешний ключ к cty.
+  e06 VARCHAR(10) DEFAULT NULL, -- Почтовый индекс. Используется в отчётах и для сверки адресов.
+  e07 VARCHAR(20) NOT NULL, -- Контактный телефон. Необходим для связи с клиентами и сотрудниками.
+  e08 TIMESTAMP NOT NULL, -- Дата последнего изменения адреса. Устанавливается триггерами.
+  PRIMARY KEY (e01),
+  CONSTRAINT fk_adr_cty FOREIGN KEY (e05) REFERENCES cty (d01) ON DELETE NO ACTION ON UPDATE CASCADE
+);
+
+Output of the first 5 rows of table adr
+e01,e02,e03,e04,e05,e06,e07,e08
+1,47 MySakila Drive,, ,300,, ,2026-06-06 20:40:00
+2,28 MySQL Boulevard,, ,576,, ,2026-06-06 20:40:00
+3,23 Workhaven Lane,, ,300,, ,2026-06-06 20:40:00
+4,1411 Lillydale Drive,, ,576,, ,2026-06-06 20:40:00
+5,1913 Hanoi Way,, ,463,35200, ,2026-06-06 20:40:00
+
+DDL script for table lng
+CREATE TABLE lng ( -- Справочник языков, на которых представлены фильмы (например, английский, французский).
+  f01 SMALLINT NOT NULL, -- Уникальный идентификатор языка. Связывается с фильмами в таблице film.
+  f02 CHAR(20) NOT NULL, -- Название языка (до 20 символов). Используется в фильтрации каталога.
+  f03 TIMESTAMP NOT NULL, -- Дата и время последнего обновления записи о языке. Управляется триггерами.
+  PRIMARY KEY (f01)
+);
+
+Output of the first 5 rows of table lng
+f01,f02,f03
+1,English,2026-06-06 20:40:00
+2,Italian,2026-06-06 20:40:00
+3,Japanese,2026-06-06 20:40:00
+4,Mandarin,2026-06-06 20:40:00
+5,French,2026-06-06 20:40:00
+
+DDL script for table cat
+CREATE TABLE cat ( -- Справочник категорий фильмов (например, комедия, ужасы, драма).
+  g01 SMALLINT NOT NULL, -- Уникальный идентификатор категории. Используется в film_category.
+  g02 VARCHAR(25) NOT NULL, -- Название категории. Применяется в аналитике продаж по жанрам.
+  g03 TIMESTAMP NOT NULL, -- Дата последнего изменения категории. Заполняется автоматически.
+  PRIMARY KEY (g01)
+);
+
+Output of the first 5 rows of table cat
+g01,g02,g03
+1,Action,2026-06-06 20:40:00
+2,Animation,2026-06-06 20:40:00
+3,Children,2026-06-06 20:40:00
+4,Classics,2026-06-06 20:40:00
+5,Comedy,2026-06-06 20:40:00
+
+DDL script for table cus
+CREATE TABLE cus ( -- Таблица клиентов проката. Содержит персональные данные, адрес, статус активности.
+  h01 INT NOT NULL, -- Уникальный идентификатор клиента. Основной ключ для связей с rental и payment.
+  h02 INT NOT NULL, -- Идентификатор магазина, к которому привязан клиент. Внешний ключ к store.
+  h03 VARCHAR(45) NOT NULL, -- Имя клиента. Используется в отчётах и уведомлениях.
+  h04 VARCHAR(45) NOT NULL, -- Фамилия клиента. Участвует в поиске и сортировке.
+  h05 VARCHAR(50) DEFAULT NULL, -- Электронная почта клиента. Используется для коммуникаций.
+  h06 INT NOT NULL, -- Идентификатор адреса клиента. Внешний ключ к address.
+  h07 CHAR(1) DEFAULT 'Y' NOT NULL, -- Статус активности клиента: 'Y' — активен, 'N' — неактивен.
+  h08 TIMESTAMP NOT NULL, -- Дата регистрации клиента. Влияет на историю и лояльность.
+  h09 TIMESTAMP NOT NULL, -- Дата последнего обновления записи клиента. Устанавливается триггерами.
+  PRIMARY KEY (h01),
+  CONSTRAINT fk_cus_sto FOREIGN KEY (h02) REFERENCES sto (j01) ON DELETE NO ACTION ON UPDATE CASCADE,
+  CONSTRAINT fk_cus_adr FOREIGN KEY (h06) REFERENCES adr (e01) ON DELETE NO ACTION ON UPDATE CASCADE
+);
+
+Output of the first 5 rows of table cus
+h01,h02,h03,h04,h05,h06,h07,h08,h09
+1,1,MARY,SMITH,MARY.SMITH@sakilacustomer.org,5,1,2006-02-14 22:04:36.000,2026-06-06 20:40:00
+2,1,PATRICIA,JOHNSON,PATRICIA.JOHNSON@sakilacustomer.org,6,1,2006-02-14 22:04:36.000,2026-06-06 20:40:00
+3,1,LINDA,WILLIAMS,LINDA.WILLIAMS@sakilacustomer.org,7,1,2006-02-14 22:04:36.000,2026-06-06 20:40:00
+4,2,BARBARA,JONES,BARBARA.JONES@sakilacustomer.org,8,1,2006-02-14 22:04:36.000,2026-06-06 20:40:00
+5,1,ELIZABETH,BROWN,ELIZABETH.BROWN@sakilacustomer.org,9,1,2006-02-14 22:04:36.000,2026-06-06 20:40:00
+
+DDL script for table flm
+CREATE TABLE flm ( -- Таблица фильмов. Содержит название, описание, язык, продолжительность, рейтинг и особенности.
+  i01 int NOT NULL, -- Уникальный идентификатор фильма. Связывается с inventory, film_actor, film_category.
+  i02 VARCHAR(255) NOT NULL, -- Название фильма. Основное поле для поиска в каталоге.
+  i03 BLOB SUB_TYPE TEXT DEFAULT NULL, -- Описание фильма (текст, может быть длинным).
+  i04 VARCHAR(4) DEFAULT NULL, -- Год выпуска фильма (4 символа).
+  i05 SMALLINT NOT NULL, -- Идентификатор языка фильма. Внешний ключ к language.
+  i06 SMALLINT DEFAULT NULL, -- Идентификатор оригинального языка (если это дубляж или субтитры). Может быть NULL.
+  i07 SMALLINT DEFAULT 3 NOT NULL, -- Длительность аренды в днях (по умолчанию 3).
+  i08 DECIMAL(4,2) DEFAULT 4.99 NOT NULL, -- Стоимость аренды за период (по умолчанию 4.99).
+  i09 SMALLINT DEFAULT NULL, -- Длительность фильма в минутах.
+  i10 DECIMAL(5,2) DEFAULT 19.99 NOT NULL, -- Стоимость замены при утере (по умолчанию 19.99).
+  i11 VARCHAR(10) DEFAULT 'G', -- Рейтинг MPAA: G, PG, PG-13, R, NC-17.
+  i12 VARCHAR(100) DEFAULT NULL, -- Особенности фильма: Trailers, Commentaries, Deleted Scenes, Behind the Scenes.
+  i13 TIMESTAMP NOT NULL, -- Дата последнего обновления фильма. Устанавливается триггерами.
+  PRIMARY KEY (i01),
+  CONSTRAINT CHECK_flm_i12 CHECK(i12 is null OR i12 LIKE '%Trailers%' OR i12 LIKE '%Commentaries%' OR i12 LIKE '%Deleted Scenes%' OR i12 LIKE '%Behind the Scenes%'),
+  CONSTRAINT CHECK_flm_i11 CHECK(i11 IN ('G','PG','PG-13','R','NC-17')),
+  CONSTRAINT fk_flm_lng FOREIGN KEY (i05) REFERENCES lng (f01),
+  CONSTRAINT fk_flm_lng_original FOREIGN KEY (i06) REFERENCES lng (f01)
+);
+
+Output of the first 5 rows of table flm
+i01,i02,i03,i04,i05,i06,i07,i08,i09,i10,i11,i12,i13
+1,ACADEMY DINOSAUR,A Epic Drama of a Feminist And a Mad Scientist who must Battle a Teacher in The Canadian Rockies,2006,1,,6,0.99,86,20.99,PG,"Deleted Scenes,Behind the Scenes",2026-06-06 20:40:00
+2,ACE GOLDFINGER,A Astounding Epistle of a Database Administrator And a Explorer who must Find a Car in Ancient China,2006,1,,3,4.99,48,12.99,G,"Trailers,Deleted Scenes",2026-06-06 20:40:00
+3,ADAPTATION HOLES,A Astounding Reflection of a Lumberjack And a Car who must Sink a Lumberjack in A Baloon Factory,2006,1,,7,2.99,50,18.99,NC-17,"Trailers,Deleted Scenes",2026-06-06 20:40:00
+4,AFFAIR PREJUDICE,A Fanciful Documentary of a Frisbee And a Lumberjack who must Chase a Monkey in A Shark Tank,2006,1,,5,2.99,117,26.99,G,"Commentaries,Behind the Scenes",2026-06-06 20:40:00
+5,AFRICAN EGG,A Fast-Paced Documentary of a Pastry Chef And a Dentist who must Pursue a Forensic Psychologist in The Gulf of Mexico,2006,1,,6,2.99,130,22.99,G,Deleted Scenes,2026-06-06 20:40:00
+
+DDL script for table fla
+CREATE TABLE fla ( -- Связующая таблица между актёрами и фильмами (many-to-many).
+  k01 INT NOT NULL, -- Идентификатор актёра. Внешний ключ к actor.
+  k02 INT NOT NULL, -- Идентификатор фильма. Внешний ключ к film.
+  k03 TIMESTAMP NOT NULL, -- Дата последнего обновления связи. Триггерная.
+  PRIMARY KEY (k01, k02),
+  CONSTRAINT fk_fla_act FOREIGN KEY (k01) REFERENCES act (a01) ON DELETE NO ACTION ON UPDATE CASCADE,
+  CONSTRAINT fk_fla_flm FOREIGN KEY (k02) REFERENCES flm (i01) ON DELETE NO ACTION ON UPDATE CASCADE
+);
+
+Output of the first 5 rows of table fla
+k01,k02,k03
+1,1,2026-06-06 20:40:00
+1,23,2026-06-06 20:40:00
+1,25,2026-06-06 20:40:00
+1,106,2026-06-06 20:40:00
+1,140,2026-06-06 20:40:00
+
+DDL script for table flc
+CREATE TABLE flc ( -- Связующая таблица между фильмами и категориями (many-to-many).
+  l01 INT NOT NULL, -- Идентификатор фильма. Внешний ключ к film.
+  l02 SMALLINT NOT NULL, -- Идентификатор категории. Внешний ключ к category.
+  l03 TIMESTAMP NOT NULL, -- Дата последнего обновления связи.
+  PRIMARY KEY (l01, l02),
+  CONSTRAINT fk_flc_flm FOREIGN KEY (l01) REFERENCES flm (i01) ON DELETE NO ACTION ON UPDATE CASCADE,
+  CONSTRAINT fk_flc_cat FOREIGN KEY (l02) REFERENCES cat (g01) ON DELETE NO ACTION ON UPDATE CASCADE
+);
+
+Output of the first 5 rows of table flc
+l01,l02,l03
+1,6,2026-06-06 20:40:00
+2,11,2026-06-06 20:40:00
+3,6,2026-06-06 20:40:00
+4,11,2026-06-06 20:40:00
+5,8,2026-06-06 20:40:00
+
+DDL script for table flt
+CREATE TABLE flt ( -- Текстовая таблица для полнотекстового поиска по фильмам (film_text).
+  m01 SMALLINT NOT NULL, -- Идентификатор фильма (связь с film).
+  m02 VARCHAR(255) NOT NULL, -- Название фильма для поисковых запросов.
+  m03 BLOB SUB_TYPE TEXT, -- Описание фильма для полнотекстового индекса.
+  PRIMARY KEY (m01)
+);
+
+Output of the first 5 rows of table flt
+m01,m02,m03
+
+DDL script for table inv
+CREATE TABLE inv ( -- Таблица инвентаря — копий фильмов, доступных в магазинах.
+  n01 INT NOT NULL, -- Уникальный идентификатор копии фильма (инвентарный номер).
+  n02 INT NOT NULL, -- Идентификатор фильма. Внешний ключ к film.
+  n03 INT NOT NULL, -- Идентификатор магазина, где находится копия. Внешний ключ к store.
+  n04 TIMESTAMP NOT NULL, -- Дата последнего обновления инвентаря. Триггерная.
+  PRIMARY KEY (n01),
+  CONSTRAINT fk_inv_sto FOREIGN KEY (n03) REFERENCES sto (j01) ON DELETE NO ACTION ON UPDATE CASCADE,
+  CONSTRAINT fk_inv_flm FOREIGN KEY (n02) REFERENCES flm (i01) ON DELETE NO ACTION ON UPDATE CASCADE
+);
+
+Output of the first 5 rows of table inv
+n01,n02,n03,n04
+1,1,1,2026-06-06 20:40:00
+2,1,1,2026-06-06 20:40:00
+3,1,1,2026-06-06 20:40:00
+4,1,1,2026-06-06 20:40:00
+5,1,2,2026-06-06 20:40:00
+
+DDL script for table stf
+CREATE TABLE stf ( -- Таблица сотрудников проката. Содержит личные данные, фото, учётные данные и активность.
+  o01 SMALLINT NOT NULL, -- Уникальный идентификатор сотрудника. Ссылается из rental, payment, store.
+  o02 VARCHAR(45) NOT NULL, -- Имя сотрудника.
+  o03 VARCHAR(45) NOT NULL, -- Фамилия сотрудника.
+  o04 INT NOT NULL, -- Идентификатор адреса сотрудника. Внешний ключ к address.
+  o05 BLOB DEFAULT NULL, -- Фотография сотрудника (BLOB, может быть NULL).
+  o06 VARCHAR(50) DEFAULT NULL, -- Электронная почта сотрудника.
+  o07 INT NOT NULL, -- Идентификатор магазина, в котором работает сотрудник.
+  o08 SMALLINT DEFAULT 1 NOT NULL, -- Статус активности (1 — активен, 0 — неактивен).
+  o09 VARCHAR(16) NOT NULL, -- Логин сотрудника в системе.
+  o10 VARCHAR(40) DEFAULT NULL, -- Пароль (хэшированный или открытый, до 40 символов).
+  o11 TIMESTAMP NOT NULL, -- Дата последнего обновления записи сотрудника.
+  PRIMARY KEY (o01),
+  CONSTRAINT fk_stf_sto FOREIGN KEY (o07) REFERENCES sto (j01) ON DELETE NO ACTION ON UPDATE CASCADE,
+  CONSTRAINT fk_stf_adr FOREIGN KEY (o04) REFERENCES adr (e01) ON DELETE NO ACTION ON UPDATE CASCADE
+);
+
+Output of the first 5 rows of table stf
+o01,o02,o03,o04,o05,o06,o07,o08,o09,o10,o11
+1,Mike,Hillyer,3,,Mike.Hillyer@sakilastaff.com,1,1,Mike,8cb2237d0679ca88db6464eac60da96345513964,2026-06-06 20:40:00
+2,Jon,Stephens,4,,Jon.Stephens@sakilastaff.com,2,1,Jon,8cb2237d0679ca88db6464eac60da96345513964,2026-06-06 20:40:00
+
+DDL script for table sto
+CREATE TABLE sto ( -- Таблица магазинов проката. У каждого есть менеджер и адрес.
+  j01 INT NOT NULL, -- Уникальный идентификатор магазина. Связывается с inventory, customer, staff.
+  j02 SMALLINT NOT NULL, -- Идентификатор сотрудника — менеджера магазина. Внешний ключ к staff.
+  j03 INT NOT NULL, -- Идентификатор адреса магазина. Внешний ключ к address.
+  j04 TIMESTAMP NOT NULL, -- Дата последнего обновления магазина.
+  PRIMARY KEY (j01),
+  CONSTRAINT fk_sto_stf FOREIGN KEY (j02) REFERENCES stf (o01),
+  CONSTRAINT fk_sto_adr FOREIGN KEY (j03) REFERENCES adr (e01)
+);
+
+Output of the first 5 rows of table sto
+j01,j02,j03,j04
+1,1,1,2026-06-06 20:40:00
+2,2,2,2026-06-06 20:40:00
+
+DDL script for table pay
+CREATE TABLE pay ( -- Таблица платежей клиентов за аренду. Содержит сумму, дату и связи с rental, customer, staff.
+  p01 int NOT NULL, -- Уникальный идентификатор платежа.
+  p02 INT NOT NULL, -- Идентификатор клиента, совершившего платёж. Внешний ключ к customer.
+  p03 SMALLINT NOT NULL, -- Идентификатор сотрудника, принявшего платёж. Внешний ключ к staff.
+  p04 INT DEFAULT NULL, -- Идентификатор аренды, за которую произведён платёж. Может быть NULL.
+  p05 DECIMAL(5,2) NOT NULL, -- Сумма платежа (до 2 знаков после запятой).
+  p06 TIMESTAMP NOT NULL, -- Дата и время платежа.
+  p07 TIMESTAMP NOT NULL, -- Дата последнего обновления записи платежа. Триггерная.
+  PRIMARY KEY (p01),
+  CONSTRAINT fk_pay_ren FOREIGN KEY (p04) REFERENCES ren (q01) ON DELETE SET NULL ON UPDATE CASCADE,
+  CONSTRAINT fk_pay_cus FOREIGN KEY (p02) REFERENCES cus (h01),
+  CONSTRAINT fk_pay_stf FOREIGN KEY (p03) REFERENCES stf (o01)
+);
+
+Output of the first 5 rows of table pay
+p01,p02,p03,p04,p05,p06,p07
+1,1,1,76,2.99,2005-05-25 11:30:37.000,2026-06-06 20:40:00
+2,1,1,573,0.99,2005-05-28 10:35:23.000,2026-06-06 20:40:00
+3,1,1,1185,5.99,2005-06-15 00:54:12.000,2026-06-06 20:40:00
+4,1,2,1422,0.99,2005-06-15 18:02:53.000,2026-06-06 20:40:00
+5,1,2,1476,9.99,2005-06-15 21:08:46.000,2026-06-06 20:40:00
+
+DDL script for table ren
+CREATE TABLE ren ( -- Таблица аренды фильмов. Фиксирует дату выдачи, возврата и связь с инвентарём, клиентом, сотрудником.
+  q01 INT NOT NULL, -- Уникальный идентификатор аренды.
+  q02 TIMESTAMP NOT NULL, -- Дата и время выдачи фильма.
+  q03 INT NOT NULL, -- Идентификатор инвентарной копии. Внешний ключ к inventory.
+  q04 INT NOT NULL, -- Идентификатор клиента. Внешний ключ к customer.
+  q05 TIMESTAMP DEFAULT NULL, -- Дата возврата фильма (может быть NULL, если ещё не вернули).
+  q06 SMALLINT NOT NULL, -- Идентификатор сотрудника, оформившего аренду. Внешний ключ к staff.
+  q07 TIMESTAMP NOT NULL, -- Дата последнего обновления аренды. Триггерная.
+  PRIMARY KEY (q01),
+  CONSTRAINT fk_ren_stf FOREIGN KEY (q06) REFERENCES stf (o01),
+  CONSTRAINT fk_ren_inv FOREIGN KEY (q03) REFERENCES inv (n01),
+  CONSTRAINT fk_ren_cus FOREIGN KEY (q04) REFERENCES cus (h01)
+);
+
+Output of the first 5 rows of table ren
+q01,q02,q03,q04,q05,q06,q07
+1,2005-05-24 22:53:30.000,367,130,2005-05-26 22:04:30.000,1,2026-06-06 20:40:00
+2,2005-05-24 22:54:33.000,1525,459,2005-05-28 19:40:33.000,1,2026-06-06 20:40:00
+3,2005-05-24 23:03:39.000,1711,408,2005-06-01 22:12:39.000,1,2026-06-06 20:40:00
+4,2005-05-24 23:04:41.000,2452,333,2005-06-03 01:43:41.000,2,2026-06-06 20:40:00
+5,2005-05-24 23:05:21.000,2079,222,2005-06-02 04:33:21.000,1,2026-06-06 20:40:00

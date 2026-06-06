@@ -10,8 +10,14 @@ from uuid import uuid4
 import pandas as pd
 from tqdm import tqdm
 
-from src.config import INTERIM_DATA_DIR
-from src.dataset import BANK_DATASET_NAME, build_schema_description_with_samples
+from src.dataset import (
+    QUERY_DESCRIPTIONS_SUBDIR,
+    SCHEMA_DESCRIPTIONS_SUBDIR,
+    get_interim_database_dir,
+    get_query_descriptions_dir,
+    load_style_schema_texts,
+    parse_schema_description_path,
+)
 from src.llm_client import call_openai_chat_with_retries
 from src.prompts import (
     build_query_description_prompt,
@@ -29,28 +35,24 @@ DEFAULT_COUNTS_BY_DIFFICULTY = {
 def generate_query_descriptions(
     client: Any,
     model: str,
-    comment_style: str = "inline",
-    comment_variant: str = "short",
-    database_name: str = BANK_DATASET_NAME,
+    schema_description_path: str | Path,
+    database_name: str | None = None,
     counts_by_difficulty: dict[str, int] | None = None,
     temperature: float = 1.0,
-) -> tuple[Path, Path, Path]:
-    schema_description, sqlite_db_path = build_schema_description_with_samples(
-        comment_style=comment_style,
-        comment_variant=comment_variant,
-        database_name=database_name,
-    )
+) -> Path:
+    schema_description_path = Path(schema_description_path)
+    parsed = parse_schema_description_path(schema_description_path)
+    resolved_database_name = database_name or parsed["database_name"]
+    comment_style = parsed["comment_style"]
+    comment_variant = parsed["comment_variant"]
 
-    interim_dir = INTERIM_DATA_DIR / database_name
-    interim_dir.mkdir(parents=True, exist_ok=True)
+    schema_description = schema_description_path.read_text(encoding="utf-8")
 
-    schema_description_path = (
-        interim_dir / f"schema_description_{comment_style}_{comment_variant}.txt"
-    )
-    schema_description_path.write_text(schema_description, encoding="utf-8")
+    query_descriptions_dir = get_query_descriptions_dir(resolved_database_name)
+    query_descriptions_dir.mkdir(parents=True, exist_ok=True)
 
     descriptions_csv_path = (
-        interim_dir / f"query_descriptions_{comment_style}_{comment_variant}.csv"
+        query_descriptions_dir / f"query_descriptions_{comment_style}_{comment_variant}.csv"
     )
     counts = counts_by_difficulty or DEFAULT_COUNTS_BY_DIFFICULTY
 
@@ -68,7 +70,7 @@ def generate_query_descriptions(
                     messages = build_query_description_prompt(
                         schema_description=schema_description,
                         difficulty=difficulty,
-                        database_name=database_name,
+                        database_name=resolved_database_name,
                     )
                     query = _call_openai_chat(
                         client=client,
@@ -78,7 +80,7 @@ def generate_query_descriptions(
                     ).strip()
                     writer.writerow(
                         {
-                            "database_name": database_name,
+                            "database_name": resolved_database_name,
                             "query": query,
                             "difficulty": difficulty,
                             "uuid": str(uuid4()),
@@ -86,7 +88,7 @@ def generate_query_descriptions(
                     )
                     progress.update(1)
 
-    return descriptions_csv_path, schema_description_path, sqlite_db_path
+    return descriptions_csv_path
 
 
 def generate_sql_scripts_and_results(
@@ -103,12 +105,18 @@ def generate_sql_scripts_and_results(
     descriptions_csv_path = (
         Path(descriptions_csv_path)
         if descriptions_csv_path is not None
-        else _latest_matching_file(interim_dir, "query_descriptions_*.csv")
+        else _latest_matching_file(
+            get_interim_database_dir(interim_dir) / QUERY_DESCRIPTIONS_SUBDIR,
+            "query_descriptions_*.csv",
+        )
     )
     schema_description_path = (
         Path(schema_description_path)
         if schema_description_path is not None
-        else _latest_matching_file(interim_dir, "schema_description_*.txt")
+        else _latest_matching_file(
+            get_interim_database_dir(interim_dir) / SCHEMA_DESCRIPTIONS_SUBDIR,
+            "schema_description_*.txt",
+        )
     )
 
     schema_description = schema_description_path.read_text(encoding="utf-8")
@@ -171,18 +179,19 @@ def generate_sql_scripts_and_results(
 
 def generate_related_query_descriptions_csv(
     rewritten_descriptions_csv_path: str | Path,
-    schema_description_path: str | Path,
     client: Any,
     model: str,
-    rewrite_styles: tuple[str, ...] = ("short", "business", "technical"),
-    source_column: str = "query",
+    style_configs: dict[str, dict[str, str | Path]],
     temperature: float = 0.9,
     num_queries: int = 3,
     output_path: str | Path | None = None,
 ) -> Path:
     """Generate related query description variants and expand the CSV by num_queries times."""
     rewritten_descriptions_csv_path = Path(rewritten_descriptions_csv_path)
-    schema_description_path = Path(schema_description_path)
+    rewrite_styles, schema_texts = load_style_schema_texts(
+        style_configs,
+        require_source_column=True,
+    )
     output_path = (
         Path(output_path)
         if output_path is not None
@@ -191,7 +200,6 @@ def generate_related_query_descriptions_csv(
         )
     )
 
-    schema_description = schema_description_path.read_text(encoding="utf-8")
     with rewritten_descriptions_csv_path.open(newline="", encoding="utf-8") as file:
         reader = csv.DictReader(file)
         fieldnames = list(reader.fieldnames or [])
@@ -199,12 +207,15 @@ def generate_related_query_descriptions_csv(
 
     if not rows:
         raise ValueError(f"No rows found in {rewritten_descriptions_csv_path}.")
-    if source_column not in rows[0]:
-        raise ValueError(
-            f"Column {source_column!r} was not found in {rewritten_descriptions_csv_path}."
-        )
 
-    related_columns = [f"{source_column}_{style}_related" for style in rewrite_styles]
+    for style in rewrite_styles:
+        source_column = str(style_configs[style]["source_column"])
+        if source_column not in rows[0]:
+            raise ValueError(
+                f"Column {source_column!r} was not found in {rewritten_descriptions_csv_path}."
+            )
+
+    related_columns = [f"query_{style}_related" for style in rewrite_styles]
     output_fieldnames = [
         *fieldnames,
         *[column for column in related_columns if column not in fieldnames],
@@ -222,9 +233,10 @@ def generate_related_query_descriptions_csv(
             difficulty = row.get("difficulty")
 
             for style, column in zip(rewrite_styles, related_columns, strict=True):
+                source_column = str(style_configs[style]["source_column"])
                 for variant_index in range(num_queries):
                     messages = build_related_query_description_prompt(
-                        schema_description=schema_description,
+                        schema_description=schema_texts[style],
                         query_description=row[source_column],
                         style=style,
                         difficulty=difficulty,

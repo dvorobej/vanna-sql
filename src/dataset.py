@@ -10,7 +10,7 @@ from typing import Any
 
 from tqdm import tqdm
 
-from src.config import PROJECT_ROOT
+from src.config import INTERIM_DATA_DIR, PROJECT_ROOT
 from src.llm_client import call_openai_chat_with_retries
 from src.prompts import build_query_description_rewrite_prompt
 
@@ -35,6 +35,8 @@ COMMENT_VARIANTS = {
     "technical": "comments_technical.json",
 }
 PLACEHOLDER_PATTERN = re.compile(r"\{\{([A-Za-z0-9_.]+)\}\}")
+SCHEMA_DESCRIPTIONS_SUBDIR = "schema_descriptions"
+QUERY_DESCRIPTIONS_SUBDIR = "query_descriptions"
 
 
 def get_database_raw_dir(database_name: str = BANK_DATASET_NAME) -> Path:
@@ -66,6 +68,69 @@ def get_sqlite_database_path(
     normalized_variant = comment_variant.lower()
     filename = f"{database_name}_{normalized_style}_{normalized_variant}.sqlite.db"
     return get_database_processed_dir(database_name) / filename
+
+
+def get_interim_database_dir(path: Path | str) -> Path:
+    """Resolve the database interim directory from a file or subdirectory path."""
+    resolved_path = Path(path)
+    if not resolved_path.is_dir():
+        resolved_path = resolved_path.parent
+    while resolved_path.name in (SCHEMA_DESCRIPTIONS_SUBDIR, QUERY_DESCRIPTIONS_SUBDIR):
+        resolved_path = resolved_path.parent
+    return resolved_path
+
+
+def get_schema_descriptions_dir(database_name: str) -> Path:
+    return get_interim_database_dir(INTERIM_DATA_DIR / database_name) / SCHEMA_DESCRIPTIONS_SUBDIR
+
+
+def get_query_descriptions_dir(database_name: str) -> Path:
+    return get_interim_database_dir(INTERIM_DATA_DIR / database_name) / QUERY_DESCRIPTIONS_SUBDIR
+
+
+def get_query_description_path(
+    database_name: str,
+    comment_style: str = "inline",
+    comment_variant: str = "short",
+) -> Path:
+    normalized_style = _normalize_comment_style(comment_style)
+    normalized_variant = comment_variant.lower()
+    return (
+        get_query_descriptions_dir(database_name)
+        / f"query_descriptions_{normalized_style}_{normalized_variant}.csv"
+    )
+
+
+def get_schema_description_path(
+    database_name: str,
+    comment_style: str = "inline",
+    comment_variant: str = "short",
+) -> Path:
+    normalized_style = _normalize_comment_style(comment_style)
+    normalized_variant = comment_variant.lower()
+    return (
+        get_schema_descriptions_dir(database_name)
+        / f"schema_description_{normalized_style}_{normalized_variant}.txt"
+    )
+
+
+def parse_schema_description_path(path: Path | str) -> dict[str, str]:
+    """Extract database_name, comment_style, and comment_variant from a schema description path."""
+    path = Path(path)
+    match = re.match(r"schema_description_(.+)_(.+)$", path.stem)
+    if not match:
+        raise ValueError(
+            f"Could not parse comment style and variant from schema description path {path}."
+        )
+    if path.parent.name == SCHEMA_DESCRIPTIONS_SUBDIR:
+        database_name = path.parent.parent.name
+    else:
+        database_name = path.parent.name
+    return {
+        "database_name": database_name,
+        "comment_style": match.group(1),
+        "comment_variant": match.group(2),
+    }
 
 
 def _normalize_comment_style(comment_style: str) -> str:
@@ -202,10 +267,8 @@ def build_schema_description_with_samples(
         comment_variant=normalized_variant,
     )
     if not db_path.exists():
-        db_path = build_database(
-            comment_style=normalized_style,
-            comment_variant=normalized_variant,
-            database_name=database_name,
+        raise FileNotFoundError(
+            f"SQLite database was not found at {db_path}. Run build_database first."
         )
 
     schema_mapping = _load_schema_mapping(database_name)
@@ -258,30 +321,48 @@ def build_schema_description_with_samples(
     return "\n\n".join(blocks), db_path
 
 
+def load_style_schema_texts(
+    style_configs: dict[str, dict[str, str | Path]],
+    *,
+    require_source_column: bool = False,
+) -> tuple[tuple[str, ...], dict[str, str]]:
+    """Preload schema description text for each style config entry."""
+    if not style_configs:
+        raise ValueError("style_configs must contain at least one style entry.")
+
+    styles = tuple(style_configs.keys())
+    schema_texts: dict[str, str] = {}
+    for style, config in style_configs.items():
+        if "schema_description_path" not in config:
+            raise ValueError(
+                f"style_configs[{style!r}] must contain 'schema_description_path'."
+            )
+        if require_source_column and "source_column" not in config:
+            raise ValueError(f"style_configs[{style!r}] must contain 'source_column'.")
+        schema_path = Path(config["schema_description_path"])
+        schema_texts[style] = schema_path.read_text(encoding="utf-8")
+
+    return styles, schema_texts
+
+
 def rewrite_query_descriptions_csv(
     descriptions_csv_path: str | Path,
     client: Any,
     model: str,
-    schema_description_path: str | Path | None = None,
-    rewrite_styles: tuple[str, ...] = ("short", "business", "technical"),
+    style_configs: dict[str, dict[str, str | Path]],
     source_column: str = "query",
     temperature: float = 0.9,
     output_path: str | Path | None = None,
 ) -> Path:
     """Rewrite query descriptions into multiple formats and save an augmented CSV."""
     descriptions_csv_path = Path(descriptions_csv_path)
-    schema_description_path = (
-        Path(schema_description_path)
-        if schema_description_path is not None
-        else _latest_schema_description_path(descriptions_csv_path.parent)
-    )
+    rewrite_styles, schema_texts = load_style_schema_texts(style_configs)
     output_path = (
         Path(output_path)
         if output_path is not None
         else descriptions_csv_path.with_name(f"{descriptions_csv_path.stem}_rewritten.csv")
     )
 
-    schema_description = schema_description_path.read_text(encoding="utf-8")
     with descriptions_csv_path.open(newline="", encoding="utf-8") as file:
         rows = list(csv.DictReader(file))
         fieldnames = list(file.seek(0) or csv.DictReader(file).fieldnames or [])
@@ -300,7 +381,7 @@ def rewrite_query_descriptions_csv(
             difficulty = row.get("difficulty")
             for style, column in zip(rewrite_styles, rewrite_columns, strict=True):
                 messages = build_query_description_rewrite_prompt(
-                    schema_description=schema_description,
+                    schema_description=schema_texts[style],
                     query_description=row[source_column],
                     rewrite_style=style,
                     difficulty=difficulty,
@@ -322,13 +403,16 @@ def rewrite_query_descriptions_csv(
 
 
 def _latest_schema_description_path(directory: Path) -> Path:
+    schema_descriptions_dir = get_interim_database_dir(directory) / SCHEMA_DESCRIPTIONS_SUBDIR
     matches = sorted(
-        directory.glob("schema_description_*.txt"),
+        schema_descriptions_dir.glob("schema_description_*.txt"),
         key=lambda path: path.stat().st_mtime,
         reverse=True,
     )
     if not matches:
-        raise FileNotFoundError(f"No schema_description_*.txt files were found in {directory}.")
+        raise FileNotFoundError(
+            f"No schema_description_*.txt files were found in {schema_descriptions_dir}."
+        )
     return matches[0]
 
 
@@ -420,6 +504,20 @@ def build_database(
         database_name=database_name,
     )
     load_csv_data(db_path, database_name=database_name)
+
+    schema_description, _ = build_schema_description_with_samples(
+        comment_style=comment_style,
+        comment_variant=comment_variant,
+        database_name=database_name,
+    )
+    schema_description_path = get_schema_description_path(
+        database_name=database_name,
+        comment_style=comment_style,
+        comment_variant=comment_variant,
+    )
+    schema_description_path.parent.mkdir(parents=True, exist_ok=True)
+    schema_description_path.write_text(schema_description, encoding="utf-8")
+
     return db_path
 
 

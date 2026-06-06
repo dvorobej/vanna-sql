@@ -20,8 +20,8 @@ Generation is **not** involved in this evaluation. We only call `get_similar_que
 
 | Artifact | Typical path | Role |
 |----------|--------------|------|
-| Related descriptions CSV | `data/interim/{database}/query_descriptions_*_rewritten_related.csv` | Query variants and metadata |
-| Ground-truth SQL scripts | `data/interim/{database}/scripts/{uuid}.txt` | SQL paired with each uuid |
+| Related descriptions CSV | `data/interim/{database}/query_descriptions/query_descriptions_*_rewritten_related.csv` | Query variants and metadata |
+| Ground-truth SQL scripts | `data/interim/{database}/scripts/{uuid}.sql` | SQL paired with each uuid |
 | DDL templates | `data/raw/{database}/schema_template.sql` | Rendered per comment style/variant |
 
 The pipeline keeps only rows whose uuid has a corresponding file in `scripts/`. Corpus pairs are deduplicated by `(uuid, description, sql)` so each unique example is indexed once.

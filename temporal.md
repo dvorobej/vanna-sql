@@ -33,5 +33,5 @@ Then we would need another function, that will do the following:
    * 'Not matching values' - number of rows and columns are the same, but the values are different. To compare values you should convert each value into a string and compare strings.
    * 'Everything matches' - number of rows and columns are the same and values are the same as well.
 - As the result you should have a .csv with columns 'uuid', 'difficulty', 'label' for all uuid that have an SQL.
-- After checking this for each result from ground truth, you should save the result as a .csv in generated/metrics/{name of subfolder from where you took predicted results, like yaml_short}.csv.
+- After checking this for each result from ground truth, you should save the result as a .csv in generated/metrics/{name of subfolder from where you took predicted results, like yaml_short + model name}.csv.
 

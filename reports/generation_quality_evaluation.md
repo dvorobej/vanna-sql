@@ -31,7 +31,7 @@ Total combos per run: `len(models) × len(comment_styles) × len(description_sty
 
 | Artifact | Typical path | Role |
 |----------|--------------|------|
-| Descriptions CSV | `data/interim/{database}/query_descriptions_*_rewritten.csv` | Query text and difficulty per uuid |
+| Descriptions CSV | `data/interim/{database}/query_descriptions/query_descriptions_*_rewritten.csv` | Query text and difficulty per uuid |
 | Ground-truth SQL | `data/interim/{database}/scripts/{uuid}.sql` | Reference SQL (used for training folds) |
 | Ground-truth results | `data/interim/{database}/results/{uuid}.csv` | Reference query output |
 
