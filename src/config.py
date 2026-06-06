@@ -28,5 +28,6 @@ OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 OPENAI_API_URL = os.getenv("OPENAI_API_URL", "https://openrouter.ai/api/v1")
 OPENAI_MODEL = os.getenv("OPENAI_MODEL", "openai/gpt-5.5")
 OPENAI_MODEL_MINI = os.getenv("OPENAI_MODEL_MINI", "openai/gpt-5.4-mini")
+DEEPSEEK_MODEL = os.getenv("DEEPSEEK_MODEL", "deepseek/deepseek-v4-flash")
 
 DEVICE = os.getenv("DEVICE", "cpu")

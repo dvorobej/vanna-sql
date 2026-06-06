@@ -100,6 +100,56 @@ def build_sql_generation_prompt(
     ]
 
 
+def build_related_query_description_prompt(
+    schema_description: str,
+    query_description: str,
+    style: str,
+    difficulty: str | None = None,
+) -> list[dict[str, str]]:
+    style_rule = _rewrite_style_rule(style)
+    difficulty_text = ""
+    if difficulty is not None:
+        difficulty_text = (
+            f"\nСложность исходного запроса: {difficulty}\n"
+            f"Правила сложности: {_difficulty_rule(difficulty)}"
+        )
+
+    return [
+        {
+            "role": "system",
+            "content": (
+                "Ты помогаешь расширять датасет для text-to-SQL системы, создавая "
+                "связанные вариации описаний аналитических запросов. "
+                "Все ответы должны быть на русском языке."
+            ),
+        },
+        {
+            "role": "user",
+            "content": (
+                "Ниже приведена схема базы данных с комментариями и примерами первых строк:\n"
+                f"{schema_description}\n\n"
+                f"Исходное описание запроса: {query_description}"
+                f"{difficulty_text}\n"
+                f"Нужный стиль формулировки: {style}\n"
+                f"Правила стиля: {style_rule}\n\n"
+                "Придумай новое описание аналитического запроса, которое:\n"
+                "- остаётся семантически связанным с исходным (та же предметная область, "
+                "похожие таблицы и тип анализа);\n"
+                "- не является дословной копией исходного описания;\n"
+                "- допускает перефразирование, изменение лимитов, фильтров, группировок "
+                "или смежный аналитический угол в рамках той же задачи;\n"
+                "- могло бы привести к SQL, близкому или родственному исходному запросу.\n\n"
+                "Требования:\n"
+                "- Верни ровно одно новое описание запроса в указанном стиле.\n"
+                "- Сохрани уровень сложности исходного запроса.\n"
+                "- Не пиши SQL-код.\n"
+                "- Не добавляй markdown, нумерацию, кавычки или пояснения.\n"
+                "- Используй схему только как контекст для точной терминологии."
+            ),
+        },
+    ]
+
+
 def build_query_description_rewrite_prompt(
     schema_description: str,
     query_description: str,

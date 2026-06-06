@@ -12,7 +12,11 @@ from tqdm import tqdm
 
 from src.config import INTERIM_DATA_DIR
 from src.dataset import BANK_DATASET_NAME, build_schema_description_with_samples
-from src.prompts import build_query_description_prompt, build_sql_generation_prompt
+from src.prompts import (
+    build_query_description_prompt,
+    build_related_query_description_prompt,
+    build_sql_generation_prompt,
+)
 
 DEFAULT_COUNTS_BY_DIFFICULTY = {
     "easy": 20,
@@ -162,6 +166,92 @@ def generate_sql_scripts_and_results(
             counters["saved"] += 1
 
     return counters
+
+
+def generate_related_query_descriptions_csv(
+    rewritten_descriptions_csv_path: str | Path,
+    schema_description_path: str | Path,
+    client: Any,
+    model: str,
+    rewrite_styles: tuple[str, ...] = ("short", "business", "technical"),
+    source_column: str = "query",
+    temperature: float = 0.9,
+    num_queries: int = 3,
+    output_path: str | Path | None = None,
+) -> Path:
+    """Generate related query description variants and expand the CSV by num_queries times."""
+    rewritten_descriptions_csv_path = Path(rewritten_descriptions_csv_path)
+    schema_description_path = Path(schema_description_path)
+    output_path = (
+        Path(output_path)
+        if output_path is not None
+        else rewritten_descriptions_csv_path.with_name(
+            f"{rewritten_descriptions_csv_path.stem}_related.csv"
+        )
+    )
+
+    schema_description = schema_description_path.read_text(encoding="utf-8")
+    with rewritten_descriptions_csv_path.open(newline="", encoding="utf-8") as file:
+        reader = csv.DictReader(file)
+        fieldnames = list(reader.fieldnames or [])
+        rows = list(reader)
+
+    if not rows:
+        raise ValueError(f"No rows found in {rewritten_descriptions_csv_path}.")
+    if source_column not in rows[0]:
+        raise ValueError(
+            f"Column {source_column!r} was not found in {rewritten_descriptions_csv_path}."
+        )
+
+    related_columns = [f"{source_column}_{style}_related" for style in rewrite_styles]
+    output_fieldnames = [
+        *fieldnames,
+        *[column for column in related_columns if column not in fieldnames],
+        "variant_index",
+    ]
+
+    output_rows: list[dict[str, str]] = []
+    total = len(rows) * len(rewrite_styles) * num_queries
+    with tqdm(total=total, desc="Generating related query descriptions") as progress:
+        for row in rows:
+            variants: list[dict[str, str]] = [
+                {column: "" for column in related_columns}
+                for _ in range(num_queries)
+            ]
+            difficulty = row.get("difficulty")
+
+            for style, column in zip(rewrite_styles, related_columns, strict=True):
+                for variant_index in range(num_queries):
+                    messages = build_related_query_description_prompt(
+                        schema_description=schema_description,
+                        query_description=row[source_column],
+                        style=style,
+                        difficulty=difficulty,
+                    )
+                    related_query = _call_openai_chat(
+                        client=client,
+                        model=model,
+                        messages=messages,
+                        temperature=temperature,
+                    ).strip()
+                    variants[variant_index][column] = related_query
+                    progress.update(1)
+
+            for variant_index, variant_values in enumerate(variants):
+                output_rows.append(
+                    {
+                        **row,
+                        **variant_values,
+                        "variant_index": str(variant_index),
+                    }
+                )
+
+    with output_path.open("w", newline="", encoding="utf-8") as file:
+        writer = csv.DictWriter(file, fieldnames=output_fieldnames)
+        writer.writeheader()
+        writer.writerows(output_rows)
+
+    return output_path
 
 
 def extract_sql(llm_response: str) -> str:
