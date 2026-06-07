@@ -369,6 +369,7 @@ END;
 -- END COMMENT_STYLE:inline
 
 -- BEGIN COMMENT_STYLE:yaml
+
 -- table: act
 -- source_table: actor
 -- description: {{act}}
@@ -377,7 +378,6 @@ END;
 --   a02: {{act.a02}}  # source: first_name
 --   a03: {{act.a03}}  # source: last_name
 --   a04: {{act.a04}}  # source: last_update
-
 CREATE TABLE act (
   a01 numeric NOT NULL,
   a02 VARCHAR(45) NOT NULL,
@@ -405,7 +405,6 @@ END;
 --   c01: {{cnt.c01}}  # source: country_id
 --   c02: {{cnt.c02}}  # source: country
 --   c03: {{cnt.c03}}  # source: last_update
-
 CREATE TABLE cnt (
   c01 SMALLINT NOT NULL,
   c02 VARCHAR(50) NOT NULL,
@@ -431,7 +430,6 @@ END;
 --   d02: {{cty.d02}}  # source: city
 --   d03: {{cty.d03}}  # source: country_id
 --   d04: {{cty.d04}}  # source: last_update
-
 CREATE TABLE cty (
   d01 int NOT NULL,
   d02 VARCHAR(50) NOT NULL,
@@ -465,7 +463,6 @@ END;
 --   e06: {{adr.e06}}  # source: postal_code
 --   e07: {{adr.e07}}  # source: phone
 --   e08: {{adr.e08}}  # source: last_update
-
 CREATE TABLE adr (
   e01 int NOT NULL,
   e02 VARCHAR(50) NOT NULL,
@@ -498,7 +495,6 @@ END;
 --   f01: {{lng.f01}}  # source: language_id
 --   f02: {{lng.f02}}  # source: name
 --   f03: {{lng.f03}}  # source: last_update
-
 CREATE TABLE lng (
   f01 SMALLINT NOT NULL,
   f02 CHAR(20) NOT NULL,
@@ -523,7 +519,6 @@ END;
 --   g01: {{cat.g01}}  # source: category_id
 --   g02: {{cat.g02}}  # source: name
 --   g03: {{cat.g03}}  # source: last_update
-
 CREATE TABLE cat (
   g01 SMALLINT NOT NULL,
   g02 VARCHAR(25) NOT NULL,
@@ -554,7 +549,6 @@ END;
 --   h07: {{cus.h07}}  # source: active
 --   h08: {{cus.h08}}  # source: create_date
 --   h09: {{cus.h09}}  # source: last_update
-
 CREATE TABLE cus (
   h01 INT NOT NULL,
   h02 INT NOT NULL,
@@ -601,7 +595,6 @@ END;
 --   i11: {{flm.i11}}  # source: rating
 --   i12: {{flm.i12}}  # source: special_features
 --   i13: {{flm.i13}}  # source: last_update
-
 CREATE TABLE flm (
   i01 int NOT NULL,
   i02 VARCHAR(255) NOT NULL,
@@ -643,7 +636,6 @@ END;
 --   k01: {{fla.k01}}  # source: actor_id
 --   k02: {{fla.k02}}  # source: film_id
 --   k03: {{fla.k03}}  # source: last_update
-
 CREATE TABLE fla (
   k01 INT NOT NULL,
   k02 INT NOT NULL,
@@ -673,7 +665,6 @@ END;
 --   l01: {{flc.l01}}  # source: film_id
 --   l02: {{flc.l02}}  # source: category_id
 --   l03: {{flc.l03}}  # source: last_update
-
 CREATE TABLE flc (
   l01 INT NOT NULL,
   l02 SMALLINT NOT NULL,
@@ -703,7 +694,6 @@ END;
 --   m01: {{flt.m01}}  # source: film_id
 --   m02: {{flt.m02}}  # source: title
 --   m03: {{flt.m03}}  # source: description
-
 CREATE TABLE flt (
   m01 SMALLINT NOT NULL,
   m02 VARCHAR(255) NOT NULL,
@@ -719,7 +709,6 @@ CREATE TABLE flt (
 --   n02: {{inv.n02}}  # source: film_id
 --   n03: {{inv.n03}}  # source: store_id
 --   n04: {{inv.n04}}  # source: last_update
-
 CREATE TABLE inv (
   n01 INT NOT NULL,
   n02 INT NOT NULL,
@@ -758,7 +747,6 @@ END;
 --   o09: {{stf.o09}}  # source: username
 --   o10: {{stf.o10}}  # source: password
 --   o11: {{stf.o11}}  # source: last_update
-
 CREATE TABLE stf (
   o01 SMALLINT NOT NULL,
   o02 VARCHAR(45) NOT NULL,
@@ -797,7 +785,6 @@ END;
 --   j02: {{sto.j02}}  # source: manager_staff_id
 --   j03: {{sto.j03}}  # source: address_id
 --   j04: {{sto.j04}}  # source: last_update
-
 CREATE TABLE sto (
   j01 INT NOT NULL,
   j02 SMALLINT NOT NULL,
@@ -832,7 +819,6 @@ END;
 --   p05: {{pay.p05}}  # source: amount
 --   p06: {{pay.p06}}  # source: payment_date
 --   p07: {{pay.p07}}  # source: last_update
-
 CREATE TABLE pay (
   p01 int NOT NULL,
   p02 INT NOT NULL,
@@ -871,7 +857,6 @@ END;
 --   q05: {{ren.q05}}  # source: return_date
 --   q06: {{ren.q06}}  # source: staff_id
 --   q07: {{ren.q07}}  # source: last_update
-
 CREATE TABLE ren (
   q01 INT NOT NULL,
   q02 TIMESTAMP NOT NULL,
@@ -901,19 +886,4 @@ BEGIN
   UPDATE ren SET q07 = DATETIME('NOW') WHERE rowid = new.rowid;
 END;
 
--- View: customer_list (adapted)
--- Columns: ID, name, address, zip_code, phone, city, country, notes, SID
--- Replaced source columns: h01, h03||' '||h04, e02, e06, e07, d02, c02, h07, h02
-
--- View: film_list (adapted)
--- Columns: FID, title, description, category, price, length, rating, actors
-
--- View: staff_list (adapted)
--- Columns: ID, name, address, zip_code, phone, city, country, SID
-
--- View: sales_by_store (adapted)
--- Columns: store_id, store, manager, total_sales
-
--- View: sales_by_film_category (adapted)
--- Columns: category, total_sales
 -- END COMMENT_STYLE:yaml

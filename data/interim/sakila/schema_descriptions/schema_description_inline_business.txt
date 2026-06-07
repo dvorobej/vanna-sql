@@ -9,11 +9,11 @@ CREATE TABLE act ( -- Справочник актёров, участвующи�
 
 Output of the first 5 rows of table act
 a01,a02,a03,a04
-1,PENELOPE,GUINESS,2026-06-06 20:40:00
-2,NICK,WAHLBERG,2026-06-06 20:40:00
-3,ED,CHASE,2026-06-06 20:40:00
-4,JENNIFER,DAVIS,2026-06-06 20:40:00
-5,JOHNNY,LOLLOBRIGIDA,2026-06-06 20:40:00
+1,PENELOPE,GUINESS,2026-06-07 16:18:57
+2,NICK,WAHLBERG,2026-06-07 16:18:57
+3,ED,CHASE,2026-06-07 16:18:57
+4,JENNIFER,DAVIS,2026-06-07 16:18:57
+5,JOHNNY,LOLLOBRIGIDA,2026-06-07 16:18:57
 
 DDL script for table cnt
 CREATE TABLE cnt ( -- Справочник стран, в которых находятся города и адреса клиентов, магазинов и сотрудников.
@@ -25,11 +25,11 @@ CREATE TABLE cnt ( -- Справочник стран, в которых нах�
 
 Output of the first 5 rows of table cnt
 c01,c02,c03
-1,Afghanistan,2026-06-06 20:40:00
-2,Algeria,2026-06-06 20:40:00
-3,American Samoa,2026-06-06 20:40:00
-4,Angola,2026-06-06 20:40:00
-5,Anguilla,2026-06-06 20:40:00
+1,Afghanistan,2026-06-07 16:18:57
+2,Algeria,2026-06-07 16:18:57
+3,American Samoa,2026-06-07 16:18:57
+4,Angola,2026-06-07 16:18:57
+5,Anguilla,2026-06-07 16:18:57
 
 DDL script for table cty
 CREATE TABLE cty ( -- Справочник городов, привязанных к странам. Используется для построения адресов.
@@ -43,11 +43,11 @@ CREATE TABLE cty ( -- Справочник городов, привязанны�
 
 Output of the first 5 rows of table cty
 d01,d02,d03,d04
-1,A Corua (La Corua),87,2026-06-06 20:40:00
-2,Abha,82,2026-06-06 20:40:00
-3,Abu Dhabi,101,2026-06-06 20:40:00
-4,Acua,60,2026-06-06 20:40:00
-5,Adana,97,2026-06-06 20:40:00
+1,A Corua (La Corua),87,2026-06-07 16:18:57
+2,Abha,82,2026-06-07 16:18:57
+3,Abu Dhabi,101,2026-06-07 16:18:57
+4,Acua,60,2026-06-07 16:18:57
+5,Adana,97,2026-06-07 16:18:57
 
 DDL script for table adr
 CREATE TABLE adr ( -- Таблица адресов клиентов, магазинов и сотрудников. Включает улицу, район, телефон и почтовый индекс.
@@ -65,11 +65,11 @@ CREATE TABLE adr ( -- Таблица адресов клиентов, магаз
 
 Output of the first 5 rows of table adr
 e01,e02,e03,e04,e05,e06,e07,e08
-1,47 MySakila Drive,, ,300,, ,2026-06-06 20:40:00
-2,28 MySQL Boulevard,, ,576,, ,2026-06-06 20:40:00
-3,23 Workhaven Lane,, ,300,, ,2026-06-06 20:40:00
-4,1411 Lillydale Drive,, ,576,, ,2026-06-06 20:40:00
-5,1913 Hanoi Way,, ,463,35200, ,2026-06-06 20:40:00
+1,47 MySakila Drive,, ,300,, ,2026-06-07 16:18:57
+2,28 MySQL Boulevard,, ,576,, ,2026-06-07 16:18:57
+3,23 Workhaven Lane,, ,300,, ,2026-06-07 16:18:57
+4,1411 Lillydale Drive,, ,576,, ,2026-06-07 16:18:57
+5,1913 Hanoi Way,, ,463,35200, ,2026-06-07 16:18:57
 
 DDL script for table lng
 CREATE TABLE lng ( -- Справочник языков, на которых представлены фильмы (например, английский, французский).
@@ -81,11 +81,11 @@ CREATE TABLE lng ( -- Справочник языков, на которых п�
 
 Output of the first 5 rows of table lng
 f01,f02,f03
-1,English,2026-06-06 20:40:00
-2,Italian,2026-06-06 20:40:00
-3,Japanese,2026-06-06 20:40:00
-4,Mandarin,2026-06-06 20:40:00
-5,French,2026-06-06 20:40:00
+1,English,2026-06-07 16:18:57
+2,Italian,2026-06-07 16:18:57
+3,Japanese,2026-06-07 16:18:57
+4,Mandarin,2026-06-07 16:18:57
+5,French,2026-06-07 16:18:57
 
 DDL script for table cat
 CREATE TABLE cat ( -- Справочник категорий фильмов (например, комедия, ужасы, драма).
@@ -97,11 +97,11 @@ CREATE TABLE cat ( -- Справочник категорий фильмов (н
 
 Output of the first 5 rows of table cat
 g01,g02,g03
-1,Action,2026-06-06 20:40:00
-2,Animation,2026-06-06 20:40:00
-3,Children,2026-06-06 20:40:00
-4,Classics,2026-06-06 20:40:00
-5,Comedy,2026-06-06 20:40:00
+1,Action,2026-06-07 16:18:57
+2,Animation,2026-06-07 16:18:57
+3,Children,2026-06-07 16:18:57
+4,Classics,2026-06-07 16:18:57
+5,Comedy,2026-06-07 16:18:57
 
 DDL script for table cus
 CREATE TABLE cus ( -- Таблица клиентов проката. Содержит персональные данные, адрес, статус активности.
@@ -121,11 +121,11 @@ CREATE TABLE cus ( -- Таблица клиентов проката. Содер
 
 Output of the first 5 rows of table cus
 h01,h02,h03,h04,h05,h06,h07,h08,h09
-1,1,MARY,SMITH,MARY.SMITH@sakilacustomer.org,5,1,2006-02-14 22:04:36.000,2026-06-06 20:40:00
-2,1,PATRICIA,JOHNSON,PATRICIA.JOHNSON@sakilacustomer.org,6,1,2006-02-14 22:04:36.000,2026-06-06 20:40:00
-3,1,LINDA,WILLIAMS,LINDA.WILLIAMS@sakilacustomer.org,7,1,2006-02-14 22:04:36.000,2026-06-06 20:40:00
-4,2,BARBARA,JONES,BARBARA.JONES@sakilacustomer.org,8,1,2006-02-14 22:04:36.000,2026-06-06 20:40:00
-5,1,ELIZABETH,BROWN,ELIZABETH.BROWN@sakilacustomer.org,9,1,2006-02-14 22:04:36.000,2026-06-06 20:40:00
+1,1,MARY,SMITH,MARY.SMITH@sakilacustomer.org,5,1,2006-02-14 22:04:36.000,2026-06-07 16:18:57
+2,1,PATRICIA,JOHNSON,PATRICIA.JOHNSON@sakilacustomer.org,6,1,2006-02-14 22:04:36.000,2026-06-07 16:18:57
+3,1,LINDA,WILLIAMS,LINDA.WILLIAMS@sakilacustomer.org,7,1,2006-02-14 22:04:36.000,2026-06-07 16:18:57
+4,2,BARBARA,JONES,BARBARA.JONES@sakilacustomer.org,8,1,2006-02-14 22:04:36.000,2026-06-07 16:18:57
+5,1,ELIZABETH,BROWN,ELIZABETH.BROWN@sakilacustomer.org,9,1,2006-02-14 22:04:36.000,2026-06-07 16:18:57
 
 DDL script for table flm
 CREATE TABLE flm ( -- Таблица фильмов. Содержит название, описание, язык, продолжительность, рейтинг и особенности.
@@ -151,11 +151,11 @@ CREATE TABLE flm ( -- Таблица фильмов. Содержит назва
 
 Output of the first 5 rows of table flm
 i01,i02,i03,i04,i05,i06,i07,i08,i09,i10,i11,i12,i13
-1,ACADEMY DINOSAUR,A Epic Drama of a Feminist And a Mad Scientist who must Battle a Teacher in The Canadian Rockies,2006,1,,6,0.99,86,20.99,PG,"Deleted Scenes,Behind the Scenes",2026-06-06 20:40:00
-2,ACE GOLDFINGER,A Astounding Epistle of a Database Administrator And a Explorer who must Find a Car in Ancient China,2006,1,,3,4.99,48,12.99,G,"Trailers,Deleted Scenes",2026-06-06 20:40:00
-3,ADAPTATION HOLES,A Astounding Reflection of a Lumberjack And a Car who must Sink a Lumberjack in A Baloon Factory,2006,1,,7,2.99,50,18.99,NC-17,"Trailers,Deleted Scenes",2026-06-06 20:40:00
-4,AFFAIR PREJUDICE,A Fanciful Documentary of a Frisbee And a Lumberjack who must Chase a Monkey in A Shark Tank,2006,1,,5,2.99,117,26.99,G,"Commentaries,Behind the Scenes",2026-06-06 20:40:00
-5,AFRICAN EGG,A Fast-Paced Documentary of a Pastry Chef And a Dentist who must Pursue a Forensic Psychologist in The Gulf of Mexico,2006,1,,6,2.99,130,22.99,G,Deleted Scenes,2026-06-06 20:40:00
+1,ACADEMY DINOSAUR,A Epic Drama of a Feminist And a Mad Scientist who must Battle a Teacher in The Canadian Rockies,2006,1,,6,0.99,86,20.99,PG,"Deleted Scenes,Behind the Scenes",2026-06-07 16:18:57
+2,ACE GOLDFINGER,A Astounding Epistle of a Database Administrator And a Explorer who must Find a Car in Ancient China,2006,1,,3,4.99,48,12.99,G,"Trailers,Deleted Scenes",2026-06-07 16:18:57
+3,ADAPTATION HOLES,A Astounding Reflection of a Lumberjack And a Car who must Sink a Lumberjack in A Baloon Factory,2006,1,,7,2.99,50,18.99,NC-17,"Trailers,Deleted Scenes",2026-06-07 16:18:57
+4,AFFAIR PREJUDICE,A Fanciful Documentary of a Frisbee And a Lumberjack who must Chase a Monkey in A Shark Tank,2006,1,,5,2.99,117,26.99,G,"Commentaries,Behind the Scenes",2026-06-07 16:18:57
+5,AFRICAN EGG,A Fast-Paced Documentary of a Pastry Chef And a Dentist who must Pursue a Forensic Psychologist in The Gulf of Mexico,2006,1,,6,2.99,130,22.99,G,Deleted Scenes,2026-06-07 16:18:57
 
 DDL script for table fla
 CREATE TABLE fla ( -- Связующая таблица между актёрами и фильмами (many-to-many).
@@ -169,11 +169,11 @@ CREATE TABLE fla ( -- Связующая таблица между актёра�
 
 Output of the first 5 rows of table fla
 k01,k02,k03
-1,1,2026-06-06 20:40:00
-1,23,2026-06-06 20:40:00
-1,25,2026-06-06 20:40:00
-1,106,2026-06-06 20:40:00
-1,140,2026-06-06 20:40:00
+1,1,2026-06-07 16:18:57
+1,23,2026-06-07 16:18:57
+1,25,2026-06-07 16:18:57
+1,106,2026-06-07 16:18:57
+1,140,2026-06-07 16:18:57
 
 DDL script for table flc
 CREATE TABLE flc ( -- Связующая таблица между фильмами и категориями (many-to-many).
@@ -187,11 +187,11 @@ CREATE TABLE flc ( -- Связующая таблица между фильма�
 
 Output of the first 5 rows of table flc
 l01,l02,l03
-1,6,2026-06-06 20:40:00
-2,11,2026-06-06 20:40:00
-3,6,2026-06-06 20:40:00
-4,11,2026-06-06 20:40:00
-5,8,2026-06-06 20:40:00
+1,6,2026-06-07 16:18:57
+2,11,2026-06-07 16:18:57
+3,6,2026-06-07 16:18:57
+4,11,2026-06-07 16:18:57
+5,8,2026-06-07 16:18:57
 
 DDL script for table flt
 CREATE TABLE flt ( -- Текстовая таблица для полнотекстового поиска по фильмам (film_text).
@@ -217,11 +217,11 @@ CREATE TABLE inv ( -- Таблица инвентаря — копий филь�
 
 Output of the first 5 rows of table inv
 n01,n02,n03,n04
-1,1,1,2026-06-06 20:40:00
-2,1,1,2026-06-06 20:40:00
-3,1,1,2026-06-06 20:40:00
-4,1,1,2026-06-06 20:40:00
-5,1,2,2026-06-06 20:40:00
+1,1,1,2026-06-07 16:18:57
+2,1,1,2026-06-07 16:18:57
+3,1,1,2026-06-07 16:18:57
+4,1,1,2026-06-07 16:18:57
+5,1,2,2026-06-07 16:18:57
 
 DDL script for table stf
 CREATE TABLE stf ( -- Таблица сотрудников проката. Содержит личные данные, фото, учётные данные и активность.
@@ -243,8 +243,8 @@ CREATE TABLE stf ( -- Таблица сотрудников проката. Со
 
 Output of the first 5 rows of table stf
 o01,o02,o03,o04,o05,o06,o07,o08,o09,o10,o11
-1,Mike,Hillyer,3,,Mike.Hillyer@sakilastaff.com,1,1,Mike,8cb2237d0679ca88db6464eac60da96345513964,2026-06-06 20:40:00
-2,Jon,Stephens,4,,Jon.Stephens@sakilastaff.com,2,1,Jon,8cb2237d0679ca88db6464eac60da96345513964,2026-06-06 20:40:00
+1,Mike,Hillyer,3,,Mike.Hillyer@sakilastaff.com,1,1,Mike,8cb2237d0679ca88db6464eac60da96345513964,2026-06-07 16:18:57
+2,Jon,Stephens,4,,Jon.Stephens@sakilastaff.com,2,1,Jon,8cb2237d0679ca88db6464eac60da96345513964,2026-06-07 16:18:57
 
 DDL script for table sto
 CREATE TABLE sto ( -- Таблица магазинов проката. У каждого есть менеджер и адрес.
@@ -259,8 +259,8 @@ CREATE TABLE sto ( -- Таблица магазинов проката. У ка�
 
 Output of the first 5 rows of table sto
 j01,j02,j03,j04
-1,1,1,2026-06-06 20:40:00
-2,2,2,2026-06-06 20:40:00
+1,1,1,2026-06-07 16:18:57
+2,2,2,2026-06-07 16:18:57
 
 DDL script for table pay
 CREATE TABLE pay ( -- Таблица платежей клиентов за аренду. Содержит сумму, дату и связи с rental, customer, staff.
@@ -279,11 +279,11 @@ CREATE TABLE pay ( -- Таблица платежей клиентов за ар
 
 Output of the first 5 rows of table pay
 p01,p02,p03,p04,p05,p06,p07
-1,1,1,76,2.99,2005-05-25 11:30:37.000,2026-06-06 20:40:00
-2,1,1,573,0.99,2005-05-28 10:35:23.000,2026-06-06 20:40:00
-3,1,1,1185,5.99,2005-06-15 00:54:12.000,2026-06-06 20:40:00
-4,1,2,1422,0.99,2005-06-15 18:02:53.000,2026-06-06 20:40:00
-5,1,2,1476,9.99,2005-06-15 21:08:46.000,2026-06-06 20:40:00
+1,1,1,76,2.99,2005-05-25 11:30:37.000,2026-06-07 16:18:57
+2,1,1,573,0.99,2005-05-28 10:35:23.000,2026-06-07 16:18:57
+3,1,1,1185,5.99,2005-06-15 00:54:12.000,2026-06-07 16:18:57
+4,1,2,1422,0.99,2005-06-15 18:02:53.000,2026-06-07 16:18:57
+5,1,2,1476,9.99,2005-06-15 21:08:46.000,2026-06-07 16:18:57
 
 DDL script for table ren
 CREATE TABLE ren ( -- Таблица аренды фильмов. Фиксирует дату выдачи, возврата и связь с инвентарём, клиентом, сотрудником.
@@ -302,8 +302,8 @@ CREATE TABLE ren ( -- Таблица аренды фильмов. Фиксиру
 
 Output of the first 5 rows of table ren
 q01,q02,q03,q04,q05,q06,q07
-1,2005-05-24 22:53:30.000,367,130,2005-05-26 22:04:30.000,1,2026-06-06 20:40:00
-2,2005-05-24 22:54:33.000,1525,459,2005-05-28 19:40:33.000,1,2026-06-06 20:40:00
-3,2005-05-24 23:03:39.000,1711,408,2005-06-01 22:12:39.000,1,2026-06-06 20:40:00
-4,2005-05-24 23:04:41.000,2452,333,2005-06-03 01:43:41.000,2,2026-06-06 20:40:00
-5,2005-05-24 23:05:21.000,2079,222,2005-06-02 04:33:21.000,1,2026-06-06 20:40:00
+1,2005-05-24 22:53:30.000,367,130,2005-05-26 22:04:30.000,1,2026-06-07 16:18:57
+2,2005-05-24 22:54:33.000,1525,459,2005-05-28 19:40:33.000,1,2026-06-07 16:18:57
+3,2005-05-24 23:03:39.000,1711,408,2005-06-01 22:12:39.000,1,2026-06-07 16:18:57
+4,2005-05-24 23:04:41.000,2452,333,2005-06-03 01:43:41.000,2,2026-06-07 16:18:57
+5,2005-05-24 23:05:21.000,2079,222,2005-06-02 04:33:21.000,1,2026-06-07 16:18:57

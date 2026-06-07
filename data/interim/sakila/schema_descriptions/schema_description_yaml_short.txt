@@ -1,4 +1,12 @@
 DDL script for table act
+-- table: act
+-- source_table: actor
+-- description: Актёры фильмов.
+-- columns:
+--   a01: Идентификатор актёра.  # source: actor_id
+--   a02: Имя актёра.  # source: first_name
+--   a03: Фамилия актёра.  # source: last_name
+--   a04: Дата изменения записи.  # source: last_update
 CREATE TABLE act (
   a01 numeric NOT NULL,
   a02 VARCHAR(45) NOT NULL,
@@ -9,13 +17,20 @@ CREATE TABLE act (
 
 Output of the first 5 rows of table act
 a01,a02,a03,a04
-1,PENELOPE,GUINESS,2026-06-06 20:39:01
-2,NICK,WAHLBERG,2026-06-06 20:39:01
-3,ED,CHASE,2026-06-06 20:39:01
-4,JENNIFER,DAVIS,2026-06-06 20:39:01
-5,JOHNNY,LOLLOBRIGIDA,2026-06-06 20:39:01
+1,PENELOPE,GUINESS,2026-06-07 16:19:37
+2,NICK,WAHLBERG,2026-06-07 16:19:37
+3,ED,CHASE,2026-06-07 16:19:37
+4,JENNIFER,DAVIS,2026-06-07 16:19:37
+5,JOHNNY,LOLLOBRIGIDA,2026-06-07 16:19:37
 
 DDL script for table cnt
+-- table: cnt
+-- source_table: country
+-- description: Страны.
+-- columns:
+--   c01: Идентификатор страны.  # source: country_id
+--   c02: Название страны.  # source: country
+--   c03: Дата изменения записи.  # source: last_update
 CREATE TABLE cnt (
   c01 SMALLINT NOT NULL,
   c02 VARCHAR(50) NOT NULL,
@@ -25,13 +40,21 @@ CREATE TABLE cnt (
 
 Output of the first 5 rows of table cnt
 c01,c02,c03
-1,Afghanistan,2026-06-06 20:39:01
-2,Algeria,2026-06-06 20:39:01
-3,American Samoa,2026-06-06 20:39:01
-4,Angola,2026-06-06 20:39:01
-5,Anguilla,2026-06-06 20:39:01
+1,Afghanistan,2026-06-07 16:19:37
+2,Algeria,2026-06-07 16:19:37
+3,American Samoa,2026-06-07 16:19:37
+4,Angola,2026-06-07 16:19:37
+5,Anguilla,2026-06-07 16:19:37
 
 DDL script for table cty
+-- table: cty
+-- source_table: city
+-- description: Города.
+-- columns:
+--   d01: Идентификатор города.  # source: city_id
+--   d02: Название города.  # source: city
+--   d03: Идентификатор страны.  # source: country_id
+--   d04: Дата изменения записи.  # source: last_update
 CREATE TABLE cty (
   d01 int NOT NULL,
   d02 VARCHAR(50) NOT NULL,
@@ -43,13 +66,25 @@ CREATE TABLE cty (
 
 Output of the first 5 rows of table cty
 d01,d02,d03,d04
-1,A Corua (La Corua),87,2026-06-06 20:39:01
-2,Abha,82,2026-06-06 20:39:01
-3,Abu Dhabi,101,2026-06-06 20:39:01
-4,Acua,60,2026-06-06 20:39:01
-5,Adana,97,2026-06-06 20:39:01
+1,A Corua (La Corua),87,2026-06-07 16:19:37
+2,Abha,82,2026-06-07 16:19:37
+3,Abu Dhabi,101,2026-06-07 16:19:37
+4,Acua,60,2026-06-07 16:19:37
+5,Adana,97,2026-06-07 16:19:37
 
 DDL script for table adr
+-- table: adr
+-- source_table: address
+-- description: Адреса.
+-- columns:
+--   e01: Идентификатор адреса.  # source: address_id
+--   e02: Адрес (строка 1).  # source: address
+--   e03: Адрес (строка 2).  # source: address2
+--   e04: Район округ.  # source: district
+--   e05: Идентификатор города.  # source: city_id
+--   e06: Почтовый индекс.  # source: postal_code
+--   e07: Телефон.  # source: phone
+--   e08: Дата изменения записи.  # source: last_update
 CREATE TABLE adr (
   e01 int NOT NULL,
   e02 VARCHAR(50) NOT NULL,
@@ -65,13 +100,20 @@ CREATE TABLE adr (
 
 Output of the first 5 rows of table adr
 e01,e02,e03,e04,e05,e06,e07,e08
-1,47 MySakila Drive,, ,300,, ,2026-06-06 20:39:01
-2,28 MySQL Boulevard,, ,576,, ,2026-06-06 20:39:01
-3,23 Workhaven Lane,, ,300,, ,2026-06-06 20:39:01
-4,1411 Lillydale Drive,, ,576,, ,2026-06-06 20:39:01
-5,1913 Hanoi Way,, ,463,35200, ,2026-06-06 20:39:01
+1,47 MySakila Drive,, ,300,, ,2026-06-07 16:19:37
+2,28 MySQL Boulevard,, ,576,, ,2026-06-07 16:19:37
+3,23 Workhaven Lane,, ,300,, ,2026-06-07 16:19:37
+4,1411 Lillydale Drive,, ,576,, ,2026-06-07 16:19:37
+5,1913 Hanoi Way,, ,463,35200, ,2026-06-07 16:19:37
 
 DDL script for table lng
+-- table: lng
+-- source_table: language
+-- description: Языки.
+-- columns:
+--   f01: Идентификатор языка.  # source: language_id
+--   f02: Название языка.  # source: name
+--   f03: Дата изменения записи.  # source: last_update
 CREATE TABLE lng (
   f01 SMALLINT NOT NULL,
   f02 CHAR(20) NOT NULL,
@@ -81,13 +123,20 @@ CREATE TABLE lng (
 
 Output of the first 5 rows of table lng
 f01,f02,f03
-1,English,2026-06-06 20:39:01
-2,Italian,2026-06-06 20:39:01
-3,Japanese,2026-06-06 20:39:01
-4,Mandarin,2026-06-06 20:39:01
-5,French,2026-06-06 20:39:01
+1,English,2026-06-07 16:19:37
+2,Italian,2026-06-07 16:19:37
+3,Japanese,2026-06-07 16:19:37
+4,Mandarin,2026-06-07 16:19:37
+5,French,2026-06-07 16:19:37
 
 DDL script for table cat
+-- table: cat
+-- source_table: category
+-- description: Категории фильмов.
+-- columns:
+--   g01: Идентификатор категории.  # source: category_id
+--   g02: Название категории.  # source: name
+--   g03: Дата изменения записи.  # source: last_update
 CREATE TABLE cat (
   g01 SMALLINT NOT NULL,
   g02 VARCHAR(25) NOT NULL,
@@ -97,13 +146,26 @@ CREATE TABLE cat (
 
 Output of the first 5 rows of table cat
 g01,g02,g03
-1,Action,2026-06-06 20:39:01
-2,Animation,2026-06-06 20:39:01
-3,Children,2026-06-06 20:39:01
-4,Classics,2026-06-06 20:39:01
-5,Comedy,2026-06-06 20:39:01
+1,Action,2026-06-07 16:19:37
+2,Animation,2026-06-07 16:19:37
+3,Children,2026-06-07 16:19:37
+4,Classics,2026-06-07 16:19:37
+5,Comedy,2026-06-07 16:19:37
 
 DDL script for table cus
+-- table: cus
+-- source_table: customer
+-- description: Клиенты проката.
+-- columns:
+--   h01: Идентификатор клиента.  # source: customer_id
+--   h02: Идентификатор магазина.  # source: store_id
+--   h03: Имя клиента.  # source: first_name
+--   h04: Фамилия клиента.  # source: last_name
+--   h05: Email клиента.  # source: email
+--   h06: Идентификатор адреса.  # source: address_id
+--   h07: Статус активности.  # source: active
+--   h08: Дата регистрации.  # source: create_date
+--   h09: Дата изменения записи.  # source: last_update
 CREATE TABLE cus (
   h01 INT NOT NULL,
   h02 INT NOT NULL,
@@ -121,13 +183,30 @@ CREATE TABLE cus (
 
 Output of the first 5 rows of table cus
 h01,h02,h03,h04,h05,h06,h07,h08,h09
-1,1,MARY,SMITH,MARY.SMITH@sakilacustomer.org,5,1,2006-02-14 22:04:36.000,2026-06-06 20:39:01
-2,1,PATRICIA,JOHNSON,PATRICIA.JOHNSON@sakilacustomer.org,6,1,2006-02-14 22:04:36.000,2026-06-06 20:39:01
-3,1,LINDA,WILLIAMS,LINDA.WILLIAMS@sakilacustomer.org,7,1,2006-02-14 22:04:36.000,2026-06-06 20:39:01
-4,2,BARBARA,JONES,BARBARA.JONES@sakilacustomer.org,8,1,2006-02-14 22:04:36.000,2026-06-06 20:39:01
-5,1,ELIZABETH,BROWN,ELIZABETH.BROWN@sakilacustomer.org,9,1,2006-02-14 22:04:36.000,2026-06-06 20:39:01
+1,1,MARY,SMITH,MARY.SMITH@sakilacustomer.org,5,1,2006-02-14 22:04:36.000,2026-06-07 16:19:37
+2,1,PATRICIA,JOHNSON,PATRICIA.JOHNSON@sakilacustomer.org,6,1,2006-02-14 22:04:36.000,2026-06-07 16:19:37
+3,1,LINDA,WILLIAMS,LINDA.WILLIAMS@sakilacustomer.org,7,1,2006-02-14 22:04:36.000,2026-06-07 16:19:37
+4,2,BARBARA,JONES,BARBARA.JONES@sakilacustomer.org,8,1,2006-02-14 22:04:36.000,2026-06-07 16:19:37
+5,1,ELIZABETH,BROWN,ELIZABETH.BROWN@sakilacustomer.org,9,1,2006-02-14 22:04:36.000,2026-06-07 16:19:37
 
 DDL script for table flm
+-- table: flm
+-- source_table: film
+-- description: Фильмы.
+-- columns:
+--   i01: Идентификатор фильма.  # source: film_id
+--   i02: Название фильма.  # source: title
+--   i03: Описание фильма.  # source: description
+--   i04: Год выпуска.  # source: release_year
+--   i05: Идентификатор языка.  # source: language_id
+--   i06: Идентификатор оригинала языка.  # source: original_language_id
+--   i07: Длительность аренды (дни).  # source: rental_duration
+--   i08: Стоимость аренды.  # source: rental_rate
+--   i09: Длительность фильма (минуты).  # source: length
+--   i10: Стоимость замены.  # source: replacement_cost
+--   i11: Рейтинг MPAA.  # source: rating
+--   i12: Особенности фильма.  # source: special_features
+--   i13: Дата изменения записи.  # source: last_update
 CREATE TABLE flm (
   i01 int NOT NULL,
   i02 VARCHAR(255) NOT NULL,
@@ -151,13 +230,20 @@ CREATE TABLE flm (
 
 Output of the first 5 rows of table flm
 i01,i02,i03,i04,i05,i06,i07,i08,i09,i10,i11,i12,i13
-1,ACADEMY DINOSAUR,A Epic Drama of a Feminist And a Mad Scientist who must Battle a Teacher in The Canadian Rockies,2006,1,,6,0.99,86,20.99,PG,"Deleted Scenes,Behind the Scenes",2026-06-06 20:39:01
-2,ACE GOLDFINGER,A Astounding Epistle of a Database Administrator And a Explorer who must Find a Car in Ancient China,2006,1,,3,4.99,48,12.99,G,"Trailers,Deleted Scenes",2026-06-06 20:39:01
-3,ADAPTATION HOLES,A Astounding Reflection of a Lumberjack And a Car who must Sink a Lumberjack in A Baloon Factory,2006,1,,7,2.99,50,18.99,NC-17,"Trailers,Deleted Scenes",2026-06-06 20:39:01
-4,AFFAIR PREJUDICE,A Fanciful Documentary of a Frisbee And a Lumberjack who must Chase a Monkey in A Shark Tank,2006,1,,5,2.99,117,26.99,G,"Commentaries,Behind the Scenes",2026-06-06 20:39:01
-5,AFRICAN EGG,A Fast-Paced Documentary of a Pastry Chef And a Dentist who must Pursue a Forensic Psychologist in The Gulf of Mexico,2006,1,,6,2.99,130,22.99,G,Deleted Scenes,2026-06-06 20:39:01
+1,ACADEMY DINOSAUR,A Epic Drama of a Feminist And a Mad Scientist who must Battle a Teacher in The Canadian Rockies,2006,1,,6,0.99,86,20.99,PG,"Deleted Scenes,Behind the Scenes",2026-06-07 16:19:37
+2,ACE GOLDFINGER,A Astounding Epistle of a Database Administrator And a Explorer who must Find a Car in Ancient China,2006,1,,3,4.99,48,12.99,G,"Trailers,Deleted Scenes",2026-06-07 16:19:37
+3,ADAPTATION HOLES,A Astounding Reflection of a Lumberjack And a Car who must Sink a Lumberjack in A Baloon Factory,2006,1,,7,2.99,50,18.99,NC-17,"Trailers,Deleted Scenes",2026-06-07 16:19:37
+4,AFFAIR PREJUDICE,A Fanciful Documentary of a Frisbee And a Lumberjack who must Chase a Monkey in A Shark Tank,2006,1,,5,2.99,117,26.99,G,"Commentaries,Behind the Scenes",2026-06-07 16:19:37
+5,AFRICAN EGG,A Fast-Paced Documentary of a Pastry Chef And a Dentist who must Pursue a Forensic Psychologist in The Gulf of Mexico,2006,1,,6,2.99,130,22.99,G,Deleted Scenes,2026-06-07 16:19:37
 
 DDL script for table fla
+-- table: fla
+-- source_table: film_actor
+-- description: Связь фильмов и актёров.
+-- columns:
+--   k01: Идентификатор актёра.  # source: actor_id
+--   k02: Идентификатор фильма.  # source: film_id
+--   k03: Дата изменения записи.  # source: last_update
 CREATE TABLE fla (
   k01 INT NOT NULL,
   k02 INT NOT NULL,
@@ -169,13 +255,20 @@ CREATE TABLE fla (
 
 Output of the first 5 rows of table fla
 k01,k02,k03
-1,1,2026-06-06 20:39:01
-1,23,2026-06-06 20:39:01
-1,25,2026-06-06 20:39:01
-1,106,2026-06-06 20:39:01
-1,140,2026-06-06 20:39:01
+1,1,2026-06-07 16:19:37
+1,23,2026-06-07 16:19:37
+1,25,2026-06-07 16:19:37
+1,106,2026-06-07 16:19:37
+1,140,2026-06-07 16:19:37
 
 DDL script for table flc
+-- table: flc
+-- source_table: film_category
+-- description: Связь фильмов и категорий.
+-- columns:
+--   l01: Идентификатор фильма.  # source: film_id
+--   l02: Идентификатор категории.  # source: category_id
+--   l03: Дата изменения записи.  # source: last_update
 CREATE TABLE flc (
   l01 INT NOT NULL,
   l02 SMALLINT NOT NULL,
@@ -187,13 +280,20 @@ CREATE TABLE flc (
 
 Output of the first 5 rows of table flc
 l01,l02,l03
-1,6,2026-06-06 20:39:01
-2,11,2026-06-06 20:39:01
-3,6,2026-06-06 20:39:01
-4,11,2026-06-06 20:39:01
-5,8,2026-06-06 20:39:01
+1,6,2026-06-07 16:19:37
+2,11,2026-06-07 16:19:37
+3,6,2026-06-07 16:19:37
+4,11,2026-06-07 16:19:37
+5,8,2026-06-07 16:19:37
 
 DDL script for table flt
+-- table: flt
+-- source_table: film_text
+-- description: Текстовая таблица для полнотекстового поиска.
+-- columns:
+--   m01: Идентификатор фильма.  # source: film_id
+--   m02: Название фильма.  # source: title
+--   m03: Описание фильма.  # source: description
 CREATE TABLE flt (
   m01 SMALLINT NOT NULL,
   m02 VARCHAR(255) NOT NULL,
@@ -205,6 +305,14 @@ Output of the first 5 rows of table flt
 m01,m02,m03
 
 DDL script for table inv
+-- table: inv
+-- source_table: inventory
+-- description: Инвентарь копии фильмов.
+-- columns:
+--   n01: Идентификатор копии.  # source: inventory_id
+--   n02: Идентификатор фильма.  # source: film_id
+--   n03: Идентификатор магазина.  # source: store_id
+--   n04: Дата изменения записи.  # source: last_update
 CREATE TABLE inv (
   n01 INT NOT NULL,
   n02 INT NOT NULL,
@@ -217,13 +325,28 @@ CREATE TABLE inv (
 
 Output of the first 5 rows of table inv
 n01,n02,n03,n04
-1,1,1,2026-06-06 20:39:01
-2,1,1,2026-06-06 20:39:01
-3,1,1,2026-06-06 20:39:01
-4,1,1,2026-06-06 20:39:01
-5,1,2,2026-06-06 20:39:01
+1,1,1,2026-06-07 16:19:37
+2,1,1,2026-06-07 16:19:37
+3,1,1,2026-06-07 16:19:37
+4,1,1,2026-06-07 16:19:37
+5,1,2,2026-06-07 16:19:37
 
 DDL script for table stf
+-- table: stf
+-- source_table: staff
+-- description: Сотрудники проката.
+-- columns:
+--   o01: Идентификатор сотрудника.  # source: staff_id
+--   o02: Имя сотрудника.  # source: first_name
+--   o03: Фамилия сотрудника.  # source: last_name
+--   o04: Идентификатор адреса.  # source: address_id
+--   o05: Фотография.  # source: picture
+--   o06: Email сотрудника.  # source: email
+--   o07: Идентификатор магазина.  # source: store_id
+--   o08: Статус активности.  # source: active
+--   o09: Логин.  # source: username
+--   o10: Пароль.  # source: password
+--   o11: Дата изменения записи.  # source: last_update
 CREATE TABLE stf (
   o01 SMALLINT NOT NULL,
   o02 VARCHAR(45) NOT NULL,
@@ -243,10 +366,18 @@ CREATE TABLE stf (
 
 Output of the first 5 rows of table stf
 o01,o02,o03,o04,o05,o06,o07,o08,o09,o10,o11
-1,Mike,Hillyer,3,,Mike.Hillyer@sakilastaff.com,1,1,Mike,8cb2237d0679ca88db6464eac60da96345513964,2026-06-06 20:39:01
-2,Jon,Stephens,4,,Jon.Stephens@sakilastaff.com,2,1,Jon,8cb2237d0679ca88db6464eac60da96345513964,2026-06-06 20:39:01
+1,Mike,Hillyer,3,,Mike.Hillyer@sakilastaff.com,1,1,Mike,8cb2237d0679ca88db6464eac60da96345513964,2026-06-07 16:19:37
+2,Jon,Stephens,4,,Jon.Stephens@sakilastaff.com,2,1,Jon,8cb2237d0679ca88db6464eac60da96345513964,2026-06-07 16:19:37
 
 DDL script for table sto
+-- table: sto
+-- source_table: store
+-- description: Магазины проката.
+-- columns:
+--   j01: Идентификатор магазина.  # source: store_id
+--   j02: Идентификатор менеджера.  # source: manager_staff_id
+--   j03: Идентификатор адреса.  # source: address_id
+--   j04: Дата изменения записи.  # source: last_update
 CREATE TABLE sto (
   j01 INT NOT NULL,
   j02 SMALLINT NOT NULL,
@@ -259,10 +390,21 @@ CREATE TABLE sto (
 
 Output of the first 5 rows of table sto
 j01,j02,j03,j04
-1,1,1,2026-06-06 20:39:01
-2,2,2,2026-06-06 20:39:01
+1,1,1,2026-06-07 16:19:37
+2,2,2,2026-06-07 16:19:37
 
 DDL script for table pay
+-- table: pay
+-- source_table: payment
+-- description: Платежи клиентов.
+-- columns:
+--   p01: Идентификатор платежа.  # source: payment_id
+--   p02: Идентификатор клиента.  # source: customer_id
+--   p03: Идентификатор сотрудника.  # source: staff_id
+--   p04: Идентификатор аренды.  # source: rental_id
+--   p05: Сумма платежа.  # source: amount
+--   p06: Дата платежа.  # source: payment_date
+--   p07: Дата изменения записи.  # source: last_update
 CREATE TABLE pay (
   p01 int NOT NULL,
   p02 INT NOT NULL,
@@ -279,13 +421,24 @@ CREATE TABLE pay (
 
 Output of the first 5 rows of table pay
 p01,p02,p03,p04,p05,p06,p07
-1,1,1,76,2.99,2005-05-25 11:30:37.000,2026-06-06 20:39:01
-2,1,1,573,0.99,2005-05-28 10:35:23.000,2026-06-06 20:39:01
-3,1,1,1185,5.99,2005-06-15 00:54:12.000,2026-06-06 20:39:01
-4,1,2,1422,0.99,2005-06-15 18:02:53.000,2026-06-06 20:39:01
-5,1,2,1476,9.99,2005-06-15 21:08:46.000,2026-06-06 20:39:01
+1,1,1,76,2.99,2005-05-25 11:30:37.000,2026-06-07 16:19:37
+2,1,1,573,0.99,2005-05-28 10:35:23.000,2026-06-07 16:19:37
+3,1,1,1185,5.99,2005-06-15 00:54:12.000,2026-06-07 16:19:37
+4,1,2,1422,0.99,2005-06-15 18:02:53.000,2026-06-07 16:19:37
+5,1,2,1476,9.99,2005-06-15 21:08:46.000,2026-06-07 16:19:37
 
 DDL script for table ren
+-- table: ren
+-- source_table: rental
+-- description: Аренда фильмов.
+-- columns:
+--   q01: Идентификатор аренды.  # source: rental_id
+--   q02: Дата выдачи.  # source: rental_date
+--   q03: Идентификатор копии.  # source: inventory_id
+--   q04: Идентификатор клиента.  # source: customer_id
+--   q05: Дата возврата.  # source: return_date
+--   q06: Идентификатор сотрудника.  # source: staff_id
+--   q07: Дата изменения записи.  # source: last_update
 CREATE TABLE ren (
   q01 INT NOT NULL,
   q02 TIMESTAMP NOT NULL,
@@ -302,8 +455,8 @@ CREATE TABLE ren (
 
 Output of the first 5 rows of table ren
 q01,q02,q03,q04,q05,q06,q07
-1,2005-05-24 22:53:30.000,367,130,2005-05-26 22:04:30.000,1,2026-06-06 20:39:01
-2,2005-05-24 22:54:33.000,1525,459,2005-05-28 19:40:33.000,1,2026-06-06 20:39:01
-3,2005-05-24 23:03:39.000,1711,408,2005-06-01 22:12:39.000,1,2026-06-06 20:39:01
-4,2005-05-24 23:04:41.000,2452,333,2005-06-03 01:43:41.000,2,2026-06-06 20:39:01
-5,2005-05-24 23:05:21.000,2079,222,2005-06-02 04:33:21.000,1,2026-06-06 20:39:01
+1,2005-05-24 22:53:30.000,367,130,2005-05-26 22:04:30.000,1,2026-06-07 16:19:37
+2,2005-05-24 22:54:33.000,1525,459,2005-05-28 19:40:33.000,1,2026-06-07 16:19:37
+3,2005-05-24 23:03:39.000,1711,408,2005-06-01 22:12:39.000,1,2026-06-07 16:19:37
+4,2005-05-24 23:04:41.000,2452,333,2005-06-03 01:43:41.000,2,2026-06-07 16:19:37
+5,2005-05-24 23:05:21.000,2079,222,2005-06-02 04:33:21.000,1,2026-06-07 16:19:37

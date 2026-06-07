@@ -1,55 +1,125 @@
 ddl
-"CREATE TABLE btm_cst ( -- Клиенты банка.
-    c01 INTEGER, -- Идентификатор клиента.
-    c02 TEXT   , -- Имя клиента.
-    c03 TEXT   , -- Адрес клиента.
-    c04 TEXT   , -- Код штата клиента.
-    c05 TEXT     -- Телефон клиента.
+"-- table: btm_cst
+-- source_table: BANK_CUST
+-- description: Таблица измерения клиентов, ключ соединения с таблицами счетов хранится в поле c01.
+-- columns:
+--   c01: Целочисленный идентификатор клиента, используется как внешний ключ в a01 и s01.  # source: customer_id
+--   c02: Текстовое имя клиента без фамилии, пример значения: Oliver.  # source: customer_name
+--   c03: Текстовый адрес клиента, обычно строка с номером дома и городом.  # source: Address
+--   c04: Трехсимвольный региональный код, типовые значения: CA, MN, NY, SFO.  # source: state_code
+--   c05: Телефон в виде строки из цифр, чтобы сохранять ведущие нули и формат исходной системы.  # source: Telephone
+CREATE TABLE btm_cst (
+    c01 INTEGER,
+    c02 TEXT,
+    c03 TEXT,
+    c04 TEXT,
+    c05 TEXT
 );"
-"CREATE TABLE btm_cex ( -- Экспортная копия клиентов.
-    x01 TEXT   , -- Идентификатор клиента в выгрузке.
-    x02 TEXT   , -- Имя клиента в выгрузке.
-    x03 TEXT   , -- Адрес клиента в выгрузке.
-    x04 TEXT   , -- Код штата в выгрузке.
-    x05 TEXT     -- Телефон в выгрузке.
+"-- table: btm_cex
+-- source_table: BANK_CUSTOMER_EXPORT
+-- description: Таблица контрольной выгрузки клиентов с текстовыми типами, близкая по структуре к btm_cst.
+-- columns:
+--   x01: Идентификатор клиента в текстовом формате, логически соответствует btm_cst.c01.  # source: customer_id
+--   x02: Имя клиента из экспортной системы.  # source: customer_name
+--   x03: Адрес клиента из экспортной системы.  # source: Address
+--   x04: Код штата или региона из экспортной системы.  # source: state_code
+--   x05: Телефон клиента из экспортной системы.  # source: Telephone
+CREATE TABLE btm_cex (
+    x01 TEXT,
+    x02 TEXT,
+    x03 TEXT,
+    x04 TEXT,
+    x05 TEXT
 );"
-"CREATE TABLE btm_accd ( -- Детали банковских счетов.
-    a01 INTEGER, -- Идентификатор владельца счета.
-    a02 TEXT   , -- Номер счета.
-    a03 TEXT   , -- Тип счета.
-    a04 INTEGER, -- Баланс счета.
-    a05 TEXT   , -- Статус счета.
-    a06 TEXT     -- Тип связи клиента со счетом.
+"-- table: btm_accd
+-- source_table: BANK_ACC_DELS
+-- description: Таблица деталей счетов, основной ключ для соединения с транзакциями находится в a02.
+-- columns:
+--   a01: Идентификатор клиента, может соединяться с btm_cst.c01.  # source: customer_id
+--   a02: Номер счета или карты как TEXT, соединяется с btm_trn.t01 и btm_rel.r02.  # source: Account_number
+--   a03: Категория продукта, примеры: SAVINGS, RECURRING DEPOSITS, Credit Card.  # source: Account_type
+--   a04: Числовой остаток по счету, для карточных продуктов часто равен 0.  # source: Balance_amount
+--   a05: Статус записи счета, ожидаемые значения ACTIVE или INACTIVE.  # source: Account_status
+--   a06: Однобуквенный тип отношения: P означает основной, S означает вторичный.  # source: Relationship_type
+CREATE TABLE btm_accd (
+    a01 INTEGER,
+    a02 TEXT,
+    a03 TEXT,
+    a04 INTEGER,
+    a05 TEXT,
+    a06 TEXT
 );"
-"CREATE TABLE btm_accs ( -- Срез банковских счетов.
-    s01 INTEGER, -- Идентификатор клиента.
-    s02 TEXT   , -- Номер счета.
-    s03 TEXT   , -- Тип счета.
-    s04 INTEGER, -- Текущий баланс.
-    s05 TEXT   , -- Статус счета.
-    s06 TEXT     -- Роль клиента по счету.
+"-- table: btm_accs
+-- source_table: BANK_ACCOU
+-- description: Аналитическая копия счетов с похожими полями на btm_accd, но отдельным источником из ноутбука.
+-- columns:
+--   s01: Идентификатор клиента для соединения с btm_cst.c01.  # source: Customer_id
+--   s02: Номер счета для соединения с btm_trn.t01.  # source: Account_Number
+--   s03: Тип продукта, возможны варианты регистра для кредитных карт.  # source: Account_type
+--   s04: Остаток по счету, допускается NULL для отдельных счетов.  # source: Balance_amount
+--   s05: Статус счета: ACTIVE или INACTIVE.  # source: Account_status
+--   s06: Признак роли клиента по счету: P или S.  # source: Relation_ship
+CREATE TABLE btm_accs (
+    s01 INTEGER,
+    s02 TEXT,
+    s03 TEXT,
+    s04 INTEGER,
+    s05 TEXT,
+    s06 TEXT
 );"
-"CREATE TABLE btm_rel ( -- Связи между счетами.
-    r01 INTEGER, -- Идентификатор клиента.
-    r02 TEXT   , -- Номер дочернего или связанного счета.
-    r03 TEXT   , -- Тип связанного счета.
-    r04 TEXT     -- Номер основного счета.
+"-- table: btm_rel
+-- source_table: Bank_Account_Relationship_Details
+-- description: Таблица отношений счетов, где r02 указывает связанный счет, а r04 указывает родительский счет.
+-- columns:
+--   r01: Идентификатор клиента, допускается NULL для связей по картам без прямого клиента.  # source: Customer_id
+--   r02: Номер связанного счета или карты.  # source: Account_Number
+--   r03: Тип связанного продукта.  # source: Account_type
+--   r04: Номер родительского счета, пустая строка означает отсутствие родителя.  # source: Linking_Account_Number
+CREATE TABLE btm_rel (
+    r01 INTEGER,
+    r02 TEXT,
+    r03 TEXT,
+    r04 TEXT
 );"
-"CREATE TABLE btm_trn ( -- Операции по счетам.
-    t01 TEXT   , -- Номер счета операции.
-    t02 REAL   , -- Сумма операции.
-    t03 TEXT   , -- Канал операции.
-    t04 TEXT   , -- Штат проведения операции.
-    t05 TEXT     -- Дата операции.
+"-- table: btm_trn
+-- source_table: BANK_ACC_TRAN
+-- description: Таблица фактов транзакций, одна строка соответствует одной операции по счету.
+-- columns:
+--   t01: Номер счета операции, внешний ключ по смыслу к a02 или s02.  # source: Account_Number
+--   t02: Сумма REAL, отрицательные значения обозначают расход, положительные обозначают приход.  # source: Transaction_amount
+--   t03: Канал операции, примеры: ATM withdrawal, POS-Walmart, ECS transfer.  # source: Transaction_channel
+--   t04: Код региона операции, используется для фильтрации по географии.  # source: Province
+--   t05: Дата операции как ISO-строка YYYY-MM-DD, удобная для BETWEEN в SQLite.  # source: Transaction_Date
+CREATE TABLE btm_trn (
+    t01 TEXT,
+    t02 REAL,
+    t03 TEXT,
+    t04 TEXT,
+    t05 TEXT
 );"
-"CREATE TABLE btm_msg ( -- Шаблоны клиентских уведомлений.
-    m01 TEXT   , -- Событие уведомления.
-    m02 TEXT   , -- Текст уведомления.
-    m03 TEXT     -- Канал доставки уведомления.
+"-- table: btm_msg
+-- source_table: BANK_CUSTOMER_MSG
+-- description: Малый справочник сообщений, соединяется с запросами по событию, а не по внешнему ключу.
+-- columns:
+--   m01: Код или название события уведомления, например Adhoc или Transaction Limit.  # source: Event
+--   m02: Полный текст сообщения, выводимый клиенту.  # source: Customer_message
+--   m03: Канал доставки, примеры: mobile, email, sms, letter.  # source: Notice_delivery_mode
+CREATE TABLE btm_msg (
+    m01 TEXT,
+    m02 TEXT,
+    m03 TEXT
 );"
-"CREATE TABLE btm_rate ( -- Процентные ставки по продуктам.
-    i01 TEXT   , -- Тип банковского продукта.
-    i02 REAL   , -- Процентная ставка.
-    i03 TEXT   , -- Месяц действия ставки.
-    i04 TEXT     -- Год действия ставки.
+"-- table: btm_rate
+-- source_table: BANK_INTEREST_RATE
+-- description: Справочник ставок с периодом действия, тип продукта находится в i01.
+-- columns:
+--   i01: Тип счета или продукта, к которому относится ставка.  # source: account_type
+--   i02: Ставка REAL в долях единицы, 0.07 соответствует 7%.  # source: interest_rate
+--   i03: Месяц действия ставки двумя цифрами.  # source: month
+--   i04: Год действия ставки четырьмя цифрами.  # source: year
+CREATE TABLE btm_rate (
+    i01 TEXT,
+    i02 REAL,
+    i03 TEXT,
+    i04 TEXT
 );"
