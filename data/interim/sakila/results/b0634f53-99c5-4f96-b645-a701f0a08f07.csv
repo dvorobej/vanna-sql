@@ -1,0 +1,450 @@
+avg_prev_30_day_amount,customer_country,customer_id,customer_name,daily_payment_amount,payment_count,payment_date,staff_count,store_count,store_countries,suspicion_rank
+0.99,China,129,CARRIE PORTER,9.97,3,2005-06-19,2,2,"Canada,Australia",32
+0.99,India,412,ALLEN BUTTERFIELD,18.97,3,2005-07-29,2,2,"Australia,Canada",4
+0.99,Japan,574,JULIAN VEST,7.97,3,2005-06-16,2,2,"Canada,Australia",19
+0.99,Russian Federation,100,ROBIN HAYES,11.97,3,2005-06-15,2,2,"Australia,Canada",12
+1.32,Turkey,172,BERNICE WILLIS,17.97,3,2005-07-08,2,2,"Canada,Australia",2
+1.66,Russian Federation,376,RANDY GAITHER,13.97,3,2005-07-07,2,2,"Canada,Australia",9
+1.99,Belarus,527,CORY MEEHAN,11.97,3,2005-07-11,2,2,"Australia,Canada",1
+1.99,Japan,1,MARY SMITH,16.97,3,2005-06-15,2,2,"Canada,Australia",6
+1.99,Japan,29,ANGELA HERNANDEZ,15.95,5,2005-06-19,2,2,"Canada,Australia",8
+1.99,United Kingdom,252,MATTIE HOFFMAN,6.97,3,2005-07-27,2,2,"Canada,Australia",4
+10.65,Argentina,331,ERIC ROBERT,21.97,3,2005-07-07,2,2,"Canada,Australia",3
+13.97,United States,2,PATRICIA JOHNSON,30.95,5,2005-07-30,2,2,"Canada,Australia",2
+2.32,Egypt,423,ALFRED CASILLAS,24.95,5,2005-07-27,2,2,"Canada,Australia",1
+2.49,China,64,JUDITH COX,13.97,3,2005-07-08,2,2,"Canada,Australia",15
+2.59,Venezuela,113,CINDY FISHER,16.97,3,2005-06-20,2,2,"Australia,Canada",2
+2.66,Iran,459,TOMMY COLLAZO,29.95,5,2005-07-28,2,2,"Canada,Australia",1
+2.79,Brunei,91,LOIS BUTLER,12.97,3,2005-07-07,2,2,"Australia,Canada",1
+2.79,China,241,HEIDI LARSON,8.97,3,2005-07-09,2,2,"Australia,Canada",44
+2.99,Bangladesh,21,MICHELLE CLARK,15.97,3,2005-06-18,2,2,"Australia,Canada",2
+2.99,Bangladesh,329,FRANK WAGGONER,7.97,3,2005-06-17,2,2,"Canada,Australia",4
+2.99,Brazil,126,ELLEN SIMPSON,18.97,3,2005-07-06,2,2,"Australia,Canada",3
+2.99,Brazil,77,JANE BENNETT,7.96,4,2005-08-02,2,2,"Canada,Australia",25
+2.99,China,384,ERNEST STEPP,11.97,3,2005-08-22,2,2,"Canada,Australia",32
+2.99,Colombia,235,JACKIE LYNCH,14.97,3,2005-07-06,2,2,"Australia,Canada",3
+2.99,Egypt,233,LILLIE KIM,10.97,3,2005-06-18,2,2,"Australia,Canada",5
+2.99,India,297,SHERRI RHODES,16.97,3,2005-06-18,2,2,"Canada,Australia",7
+2.99,India,529,ERIK GUILLEN,20.97,3,2005-07-12,2,2,"Australia,Canada",3
+2.99,Indonesia,450,JAY ROBB,10.97,3,2005-08-20,2,2,"Australia,Canada",4
+2.99,Indonesia,458,LLOYD DOWD,15.97,3,2005-07-12,2,2,"Canada,Australia",1
+2.99,Israel,478,LEWIS LYMAN,20.97,3,2005-06-19,2,2,"Canada,Australia",1
+2.99,Japan,240,MARLENE WELCH,18.97,3,2005-07-27,2,2,"Canada,Australia",5
+2.99,Mexico,177,SAMANTHA DUNCAN,8.97,3,2005-06-16,2,2,"Canada,Australia",24
+2.99,Mexico,570,IVAN CROMWELL,11.97,3,2005-07-30,2,2,"Canada,Australia",18
+2.99,Mozambique,97,ANNIE RUSSELL,8.97,3,2005-07-06,2,2,"Canada,Australia",3
+2.99,Nigeria,280,TRACEY BARRETT,20.95,5,2005-07-29,2,2,"Australia,Canada",2
+2.99,Philippines,72,THERESA WATSON,10.97,3,2005-07-09,2,2,"Australia,Canada",16
+2.99,Romania,563,KEN PREWITT,29.93,7,2005-07-08,2,2,"Canada,Australia",1
+2.99,Russian Federation,350,JUAN FRALEY,14.97,3,2005-08-17,2,2,"Australia,Canada",10
+2.99,Switzerland,598,WADE DELVALLE,12.97,3,2005-07-06,2,2,"Canada,Australia",2
+2.99,Tunisia,335,GREGORY MAULDIN,17.96,4,2005-07-07,2,2,"Australia,Canada",1
+2.99,United States,14,BETTY WHITE,13.97,3,2005-07-09,2,2,"Canada,Australia",10
+2.99,Venezuela,290,KRISTINA CHAMBERS,20.97,3,2005-06-15,2,2,"Canada,Australia",1
+2.99,Venezuela,539,MATHEW BOLIN,9.97,3,2005-06-15,2,2,"Australia,Canada",6
+3.16,Brazil,374,JEREMY HURTADO,13.97,3,2005-07-10,2,2,"Canada,Australia",14
+3.16,Egypt,134,EMMA BOYD,20.96,4,2005-08-02,2,2,"Canada,Australia",2
+3.24,Bulgaria,215,JESSIE BANKS,9.96,4,2005-08-23,2,2,"Canada,Australia",3
+3.24,Nigeria,198,ELSIE KELLEY,14.97,3,2005-07-12,2,2,"Australia,Canada",5
+3.24,Russian Federation,351,JACK FOUST,8.97,3,2005-07-08,2,2,"Canada,Australia",25
+3.32,Dominican Republic,418,JEFF EAST,11.97,3,2005-07-08,2,2,"Australia,Canada",2
+3.32,Mexico,465,FLOYD GANDY,16.97,3,2005-08-17,2,2,"Canada,Australia",10
+3.39,Brazil,74,DENISE KELLY,10.97,3,2005-07-10,2,2,"Canada,Australia",22
+3.39,Cameroon,361,LAWRENCE LAWTON,7.97,3,2005-07-12,2,2,"Australia,Canada",3
+3.49,Brazil,183,IDA ANDREWS,13.97,3,2005-07-31,2,2,"Australia,Canada",15
+3.49,Cambodia,228,ALLISON STANLEY,17.96,4,2005-07-06,2,2,"Australia,Canada",1
+3.49,China,546,KELLY KNOTT,19.97,3,2005-07-12,2,2,"Australia,Canada",3
+3.49,China,90,RUBY WASHINGTON,13.97,3,2005-07-27,2,2,"Australia,Canada",22
+3.49,Mexico,133,PAULINE HENRY,19.96,4,2005-07-08,2,2,"Australia,Canada",4
+3.49,Mexico,582,ANDY VANHORN,20.96,4,2005-07-27,2,2,"Australia,Canada",3
+3.49,Russian Federation,487,HECTOR POINDEXTER,9.97,3,2005-07-29,2,2,"Australia,Canada",20
+3.59,China,138,HAZEL WARREN,11.97,3,2005-07-28,2,2,"Canada,Australia",38
+3.59,"Congo, The Democratic Republic of the",387,JESSE SCHILLING,15.97,3,2005-08-19,2,2,"Canada,Australia",2
+3.59,Italy,33,ANNA HILL,11.97,3,2005-07-30,2,2,"Canada,Australia",3
+3.65,India,297,SHERRI RHODES,8.97,3,2005-08-17,2,2,"Australia,Canada",34
+3.66,China,267,MARGIE WADE,15.97,3,2005-07-30,2,2,"Australia,Canada",8
+3.7,India,78,LORI WOOD,15.97,3,2005-07-28,2,2,"Australia,Canada",10
+3.74,China,93,PHYLLIS FOSTER,19.96,4,2005-08-20,2,2,"Canada,Australia",4
+3.74,Russian Federation,430,RAY HOULE,9.97,3,2005-08-20,2,2,"Australia,Canada",22
+3.74,"Virgin Islands, U.S.",406,NATHAN RUNYON,23.96,4,2005-07-27,2,2,"Australia,Canada",1
+3.79,Chile,515,ANDRE RAPP,15.97,3,2005-08-17,2,2,"Australia,Canada",2
+3.79,Japan,404,STANLEY SCROGGINS,21.96,4,2005-07-08,2,2,"Canada,Australia",2
+3.82,Brunei,91,LOIS BUTLER,10.97,3,2005-08-19,2,2,"Canada,Australia",2
+3.82,China,424,KYLE SPURLOCK,14.96,4,2005-07-30,2,2,"Canada,Australia",17
+3.82,Slovakia,357,KEITH RICO,16.97,3,2005-07-11,2,2,"Canada,Australia",1
+3.84,China,241,HEIDI LARSON,14.97,3,2005-07-11,2,2,"Canada,Australia",18
+3.84,Turkey,327,LARRY THRASHER,11.97,3,2005-08-22,2,2,"Canada,Australia",6
+3.85,Iran,10,DOROTHY TAYLOR,11.97,3,2005-07-09,2,2,"Canada,Australia",8
+3.85,Japan,264,GWENDOLYN MAY,12.97,3,2005-07-11,2,2,"Canada,Australia",12
+3.99,Argentina,560,JORDAN ARCHULETA,13.97,3,2005-07-07,2,2,"Canada,Australia",4
+3.99,Brazil,206,TERRI VASQUEZ,11.97,3,2005-07-06,2,2,"Canada,Australia",20
+3.99,China,242,GLENDA FRAZIER,14.97,3,2005-06-15,2,2,"Australia,Canada",19
+3.99,Germany,251,VICKIE BREWER,11.97,3,2005-05-31,2,2,"Australia,Canada",2
+3.99,Iran,36,KATHLEEN ADAMS,8.97,3,2005-07-28,2,2,"Canada,Australia",9
+3.99,Japan,401,TONY CARRANZA,14.97,3,2005-07-29,2,2,"Canada,Australia",10
+3.99,Madagascar,81,ANDREA HENDERSON,16.97,3,2005-08-21,2,2,"Canada,Australia",1
+3.99,Mexico,570,IVAN CROMWELL,8.97,3,2005-07-31,2,2,"Canada,Australia",25
+3.99,Moldova,38,MARTHA GONZALEZ,12.97,3,2005-07-07,2,2,"Canada,Australia",2
+3.99,Nepal,321,KEVIN SCHULER,17.97,3,2005-08-17,2,2,"Canada,Australia",1
+3.99,Nigeria,103,GLADYS HAMILTON,11.97,3,2005-07-07,2,2,"Australia,Canada",9
+3.99,Paraguay,345,CARL ARTIS,10.97,3,2005-07-07,2,2,"Australia,Canada",4
+3.99,Peru,597,FREDDIE DUGGAN,16.96,4,2005-08-02,2,2,"Australia,Canada",1
+3.99,Philippines,261,DEANNA BYRD,18.97,3,2005-06-17,2,2,"Canada,Australia",4
+3.99,Philippines,27,SHIRLEY ALLEN,18.97,3,2005-07-31,2,2,"Australia,Canada",3
+3.99,South Africa,145,LUCILLE HOLMES,20.97,3,2005-07-07,2,2,"Australia,Canada",3
+3.99,South Korea,245,COURTNEY DAY,17.95,5,2005-07-27,2,2,"Australia,Canada",1
+3.99,Sudan,50,DIANE COLLINS,21.97,3,2005-07-10,2,2,"Australia,Canada",2
+3.99,Taiwan,5,ELIZABETH BROWN,12.97,3,2005-07-09,2,2,"Canada,Australia",9
+3.99,Vietnam,340,PATRICK NEWSOM,15.96,4,2005-07-29,2,2,"Australia,Canada",3
+4.09,Brazil,374,JEREMY HURTADO,20.96,4,2005-08-22,2,2,"Australia,Canada",2
+4.11,China,538,TED BREAUX,18.97,3,2005-07-31,2,2,"Canada,Australia",6
+4.11,Sweden,66,JANICE WARD,13.96,4,2005-08-21,2,2,"Australia,Canada",2
+4.13,Egypt,559,EVERETT BANDA,13.97,3,2005-08-19,2,2,"Canada,Australia",3
+4.15,Canada,410,CURTIS IRBY,17.96,4,2005-07-09,2,2,"Canada,Australia",1
+4.16,Latvia,347,RYAN SALISBURY,15.96,4,2005-07-28,2,2,"Canada,Australia",1
+4.19,France,104,RITA GRAHAM,15.97,3,2005-07-08,2,2,"Australia,Canada",1
+4.19,Japan,1,MARY SMITH,10.97,3,2005-08-22,2,2,"Canada,Australia",23
+4.21,Philippines,461,DEREK BLAKELY,22.95,5,2005-08-22,2,2,"Canada,Australia",2
+4.24,Indonesia,450,JAY ROBB,10.97,3,2005-08-22,2,2,"Australia,Canada",6
+4.24,Mexico,414,VINCENT RALSTON,17.95,5,2005-08-19,2,2,"Australia,Canada",9
+4.24,North Korea,157,DARLENE ROSE,10.97,3,2005-07-27,2,2,"Canada,Australia",2
+4.24,South Africa,145,LUCILLE HOLMES,15.96,4,2005-08-19,2,2,"Australia,Canada",4
+4.24,Turkey,566,CASEY MENA,9.97,3,2005-07-06,2,2,"Australia,Canada",8
+4.24,Vietnam,532,NEIL RENNER,15.97,3,2005-07-09,2,2,"Australia,Canada",4
+4.27,Ecuador,262,PATSY DAVIDSON,26.96,4,2005-07-12,2,2,"Australia,Canada",1
+4.27,Holy See (Vatican City State),26,JESSICA HALL,23.96,4,2005-08-21,2,2,"Australia,Canada",1
+4.29,India,419,CHAD CARBONE,13.96,4,2005-08-02,2,2,"Australia,Canada",19
+4.32,Austria,266,NORA HERRERA,16.97,3,2005-08-02,2,2,"Australia,Canada",1
+4.32,China,569,DAVE GARDINER,9.97,3,2005-07-30,2,2,"Canada,Australia",48
+4.32,India,534,CHRISTIAN JUNG,13.97,3,2005-08-01,2,2,"Australia,Canada",20
+4.32,Philippines,434,EDDIE TOMLIN,15.97,3,2005-06-18,2,2,"Australia,Canada",11
+4.36,Brunei,91,LOIS BUTLER,9.97,3,2005-08-22,2,2,"Australia,Canada",3
+4.39,India,135,JUANITA MASON,13.97,3,2005-07-27,2,2,"Australia,Canada",21
+4.39,Nigeria,277,OLGA JIMENEZ,13.97,3,2005-06-21,2,2,"Canada,Australia",7
+4.39,Oman,9,MARGARET MOORE,10.97,3,2005-08-18,2,2,"Canada,Australia",1
+4.41,Cameroon,361,LAWRENCE LAWTON,15.96,4,2005-08-02,2,2,"Australia,Canada",2
+4.41,Russian Federation,487,HECTOR POINDEXTER,14.97,3,2005-07-30,2,2,"Canada,Australia",13
+4.49,Argentina,530,DARRYL ASHCRAFT,10.97,3,2005-07-27,2,2,"Canada,Australia",5
+4.49,India,170,BEATRICE ARNOLD,15.97,3,2005-07-10,2,2,"Canada,Australia",12
+4.49,India,370,WAYNE TRUONG,15.97,3,2005-07-27,2,2,"Canada,Australia",13
+4.49,Israel,478,LEWIS LYMAN,10.97,3,2005-07-31,2,2,"Canada,Australia",3
+4.49,Japan,531,JAMIE WAUGH,11.97,3,2005-07-10,2,2,"Canada,Australia",16
+4.49,Mexico,319,RONALD WEINER,16.95,5,2005-08-17,2,2,"Canada,Australia",14
+4.49,Russian Federation,44,MARIE TURNER,24.96,4,2005-07-10,2,2,"Canada,Australia",1
+4.49,United States,149,VALERIE BLACK,18.97,3,2005-06-18,2,2,"Australia,Canada",7
+4.55,India,15,HELEN HARRIS,11.96,4,2005-08-02,2,2,"Canada,Australia",29
+4.56,Philippines,188,MELANIE ARMSTRONG,16.96,4,2005-08-01,2,2,"Australia,Canada",10
+4.59,South Africa,407,DALE RATCLIFF,22.96,4,2005-07-28,2,2,"Australia,Canada",1
+4.59,Taiwan,348,ROGER QUINTANILLA,20.96,4,2005-07-08,2,2,"Australia,Canada",2
+4.61,Iran,368,HARRY ARCE,17.96,4,2005-08-19,2,2,"Canada,Australia",6
+4.61,Kenya,193,KATIE ELLIOTT,16.97,3,2005-08-22,2,2,"Canada,Australia",1
+4.65,China,154,MICHELE GRANT,14.97,3,2005-07-27,2,2,"Australia,Canada",24
+4.65,China,384,ERNEST STEPP,18.97,3,2005-06-20,2,2,"Australia,Canada",7
+4.65,China,569,DAVE GARDINER,14.96,4,2005-08-02,2,2,"Australia,Canada",25
+4.65,Japan,519,RON DELUCA,23.95,5,2005-07-31,2,2,"Australia,Canada",1
+4.65,Mexico,451,JIM REA,16.97,3,2005-07-08,2,2,"Canada,Australia",15
+4.65,Yemen,210,ELLA OLIVER,12.96,4,2005-07-07,2,2,"Australia,Canada",3
+4.66,Russian Federation,510,BEN EASTER,10.97,3,2005-06-19,2,2,"Canada,Australia",21
+4.66,South Korea,88,BONNIE HUGHES,13.96,4,2005-07-06,2,2,"Australia,Canada",3
+4.7,Brazil,314,GEORGE LINTON,11.97,3,2005-07-28,2,2,"Australia,Canada",23
+4.7,Russian Federation,447,CLIFFORD BOWENS,17.97,3,2005-07-30,2,2,"Australia,Canada",7
+4.7,Turkey,366,BRANDON HUEY,13.97,3,2005-07-12,2,2,"Australia,Canada",4
+4.74,Brazil,254,MAXINE SILVA,9.97,3,2005-07-09,2,2,"Australia,Canada",24
+4.74,French Guiana,65,ROSE HOWARD,19.97,3,2005-08-02,2,2,"Australia,Canada",1
+4.74,Japan,503,ANGEL BARCLAY,11.96,4,2005-08-22,2,2,"Canada,Australia",18
+4.74,Netherlands,474,DUSTIN GILLETTE,13.96,4,2005-08-18,2,2,"Canada,Australia",3
+4.74,Taiwan,139,AMBER DIXON,17.97,3,2005-07-09,2,2,"Australia,Canada",5
+4.74,Ukraine,131,MONICA HICKS,11.97,3,2005-08-18,2,2,"Canada,Australia",8
+4.74,United States,146,JAMIE RICE,19.97,3,2005-07-11,2,2,"Canada,Australia",5
+4.76,Bangladesh,21,MICHELLE CLARK,12.97,3,2005-08-19,2,2,"Canada,Australia",3
+4.79,China,538,TED BREAUX,16.97,3,2005-07-09,2,2,"Australia,Canada",9
+4.79,Myanmar,256,MABEL HOLLAND,13.96,4,2005-08-20,2,2,"Australia,Canada",2
+4.79,Spain,52,JULIE SANCHEZ,15.97,3,2005-08-22,2,2,"Australia,Canada",1
+4.82,Bulgaria,540,TYRONE ASHER,13.97,3,2005-07-11,2,2,"Canada,Australia",2
+4.82,China,339,WALTER PERRYMAN,12.97,3,2005-08-17,2,2,"Canada,Australia",39
+4.82,Indonesia,328,JEFFREY SPEAR,14.97,3,2005-08-20,2,2,"Canada,Australia",3
+4.82,North Korea,157,DARLENE ROSE,12.95,5,2005-07-29,2,2,"Australia,Canada",1
+4.82,South Africa,132,ESTHER CRAWFORD,11.97,3,2005-07-08,2,2,"Canada,Australia",7
+4.82,Vietnam,520,MITCHELL WESTMORELAND,19.97,3,2005-07-10,2,2,"Australia,Canada",1
+4.84,Austria,173,AUDREY RAY,9.97,3,2005-07-10,2,2,"Canada,Australia",4
+4.86,Brazil,254,MAXINE SILVA,13.96,4,2005-08-19,2,2,"Canada,Australia",19
+4.86,Nigeria,156,BERTHA FERGUSON,14.96,4,2005-08-22,2,2,"Canada,Australia",6
+4.86,Turkey,327,LARRY THRASHER,23.97,3,2005-08-23,2,2,"Canada,Australia",1
+4.86,Vietnam,472,GREG ROBINS,18.97,3,2005-07-11,2,2,"Canada,Australia",2
+4.98,Brazil,354,JUSTIN NGO,18.97,3,2005-07-29,2,2,"Australia,Canada",7
+4.98,Lithuania,557,FELIX GAFFNEY,10.96,4,2005-07-12,2,2,"Canada,Australia",1
+4.99,Brazil,47,FRANCES PARKER,14.97,3,2005-07-11,2,2,"Australia,Canada",17
+4.99,Chad,535,JAVIER ELROD,16.97,3,2005-07-08,2,2,"Canada,Australia",1
+4.99,China,521,ROLAND SOUTH,11.97,3,2005-08-17,2,2,"Australia,Canada",43
+4.99,Colombia,490,SAM MCDUFFIE,16.97,3,2005-07-12,2,2,"Canada,Australia",2
+4.99,Germany,251,VICKIE BREWER,12.97,3,2005-08-19,2,2,"Australia,Canada",3
+4.99,India,367,ADAM GOOCH,14.97,3,2005-08-18,2,2,"Canada,Australia",16
+4.99,Liechtenstein,57,EVELYN MORGAN,11.97,3,2005-07-12,2,2,"Australia,Canada",1
+4.99,Mexico,581,VIRGIL WOFFORD,11.97,3,2005-06-17,2,2,"Australia,Canada",20
+4.99,Philippines,522,ARNOLD HAVENS,12.97,3,2005-06-20,2,2,"Australia,Canada",16
+4.99,Philippines,71,KATHY JAMES,18.97,3,2005-07-10,2,2,"Canada,Australia",6
+4.99,Russian Federation,311,PAUL TROUT,20.97,3,2005-07-31,2,2,"Canada,Australia",3
+4.99,Russian Federation,351,JACK FOUST,10.97,3,2005-08-23,2,2,"Canada,Australia",24
+4.99,Switzerland,155,GAIL KNIGHT,15.97,3,2005-07-11,2,2,"Canada,Australia",1
+4.99,Taiwan,139,AMBER DIXON,21.95,5,2005-08-22,2,2,"Canada,Australia",1
+4.99,Thailand,42,CAROLYN PEREZ,10.97,3,2005-07-29,2,2,"Canada,Australia",3
+4.99,United States,420,JACOB LANCE,20.97,3,2005-08-01,2,2,"Australia,Canada",3
+4.99,United States,63,ASHLEY RICHARDSON,16.97,3,2005-07-10,2,2,"Canada,Australia",9
+4.99,Venezuela,111,CARMEN OWENS,12.97,3,2005-08-02,2,2,"Canada,Australia",5
+5.08,China,389,ALAN KAHN,10.97,3,2005-08-02,2,2,"Canada,Australia",46
+5.1,Japan,53,HEATHER MORRIS,11.97,3,2005-08-21,2,2,"Australia,Canada",20
+5.1,Peru,565,JAIME NETTLES,14.97,3,2005-08-02,2,2,"Australia,Canada",2
+5.1,Philippines,349,JOE GILLILAND,18.97,3,2005-08-02,2,2,"Canada,Australia",7
+5.1,United States,158,VERONICA STONE,15.96,4,2005-08-02,2,2,"Australia,Canada",12
+5.13,China,168,REGINA BERRY,10.97,3,2005-07-29,2,2,"Australia,Canada",47
+5.13,Japan,54,TERESA ROGERS,15.97,3,2005-08-02,2,2,"Australia,Canada",11
+5.13,Mexico,84,SARA PERRY,18.97,3,2005-07-11,2,2,"Canada,Australia",7
+5.15,China,588,MARION OCAMPO,13.96,4,2005-07-29,2,2,"Canada,Australia",34
+5.15,Mexico,108,TRACY COLE,15.97,3,2005-07-29,2,2,"Australia,Canada",17
+5.15,Nigeria,198,ELSIE KELLEY,22.94,6,2005-08-17,2,2,"Canada,Australia",3
+5.15,Russian Federation,397,JIMMY SCHRADER,14.94,6,2005-08-18,2,2,"Australia,Canada",15
+5.15,South Africa,125,ETHEL WEBB,10.97,3,2005-07-29,2,2,"Australia,Canada",8
+5.16,Brazil,544,CODY NOLEN,18.97,3,2005-08-21,2,2,"Australia,Canada",8
+5.16,Iran,279,DIANNE SHELTON,18.96,4,2005-08-19,2,2,"Australia,Canada",5
+5.16,Russian Federation,55,DORIS REED,13.97,3,2005-08-19,2,2,"Canada,Australia",17
+5.18,Philippines,388,CRAIG MORRELL,17.96,4,2005-08-18,2,2,"Australia,Canada",9
+5.19,Saint Vincent and the Grenadines,326,JOSE ANDREW,13.97,3,2005-07-29,2,2,"Canada,Australia",1
+5.19,Taiwan,73,BEVERLY BROOKS,10.97,3,2005-08-02,2,2,"Canada,Australia",11
+5.21,Colombia,120,SYLVIA ORTIZ,19.97,3,2005-08-21,2,2,"Canada,Australia",1
+5.21,Russian Federation,487,HECTOR POINDEXTER,16.97,3,2005-08-01,2,2,"Australia,Canada",11
+5.21,Sri Lanka,408,MANUEL MURRELL,14.97,3,2005-08-20,2,2,"Canada,Australia",1
+5.21,United States,275,CAROLE BARNETT,19.96,4,2005-08-21,2,2,"Canada,Australia",6
+5.23,Mexico,454,ALEX GRESHAM,27.96,4,2005-08-20,2,2,"Australia,Canada",1
+5.23,Pakistan,25,DEBORAH WALKER,12.97,3,2005-07-30,2,2,"Australia,Canada",1
+5.24,Brazil,342,HAROLD MARTINO,19.97,3,2005-07-12,2,2,"Australia,Canada",5
+5.24,Brazil,551,CLAYTON BARBEE,14.97,3,2005-08-22,2,2,"Canada,Australia",18
+5.24,Czech Republic,265,JENNIE TERRY,18.97,3,2005-08-21,2,2,"Australia,Canada",1
+5.24,Philippines,373,LOUIS LEONE,14.97,3,2005-07-30,2,2,"Australia,Canada",12
+5.24,United Arab Emirates,98,LILLIAN GRIFFIN,16.97,3,2005-07-29,2,2,"Canada,Australia",1
+5.27,Yemen,213,GINA WILLIAMSON,14.97,3,2005-07-30,2,2,"Australia,Canada",2
+5.32,Algeria,441,MARIO CHEATHAM,18.95,5,2005-07-29,2,2,"Australia,Canada",1
+5.32,China,138,HAZEL WARREN,14.97,3,2005-08-01,2,2,"Australia,Canada",29
+5.32,China,514,FRANKLIN TROUTMAN,13.96,4,2005-08-18,2,2,"Canada,Australia",36
+5.32,"Congo, The Democratic Republic of the",375,AARON SELBY,18.97,3,2005-08-02,2,2,"Canada,Australia",1
+5.32,Dominican Republic,437,RANDALL NEUMANN,12.97,3,2005-08-20,2,2,"Australia,Canada",3
+5.32,India,192,LAURIE LAWRENCE,24.96,4,2005-08-21,2,2,"Australia,Canada",2
+5.32,India,259,LENA JENSEN,18.97,3,2005-06-16,2,2,"Canada,Australia",8
+5.32,India,259,LENA JENSEN,21.97,3,2005-07-30,2,2,"Australia,Canada",6
+5.32,United States,294,SHELLY WATTS,20.95,5,2005-08-01,2,2,"Australia,Canada",4
+5.36,Slovakia,357,KEITH RICO,13.96,4,2005-08-01,2,2,"Australia,Canada",2
+5.38,Morocco,40,AMANDA CARTER,13.97,3,2005-07-31,2,2,"Australia,Canada",1
+5.39,China,484,ROBERTO VU,14.97,3,2005-07-10,2,2,"Australia,Canada",30
+5.39,India,231,GEORGIA JACOBS,13.97,3,2005-08-18,2,2,"Canada,Australia",25
+5.41,China,424,KYLE SPURLOCK,20.97,3,2005-07-31,2,2,"Canada,Australia",5
+5.43,Russian Federation,295,DAISY BATES,10.97,3,2005-07-09,2,2,"Canada,Australia",26
+5.49,Brazil,206,TERRI VASQUEZ,18.97,3,2005-08-19,2,2,"Canada,Australia",9
+5.49,Cameroon,352,ALBERT CROUSE,22.96,4,2005-07-27,2,2,"Canada,Australia",1
+5.49,India,167,SALLY PIERCE,11.96,4,2005-07-09,2,2,"Australia,Canada",32
+5.49,Indonesia,239,MINNIE ROMERO,12.97,3,2005-07-27,2,2,"Australia,Canada",5
+5.49,Iran,279,DIANNE SHELTON,20.97,3,2005-07-09,2,2,"Canada,Australia",2
+5.49,Japan,29,ANGELA HERNANDEZ,11.97,3,2005-07-27,2,2,"Australia,Canada",24
+5.49,Mexico,247,STELLA MORENO,17.97,3,2005-08-18,2,2,"Australia,Canada",13
+5.49,Russian Federation,46,CATHERINE CAMPBELL,15.97,3,2005-08-01,2,2,"Australia,Canada",14
+5.49,United Arab Emirates,292,MISTY LAMBERT,11.97,3,2005-07-27,2,2,"Australia,Canada",3
+5.49,Venezuela,174,YVONNE WATKINS,16.97,3,2005-08-01,2,2,"Canada,Australia",4
+5.53,Malaysia,306,CHARLES KOWALSKI,11.97,3,2005-08-02,2,2,"Australia,Canada",3
+5.54,Brazil,427,JESUS MCCARTNEY,15.97,3,2005-08-01,2,2,"Canada,Australia",16
+5.54,Ukraine,131,MONICA HICKS,18.96,4,2005-08-19,2,2,"Australia,Canada",3
+5.54,United States,305,RICHARD MCCRARY,13.97,3,2005-08-02,2,2,"Australia,Canada",19
+5.56,China,151,MEGAN PALMER,13.97,3,2005-08-22,2,2,"Canada,Australia",37
+5.56,Japan,264,GWENDOLYN MAY,12.97,3,2005-07-31,2,2,"Australia,Canada",17
+5.56,South Africa,471,DEAN SAUER,13.97,3,2005-08-21,2,2,"Canada,Australia",6
+5.58,Bangladesh,21,MICHELLE CLARK,32.96,4,2005-08-20,2,2,"Canada,Australia",1
+5.59,Nauru,513,DUANE TUBBS,25.96,4,2005-07-29,2,2,"Australia,Canada",1
+5.59,Turkey,204,ROSEMARY SCHMIDT,17.97,3,2005-08-22,2,2,"Canada,Australia",3
+5.61,Dominican Republic,258,MYRTLE FLEMING,20.95,5,2005-08-01,2,2,"Australia,Canada",1
+5.61,South Africa,132,ESTHER CRAWFORD,22.96,4,2005-08-01,2,2,"Australia,Canada",2
+5.61,United States,593,RENE MCALISTER,13.97,3,2005-08-01,2,2,"Canada,Australia",20
+5.65,Madagascar,81,ANDREA HENDERSON,14.96,4,2005-08-23,2,2,"Canada,Australia",2
+5.65,Mexico,150,DANIELLE DANIELS,21.95,5,2005-08-19,2,2,"Canada,Australia",6
+5.65,South Korea,237,TANYA GILBERT,16.97,3,2005-07-28,2,2,"Canada,Australia",2
+5.7,Pakistan,20,SHARON ROBINSON,12.97,3,2005-08-19,2,2,"Australia,Canada",2
+5.73,United Arab Emirates,452,TOM MILNER,13.97,3,2005-07-06,2,2,"Australia,Canada",2
+5.74,India,186,HOLLY FOX,11.97,3,2005-08-20,2,2,"Australia,Canada",33
+5.74,Italy,541,DARREN WINDHAM,18.95,5,2005-08-22,2,2,"Australia,Canada",1
+5.74,Mexico,319,RONALD WEINER,12.97,3,2005-07-11,2,2,"Australia,Canada",19
+5.74,Taiwan,517,BRAD MCCURDY,17.96,4,2005-07-07,2,2,"Australia,Canada",6
+5.76,Poland,572,SIDNEY BURLESON,13.96,4,2005-08-02,2,2,"Canada,Australia",4
+5.78,Brazil,254,MAXINE SILVA,19.96,4,2005-07-10,2,2,"Canada,Australia",6
+5.78,China,129,CARRIE PORTER,26.96,4,2005-07-31,2,2,"Australia,Canada",1
+5.79,Mexico,414,VINCENT RALSTON,11.97,3,2005-07-31,2,2,"Canada,Australia",23
+5.79,Thailand,390,SHAWN HEATON,11.97,3,2005-07-07,2,2,"Canada,Australia",2
+5.82,Russian Federation,376,RANDY GAITHER,18.97,3,2005-07-12,2,2,"Canada,Australia",8
+5.84,Chile,45,JANET PHILLIPS,27.95,5,2005-08-02,2,2,"Australia,Canada",1
+5.84,Germany,196,ALMA AUSTIN,22.97,3,2005-07-31,2,2,"Canada,Australia",1
+5.84,Japan,29,ANGELA HERNANDEZ,21.96,4,2005-08-18,2,2,"Canada,Australia",4
+5.84,Poland,128,MARJORIE TUCKER,14.97,3,2005-07-30,2,2,"Australia,Canada",3
+5.85,Colombia,460,LEON BOSTIC,13.97,3,2005-08-19,2,2,"Canada,Australia",4
+5.86,China,168,REGINA BERRY,11.97,3,2005-07-30,2,2,"Australia,Canada",45
+5.87,India,78,LORI WOOD,14.97,3,2005-08-01,2,2,"Australia,Canada",23
+5.98,China,283,FELICIA SUTTON,17.96,4,2005-07-06,2,2,"Canada,Australia",11
+5.98,China,485,CLYDE TOBIAS,17.96,4,2005-07-30,2,2,"Australia,Canada",10
+5.98,China,550,GUY BROWNLEE,12.97,3,2005-08-17,2,2,"Canada,Australia",42
+5.98,Japan,396,EARL SHANKS,13.97,3,2005-08-21,2,2,"Canada,Australia",15
+5.98,Paraguay,226,MAUREEN LITTLE,13.96,4,2005-08-21,2,2,"Canada,Australia",3
+5.98,Russian Federation,295,DAISY BATES,11.97,3,2005-07-11,2,2,"Australia,Canada",23
+5.98,Saudi Arabia,417,TRAVIS ESTEP,14.97,3,2005-08-21,2,2,"Australia,Canada",1
+5.98,Taiwan,30,MELISSA KING,16.97,3,2005-07-09,2,2,"Australia,Canada",8
+5.98,Taiwan,577,CLIFTON MALCOLM,21.97,3,2005-07-28,2,2,"Australia,Canada",3
+5.98,United States,212,WILMA RICHARDS,12.97,3,2005-08-18,2,2,"Canada,Australia",23
+5.99,Argentina,560,JORDAN ARCHULETA,17.97,3,2005-08-01,2,2,"Australia,Canada",2
+5.99,China,267,MARGIE WADE,22.96,4,2005-06-19,2,2,"Australia,Canada",2
+5.99,China,272,KAY CALDWELL,16.97,3,2005-08-17,2,2,"Australia,Canada",20
+5.99,France,162,LAUREN HUDSON,14.97,3,2005-07-31,2,2,"Canada,Australia",2
+5.99,India,123,SHANNON FREEMAN,12.96,4,2005-07-28,2,2,"Canada,Australia",31
+5.99,Japan,547,KURT EMMONS,14.96,4,2005-08-02,2,2,"Canada,Australia",13
+5.99,Netherlands,184,VIVIAN RUIZ,15.97,3,2005-08-18,2,2,"Australia,Canada",2
+5.99,Netherlands,474,DUSTIN GILLETTE,12.95,5,2005-07-08,2,2,"Canada,Australia",4
+5.99,Nigeria,103,GLADYS HAMILTON,25.95,5,2005-08-23,2,2,"Canada,Australia",1
+5.99,Paraguay,205,EILEEN CARR,15.96,4,2005-08-21,2,2,"Canada,Australia",1
+5.99,Russian Federation,106,CONNIE WALLACE,20.97,3,2005-08-01,2,2,"Australia,Canada",4
+5.99,Russian Federation,447,CLIFFORD BOWENS,12.97,3,2005-08-02,2,2,"Australia,Canada",19
+5.99,Turkey,518,GABRIEL HARDER,14.96,4,2005-07-27,2,2,"Canada,Australia",5
+5.99,Ukraine,475,PEDRO CHESTNUT,14.96,4,2005-07-09,2,2,"Australia,Canada",4
+5.99,United Kingdom,583,MARSHALL THORN,17.97,3,2005-07-06,2,2,"Canada,Australia",1
+5.99,United States,479,ZACHARY HITE,13.96,4,2005-06-17,2,2,"Canada,Australia",21
+5.99,United States,526,KARL SEAL,14.96,4,2005-06-17,2,2,"Australia,Canada",18
+6.07,United States,51,ALICE STEWART,16.97,3,2005-08-21,2,2,"Australia,Canada",11
+6.1,China,154,MICHELE GRANT,15.97,3,2005-08-22,2,2,"Australia,Canada",28
+6.11,Japan,147,JOANNE ROBERTSON,12.97,3,2005-08-22,2,2,"Australia,Canada",21
+6.13,Mexico,482,MAURICE CRAWLEY,12.97,3,2005-08-22,2,2,"Australia,Canada",21
+6.15,Japan,574,JULIAN VEST,12.97,3,2005-07-09,2,2,"Australia,Canada",22
+6.15,Ukraine,386,TODD TAN,14.96,4,2005-07-11,2,2,"Canada,Australia",5
+6.16,China,37,PAMELA BAKER,14.96,4,2005-08-20,2,2,"Australia,Canada",35
+6.18,Italy,499,MARC OUTLAW,14.97,3,2005-08-17,2,2,"Australia,Canada",2
+6.18,Vietnam,340,PATRICK NEWSOM,16.96,4,2005-08-01,2,2,"Canada,Australia",6
+6.19,Mexico,323,MATTHEW MAHAN,12.97,3,2005-07-28,2,2,"Australia,Canada",22
+6.19,Poland,270,LEAH CURTIS,18.97,3,2005-08-01,2,2,"Canada,Australia",1
+6.19,Russian Federation,222,DELORES HANSEN,13.97,3,2005-07-29,2,2,"Canada,Australia",18
+6.23,Japan,253,TERRY CARLSON,17.97,3,2005-08-21,2,2,"Australia,Canada",9
+6.24,Austria,173,AUDREY RAY,12.97,3,2005-08-23,2,2,"Australia,Canada",3
+6.24,India,336,JOSHUA MARK,16.97,3,2005-07-29,2,2,"Australia,Canada",14
+6.24,Italy,499,MARC OUTLAW,13.96,4,2005-07-28,2,2,"Canada,Australia",4
+6.24,Malaysia,171,DOLORES WAGNER,14.96,4,2005-08-19,2,2,"Canada,Australia",2
+6.24,Mexico,273,PRISCILLA LOWE,19.96,4,2005-07-12,2,2,"Canada,Australia",8
+6.27,Israel,161,GERALDINE PERKINS,15.96,4,2005-08-22,2,2,"Canada,Australia",2
+6.32,Japan,285,MIRIAM MCKINNEY,14.96,4,2005-07-11,2,2,"Canada,Australia",14
+6.32,Ukraine,386,TODD TAN,13.97,3,2005-08-20,2,2,"Canada,Australia",7
+6.32,United States,214,KRISTIN JOHNSTON,15.97,3,2005-08-19,2,2,"Australia,Canada",16
+6.32,Venezuela,453,CALVIN MARTEL,18.96,4,2005-08-21,2,2,"Canada,Australia",3
+6.39,United States,269,CASSANDRA WALTERS,13.97,3,2005-07-12,2,2,"Canada,Australia",22
+6.41,Myanmar,256,MABEL HOLLAND,15.97,3,2005-08-23,2,2,"Australia,Canada",1
+6.42,Ukraine,82,KATHRYN COLEMAN,19.97,3,2005-07-30,2,2,"Australia,Canada",2
+6.44,Malaysia,306,CHARLES KOWALSKI,16.96,4,2005-08-20,2,2,"Canada,Australia",1
+6.44,Poland,558,JIMMIE EGGLESTON,15.97,3,2005-07-12,2,2,"Australia,Canada",2
+6.48,Iran,10,DOROTHY TAYLOR,14.97,3,2005-07-28,2,2,"Canada,Australia",7
+6.48,Nigeria,280,TRACEY BARRETT,20.97,3,2005-08-19,2,2,"Canada,Australia",4
+6.48,Philippines,244,VIOLA HANSON,15.97,3,2005-07-31,2,2,"Canada,Australia",13
+6.49,Argentina,331,ERIC ROBERT,18.97,3,2005-07-06,2,2,"Canada,Australia",1
+6.49,China,260,CHRISTY VARGAS,16.97,3,2005-06-17,2,2,"Australia,Canada",23
+6.49,China,90,RUBY WASHINGTON,17.97,3,2005-08-01,2,2,"Australia,Canada",14
+6.49,Tanzania,190,YOLANDA WEAVER,13.97,3,2005-07-27,2,2,"Canada,Australia",2
+6.49,United States,51,ALICE STEWART,16.97,3,2005-07-09,2,2,"Canada,Australia",14
+6.58,Austria,266,NORA HERRERA,17.96,4,2005-08-18,2,2,"Canada,Australia",2
+6.58,Moldova,38,MARTHA GONZALEZ,17.96,4,2005-07-27,2,2,"Canada,Australia",1
+6.59,Nigeria,284,SONIA GREGORY,14.97,3,2005-07-27,2,2,"Australia,Canada",8
+6.59,Philippines,72,THERESA WATSON,13.96,4,2005-08-17,2,2,"Canada,Australia",18
+6.59,Switzerland,155,GAIL KNIGHT,14.97,3,2005-08-21,2,2,"Canada,Australia",3
+6.61,India,502,BRETT CORNWELL,14.97,3,2005-07-28,2,2,"Canada,Australia",26
+6.65,Mexico,575,ISAAC OGLESBY,22.97,3,2005-08-18,2,2,"Canada,Australia",5
+6.65,Runion,148,ELEANOR HUNT,20.96,4,2005-07-28,2,2,"Canada,Australia",1
+6.65,Yugoslavia,7,MARIA MILLER,22.96,4,2005-08-01,2,2,"Australia,Canada",1
+6.69,China,260,CHRISTY VARGAS,17.97,3,2005-08-21,2,2,"Australia,Canada",16
+6.71,Taiwan,348,ROGER QUINTANILLA,13.97,3,2005-08-02,2,2,"Australia,Canada",10
+6.73,India,68,NICOLE PETERSON,16.97,3,2005-07-31,2,2,"Canada,Australia",15
+6.74,Sudan,50,DIANE COLLINS,26.95,5,2005-07-31,2,2,"Canada,Australia",1
+6.74,Switzerland,598,WADE DELVALLE,14.96,4,2005-07-12,2,2,"Canada,Australia",4
+6.74,Ukraine,187,BRITTANY RILEY,26.97,3,2005-08-18,2,2,"Australia,Canada",1
+6.74,Yugoslavia,553,MAX PITT,22.95,5,2005-07-06,2,2,"Australia,Canada",2
+6.78,India,446,THEODORE CULP,13.96,4,2005-07-12,2,2,"Australia,Canada",30
+6.78,Philippines,261,DEANNA BYRD,13.97,3,2005-08-20,2,2,"Australia,Canada",19
+6.79,United Kingdom,477,DAN PAINE,15.97,3,2005-07-29,2,2,"Canada,Australia",3
+6.8,Egypt,119,SHERRY MARSHALL,15.97,3,2005-08-22,2,2,"Canada,Australia",4
+6.81,Romania,230,JOY GEORGE,17.97,3,2005-07-31,2,2,"Australia,Canada",3
+6.82,China,595,TERRENCE GUNDERSON,14.96,4,2005-07-27,2,2,"Canada,Australia",40
+6.82,India,170,BEATRICE ARNOLD,15.97,3,2005-07-31,2,2,"Australia,Canada",22
+6.84,United States,276,BRANDY GRAVES,15.97,3,2005-08-18,2,2,"Australia,Canada",17
+6.85,Russian Federation,346,ARTHUR SIMPKINS,22.96,4,2005-07-29,2,2,"Australia,Canada",2
+6.85,United States,181,ANA BRADLEY,19.97,3,2005-07-30,2,2,"Australia,Canada",8
+6.86,South Africa,407,DALE RATCLIFF,17.97,3,2005-08-02,2,2,"Canada,Australia",5
+6.87,Japan,147,JOANNE ROBERTSON,20.97,3,2005-08-23,2,2,"Australia,Canada",7
+6.98,China,550,GUY BROWNLEE,16.97,3,2005-08-21,2,2,"Australia,Canada",26
+6.98,China,594,EDUARDO HIATT,16.97,3,2005-07-31,2,2,"Canada,Australia",27
+6.98,India,31,BRENDA WRIGHT,16.96,4,2005-06-18,2,2,"Canada,Australia",18
+6.98,Philippines,261,DEANNA BYRD,14.97,3,2005-07-31,2,2,"Australia,Canada",15
+6.98,Russian Federation,46,CATHERINE CAMPBELL,15.96,4,2005-08-18,2,2,"Australia,Canada",16
+6.98,Tanzania,190,YOLANDA WEAVER,24.96,4,2005-08-02,2,2,"Canada,Australia",1
+6.99,India,316,STEVEN CURLEY,15.96,4,2005-07-27,2,2,"Australia,Canada",24
+6.99,Mexico,425,FRANCIS SIKES,27.96,4,2005-07-08,2,2,"Australia,Canada",2
+6.99,Vietnam,472,GREG ROBINS,14.97,3,2005-08-21,2,2,"Canada,Australia",9
+7.11,Turkmenistan,200,JEANNE LAWSON,17.97,3,2005-08-23,2,2,"Australia,Canada",1
+7.15,Algeria,176,JUNE CARROLL,16.96,4,2005-06-18,2,2,"Canada,Australia",2
+7.15,Ecuador,262,PATSY DAVIDSON,14.96,4,2005-08-23,2,2,"Canada,Australia",4
+7.15,India,297,SHERRI RHODES,14.97,3,2005-07-11,2,2,"Australia,Canada",27
+7.15,Saudi Arabia,49,JOYCE EDWARDS,15.97,3,2005-08-21,2,2,"Australia,Canada",2
+7.15,Thailand,390,SHAWN HEATON,27.94,6,2005-08-20,2,2,"Canada,Australia",1
+7.18,Philippines,27,SHIRLEY ALLEN,21.97,3,2005-08-17,2,2,"Canada,Australia",5
+7.21,India,15,HELEN HARRIS,14.97,3,2005-08-20,2,2,"Australia,Canada",28
+7.23,Indonesia,473,JORGE OLIVARES,19.95,5,2005-08-02,2,2,"Canada,Australia",2
+7.27,Italy,221,BESSIE MORRISON,14.97,3,2005-08-21,2,2,"Australia,Canada",5
+7.32,India,492,LESTER KRAUS,18.97,3,2005-07-07,2,2,"Australia,Canada",11
+7.32,Mexico,84,SARA PERRY,19.96,4,2005-08-02,2,2,"Canada,Australia",12
+7.32,Russian Federation,17,DONNA THOMPSON,21.96,4,2005-07-30,2,2,"Australia,Canada",5
+7.32,Turkey,366,BRANDON HUEY,14.96,4,2005-07-27,2,2,"Australia,Canada",7
+7.35,Vietnam,340,PATRICK NEWSOM,15.97,3,2005-08-22,2,2,"Canada,Australia",8
+7.36,Brazil,314,GEORGE LINTON,14.97,3,2005-08-21,2,2,"Australia,Canada",21
+7.38,China,302,MICHAEL SILVERMAN,16.96,4,2005-08-23,2,2,"Australia,Canada",31
+7.38,Iran,449,OSCAR AQUINO,21.96,4,2005-08-01,2,2,"Australia,Canada",3
+7.38,Paraguay,226,MAUREEN LITTLE,16.96,4,2005-08-23,2,2,"Australia,Canada",2
+7.38,Saudi Arabia,417,TRAVIS ESTEP,15.97,3,2005-08-02,2,2,"Canada,Australia",3
+7.39,United States,146,JAMIE RICE,17.96,4,2005-08-02,2,2,"Australia,Canada",13
+7.48,Brazil,362,NICHOLAS BARFIELD,25.96,4,2005-08-21,2,2,"Australia,Canada",1
+7.48,Ecuador,494,RAMON CHOATE,26.96,4,2005-08-22,2,2,"Canada,Australia",2
+7.48,Sweden,66,JANICE WARD,18.97,3,2005-07-11,2,2,"Canada,Australia",1
+7.55,Vietnam,199,BETH FRANKLIN,16.97,3,2005-08-01,2,2,"Canada,Australia",7
+7.58,Romania,563,KEN PREWITT,22.96,4,2005-07-29,2,2,"Canada,Australia",2
+7.58,Ukraine,475,PEDRO CHESTNUT,15.97,3,2005-07-28,2,2,"Canada,Australia",6
+7.61,Philippines,522,ARNOLD HAVENS,29.95,5,2005-07-30,2,2,"Canada,Australia",1
+7.65,Kuwait,234,CLAUDIA FULLER,17.96,4,2005-08-02,2,2,"Australia,Canada",1
+7.68,Philippines,373,LOUIS LEONE,20.96,4,2005-08-18,2,2,"Canada,Australia",8
+7.7,Vietnam,532,NEIL RENNER,18.97,3,2005-08-19,2,2,"Australia,Canada",5
+7.73,Ecuador,494,RAMON CHOATE,18.97,3,2005-07-31,2,2,"Australia,Canada",3
+7.82,Mexico,451,JIM REA,19.96,4,2005-08-02,2,2,"Canada,Australia",16
+7.84,India,468,TIM CARY,32.95,5,2005-08-21,2,2,"Australia,Canada",1
+7.98,Bulgaria,540,TYRONE ASHER,24.96,4,2005-08-02,2,2,"Canada,Australia",1
+7.98,China,550,GUY BROWNLEE,15.97,3,2005-08-23,2,2,"Australia,Canada",41
+7.98,India,121,JOSEPHINE GOMEZ,25.96,4,2005-08-21,2,2,"Canada,Australia",4
+7.98,Mexico,467,ALVIN DELOACH,20.96,4,2005-07-28,2,2,"Canada,Australia",11
+7.98,Yemen,470,GORDON ALLARD,23.97,3,2005-08-18,2,2,"Australia,Canada",1
+7.99,Brazil,92,TINA SIMMONS,23.96,4,2005-07-10,2,2,"Australia,Canada",4
+7.99,India,508,MILTON HOWLAND,17.97,3,2005-07-27,2,2,"Canada,Australia",16
+7.99,United Kingdom,497,GILBERT SLEDGE,17.97,3,2005-06-18,2,2,"Australia,Canada",2
+8.1,United States,181,ANA BRADLEY,26.95,5,2005-08-01,2,2,"Australia,Canada",1
+8.18,China,533,JESSIE MILAM,19.97,3,2005-08-17,2,2,"Australia,Canada",12
+8.19,Brazil,39,DEBRA NELSON,19.96,4,2005-07-29,2,2,"Australia,Canada",12
+8.23,Armenia,41,STEPHANIE MITCHELL,17.96,4,2005-07-28,2,2,"Australia,Canada",1
+8.23,United States,112,ROSA REYNOLDS,17.96,4,2005-07-31,2,2,"Australia,Canada",15
+8.24,Brazil,591,KENT ARSENAULT,20.96,4,2005-07-27,2,2,"Canada,Australia",10
+8.38,China,302,MICHAEL SILVERMAN,19.97,3,2005-07-30,2,2,"Canada,Australia",13
+8.38,Taiwan,576,MORRIS MCCARTER,21.95,5,2005-07-31,2,2,"Australia,Canada",4
+8.39,Holy See (Vatican City State),26,JESSICA HALL,20.95,5,2005-07-07,2,2,"Canada,Australia",2
+8.48,China,595,TERRENCE GUNDERSON,18.97,3,2005-07-31,2,2,"Australia,Canada",21
+8.58,Taiwan,30,MELISSA KING,19.96,4,2005-07-28,2,2,"Australia,Canada",7
+8.65,Philippines,236,MARCIA DEAN,17.97,3,2005-08-21,2,2,"Australia,Canada",14
+8.7,Netherlands,137,RHONDA KENNEDY,20.96,4,2005-07-30,2,2,"Australia,Canada",1
+8.7,Runion,148,ELEANOR HUNT,18.96,4,2005-07-29,2,2,"Australia,Canada",2
+8.98,Iran,459,TOMMY COLLAZO,22.96,4,2005-08-01,2,2,"Canada,Australia",4
+8.99,Greece,3,LINDA WILLIAMS,24.96,4,2005-07-28,2,2,"Australia,Canada",1
+8.99,Mozambique,257,MARSHA DOUGLAS,18.95,5,2005-07-27,2,2,"Australia,Canada",2
+9.11,Nauru,513,DUANE TUBBS,24.96,4,2005-08-22,2,2,"Australia,Canada",2
+9.12,Russian Federation,462,WARREN SHERROD,22.97,3,2005-08-19,2,2,"Canada,Australia",6
+9.23,Brazil,39,DEBRA NELSON,20.96,4,2005-08-01,2,2,"Canada,Australia",13
+9.27,Japan,531,JAMIE WAUGH,26.96,4,2005-08-02,2,2,"Australia,Canada",3
+9.36,India,403,MIKE WAY,21.96,4,2005-08-02,2,2,"Canada,Australia",9
+9.58,Brazil,591,KENT ARSENAULT,21.96,4,2005-08-18,2,2,"Australia,Canada",11
+9.69,Mozambique,257,MARSHA DOUGLAS,20.95,5,2005-08-19,2,2,"Australia,Canada",1

@@ -1,0 +1,139 @@
+customer_city,customer_country,customer_first_name,customer_id,customer_last_name,customer_suspicious_total_amount,deviation_from_avg,month_payment_amount,payment_count,payment_month,previous_2_month_avg_amount,ratio_to_avg,store_customer_count,store_id,store_rank,top_staff_email,top_staff_first_name,top_staff_id,top_staff_last_name,top_staff_payment_amount,top_staff_payment_count
+Adoni,India,ADAM,367,GOOCH,96.81,25.98,49.92,8,2005-08,23.94,2.09,326,1,28,Jon.Stephens@sakilastaff.com,Jon,2,Stephens,26.95,5
+Adoni,India,ADAM,367,GOOCH,96.81,44.41,46.89,11,2005-07,2.49,18.87,326,1,28,Mike.Hillyer@sakilastaff.com,Mike,1,Hillyer,23.95,5
+Akron,United States,ZACHARY,479,HITE,103.79,17.95,23.94,6,2005-06,5.99,4.0,326,1,20,Jon.Stephens@sakilastaff.com,Jon,2,Stephens,20.95,5
+Akron,United States,ZACHARY,479,HITE,103.79,61.89,79.85,15,2005-07,17.96,4.45,326,1,20,Jon.Stephens@sakilastaff.com,Jon,2,Stephens,46.93,7
+Antofagasta,Chile,JANET,45,PHILLIPS,124.74,16.46,17.95,5,2005-06,1.5,12.01,326,1,3,Mike.Hillyer@sakilastaff.com,Mike,1,Hillyer,8.98,2
+Antofagasta,Chile,JANET,45,PHILLIPS,124.74,27.44,37.91,9,2005-07,10.47,3.62,326,1,3,Mike.Hillyer@sakilastaff.com,Mike,1,Hillyer,33.93,7
+Antofagasta,Chile,JANET,45,PHILLIPS,124.74,40.95,68.88,12,2005-08,27.93,2.47,326,1,3,Mike.Hillyer@sakilastaff.com,Mike,1,Hillyer,41.93,7
+Apeldoorn,Netherlands,RHONDA,137,KENNEDY,116.77,18.47,19.96,4,2005-06,1.5,13.35,273,2,9,Mike.Hillyer@sakilastaff.com,Mike,1,Hillyer,15.97,3
+Apeldoorn,Netherlands,RHONDA,137,KENNEDY,116.77,85.34,96.81,19,2005-07,11.48,8.44,273,2,9,Mike.Hillyer@sakilastaff.com,Mike,1,Hillyer,57.89,11
+Banjul,Gambia,SALVADOR,584,TEEL,103.75,30.94,58.87,13,2005-08,27.93,2.11,273,2,19,Jon.Stephens@sakilastaff.com,Jon,2,Stephens,42.92,8
+Banjul,Gambia,SALVADOR,584,TEEL,103.75,31.91,44.88,12,2005-07,12.98,3.46,273,2,19,Jon.Stephens@sakilastaff.com,Jon,2,Stephens,23.94,6
+Bhilwara,India,TONYA,209,CHAPMAN,102.79,12.98,19.96,4,2005-06,6.99,2.86,273,2,20,Mike.Hillyer@sakilastaff.com,Mike,1,Hillyer,14.97,3
+Bhilwara,India,TONYA,209,CHAPMAN,102.79,65.87,82.83,17,2005-07,16.97,4.88,273,2,20,Jon.Stephens@sakilastaff.com,Jon,2,Stephens,48.91,9
+Bhimavaram,India,ERIK,529,GUILLEN,115.72,2.48,3.97,3,2005-06,1.5,2.66,273,2,11,Mike.Hillyer@sakilastaff.com,Mike,1,Hillyer,1.99,1
+Bhimavaram,India,ERIK,529,GUILLEN,115.72,28.96,57.88,12,2005-08,28.92,2.0,273,2,11,Jon.Stephens@sakilastaff.com,Jon,2,Stephens,36.93,7
+Bhimavaram,India,ERIK,529,GUILLEN,115.72,50.39,53.87,13,2005-07,3.48,15.48,273,2,11,Jon.Stephens@sakilastaff.com,Jon,2,Stephens,29.92,8
+Bhopal,India,HELEN,15,HARRIS,120.73,35.93,40.91,9,2005-07,4.99,8.21,326,1,6,Mike.Hillyer@sakilastaff.com,Mike,1,Hillyer,25.94,6
+Bhopal,India,HELEN,15,HARRIS,120.73,54.38,79.82,18,2005-08,25.44,3.14,326,1,6,Jon.Stephens@sakilastaff.com,Jon,2,Stephens,45.9,10
+Bilbays,Egypt,EVERETT,559,BANDA,97.76,28.46,55.88,12,2005-08,27.42,2.04,273,2,25,Mike.Hillyer@sakilastaff.com,Mike,1,Hillyer,30.94,6
+Bilbays,Egypt,EVERETT,559,BANDA,97.76,35.4,41.88,12,2005-07,6.48,6.46,273,2,25,Mike.Hillyer@sakilastaff.com,Mike,1,Hillyer,35.91,9
+Boa Vista,Brazil,HAROLD,342,MARTINO,115.71,38.4,45.88,12,2005-07,7.49,6.13,326,1,13,Jon.Stephens@sakilastaff.com,Jon,2,Stephens,36.93,7
+Boa Vista,Brazil,HAROLD,342,MARTINO,115.71,39.41,69.83,17,2005-08,30.43,2.3,326,1,13,Jon.Stephens@sakilastaff.com,Jon,2,Stephens,36.91,9
+Brescia,Italy,CHRISTOPHER,309,GRECO,102.8,21.97,25.96,4,2005-06,3.99,6.51,326,1,21,Jon.Stephens@sakilastaff.com,Jon,2,Stephens,20.97,3
+Brescia,Italy,CHRISTOPHER,309,GRECO,102.8,59.87,76.84,16,2005-07,16.97,4.53,326,1,21,Jon.Stephens@sakilastaff.com,Jon,2,Stephens,45.92,8
+Brindisi,Italy,MARC,499,OUTLAW,120.71,13.47,14.96,4,2005-06,1.5,10.01,273,2,7,Jon.Stephens@sakilastaff.com,Jon,2,Stephens,11.97,3
+Brindisi,Italy,MARC,499,OUTLAW,120.71,32.45,61.87,13,2005-08,29.42,2.1,273,2,7,Mike.Hillyer@sakilastaff.com,Mike,1,Hillyer,42.93,7
+Brindisi,Italy,MARC,499,OUTLAW,120.71,34.91,43.88,12,2005-07,8.98,4.89,273,2,7,Mike.Hillyer@sakilastaff.com,Mike,1,Hillyer,26.92,8
+Cape Coral,United States,KARL,526,SEAL,128.72,35.43,41.91,9,2005-06,6.49,6.46,273,2,3,Jon.Stephens@sakilastaff.com,Jon,2,Stephens,23.95,5
+Cape Coral,United States,KARL,526,SEAL,128.72,59.37,86.81,19,2005-07,27.44,3.16,273,2,3,Jon.Stephens@sakilastaff.com,Jon,2,Stephens,47.89,11
+Changhwa,Taiwan,TAMMY,75,SANDERS,100.75,26.96,29.95,5,2005-06,2.99,10.02,273,2,21,Mike.Hillyer@sakilastaff.com,Mike,1,Hillyer,17.97,3
+Changhwa,Taiwan,TAMMY,75,SANDERS,100.75,52.84,70.8,20,2005-07,17.97,3.94,273,2,21,Mike.Hillyer@sakilastaff.com,Mike,1,Hillyer,37.91,9
+Cuauhtmoc,Mexico,ALVIN,467,DELOACH,97.83,28.47,30.96,4,2005-06,2.5,12.41,273,2,23,Mike.Hillyer@sakilastaff.com,Mike,1,Hillyer,15.98,2
+Cuauhtmoc,Mexico,ALVIN,467,DELOACH,97.83,48.9,66.87,13,2005-07,17.98,3.72,273,2,23,Jon.Stephens@sakilastaff.com,Jon,2,Stephens,44.92,8
+Cuernavaca,Mexico,ISAAC,575,OGLESBY,98.79,22.95,36.91,9,2005-07,13.96,2.64,273,2,22,Jon.Stephens@sakilastaff.com,Jon,2,Stephens,20.95,5
+Cuernavaca,Mexico,ISAAC,575,OGLESBY,98.79,37.94,61.88,12,2005-08,23.94,2.58,273,2,22,Jon.Stephens@sakilastaff.com,Jon,2,Stephens,39.92,8
+Dadu,Pakistan,JEFFERY,416,PINSON,113.72,26.44,36.9,10,2005-07,10.46,3.53,273,2,14,Mike.Hillyer@sakilastaff.com,Mike,1,Hillyer,21.94,6
+Dadu,Pakistan,JEFFERY,416,PINSON,113.72,38.95,63.87,13,2005-08,24.93,2.56,273,2,14,Mike.Hillyer@sakilastaff.com,Mike,1,Hillyer,51.9,10
+Dadu,Pakistan,JEFFERY,416,PINSON,113.72,8.97,12.95,5,2005-06,3.99,3.25,273,2,14,Jon.Stephens@sakilastaff.com,Jon,2,Stephens,7.96,4
+Dayton,United States,SHELLY,294,WATTS,105.77,30.93,57.87,13,2005-08,26.94,2.15,273,2,17,Jon.Stephens@sakilastaff.com,Jon,2,Stephens,32.92,8
+Dayton,United States,SHELLY,294,WATTS,105.77,43.92,47.9,10,2005-07,3.99,12.02,273,2,17,Jon.Stephens@sakilastaff.com,Jon,2,Stephens,26.94,6
+Escobar,Argentina,MICHEAL,445,FORMAN,96.76,26.91,29.9,10,2005-07,2.99,10.0,326,1,32,Jon.Stephens@sakilastaff.com,Jon,2,Stephens,16.95,5
+Escobar,Argentina,MICHEAL,445,FORMAN,96.76,51.91,66.86,14,2005-08,14.95,4.47,326,1,32,Mike.Hillyer@sakilastaff.com,Mike,1,Hillyer,46.92,8
+Etawah,India,JOSEPHINE,121,GOMEZ,99.77,26.93,31.91,9,2005-07,4.99,6.4,326,1,25,Jon.Stephens@sakilastaff.com,Jon,2,Stephens,23.93,7
+Etawah,India,JOSEPHINE,121,GOMEZ,99.77,49.42,67.86,14,2005-08,18.45,3.68,326,1,25,Jon.Stephens@sakilastaff.com,Jon,2,Stephens,41.92,8
+Fengshan,Taiwan,MORRIS,576,MCCARTER,97.78,31.94,33.93,7,2005-06,1.99,17.05,273,2,24,Jon.Stephens@sakilastaff.com,Jon,2,Stephens,23.96,4
+Fengshan,Taiwan,MORRIS,576,MCCARTER,97.78,44.9,63.85,15,2005-07,18.96,3.37,273,2,24,Mike.Hillyer@sakilastaff.com,Mike,1,Hillyer,35.92,8
+Florencia,Colombia,LEON,460,BOSTIC,96.8,33.43,54.88,12,2005-08,21.46,2.56,326,1,30,Jon.Stephens@sakilastaff.com,Jon,2,Stephens,37.93,7
+Florencia,Colombia,LEON,460,BOSTIC,96.8,35.45,41.92,8,2005-07,6.48,6.47,326,1,30,Mike.Hillyer@sakilastaff.com,Mike,1,Hillyer,29.95,5
+Fukuyama,Japan,DEBBIE,141,REYES,127.69,19.48,20.97,3,2005-06,1.5,14.03,326,1,2,Jon.Stephens@sakilastaff.com,Jon,2,Stephens,15.98,2
+Fukuyama,Japan,DEBBIE,141,REYES,127.69,29.91,41.89,11,2005-07,11.98,3.5,326,1,2,Jon.Stephens@sakilastaff.com,Jon,2,Stephens,22.94,6
+Fukuyama,Japan,DEBBIE,141,REYES,127.69,33.4,64.83,17,2005-08,31.43,2.06,326,1,2,Mike.Hillyer@sakilastaff.com,Mike,1,Hillyer,41.88,12
+Hodeida,Yemen,GORDON,470,ALLARD,106.8,8.48,9.97,3,2005-06,1.5,6.67,326,1,17,Jon.Stephens@sakilastaff.com,Jon,2,Stephens,8.98,2
+Hodeida,Yemen,GORDON,470,ALLARD,106.8,90.35,96.83,17,2005-07,6.48,14.94,326,1,17,Mike.Hillyer@sakilastaff.com,Mike,1,Hillyer,70.87,13
+Hunuco,Peru,JAIME,565,NETTLES,118.73,12.98,16.97,3,2005-06,3.99,4.25,273,2,8,Mike.Hillyer@sakilastaff.com,Mike,1,Hillyer,11.98,2
+Hunuco,Peru,JAIME,565,NETTLES,118.73,22.42,34.89,11,2005-07,12.48,2.8,273,2,8,Mike.Hillyer@sakilastaff.com,Mike,1,Hillyer,26.92,8
+Hunuco,Peru,JAIME,565,NETTLES,118.73,40.94,66.87,13,2005-08,25.93,2.58,273,2,8,Jon.Stephens@sakilastaff.com,Jon,2,Stephens,42.93,7
+Ikerre,Nigeria,ELSIE,198,KELLEY,123.69,43.88,52.85,15,2005-07,8.97,5.89,273,2,6,Mike.Hillyer@sakilastaff.com,Mike,1,Hillyer,28.93,7
+Ikerre,Nigeria,ELSIE,198,KELLEY,123.69,43.92,70.84,16,2005-08,26.92,2.63,273,2,6,Mike.Hillyer@sakilastaff.com,Mike,1,Hillyer,51.89,11
+Johannesburg,South Africa,DEAN,471,SAUER,106.74,17.94,29.91,9,2005-07,11.97,2.5,326,1,18,Mike.Hillyer@sakilastaff.com,Mike,1,Hillyer,23.93,7
+Johannesburg,South Africa,DEAN,471,SAUER,106.74,19.46,20.95,5,2005-06,1.5,14.01,326,1,18,Jon.Stephens@sakilastaff.com,Jon,2,Stephens,15.96,4
+Johannesburg,South Africa,DEAN,471,SAUER,106.74,30.45,55.88,12,2005-08,25.43,2.2,326,1,18,Mike.Hillyer@sakilastaff.com,Mike,1,Hillyer,34.93,7
+Kansas City,United States,THOMAS,308,GRIGSBY,101.76,15.97,27.94,6,2005-07,11.97,2.33,326,1,22,Mike.Hillyer@sakilastaff.com,Mike,1,Hillyer,26.95,5
+Kansas City,United States,THOMAS,308,GRIGSBY,101.76,17.96,19.95,5,2005-06,2.0,10.0,326,1,22,Jon.Stephens@sakilastaff.com,Jon,2,Stephens,9.98,2
+Kansas City,United States,THOMAS,308,GRIGSBY,101.76,29.93,53.87,13,2005-08,23.95,2.25,326,1,22,Mike.Hillyer@sakilastaff.com,Mike,1,Hillyer,30.93,7
+Karnal,India,NAOMI,274,JENNINGS,115.74,27.94,45.9,10,2005-07,17.96,2.56,326,1,12,Jon.Stephens@sakilastaff.com,Jon,2,Stephens,32.93,7
+Karnal,India,NAOMI,274,JENNINGS,115.74,41.4,69.84,16,2005-08,28.44,2.46,326,1,12,Mike.Hillyer@sakilastaff.com,Mike,1,Hillyer,38.91,9
+Kolpino,Russian Federation,DAISY,295,BATES,120.73,30.92,32.91,9,2005-06,2.0,16.5,326,1,7,Mike.Hillyer@sakilastaff.com,Mike,1,Hillyer,20.93,7
+Kolpino,Russian Federation,DAISY,295,BATES,120.73,69.37,87.82,18,2005-07,18.45,4.76,326,1,7,Mike.Hillyer@sakilastaff.com,Mike,1,Hillyer,45.92,8
+Kuching,Malaysia,JEAN,58,BELL,97.8,30.44,38.91,9,2005-07,8.47,4.59,326,1,27,Mike.Hillyer@sakilastaff.com,Mike,1,Hillyer,20.96,4
+Kuching,Malaysia,JEAN,58,BELL,97.8,35.95,58.89,11,2005-08,22.94,2.57,326,1,27,Mike.Hillyer@sakilastaff.com,Mike,1,Hillyer,33.93,7
+La Plata,Argentina,JULIA,89,FLORES,99.78,25.97,30.95,5,2005-06,4.99,6.21,326,1,23,Mike.Hillyer@sakilastaff.com,Mike,1,Hillyer,22.96,4
+La Plata,Argentina,JULIA,89,FLORES,99.78,48.37,68.83,17,2005-07,20.46,3.36,326,1,23,Jon.Stephens@sakilastaff.com,Jon,2,Stephens,46.89,11
+Ljubertsy,Russian Federation,ERIN,160,DUNN,95.76,23.43,28.91,9,2005-07,5.49,5.27,273,2,28,Jon.Stephens@sakilastaff.com,Jon,2,Stephens,15.95,5
+Ljubertsy,Russian Federation,ERIN,160,DUNN,95.76,46.91,66.85,15,2005-08,19.94,3.35,273,2,28,Mike.Hillyer@sakilastaff.com,Mike,1,Hillyer,38.92,8
+London,United Kingdom,CECIL,512,VINES,99.78,29.43,36.91,9,2005-07,7.49,4.93,326,1,23,Mike.Hillyer@sakilastaff.com,Mike,1,Hillyer,27.93,7
+London,United Kingdom,CECIL,512,VINES,99.78,36.93,62.87,13,2005-08,25.94,2.42,326,1,23,Jon.Stephens@sakilastaff.com,Jon,2,Stephens,47.91,9
+Maikop,Russian Federation,ARTHUR,346,SIMPKINS,95.82,6.98,11.97,3,2005-06,4.99,2.4,326,1,33,Mike.Hillyer@sakilastaff.com,Mike,1,Hillyer,8.98,2
+Maikop,Russian Federation,ARTHUR,346,SIMPKINS,95.82,72.88,83.85,15,2005-07,10.98,7.64,326,1,33,Jon.Stephens@sakilastaff.com,Jon,2,Stephens,54.9,10
+Mandaluyong,Philippines,HILDA,263,HOPKINS,104.76,33.47,60.89,11,2005-08,27.43,2.22,326,1,19,Jon.Stephens@sakilastaff.com,Jon,2,Stephens,37.95,5
+Mandaluyong,Philippines,HILDA,263,HOPKINS,104.76,35.39,43.87,13,2005-07,8.48,5.17,326,1,19,Jon.Stephens@sakilastaff.com,Jon,2,Stephens,23.92,8
+Molodetno,Belarus,CLARA,144,SHAW,116.76,19.95,22.94,6,2005-06,2.99,7.67,326,1,9,Mike.Hillyer@sakilastaff.com,Mike,1,Hillyer,17.95,5
+Molodetno,Belarus,CLARA,144,SHAW,116.76,79.36,93.82,18,2005-07,14.46,6.49,326,1,9,Jon.Stephens@sakilastaff.com,Jon,2,Stephens,68.88,12
+NDjamna,Chad,JAVIER,535,ELROD,112.74,34.42,63.85,15,2005-08,29.44,2.17,326,1,14,Jon.Stephens@sakilastaff.com,Jon,2,Stephens,34.93,7
+NDjamna,Chad,JAVIER,535,ELROD,112.74,37.42,48.89,11,2005-07,11.47,4.26,326,1,14,Mike.Hillyer@sakilastaff.com,Mike,1,Hillyer,31.92,8
+Owo,Nigeria,TRACEY,280,BARRETT,113.74,27.41,34.89,11,2005-07,7.48,4.66,273,2,13,Mike.Hillyer@sakilastaff.com,Mike,1,Hillyer,19.95,5
+Owo,Nigeria,TRACEY,280,BARRETT,113.74,46.45,68.88,12,2005-08,22.43,3.07,273,2,13,Mike.Hillyer@sakilastaff.com,Mike,1,Hillyer,43.92,8
+Owo,Nigeria,TRACEY,280,BARRETT,113.74,7.48,9.97,3,2005-06,2.5,4.0,273,2,13,Jon.Stephens@sakilastaff.com,Jon,2,Stephens,5.98,2
+Papeete,French Polynesia,GLORIA,56,COOK,96.79,20.95,37.91,9,2005-07,16.96,2.24,326,1,31,Mike.Hillyer@sakilastaff.com,Mike,1,Hillyer,28.94,6
+Papeete,French Polynesia,GLORIA,56,COOK,96.79,32.95,58.88,12,2005-08,25.94,2.27,326,1,31,Jon.Stephens@sakilastaff.com,Jon,2,Stephens,36.92,8
+Peoria,United States,CAROLE,275,BARNETT,105.71,11.47,12.96,4,2005-06,1.5,8.67,273,2,18,Mike.Hillyer@sakilastaff.com,Mike,1,Hillyer,7.98,2
+Peoria,United States,CAROLE,275,BARNETT,105.71,24.94,32.91,9,2005-07,7.98,4.13,273,2,18,Jon.Stephens@sakilastaff.com,Jon,2,Stephens,25.94,6
+Peoria,United States,CAROLE,275,BARNETT,105.71,36.91,59.84,16,2005-08,22.94,2.61,273,2,18,Jon.Stephens@sakilastaff.com,Jon,2,Stephens,32.9,10
+Pjatigorsk,Russian Federation,HECTOR,487,POINDEXTER,115.75,43.47,68.89,11,2005-08,25.43,2.71,273,2,10,Mike.Hillyer@sakilastaff.com,Mike,1,Hillyer,38.95,5
+Pjatigorsk,Russian Federation,HECTOR,487,POINDEXTER,115.75,44.87,46.86,14,2005-07,2.0,23.49,273,2,10,Mike.Hillyer@sakilastaff.com,Mike,1,Hillyer,27.93,7
+Pyongyang,North Korea,DARLENE,157,ROSE,106.72,26.98,53.89,11,2005-08,26.91,2.0,273,2,15,Mike.Hillyer@sakilastaff.com,Mike,1,Hillyer,38.92,8
+Pyongyang,North Korea,DARLENE,157,ROSE,106.72,49.35,52.83,17,2005-07,3.49,15.16,273,2,15,Jon.Stephens@sakilastaff.com,Jon,2,Stephens,27.91,9
+Qomsheh,Iran,TOMMY,459,COLLAZO,115.75,24.44,25.93,7,2005-06,1.5,17.34,326,1,11,Jon.Stephens@sakilastaff.com,Jon,2,Stephens,24.94,6
+Qomsheh,Iran,TOMMY,459,COLLAZO,115.75,75.36,89.82,18,2005-07,14.46,6.21,326,1,11,Mike.Hillyer@sakilastaff.com,Mike,1,Hillyer,58.88,12
+Rae Bareli,India,LORI,78,WOOD,123.72,35.45,70.86,14,2005-08,35.42,2.0,326,1,5,Jon.Stephens@sakilastaff.com,Jon,2,Stephens,43.92,8
+Rae Bareli,India,LORI,78,WOOD,123.72,43.88,52.86,14,2005-07,8.99,5.88,326,1,5,Jon.Stephens@sakilastaff.com,Jon,2,Stephens,26.92,8
+Richmond Hill,Canada,CURTIS,410,IRBY,141.69,43.39,54.86,14,2005-07,11.47,4.78,273,2,1,Jon.Stephens@sakilastaff.com,Jon,2,Stephens,27.94,6
+Richmond Hill,Canada,CURTIS,410,IRBY,141.69,47.93,86.83,17,2005-08,38.9,2.23,273,2,1,Mike.Hillyer@sakilastaff.com,Mike,1,Hillyer,55.89,11
+Saint-Denis,Runion,ELEANOR,148,HUNT,123.73,20.46,22.95,5,2005-06,2.5,9.2,326,1,4,Jon.Stephens@sakilastaff.com,Jon,2,Stephens,20.96,4
+Saint-Denis,Runion,ELEANOR,148,HUNT,123.73,86.81,100.78,22,2005-07,13.97,7.21,326,1,4,Mike.Hillyer@sakilastaff.com,Mike,1,Hillyer,60.85,15
+Santa Rosa,Philippines,ARNOLD,522,HAVENS,113.78,13.97,16.96,4,2005-06,3.0,5.66,273,2,12,Jon.Stephens@sakilastaff.com,Jon,2,Stephens,9.98,2
+Santa Rosa,Philippines,ARNOLD,522,HAVENS,113.78,85.35,96.82,18,2005-07,11.48,8.44,273,2,12,Jon.Stephens@sakilastaff.com,Jon,2,Stephens,63.89,11
+Shimonoseki,Japan,ANGELA,29,HERNANDEZ,137.66,20.94,21.93,7,2005-06,1.0,22.04,273,2,2,Mike.Hillyer@sakilastaff.com,Mike,1,Hillyer,15.95,5
+Shimonoseki,Japan,ANGELA,29,HERNANDEZ,137.66,34.43,68.84,16,2005-08,34.41,2.0,273,2,2,Mike.Hillyer@sakilastaff.com,Mike,1,Hillyer,43.9,10
+Shimonoseki,Japan,ANGELA,29,HERNANDEZ,137.66,34.93,46.89,11,2005-07,11.96,3.92,273,2,2,Jon.Stephens@sakilastaff.com,Jon,2,Stephens,30.94,6
+Shubra al-Khayma,Egypt,SHERRY,119,MARSHALL,139.69,29.43,44.9,10,2005-07,15.47,2.9,326,1,1,Mike.Hillyer@sakilastaff.com,Mike,1,Hillyer,26.94,6
+Shubra al-Khayma,Egypt,SHERRY,119,MARSHALL,139.69,46.89,77.82,18,2005-08,30.94,2.52,326,1,1,Jon.Stephens@sakilastaff.com,Jon,2,Stephens,49.88,12
+Shubra al-Khayma,Egypt,SHERRY,119,MARSHALL,139.69,9.99,16.97,3,2005-06,6.99,2.43,326,1,1,Jon.Stephens@sakilastaff.com,Jon,2,Stephens,8.98,2
+Smolensk,Russian Federation,ELAINE,127,STEVENS,105.78,10.98,11.97,3,2005-06,0.99,12.09,273,2,16,Jon.Stephens@sakilastaff.com,Jon,2,Stephens,6.98,2
+Smolensk,Russian Federation,ELAINE,127,STEVENS,105.78,29.96,36.93,7,2005-07,6.98,5.29,273,2,16,Jon.Stephens@sakilastaff.com,Jon,2,Stephens,18.96,4
+Smolensk,Russian Federation,ELAINE,127,STEVENS,105.78,32.43,56.88,12,2005-08,24.45,2.33,273,2,16,Mike.Hillyer@sakilastaff.com,Mike,1,Hillyer,34.93,7
+Sungai Petani,Malaysia,CHARLES,306,KOWALSKI,119.72,34.94,65.86,14,2005-08,30.92,2.13,326,1,8,Jon.Stephens@sakilastaff.com,Jon,2,Stephens,32.94,6
+Sungai Petani,Malaysia,CHARLES,306,KOWALSKI,119.72,44.38,53.86,14,2005-07,9.48,5.68,326,1,8,Jon.Stephens@sakilastaff.com,Jon,2,Stephens,27.92,8
+Tabora,Tanzania,YOLANDA,190,WEAVER,97.76,13.97,27.93,7,2005-07,13.97,2.0,273,2,25,Mike.Hillyer@sakilastaff.com,Mike,1,Hillyer,14.96,4
+Tabora,Tanzania,YOLANDA,190,WEAVER,97.76,15.96,19.95,5,2005-06,3.99,5.0,273,2,25,Mike.Hillyer@sakilastaff.com,Mike,1,Hillyer,19.95,5
+Tabora,Tanzania,YOLANDA,190,WEAVER,97.76,25.94,49.88,12,2005-08,23.94,2.08,273,2,25,Jon.Stephens@sakilastaff.com,Jon,2,Stephens,40.9,10
+Tabriz,Iran,DIANNE,279,SHELTON,126.72,14.96,16.95,5,2005-06,1.99,8.52,273,2,4,Mike.Hillyer@sakilastaff.com,Mike,1,Hillyer,16.95,5
+Tabriz,Iran,DIANNE,279,SHELTON,126.72,32.45,42.91,9,2005-07,10.47,4.1,273,2,4,Mike.Hillyer@sakilastaff.com,Mike,1,Hillyer,26.95,5
+Tabriz,Iran,DIANNE,279,SHELTON,126.72,36.93,66.86,14,2005-08,29.93,2.23,273,2,4,Mike.Hillyer@sakilastaff.com,Mike,1,Hillyer,41.91,9
+Tangail,Bangladesh,MICHELLE,21,CLARK,111.78,27.47,31.95,5,2005-06,4.49,7.12,326,1,15,Mike.Hillyer@sakilastaff.com,Mike,1,Hillyer,18.97,3
+Tangail,Bangladesh,MICHELLE,21,CLARK,111.78,47.9,79.83,17,2005-08,31.93,2.5,326,1,15,Mike.Hillyer@sakilastaff.com,Mike,1,Hillyer,44.92,8
+Tanza,Philippines,MARCIA,236,DEAN,111.72,33.44,37.92,8,2005-06,4.49,8.45,326,1,16,Jon.Stephens@sakilastaff.com,Jon,2,Stephens,28.95,5
+Tanza,Philippines,MARCIA,236,DEAN,111.72,50.36,73.8,20,2005-07,23.45,3.15,326,1,16,Jon.Stephens@sakilastaff.com,Jon,2,Stephens,38.9,10
+Urawa,Japan,JOANNE,147,ROBERTSON,125.68,15.97,16.96,4,2005-06,0.99,17.13,273,2,5,Jon.Stephens@sakilastaff.com,Jon,2,Stephens,8.98,2
+Urawa,Japan,JOANNE,147,ROBERTSON,125.68,22.4,31.87,13,2005-07,9.47,3.37,273,2,5,Jon.Stephens@sakilastaff.com,Jon,2,Stephens,23.91,9
+Urawa,Japan,JOANNE,147,ROBERTSON,125.68,52.44,76.85,15,2005-08,24.42,3.15,273,2,5,Jon.Stephens@sakilastaff.com,Jon,2,Stephens,45.91,9
+Usolje-Sibirskoje,Russian Federation,WARREN,462,SHERROD,95.81,17.48,20.97,3,2005-06,3.49,6.01,273,2,27,Jon.Stephens@sakilastaff.com,Jon,2,Stephens,15.98,2
+Usolje-Sibirskoje,Russian Federation,WARREN,462,SHERROD,95.81,60.87,74.84,16,2005-07,13.98,5.36,273,2,27,Mike.Hillyer@sakilastaff.com,Mike,1,Hillyer,55.88,12
+Valparai,India,MIKE,403,WAY,97.82,33.95,35.94,6,2005-06,1.99,18.06,326,1,26,Mike.Hillyer@sakilastaff.com,Mike,1,Hillyer,19.97,3
+Valparai,India,MIKE,403,WAY,97.82,41.92,61.88,12,2005-07,19.96,3.1,326,1,26,Jon.Stephens@sakilastaff.com,Jon,2,Stephens,36.93,7
+Vancouver,Canada,TROY,436,QUIGLEY,116.74,32.43,63.86,14,2005-08,31.44,2.03,326,1,10,Jon.Stephens@sakilastaff.com,Jon,2,Stephens,49.9,10
+Vancouver,Canada,TROY,436,QUIGLEY,116.74,38.9,52.88,12,2005-07,13.98,3.78,326,1,10,Mike.Hillyer@sakilastaff.com,Mike,1,Hillyer,27.94,6
+Yinchuan,China,ROBERTO,484,VU,96.81,13.48,18.96,4,2005-06,5.49,3.46,326,1,29,Mike.Hillyer@sakilastaff.com,Mike,1,Hillyer,14.97,3
+Yinchuan,China,ROBERTO,484,VU,96.81,62.89,77.85,15,2005-07,14.97,5.2,326,1,29,Jon.Stephens@sakilastaff.com,Jon,2,Stephens,56.9,10

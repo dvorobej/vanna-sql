@@ -10,7 +10,6 @@ We evaluate whether the vector store can retrieve the **correct SQL example** wh
 
 Search quality depends on:
 
-- the **DDL comment style** loaded into Qdrant (`inline` or `yaml`, plus a comment variant such as `short`);
 - the **description style** used to index corpus examples (`short`, `business`, or `technical`);
 - the **query phrasing** used at search time (related-query variants from the expanded dataset).
 
@@ -22,7 +21,6 @@ Generation is **not** involved in this evaluation. We only call `get_similar_que
 |----------|--------------|------|
 | Related descriptions CSV | `data/interim/{database}/query_descriptions/query_descriptions_*_rewritten_related.csv` | Query variants and metadata |
 | Ground-truth SQL scripts | `data/interim/{database}/scripts/{uuid}.sql` | SQL paired with each uuid |
-| DDL templates | `data/raw/{database}/schema_template.sql` | Rendered per comment style/variant |
 
 The pipeline keeps only rows whose uuid has a corresponding file in `scripts/`. Corpus pairs are deduplicated by `(uuid, description, sql)` so each unique example is indexed once.
 
@@ -102,6 +100,3 @@ Reported rows include per-column scores (`predicted_short`, `predicted_business`
 ## Limitations
 
 - Metrics assume a **single relevant document** per query (the uuid's canonical example for that style).
-- Search evaluation uses a **fully populated** corpus (all examples in Qdrant), unlike generation evaluation which uses cross-validation.
-- Only examples with generated SQL scripts participate; queries without scripts are excluded.
-- Ranking metrics do not measure SQL correctness — only whether the right indexed example is retrieved.

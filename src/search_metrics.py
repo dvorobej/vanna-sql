@@ -41,12 +41,15 @@ def recall_at_k(relevant_id: str, predicted_ids: list[str], k: int) -> float:
 
 def compute_ranking_metrics(
     search_result_paths: list[Path | str],
-    k: int,
+    k: list[int],
     true_label_column: str = "true_qdrant_uuid",
     predicted_column_pattern: str = "predicted_",
     output_dir: Path | str | None = None,
 ) -> list[Path]:
     """Compute ranking metrics for each predicted column and a combined column."""
+    if not k:
+        raise ValueError("k must contain at least one integer.")
+
     saved_paths: list[Path] = []
 
     for search_result_path in search_result_paths:
@@ -63,63 +66,66 @@ def compute_ranking_metrics(
 
         rows = _read_csv_rows(search_result_path)
         metrics_rows: list[dict[str, Any]] = []
-        column_scores: list[dict[str, list[float]]] = []
 
-        for predicted_column in predicted_columns:
-            scores = _metric_scores_for_column(rows, true_label_column, predicted_column, k)
-            column_scores.append(scores)
+        for k_value in k:
+            column_scores: list[dict[str, list[float]]] = []
+            for predicted_column in predicted_columns:
+                scores = _metric_scores_for_column(
+                    rows, true_label_column, predicted_column, k_value
+                )
+                column_scores.append(scores)
+                metrics_rows.extend(
+                    [
+                        {
+                            "metric": "mrr",
+                            "column": predicted_column,
+                            "k": k_value,
+                            "value": _mean(scores["mrr"]),
+                        },
+                        {
+                            "metric": "map_at_k",
+                            "column": predicted_column,
+                            "k": k_value,
+                            "value": _mean(scores["map_at_k"]),
+                        },
+                        {
+                            "metric": "recall_at_k",
+                            "column": predicted_column,
+                            "k": k_value,
+                            "value": _mean(scores["recall_at_k"]),
+                        },
+                    ]
+                )
+
+            combined_scores = _pool_metric_scores(*column_scores)
             metrics_rows.extend(
                 [
                     {
                         "metric": "mrr",
-                        "column": predicted_column,
-                        "k": k,
-                        "value": _mean(scores["mrr"]),
+                        "column": "combined",
+                        "k": k_value,
+                        "value": _mean(combined_scores["mrr"]),
                     },
                     {
                         "metric": "map_at_k",
-                        "column": predicted_column,
-                        "k": k,
-                        "value": _mean(scores["map_at_k"]),
+                        "column": "combined",
+                        "k": k_value,
+                        "value": _mean(combined_scores["map_at_k"]),
                     },
                     {
                         "metric": "recall_at_k",
-                        "column": predicted_column,
-                        "k": k,
-                        "value": _mean(scores["recall_at_k"]),
+                        "column": "combined",
+                        "k": k_value,
+                        "value": _mean(combined_scores["recall_at_k"]),
+                    },
+                    {
+                        "metric": "num_queries",
+                        "column": "all",
+                        "k": k_value,
+                        "value": len(rows),
                     },
                 ]
             )
-
-        combined_scores = _pool_metric_scores(*column_scores)
-        metrics_rows.extend(
-            [
-                {
-                    "metric": "mrr",
-                    "column": "combined",
-                    "k": k,
-                    "value": _mean(combined_scores["mrr"]),
-                },
-                {
-                    "metric": "map_at_k",
-                    "column": "combined",
-                    "k": k,
-                    "value": _mean(combined_scores["map_at_k"]),
-                },
-                {
-                    "metric": "recall_at_k",
-                    "column": "combined",
-                    "k": k,
-                    "value": _mean(combined_scores["recall_at_k"]),
-                },
-                {
-                    "metric": "num_queries",
-                    "column": "all",
-                    "k": k,
-                    "value": len(rows),
-                },
-            ]
-        )
 
         output_path = (
             Path(output_dir)
@@ -139,6 +145,7 @@ def combine_search_ranking_metrics(
     metrics_paths: list[Path | str],
     database_name: str,
     column_mode: Literal["combined", "respective"],
+    k: int,
 ) -> Path:
     """Combine per-style ranking metrics CSVs into one wide Excel file."""
     if not metrics_paths:
@@ -151,10 +158,12 @@ def combine_search_ranking_metrics(
         target_column = _column_filter_for_mode(column_mode, description_style)
 
         metrics_df = pd.read_csv(metrics_path)
-        filtered = metrics_df[metrics_df["column"] == target_column]
+        filtered = metrics_df[
+            (metrics_df["column"] == target_column) & (metrics_df["k"] == k)
+        ]
         if filtered.empty:
             raise ValueError(
-                f"No rows with column={target_column!r} in {metrics_path}."
+                f"No rows with column={target_column!r} and k={k} in {metrics_path}."
             )
 
         row_values: dict[str, float] = {}
@@ -163,7 +172,7 @@ def combine_search_ranking_metrics(
             if metric_rows.empty:
                 raise ValueError(
                     f"Metric {metric_name!r} missing for column={target_column!r} "
-                    f"in {metrics_path}."
+                    f"and k={k} in {metrics_path}."
                 )
             row_values[metric_name] = float(metric_rows.iloc[0]["value"])
 
@@ -181,7 +190,7 @@ def combine_search_ranking_metrics(
 
     output_dir = get_database_processed_dir(database_name) / "metrics"
     output_dir.mkdir(parents=True, exist_ok=True)
-    output_path = output_dir / f"combined_search_top_k_{column_mode}.xlsx"
+    output_path = output_dir / f"combined_search_top_{k}_{column_mode}.xlsx"
     combined_df.to_excel(output_path)
     return output_path
 

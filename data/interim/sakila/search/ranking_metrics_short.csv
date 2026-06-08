@@ -1,4 +1,17 @@
 metric,column,k,value
+mrr,predicted_short,3,0.9166666666666666
+map_at_k,predicted_short,3,0.9166666666666666
+recall_at_k,predicted_short,3,1.0
+mrr,predicted_business,3,0.9444444444444444
+map_at_k,predicted_business,3,0.9444444444444444
+recall_at_k,predicted_business,3,1.0
+mrr,predicted_technical,3,0.9722222222222222
+map_at_k,predicted_technical,3,0.9722222222222222
+recall_at_k,predicted_technical,3,1.0
+mrr,combined,3,0.9444444444444444
+map_at_k,combined,3,0.9444444444444444
+recall_at_k,combined,3,1.0
+num_queries,all,3,18
 mrr,predicted_short,5,0.9166666666666666
 map_at_k,predicted_short,5,0.9166666666666666
 recall_at_k,predicted_short,5,1.0
@@ -8,7 +21,7 @@ recall_at_k,predicted_business,5,1.0
 mrr,predicted_technical,5,0.9722222222222222
 map_at_k,predicted_technical,5,0.9722222222222222
 recall_at_k,predicted_technical,5,1.0
-mrr,combined,5,0.9166666666666666
-map_at_k,combined,5,0.9166666666666666
+mrr,combined,5,0.9444444444444444
+map_at_k,combined,5,0.9444444444444444
 recall_at_k,combined,5,1.0
 num_queries,all,5,18

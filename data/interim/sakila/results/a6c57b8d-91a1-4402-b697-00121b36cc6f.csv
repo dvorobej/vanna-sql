@@ -1,0 +1,74 @@
+city_name,country_avg_monthly_payment_count,country_avg_monthly_sum,country_customer_count,country_name,country_rank,customer_id,customer_name,deviation_from_personal_avg,monthly_payment_count,monthly_payment_sum,payment_month,personal_avg_monthly_sum,staff_email,staff_id,top_staff_name,top_staff_payment_count,top_staff_payment_sum
+Adana,8.93,38.98,15,Turkey,2,327,LARRY THRASHER,31.43,13,58.87,2005-08,27.44,Mike.Hillyer@sakilastaff.com,1,Mike Hillyer,9,36.91
+Akishima,10.81,45.25,31,Japan,3,574,JULIAN VEST,37.42,15,64.85,2005-07,27.43,Mike.Hillyer@sakilastaff.com,1,Mike Hillyer,13,56.87
+Akron,10.44,45.84,36,United States,2,479,ZACHARY HITE,43.43,15,79.85,2005-07,36.43,Jon.Stephens@sakilastaff.com,2,Jon Stephens,7,46.93
+Ambattur,10.85,45.74,60,India,2,225,ARLENE HARVEY,50.65,17,80.83,2005-07,30.19,Mike.Hillyer@sakilastaff.com,1,Mike Hillyer,9,50.91
+Antofagasta,10.0,49.9,3,Chile,1,45,JANET PHILLIPS,36.95,12,68.88,2005-08,31.93,Mike.Hillyer@sakilastaff.com,1,Mike Hillyer,7,41.93
+Ashdod,11.5,50.89,4,Israel,1,102,CRYSTAL FORD,50.37,21,84.79,2005-07,34.42,Mike.Hillyer@sakilastaff.com,1,Mike Hillyer,9,42.91
+Athenai,9.5,45.41,2,Greece,1,3,LINDA WILLIAMS,34.94,13,68.87,2005-07,33.94,Jon.Stephens@sakilastaff.com,2,Jon Stephens,6,39.94
+Balikesir,11.47,49.29,15,Turkey,1,366,BRANDON HUEY,45.9,19,82.81,2005-07,36.91,Jon.Stephens@sakilastaff.com,2,Jon Stephens,10,41.9
+Bandar Seri Begawan,19.0,59.81,1,Brunei,1,91,LOIS BUTLER,32.65,19,59.81,2005-07,27.17,Jon.Stephens@sakilastaff.com,2,Jon Stephens,12,30.88
+Batna,13.33,56.87,3,Algeria,1,441,MARIO CHEATHAM,39.9,17,66.83,2005-07,26.93,Jon.Stephens@sakilastaff.com,2,Jon Stephens,10,34.9
+Beira,14.67,65.19,3,Mozambique,1,257,MARSHA DOUGLAS,50.91,18,88.82,2005-07,37.91,Jon.Stephens@sakilastaff.com,2,Jon Stephens,10,50.9
+Benguela,10.0,41.9,2,Angola,1,528,CLAUDE HERZOG,28.95,11,56.89,2005-07,27.94,Jon.Stephens@sakilastaff.com,2,Jon Stephens,6,33.94
+Bhilwara,10.85,45.74,60,India,1,209,TONYA CHAPMAN,42.41,17,82.83,2005-07,40.42,Jon.Stephens@sakilastaff.com,2,Jon Stephens,9,48.91
+Brescia,11.14,48.46,7,Italy,1,309,CHRISTOPHER GRECO,39.92,16,76.84,2005-07,36.92,Jon.Stephens@sakilastaff.com,2,Jon Stephens,8,45.92
+Bucuresti,15.5,59.85,2,Romania,1,563,KEN PREWITT,33.16,16,60.84,2005-07,27.68,Jon.Stephens@sakilastaff.com,2,Jon Stephens,10,44.9
+Charlotte Amalie,18.0,68.82,1,"Virgin Islands, U.S.",1,406,NATHAN RUNYON,38.15,18,68.82,2005-07,30.67,Jon.Stephens@sakilastaff.com,2,Jon Stephens,12,42.88
+Coatzacoalcos,10.67,46.13,30,Mexico,1,482,MAURICE CRAWLEY,35.2,12,69.88,2005-07,34.68,Jon.Stephens@sakilastaff.com,2,Jon Stephens,8,45.92
+Dadu,10.0,41.7,5,Pakistan,1,416,JEFFERY PINSON,33.45,13,63.87,2005-08,30.42,Mike.Hillyer@sakilastaff.com,1,Mike Hillyer,10,51.9
+Effon-Alaiye,12.08,49.8,13,Nigeria,1,286,VELMA LUCAS,47.4,17,76.83,2005-07,29.43,Jon.Stephens@sakilastaff.com,2,Jon Stephens,8,42.92
+El Alto,7.0,31.93,2,Bolivia,1,455,JON WILES,23.97,9,45.91,2005-07,21.94,Mike.Hillyer@sakilastaff.com,1,Mike Hillyer,4,23.96
+Etawah,9.67,42.67,60,India,6,121,JOSEPHINE GOMEZ,40.43,14,67.86,2005-08,27.44,Jon.Stephens@sakilastaff.com,2,Jon Stephens,8,41.92
+Florencia,9.17,42.91,6,Colombia,1,460,LEON BOSTIC,27.44,12,54.88,2005-08,27.44,Jon.Stephens@sakilastaff.com,2,Jon Stephens,7,37.93
+Goinia,11.39,49.85,28,Brazil,2,92,TINA SIMMONS,45.42,15,78.85,2005-07,33.43,Jon.Stephens@sakilastaff.com,2,Jon Stephens,7,45.93
+Hidalgo,9.67,38.04,30,Mexico,1,150,DANIELLE DANIELS,42.4,16,68.84,2005-08,26.44,Jon.Stephens@sakilastaff.com,2,Jon Stephens,11,52.89
+Hodeida,14.0,64.86,4,Yemen,1,470,GORDON ALLARD,56.66,17,96.83,2005-07,40.17,Mike.Hillyer@sakilastaff.com,1,Mike Hillyer,13,70.87
+Hunuco,10.0,43.65,4,Peru,1,565,JAIME NETTLES,35.19,13,66.87,2005-08,31.68,Jon.Stephens@sakilastaff.com,2,Jon Stephens,7,42.93
+Ikerre,9.46,41.75,13,Nigeria,1,198,ELSIE KELLEY,35.43,16,70.84,2005-08,35.41,Mike.Hillyer@sakilastaff.com,1,Mike Hillyer,11,51.89
+Iwakuni,9.68,40.94,31,Japan,3,54,TERESA ROGERS,32.68,14,64.86,2005-08,32.18,Mike.Hillyer@sakilastaff.com,1,Mike Hillyer,8,39.92
+Jedda,10.0,47.1,5,Saudi Arabia,1,49,JOYCE EDWARDS,37.19,13,69.87,2005-07,32.68,Jon.Stephens@sakilastaff.com,2,Jon Stephens,7,36.93
+Jinchang,11.23,44.91,53,China,3,168,REGINA BERRY,37.16,17,70.83,2005-07,33.67,Jon.Stephens@sakilastaff.com,2,Jon Stephens,10,41.9
+Jining,11.23,44.91,53,China,5,594,EDUARDO HIATT,33.18,14,65.86,2005-07,32.68,Mike.Hillyer@sakilastaff.com,1,Mike Hillyer,9,47.91
+Jinzhou,11.23,44.91,53,China,1,595,TERRENCE GUNDERSON,57.39,19,86.81,2005-07,29.43,Mike.Hillyer@sakilastaff.com,1,Mike Hillyer,12,58.88
+Johannesburg,9.27,41.27,11,South Africa,1,471,DEAN SAUER,28.45,12,55.88,2005-08,27.43,Mike.Hillyer@sakilastaff.com,1,Mike Hillyer,7,34.93
+Kolpino,11.0,50.5,28,Russian Federation,1,295,DAISY BATES,47.41,18,87.82,2005-07,40.41,Mike.Hillyer@sakilastaff.com,1,Mike Hillyer,8,45.92
+Kuwana,10.81,45.25,31,Japan,2,531,JAMIE WAUGH,35.17,14,64.86,2005-07,29.69,Jon.Stephens@sakilastaff.com,2,Jon Stephens,10,41.9
+La Plata,12.15,49.19,13,Argentina,2,89,JULIA FLORES,35.16,17,68.83,2005-07,33.67,Jon.Stephens@sakilastaff.com,2,Jon Stephens,11,46.89
+Laohekou,9.66,39.38,53,China,6,422,MELVIN ELLINGTON,33.18,13,56.87,2005-08,23.69,Mike.Hillyer@sakilastaff.com,1,Mike Hillyer,6,29.94
+Lausanne,10.67,46.89,3,Switzerland,1,598,WADE DELVALLE,36.91,16,64.84,2005-07,27.93,Mike.Hillyer@sakilastaff.com,1,Mike Hillyer,8,32.92
+Leshan,9.66,39.38,53,China,1,569,DAVE GARDINER,42.15,18,75.82,2005-08,33.67,Mike.Hillyer@sakilastaff.com,1,Mike Hillyer,8,40.92
+Mahajanga,12.0,55.88,1,Madagascar,1,81,ANDREA HENDERSON,32.44,12,55.88,2005-08,23.45,Mike.Hillyer@sakilastaff.com,1,Mike Hillyer,7,33.93
+Maikop,11.0,50.5,28,Russian Federation,2,346,ARTHUR SIMPKINS,44.93,15,83.85,2005-07,38.92,Jon.Stephens@sakilastaff.com,2,Jon Stephens,10,54.9
+Novi Sad,13.5,64.37,2,Yugoslavia,1,553,MAX PITT,41.9,16,68.84,2005-07,26.94,Jon.Stephens@sakilastaff.com,2,Jon Stephens,10,36.9
+Olomouc,16.0,70.84,1,Czech Republic,1,265,JENNIE TERRY,37.41,16,70.84,2005-07,33.43,Mike.Hillyer@sakilastaff.com,1,Mike Hillyer,9,38.91
+Owo,9.46,41.75,13,Nigeria,2,280,TRACEY BARRETT,39.2,12,68.88,2005-08,29.68,Mike.Hillyer@sakilastaff.com,1,Mike Hillyer,8,43.92
+Phnom Penh,12.0,50.88,2,Cambodia,1,228,ALLISON STANLEY,32.66,15,54.85,2005-07,22.19,Mike.Hillyer@sakilastaff.com,1,Mike Hillyer,9,31.91
+Purnea (Purnia),10.85,45.74,60,India,6,426,BRADLEY MOTLEY,34.21,11,65.89,2005-07,31.68,Mike.Hillyer@sakilastaff.com,1,Mike Hillyer,7,41.93
+Robamba,13.0,55.54,3,Ecuador,1,494,RAMON CHOATE,45.65,18,80.82,2005-07,35.17,Jon.Stephens@sakilastaff.com,2,Jon Stephens,13,64.87
+Sal,9.33,42.24,3,Morocco,1,22,LAURA RODRIGUEZ,27.7,10,54.9,2005-08,27.2,Mike.Hillyer@sakilastaff.com,1,Mike Hillyer,8,43.92
+Salala,12.0,40.38,2,Oman,1,498,GENE SANBORN,27.42,15,51.85,2005-07,24.43,Mike.Hillyer@sakilastaff.com,1,Mike Hillyer,8,32.92
+Salzburg,10.0,42.23,3,Austria,1,266,NORA HERRERA,42.15,17,71.83,2005-08,29.68,Mike.Hillyer@sakilastaff.com,1,Mike Hillyer,12,52.88
+San Bernardino,10.44,45.84,36,United States,3,2,PATRICIA JOHNSON,43.68,14,75.86,2005-07,32.18,Jon.Stephens@sakilastaff.com,2,Jon Stephens,8,48.92
+San Juan Bautista Tuxtepec,10.67,46.13,30,Mexico,3,425,FRANCIS SIKES,41.65,17,67.83,2005-07,26.19,Mike.Hillyer@sakilastaff.com,1,Mike Hillyer,10,39.9
+Santa Rosa,11.6,45.83,20,Philippines,1,522,ARNOLD HAVENS,54.9,18,96.82,2005-07,41.92,Jon.Stephens@sakilastaff.com,2,Jon Stephens,11,63.89
+Shaoguan,11.23,44.91,53,China,6,485,CLYDE TOBIAS,34.89,18,63.82,2005-07,28.93,Mike.Hillyer@sakilastaff.com,1,Mike Hillyer,10,32.9
+Sharja,12.67,53.87,3,United Arab Emirates,1,292,MISTY LAMBERT,45.16,16,74.84,2005-07,29.68,Mike.Hillyer@sakilastaff.com,1,Mike Hillyer,10,54.9
+Shubra al-Khayma,10.0,42.73,6,Egypt,1,119,SHERRY MARSHALL,39.41,18,77.82,2005-08,38.42,Jon.Stephens@sakilastaff.com,2,Jon Stephens,12,49.88
+Siliguri (Shiliguri),10.85,45.74,60,India,4,502,BRETT CORNWELL,39.19,15,73.85,2005-07,34.67,Jon.Stephens@sakilastaff.com,2,Jon Stephens,9,41.91
+Sogamoso,11.83,52.72,6,Colombia,1,490,SAM MCDUFFIE,35.42,14,64.86,2005-07,29.44,Jon.Stephens@sakilastaff.com,2,Jon Stephens,7,33.93
+Sousse,15.0,55.85,1,Tunisia,1,335,GREGORY MAULDIN,29.92,15,55.85,2005-07,25.93,Mike.Hillyer@sakilastaff.com,1,Mike Hillyer,10,39.9
+Tangail,12.0,51.55,3,Bangladesh,1,21,MICHELLE CLARK,41.67,17,79.83,2005-08,38.17,Mike.Hillyer@sakilastaff.com,1,Mike Hillyer,8,44.92
+Tiefa,11.23,44.91,53,China,4,302,MICHAEL SILVERMAN,35.92,15,67.85,2005-07,31.93,Mike.Hillyer@sakilastaff.com,1,Mike Hillyer,6,34.94
+Tokat,11.47,49.29,15,Turkey,2,566,CASEY MENA,36.41,18,71.82,2005-07,35.42,Mike.Hillyer@sakilastaff.com,1,Mike Hillyer,9,37.91
+Toulouse,11.25,49.89,4,France,1,35,VIRGINIA GREEN,36.42,16,68.84,2005-07,32.42,Mike.Hillyer@sakilastaff.com,1,Mike Hillyer,11,55.89
+Uijongbu,13.8,58.26,5,South Korea,1,245,COURTNEY DAY,40.42,16,72.84,2005-07,32.42,Mike.Hillyer@sakilastaff.com,1,Mike Hillyer,8,41.92
+Uluberia,10.85,45.74,60,India,5,446,THEODORE CULP,42.66,17,71.83,2005-07,29.17,Jon.Stephens@sakilastaff.com,2,Jon Stephens,9,37.91
+Urawa,9.68,40.94,31,Japan,1,147,JOANNE ROBERTSON,44.94,15,76.85,2005-08,31.92,Jon.Stephens@sakilastaff.com,2,Jon Stephens,9,45.91
+Valencia,10.14,40.76,7,Venezuela,1,539,MATHEW BOLIN,33.19,12,55.88,2005-07,22.7,Jon.Stephens@sakilastaff.com,2,Jon Stephens,7,35.93
+Vijayawada,10.85,45.74,60,India,3,508,MILTON HOWLAND,43.17,14,74.86,2005-07,31.69,Jon.Stephens@sakilastaff.com,2,Jon Stephens,11,60.89
+Yinchuan,11.23,44.91,53,China,2,484,ROBERTO VU,42.93,15,77.85,2005-07,34.93,Jon.Stephens@sakilastaff.com,2,Jon Stephens,10,56.9
+Zanzibar,10.67,48.56,3,Tanzania,1,220,CHARLENE ALVAREZ,31.2,12,59.88,2005-07,28.68,Jon.Stephens@sakilastaff.com,2,Jon Stephens,9,48.91
+Zhezqazghan,12.0,48.38,2,Kazakstan,1,573,BYRON BOX,40.67,15,70.85,2005-07,30.18,Jon.Stephens@sakilastaff.com,2,Jon Stephens,8,43.92
+al-Manama,14.0,56.86,1,Bahrain,1,590,SETH HANNON,29.42,14,56.86,2005-07,27.44,Mike.Hillyer@sakilastaff.com,1,Mike Hillyer,8,32.92
+ostka,11.83,58.05,6,Ukraine,1,475,PEDRO CHESTNUT,37.26,15,71.85,2005-07,34.59,Mike.Hillyer@sakilastaff.com,1,Mike Hillyer,9,41.91

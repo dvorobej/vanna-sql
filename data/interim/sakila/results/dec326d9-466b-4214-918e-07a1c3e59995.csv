@@ -1,0 +1,1106 @@
+avg_prev30_window_count_7d,avg_prev30_window_sum_7d,customer_city,customer_country,customer_id,customer_name,distinct_rented_films,payment_staff,payment_stores,sum_spike_ratio,suspicious_payment_sum_rank,total_suspicious_payment_sum,window_count_7d,window_end_date,window_start_date,window_sum_7d
+1.0,0.99,Adoni,India,367,ADAM GOOCH,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",25.2,47,76.86,5,2005-07-11,2005-07-05,24.95
+1.0,0.99,Adoni,India,367,ADAM GOOCH,7,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",32.25,47,76.86,7,2005-07-12,2005-07-06,31.93
+1.0,0.99,Akishima,Japan,574,JULIAN VEST,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",16.11,120,55.86,5,2005-06-21,2005-06-15,15.95
+1.0,0.99,Arak,Iran,36,KATHLEEN ADAMS,5,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",13.08,125,54.83,5,2005-07-11,2005-07-05,12.95
+1.0,0.99,Charlotte Amalie,"Virgin Islands, U.S.",406,NATHAN RUNYON,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",14.09,35,82.79,5,2005-06-19,2005-06-13,13.95
+1.0,0.99,Charlotte Amalie,"Virgin Islands, U.S.",406,NATHAN RUNYON,6,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",22.16,35,82.79,6,2005-06-20,2005-06-14,21.94
+1.0,0.99,Charlotte Amalie,"Virgin Islands, U.S.",406,NATHAN RUNYON,7,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",27.2,35,82.79,7,2005-06-21,2005-06-15,26.93
+1.0,0.99,Florencia,Colombia,460,LEON BOSTIC,5,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",28.23,285,27.95,5,2005-07-12,2005-07-06,27.95
+1.0,0.99,Ibirit,Brazil,310,DANIEL CABRAL,5,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",25.2,286,27.94,5,2005-06-18,2005-06-12,24.95
+1.0,0.99,Ibirit,Brazil,310,DANIEL CABRAL,6,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",28.22,286,27.94,6,2005-06-19,2005-06-13,27.94
+1.0,0.99,Ikerre,Nigeria,198,ELSIE KELLEY,7,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",27.2,16,92.79,7,2005-07-12,2005-07-06,26.93
+1.0,0.99,Iligan,Philippines,580,ROSS GREY,5,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",17.12,78,66.82,5,2005-07-10,2005-07-04,16.95
+1.0,0.99,Iligan,Philippines,580,ROSS GREY,7,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",23.16,78,66.82,7,2005-07-11,2005-07-05,22.93
+1.0,0.99,Jurez,Mexico,369,FRED WHEAT,6,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",28.22,286,27.94,6,2005-07-10,2005-07-04,27.94
+1.0,0.99,Lincoln,United States,63,ASHLEY RICHARDSON,5,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",31.26,175,43.93,5,2005-07-10,2005-07-04,30.95
+1.0,0.99,Lincoln,United States,63,ASHLEY RICHARDSON,7,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",44.37,175,43.93,7,2005-07-12,2005-07-06,43.93
+1.0,0.99,Paarl,South Africa,338,DENNIS GILMAN,6,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",29.23,236,34.93,6,2005-06-18,2005-06-12,28.94
+1.0,0.99,Paarl,South Africa,338,DENNIS GILMAN,7,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",35.28,236,34.93,7,2005-06-21,2005-06-15,34.93
+1.0,0.99,Purnea (Purnia),India,426,BRADLEY MOTLEY,5,Mike Hillyer (#1),store #1,20.15,56,71.86,5,2005-06-21,2005-06-15,19.95
+1.0,0.99,Pyongyang,North Korea,157,DARLENE ROSE,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",17.12,74,67.8,5,2005-07-10,2005-07-04,16.95
+1.0,0.99,Taizz,Yemen,213,GINA WILLIAMSON,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",20.15,231,35.91,5,2005-06-19,2005-06-13,19.95
+1.0,0.99,Taizz,Yemen,213,GINA WILLIAMSON,7,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",30.23,231,35.91,7,2005-06-20,2005-06-14,29.93
+1.0,0.99,Taizz,Yemen,213,GINA WILLIAMSON,9,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",36.27,231,35.91,9,2005-06-21,2005-06-15,35.91
+1.0,0.99,Uttarpara-Kotrung,India,231,GEORGIA JACOBS,5,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",18.13,77,66.83,5,2005-07-09,2005-07-03,17.95
+1.0,0.99,Uttarpara-Kotrung,India,231,GEORGIA JACOBS,6,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",24.18,77,66.83,6,2005-07-10,2005-07-04,23.94
+1.0,0.99,Uttarpara-Kotrung,India,231,GEORGIA JACOBS,8,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",27.19,77,66.83,8,2005-07-12,2005-07-06,26.92
+1.0,0.99,Zanzibar,Tanzania,220,CHARLENE ALVAREZ,5,Jon Stephens (#2),store #2,11.06,52,74.84,5,2005-07-11,2005-07-05,10.95
+1.0,0.99,Zanzibar,Tanzania,220,CHARLENE ALVAREZ,6,Jon Stephens (#2),store #2,20.14,52,74.84,6,2005-07-12,2005-07-06,19.94
+1.0,1.99,Salinas,United States,269,CASSANDRA WALTERS,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",8.52,152,48.89,5,2005-05-31,2005-05-25,16.95
+1.0,1.99,Shimonoseki,Japan,29,ANGELA HERNANDEZ,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",8.02,320,21.93,5,2005-06-19,2005-06-13,15.95
+1.0,1.99,Shimonoseki,Japan,29,ANGELA HERNANDEZ,6,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",9.52,320,21.93,6,2005-06-20,2005-06-14,18.94
+1.0,1.99,Shimonoseki,Japan,29,ANGELA HERNANDEZ,7,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",11.02,320,21.93,7,2005-06-21,2005-06-15,21.93
+1.0,1.99,Songkhla,Thailand,86,JACQUELINE LONG,5,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",9.52,305,24.93,5,2005-06-19,2005-06-13,18.95
+1.0,1.99,Songkhla,Thailand,86,JACQUELINE LONG,7,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",12.53,305,24.93,7,2005-06-21,2005-06-15,24.93
+1.0,2.99,Antofagasta,Chile,45,JANET PHILLIPS,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",6.0,80,65.86,5,2005-06-21,2005-06-15,17.95
+1.0,2.99,Bamenda,Cameroon,352,ALBERT CROUSE,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",7.01,127,53.88,5,2005-06-21,2005-06-15,20.95
+1.0,2.99,Bat Yam,Israel,315,KENNETH GOODEN,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",8.34,304,24.95,5,2005-07-12,2005-07-06,24.95
+1.0,2.99,Bern,Switzerland,155,GAIL KNIGHT,5,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",9.35,285,27.95,5,2005-06-21,2005-06-15,27.95
+1.0,2.99,Caracas,Venezuela,111,CARMEN OWENS,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",6.67,313,22.94,5,2005-06-20,2005-06-14,19.95
+1.0,2.99,Caracas,Venezuela,111,CARMEN OWENS,6,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",7.67,313,22.94,6,2005-06-21,2005-06-15,22.94
+1.0,2.99,Chatsworth,South Africa,555,DWIGHT LOMBARDI,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",9.01,228,35.93,5,2005-07-31,2005-07-25,26.95
+1.0,2.99,Chatsworth,South Africa,555,DWIGHT LOMBARDI,7,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",12.02,228,35.93,7,2005-08-02,2005-07-27,35.93
+1.0,2.99,Ciparay,Indonesia,328,JEFFREY SPEAR,5,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",7.34,173,44.89,5,2005-06-21,2005-06-15,21.95
+1.0,2.99,Davao,Philippines,27,SHIRLEY ALLEN,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",6.67,76,66.84,5,2005-06-18,2005-06-12,19.95
+1.0,2.99,Davao,Philippines,27,SHIRLEY ALLEN,6,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",8.34,76,66.84,6,2005-06-19,2005-06-13,24.94
+1.0,2.99,Davao,Philippines,27,SHIRLEY ALLEN,7,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",9.01,76,66.84,7,2005-06-20,2005-06-14,26.93
+1.0,2.99,Davao,Philippines,27,SHIRLEY ALLEN,8,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",10.34,76,66.84,8,2005-06-21,2005-06-15,30.92
+1.0,2.99,Dongying,China,466,LEO EBERT,5,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",9.68,21,88.81,5,2005-06-21,2005-06-15,28.95
+1.0,2.99,Johannesburg,South Africa,471,DEAN SAUER,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",7.01,64,69.85,5,2005-06-20,2005-06-14,20.95
+1.0,2.99,Katihar,India,419,CHAD CARBONE,7,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",6.33,310,23.91,7,2005-07-10,2005-07-04,18.93
+1.0,2.99,Katihar,India,419,CHAD CARBONE,8,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",6.66,310,23.91,8,2005-07-11,2005-07-05,19.92
+1.0,2.99,Katihar,India,419,CHAD CARBONE,9,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",8.0,310,23.91,9,2005-07-12,2005-07-06,23.91
+1.0,2.99,Kumbakonam,India,271,PENNY NEAL,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.33,184,42.88,5,2005-07-11,2005-07-05,12.95
+1.0,2.99,Kuwana,Japan,531,JAMIE WAUGH,6,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",9.34,18,91.82,6,2005-07-12,2005-07-06,27.94
+1.0,2.99,Lausanne,Switzerland,598,WADE DELVALLE,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",8.01,210,38.91,5,2005-07-10,2005-07-04,23.95
+1.0,2.99,Lausanne,Switzerland,598,WADE DELVALLE,9,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",13.01,210,38.91,9,2005-07-12,2005-07-06,38.91
+1.0,2.99,Le Mans,France,162,LAUREN HUDSON,6,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",10.01,270,30.93,6,2005-07-31,2005-07-25,29.94
+1.0,2.99,Le Mans,France,162,LAUREN HUDSON,7,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",10.34,270,30.93,7,2005-08-02,2005-07-27,30.93
+1.0,2.99,Po,Brazil,126,ELLEN SIMPSON,5,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",7.68,252,32.91,5,2005-07-08,2005-07-02,22.95
+1.0,2.99,Po,Brazil,126,ELLEN SIMPSON,6,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",8.01,252,32.91,6,2005-07-09,2005-07-03,23.94
+1.0,2.99,Po,Brazil,126,ELLEN SIMPSON,7,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",8.34,252,32.91,7,2005-07-10,2005-07-04,24.93
+1.0,2.99,Po,Brazil,126,ELLEN SIMPSON,9,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",11.01,252,32.91,9,2005-07-12,2005-07-06,32.91
+1.0,2.99,Qomsheh,Iran,459,TOMMY COLLAZO,6,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",5.33,3,122.77,6,2005-06-20,2005-06-14,15.94
+1.0,2.99,Qomsheh,Iran,459,TOMMY COLLAZO,7,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",8.67,3,122.77,7,2005-06-21,2005-06-15,25.93
+1.0,2.99,Rizhao,China,496,TYLER WREN,6,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",8.01,112,57.87,6,2005-07-10,2005-07-04,23.94
+1.0,2.99,Robamba,Ecuador,494,RAMON CHOATE,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",5.0,23,88.79,5,2005-07-07,2005-07-01,14.95
+1.0,2.99,Robamba,Ecuador,494,RAMON CHOATE,6,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",7.67,23,88.79,6,2005-07-08,2005-07-02,22.94
+1.0,2.99,Robamba,Ecuador,494,RAMON CHOATE,8,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",10.34,23,88.79,8,2005-07-09,2005-07-03,30.92
+1.0,2.99,Sucre,Bolivia,431,JOEL FRANCISCO,5,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",6.67,105,58.88,5,2005-06-19,2005-06-13,19.95
+1.0,2.99,Sucre,Bolivia,431,JOEL FRANCISCO,7,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",12.02,105,58.88,7,2005-06-21,2005-06-15,35.93
+1.0,2.99,Teboksary,Russian Federation,350,JUAN FRALEY,8,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",9.67,147,49.84,8,2005-08-23,2005-08-17,28.92
+1.0,2.99,Tiefa,China,302,MICHAEL SILVERMAN,5,Jon Stephens (#2),store #2,5.0,67,68.84,5,2005-07-10,2005-07-04,14.95
+1.0,2.99,Tiefa,China,302,MICHAEL SILVERMAN,6,Jon Stephens (#2),store #2,7.67,67,68.84,6,2005-07-12,2005-07-06,22.94
+1.0,2.99,Udine,Italy,525,ADRIAN CLARY,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",9.01,292,26.95,5,2005-07-12,2005-07-06,26.95
+1.0,2.99,Valle de la Pascua,Venezuela,290,KRISTINA CHAMBERS,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",8.68,299,25.95,5,2005-06-20,2005-06-14,25.95
+1.0,2.99,Varanasi (Benares),India,123,SHANNON FREEMAN,5,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",5.0,115,56.86,5,2005-06-19,2005-06-13,14.95
+1.0,3.99,Firozabad,India,192,LAURIE LAWRENCE,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.25,146,49.87,5,2005-07-12,2005-07-06,12.95
+1.0,3.99,Jinzhou,China,595,TERRENCE GUNDERSON,6,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",6.75,193,40.92,6,2005-07-10,2005-07-04,26.94
+1.0,3.99,Jinzhou,China,595,TERRENCE GUNDERSON,7,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",8.5,193,40.92,7,2005-07-11,2005-07-05,33.93
+1.0,3.99,Jinzhou,China,595,TERRENCE GUNDERSON,8,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",10.26,193,40.92,8,2005-07-12,2005-07-06,40.92
+1.0,3.99,Kansas City,United States,308,THOMAS GRIGSBY,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",5.0,83,64.85,5,2005-06-18,2005-06-12,19.95
+1.0,3.99,Kolpino,Russian Federation,295,DAISY BATES,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.25,19,91.8,5,2005-06-18,2005-06-12,16.95
+1.0,3.99,Kolpino,Russian Federation,295,DAISY BATES,6,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.75,19,91.8,6,2005-06-19,2005-06-13,18.94
+1.0,3.99,Kolpino,Russian Federation,295,DAISY BATES,7,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",5.5,19,91.8,7,2005-06-20,2005-06-14,21.93
+1.0,3.99,Kolpino,Russian Federation,295,DAISY BATES,9,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",8.25,19,91.8,9,2005-06-21,2005-06-15,32.91
+1.0,3.99,Nuuk,Greenland,207,GERTRUDE CASTILLO,11,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",9.5,220,37.89,11,2005-07-12,2005-07-06,37.89
+1.0,3.99,Nuuk,Greenland,207,GERTRUDE CASTILLO,5,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",5.75,220,37.89,5,2005-07-08,2005-07-02,22.95
+1.0,3.99,Nuuk,Greenland,207,GERTRUDE CASTILLO,8,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",7.5,220,37.89,8,2005-07-09,2005-07-03,29.92
+1.0,3.99,Nuuk,Greenland,207,GERTRUDE CASTILLO,9,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",7.75,220,37.89,9,2005-07-10,2005-07-04,30.91
+1.0,3.99,Nyeri,Kenya,363,ROY WHITING,5,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",5.75,311,22.95,5,2005-06-21,2005-06-15,22.95
+1.0,3.99,Sogamoso,Colombia,490,SAM MCDUFFIE,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",6.75,131,52.89,5,2005-07-09,2005-07-03,26.95
+1.0,3.99,Sogamoso,Colombia,490,SAM MCDUFFIE,7,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",8.25,131,52.89,7,2005-07-10,2005-07-04,32.93
+1.0,3.99,Sogamoso,Colombia,490,SAM MCDUFFIE,8,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",9.0,131,52.89,8,2005-07-11,2005-07-05,35.92
+1.0,3.99,Surakarta,Indonesia,450,JAY ROBB,5,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.75,315,22.93,5,2005-06-18,2005-06-12,14.95
+1.0,3.99,Surakarta,Indonesia,450,JAY ROBB,6,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",4.5,315,22.93,6,2005-06-19,2005-06-13,17.94
+1.0,3.99,Surakarta,Indonesia,450,JAY ROBB,7,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",5.75,315,22.93,7,2005-06-20,2005-06-14,22.93
+1.0,3.99,Tychy,Poland,380,RUSSELL BRINSON,5,Mike Hillyer (#1),store #1,4.75,50,75.81,5,2005-06-18,2005-06-12,18.95
+1.0,3.99,Tychy,Poland,380,RUSSELL BRINSON,7,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",5.75,50,75.81,7,2005-06-20,2005-06-14,22.93
+1.0,3.99,Tychy,Poland,380,RUSSELL BRINSON,8,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",7.0,50,75.81,8,2005-06-21,2005-06-15,27.92
+1.0,3.99,al-Ayn,United Arab Emirates,98,LILLIAN GRIFFIN,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",5.25,85,64.83,5,2005-06-19,2005-06-13,20.95
+1.0,3.99,al-Ayn,United Arab Emirates,98,LILLIAN GRIFFIN,6,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",6.5,85,64.83,6,2005-06-21,2005-06-15,25.94
+1.0,3.99,al-Manama,Bahrain,590,SETH HANNON,5,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",7.76,264,30.95,5,2005-06-20,2005-06-14,30.95
+1.0,3.99,al-Qatif,Saudi Arabia,417,TRAVIS ESTEP,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",7.51,274,29.95,5,2005-07-11,2005-07-05,29.95
+1.0,4.49,Sogamoso,Colombia,490,SAM MCDUFFIE,10,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",10.67,131,52.89,10,2005-07-12,2005-07-06,47.9
+1.0,4.99,Aparecida de Goinia,Brazil,216,NATALIE MEYER,5,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.2,329,15.95,5,2005-06-21,2005-06-15,15.95
+1.0,4.99,Brockton,United States,149,VALERIE BLACK,6,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",6.4,248,32.93,6,2005-06-18,2005-06-12,31.94
+1.0,4.99,Brockton,United States,149,VALERIE BLACK,7,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",6.6,248,32.93,7,2005-06-19,2005-06-13,32.93
+1.0,4.99,Chungho,Taiwan,517,BRAD MCCURDY,5,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",4.6,312,22.95,5,2005-06-20,2005-06-14,22.95
+1.0,4.99,Ciomas,Indonesia,239,MINNIE ROMERO,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",5.8,279,28.95,5,2005-05-31,2005-05-25,28.95
+1.0,4.99,Ciparay,Indonesia,328,JEFFREY SPEAR,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.0,173,44.89,5,2005-07-31,2005-07-25,19.95
+1.0,4.99,Ciparay,Indonesia,328,JEFFREY SPEAR,6,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.6,173,44.89,6,2005-08-02,2005-07-27,22.94
+1.0,4.99,Citrus Heights,United States,14,BETTY WHITE,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.6,81,65.85,5,2005-07-09,2005-07-03,17.95
+1.0,4.99,Citrus Heights,United States,14,BETTY WHITE,6,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",5.2,81,65.85,6,2005-07-10,2005-07-04,25.94
+1.0,4.99,Esfahan,Iran,10,DOROTHY TAYLOR,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.2,329,15.95,5,2005-06-20,2005-06-14,15.95
+1.0,4.99,Faaa,French Polynesia,43,CHRISTINE ROBERTS,6,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",4.6,289,27.92,6,2005-07-10,2005-07-04,22.94
+1.0,4.99,Faaa,French Polynesia,43,CHRISTINE ROBERTS,8,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",5.6,289,27.92,8,2005-07-12,2005-07-06,27.92
+1.0,4.99,Gijn,Spain,394,CHRIS BROTHERS,5,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",4.6,124,54.88,5,2005-07-09,2005-07-03,22.95
+1.0,4.99,Gijn,Spain,394,CHRIS BROTHERS,6,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",5.6,124,54.88,6,2005-07-10,2005-07-04,27.94
+1.0,4.99,Gijn,Spain,394,CHRIS BROTHERS,7,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",6.6,124,54.88,7,2005-07-11,2005-07-05,32.93
+1.0,4.99,Haldia,India,186,HOLLY FOX,6,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",4.0,8,103.73,6,2005-07-30,2005-07-24,19.94
+1.0,4.99,Haldia,India,186,HOLLY FOX,7,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",4.39,8,103.73,7,2005-07-31,2005-07-25,21.93
+1.0,4.99,Haldia,India,186,HOLLY FOX,8,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",4.59,8,103.73,8,2005-08-02,2005-07-27,22.92
+1.0,4.99,Jalib al-Shuyukh,Kuwait,234,CLAUDIA FULLER,5,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.8,66,68.85,5,2005-06-17,2005-06-11,18.95
+1.0,4.99,Jalib al-Shuyukh,Kuwait,234,CLAUDIA FULLER,6,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",5.0,66,68.85,6,2005-06-18,2005-06-12,24.94
+1.0,4.99,Jalib al-Shuyukh,Kuwait,234,CLAUDIA FULLER,7,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",6.4,66,68.85,7,2005-06-20,2005-06-14,31.93
+1.0,4.99,Jalib al-Shuyukh,Kuwait,234,CLAUDIA FULLER,8,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",7.4,66,68.85,8,2005-06-21,2005-06-15,36.92
+1.0,4.99,Jinchang,China,168,REGINA BERRY,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.8,233,35.91,5,2005-07-09,2005-07-03,18.95
+1.0,4.99,Jinchang,China,168,REGINA BERRY,6,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",5.0,233,35.91,6,2005-07-10,2005-07-04,24.94
+1.0,4.99,Jinchang,China,168,REGINA BERRY,7,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",6.2,233,35.91,7,2005-07-11,2005-07-05,30.93
+1.0,4.99,Jinchang,China,168,REGINA BERRY,9,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",7.2,233,35.91,9,2005-07-12,2005-07-06,35.91
+1.0,4.99,Malm,Sweden,66,JANICE WARD,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.8,4,117.73,5,2005-06-19,2005-06-13,18.95
+1.0,4.99,Malm,Sweden,66,JANICE WARD,7,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",6.0,4,117.73,7,2005-06-21,2005-06-15,29.93
+1.0,4.99,Nagaon,India,152,ALICIA MILLS,5,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",4.0,142,50.85,5,2005-07-12,2005-07-06,19.95
+1.0,4.99,Oyo,Nigeria,250,JO FOWLER,5,Mike Hillyer (#1),store #1,3.2,198,40.89,5,2005-07-11,2005-07-05,15.95
+1.0,4.99,Pemalang,Indonesia,116,VICTORIA GIBSON,6,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",4.2,322,20.94,6,2005-06-19,2005-06-13,20.94
+1.0,4.99,Ranchi,India,358,SAMUEL MARLOW,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.2,325,18.94,5,2005-06-19,2005-06-13,15.95
+1.0,4.99,Ranchi,India,358,SAMUEL MARLOW,6,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.8,325,18.94,6,2005-06-21,2005-06-15,18.94
+1.0,4.99,Saint-Denis,Runion,148,ELEANOR HUNT,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.6,9,101.8,5,2005-06-19,2005-06-13,22.95
+1.0,4.99,Sousse,Tunisia,335,GREGORY MAULDIN,10,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",7.39,223,36.9,10,2005-07-12,2005-07-06,36.9
+1.0,4.99,Sousse,Tunisia,335,GREGORY MAULDIN,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.8,223,36.9,5,2005-07-07,2005-07-01,18.95
+1.0,4.99,Sousse,Tunisia,335,GREGORY MAULDIN,7,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",5.0,223,36.9,7,2005-07-09,2005-07-03,24.93
+1.0,4.99,Sousse,Tunisia,335,GREGORY MAULDIN,8,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",5.6,223,36.9,8,2005-07-10,2005-07-04,27.92
+1.0,4.99,Syrakusa,Italy,221,BESSIE MORRISON,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.8,307,23.95,5,2005-06-21,2005-06-15,23.95
+1.0,4.99,Taguig,Philippines,72,THERESA WATSON,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.4,328,17.94,5,2005-07-10,2005-07-04,16.95
+1.0,4.99,Taguig,Philippines,72,THERESA WATSON,6,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.6,328,17.94,6,2005-07-11,2005-07-05,17.94
+1.0,4.99,Teboksary,Russian Federation,350,JUAN FRALEY,6,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",5.2,147,49.84,6,2005-08-18,2005-08-12,25.94
+1.0,4.99,Teboksary,Russian Federation,350,JUAN FRALEY,7,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",5.4,147,49.84,7,2005-08-19,2005-08-13,26.93
+1.0,4.99,Ziguinchor,Senegal,456,RONNIE RICKETTS,6,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.6,92,61.85,6,2005-06-18,2005-06-12,22.94
+1.0,4.99,Ziguinchor,Senegal,456,RONNIE RICKETTS,7,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",5.2,92,61.85,7,2005-06-19,2005-06-13,25.93
+1.0,5.99,Bag,Brazil,398,ANTONIO MEEK,5,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",4.33,230,35.92,5,2005-07-30,2005-07-24,25.95
+1.0,5.99,Bag,Brazil,398,ANTONIO MEEK,6,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",4.66,230,35.92,6,2005-07-31,2005-07-25,27.94
+1.0,5.99,Bag,Brazil,398,ANTONIO MEEK,7,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",5.16,230,35.92,7,2005-08-01,2005-07-26,30.93
+1.0,5.99,Bag,Brazil,398,ANTONIO MEEK,8,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",6.0,230,35.92,8,2005-08-02,2005-07-27,35.92
+1.0,5.99,Coacalco de Berriozbal,Mexico,247,STELLA MORENO,5,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.83,94,60.88,5,2005-07-09,2005-07-03,22.95
+1.0,5.99,Coacalco de Berriozbal,Mexico,247,STELLA MORENO,6,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",4.66,94,60.88,6,2005-07-10,2005-07-04,27.94
+1.0,5.99,Guadalajara,Mexico,364,BENJAMIN VARNEY,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.33,158,47.87,5,2005-06-20,2005-06-14,19.95
+1.0,5.99,Ozamis,Philippines,434,EDDIE TOMLIN,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.83,45,77.84,5,2005-06-18,2005-06-12,22.95
+1.0,5.99,Ozamis,Philippines,434,EDDIE TOMLIN,7,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.83,45,77.84,7,2005-06-20,2005-06-14,28.93
+1.0,5.99,Xinxiang,China,339,WALTER PERRYMAN,5,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",4.33,297,25.95,5,2005-06-21,2005-06-15,25.95
+1.0,6.99,Adana,Turkey,327,LARRY THRASHER,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.86,30,83.83,5,2005-06-18,2005-06-12,26.95
+1.0,6.99,Adana,Turkey,327,LARRY THRASHER,6,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.43,30,83.83,6,2005-06-19,2005-06-13,30.94
+1.0,6.99,Kisumu,Kenya,193,KATIE ELLIOTT,6,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.42,99,59.88,6,2005-08-01,2005-07-26,23.94
+1.0,6.99,Ogbomosho,Nigeria,277,OLGA JIMENEZ,7,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.14,36,81.83,7,2005-06-21,2005-06-15,28.93
+1.0,6.99,San Juan Bautista Tuxtepec,Mexico,425,FRANCIS SIKES,10,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",7.57,116,55.89,10,2005-07-11,2005-07-05,52.9
+1.0,6.99,San Juan Bautista Tuxtepec,Mexico,425,FRANCIS SIKES,11,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",8.0,116,55.89,11,2005-07-12,2005-07-06,55.89
+1.0,6.99,San Juan Bautista Tuxtepec,Mexico,425,FRANCIS SIKES,7,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",6.0,116,55.89,7,2005-07-08,2005-07-02,41.93
+1.0,6.99,San Juan Bautista Tuxtepec,Mexico,425,FRANCIS SIKES,9,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",7.14,116,55.89,9,2005-07-09,2005-07-03,49.91
+1.0,7.99,Ambattur,India,225,ARLENE HARVEY,10,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",5.62,171,44.9,10,2005-07-12,2005-07-06,44.9
+1.0,7.99,Ambattur,India,225,ARLENE HARVEY,5,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.62,171,44.9,5,2005-07-09,2005-07-03,28.95
+1.0,7.99,Ambattur,India,225,ARLENE HARVEY,8,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",4.75,171,44.9,8,2005-07-11,2005-07-05,37.92
+1.0,7.99,Monclova,Mexico,570,IVAN CROMWELL,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.25,70,67.84,5,2005-06-17,2005-06-11,25.95
+1.0,7.99,Monclova,Mexico,570,IVAN CROMWELL,6,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.75,70,67.84,6,2005-06-18,2005-06-12,29.94
+1.0,7.99,Monclova,Mexico,570,IVAN CROMWELL,7,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.12,70,67.84,7,2005-06-20,2005-06-14,32.93
+1.0,7.99,Rockford,United States,457,BILL GAVIN,7,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.12,53,74.82,7,2005-06-19,2005-06-13,24.93
+1.0,7.99,Rockford,United States,457,BILL GAVIN,9,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.87,53,74.82,9,2005-06-20,2005-06-14,30.91
+1.0,7.99,Uruapan,Mexico,454,ALEX GRESHAM,10,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",6.62,11,97.79,10,2005-06-21,2005-06-15,52.9
+1.0,7.99,Uruapan,Mexico,454,ALEX GRESHAM,5,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.25,11,97.79,5,2005-06-17,2005-06-11,25.95
+1.0,7.99,Uruapan,Mexico,454,ALEX GRESHAM,7,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",4.37,11,97.79,7,2005-06-18,2005-06-12,34.93
+1.0,7.99,Uruapan,Mexico,454,ALEX GRESHAM,8,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",5.62,11,97.79,8,2005-06-19,2005-06-13,44.92
+1.0,7.99,Zhoushan,China,550,GUY BROWNLEE,6,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",5.0,1,135.73,6,2005-06-21,2005-06-15,39.94
+1.0,8.99,Datong,China,260,CHRISTY VARGAS,6,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.33,77,66.83,6,2005-06-19,2005-06-13,29.94
+1.0,8.99,Datong,China,260,CHRISTY VARGAS,8,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.88,77,66.83,8,2005-06-20,2005-06-14,34.92
+1.0,9.99,Ashgabat,Turkmenistan,200,JEANNE LAWSON,7,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.2,96,60.87,7,2005-06-20,2005-06-14,31.93
+1.0,9.99,Ipoh,Malaysia,171,DOLORES WAGNER,7,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.3,248,32.93,7,2005-06-21,2005-06-15,32.93
+1.33,4.99,Battambang,Cambodia,516,ELMER NOE,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.6,314,22.94,5,2005-06-21,2005-06-15,17.95
+1.33,6.65,Atinsk,Russian Federation,397,JIMMY SCHRADER,7,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.05,249,32.92,7,2005-07-12,2005-07-06,26.93
+1.33,7.32,Pingxiang,China,169,ERICA MATTHEWS,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.68,291,26.95,5,2005-07-12,2005-07-06,26.95
+1.33,7.99,al-Ayn,United Arab Emirates,98,LILLIAN GRIFFIN,10,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",4.49,85,64.83,10,2005-08-02,2005-07-27,35.9
+1.5,1.49,Cuman,Venezuela,113,CINDY FISHER,6,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",18.81,286,27.94,6,2005-06-20,2005-06-14,27.94
+1.5,1.49,Hoshiarpur,India,412,ALLEN BUTTERFIELD,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",16.8,209,38.92,5,2005-07-31,2005-07-25,24.95
+1.5,1.49,Hoshiarpur,India,412,ALLEN BUTTERFIELD,7,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",22.85,209,38.92,7,2005-08-01,2005-07-26,33.93
+1.5,1.49,Hoshiarpur,India,412,ALLEN BUTTERFIELD,8,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",26.21,209,38.92,8,2005-08-02,2005-07-27,38.92
+1.5,1.49,Kurgan,Russian Federation,376,RANDY GAITHER,10,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",34.95,136,51.9,10,2005-07-12,2005-07-06,51.9
+1.5,1.49,Kurgan,Russian Federation,376,RANDY GAITHER,6,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",18.81,136,51.9,6,2005-07-08,2005-07-02,27.94
+1.5,1.49,Kurgan,Russian Federation,376,RANDY GAITHER,7,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",22.18,136,51.9,7,2005-07-10,2005-07-04,32.93
+1.5,1.49,Yingkou,China,521,ROLAND SOUTH,6,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",13.43,110,58.84,6,2005-07-10,2005-07-04,19.94
+1.5,1.99,Huaian,China,384,ERNEST STEPP,6,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",12.06,106,58.87,6,2005-08-22,2005-08-16,23.94
+1.5,10.49,Deba Habe,Nigeria,409,RODNEY MOELLER,7,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.14,196,40.91,7,2005-07-10,2005-07-04,32.93
+1.5,10.49,Deba Habe,Nigeria,409,RODNEY MOELLER,8,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.62,196,40.91,8,2005-07-11,2005-07-05,37.92
+1.5,10.49,Deba Habe,Nigeria,409,RODNEY MOELLER,9,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.9,196,40.91,9,2005-07-12,2005-07-06,40.91
+1.5,10.49,Erlangen,Germany,448,MIGUEL BETANCOURT,10,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",5.24,41,79.85,10,2005-08-23,2005-08-17,54.9
+1.5,10.49,Erlangen,Germany,448,MIGUEL BETANCOURT,6,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.14,41,79.85,6,2005-08-20,2005-08-14,32.94
+1.5,10.49,Erlangen,Germany,448,MIGUEL BETANCOURT,8,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.81,41,79.85,8,2005-08-21,2005-08-15,39.92
+1.5,10.49,Erlangen,Germany,448,MIGUEL BETANCOURT,9,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",4.76,41,79.85,9,2005-08-22,2005-08-16,49.91
+1.5,10.49,Hiroshima,Japan,299,JAMES GANNON,7,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.05,258,31.93,7,2005-06-21,2005-06-15,31.93
+1.5,10.49,al-Ayn,United Arab Emirates,98,LILLIAN GRIFFIN,8,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.04,85,64.83,8,2005-08-01,2005-07-26,31.92
+1.5,11.49,Effon-Alaiye,Nigeria,286,VELMA LUCAS,7,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.39,185,41.92,7,2005-07-10,2005-07-04,38.93
+1.5,11.49,Effon-Alaiye,Nigeria,286,VELMA LUCAS,8,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.65,185,41.92,8,2005-07-12,2005-07-06,41.92
+1.5,12.49,Fuyu,China,211,STACEY MONTGOMERY,11,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.76,17,92.78,11,2005-07-12,2005-07-06,46.89
+1.5,12.49,Fuyu,China,211,STACEY MONTGOMERY,8,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.12,17,92.78,8,2005-07-10,2005-07-04,38.92
+1.5,2.49,Balikesir,Turkey,366,BRANDON HUEY,10,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",17.67,177,43.9,10,2005-07-12,2005-07-06,43.9
+1.5,2.49,Balikesir,Turkey,366,BRANDON HUEY,5,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",7.22,177,43.9,5,2005-07-09,2005-07-03,17.95
+1.5,2.49,Balikesir,Turkey,366,BRANDON HUEY,7,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",12.04,177,43.9,7,2005-07-11,2005-07-05,29.93
+1.5,2.49,Daxian,China,64,JUDITH COX,12,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",14.04,241,34.88,12,2005-07-12,2005-07-06,34.88
+1.5,2.49,Daxian,China,64,JUDITH COX,5,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",8.03,241,34.88,5,2005-07-08,2005-07-02,19.95
+1.5,2.49,Daxian,China,64,JUDITH COX,8,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",11.24,241,34.88,8,2005-07-09,2005-07-03,27.92
+1.5,2.49,Daxian,China,64,JUDITH COX,9,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",12.44,241,34.88,9,2005-07-11,2005-07-05,30.91
+1.5,2.49,Haldia,India,186,HOLLY FOX,6,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",10.44,8,103.73,6,2005-06-20,2005-06-14,25.94
+1.5,2.49,Matsue,Japan,355,TERRY GRISSOM,6,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",12.85,201,39.92,6,2005-07-11,2005-07-05,31.94
+1.5,2.49,Matsue,Japan,355,TERRY GRISSOM,8,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",16.06,201,39.92,8,2005-07-12,2005-07-06,39.92
+1.5,2.49,Parbhani,India,300,JOHN FARNSWORTH,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",8.43,293,26.94,5,2005-07-11,2005-07-05,20.95
+1.5,2.49,Parbhani,India,300,JOHN FARNSWORTH,6,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",10.84,293,26.94,6,2005-07-12,2005-07-06,26.94
+1.5,2.49,Pavlodar,Kazakstan,76,IRENE PRICE,5,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",4.81,174,44.86,5,2005-06-20,2005-06-14,11.95
+1.5,2.49,Pavlodar,Kazakstan,76,IRENE PRICE,6,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",5.21,174,44.86,6,2005-06-21,2005-06-15,12.94
+1.5,2.49,Yuzhou,China,324,GARY COY,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",6.02,315,22.93,5,2005-07-10,2005-07-04,14.95
+1.5,2.49,Yuzhou,China,324,GARY COY,7,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",9.23,315,22.93,7,2005-07-11,2005-07-05,22.93
+1.5,2.99,Ahmadnagar,India,297,SHERRI RHODES,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",8.02,69,67.85,5,2005-06-18,2005-06-12,23.95
+1.5,2.99,Patras,Greece,596,ENRIQUE FORSYTHE,5,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",6.01,327,17.95,5,2005-07-12,2005-07-06,17.95
+1.5,2.99,Tabuk,Saudi Arabia,312,MARK RINEHART,6,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",7.02,322,20.94,6,2005-07-12,2005-07-06,20.94
+1.5,3.49,Aden,Yemen,210,ELLA OLIVER,10,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",12.88,133,52.87,10,2005-07-09,2005-07-03,44.9
+1.5,3.49,Aden,Yemen,210,ELLA OLIVER,11,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",13.17,133,52.87,11,2005-07-10,2005-07-04,45.89
+1.5,3.49,Aden,Yemen,210,ELLA OLIVER,12,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",14.6,133,52.87,12,2005-07-11,2005-07-05,50.88
+1.5,3.49,Aden,Yemen,210,ELLA OLIVER,13,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",15.17,133,52.87,13,2005-07-12,2005-07-06,52.87
+1.5,3.49,Aden,Yemen,210,ELLA OLIVER,6,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",6.58,133,52.87,6,2005-07-07,2005-07-01,22.94
+1.5,3.49,Aden,Yemen,210,ELLA OLIVER,9,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",11.74,133,52.87,9,2005-07-08,2005-07-02,40.91
+1.5,3.49,Beira,Mozambique,257,MARSHA DOUGLAS,5,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",8.59,227,35.94,5,2005-07-11,2005-07-05,29.95
+1.5,3.49,Beira,Mozambique,257,MARSHA DOUGLAS,6,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",10.31,227,35.94,6,2005-07-12,2005-07-06,35.94
+1.5,3.49,Botosani,Romania,230,JOY GEORGE,6,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",6.01,75,66.84,6,2005-06-19,2005-06-13,20.94
+1.5,3.49,Chiayi,Taiwan,73,BEVERLY BROOKS,5,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",7.45,297,25.95,5,2005-07-12,2005-07-06,25.95
+1.5,3.49,Coatzacoalcos,Mexico,482,MAURICE CRAWLEY,6,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",8.59,128,52.91,6,2005-07-10,2005-07-04,29.94
+1.5,3.49,Coatzacoalcos,Mexico,482,MAURICE CRAWLEY,7,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",11.17,128,52.91,7,2005-07-11,2005-07-05,38.93
+1.5,3.49,Coatzacoalcos,Mexico,482,MAURICE CRAWLEY,9,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",15.18,128,52.91,9,2005-07-12,2005-07-06,52.91
+1.5,3.49,Etawah,India,121,JOSEPHINE GOMEZ,5,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",4.0,14,93.79,5,2005-07-29,2005-07-23,13.95
+1.5,3.49,Etawah,India,121,JOSEPHINE GOMEZ,7,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",7.44,14,93.79,7,2005-07-30,2005-07-24,25.93
+1.5,3.49,Etawah,India,121,JOSEPHINE GOMEZ,8,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",9.16,14,93.79,8,2005-08-01,2005-07-26,31.92
+1.5,3.49,Fengshan,Taiwan,576,MORRIS MCCARTER,6,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",7.73,243,33.93,6,2005-06-19,2005-06-13,26.94
+1.5,3.49,Fengshan,Taiwan,576,MORRIS MCCARTER,7,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",9.74,243,33.93,7,2005-06-21,2005-06-15,33.93
+1.5,3.49,Kisumu,Kenya,193,KATIE ELLIOTT,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",7.73,99,59.88,5,2005-06-20,2005-06-14,26.95
+1.5,3.49,Kisumu,Kenya,193,KATIE ELLIOTT,6,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",10.31,99,59.88,6,2005-06-21,2005-06-15,35.94
+1.5,3.49,Lima,Peru,122,THELMA MURRAY,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",5.44,301,25.93,5,2005-06-18,2005-06-12,18.95
+1.5,3.49,Lima,Peru,122,THELMA MURRAY,7,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",7.44,301,25.93,7,2005-06-19,2005-06-13,25.93
+1.5,3.49,Mit Ghamr,Egypt,491,RICK MATTOX,5,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",6.59,256,31.93,5,2005-06-18,2005-06-12,22.95
+1.5,3.49,Mit Ghamr,Egypt,491,RICK MATTOX,6,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",8.02,256,31.93,6,2005-06-20,2005-06-14,27.94
+1.5,3.49,Mit Ghamr,Egypt,491,RICK MATTOX,7,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",9.16,256,31.93,7,2005-06-21,2005-06-15,31.93
+1.5,3.49,Naju,South Korea,237,TANYA GILBERT,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.72,29,84.8,5,2005-06-20,2005-06-14,12.95
+1.5,3.49,Sasebo,Japan,1,MARY SMITH,6,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",8.02,258,31.93,6,2005-06-18,2005-06-12,27.94
+1.5,3.49,Sasebo,Japan,1,MARY SMITH,7,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",9.16,258,31.93,7,2005-06-21,2005-06-15,31.93
+1.5,3.49,Tabriz,Iran,279,DIANNE SHELTON,5,Mike Hillyer (#1),store #1,4.86,49,76.82,5,2005-06-21,2005-06-15,16.95
+1.5,3.49,Valparai,India,403,MIKE WAY,4,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",8.59,7,103.81,5,2005-06-20,2005-06-14,29.95
+1.5,3.49,Valparai,India,403,MIKE WAY,5,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",10.31,7,103.81,6,2005-06-21,2005-06-15,35.94
+1.5,3.49,s-Hertogenbosch,Netherlands,184,VIVIAN RUIZ,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",5.44,107,58.86,5,2005-07-12,2005-07-06,18.95
+1.5,3.99,Hubli-Dharwad,India,136,ANITA MORALES,6,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",6.76,258,31.93,6,2005-08-21,2005-08-15,26.94
+1.5,3.99,Hubli-Dharwad,India,136,ANITA MORALES,7,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",8.01,258,31.93,7,2005-08-23,2005-08-17,31.93
+1.5,3.99,Huejutla de Reyes,Mexico,582,ANDY VANHORN,7,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",9.27,121,54.91,7,2005-07-29,2005-07-23,36.93
+1.5,3.99,Huejutla de Reyes,Mexico,582,ANDY VANHORN,8,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",11.77,121,54.91,8,2005-07-31,2005-07-25,46.92
+1.5,3.99,Huejutla de Reyes,Mexico,582,ANDY VANHORN,9,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",13.78,121,54.91,9,2005-08-02,2005-07-27,54.91
+1.5,3.99,al-Hawiya,Saudi Arabia,70,CHRISTINA RAMIREZ,5,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",5.01,276,29.94,5,2005-07-29,2005-07-23,19.95
+1.5,3.99,al-Hawiya,Saudi Arabia,70,CHRISTINA RAMIREZ,6,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",7.51,276,29.94,6,2005-08-02,2005-07-27,29.94
+1.5,4.49,Citt del Vaticano,Holy See (Vatican City State),26,JESSICA HALL,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",7.12,24,87.85,5,2005-06-18,2005-06-12,31.95
+1.5,4.49,Citt del Vaticano,Holy See (Vatican City State),26,JESSICA HALL,7,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",9.35,24,87.85,7,2005-06-19,2005-06-13,41.93
+1.5,4.49,Manchester,United States,382,VICTOR BARKLEY,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.56,329,15.95,5,2005-06-20,2005-06-14,15.95
+1.5,4.49,Munger (Monghyr),India,28,CYNTHIA YOUNG,5,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.11,113,57.86,5,2005-06-21,2005-06-15,13.95
+1.5,4.49,Okinawa,Japan,365,BRUCE SCHWARZ,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",6.01,195,40.91,5,2005-07-29,2005-07-23,26.95
+1.5,4.49,Okinawa,Japan,365,BRUCE SCHWARZ,7,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",7.79,195,40.91,7,2005-07-30,2005-07-24,34.93
+1.5,4.49,Okinawa,Japan,365,BRUCE SCHWARZ,8,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",8.45,195,40.91,8,2005-07-31,2005-07-25,37.92
+1.5,4.49,Okinawa,Japan,365,BRUCE SCHWARZ,9,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",9.12,195,40.91,9,2005-08-01,2005-07-26,40.91
+1.5,4.49,Salamanca,Mexico,273,PRISCILLA LOWE,5,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",4.89,318,21.95,5,2005-06-21,2005-06-15,21.95
+1.5,4.49,Sungai Petani,Malaysia,306,CHARLES KOWALSKI,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.67,72,67.83,5,2005-07-12,2005-07-06,20.95
+1.5,4.49,Vicente Lpez,Argentina,219,WILLIE HOWELL,5,Jon Stephens (#2),store #2,4.45,217,37.91,5,2005-07-09,2005-07-03,19.95
+1.5,4.49,Vicente Lpez,Argentina,219,WILLIE HOWELL,6,Jon Stephens (#2),store #2,6.23,217,37.91,6,2005-07-10,2005-07-04,27.94
+1.5,4.49,Vicente Lpez,Argentina,219,WILLIE HOWELL,8,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",8.01,217,37.91,8,2005-07-11,2005-07-05,35.92
+1.5,4.49,Vicente Lpez,Argentina,219,WILLIE HOWELL,9,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",8.45,217,37.91,9,2005-07-12,2005-07-06,37.91
+1.5,4.49,guas Lindas de Gois,Brazil,130,CHARLOTTE HUNTER,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.33,319,21.94,5,2005-06-19,2005-06-13,14.95
+1.5,4.49,guas Lindas de Gois,Brazil,130,CHARLOTTE HUNTER,6,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.89,319,21.94,6,2005-06-20,2005-06-14,21.94
+1.5,4.99,Battambang,Cambodia,516,ELMER NOE,5,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",4.0,314,22.94,5,2005-06-20,2005-06-14,19.95
+1.5,4.99,Tel Aviv-Jaffa,Israel,161,GERALDINE PERKINS,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.6,286,27.94,5,2005-07-09,2005-07-03,22.95
+1.5,4.99,Tel Aviv-Jaffa,Israel,161,GERALDINE PERKINS,6,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",5.6,286,27.94,6,2005-07-12,2005-07-06,27.94
+1.5,5.49,Amroha,India,534,CHRISTIAN JUNG,5,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.27,218,37.91,5,2005-07-30,2005-07-24,17.95
+1.5,5.49,Amroha,India,534,CHRISTIAN JUNG,8,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",5.82,218,37.91,8,2005-08-01,2005-07-26,31.92
+1.5,5.49,Amroha,India,534,CHRISTIAN JUNG,9,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",6.91,218,37.91,9,2005-08-02,2005-07-27,37.91
+1.5,5.49,Bchar,Algeria,69,JUDY GRAY,6,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.91,75,66.84,6,2005-07-11,2005-07-05,26.94
+1.5,5.49,Bchar,Algeria,69,JUDY GRAY,7,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",6.19,75,66.84,7,2005-07-12,2005-07-06,33.93
+1.5,5.49,Bislig,Philippines,94,NORMA GONZALES,5,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.64,323,19.95,5,2005-06-19,2005-06-13,19.95
+1.5,5.49,Bucuresti,Romania,563,KEN PREWITT,10,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",6.18,224,36.89,10,2005-07-09,2005-07-03,33.9
+1.5,5.49,Bucuresti,Romania,563,KEN PREWITT,11,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",6.73,224,36.89,11,2005-07-11,2005-07-05,36.89
+1.5,5.49,Bucuresti,Romania,563,KEN PREWITT,9,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",6.0,224,36.89,9,2005-07-08,2005-07-02,32.91
+1.5,5.49,Buenaventura,Colombia,235,JACKIE LYNCH,5,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",4.18,229,35.92,5,2005-07-10,2005-07-04,22.95
+1.5,5.49,Buenaventura,Colombia,235,JACKIE LYNCH,7,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",5.64,229,35.92,7,2005-07-11,2005-07-05,30.93
+1.5,5.49,Buenaventura,Colombia,235,JACKIE LYNCH,8,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",6.55,229,35.92,8,2005-07-12,2005-07-06,35.92
+1.5,5.49,Chapra,India,509,RAUL FORTIER,5,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.45,324,18.95,5,2005-07-12,2005-07-06,18.95
+1.5,5.49,Hami,China,165,LORRAINE STEPHENS,5,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.64,249,32.92,5,2005-07-09,2005-07-03,19.95
+1.5,5.49,Hami,China,165,LORRAINE STEPHENS,7,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",5.82,249,32.92,7,2005-07-10,2005-07-04,31.93
+1.5,5.49,Hami,China,165,LORRAINE STEPHENS,8,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",6.0,249,32.92,8,2005-07-11,2005-07-05,32.92
+1.5,5.49,Huixquilucan,Mexico,108,TRACY COLE,5,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",4.55,304,24.95,5,2005-06-20,2005-06-14,24.95
+1.5,5.49,Joliet,United States,504,NATHANIEL ADAM,5,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",5.64,265,30.95,5,2005-07-09,2005-07-03,30.95
+1.5,5.49,Korolev,Russian Federation,393,PHILIP CAUSEY,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.64,323,19.95,5,2005-06-20,2005-06-14,19.95
+1.5,5.49,Namibe,Angola,383,MARTIN BALES,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.55,286,27.94,5,2005-06-19,2005-06-13,24.95
+1.5,5.49,Namibe,Angola,383,MARTIN BALES,6,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",5.09,286,27.94,6,2005-06-20,2005-06-14,27.94
+1.5,5.49,Owo,Nigeria,280,TRACEY BARRETT,10,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",7.09,179,43.89,10,2005-08-01,2005-07-26,38.9
+1.5,5.49,Owo,Nigeria,280,TRACEY BARRETT,11,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",8.0,179,43.89,11,2005-08-02,2005-07-27,43.89
+1.5,5.49,Owo,Nigeria,280,TRACEY BARRETT,7,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.91,179,43.89,7,2005-07-29,2005-07-23,26.93
+1.5,5.49,Owo,Nigeria,280,TRACEY BARRETT,9,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",5.27,179,43.89,9,2005-07-30,2005-07-24,28.91
+1.5,5.49,Soshanguve,South Africa,145,LUCILLE HOLMES,6,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",6.01,210,38.91,6,2005-07-08,2005-07-02,32.94
+1.5,5.49,Soshanguve,South Africa,145,LUCILLE HOLMES,9,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",7.09,210,38.91,9,2005-07-11,2005-07-05,38.91
+1.5,5.49,Tandil,Argentina,405,LEONARD SCHOFIELD,6,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",4.91,108,58.86,6,2005-06-21,2005-06-15,26.94
+1.5,5.49,Udaipur,India,170,BEATRICE ARNOLD,5,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.09,250,32.92,5,2005-07-09,2005-07-03,16.95
+1.5,5.49,Udaipur,India,170,BEATRICE ARNOLD,8,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",6.0,250,32.92,8,2005-07-10,2005-07-04,32.92
+1.5,5.49,Weifang,China,588,MARION OCAMPO,5,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",4.55,304,24.95,5,2005-06-20,2005-06-14,24.95
+1.5,5.99,Avellaneda,Argentina,560,JORDAN ARCHULETA,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.67,32,82.83,5,2005-07-09,2005-07-03,21.95
+1.5,5.99,Avellaneda,Argentina,560,JORDAN ARCHULETA,6,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.5,32,82.83,6,2005-07-11,2005-07-05,26.94
+1.5,5.99,Gorontalo,Indonesia,203,TARA RYAN,5,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",5.34,207,38.93,5,2005-07-30,2005-07-24,31.95
+1.5,5.99,Gorontalo,Indonesia,203,TARA RYAN,7,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",6.5,207,38.93,7,2005-08-01,2005-07-26,38.93
+1.5,5.99,Mexicali,Mexico,343,DOUGLAS GRAF,5,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.5,268,30.93,5,2005-06-18,2005-06-12,20.95
+1.5,5.99,Mexicali,Mexico,343,DOUGLAS GRAF,6,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",5.0,268,30.93,6,2005-06-20,2005-06-14,29.94
+1.5,5.99,Mexicali,Mexico,343,DOUGLAS GRAF,7,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",5.17,268,30.93,7,2005-06-21,2005-06-15,30.93
+1.5,5.99,Ourense (Orense),Spain,469,WESLEY BULL,10,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",7.34,177,43.9,10,2005-07-12,2005-07-06,43.9
+1.5,5.99,Ourense (Orense),Spain,469,WESLEY BULL,6,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",4.33,177,43.9,6,2005-07-09,2005-07-03,25.94
+1.5,5.99,Ourense (Orense),Spain,469,WESLEY BULL,7,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",5.5,177,43.9,7,2005-07-10,2005-07-04,32.93
+1.5,5.99,Ourense (Orense),Spain,469,WESLEY BULL,9,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",6.5,177,43.9,9,2005-07-11,2005-07-05,38.91
+1.5,6.49,Amersfoort,Netherlands,415,GLENN PULLEN,5,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.23,321,20.95,5,2005-07-12,2005-07-06,20.95
+1.5,6.49,Birgunj,Nepal,321,KEVIN SCHULER,5,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.85,26,85.85,5,2005-07-09,2005-07-03,24.95
+1.5,6.49,Birgunj,Nepal,321,KEVIN SCHULER,6,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",5.23,26,85.85,6,2005-07-10,2005-07-04,33.94
+1.5,6.49,Birgunj,Nepal,321,KEVIN SCHULER,7,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",5.69,26,85.85,7,2005-07-11,2005-07-05,36.93
+1.5,6.49,Birgunj,Nepal,321,KEVIN SCHULER,8,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",6.62,26,85.85,8,2005-07-12,2005-07-06,42.92
+1.5,6.49,Dzerzinsk,Russian Federation,430,RAY HOULE,7,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.38,320,21.93,7,2005-08-22,2005-08-16,21.93
+1.5,6.49,Erlangen,Germany,448,MIGUEL BETANCOURT,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.85,41,79.85,5,2005-06-21,2005-06-15,24.95
+1.5,6.49,Kimchon,South Korea,99,EMILY DIAZ,10,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",5.69,190,41.89,10,2005-07-11,2005-07-05,36.9
+1.5,6.49,Kimchon,South Korea,99,EMILY DIAZ,11,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",6.46,190,41.89,11,2005-07-12,2005-07-06,41.89
+1.5,6.49,Kimchon,South Korea,99,EMILY DIAZ,6,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.69,190,41.89,6,2005-07-08,2005-07-02,23.94
+1.5,6.49,Kimchon,South Korea,99,EMILY DIAZ,7,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",4.15,190,41.89,7,2005-07-09,2005-07-03,26.93
+1.5,6.49,Kimchon,South Korea,99,EMILY DIAZ,8,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",4.61,190,41.89,8,2005-07-10,2005-07-04,29.92
+1.5,6.49,Rancagua,Chile,464,JEROME KENYON,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.16,136,51.9,5,2005-07-12,2005-07-06,26.95
+1.5,6.49,Sincelejo,Colombia,87,WANDA PATTERSON,5,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",4.0,297,25.95,5,2005-06-20,2005-06-14,25.95
+1.5,6.49,Sivas,Turkey,518,GABRIEL HARDER,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.69,81,65.85,5,2005-07-12,2005-07-06,23.95
+1.5,6.49,Tabora,Tanzania,190,YOLANDA WEAVER,5,Mike Hillyer (#1),store #1,3.08,100,59.87,5,2005-06-21,2005-06-15,19.95
+1.5,6.49,Tarlac,Philippines,548,ALLAN CORNISH,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.0,143,49.9,5,2005-08-21,2005-08-15,25.95
+1.5,6.49,Tegal,Indonesia,458,LLOYD DOWD,7,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",4.15,137,51.86,7,2005-07-12,2005-07-06,26.93
+1.5,6.99,Atinsk,Russian Federation,397,JIMMY SCHRADER,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.14,249,32.92,5,2005-07-10,2005-07-04,21.95
+1.5,6.99,Atinsk,Russian Federation,397,JIMMY SCHRADER,7,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.0,249,32.92,7,2005-07-11,2005-07-05,27.93
+1.5,6.99,Cam Ranh,Vietnam,532,NEIL RENNER,10,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",7.57,129,52.9,10,2005-07-12,2005-07-06,52.9
+1.5,6.99,Cam Ranh,Vietnam,532,NEIL RENNER,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.43,129,52.9,5,2005-07-09,2005-07-03,23.95
+1.5,6.99,Cam Ranh,Vietnam,532,NEIL RENNER,7,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",5.14,129,52.9,7,2005-07-10,2005-07-04,35.93
+1.5,6.99,Cam Ranh,Vietnam,532,NEIL RENNER,8,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",6.29,129,52.9,8,2005-07-11,2005-07-05,43.92
+1.5,6.99,Rancagua,Chile,464,JEROME KENYON,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.57,136,51.9,5,2005-08-23,2005-08-17,24.95
+1.5,6.99,Zaoyang,China,514,FRANKLIN TROUTMAN,11,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",5.28,226,36.89,11,2005-08-23,2005-08-17,36.89
+1.5,6.99,Zaoyang,China,514,FRANKLIN TROUTMAN,7,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.57,226,36.89,7,2005-08-19,2005-08-13,24.93
+1.5,6.99,Zaoyang,China,514,FRANKLIN TROUTMAN,8,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.71,226,36.89,8,2005-08-20,2005-08-14,25.92
+1.5,6.99,Zaoyang,China,514,FRANKLIN TROUTMAN,9,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.0,226,36.89,9,2005-08-21,2005-08-15,27.91
+1.5,7.49,Ashdod,Israel,102,CRYSTAL FORD,10,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",6.27,130,52.89,10,2005-07-10,2005-07-04,46.9
+1.5,7.49,Ashdod,Israel,102,CRYSTAL FORD,11,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",7.07,130,52.89,11,2005-07-12,2005-07-06,52.89
+1.5,7.49,Ashdod,Israel,102,CRYSTAL FORD,8,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",5.07,130,52.89,8,2005-07-09,2005-07-03,37.92
+1.5,7.49,Athenai,Greece,3,LINDA WILLIAMS,11,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",7.87,82,64.88,11,2005-07-31,2005-07-25,58.89
+1.5,7.49,Athenai,Greece,3,LINDA WILLIAMS,12,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",8.67,82,64.88,12,2005-08-01,2005-07-26,64.88
+1.5,7.49,Athenai,Greece,3,LINDA WILLIAMS,6,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",5.6,82,64.88,6,2005-07-28,2005-07-22,41.94
+1.5,7.49,Athenai,Greece,3,LINDA WILLIAMS,7,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",6.0,82,64.88,7,2005-07-29,2005-07-23,44.93
+1.5,7.49,Athenai,Greece,3,LINDA WILLIAMS,9,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",6.8,82,64.88,9,2005-07-30,2005-07-24,50.91
+1.5,7.49,Batna,Algeria,441,MARIO CHEATHAM,8,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.46,303,25.92,8,2005-07-12,2005-07-06,25.92
+1.5,7.49,Birgunj,Nepal,321,KEVIN SCHULER,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.0,26,85.85,5,2005-08-20,2005-08-14,29.95
+1.5,7.49,Birgunj,Nepal,321,KEVIN SCHULER,7,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",5.74,26,85.85,7,2005-08-23,2005-08-17,42.93
+1.5,7.49,Cavite,Philippines,388,CRAIG MORRELL,5,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.6,45,77.84,5,2005-06-20,2005-06-14,26.95
+1.5,7.49,NDjamna,Chad,535,JAVIER ELROD,6,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.27,22,88.8,6,2005-07-10,2005-07-04,31.94
+1.5,7.49,NDjamna,Chad,535,JAVIER ELROD,7,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.67,22,88.8,7,2005-07-12,2005-07-06,34.93
+1.5,7.49,Naju,South Korea,237,TANYA GILBERT,13,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",7.33,29,84.8,13,2005-07-31,2005-07-25,54.87
+1.5,7.49,Naju,South Korea,237,TANYA GILBERT,15,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",9.6,29,84.8,15,2005-08-02,2005-07-27,71.85
+1.5,7.49,Naju,South Korea,237,TANYA GILBERT,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.2,29,84.8,5,2005-07-28,2005-07-22,23.95
+1.5,7.49,Naju,South Korea,237,TANYA GILBERT,8,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",5.07,29,84.8,8,2005-07-29,2005-07-23,37.92
+1.5,7.49,Naju,South Korea,237,TANYA GILBERT,9,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",5.87,29,84.8,9,2005-07-30,2005-07-24,43.91
+1.5,7.49,Nakhon Sawan,Thailand,390,SHAWN HEATON,5,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.47,27,85.83,5,2005-06-20,2005-06-14,25.95
+1.5,7.49,Stara Zagora,Bulgaria,215,JESSIE BANKS,6,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.2,153,48.84,6,2005-06-20,2005-06-14,23.94
+1.5,7.49,Yamuna Nagar,India,12,NANCY THOMAS,5,Jon Stephens (#2),store #2,3.47,87,63.86,5,2005-06-20,2005-06-14,25.95
+1.5,7.49,Yamuna Nagar,India,12,NANCY THOMAS,6,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.6,87,63.86,6,2005-06-21,2005-06-15,26.94
+1.5,7.99,Bamenda,Cameroon,352,ALBERT CROUSE,6,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.0,127,53.88,6,2005-07-28,2005-07-22,31.94
+1.5,7.99,Bamenda,Cameroon,352,ALBERT CROUSE,7,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.12,127,53.88,7,2005-07-30,2005-07-24,32.93
+1.5,8.49,Dos Quebradas,Colombia,120,SYLVIA ORTIZ,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.18,276,29.94,5,2005-06-19,2005-06-13,26.95
+1.5,8.49,Dos Quebradas,Colombia,120,SYLVIA ORTIZ,6,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.53,276,29.94,6,2005-06-20,2005-06-14,29.94
+1.5,8.49,Tanauan,Philippines,373,LOUIS LEONE,6,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.18,33,82.82,6,2005-07-11,2005-07-05,26.94
+1.5,8.49,Varanasi (Benares),India,123,SHANNON FREEMAN,8,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.88,115,56.86,8,2005-07-31,2005-07-25,32.92
+1.5,8.49,Varanasi (Benares),India,123,SHANNON FREEMAN,9,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",4.94,115,56.86,9,2005-08-01,2005-07-26,41.91
+1.5,9.49,Nagaon,India,152,ALICIA MILLS,10,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.26,142,50.85,10,2005-08-21,2005-08-15,30.9
+1.5,9.49,Shikarpur,Pakistan,25,DEBORAH WALKER,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.05,242,33.94,5,2005-06-20,2005-06-14,28.95
+1.5,9.49,Shikarpur,Pakistan,25,DEBORAH WALKER,6,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.58,242,33.94,6,2005-06-21,2005-06-15,33.94
+1.67,5.65,Benin City,Nigeria,284,SONIA GREGORY,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.77,246,32.94,5,2005-07-09,2005-07-03,26.95
+1.67,5.65,Benin City,Nigeria,284,SONIA GREGORY,6,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",5.83,246,32.94,6,2005-07-11,2005-07-05,32.94
+1.67,6.32,Tangail,Bangladesh,21,MICHELLE CLARK,8,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.95,2,131.72,8,2005-08-02,2005-07-27,24.92
+1.75,10.98,Novi Sad,Yugoslavia,553,MAX PITT,12,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",4.45,118,55.87,12,2005-07-12,2005-07-06,48.88
+1.75,11.23,Memphis,United States,181,ANA BRADLEY,14,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",7.02,24,87.85,14,2005-08-02,2005-07-27,78.86
+1.75,3.98,Hohhot,China,138,HAZEL WARREN,5,Mike Hillyer (#1),store #1,3.0,79,66.8,5,2005-07-12,2005-07-06,11.95
+1.75,4.73,Pjatigorsk,Russian Federation,487,HECTOR POINDEXTER,15,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",14.34,62,70.84,15,2005-08-02,2005-07-27,67.85
+1.75,8.23,Hsichuh,Taiwan,348,ROGER QUINTANILLA,8,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",4.24,203,39.91,8,2005-07-12,2005-07-06,34.92
+2.0,10.98,Baiyin,China,495,CHARLIE BESS,10,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",4.45,149,48.9,10,2005-08-01,2005-07-26,48.9
+2.0,10.98,Baiyin,China,495,CHARLIE BESS,8,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.45,149,48.9,8,2005-07-31,2005-07-25,37.92
+2.0,10.98,Gaziantep,Turkey,480,COREY HAUSER,8,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.54,209,38.92,8,2005-08-02,2005-07-27,38.92
+2.0,10.98,Onomichi,Japan,337,JERRY JORDON,7,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.18,216,37.92,7,2005-07-11,2005-07-05,34.93
+2.0,10.98,Onomichi,Japan,337,JERRY JORDON,8,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.45,216,37.92,8,2005-07-12,2005-07-06,37.92
+2.0,11.31,Mwene-Ditu,"Congo, The Democratic Republic of the",375,AARON SELBY,9,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.17,232,35.91,9,2005-08-02,2005-07-27,35.91
+2.0,11.48,So Leopoldo,Brazil,443,FRANCISCO SKIDMORE,7,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.3,176,43.91,7,2005-07-31,2005-07-25,37.93
+2.0,11.48,So Leopoldo,Brazil,443,FRANCISCO SKIDMORE,8,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.39,176,43.91,8,2005-08-01,2005-07-26,38.92
+2.0,11.48,So Leopoldo,Brazil,443,FRANCISCO SKIDMORE,9,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.82,176,43.91,9,2005-08-02,2005-07-27,43.91
+2.0,11.65,Miraj,India,316,STEVEN CURLEY,7,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.09,43,78.84,7,2005-06-21,2005-06-15,35.93
+2.0,11.98,Lengshuijiang,China,267,MARGIE WADE,9,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.25,54,73.82,9,2005-06-20,2005-06-14,38.91
+2.0,11.98,Memphis,United States,181,ANA BRADLEY,14,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",6.92,24,87.85,14,2005-08-01,2005-07-26,82.86
+2.0,11.98,Memphis,United States,181,ANA BRADLEY,8,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.25,24,87.85,8,2005-07-30,2005-07-24,50.92
+2.0,11.98,Memphis,United States,181,ANA BRADLEY,9,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.67,24,87.85,9,2005-07-31,2005-07-25,55.91
+2.0,11.98,Olomouc,Czech Republic,265,JENNIE TERRY,10,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.42,129,52.9,10,2005-07-12,2005-07-06,52.9
+2.0,11.98,Olomouc,Czech Republic,265,JENNIE TERRY,8,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.33,129,52.9,8,2005-07-11,2005-07-05,39.92
+2.0,11.98,Shaoguan,China,485,CLYDE TOBIAS,11,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.08,225,36.89,11,2005-07-12,2005-07-06,36.89
+2.0,12.31,Novi Sad,Yugoslavia,553,MAX PITT,10,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.65,118,55.87,10,2005-07-08,2005-07-02,44.9
+2.0,12.31,Novi Sad,Yugoslavia,553,MAX PITT,11,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.89,118,55.87,11,2005-07-11,2005-07-05,47.89
+2.0,13.98,Haining,China,552,HUGH WALDROP,9,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.14,176,43.91,9,2005-08-02,2005-07-27,43.91
+2.0,2.31,Batman,Turkey,172,BERNICE WILLIS,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",11.65,247,32.94,5,2005-07-11,2005-07-05,26.95
+2.0,2.31,Batman,Turkey,172,BERNICE WILLIS,6,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",14.24,247,32.94,6,2005-07-12,2005-07-06,32.94
+2.0,2.98,Araatuba,Brazil,77,JANE BENNETT,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",5.35,109,58.85,5,2005-08-01,2005-07-26,15.95
+2.0,2.98,Araatuba,Brazil,77,JANE BENNETT,9,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",8.02,109,58.85,9,2005-08-02,2005-07-27,23.91
+2.0,2.98,Bhimavaram,India,529,ERIK GUILLEN,5,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",4.68,38,81.81,5,2005-07-11,2005-07-05,13.95
+2.0,2.98,Bhimavaram,India,529,ERIK GUILLEN,8,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",11.72,38,81.81,8,2005-07-12,2005-07-06,34.92
+2.0,2.98,Fontana,United States,51,ALICE STEWART,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",10.72,254,31.95,5,2005-07-10,2005-07-04,31.95
+2.0,3.31,Pune,India,135,JUANITA MASON,6,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",6.62,58,71.82,6,2005-07-12,2005-07-06,21.94
+2.0,3.31,Uluberia,India,446,THEODORE CULP,6,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",6.32,65,69.83,6,2005-06-20,2005-06-14,20.94
+2.0,3.98,El Fuerte,Mexico,451,JIM REA,6,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.01,315,22.93,6,2005-06-20,2005-06-14,15.94
+2.0,3.98,El Fuerte,Mexico,451,JIM REA,7,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",5.76,315,22.93,7,2005-06-21,2005-06-15,22.93
+2.0,3.98,South Hill,Anguilla,381,BOBBY BOUDREAU,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.26,104,59.84,5,2005-06-21,2005-06-15,16.95
+2.0,3.98,Tama,Japan,385,PHILLIP HOLM,5,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",6.27,304,24.95,5,2005-07-12,2005-07-06,24.95
+2.0,3.98,Xintai,China,564,BOB PFEIFFER,10,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",11.03,177,43.9,10,2005-08-01,2005-07-26,43.9
+2.0,3.98,Xintai,China,564,BOB PFEIFFER,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",6.02,177,43.9,5,2005-07-30,2005-07-24,23.95
+2.0,3.98,Xintai,China,564,BOB PFEIFFER,7,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",8.53,177,43.9,7,2005-07-31,2005-07-25,33.93
+2.0,4.31,Tarlac,Philippines,548,ALLAN CORNISH,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",5.55,143,49.9,5,2005-07-12,2005-07-06,23.95
+2.0,4.65,Cuautla,Mexico,323,MATTHEW MAHAN,5,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",4.29,89,63.83,5,2005-07-12,2005-07-06,19.95
+2.0,4.98,Addis Abeba,Ethiopia,392,SEAN DOUGLASS,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.4,316,22.93,5,2005-07-31,2005-07-25,16.95
+2.0,4.98,Addis Abeba,Ethiopia,392,SEAN DOUGLASS,6,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.41,316,22.93,6,2005-08-01,2005-07-26,21.94
+2.0,4.98,Addis Abeba,Ethiopia,392,SEAN DOUGLASS,7,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.6,316,22.93,7,2005-08-02,2005-07-27,22.93
+2.0,4.98,Juiz de Fora,Brazil,591,KENT ARSENAULT,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",6.62,245,32.95,5,2005-07-10,2005-07-04,32.95
+2.0,4.98,Satna,India,356,GERALD FULTZ,5,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.81,103,59.85,5,2005-07-12,2005-07-06,18.95
+2.0,4.98,Yuncheng,China,154,MICHELE GRANT,5,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",4.61,290,27.92,5,2005-07-08,2005-07-02,22.95
+2.0,4.98,Yuncheng,China,154,MICHELE GRANT,6,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",4.81,290,27.92,6,2005-07-09,2005-07-03,23.94
+2.0,4.98,Yuncheng,China,154,MICHELE GRANT,7,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",5.41,290,27.92,7,2005-07-10,2005-07-04,26.93
+2.0,4.98,Yuncheng,China,154,MICHELE GRANT,8,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",5.61,290,27.92,8,2005-07-11,2005-07-05,27.92
+2.0,5.31,Kaliningrad,Russian Federation,301,ROBERT BAUGHMAN,6,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",5.07,243,33.93,6,2005-07-10,2005-07-04,26.94
+2.0,5.31,Kaliningrad,Russian Federation,301,ROBERT BAUGHMAN,7,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",6.39,243,33.93,7,2005-07-12,2005-07-06,33.93
+2.0,5.31,Oyo,Nigeria,250,JO FOWLER,6,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.69,198,40.89,6,2005-08-22,2005-08-16,24.94
+2.0,5.31,Pjatigorsk,Russian Federation,487,HECTOR POINDEXTER,10,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",6.94,62,70.84,10,2005-07-30,2005-07-24,36.9
+2.0,5.31,Pjatigorsk,Russian Federation,487,HECTOR POINDEXTER,11,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",7.13,62,70.84,11,2005-07-31,2005-07-25,37.89
+2.0,5.31,Pjatigorsk,Russian Federation,487,HECTOR POINDEXTER,14,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",10.32,62,70.84,14,2005-08-01,2005-07-26,54.86
+2.0,5.31,Pjatigorsk,Russian Federation,487,HECTOR POINDEXTER,7,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.13,62,70.84,7,2005-07-29,2005-07-23,21.93
+2.0,5.31,Shimoga,India,238,NELLIE GARRETT,5,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",5.07,192,40.93,5,2005-07-30,2005-07-24,26.95
+2.0,5.31,Shimoga,India,238,NELLIE GARRETT,6,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",6.58,192,40.93,6,2005-07-31,2005-07-25,34.94
+2.0,5.31,Shimoga,India,238,NELLIE GARRETT,7,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",7.7,192,40.93,7,2005-08-01,2005-07-26,40.93
+2.0,5.48,Abu Dhabi,United Arab Emirates,452,TOM MILNER,6,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",4.0,315,22.93,6,2005-06-18,2005-06-12,21.94
+2.0,5.48,Abu Dhabi,United Arab Emirates,452,TOM MILNER,7,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",4.18,315,22.93,7,2005-06-19,2005-06-13,22.93
+2.0,5.48,Nantou,Taiwan,5,ELIZABETH BROWN,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.64,102,59.86,5,2005-06-20,2005-06-14,19.95
+2.0,5.65,La Plata,Argentina,89,JULIA FLORES,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",5.48,265,30.95,5,2005-06-19,2005-06-13,30.95
+2.0,5.65,Zalantun,China,93,PHYLLIS FOSTER,11,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",7.6,183,42.89,11,2005-08-23,2005-08-17,42.89
+2.0,5.65,Zalantun,China,93,PHYLLIS FOSTER,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.42,183,42.89,5,2005-08-20,2005-08-14,24.95
+2.0,5.65,Zalantun,China,93,PHYLLIS FOSTER,7,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",5.48,183,42.89,7,2005-08-21,2005-08-15,30.93
+2.0,5.65,Zalantun,China,93,PHYLLIS FOSTER,8,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",6.54,183,42.89,8,2005-08-22,2005-08-16,36.92
+2.0,5.98,Baha Blanca,Argentina,322,JASON MORRISSEY,6,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",5.34,56,71.86,6,2005-06-20,2005-06-14,31.94
+2.0,5.98,Baha Blanca,Argentina,322,JASON MORRISSEY,7,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",6.84,56,71.86,7,2005-06-21,2005-06-15,40.93
+2.0,5.98,Changhwa,Taiwan,75,TAMMY SANDERS,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",5.01,15,92.81,5,2005-06-21,2005-06-15,29.95
+2.0,5.98,Molodetno,Belarus,144,CLARA SHAW,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.34,44,77.86,5,2005-06-20,2005-06-14,19.95
+2.0,5.98,Molodetno,Belarus,144,CLARA SHAW,6,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.84,44,77.86,6,2005-06-21,2005-06-15,22.94
+2.0,5.98,Patiala,India,296,RAMONA HALE,5,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.67,248,32.93,5,2005-07-10,2005-07-04,21.95
+2.0,5.98,Patiala,India,296,RAMONA HALE,7,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",5.51,248,32.93,7,2005-07-11,2005-07-05,32.93
+2.0,5.98,Pavlodar,Kazakstan,76,IRENE PRICE,5,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.0,174,44.86,5,2005-07-30,2005-07-24,17.95
+2.0,5.98,Pavlodar,Kazakstan,76,IRENE PRICE,6,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.17,174,44.86,6,2005-07-31,2005-07-25,18.94
+2.0,5.98,Pavlodar,Kazakstan,76,IRENE PRICE,7,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",4.0,174,44.86,7,2005-08-01,2005-07-26,23.93
+2.0,5.98,Pavlodar,Kazakstan,76,IRENE PRICE,8,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",5.34,174,44.86,8,2005-08-02,2005-07-27,31.92
+2.0,5.98,Pereira,Colombia,180,STACY CUNNINGHAM,5,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",4.01,308,23.95,5,2005-07-10,2005-07-04,23.95
+2.0,5.98,Roanoke,United States,291,TONI HOLT,5,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.34,108,58.86,5,2005-07-12,2005-07-06,19.95
+2.0,5.98,Saint Louis,United States,62,JOAN COOPER,5,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.34,134,52.86,5,2005-06-20,2005-06-14,19.95
+2.0,5.98,Saint Louis,United States,62,JOAN COOPER,7,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",4.17,134,52.86,7,2005-06-21,2005-06-15,24.93
+2.0,5.98,San Felipe de Puerto Plata,Dominican Republic,418,JEFF EAST,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.0,84,64.84,5,2005-07-11,2005-07-05,17.95
+2.0,5.98,San Felipe del Progreso,Mexico,319,RONALD WEINER,6,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.34,28,84.82,6,2005-08-18,2005-08-12,25.94
+2.0,5.98,San Felipe del Progreso,Mexico,319,RONALD WEINER,7,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",5.01,28,84.82,7,2005-08-20,2005-08-14,29.93
+2.0,5.98,San Felipe del Progreso,Mexico,319,RONALD WEINER,9,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",6.84,28,84.82,9,2005-08-22,2005-08-16,40.91
+2.0,5.98,So Bernardo do Campo,Brazil,544,CODY NOLEN,5,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",4.01,308,23.95,5,2005-08-02,2005-07-27,23.95
+2.0,5.98,Sucre,Bolivia,431,JOEL FRANCISCO,5,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.84,105,58.88,5,2005-08-02,2005-07-27,22.95
+2.0,5.98,Tanza,Philippines,236,MARCIA DEAN,6,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",5.01,20,90.8,6,2005-06-19,2005-06-13,29.94
+2.0,5.98,Tanza,Philippines,236,MARCIA DEAN,8,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",6.34,20,90.8,8,2005-06-21,2005-06-15,37.92
+2.0,5.98,Uijongbu,South Korea,245,COURTNEY DAY,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.34,51,75.81,5,2005-07-12,2005-07-06,19.95
+2.0,6.31,Purwakarta,Indonesia,524,JARED ELY,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.43,285,27.95,5,2005-07-12,2005-07-06,27.95
+2.0,6.31,Southport,United Kingdom,556,ARMANDO GRUBER,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.11,297,25.95,5,2005-06-21,2005-06-15,25.95
+2.0,6.48,Dallas,United States,400,BRYAN HARDISON,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.47,279,28.95,5,2005-07-12,2005-07-06,28.95
+2.0,6.65,Blumenau,Brazil,206,TERRI VASQUEZ,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.3,215,37.92,5,2005-07-07,2005-07-01,21.95
+2.0,6.65,Blumenau,Brazil,206,TERRI VASQUEZ,6,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.05,215,37.92,6,2005-07-08,2005-07-02,26.94
+2.0,6.65,Blumenau,Brazil,206,TERRI VASQUEZ,8,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",5.71,215,37.92,8,2005-07-11,2005-07-05,37.92
+2.0,6.65,Dongying,China,466,LEO EBERT,7,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.3,21,88.81,7,2005-08-02,2005-07-27,21.93
+2.0,6.65,Salzburg,Austria,266,NORA HERRERA,6,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.65,40,80.81,6,2005-08-02,2005-07-27,30.94
+2.0,6.65,Santiago de los Caballeros,Dominican Republic,258,MYRTLE FLEMING,6,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",4.05,258,31.93,6,2005-07-10,2005-07-04,26.94
+2.0,6.65,Santiago de los Caballeros,Dominican Republic,258,MYRTLE FLEMING,7,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",4.8,258,31.93,7,2005-07-11,2005-07-05,31.93
+2.0,6.65,Tete,Mozambique,97,ANNIE RUSSELL,6,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.6,303,25.92,6,2005-07-09,2005-07-03,23.94
+2.0,6.65,Tete,Mozambique,97,ANNIE RUSSELL,8,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.9,303,25.92,8,2005-07-12,2005-07-06,25.92
+2.0,6.65,Zapopan,Mexico,465,FLOYD GANDY,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.05,228,35.93,5,2005-08-19,2005-08-13,26.95
+2.0,6.65,Zapopan,Mexico,465,FLOYD GANDY,7,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",5.41,228,35.93,7,2005-08-23,2005-08-17,35.93
+2.0,6.98,Bergamo,Italy,439,ALEXANDER FENNELL,6,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.43,42,79.82,6,2005-06-21,2005-06-15,23.94
+2.0,6.98,Jaipur,India,60,MILDRED BAILEY,8,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",4.43,272,30.92,8,2005-08-02,2005-07-27,30.92
+2.0,6.98,Mysore,India,59,CHERYL MURPHY,6,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",4.29,235,34.93,6,2005-07-09,2005-07-03,29.94
+2.0,6.98,Mysore,India,59,CHERYL MURPHY,7,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",5.0,235,34.93,7,2005-07-10,2005-07-04,34.93
+2.0,6.98,Ocumare del Tuy,Venezuela,174,YVONNE WATKINS,7,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",5.43,214,37.93,7,2005-08-01,2005-07-26,37.93
+2.0,6.98,Sorocaba,Brazil,314,GEORGE LINTON,8,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.57,73,67.82,9,2005-07-12,2005-07-06,24.91
+2.0,6.98,Tangail,Bangladesh,21,MICHELLE CLARK,5,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",4.58,2,131.72,5,2005-06-21,2005-06-15,31.95
+2.0,6.98,Yantai,China,272,KAY CALDWELL,5,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",4.72,227,35.94,5,2005-08-01,2005-07-26,32.95
+2.0,6.98,Yantai,China,272,KAY CALDWELL,6,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",5.15,227,35.94,6,2005-08-02,2005-07-27,35.94
+2.0,7.31,Donostia-San Sebastin,Spain,293,MAE FLETCHER,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.96,12,94.83,5,2005-06-20,2005-06-14,28.95
+2.0,7.31,Donostia-San Sebastin,Spain,293,MAE FLETCHER,7,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.91,12,94.83,7,2005-06-21,2005-06-15,35.93
+2.0,7.31,Haiphong,Vietnam,199,BETH FRANKLIN,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.55,243,33.93,5,2005-07-10,2005-07-04,25.95
+2.0,7.31,Haiphong,Vietnam,199,BETH FRANKLIN,7,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.64,243,33.93,7,2005-07-12,2005-07-06,33.93
+2.0,7.31,Nha Trang,Vietnam,520,MITCHELL WESTMORELAND,6,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",4.91,207,38.93,6,2005-07-10,2005-07-04,35.94
+2.0,7.31,Nha Trang,Vietnam,520,MITCHELL WESTMORELAND,7,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",5.32,207,38.93,7,2005-07-11,2005-07-05,38.93
+2.0,7.31,Qalyub,Egypt,134,EMMA BOYD,7,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",4.23,267,30.93,7,2005-08-02,2005-07-27,30.93
+2.0,7.31,Qinhuangdao,China,242,GLENDA FRAZIER,5,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.41,57,71.85,5,2005-06-19,2005-06-13,24.95
+2.0,7.31,Qinhuangdao,China,242,GLENDA FRAZIER,6,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",4.09,57,71.85,6,2005-06-20,2005-06-14,29.94
+2.0,7.31,Ueda,Japan,503,ANGEL BARCLAY,5,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.41,59,71.81,5,2005-07-11,2005-07-05,24.95
+2.0,7.31,Ueda,Japan,503,ANGEL BARCLAY,6,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.82,59,71.81,6,2005-07-12,2005-07-06,27.94
+2.0,7.48,Matamoros,Mexico,177,SAMANTHA DUNCAN,9,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.33,306,24.91,9,2005-08-02,2005-07-27,24.91
+2.0,7.65,Probolinggo,Indonesia,372,STEVE MACKENZIE,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.39,266,30.94,5,2005-07-10,2005-07-04,25.95
+2.0,7.65,Probolinggo,Indonesia,372,STEVE MACKENZIE,6,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.05,266,30.94,6,2005-07-12,2005-07-06,30.94
+2.0,7.65,Zeleznogorsk,Russian Federation,351,JACK FOUST,9,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.17,261,31.91,9,2005-07-12,2005-07-06,31.91
+2.0,7.98,Asuncin,Paraguay,226,MAUREEN LITTLE,5,Mike Hillyer (#1),store #1,3.25,297,25.95,5,2005-07-12,2005-07-06,25.95
+2.0,7.98,Benguela,Angola,528,CLAUDE HERZOG,5,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.25,294,26.94,5,2005-07-09,2005-07-03,25.95
+2.0,7.98,Benguela,Angola,528,CLAUDE HERZOG,6,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.38,294,26.94,6,2005-07-12,2005-07-06,26.94
+2.0,7.98,Beni-Mellal,Morocco,543,LANCE PEMBERTON,7,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.87,272,30.92,8,2005-08-02,2005-07-27,30.92
+2.0,7.98,Ezhou,China,313,DONALD MAHON,6,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.38,293,26.94,6,2005-08-02,2005-07-27,26.94
+2.0,7.98,Kabul,Afghanistan,218,VERA MCCOY,5,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.63,280,28.95,5,2005-07-31,2005-07-25,28.95
+2.0,7.98,Kamakura,Japan,79,RACHEL BARNES,7,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.12,271,30.92,7,2005-07-10,2005-07-04,24.93
+2.0,7.98,Kamakura,Japan,79,RACHEL BARNES,8,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.87,271,30.92,8,2005-07-11,2005-07-05,30.92
+2.0,7.98,Moscow,Russian Federation,46,CATHERINE CAMPBELL,6,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.5,6,113.73,6,2005-06-21,2005-06-15,27.94
+2.0,7.98,Santa F,Argentina,331,ERIC ROBERT,6,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",5.13,135,51.91,6,2005-07-07,2005-07-01,40.94
+2.0,7.98,Santa F,Argentina,331,ERIC ROBERT,7,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",5.51,135,51.91,7,2005-07-09,2005-07-03,43.93
+2.0,7.98,Santa F,Argentina,331,ERIC ROBERT,9,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",6.51,135,51.91,9,2005-07-10,2005-07-04,51.91
+2.0,8.31,Baybay,Philippines,71,KATHY JAMES,6,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.6,221,36.92,6,2005-07-10,2005-07-04,29.94
+2.0,8.31,Baybay,Philippines,71,KATHY JAMES,7,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.72,221,36.92,7,2005-07-11,2005-07-05,30.93
+2.0,8.31,Baybay,Philippines,71,KATHY JAMES,8,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",4.44,221,36.92,8,2005-07-12,2005-07-06,36.92
+2.0,8.31,Kingstown,Saint Vincent and the Grenadines,326,JOSE ANDREW,10,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.96,163,46.86,10,2005-08-01,2005-07-26,32.9
+2.0,8.31,Kingstown,Saint Vincent and the Grenadines,326,JOSE ANDREW,14,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",5.64,163,46.86,14,2005-08-02,2005-07-27,46.86
+2.0,8.31,Kingstown,Saint Vincent and the Grenadines,326,JOSE ANDREW,6,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.0,163,46.86,6,2005-07-29,2005-07-23,24.94
+2.0,8.31,Kingstown,Saint Vincent and the Grenadines,326,JOSE ANDREW,9,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.84,163,46.86,9,2005-07-31,2005-07-25,31.91
+2.0,8.31,Salinas,United States,269,CASSANDRA WALTERS,6,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.84,152,48.89,6,2005-07-12,2005-07-06,31.94
+2.0,8.48,Tangail,Bangladesh,21,MICHELLE CLARK,7,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.06,2,131.72,8,2005-08-01,2005-07-26,25.92
+2.0,8.65,Hamilton,New Zealand,8,SUSAN WILSON,7,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.34,283,28.92,8,2005-07-11,2005-07-05,28.92
+2.0,8.65,Leshan,China,569,DAVE GARDINER,9,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.46,25,87.78,9,2005-08-02,2005-07-27,29.91
+2.0,8.65,Pudukkottai,India,421,LEE HAWKS,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.46,275,29.95,5,2005-07-11,2005-07-05,29.95
+2.0,8.98,Jalib al-Shuyukh,Kuwait,234,CLAUDIA FULLER,7,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.56,66,68.85,7,2005-08-02,2005-07-27,31.93
+2.0,8.98,Jastrzebie-Zdrj,Poland,128,MARJORIE TUCKER,8,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.67,249,32.92,8,2005-07-12,2005-07-06,32.92
+2.0,8.98,Kuching,Malaysia,58,JEAN BELL,6,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.0,202,39.91,6,2005-07-31,2005-07-25,26.94
+2.0,8.98,Kuching,Malaysia,58,JEAN BELL,8,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.67,202,39.91,8,2005-08-01,2005-07-26,32.92
+2.0,8.98,Kuching,Malaysia,58,JEAN BELL,9,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.44,202,39.91,9,2005-08-02,2005-07-27,39.91
+2.0,8.98,La Romana,Dominican Republic,437,RANDALL NEUMANN,6,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.0,293,26.94,6,2005-07-10,2005-07-04,26.94
+2.0,8.98,Maikop,Russian Federation,346,ARTHUR SIMPKINS,6,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.56,191,40.93,6,2005-07-11,2005-07-05,31.94
+2.0,8.98,Maikop,Russian Federation,346,ARTHUR SIMPKINS,7,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",4.56,191,40.93,7,2005-07-12,2005-07-06,40.93
+2.0,8.98,Siliguri (Shiliguri),India,502,BRETT CORNWELL,7,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.89,34,82.8,7,2005-07-12,2005-07-06,34.93
+2.0,8.98,Yangor,Nauru,513,DUANE TUBBS,6,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.0,293,26.94,6,2005-07-11,2005-07-05,26.94
+2.0,8.98,Zaria,Nigeria,232,CONSTANCE REID,11,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",5.11,119,55.87,11,2005-07-30,2005-07-24,45.89
+2.0,8.98,Zaria,Nigeria,232,CONSTANCE REID,12,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",5.44,119,55.87,12,2005-07-31,2005-07-25,48.88
+2.0,8.98,Zaria,Nigeria,232,CONSTANCE REID,13,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",6.22,119,55.87,13,2005-08-01,2005-07-26,55.87
+2.0,8.98,Zaria,Nigeria,232,CONSTANCE REID,8,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.44,119,55.87,8,2005-07-29,2005-07-23,30.92
+2.0,9.31,Brest,France,402,LUIS YANEZ,6,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.11,229,35.92,6,2005-07-09,2005-07-03,28.94
+2.0,9.31,Brest,France,402,LUIS YANEZ,8,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.86,229,35.92,8,2005-07-11,2005-07-05,35.92
+2.0,9.31,Hsichuh,Taiwan,348,ROGER QUINTANILLA,6,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.32,203,39.91,6,2005-07-08,2005-07-02,30.94
+2.0,9.31,Hsichuh,Taiwan,348,ROGER QUINTANILLA,7,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.86,203,39.91,7,2005-07-09,2005-07-03,35.93
+2.0,9.31,Hsichuh,Taiwan,348,ROGER QUINTANILLA,8,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.96,203,39.91,8,2005-07-10,2005-07-04,36.92
+2.0,9.31,Zhoushan,China,550,GUY BROWNLEE,10,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.85,1,135.73,10,2005-08-02,2005-07-27,35.9
+2.0,9.31,Zhoushan,China,550,GUY BROWNLEE,8,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.43,1,135.73,8,2005-07-31,2005-07-25,31.92
+2.0,9.65,Bhavnagar,India,379,CARLOS COUGHLIN,11,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.55,178,43.89,11,2005-08-23,2005-08-17,43.89
+2.0,9.65,Bhavnagar,India,379,CARLOS COUGHLIN,9,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.62,178,43.89,9,2005-08-22,2005-08-16,34.91
+2.0,9.65,Kursk,Russian Federation,311,PAUL TROUT,5,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.21,227,35.94,5,2005-07-31,2005-07-25,30.95
+2.0,9.65,Kursk,Russian Federation,311,PAUL TROUT,6,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.73,227,35.94,6,2005-08-01,2005-07-26,35.94
+2.0,9.65,Newcastle,South Africa,432,EDWIN BURK,6,Mike Hillyer (#1),store #1,3.21,266,30.94,6,2005-07-11,2005-07-05,30.94
+2.0,9.98,Garland,United States,561,IAN STILL,8,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.3,71,67.84,8,2005-06-20,2005-06-14,32.92
+2.0,9.98,Garland,United States,561,IAN STILL,9,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.4,71,67.84,9,2005-06-21,2005-06-15,33.91
+2.0,9.98,Goinia,Brazil,92,TINA SIMMONS,10,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",5.7,114,56.9,10,2005-07-11,2005-07-05,56.9
+2.0,9.98,Goinia,Brazil,92,TINA SIMMONS,8,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",4.9,114,56.9,8,2005-07-10,2005-07-04,48.92
+2.0,9.98,San Bernardino,United States,2,PATRICIA JOHNSON,11,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",6.3,31,83.83,11,2005-07-30,2005-07-24,62.89
+2.0,9.98,San Bernardino,United States,2,PATRICIA JOHNSON,12,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",6.6,31,83.83,12,2005-07-31,2005-07-25,65.88
+2.0,9.98,San Bernardino,United States,2,PATRICIA JOHNSON,13,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",6.7,31,83.83,13,2005-08-01,2005-07-26,66.87
+2.0,9.98,San Bernardino,United States,2,PATRICIA JOHNSON,17,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",8.4,31,83.83,17,2005-08-02,2005-07-27,83.83
+2.0,9.98,San Bernardino,United States,2,PATRICIA JOHNSON,6,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.2,31,83.83,6,2005-07-29,2005-07-23,31.94
+2.25,15.98,Vijayawada,India,508,MILTON HOWLAND,12,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.87,61,70.87,12,2005-08-02,2005-07-27,61.88
+2.25,8.23,Higashiosaka,Japan,264,GWENDOLYN MAY,6,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.15,295,26.93,6,2005-07-11,2005-07-05,25.94
+2.25,8.23,Higashiosaka,Japan,264,GWENDOLYN MAY,7,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.27,295,26.93,7,2005-07-12,2005-07-06,26.93
+2.25,8.48,Ashgabat,Turkmenistan,200,JEANNE LAWSON,6,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.41,96,60.87,6,2005-08-02,2005-07-27,28.94
+2.33,10.31,Bchar,Algeria,69,JUDY GRAY,9,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.19,75,66.84,9,2005-08-23,2005-08-17,32.91
+2.33,10.31,Miraj,India,316,STEVEN CURLEY,8,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.39,43,78.84,8,2005-07-31,2005-07-25,34.92
+2.33,10.31,Miraj,India,316,STEVEN CURLEY,9,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",4.16,43,78.84,9,2005-08-01,2005-07-26,42.91
+2.33,10.31,Portoviejo,Ecuador,262,PATSY DAVIDSON,10,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",4.26,177,43.9,10,2005-08-23,2005-08-17,43.9
+2.33,10.31,Yinchuan,China,484,ROBERTO VU,7,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.1,208,38.92,7,2005-07-11,2005-07-05,31.93
+2.33,10.31,Yinchuan,China,484,ROBERTO VU,8,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.77,208,38.92,8,2005-07-12,2005-07-06,38.92
+2.33,11.64,Bhilwara,India,209,TONYA CHAPMAN,7,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.0,229,35.92,7,2005-07-09,2005-07-03,34.93
+2.33,11.64,Bhilwara,India,209,TONYA CHAPMAN,8,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.09,229,35.92,8,2005-07-11,2005-07-05,35.92
+2.33,11.64,s-Hertogenbosch,Netherlands,184,VIVIAN RUIZ,8,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.34,107,58.86,8,2005-08-22,2005-08-16,38.92
+2.33,11.64,s-Hertogenbosch,Netherlands,184,VIVIAN RUIZ,9,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.43,107,58.86,9,2005-08-23,2005-08-17,39.91
+2.33,12.31,Yerevan,Armenia,41,STEPHANIE MITCHELL,11,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.05,97,60.87,11,2005-07-31,2005-07-25,49.89
+2.33,12.31,Yerevan,Armenia,41,STEPHANIE MITCHELL,12,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.46,97,60.87,12,2005-08-01,2005-07-26,54.88
+2.33,12.31,Yerevan,Armenia,41,STEPHANIE MITCHELL,13,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.94,97,60.87,13,2005-08-02,2005-07-27,60.87
+2.33,12.31,Yerevan,Armenia,41,STEPHANIE MITCHELL,9,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.16,97,60.87,9,2005-07-30,2005-07-24,38.91
+2.33,13.31,Nam Dinh,Vietnam,472,GREG ROBINS,8,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.37,63,69.86,8,2005-08-22,2005-08-16,44.92
+2.33,13.64,Kimberley,South Africa,19,RUTH MARTINEZ,8,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.37,121,54.91,8,2005-08-23,2005-08-17,45.92
+2.33,3.64,London,United Kingdom,252,MATTIE HOFFMAN,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.83,326,18.92,5,2005-07-29,2005-07-23,13.95
+2.33,3.64,London,United Kingdom,252,MATTIE HOFFMAN,6,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.1,326,18.92,6,2005-07-30,2005-07-24,14.94
+2.33,3.64,London,United Kingdom,252,MATTIE HOFFMAN,8,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",5.19,326,18.92,8,2005-08-01,2005-07-26,18.92
+2.33,4.31,Gingoog,Philippines,461,DEREK BLAKELY,10,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",5.55,60,71.79,10,2005-08-02,2005-07-27,23.9
+2.33,4.31,Gingoog,Philippines,461,DEREK BLAKELY,5,Jon Stephens (#2),store #2,3.0,60,71.79,5,2005-07-30,2005-07-24,12.95
+2.33,4.31,Gingoog,Philippines,461,DEREK BLAKELY,7,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",4.39,60,71.79,7,2005-07-31,2005-07-25,18.93
+2.33,4.31,Gingoog,Philippines,461,DEREK BLAKELY,8,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",5.09,60,71.79,8,2005-08-01,2005-07-26,21.92
+2.33,4.98,Lubumbashi,"Congo, The Democratic Republic of the",387,JESSE SCHILLING,5,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",4.81,222,36.91,5,2005-08-19,2005-08-13,23.95
+2.33,4.98,Lubumbashi,"Congo, The Democratic Republic of the",387,JESSE SCHILLING,7,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",6.01,222,36.91,7,2005-08-20,2005-08-14,29.93
+2.33,4.98,Lubumbashi,"Congo, The Democratic Republic of the",387,JESSE SCHILLING,8,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",7.22,222,36.91,8,2005-08-21,2005-08-15,35.92
+2.33,4.98,Lubumbashi,"Congo, The Democratic Republic of the",387,JESSE SCHILLING,9,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",7.42,222,36.91,9,2005-08-22,2005-08-16,36.91
+2.33,5.31,Jakarta,Indonesia,153,SUZANNE NICHOLS,6,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.0,302,25.93,6,2005-07-10,2005-07-04,15.94
+2.33,5.31,Jakarta,Indonesia,153,SUZANNE NICHOLS,7,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.88,302,25.93,7,2005-07-12,2005-07-06,25.93
+2.33,5.98,Stara Zagora,Bulgaria,215,JESSIE BANKS,10,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.17,153,48.84,10,2005-08-23,2005-08-17,24.9
+2.33,6.31,Lhokseumawe,Indonesia,473,JORGE OLIVARES,7,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.11,46,77.82,7,2005-07-12,2005-07-06,25.93
+2.33,6.64,Loja,Ecuador,589,TRACY HERRMANN,5,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.0,95,60.88,5,2005-07-29,2005-07-23,19.95
+2.33,6.64,Loja,Ecuador,589,TRACY HERRMANN,6,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.75,95,60.88,6,2005-07-30,2005-07-24,24.94
+2.33,6.64,Loja,Ecuador,589,TRACY HERRMANN,7,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",4.51,95,60.88,7,2005-08-01,2005-07-26,29.93
+2.33,6.98,Bhusawal,India,202,CARLA GUTIERREZ,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.29,311,22.95,5,2005-07-10,2005-07-04,22.95
+2.33,6.98,Warren,United States,276,BRANDY GRAVES,10,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",5.58,212,38.9,10,2005-08-02,2005-07-27,38.9
+2.33,6.98,Warren,United States,276,BRANDY GRAVES,6,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.72,212,38.9,6,2005-07-30,2005-07-24,25.94
+2.33,6.98,Warren,United States,276,BRANDY GRAVES,7,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",4.58,212,38.9,7,2005-07-31,2005-07-25,31.93
+2.33,6.98,Warren,United States,276,BRANDY GRAVES,9,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",5.15,212,38.9,9,2005-08-01,2005-07-26,35.91
+2.33,7.64,Omdurman,Sudan,50,DIANE COLLINS,5,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.92,199,39.93,5,2005-07-10,2005-07-04,29.95
+2.33,7.64,Omdurman,Sudan,50,DIANE COLLINS,7,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",5.22,199,39.93,7,2005-07-12,2005-07-06,39.93
+2.33,7.64,Ponce,Puerto Rico,282,JENNY CASTRO,6,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.13,269,30.93,6,2005-07-09,2005-07-03,23.94
+2.33,7.64,Ponce,Puerto Rico,282,JENNY CASTRO,7,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",4.05,269,30.93,7,2005-07-10,2005-07-04,30.93
+2.33,7.98,Lilongwe,Malawi,166,LYNN PAYNE,10,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",4.88,37,81.81,10,2005-07-12,2005-07-06,38.9
+2.33,7.98,Lilongwe,Malawi,166,LYNN PAYNE,6,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.0,37,81.81,6,2005-07-09,2005-07-03,23.94
+2.33,7.98,Lilongwe,Malawi,166,LYNN PAYNE,8,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",4.38,37,81.81,8,2005-07-10,2005-07-04,34.92
+2.33,7.98,Lilongwe,Malawi,166,LYNN PAYNE,9,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",4.5,37,81.81,9,2005-07-11,2005-07-05,35.91
+2.33,7.98,Touliu,Taiwan,139,AMBER DIXON,6,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.63,39,80.82,6,2005-07-10,2005-07-04,28.94
+2.33,7.98,Touliu,Taiwan,139,AMBER DIXON,8,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",4.63,39,80.82,8,2005-07-12,2005-07-06,36.92
+2.33,8.31,Emmen,Netherlands,474,DUSTIN GILLETTE,8,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.12,251,32.91,8,2005-08-22,2005-08-16,25.92
+2.33,8.31,Emmen,Netherlands,474,DUSTIN GILLETTE,9,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.96,251,32.91,9,2005-08-23,2005-08-17,32.91
+2.33,8.98,Dundee,United Kingdom,142,APRIL BURNS,6,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.11,200,39.92,6,2005-07-30,2005-07-24,27.94
+2.33,8.98,Dundee,United Kingdom,142,APRIL BURNS,8,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.45,200,39.92,8,2005-08-02,2005-07-27,39.92
+2.33,9.31,Arecibo,Puerto Rico,360,RALPH MADRIGAL,7,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.11,282,28.93,7,2005-07-12,2005-07-06,28.93
+2.33,9.31,Rizhao,China,496,TYLER WREN,6,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.32,112,57.87,6,2005-08-21,2005-08-15,30.94
+2.33,9.31,Rizhao,China,496,TYLER WREN,7,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.64,112,57.87,7,2005-08-23,2005-08-17,33.93
+2.33,9.31,Ziguinchor,Senegal,456,RONNIE RICKETTS,6,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.11,92,61.85,6,2005-08-21,2005-08-15,28.94
+2.33,9.31,Ziguinchor,Senegal,456,RONNIE RICKETTS,8,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.86,92,61.85,8,2005-08-23,2005-08-17,35.92
+2.5,10.48,Moscow,Russian Federation,46,CATHERINE CAMPBELL,8,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.43,6,113.73,8,2005-08-01,2005-07-26,35.92
+2.5,10.48,Santa Rosa,Philippines,522,ARNOLD HAVENS,8,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.91,5,115.78,8,2005-07-10,2005-07-04,40.92
+2.5,10.48,Sumqayit,Azerbaijan,334,RAYMOND MCWHORTER,8,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.81,201,39.92,8,2005-07-12,2005-07-06,39.92
+2.5,10.73,Coacalco de Berriozbal,Mexico,247,STELLA MORENO,6,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.07,94,60.88,6,2005-08-23,2005-08-17,32.94
+2.5,10.73,Karnal,India,274,NAOMI JENNINGS,10,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.72,204,39.9,10,2005-08-02,2005-07-27,39.9
+2.5,10.98,Tabora,Tanzania,190,YOLANDA WEAVER,8,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.64,100,59.87,8,2005-08-02,2005-07-27,39.92
+2.5,11.23,Halisahar,India,259,LENA JENSEN,6,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.38,148,48.91,6,2005-07-30,2005-07-24,37.94
+2.5,11.23,Halisahar,India,259,LENA JENSEN,8,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",4.0,148,48.91,8,2005-08-01,2005-07-26,44.92
+2.5,11.23,Halisahar,India,259,LENA JENSEN,9,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",4.36,148,48.91,9,2005-08-02,2005-07-27,48.91
+2.5,11.48,Cape Coral,United States,526,KARL SEAL,8,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.04,187,41.91,8,2005-06-20,2005-06-14,34.92
+2.5,11.48,Cape Coral,United States,526,KARL SEAL,9,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.65,187,41.91,9,2005-06-21,2005-06-15,41.91
+2.5,12.48,Zhezqazghan,Kazakstan,573,BYRON BOX,10,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.28,197,40.9,10,2005-07-12,2005-07-06,40.9
+2.5,12.73,Apeldoorn,Netherlands,137,RHONDA KENNEDY,10,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.69,161,46.9,10,2005-07-11,2005-07-05,46.9
+2.5,12.73,Apeldoorn,Netherlands,137,RHONDA KENNEDY,8,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.06,161,46.9,8,2005-07-10,2005-07-04,38.92
+2.5,12.73,Sal,Morocco,22,LAURA RODRIGUEZ,10,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.31,122,54.9,10,2005-08-23,2005-08-17,54.9
+2.5,13.98,Ife,Nigeria,80,MARILYN ROSS,7,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.29,155,47.91,8,2005-07-11,2005-07-05,45.92
+2.5,13.98,Ife,Nigeria,80,MARILYN ROSS,8,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.43,155,47.91,9,2005-07-12,2005-07-06,47.91
+2.5,13.98,Lilongwe,Malawi,166,LYNN PAYNE,9,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.07,37,81.81,9,2005-08-23,2005-08-17,42.91
+2.5,14.23,Dayton,United States,294,SHELLY WATTS,11,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.16,140,50.87,11,2005-08-01,2005-07-26,44.89
+2.5,14.23,Dayton,United States,294,SHELLY WATTS,13,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.58,140,50.87,13,2005-08-02,2005-07-27,50.87
+2.5,3.48,Grand Prairie,United States,118,KIM CRUZ,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",7.18,257,31.93,5,2005-07-29,2005-07-23,24.95
+2.5,3.48,Grand Prairie,United States,118,KIM CRUZ,6,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",8.62,257,31.93,6,2005-07-30,2005-07-24,29.94
+2.5,3.48,Grand Prairie,United States,118,KIM CRUZ,7,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",9.19,257,31.93,7,2005-07-31,2005-07-25,31.93
+2.5,4.48,Cianjur,Indonesia,411,NORMAN CURRIER,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.56,329,15.95,5,2005-07-10,2005-07-04,15.95
+2.5,4.98,Nam Dinh,Vietnam,472,GREG ROBINS,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.81,63,69.86,5,2005-06-20,2005-06-14,23.95
+2.5,4.98,Nam Dinh,Vietnam,472,GREG ROBINS,6,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",5.01,63,69.86,6,2005-06-21,2005-06-15,24.94
+2.5,5.23,Adana,Turkey,327,LARRY THRASHER,11,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",10.12,30,83.83,11,2005-08-23,2005-08-17,52.89
+2.5,5.23,Adana,Turkey,327,LARRY THRASHER,5,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.24,30,83.83,5,2005-08-20,2005-08-14,16.95
+2.5,5.23,Adana,Turkey,327,LARRY THRASHER,8,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",5.53,30,83.83,8,2005-08-22,2005-08-16,28.92
+2.5,5.23,El Alto,Bolivia,455,JON WILES,5,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",5.16,291,26.95,5,2005-07-12,2005-07-06,26.95
+2.5,5.73,Rio Claro,Brazil,74,DENISE KELLY,5,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",4.01,300,25.94,5,2005-07-11,2005-07-05,22.95
+2.5,5.73,Rio Claro,Brazil,74,DENISE KELLY,6,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",4.53,300,25.94,6,2005-07-12,2005-07-06,25.94
+2.5,5.98,Binzhou,China,533,JESSIE MILAM,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.0,325,18.94,5,2005-06-19,2005-06-13,17.95
+2.5,5.98,Binzhou,China,533,JESSIE MILAM,6,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.17,325,18.94,6,2005-06-20,2005-06-14,18.94
+2.5,5.98,Bradford,United Kingdom,85,ANNE POWELL,6,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.84,258,31.93,6,2005-08-01,2005-07-26,22.94
+2.5,5.98,Bradford,United Kingdom,85,ANNE POWELL,7,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",5.34,258,31.93,7,2005-08-02,2005-07-27,31.93
+2.5,5.98,Hodeida,Yemen,470,GORDON ALLARD,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.68,169,44.91,5,2005-07-08,2005-07-02,27.95
+2.5,5.98,Hodeida,Yemen,470,GORDON ALLARD,6,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",5.51,169,44.91,6,2005-07-09,2005-07-03,32.94
+2.5,5.98,Hodeida,Yemen,470,GORDON ALLARD,8,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",6.68,169,44.91,8,2005-07-11,2005-07-05,39.92
+2.5,5.98,Hodeida,Yemen,470,GORDON ALLARD,9,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",7.52,169,44.91,9,2005-07-12,2005-07-06,44.91
+2.5,5.98,Laiwu,China,151,MEGAN PALMER,6,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.5,283,28.92,6,2005-07-31,2005-07-25,20.94
+2.5,5.98,Laiwu,China,151,MEGAN PALMER,8,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.84,283,28.92,8,2005-08-01,2005-07-26,28.92
+2.5,5.98,Springs,South Africa,83,LOUISE JENKINS,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.51,214,37.93,5,2005-08-20,2005-08-14,26.95
+2.5,5.98,Springs,South Africa,83,LOUISE JENKINS,7,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",6.35,214,37.93,7,2005-08-23,2005-08-17,37.93
+2.5,5.98,Toulon,France,104,RITA GRAHAM,5,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",4.68,277,29.94,5,2005-07-08,2005-07-02,27.95
+2.5,5.98,Toulon,France,104,RITA GRAHAM,6,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",5.01,277,29.94,6,2005-07-09,2005-07-03,29.94
+2.5,6.48,Garland,United States,561,IAN STILL,7,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",5.24,71,67.84,7,2005-08-02,2005-07-27,33.93
+2.5,6.48,Hanoi,Vietnam,340,PATRICK NEWSOM,10,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",6.01,205,39.89,10,2005-08-01,2005-07-26,38.9
+2.5,6.48,Hanoi,Vietnam,340,PATRICK NEWSOM,11,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",6.16,205,39.89,11,2005-08-02,2005-07-27,39.89
+2.5,6.48,Hanoi,Vietnam,340,PATRICK NEWSOM,6,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.39,205,39.89,6,2005-07-31,2005-07-25,21.94
+2.5,6.48,Ilorin,Nigeria,103,GLADYS HAMILTON,5,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.7,10,98.81,5,2005-07-07,2005-07-01,23.95
+2.5,6.48,Ilorin,Nigeria,103,GLADYS HAMILTON,6,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",4.47,10,98.81,6,2005-07-08,2005-07-02,28.94
+2.5,6.48,Ilorin,Nigeria,103,GLADYS HAMILTON,7,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",5.24,10,98.81,7,2005-07-09,2005-07-03,33.93
+2.5,6.48,Ilorin,Nigeria,103,GLADYS HAMILTON,9,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",7.24,10,98.81,9,2005-07-12,2005-07-06,46.91
+2.5,6.48,Teboksary,Russian Federation,350,JUAN FRALEY,7,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.08,147,49.84,7,2005-07-11,2005-07-05,19.93
+2.5,6.48,Tegal,Indonesia,458,LLOYD DOWD,6,Jon Stephens (#2),store #2,3.08,137,51.86,6,2005-08-21,2005-08-15,19.94
+2.5,6.48,Tegal,Indonesia,458,LLOYD DOWD,7,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.85,137,51.86,7,2005-08-23,2005-08-17,24.93
+2.5,6.73,Vitria de Santo Anto,Brazil,374,JEREMY HURTADO,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.12,88,63.85,5,2005-07-10,2005-07-04,20.95
+2.5,6.73,Vitria de Santo Anto,Brazil,374,JEREMY HURTADO,6,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.26,88,63.85,6,2005-07-11,2005-07-05,21.94
+2.5,7.48,Nezahualcyotl,Mexico,115,WENDY HARRISON,9,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.87,284,28.91,9,2005-07-12,2005-07-06,28.91
+2.5,7.48,Southend-on-Sea,United Kingdom,16,SANDRA MARTIN,4,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.47,298,25.95,5,2005-06-21,2005-06-15,25.95
+2.5,7.48,Tafuna,American Samoa,320,ANTHONY SCHWAB,7,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",4.0,263,31.91,7,2005-07-29,2005-07-23,29.93
+2.5,7.48,Tafuna,American Samoa,320,ANTHONY SCHWAB,8,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",4.14,263,31.91,8,2005-07-31,2005-07-25,30.92
+2.5,7.48,Tafuna,American Samoa,320,ANTHONY SCHWAB,9,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",4.27,263,31.91,9,2005-08-02,2005-07-27,31.91
+2.5,7.73,Usak,Turkey,204,ROSEMARY SCHMIDT,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.49,255,31.94,5,2005-06-18,2005-06-12,26.95
+2.5,7.73,Usak,Turkey,204,ROSEMARY SCHMIDT,6,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.13,255,31.94,6,2005-06-19,2005-06-13,31.94
+2.5,7.98,Gatineau,Canada,476,DERRICK BOURQUE,5,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.38,291,26.95,5,2005-07-11,2005-07-05,26.95
+2.5,7.98,Mahajanga,Madagascar,81,ANDREA HENDERSON,11,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",6.88,123,54.89,11,2005-08-23,2005-08-17,54.89
+2.5,7.98,Mahajanga,Madagascar,81,ANDREA HENDERSON,6,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.26,123,54.89,6,2005-08-21,2005-08-15,33.94
+2.5,7.98,Mahajanga,Madagascar,81,ANDREA HENDERSON,7,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",5.01,123,54.89,7,2005-08-22,2005-08-16,39.93
+2.5,8.48,Ezeiza,Argentina,530,DARRYL ASHCRAFT,8,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.65,262,31.91,8,2005-08-01,2005-07-26,30.92
+2.5,8.48,Ezeiza,Argentina,530,DARRYL ASHCRAFT,9,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.77,262,31.91,9,2005-08-02,2005-07-27,31.91
+2.5,8.48,Huaian,China,384,ERNEST STEPP,7,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.12,106,58.87,7,2005-06-20,2005-06-14,34.93
+2.5,8.48,Idfu,Egypt,233,LILLIE KIM,6,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.3,267,30.93,6,2005-07-11,2005-07-05,27.94
+2.5,8.48,Idfu,Egypt,233,LILLIE KIM,7,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.65,267,30.93,7,2005-07-12,2005-07-06,30.93
+2.5,8.48,Loja,Ecuador,589,TRACY HERRMANN,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.65,95,60.88,5,2005-06-20,2005-06-14,30.95
+2.5,8.48,Santiago de Compostela,Spain,549,NELSON CHRISTENSON,6,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.89,243,33.93,6,2005-07-31,2005-07-25,32.94
+2.5,8.48,Santiago de Compostela,Spain,549,NELSON CHRISTENSON,7,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.0,243,33.93,7,2005-08-01,2005-07-26,33.93
+2.5,8.73,Guadalajara,Mexico,364,BENJAMIN VARNEY,7,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.09,158,47.87,7,2005-08-21,2005-08-15,26.93
+2.5,8.73,Guadalajara,Mexico,364,BENJAMIN VARNEY,8,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.2,158,47.87,8,2005-08-22,2005-08-16,27.92
+2.5,8.73,Phnom Penh,Cambodia,228,ALLISON STANLEY,10,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",4.23,213,38.89,10,2005-07-10,2005-07-04,36.9
+2.5,8.73,Phnom Penh,Cambodia,228,ALLISON STANLEY,11,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",4.46,213,38.89,11,2005-07-11,2005-07-05,38.89
+2.5,8.73,Phnom Penh,Cambodia,228,ALLISON STANLEY,7,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.2,213,38.89,7,2005-07-08,2005-07-02,27.93
+2.5,8.73,Phnom Penh,Cambodia,228,ALLISON STANLEY,9,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",4.12,213,38.89,9,2005-07-09,2005-07-03,35.91
+2.5,8.73,Saint Louis,United States,62,JOAN COOPER,7,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.2,134,52.86,7,2005-08-23,2005-08-17,27.93
+2.5,8.98,Elista,Russian Federation,17,DONNA THOMPSON,6,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.78,242,33.94,6,2005-07-30,2005-07-24,33.94
+2.5,8.98,Santo Andr,Brazil,354,JUSTIN NGO,7,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.0,251,32.91,7,2005-07-10,2005-07-04,26.93
+2.5,8.98,Santo Andr,Brazil,354,JUSTIN NGO,8,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.11,251,32.91,8,2005-07-11,2005-07-05,27.92
+2.5,8.98,Santo Andr,Brazil,354,JUSTIN NGO,9,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.67,251,32.91,9,2005-07-12,2005-07-06,32.91
+2.5,9.23,Bandar Seri Begawan,Brunei,91,LOIS BUTLER,10,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.78,219,37.89,10,2005-07-11,2005-07-05,34.9
+2.5,9.23,Bandar Seri Begawan,Brunei,91,LOIS BUTLER,11,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",4.11,219,37.89,11,2005-07-12,2005-07-06,37.89
+2.5,9.23,Banjul,Gambia,584,SALVADOR TEEL,10,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.54,188,41.9,10,2005-08-02,2005-07-27,41.9
+2.5,9.23,Meixian,China,90,RUBY WASHINGTON,11,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",6.06,95,60.88,11,2005-08-01,2005-07-26,55.89
+2.5,9.23,Meixian,China,90,RUBY WASHINGTON,12,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",6.6,95,60.88,12,2005-08-02,2005-07-27,60.88
+2.5,9.23,Meixian,China,90,RUBY WASHINGTON,8,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",4.11,95,60.88,8,2005-07-30,2005-07-24,37.92
+2.5,9.48,Hidalgo,Mexico,150,DANIELLE DANIELS,10,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",5.06,91,62.86,10,2005-08-20,2005-08-14,47.9
+2.5,9.48,Hidalgo,Mexico,150,DANIELLE DANIELS,14,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",6.63,91,62.86,14,2005-08-21,2005-08-15,62.86
+2.5,9.48,Hidalgo,Mexico,150,DANIELLE DANIELS,9,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",4.42,91,62.86,9,2005-08-19,2005-08-13,41.91
+2.5,9.48,Lancaster,United States,112,ROSA REYNOLDS,10,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",5.16,149,48.9,10,2005-08-02,2005-07-27,48.9
+2.5,9.48,Lancaster,United States,112,ROSA REYNOLDS,8,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",4.21,149,48.9,8,2005-07-31,2005-07-25,39.92
+2.5,9.48,Lancaster,United States,112,ROSA REYNOLDS,9,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",4.85,149,48.9,9,2005-08-01,2005-07-26,45.91
+2.5,9.48,Lipetsk,Russian Federation,44,MARIE TURNER,6,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.79,227,35.94,6,2005-07-10,2005-07-04,35.94
+2.5,9.48,Miyakonojo,Japan,253,TERRY CARLSON,6,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.16,276,29.94,6,2005-06-19,2005-06-13,29.94
+2.5,9.48,Monywa,Myanmar,256,MABEL HOLLAND,10,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",4.84,48,76.83,10,2005-08-23,2005-08-17,45.9
+2.5,9.48,Monywa,Myanmar,256,MABEL HOLLAND,7,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.16,48,76.83,7,2005-08-21,2005-08-15,29.93
+2.5,9.48,Sambhal,India,217,AGNES BISHOP,8,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.69,217,37.91,8,2005-08-01,2005-07-26,34.92
+2.5,9.48,Sambhal,India,217,AGNES BISHOP,9,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",4.0,217,37.91,9,2005-08-02,2005-07-27,37.91
+2.5,9.73,Kamyin,Russian Federation,510,BEN EASTER,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.18,199,39.93,5,2005-07-30,2005-07-24,30.95
+2.5,9.73,Kamyin,Russian Federation,510,BEN EASTER,6,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.28,199,39.93,6,2005-07-31,2005-07-25,31.94
+2.5,9.73,Kamyin,Russian Federation,510,BEN EASTER,7,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.11,199,39.93,7,2005-08-01,2005-07-26,39.93
+2.5,9.73,Lengshuijiang,China,267,MARGIE WADE,7,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.18,54,73.82,7,2005-07-31,2005-07-25,30.93
+2.5,9.73,Lengshuijiang,China,267,MARGIE WADE,8,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.49,54,73.82,8,2005-08-01,2005-07-26,33.92
+2.5,9.73,Lengshuijiang,China,267,MARGIE WADE,9,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.59,54,73.82,9,2005-08-02,2005-07-27,34.91
+2.5,9.73,Sharja,United Arab Emirates,292,MISTY LAMBERT,7,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.39,248,32.93,7,2005-07-12,2005-07-06,32.93
+2.5,9.98,Omiya,Japan,404,STANLEY SCROGGINS,7,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.1,260,31.92,7,2005-07-11,2005-07-05,30.93
+2.5,9.98,Omiya,Japan,404,STANLEY SCROGGINS,8,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.2,260,31.92,8,2005-07-12,2005-07-06,31.92
+2.5,9.98,Pathankot,India,95,PAULA BRYANT,6,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.1,258,31.93,6,2005-07-31,2005-07-25,30.94
+2.5,9.98,Pathankot,India,95,PAULA BRYANT,7,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.2,258,31.93,7,2005-08-01,2005-07-26,31.93
+2.5,9.98,Rustenburg,South Africa,407,DALE RATCLIFF,10,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",5.6,117,55.89,11,2005-08-02,2005-07-27,55.89
+2.5,9.98,Rustenburg,South Africa,407,DALE RATCLIFF,7,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.3,117,55.89,7,2005-07-29,2005-07-23,32.93
+2.5,9.98,Rustenburg,South Africa,407,DALE RATCLIFF,8,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.8,117,55.89,8,2005-08-01,2005-07-26,37.92
+2.6,10.37,Tabriz,Iran,279,DIANNE SHELTON,12,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",5.48,49,76.82,12,2005-08-23,2005-08-17,56.88
+2.67,10.97,Maracabo,Venezuela,453,CALVIN MARTEL,10,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.18,165,45.9,10,2005-08-23,2005-08-17,45.9
+2.67,10.97,Maracabo,Venezuela,453,CALVIN MARTEL,8,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.64,165,45.9,8,2005-08-21,2005-08-15,39.92
+2.67,10.97,Maracabo,Venezuela,453,CALVIN MARTEL,9,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.73,165,45.9,9,2005-08-22,2005-08-16,40.91
+2.67,11.31,Osmaniye,Turkey,13,KAREN JACKSON,10,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.32,150,48.9,10,2005-08-02,2005-07-27,48.9
+2.67,11.31,Osmaniye,Turkey,13,KAREN JACKSON,8,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.8,150,48.9,8,2005-07-31,2005-07-25,42.92
+2.67,11.97,Czestochowa,Poland,572,SIDNEY BURLESON,12,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.0,157,47.88,12,2005-08-02,2005-07-27,47.88
+2.67,12.31,Okayama,Japan,489,RICARDO MEADOR,7,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.24,164,45.91,7,2005-08-21,2005-08-15,39.93
+2.67,12.31,Okayama,Japan,489,RICARDO MEADOR,8,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.33,164,45.91,8,2005-08-22,2005-08-16,40.92
+2.67,12.31,Okayama,Japan,489,RICARDO MEADOR,9,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.73,164,45.91,9,2005-08-23,2005-08-17,45.91
+2.67,12.47,Guaruj,Brazil,427,JESUS MCCARTNEY,8,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.28,148,48.91,8,2005-08-02,2005-07-27,40.92
+2.67,16.64,Sumy,Ukraine,187,BRITTANY RILEY,7,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.18,86,63.91,7,2005-08-22,2005-08-16,52.93
+2.67,16.64,Sumy,Ukraine,187,BRITTANY RILEY,9,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.84,86,63.91,9,2005-08-23,2005-08-17,63.91
+2.67,18.31,Vijayawada,India,508,MILTON HOWLAND,11,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.33,61,70.87,11,2005-08-01,2005-07-26,60.89
+2.67,5.64,Mogiljov,Belarus,527,CORY MEEHAN,6,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.18,296,26.92,6,2005-08-01,2005-07-26,17.94
+2.67,5.64,Mogiljov,Belarus,527,CORY MEEHAN,8,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",4.77,296,26.92,8,2005-08-02,2005-07-27,26.92
+2.67,5.97,Baku,Azerbaijan,333,ANDREW PURDY,10,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",8.02,156,47.9,10,2005-08-01,2005-07-26,47.9
+2.67,5.97,Baku,Azerbaijan,333,ANDREW PURDY,5,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.17,156,47.9,5,2005-07-29,2005-07-23,18.95
+2.67,5.97,Baku,Azerbaijan,333,ANDREW PURDY,7,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",5.85,156,47.9,7,2005-07-30,2005-07-24,34.93
+2.67,5.97,Baku,Azerbaijan,333,ANDREW PURDY,9,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",7.18,156,47.9,9,2005-07-31,2005-07-25,42.91
+2.67,6.31,Yaound,Cameroon,361,LAWRENCE LAWTON,10,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",5.53,239,34.9,10,2005-08-02,2005-07-27,34.9
+2.67,6.31,Yaound,Cameroon,361,LAWRENCE LAWTON,6,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.0,239,34.9,6,2005-08-01,2005-07-26,18.94
+2.67,6.97,Allende,Mexico,414,VINCENT RALSTON,10,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",5.0,239,34.9,10,2005-08-23,2005-08-17,34.9
+2.67,6.97,Allende,Mexico,414,VINCENT RALSTON,8,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.86,239,34.9,8,2005-08-20,2005-08-14,26.92
+2.67,6.97,Allende,Mexico,414,VINCENT RALSTON,9,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.86,239,34.9,9,2005-08-22,2005-08-16,33.91
+2.67,7.31,Halifax,Canada,463,DARRELL POWER,8,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.27,273,30.91,8,2005-08-02,2005-07-27,23.92
+2.67,7.31,Pak Kret,Thailand,42,CAROLYN PEREZ,6,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.28,55,72.82,6,2005-07-12,2005-07-06,23.94
+2.67,7.97,Nabereznyje Telny,Russian Federation,447,CLIFFORD BOWENS,7,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.0,309,23.93,7,2005-07-12,2005-07-06,23.93
+2.67,8.31,Laohekou,China,422,MELVIN ELLINGTON,5,Jon Stephens (#2),store #2,3.0,304,24.95,5,2005-08-02,2005-07-27,24.95
+2.67,8.31,Nador,Morocco,40,AMANDA CARTER,7,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.48,260,31.92,7,2005-07-31,2005-07-25,28.93
+2.67,8.31,Nador,Morocco,40,AMANDA CARTER,8,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.84,260,31.92,8,2005-08-01,2005-07-26,31.92
+2.67,8.31,Rockford,United States,457,BILL GAVIN,8,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",4.81,53,74.82,8,2005-08-21,2005-08-15,39.92
+2.67,8.31,Rockford,United States,457,BILL GAVIN,9,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",5.29,53,74.82,9,2005-08-22,2005-08-16,43.91
+2.67,8.64,Datong,China,260,CHRISTY VARGAS,9,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.69,77,66.83,9,2005-08-02,2005-07-27,31.91
+2.67,9.64,Yingkou,China,521,ROLAND SOUTH,10,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",4.04,110,58.84,10,2005-08-22,2005-08-16,38.9
+2.67,9.64,Yingkou,China,521,ROLAND SOUTH,8,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.21,110,58.84,8,2005-08-21,2005-08-15,30.92
+2.75,11.47,Roanoke,United States,291,TONI HOLT,8,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.31,108,58.86,8,2005-08-01,2005-07-26,37.92
+2.75,11.47,Roanoke,United States,291,TONI HOLT,9,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.39,108,58.86,9,2005-08-02,2005-07-27,38.91
+2.75,12.72,Satna,India,356,GERALD FULTZ,10,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.21,103,59.85,10,2005-08-02,2005-07-27,40.9
+2.75,13.22,Boksburg,South Africa,125,ETHEL WEBB,11,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.17,120,55.86,11,2005-07-31,2005-07-25,41.89
+2.75,13.22,Boksburg,South Africa,125,ETHEL WEBB,13,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.62,120,55.86,13,2005-08-01,2005-07-26,47.87
+2.75,13.22,Boksburg,South Africa,125,ETHEL WEBB,14,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.22,120,55.86,14,2005-08-02,2005-07-27,55.86
+2.75,5.22,Kragujevac,Yugoslavia,7,MARIA MILLER,5,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",5.54,164,45.91,5,2005-07-09,2005-07-03,28.95
+2.75,5.22,Kragujevac,Yugoslavia,7,MARIA MILLER,6,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",7.07,164,45.91,6,2005-07-10,2005-07-04,36.94
+2.75,5.22,Kragujevac,Yugoslavia,7,MARIA MILLER,8,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",8.03,164,45.91,8,2005-07-11,2005-07-05,41.92
+2.75,5.22,Kragujevac,Yugoslavia,7,MARIA MILLER,9,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",8.79,164,45.91,9,2005-07-12,2005-07-06,45.91
+2.75,9.72,Graz,Austria,173,AUDREY RAY,8,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.28,259,31.92,8,2005-07-11,2005-07-05,31.92
+2.75,9.72,Uttarpara-Kotrung,India,231,GEORGIA JACOBS,7,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.39,77,66.83,7,2005-08-21,2005-08-15,32.93
+2.75,9.72,Uttarpara-Kotrung,India,231,GEORGIA JACOBS,9,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.1,77,66.83,9,2005-08-22,2005-08-16,39.91
+2.8,13.17,Sungai Petani,Malaysia,306,CHARLES KOWALSKI,12,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.56,72,67.83,12,2005-08-02,2005-07-27,46.88
+3.0,10.17,Iwaki,Japan,240,MARLENE WELCH,6,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.24,159,46.92,6,2005-07-29,2005-07-23,32.94
+3.0,10.17,Iwaki,Japan,240,MARLENE WELCH,7,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.83,159,46.92,7,2005-07-30,2005-07-24,38.93
+3.0,10.17,Iwaki,Japan,240,MARLENE WELCH,8,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.61,159,46.92,8,2005-08-01,2005-07-26,46.92
+3.0,10.17,Monywa,Myanmar,256,MABEL HOLLAND,7,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.04,48,76.83,7,2005-06-19,2005-06-13,30.93
+3.0,10.17,Touliu,Taiwan,139,AMBER DIXON,10,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.32,39,80.82,10,2005-08-23,2005-08-17,43.9
+3.0,10.17,Touliu,Taiwan,139,AMBER DIXON,8,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.83,39,80.82,8,2005-08-22,2005-08-16,38.92
+3.0,10.22,Ueda,Japan,503,ANGEL BARCLAY,12,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.29,59,71.81,13,2005-08-23,2005-08-17,43.87
+3.0,10.22,Ueda,Japan,503,ANGEL BARCLAY,8,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.02,59,71.81,9,2005-08-22,2005-08-16,30.91
+3.0,10.77,Qinhuangdao,China,242,GLENDA FRAZIER,7,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.34,57,71.85,7,2005-08-01,2005-07-26,35.93
+3.0,10.77,Qinhuangdao,China,242,GLENDA FRAZIER,9,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.89,57,71.85,9,2005-08-02,2005-07-27,41.91
+3.0,10.77,Uijongbu,South Korea,245,COURTNEY DAY,11,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",4.91,51,75.81,11,2005-07-31,2005-07-25,52.89
+3.0,10.77,Uijongbu,South Korea,245,COURTNEY DAY,14,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",5.19,51,75.81,14,2005-08-02,2005-07-27,55.86
+3.0,10.77,Uijongbu,South Korea,245,COURTNEY DAY,7,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.34,51,75.81,7,2005-07-29,2005-07-23,35.93
+3.0,10.77,Uijongbu,South Korea,245,COURTNEY DAY,9,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.89,51,75.81,9,2005-07-30,2005-07-24,41.91
+3.0,10.97,Imus,Philippines,349,JOE GILLILAND,10,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.18,166,45.9,10,2005-08-02,2005-07-27,45.9
+3.0,10.97,Quilmes,Argentina,585,PERRY SWAFFORD,6,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.19,234,34.94,6,2005-07-12,2005-07-06,34.94
+3.0,11.22,Skikda,Algeria,176,JUNE CARROLL,7,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.38,180,42.92,7,2005-06-18,2005-06-12,37.93
+3.0,11.22,Skikda,Algeria,176,JUNE CARROLL,8,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.83,180,42.92,8,2005-06-20,2005-06-14,42.92
+3.0,11.3,Jamalpur,Bangladesh,329,FRANK WAGGONER,10,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.88,139,50.88,10,2005-08-01,2005-07-26,43.9
+3.0,11.3,Jamalpur,Bangladesh,329,FRANK WAGGONER,12,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.5,139,50.88,12,2005-08-02,2005-07-27,50.88
+3.0,11.3,Jamalpur,Bangladesh,329,FRANK WAGGONER,8,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.09,139,50.88,8,2005-07-31,2005-07-25,34.92
+3.0,11.37,Vitria de Santo Anto,Brazil,374,JEREMY HURTADO,9,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.69,88,63.85,9,2005-08-22,2005-08-16,41.91
+3.0,11.57,Nantou,Taiwan,5,ELIZABETH BROWN,9,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.45,102,59.86,9,2005-07-12,2005-07-06,39.91
+3.0,11.64,Dadu,Pakistan,416,JEFFERY PINSON,11,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.94,167,45.89,11,2005-08-02,2005-07-27,45.89
+3.0,11.97,Ivanovo,Russian Federation,106,CONNIE WALLACE,10,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",4.0,156,47.9,10,2005-08-02,2005-07-27,47.9
+3.0,11.97,Ivanovo,Russian Federation,106,CONNIE WALLACE,9,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.92,156,47.9,9,2005-08-01,2005-07-26,46.91
+3.0,11.97,Jos Azueta,Mexico,581,VIRGIL WOFFORD,10,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.5,189,41.9,10,2005-07-10,2005-07-04,41.9
+3.0,12.17,Coquimbo,Chile,515,ANDRE RAPP,10,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",4.02,149,48.9,10,2005-08-22,2005-08-16,48.9
+3.0,12.17,Coquimbo,Chile,515,ANDRE RAPP,7,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.2,149,48.9,7,2005-08-20,2005-08-14,38.93
+3.0,12.17,Coquimbo,Chile,515,ANDRE RAPP,9,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.61,149,48.9,9,2005-08-21,2005-08-15,43.91
+3.0,12.22,Tabriz,Iran,279,DIANNE SHELTON,11,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.08,49,76.82,11,2005-08-22,2005-08-16,49.89
+3.0,12.22,Tabriz,Iran,279,DIANNE SHELTON,9,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.18,49,76.82,9,2005-08-21,2005-08-15,38.91
+3.0,12.64,Purnea (Purnia),India,426,BRADLEY MOTLEY,6,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.0,56,71.86,6,2005-07-30,2005-07-24,37.94
+3.0,12.64,Purnea (Purnia),India,426,BRADLEY MOTLEY,7,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.87,56,71.86,7,2005-07-31,2005-07-25,48.93
+3.0,12.64,Purnea (Purnia),India,426,BRADLEY MOTLEY,8,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.03,56,71.86,8,2005-08-01,2005-07-26,50.92
+3.0,12.64,Purnea (Purnia),India,426,BRADLEY MOTLEY,9,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.11,56,71.86,9,2005-08-02,2005-07-27,51.91
+3.0,12.97,Cuautla,Mexico,323,MATTHEW MAHAN,11,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.08,89,63.83,11,2005-08-01,2005-07-26,39.89
+3.0,12.97,Cuautla,Mexico,323,MATTHEW MAHAN,12,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.38,89,63.83,12,2005-08-02,2005-07-27,43.88
+3.0,13.37,Guaruj,Brazil,427,JESUS MCCARTNEY,8,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.21,148,48.91,8,2005-08-01,2005-07-26,42.92
+3.0,13.64,Sirjan,Iran,449,OSCAR AQUINO,8,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.07,185,41.92,8,2005-08-01,2005-07-26,41.92
+3.0,13.72,Sivas,Turkey,518,GABRIEL HARDER,10,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.05,81,65.85,10,2005-08-02,2005-07-27,41.9
+3.0,13.77,Wroclaw,Poland,558,JIMMIE EGGLESTON,11,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.28,13,93.83,11,2005-07-12,2005-07-06,58.89
+3.0,13.77,Wroclaw,Poland,558,JIMMIE EGGLESTON,8,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.12,13,93.83,8,2005-07-11,2005-07-05,42.92
+3.0,14.22,Salzburg,Austria,266,NORA HERRERA,13,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.51,40,80.81,13,2005-08-22,2005-08-16,49.87
+3.0,14.3,Sagamihara,Japan,11,LISA ANDERSON,9,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.14,170,44.91,9,2005-08-02,2005-07-27,44.91
+3.0,15.97,Kimberley,South Africa,19,RUTH MARTINEZ,7,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.19,121,54.91,7,2005-08-21,2005-08-15,50.93
+3.0,15.97,Kimberley,South Africa,19,RUTH MARTINEZ,8,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.38,121,54.91,8,2005-08-22,2005-08-16,53.92
+3.0,4.3,Escobar,Argentina,445,MICHEAL FORMAN,10,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",10.43,172,44.9,10,2005-08-02,2005-07-27,44.9
+3.0,4.3,Escobar,Argentina,445,MICHEAL FORMAN,6,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",5.56,172,44.9,6,2005-07-31,2005-07-25,23.94
+3.0,4.3,Escobar,Argentina,445,MICHEAL FORMAN,8,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",6.26,172,44.9,8,2005-08-01,2005-07-26,26.92
+3.0,4.64,Sawhaj,Egypt,423,ALFRED CASILLAS,10,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",11.84,111,57.89,10,2005-08-01,2005-07-26,54.9
+3.0,4.64,Sawhaj,Egypt,423,ALFRED CASILLAS,11,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",12.49,111,57.89,11,2005-08-02,2005-07-27,57.89
+3.0,4.64,Sawhaj,Egypt,423,ALFRED CASILLAS,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",5.38,111,57.89,5,2005-07-27,2005-07-21,24.95
+3.0,4.64,Sawhaj,Egypt,423,ALFRED CASILLAS,7,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",8.4,111,57.89,7,2005-07-28,2005-07-22,38.93
+3.0,4.64,Sawhaj,Egypt,423,ALFRED CASILLAS,8,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",10.55,111,57.89,8,2005-07-29,2005-07-23,48.92
+3.0,4.64,Sawhaj,Egypt,423,ALFRED CASILLAS,9,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",11.2,111,57.89,9,2005-07-30,2005-07-24,51.91
+3.0,5.97,El Monte,United States,420,JACOB LANCE,6,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.18,237,34.92,6,2005-07-11,2005-07-05,24.94
+3.0,5.97,El Monte,United States,420,JACOB LANCE,8,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",5.85,237,34.92,8,2005-07-12,2005-07-06,34.92
+3.0,6.97,Gijn,Spain,394,CHRIS BROTHERS,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.15,124,54.88,5,2005-08-21,2005-08-15,21.95
+3.0,6.97,Maring,Brazil,246,MARIAN MENDOZA,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.15,317,21.95,5,2005-07-12,2005-07-06,21.95
+3.0,7.47,Hohhot,China,138,HAZEL WARREN,12,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",6.41,79,66.8,12,2005-08-01,2005-07-26,47.88
+3.0,7.47,Hohhot,China,138,HAZEL WARREN,15,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",7.34,79,66.8,15,2005-08-02,2005-07-27,54.85
+3.0,7.47,Hohhot,China,138,HAZEL WARREN,9,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.41,79,66.8,9,2005-07-31,2005-07-25,32.91
+3.0,7.47,Kumbakonam,India,271,PENNY NEAL,6,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.61,184,42.88,6,2005-08-01,2005-07-26,26.94
+3.0,7.47,Kumbakonam,India,271,PENNY NEAL,7,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.01,184,42.88,7,2005-08-02,2005-07-27,29.93
+3.0,7.64,Sanya,China,546,KELLY KNOTT,7,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.66,287,27.93,7,2005-07-12,2005-07-06,27.93
+3.0,7.72,Balurghat,India,208,LUCY WHEELER,6,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.49,281,28.93,6,2005-07-11,2005-07-05,26.94
+3.0,7.72,Balurghat,India,208,LUCY WHEELER,7,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.75,281,28.93,7,2005-07-12,2005-07-06,28.93
+3.0,8.47,Jaffna,Sri Lanka,408,MANUEL MURRELL,6,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.18,238,34.92,6,2005-07-30,2005-07-24,26.94
+3.0,8.47,Jaffna,Sri Lanka,408,MANUEL MURRELL,7,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.77,238,34.92,7,2005-07-31,2005-07-25,31.93
+3.0,8.47,Jaffna,Sri Lanka,408,MANUEL MURRELL,8,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.12,238,34.92,8,2005-08-02,2005-07-27,34.92
+3.0,8.64,Oshawa,Canada,189,LORETTA CARPENTER,7,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.04,186,41.92,7,2005-08-01,2005-07-26,34.93
+3.0,8.64,Oshawa,Canada,189,LORETTA CARPENTER,8,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.85,186,41.92,8,2005-08-02,2005-07-27,41.92
+3.0,8.97,Belm,Brazil,362,NICHOLAS BARFIELD,5,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.0,255,31.94,5,2005-07-11,2005-07-05,26.95
+3.0,8.97,Belm,Brazil,362,NICHOLAS BARFIELD,6,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.56,255,31.94,6,2005-07-12,2005-07-06,31.94
+3.0,8.97,Sullana,Peru,597,FREDDIE DUGGAN,8,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.67,249,32.92,8,2005-08-02,2005-07-27,32.92
+3.0,9.17,Tonghae,South Korea,536,FERNANDO CHURCHILL,7,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.92,180,42.92,7,2005-07-31,2005-07-25,35.93
+3.0,9.17,Tonghae,South Korea,536,FERNANDO CHURCHILL,8,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.68,180,42.92,8,2005-08-02,2005-07-27,42.92
+3.0,9.37,Firozabad,India,192,LAURIE LAWRENCE,7,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.41,146,49.87,7,2005-08-01,2005-07-26,31.93
+3.0,9.37,Firozabad,India,192,LAURIE LAWRENCE,8,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.94,146,49.87,8,2005-08-02,2005-07-27,36.92
+3.0,9.47,Sunnyvale,United States,214,KRISTIN JOHNSTON,6,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.48,248,32.93,7,2005-08-02,2005-07-27,32.93
+3.0,9.64,Sterling Heights,United States,146,JAMIE RICE,7,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.73,164,45.91,7,2005-08-20,2005-08-14,35.93
+3.0,9.64,Sterling Heights,United States,146,JAMIE RICE,8,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.04,164,45.91,8,2005-08-21,2005-08-15,38.92
+3.0,9.64,Sterling Heights,United States,146,JAMIE RICE,9,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.76,164,45.91,9,2005-08-23,2005-08-17,45.91
+3.17,12.47,Pak Kret,Thailand,42,CAROLYN PEREZ,11,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.92,55,72.82,12,2005-08-02,2005-07-27,48.88
+3.2,11.17,Malm,Sweden,66,JANICE WARD,10,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.48,4,117.73,10,2005-08-23,2005-08-17,38.9
+3.2,11.17,Pune,India,135,JUANITA MASON,11,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.93,58,71.82,11,2005-08-01,2005-07-26,43.89
+3.2,11.17,Pune,India,135,JUANITA MASON,12,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",4.47,58,71.82,12,2005-08-02,2005-07-27,49.88
+3.2,11.17,Pune,India,135,JUANITA MASON,8,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.22,58,71.82,8,2005-07-31,2005-07-25,35.92
+3.2,15.57,Tanauan,Philippines,373,LOUIS LEONE,12,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.59,33,82.82,12,2005-08-02,2005-07-27,55.88
+3.2,7.37,Urawa,Japan,147,JOANNE ROBERTSON,10,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",5.28,101,59.87,10,2005-08-22,2005-08-16,38.9
+3.2,7.37,Urawa,Japan,147,JOANNE ROBERTSON,13,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",8.13,101,59.87,13,2005-08-23,2005-08-17,59.87
+3.2,7.37,Urawa,Japan,147,JOANNE ROBERTSON,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.25,101,59.87,5,2005-08-20,2005-08-14,23.95
+3.2,7.37,Urawa,Japan,147,JOANNE ROBERTSON,7,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.52,101,59.87,7,2005-08-21,2005-08-15,25.93
+3.2,7.37,Witten,Germany,201,VICKI FIELDS,5,Jon Stephens (#2),store #2,3.11,217,37.91,5,2005-08-20,2005-08-14,22.95
+3.2,7.37,Witten,Germany,201,VICKI FIELDS,6,Jon Stephens (#2),store #2,3.52,217,37.91,6,2005-08-21,2005-08-15,25.94
+3.2,7.37,Witten,Germany,201,VICKI FIELDS,7,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.93,217,37.91,7,2005-08-22,2005-08-16,28.93
+3.2,7.37,Witten,Germany,201,VICKI FIELDS,9,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",5.15,217,37.91,9,2005-08-23,2005-08-17,37.91
+3.2,9.57,Kitwe,Zambia,438,BARRY LOVELACE,8,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.65,237,34.92,8,2005-07-12,2005-07-06,34.92
+3.25,10.22,Pyongyang,North Korea,157,DARLENE ROSE,11,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.22,74,67.8,11,2005-07-30,2005-07-24,32.89
+3.25,10.22,Pyongyang,North Korea,157,DARLENE ROSE,12,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.51,74,67.8,12,2005-07-31,2005-07-25,35.88
+3.25,10.22,Pyongyang,North Korea,157,DARLENE ROSE,13,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.0,74,67.8,13,2005-08-01,2005-07-26,40.87
+3.25,10.22,Pyongyang,North Korea,157,DARLENE ROSE,15,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.98,74,67.8,15,2005-08-02,2005-07-27,50.85
+3.25,10.72,Charlotte Amalie,"Virgin Islands, U.S.",406,NATHAN RUNYON,12,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",4.19,35,82.79,12,2005-07-30,2005-07-24,44.88
+3.25,10.72,Charlotte Amalie,"Virgin Islands, U.S.",406,NATHAN RUNYON,13,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",5.03,35,82.79,13,2005-07-31,2005-07-25,53.87
+3.25,10.72,Charlotte Amalie,"Virgin Islands, U.S.",406,NATHAN RUNYON,14,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",5.21,35,82.79,14,2005-08-01,2005-07-26,55.86
+3.25,10.72,Charlotte Amalie,"Virgin Islands, U.S.",406,NATHAN RUNYON,7,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.07,35,82.79,7,2005-07-29,2005-07-23,32.93
+3.25,10.72,Tambaram,India,287,BECKY MILES,8,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.26,237,34.92,8,2005-08-02,2005-07-27,34.92
+3.25,11.47,Adoni,India,367,ADAM GOOCH,7,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.92,47,76.86,7,2005-08-21,2005-08-15,44.93
+3.25,12.47,Ogbomosho,Nigeria,277,OLGA JIMENEZ,10,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",4.24,36,81.83,10,2005-08-22,2005-08-16,52.9
+3.25,12.97,Donostia-San Sebastin,Spain,293,MAE FLETCHER,10,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.54,12,94.83,10,2005-08-23,2005-08-17,58.9
+3.25,12.97,Donostia-San Sebastin,Spain,293,MAE FLETCHER,8,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.46,12,94.83,8,2005-08-22,2005-08-16,44.92
+3.25,6.22,Izumisano,Japan,391,CLARENCE GAMEZ,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.37,287,27.93,5,2005-07-10,2005-07-04,20.95
+3.25,6.22,Izumisano,Japan,391,CLARENCE GAMEZ,6,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.01,287,27.93,6,2005-07-11,2005-07-05,24.94
+3.25,6.22,Izumisano,Japan,391,CLARENCE GAMEZ,7,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.49,287,27.93,7,2005-07-12,2005-07-06,27.93
+3.25,6.97,Johannesburg,South Africa,471,DEAN SAUER,10,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",7.02,64,69.85,10,2005-08-23,2005-08-17,48.9
+3.25,6.97,Johannesburg,South Africa,471,DEAN SAUER,7,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",5.44,64,69.85,7,2005-08-21,2005-08-15,37.93
+3.25,6.97,Johannesburg,South Africa,471,DEAN SAUER,9,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",6.73,64,69.85,9,2005-08-22,2005-08-16,46.91
+3.25,9.22,A Corua (La Corua),Spain,52,JULIE SANCHEZ,10,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.68,244,33.9,10,2005-08-02,2005-07-27,33.9
+3.25,9.22,A Corua (La Corua),Spain,52,JULIE SANCHEZ,7,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.36,244,33.9,7,2005-07-31,2005-07-25,30.93
+3.25,9.22,A Corua (La Corua),Spain,52,JULIE SANCHEZ,9,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.57,244,33.9,9,2005-08-01,2005-07-26,32.91
+3.25,9.22,Arak,Iran,36,KATHLEEN ADAMS,11,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.54,125,54.83,12,2005-08-02,2005-07-27,41.88
+3.25,9.22,Arak,Iran,36,KATHLEEN ADAMS,7,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.03,125,54.83,8,2005-07-31,2005-07-25,27.92
+3.25,9.22,Arak,Iran,36,KATHLEEN ADAMS,9,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.68,125,54.83,10,2005-08-01,2005-07-26,33.9
+3.25,9.47,Chisinau,Moldova,38,MARTHA GONZALEZ,8,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.48,249,32.92,8,2005-07-12,2005-07-06,32.92
+3.29,14.68,Siliguri (Shiliguri),India,502,BRETT CORNWELL,12,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.26,34,82.8,13,2005-08-02,2005-07-27,47.87
+3.33,10.63,San Felipe de Puerto Plata,Dominican Republic,418,JEFF EAST,11,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.41,84,64.84,11,2005-08-02,2005-07-27,46.89
+3.33,10.63,San Felipe de Puerto Plata,Dominican Republic,418,JEFF EAST,7,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.28,84,64.84,7,2005-08-01,2005-07-26,34.93
+3.33,12.3,Mardan,Pakistan,20,SHARON ROBINSON,8,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.08,215,37.92,8,2005-08-02,2005-07-27,37.92
+3.33,12.97,Tanshui,Taiwan,577,CLIFTON MALCOLM,11,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",4.23,123,54.89,11,2005-08-02,2005-07-27,54.89
+3.33,12.97,Tanshui,Taiwan,577,CLIFTON MALCOLM,9,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.54,123,54.89,9,2005-08-01,2005-07-26,45.91
+3.33,7.63,Kermanshah,Iran,377,HOWARD FORTNER,6,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.66,176,43.91,6,2005-07-31,2005-07-25,27.94
+3.33,7.63,Kermanshah,Iran,377,HOWARD FORTNER,8,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",5.36,176,43.91,8,2005-08-01,2005-07-26,40.92
+3.33,7.63,Kermanshah,Iran,377,HOWARD FORTNER,9,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",5.75,176,43.91,9,2005-08-02,2005-07-27,43.91
+3.33,8.63,Berhampore (Baharampur),India,413,MARVIN YEE,8,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.12,296,26.92,8,2005-08-23,2005-08-17,26.92
+3.33,9.3,Celaya,Mexico,587,SERGIO STANFIELD,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.54,148,48.91,5,2005-07-31,2005-07-25,32.95
+3.33,9.3,Celaya,Mexico,587,SERGIO STANFIELD,7,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.4,148,48.91,7,2005-08-01,2005-07-26,40.93
+3.33,9.3,Celaya,Mexico,587,SERGIO STANFIELD,9,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",5.26,148,48.91,9,2005-08-02,2005-07-27,48.91
+3.33,9.3,Jodhpur,India,224,PEARL GARZA,10,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.54,253,32.9,10,2005-08-23,2005-08-17,32.9
+3.33,9.3,Jodhpur,India,224,PEARL GARZA,9,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.32,253,32.9,9,2005-08-22,2005-08-16,30.91
+3.33,9.63,Korla,China,283,FELICIA SUTTON,10,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.1,240,34.89,10,2005-07-11,2005-07-05,29.9
+3.33,9.63,Korla,China,283,FELICIA SUTTON,11,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.62,240,34.89,11,2005-07-12,2005-07-06,34.89
+3.4,13.57,Molodetno,Belarus,144,CLARA SHAW,8,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.05,44,77.86,8,2005-07-12,2005-07-06,54.92
+3.4,15.17,Avellaneda,Argentina,560,JORDAN ARCHULETA,11,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.69,32,82.83,11,2005-08-02,2005-07-27,55.89
+3.4,8.77,Citt del Vaticano,Holy See (Vatican City State),26,JESSICA HALL,6,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.99,24,87.85,6,2005-08-21,2005-08-15,34.94
+3.4,8.77,Citt del Vaticano,Holy See (Vatican City State),26,JESSICA HALL,7,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.33,24,87.85,7,2005-08-22,2005-08-16,37.93
+3.4,8.77,Citt del Vaticano,Holy See (Vatican City State),26,JESSICA HALL,8,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",5.24,24,87.85,8,2005-08-23,2005-08-17,45.92
+3.5,11.13,Emeishan,China,389,ALAN KAHN,6,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.23,160,46.91,6,2005-08-01,2005-07-26,35.94
+3.5,11.13,Emeishan,China,389,ALAN KAHN,9,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.21,160,46.91,9,2005-08-02,2005-07-27,46.91
+3.5,11.47,Lungtan,Taiwan,30,MELISSA KING,8,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.48,203,39.91,9,2005-07-11,2005-07-05,39.91
+3.5,12.72,Cavite,Philippines,388,CRAIG MORRELL,10,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.53,45,77.84,10,2005-08-22,2005-08-16,44.9
+3.5,12.72,Cavite,Philippines,388,CRAIG MORRELL,11,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",4.0,45,77.84,11,2005-08-23,2005-08-17,50.89
+3.5,12.72,Cavite,Philippines,388,CRAIG MORRELL,9,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.06,45,77.84,9,2005-08-21,2005-08-15,38.91
+3.5,12.72,Citrus Heights,United States,14,BETTY WHITE,9,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.14,81,65.85,9,2005-08-02,2005-07-27,39.91
+3.5,13.47,Carmen,Mexico,578,WILLARD LUMPKIN,8,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.19,180,42.92,8,2005-08-02,2005-07-27,42.92
+3.5,13.72,Antofagasta,Chile,45,JANET PHILLIPS,9,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.49,80,65.86,9,2005-08-02,2005-07-27,47.91
+3.5,14.97,Bhimavaram,India,529,ERIK GUILLEN,11,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.13,38,81.81,11,2005-08-22,2005-08-16,46.89
+3.5,15.47,Jelets,Russian Federation,100,ROBIN HAYES,8,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.29,138,50.92,8,2005-07-12,2005-07-06,50.92
+3.5,6.8,Monclova,Mexico,570,IVAN CROMWELL,5,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.23,70,67.84,5,2005-07-30,2005-07-24,21.95
+3.5,6.8,Monclova,Mexico,570,IVAN CROMWELL,8,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",4.55,70,67.84,8,2005-07-31,2005-07-25,30.92
+3.5,6.8,Monclova,Mexico,570,IVAN CROMWELL,9,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",5.14,70,67.84,9,2005-08-02,2005-07-27,34.91
+3.5,7.47,Halifax,Canada,463,DARRELL POWER,6,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.07,273,30.91,6,2005-07-31,2005-07-25,22.94
+3.5,7.47,Halifax,Canada,463,DARRELL POWER,8,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.74,273,30.91,8,2005-08-01,2005-07-26,27.92
+3.5,9.22,Fukuyama,Japan,141,DEBBIE REYES,11,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",5.31,151,48.89,11,2005-08-02,2005-07-27,48.89
+3.5,9.22,Fukuyama,Japan,141,DEBBIE REYES,6,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.14,151,48.89,6,2005-07-31,2005-07-25,28.94
+3.5,9.22,Fukuyama,Japan,141,DEBBIE REYES,9,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",4.33,151,48.89,9,2005-08-01,2005-07-26,39.91
+3.5,9.47,Botshabelo,South Africa,132,ESTHER CRAWFORD,10,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.48,206,39.89,10,2005-07-10,2005-07-04,32.9
+3.5,9.47,Botshabelo,South Africa,132,ESTHER CRAWFORD,11,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.21,206,39.89,11,2005-07-11,2005-07-05,39.89
+3.5,9.63,Qomsheh,Iran,459,TOMMY COLLAZO,12,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",7.67,3,122.77,12,2005-07-31,2005-07-25,73.88
+3.5,9.63,Qomsheh,Iran,459,TOMMY COLLAZO,16,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",10.05,3,122.77,16,2005-08-01,2005-07-26,96.84
+3.5,9.63,Qomsheh,Iran,459,TOMMY COLLAZO,5,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.11,3,122.77,5,2005-07-28,2005-07-22,29.95
+3.5,9.63,Qomsheh,Iran,459,TOMMY COLLAZO,7,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",5.29,3,122.77,7,2005-07-29,2005-07-23,50.93
+3.5,9.63,Qomsheh,Iran,459,TOMMY COLLAZO,9,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",6.32,3,122.77,9,2005-07-30,2005-07-24,60.91
+3.5,9.97,Baha Blanca,Argentina,322,JASON MORRISSEY,7,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.1,56,71.86,7,2005-08-02,2005-07-27,30.93
+3.6,8.96,Crdoba,Argentina,24,KIMBERLY LEE,7,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.12,288,27.93,7,2005-08-22,2005-08-16,27.93
+3.6,9.16,Toulouse,France,35,VIRGINIA GREEN,11,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",4.46,198,40.89,11,2005-07-12,2005-07-06,40.89
+3.6,9.16,Toulouse,France,35,VIRGINIA GREEN,9,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.37,198,40.89,9,2005-07-11,2005-07-05,30.91
+3.67,12.3,Kansas City,United States,308,THOMAS GRIGSBY,10,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.65,83,64.85,10,2005-08-23,2005-08-17,44.9
+3.67,12.3,Kansas City,United States,308,THOMAS GRIGSBY,8,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.0,83,64.85,8,2005-08-22,2005-08-16,36.92
+3.67,12.63,Uruapan,Mexico,454,ALEX GRESHAM,10,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.4,11,97.79,10,2005-08-22,2005-08-16,42.9
+3.67,12.63,Uruapan,Mexico,454,ALEX GRESHAM,11,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.55,11,97.79,11,2005-08-23,2005-08-17,44.89
+3.67,13.63,Tychy,Poland,380,RUSSELL BRINSON,10,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.22,50,75.81,10,2005-08-01,2005-07-26,43.9
+3.67,13.63,Tychy,Poland,380,RUSSELL BRINSON,11,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.51,50,75.81,11,2005-08-02,2005-07-27,47.89
+3.67,13.63,Tychy,Poland,380,RUSSELL BRINSON,9,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.07,50,75.81,9,2005-07-31,2005-07-25,41.91
+3.67,14.96,Najafabad,Iran,368,HARRY ARCE,11,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.07,168,45.89,11,2005-08-23,2005-08-17,45.89
+3.67,14.96,Uluberia,India,446,THEODORE CULP,10,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.0,65,69.83,10,2005-07-30,2005-07-24,44.9
+3.67,14.96,Uluberia,India,446,THEODORE CULP,11,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.27,65,69.83,11,2005-08-02,2005-07-27,48.89
+3.67,17.3,Kuwana,Japan,531,JAMIE WAUGH,12,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.69,18,91.82,12,2005-08-02,2005-07-27,63.88
+3.67,18.63,Valparai,India,403,MIKE WAY,13,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.64,7,103.81,13,2005-08-02,2005-07-27,67.87
+3.67,6.3,Kilis,Turkey,143,LESLIE GORDON,5,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",4.12,297,25.95,5,2005-08-23,2005-08-17,25.95
+3.67,9.3,Poos de Caldas,Brazil,254,MAXINE SILVA,8,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.76,238,34.92,8,2005-07-10,2005-07-04,34.92
+3.67,9.46,Oulu,Finland,298,ERIKA PENA,6,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.16,278,29.94,6,2005-08-02,2005-07-27,29.94
+3.75,13.21,Ilorin,Nigeria,103,GLADYS HAMILTON,10,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.93,10,98.81,10,2005-08-23,2005-08-17,51.9
+3.75,13.71,NDjamna,Chad,535,JAVIER ELROD,12,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.86,22,88.8,12,2005-08-22,2005-08-16,52.88
+3.75,13.71,NDjamna,Chad,535,JAVIER ELROD,13,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.93,22,88.8,13,2005-08-23,2005-08-17,53.87
+3.75,14.96,York,United Kingdom,497,GILBERT SLEDGE,8,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.2,154,47.92,8,2005-08-01,2005-07-26,47.92
+3.75,16.46,Kirovo-Tepetsk,Russian Federation,179,DANA HART,11,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.03,145,49.89,11,2005-08-02,2005-07-27,49.89
+3.75,9.96,Laredo,United States,6,JENNIFER DAVIS,7,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.21,210,38.91,7,2005-08-21,2005-08-15,31.93
+3.75,9.96,Laredo,United States,6,JENNIFER DAVIS,9,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.91,210,38.91,9,2005-08-23,2005-08-17,38.91
+3.8,11.16,Dongying,China,466,LEO EBERT,7,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.4,21,88.81,7,2005-08-23,2005-08-17,37.93
+3.8,11.96,Davao,Philippines,27,SHIRLEY ALLEN,8,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.0,76,66.84,8,2005-08-02,2005-07-27,35.92
+3.8,12.56,Lhokseumawe,Indonesia,473,JORGE OLIVARES,11,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.13,46,77.82,11,2005-08-02,2005-07-27,51.89
+3.8,14.36,San Felipe del Progreso,Mexico,319,RONALD WEINER,9,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.06,28,84.82,9,2005-07-12,2005-07-06,43.91
+3.8,15.16,Moscow,Russian Federation,46,CATHERINE CAMPBELL,13,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.29,6,113.73,13,2005-08-23,2005-08-17,49.87
+3.8,9.76,Wroclaw,Poland,558,JIMMIE EGGLESTON,6,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.58,13,93.83,6,2005-08-21,2005-08-15,34.94
+4.0,10.46,Atlixco,Mexico,84,SARA PERRY,7,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.82,199,39.93,7,2005-07-11,2005-07-05,39.93
+4.0,10.96,Akishima,Japan,574,JULIAN VEST,7,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.1,120,55.86,7,2005-07-09,2005-07-03,33.93
+4.0,10.96,Akishima,Japan,574,JULIAN VEST,8,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.37,120,55.86,8,2005-07-10,2005-07-04,36.92
+4.0,10.96,Akishima,Japan,574,JULIAN VEST,9,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.64,120,55.86,9,2005-07-12,2005-07-06,39.91
+4.0,10.96,Zanzibar,Tanzania,220,CHARLENE ALVAREZ,10,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",5.01,52,74.84,10,2005-08-02,2005-07-27,54.9
+4.0,10.96,Zanzibar,Tanzania,220,CHARLENE ALVAREZ,5,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.37,52,74.84,5,2005-07-30,2005-07-24,36.95
+4.0,10.96,Zanzibar,Tanzania,220,CHARLENE ALVAREZ,6,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.64,52,74.84,6,2005-07-31,2005-07-25,39.94
+4.0,10.96,Zanzibar,Tanzania,220,CHARLENE ALVAREZ,7,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",4.1,52,74.84,7,2005-08-01,2005-07-26,44.93
+4.0,11.63,Araatuba,Brazil,77,JANE BENNETT,6,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.01,109,58.85,6,2005-08-22,2005-08-16,34.94
+4.0,13.71,Liepaja,Latvia,23,SARAH LEWIS,8,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.06,185,41.92,8,2005-08-02,2005-07-27,41.92
+4.0,14.29,Tiefa,China,302,MICHAEL SILVERMAN,10,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.21,67,68.84,10,2005-08-01,2005-07-26,45.9
+4.0,14.29,Tiefa,China,302,MICHAEL SILVERMAN,9,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.14,67,68.84,9,2005-07-31,2005-07-25,44.91
+4.0,15.36,Peoria,United States,275,CAROLE BARNETT,13,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.05,141,50.86,13,2005-08-22,2005-08-16,46.87
+4.0,15.36,Peoria,United States,275,CAROLE BARNETT,14,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.31,141,50.86,14,2005-08-23,2005-08-17,50.86
+4.0,15.63,Kowloon and New Kowloon,Hong Kong,289,VIOLET RODRIQUEZ,11,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.0,162,46.89,11,2005-08-22,2005-08-16,46.89
+4.0,15.71,Malm,Sweden,66,JANICE WARD,10,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.11,4,117.73,10,2005-07-11,2005-07-05,48.9
+4.0,15.96,Bhopal,India,15,HELEN HARRIS,11,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.31,68,67.86,11,2005-08-21,2005-08-15,52.89
+4.0,15.96,Bhopal,India,15,HELEN HARRIS,13,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.94,68,67.86,13,2005-08-22,2005-08-16,62.87
+4.0,15.96,Bhopal,India,15,HELEN HARRIS,14,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.25,68,67.86,14,2005-08-23,2005-08-17,67.86
+4.0,17.63,Tokat,Turkey,566,CASEY MENA,14,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.34,93,61.84,15,2005-08-01,2005-07-26,58.85
+4.0,17.63,Tokat,Turkey,566,CASEY MENA,15,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.51,93,61.84,16,2005-08-02,2005-07-27,61.84
+4.0,18.96,Bijapur,India,468,TIM CARY,13,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.21,96,60.87,13,2005-08-23,2005-08-17,60.87
+4.0,19.36,Santa Rosa,Philippines,522,ARNOLD HAVENS,14,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.87,5,115.78,14,2005-08-01,2005-07-26,74.86
+4.0,9.56,Isesaki,Japan,519,RON DELUCA,7,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.76,194,40.92,7,2005-07-31,2005-07-25,35.93
+4.0,9.56,Isesaki,Japan,519,RON DELUCA,8,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.28,194,40.92,8,2005-08-01,2005-07-26,40.92
+4.0,9.63,Yamuna Nagar,India,12,NANCY THOMAS,8,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.84,87,63.86,8,2005-08-01,2005-07-26,36.92
+4.0,9.96,Changzhou,China,197,SUE PETERS,8,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.2,259,31.92,8,2005-06-19,2005-06-13,31.92
+4.0,9.96,Hunuco,Peru,565,JAIME NETTLES,7,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",4.11,191,40.93,7,2005-08-02,2005-07-27,40.93
+4.2,11.96,Iligan,Philippines,580,ROSS GREY,11,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.67,78,66.82,11,2005-08-02,2005-07-27,43.89
+4.25,10.46,Tandil,Argentina,405,LEONARD SCHOFIELD,8,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.05,108,58.86,8,2005-08-02,2005-07-27,31.92
+4.25,12.21,Kakamigahara,Japan,163,CATHY SPENCER,9,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.52,182,42.91,9,2005-08-23,2005-08-17,42.91
+4.25,15.46,London,United Kingdom,512,CECIL VINES,11,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.49,126,53.89,11,2005-08-23,2005-08-17,53.89
+4.25,17.71,Nakhon Sawan,Thailand,390,SHAWN HEATON,12,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.38,27,85.83,12,2005-08-22,2005-08-16,59.88
+4.33,11.29,Vancouver,Canada,436,TROY QUIGLEY,6,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.36,181,42.92,6,2005-07-31,2005-07-25,37.94
+4.33,11.29,Vancouver,Canada,436,TROY QUIGLEY,7,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.71,181,42.92,7,2005-08-01,2005-07-26,41.93
+4.33,11.29,Vancouver,Canada,436,TROY QUIGLEY,8,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.8,181,42.92,8,2005-08-02,2005-07-27,42.92
+4.33,14.62,Fuyu,China,211,STACEY MONTGOMERY,11,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.14,17,92.78,11,2005-08-23,2005-08-17,45.89
+4.33,14.96,Rae Bareli,India,78,LORI WOOD,10,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.67,122,54.9,10,2005-08-02,2005-07-27,54.9
+4.4,11.76,Munger (Monghyr),India,28,CYNTHIA YOUNG,8,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.48,113,57.86,8,2005-08-01,2005-07-26,40.92
+4.4,11.76,Munger (Monghyr),India,28,CYNTHIA YOUNG,9,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.74,113,57.86,9,2005-08-02,2005-07-27,43.91
+4.5,10.21,Shanwei,China,424,KYLE SPURLOCK,10,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.6,132,52.88,10,2005-08-01,2005-07-26,46.9
+4.5,10.21,Shanwei,China,424,KYLE SPURLOCK,12,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",5.18,132,52.88,12,2005-08-02,2005-07-27,52.88
+4.5,10.21,Shanwei,China,424,KYLE SPURLOCK,9,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.11,132,52.88,9,2005-07-31,2005-07-25,41.91
+4.5,12.12,South Hill,Anguilla,381,BOBBY BOUDREAU,10,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.13,104,59.84,10,2005-08-22,2005-08-16,37.9
+4.5,12.12,South Hill,Anguilla,381,BOBBY BOUDREAU,11,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.54,104,59.84,11,2005-08-23,2005-08-17,42.89
+4.5,15.21,Ozamis,Philippines,434,EDDIE TOMLIN,9,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.22,45,77.84,9,2005-08-22,2005-08-16,48.91
+4.5,18.96,Dhaka,Bangladesh,332,STEPHEN QUALLS,12,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.0,90,62.87,12,2005-08-01,2005-07-26,56.88
+4.5,18.96,Dhaka,Bangladesh,332,STEPHEN QUALLS,13,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.32,90,62.87,13,2005-08-02,2005-07-27,62.87
+4.67,12.79,Salala,Oman,498,GENE SANBORN,9,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.04,211,38.91,9,2005-08-02,2005-07-27,38.91
+4.67,13.62,Botosani,Romania,230,JOY GEORGE,10,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.37,75,66.84,10,2005-08-02,2005-07-27,45.9
+4.8,16.35,Brindisi,Italy,499,MARC OUTLAW,10,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.05,144,49.9,10,2005-08-23,2005-08-17,49.9
+4.8,19.15,Kolpino,Russian Federation,295,DAISY BATES,11,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.07,19,91.8,11,2005-08-02,2005-07-27,58.89
+4.83,12.12,Changhwa,Taiwan,75,TAMMY SANDERS,10,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.87,15,92.81,10,2005-07-31,2005-07-25,46.9
+4.83,12.12,Changhwa,Taiwan,75,TAMMY SANDERS,12,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.69,15,92.81,12,2005-08-01,2005-07-26,56.88
+4.83,12.12,Changhwa,Taiwan,75,TAMMY SANDERS,14,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",5.19,15,92.81,14,2005-08-02,2005-07-27,62.86
+4.83,12.12,Changhwa,Taiwan,75,TAMMY SANDERS,9,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.05,15,92.81,9,2005-07-30,2005-07-24,36.91
+4.83,14.79,Saint-Denis,Runion,148,ELEANOR HUNT,10,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.31,9,101.8,10,2005-07-30,2005-07-24,48.9
+4.83,14.79,Saint-Denis,Runion,148,ELEANOR HUNT,13,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.12,9,101.8,13,2005-07-31,2005-07-25,60.87
+4.83,14.79,Saint-Denis,Runion,148,ELEANOR HUNT,14,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",4.59,9,101.8,14,2005-08-01,2005-07-26,67.86
+4.83,14.79,Saint-Denis,Runion,148,ELEANOR HUNT,15,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",5.33,9,101.8,15,2005-08-02,2005-07-27,78.85
+4.86,12.38,Bilbays,Egypt,559,EVERETT BANDA,8,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.22,200,39.92,8,2005-08-23,2005-08-17,39.92
+5.0,12.12,Ahmadnagar,India,297,SHERRI RHODES,10,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.62,69,67.85,10,2005-08-23,2005-08-17,43.9
+5.0,13.55,Ljubertsy,Russian Federation,160,ERIN DUNN,9,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.61,149,48.9,10,2005-08-23,2005-08-17,48.9
+5.0,15.66,Tangail,Bangladesh,21,MICHELLE CLARK,11,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.95,2,131.72,11,2005-08-20,2005-08-14,61.89
+5.0,15.66,Tangail,Bangladesh,21,MICHELLE CLARK,12,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",4.33,2,131.72,13,2005-08-21,2005-08-15,67.87
+5.0,15.66,Tangail,Bangladesh,21,MICHELLE CLARK,13,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",4.65,2,131.72,14,2005-08-22,2005-08-16,72.86
+5.0,18.28,Zhoushan,China,550,GUY BROWNLEE,11,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.28,1,135.73,11,2005-08-23,2005-08-17,59.89
+5.2,15.95,Haldia,India,186,HOLLY FOX,12,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.38,8,103.73,12,2005-08-22,2005-08-16,53.88
+5.2,15.95,Haldia,India,186,HOLLY FOX,13,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.44,8,103.73,13,2005-08-23,2005-08-17,54.87
+5.25,16.7,Leshan,China,569,DAVE GARDINER,11,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.11,25,87.78,11,2005-08-22,2005-08-16,51.89
+5.25,16.7,Leshan,China,569,DAVE GARDINER,13,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.47,25,87.78,13,2005-08-23,2005-08-17,57.87
+5.5,12.95,Liaocheng,China,129,CARRIE PORTER,11,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.85,145,49.89,11,2005-08-01,2005-07-26,49.89
+5.5,18.45,Bergamo,Italy,439,ALEXANDER FENNELL,12,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.03,42,79.82,12,2005-08-23,2005-08-17,55.88
+5.5,18.45,Robamba,Ecuador,494,RAMON CHOATE,13,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.14,23,88.79,13,2005-08-02,2005-07-27,57.87
+5.6,17.54,Tanza,Philippines,236,MARCIA DEAN,12,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.01,20,90.8,12,2005-08-02,2005-07-27,52.88
+5.67,12.78,Sorocaba,Brazil,314,GEORGE LINTON,9,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.36,73,67.82,9,2005-07-30,2005-07-24,42.91
+5.75,19.19,Etawah,India,121,JOSEPHINE GOMEZ,12,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.07,14,93.79,12,2005-08-22,2005-08-16,58.88
+5.75,19.19,Etawah,India,121,JOSEPHINE GOMEZ,13,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.22,14,93.79,13,2005-08-23,2005-08-17,61.87
+5.83,14.78,Gingoog,Philippines,461,DEREK BLAKELY,11,"Jon Stephens (#2),Mike Hillyer (#1)","store #2,store #1",3.24,60,71.79,11,2005-08-23,2005-08-17,47.89
+6.0,16.94,Boa Vista,Brazil,342,HAROLD MARTINO,12,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.06,98,60.86,12,2005-08-21,2005-08-15,51.88
+6.0,16.94,Boa Vista,Brazil,342,HAROLD MARTINO,14,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.59,98,60.86,14,2005-08-23,2005-08-17,60.86
+6.83,21.43,Ikerre,Nigeria,198,ELSIE KELLEY,14,"Mike Hillyer (#1),Jon Stephens (#2)","store #1,store #2",3.07,16,92.79,14,2005-08-23,2005-08-17,65.86

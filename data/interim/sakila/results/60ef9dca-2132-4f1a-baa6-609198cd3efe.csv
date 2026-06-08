@@ -1,0 +1,114 @@
+avg_monthly_amount_2005,city,country,customer_id,customer_name,deviation_from_avg,last_staff_id,last_staff_name,monthly_amount,payment_count,payment_month,store_id,store_month_customer_count,store_month_rank
+10.06,Ambattur,India,225,ARLENE HARVEY,70.77,2,Jon Stephens,80.83,17,2005-07,1,326,10
+10.06,Funafuti,Tuvalu,105,DAWN SULLIVAN,16.9,1,Mike Hillyer,26.96,4,2005-05,1,281,3
+10.06,Kursk,Russian Federation,311,PAUL TROUT,16.89,2,Jon Stephens,26.95,5,2005-05,2,239,4
+10.15,Brockton,United States,149,VALERIE BLACK,22.79,1,Mike Hillyer,32.93,7,2005-06,1,320,15
+10.15,Plock,Poland,571,JOHNNIE CHISHOLM,22.79,1,Mike Hillyer,32.94,6,2005-06,2,270,14
+10.22,Datong,China,260,CHRISTY VARGAS,24.7,1,Mike Hillyer,34.92,8,2005-06,1,320,13
+10.23,Kamyin,Russian Federation,510,BEN EASTER,23.69,2,Jon Stephens,33.92,8,2005-06,2,270,12
+10.48,Kimberley,South Africa,19,RUTH MARTINEZ,16.46,2,Jon Stephens,26.94,6,2005-05,1,281,4
+10.56,Vijayawada,India,508,MILTON HOWLAND,64.3,2,Jon Stephens,74.86,14,2005-07,2,273,11
+10.64,Antofagasta,Chile,45,JANET PHILLIPS,58.24,2,Jon Stephens,68.88,12,2005-08,1,326,11
+10.64,Urawa,Japan,147,JOANNE ROBERTSON,66.21,2,Jon Stephens,76.85,15,2005-08,2,273,3
+10.73,Baha Blanca,Argentina,322,JASON MORRISSEY,30.2,2,Jon Stephens,40.93,7,2005-06,1,320,2
+10.73,Iwakuni,Japan,54,TERESA ROGERS,54.13,1,Mike Hillyer,64.86,14,2005-08,1,326,16
+10.73,San Bernardino,United States,2,PATRICIA JOHNSON,65.13,1,Mike Hillyer,75.86,14,2005-07,1,326,17
+10.81,Uijongbu,South Korea,245,COURTNEY DAY,18.13,2,Jon Stephens,28.94,6,2005-05,1,281,2
+10.89,Bhopal,India,15,HELEN HARRIS,68.93,1,Mike Hillyer,79.82,18,2005-08,1,326,3
+10.89,Boa Vista,Brazil,342,HAROLD MARTINO,58.94,1,Mike Hillyer,69.83,17,2005-08,1,326,10
+10.89,Jining,China,594,EDUARDO HIATT,11.07,1,Mike Hillyer,21.96,4,2005-05,1,281,14
+11.06,Miraj,India,316,STEVEN CURLEY,24.87,2,Jon Stephens,35.93,7,2005-06,1,320,9
+11.14,Fengshan,Taiwan,576,MORRIS MCCARTER,22.79,2,Jon Stephens,33.93,7,2005-06,2,270,11
+11.14,Goinia,Brazil,92,TINA SIMMONS,67.71,1,Mike Hillyer,78.85,15,2005-07,2,273,9
+11.22,Leshan,China,569,DAVE GARDINER,64.6,2,Jon Stephens,75.82,18,2005-08,2,273,5
+11.47,Aden,Yemen,210,ELLA OLIVER,62.35,2,Jon Stephens,73.82,18,2005-07,2,273,14
+11.47,Ashdod,Israel,102,CRYSTAL FORD,73.32,1,Mike Hillyer,84.79,21,2005-07,1,326,7
+11.56,Sungai Petani,Malaysia,306,CHARLES KOWALSKI,54.3,2,Jon Stephens,65.86,14,2005-08,1,326,15
+11.64,Shimonoseki,Japan,29,ANGELA HERNANDEZ,57.2,1,Mike Hillyer,68.84,16,2005-08,2,273,14
+11.64,Yinchuan,China,484,ROBERTO VU,66.21,2,Jon Stephens,77.85,15,2005-07,1,326,14
+11.72,Robamba,Ecuador,494,RAMON CHOATE,69.1,2,Jon Stephens,80.82,18,2005-07,2,273,7
+11.8,Ikerre,Nigeria,198,ELSIE KELLEY,59.04,1,Mike Hillyer,70.84,16,2005-08,2,273,9
+11.81,Rae Bareli,India,78,LORI WOOD,59.05,2,Jon Stephens,70.86,14,2005-08,1,326,8
+11.89,Ciomas,Indonesia,239,MINNIE ROMERO,22.05,2,Jon Stephens,33.94,6,2005-05,2,239,1
+11.89,Kowloon and New Kowloon,Hong Kong,289,VIOLET RODRIQUEZ,26.05,2,Jon Stephens,37.94,6,2005-06,1,320,4
+12.14,Akron,United States,479,ZACHARY HITE,67.71,2,Jon Stephens,79.85,15,2005-07,1,326,12
+12.3,Balikesir,Turkey,366,BRANDON HUEY,70.51,1,Mike Hillyer,82.81,19,2005-07,1,326,9
+12.31,Brescia,Italy,309,CHRISTOPHER GRECO,64.53,1,Mike Hillyer,76.84,16,2005-07,1,326,15
+12.39,Yangor,Nauru,513,DUANE TUBBS,57.47,2,Jon Stephens,69.86,14,2005-08,2,273,10
+12.47,Cabuyao,Philippines,371,BILLY POULIN,13.47,1,Mike Hillyer,25.94,6,2005-05,1,281,6
+12.64,Beira,Mozambique,257,MARSHA DOUGLAS,76.18,2,Jon Stephens,88.82,18,2005-07,2,273,3
+12.64,Cam Ranh,Vietnam,532,NEIL RENNER,57.22,1,Mike Hillyer,69.86,14,2005-08,2,273,10
+12.64,Karnal,India,274,NAOMI JENNINGS,57.2,2,Jon Stephens,69.84,16,2005-08,1,326,9
+12.64,Lengshuijiang,China,267,MARGIE WADE,26.27,2,Jon Stephens,38.91,9,2005-06,1,320,3
+12.64,Uruapan,Mexico,454,ALEX GRESHAM,40.26,1,Mike Hillyer,52.9,10,2005-06,2,270,1
+12.72,Citt del Vaticano,Holy See (Vatican City State),26,JESSICA HALL,29.21,1,Mike Hillyer,41.93,7,2005-06,2,270,3
+12.72,Pontianak,Indonesia,506,LESLIE SEWARD,16.21,2,Jon Stephens,28.93,7,2005-05,2,239,2
+12.72,Tangail,Bangladesh,21,MICHELLE CLARK,67.11,1,Mike Hillyer,79.83,17,2005-08,1,326,2
+12.81,Shubra al-Khayma,Egypt,119,SHERRY MARSHALL,65.02,2,Jon Stephens,77.82,18,2005-08,1,326,4
+12.97,Maikop,Russian Federation,346,ARTHUR SIMPKINS,70.88,1,Mike Hillyer,83.85,15,2005-07,1,326,8
+13.06,Zhoushan,China,550,GUY BROWNLEE,26.88,1,Mike Hillyer,39.94,6,2005-06,2,270,5
+13.22,Donostia-San Sebastin,Spain,293,MAE FLETCHER,22.71,2,Jon Stephens,35.93,7,2005-06,2,270,8
+13.22,Probolinggo,Indonesia,372,STEVE MACKENZIE,64.62,1,Mike Hillyer,77.84,16,2005-07,2,273,10
+13.31,Usolje-Sibirskoje,Russian Federation,462,WARREN SHERROD,61.53,1,Mike Hillyer,74.84,16,2005-07,2,273,13
+13.39,Hodeida,Yemen,470,GORDON ALLARD,83.44,1,Mike Hillyer,96.83,17,2005-07,1,326,2
+13.39,Tanauan,Philippines,373,LOUIS LEONE,63.46,1,Mike Hillyer,76.85,15,2005-08,1,326,5
+13.47,Bhilwara,India,209,TONYA CHAPMAN,69.36,1,Mike Hillyer,82.83,17,2005-07,2,273,6
+13.47,Kolpino,Russian Federation,295,DAISY BATES,19.44,2,Jon Stephens,32.91,9,2005-06,1,320,16
+13.47,Kolpino,Russian Federation,295,DAISY BATES,74.35,2,Jon Stephens,87.82,18,2005-07,1,326,5
+13.72,Richmond Hill,Canada,410,CURTIS IRBY,73.11,1,Mike Hillyer,86.83,17,2005-08,2,273,1
+13.89,Valparai,India,403,MIKE WAY,22.05,1,Mike Hillyer,35.94,6,2005-06,1,320,8
+13.89,Valparai,India,403,MIKE WAY,50.96,1,Mike Hillyer,64.85,15,2005-08,1,326,17
+13.97,Santa Rosa,Philippines,522,ARNOLD HAVENS,82.85,2,Jon Stephens,96.82,18,2005-07,2,273,1
+14.14,Omdurman,Sudan,50,DIANE COLLINS,66.69,2,Jon Stephens,80.83,17,2005-07,1,326,10
+14.22,Halisahar,India,259,LENA JENSEN,61.62,1,Mike Hillyer,75.84,16,2005-08,2,273,4
+14.31,Memphis,United States,181,ANA BRADLEY,57.53,2,Jon Stephens,71.84,16,2005-08,2,273,7
+14.47,Skikda,Algeria,176,JUNE CARROLL,28.45,1,Mike Hillyer,42.92,8,2005-06,1,320,1
+14.55,Tanza,Philippines,236,MARCIA DEAN,23.37,2,Jon Stephens,37.92,8,2005-06,1,320,6
+14.63,Bijapur,India,468,TIM CARY,57.23,2,Jon Stephens,71.86,14,2005-08,1,326,7
+14.8,Ourense (Orense),Spain,469,WESLEY BULL,66.02,2,Jon Stephens,80.82,18,2005-07,2,273,8
+15.55,Qomsheh,Iran,459,TOMMY COLLAZO,52.33,1,Mike Hillyer,67.88,12,2005-08,1,326,12
+15.55,Qomsheh,Iran,459,TOMMY COLLAZO,74.27,2,Jon Stephens,89.82,18,2005-07,1,326,4
+15.8,Santa Brbara dOeste,Brazil,178,MARION SNYDER,29.12,1,Mike Hillyer,44.92,8,2005-06,2,270,2
+15.8,Santa Brbara dOeste,Brazil,178,MARION SNYDER,70.02,2,Jon Stephens,85.82,18,2005-07,2,273,5
+16.22,Apeldoorn,Netherlands,137,RHONDA KENNEDY,58.63,1,Mike Hillyer,74.85,15,2005-08,2,273,6
+16.22,Apeldoorn,Netherlands,137,RHONDA KENNEDY,80.59,1,Mike Hillyer,96.81,19,2005-07,2,273,2
+16.3,Molodetno,Belarus,144,CLARA SHAW,56.54,1,Mike Hillyer,72.84,16,2005-08,1,326,6
+16.3,Molodetno,Belarus,144,CLARA SHAW,77.52,2,Jon Stephens,93.82,18,2005-07,1,326,3
+18.05,Saint-Denis,Runion,148,ELEANOR HUNT,69.78,2,Jon Stephens,87.82,18,2005-08,1,326,1
+18.05,Saint-Denis,Runion,148,ELEANOR HUNT,82.73,2,Jon Stephens,100.78,22,2005-07,1,326,1
+18.46,Cape Coral,United States,526,KARL SEAL,23.45,1,Mike Hillyer,41.91,9,2005-06,2,270,4
+18.46,Cape Coral,United States,526,KARL SEAL,61.4,1,Mike Hillyer,79.86,14,2005-08,2,273,2
+18.46,Cape Coral,United States,526,KARL SEAL,68.35,2,Jon Stephens,86.81,19,2005-07,2,273,4
+6.73,Valle de Santiago,Mexico,288,BOBBIE CRAIG,15.23,2,Jon Stephens,21.96,4,2005-05,1,281,14
+7.48,Huaian,China,384,ERNEST STEPP,27.45,2,Jon Stephens,34.93,7,2005-06,2,270,10
+7.73,Sucre,Bolivia,431,JOEL FRANCISCO,28.2,2,Jon Stephens,35.93,7,2005-06,2,270,7
+7.98,Garland,United States,561,IAN STILL,25.93,1,Mike Hillyer,33.91,9,2005-06,2,270,13
+7.98,Patras,Greece,596,ENRIQUE FORSYTHE,14.96,1,Mike Hillyer,22.94,6,2005-05,1,281,12
+8.06,Alvorada,Brazil,551,CLAYTON BARBEE,12.89,2,Jon Stephens,20.95,5,2005-05,2,239,8
+8.48,Lubumbashi,"Congo, The Democratic Republic of the",387,JESSE SCHILLING,13.48,1,Mike Hillyer,21.96,4,2005-05,2,239,6
+8.56,Escobar,Argentina,445,MICHEAL FORMAN,58.3,2,Jon Stephens,66.86,14,2005-08,1,326,14
+8.73,Izumisano,Japan,391,CLARENCE GAMEZ,16.23,1,Mike Hillyer,24.95,5,2005-05,1,281,7
+8.73,Kamarhati,India,31,BRENDA WRIGHT,27.16,1,Mike Hillyer,35.89,11,2005-06,2,270,9
+8.82,Tsuyama,Japan,429,FREDERICK ISBELL,18.13,2,Jon Stephens,26.95,5,2005-05,2,239,4
+8.9,Ede,Netherlands,341,PETER MENARD,29.03,1,Mike Hillyer,37.93,7,2005-06,1,320,5
+8.9,Kisumu,Kenya,193,KATIE ELLIOTT,27.04,1,Mike Hillyer,35.94,6,2005-06,2,270,6
+8.98,Klerksdorp,South Africa,109,EDNA WEST,18.95,1,Mike Hillyer,27.93,7,2005-05,2,239,3
+8.98,Maring,Brazil,246,MARIAN MENDOZA,21.97,1,Mike Hillyer,30.95,5,2005-05,1,281,1
+8.98,Nagareyama,Japan,53,HEATHER MORRIS,17.96,1,Mike Hillyer,26.94,6,2005-05,1,281,4
+9.06,Taizz,Yemen,213,GINA WILLIAMSON,26.85,1,Mike Hillyer,35.91,9,2005-06,1,320,11
+9.15,Etawah,India,121,JOSEPHINE GOMEZ,58.72,1,Mike Hillyer,67.86,14,2005-08,1,326,13
+9.23,Jalib al-Shuyukh,Kuwait,234,CLAUDIA FULLER,27.69,2,Jon Stephens,36.92,8,2005-06,1,320,7
+9.23,Mwene-Ditu,"Congo, The Democratic Republic of the",375,AARON SELBY,12.73,1,Mike Hillyer,21.96,4,2005-05,2,239,6
+9.23,Uttarpara-Kotrung,India,231,GEORGIA JACOBS,12.74,1,Mike Hillyer,21.97,3,2005-05,1,281,13
+9.39,Citrus Heights,United States,14,BETTY WHITE,11.56,2,Jon Stephens,20.95,5,2005-05,2,239,10
+9.56,Paarl,South Africa,338,DENNIS GILMAN,25.37,1,Mike Hillyer,34.93,7,2005-06,1,320,12
+9.64,Shikarpur,Pakistan,25,DEBORAH WALKER,24.3,1,Mike Hillyer,33.94,6,2005-06,1,320,14
+9.73,Newcastle,South Africa,432,EDWIN BURK,13.24,1,Mike Hillyer,22.97,3,2005-05,1,281,10
+9.81,Effon-Alaiye,Nigeria,286,VELMA LUCAS,67.02,2,Jon Stephens,76.83,17,2005-07,1,326,16
+9.81,Jinzhou,China,595,TERRENCE GUNDERSON,77.0,2,Jon Stephens,86.81,19,2005-07,1,326,6
+9.89,Dhaka,Bangladesh,332,STEPHEN QUALLS,68.94,1,Mike Hillyer,78.83,17,2005-07,1,326,13
+9.89,Owo,Nigeria,280,TRACEY BARRETT,58.99,2,Jon Stephens,68.88,12,2005-08,2,273,13
+9.89,Salzburg,Austria,266,NORA HERRERA,61.94,1,Mike Hillyer,71.83,17,2005-08,2,273,8
+9.89,Sharja,United Arab Emirates,292,MISTY LAMBERT,64.95,2,Jon Stephens,74.84,16,2005-07,2,273,12
+9.97,Hanoi,Vietnam,340,PATRICK NEWSOM,25.95,1,Mike Hillyer,35.92,8,2005-06,1,320,10
+9.98,Pjatigorsk,Russian Federation,487,HECTOR POINDEXTER,58.91,2,Jon Stephens,68.89,11,2005-08,2,273,12

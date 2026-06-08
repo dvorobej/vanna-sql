@@ -1,0 +1,8 @@
+avg_prev_3_months_amount,country_median_monthly_amount,country_month_percent_rank,country_name,customer_first_name,customer_id,customer_last_name,distinct_staff_count,distinct_store_count,monthly_payment_amount,payment_count,payment_month
+0.0,0.99,0.0,Germany,COLLEEN,227,BURTON,1,1,4.99,1,2006-02
+0.0,0.99,0.0,Germany,GRACE,114,ELLIS,1,1,4.99,1,2006-02
+0.0,1.5,0.0,Bolivia,JOEL,431,FRANCISCO,1,1,2.99,1,2006-02
+0.0,1.5,0.0,Latvia,SARAH,23,LEWIS,1,1,2.99,1,2006-02
+17.29,25.92,0.0,United Kingdom,CECIL,512,VINES,2,2,62.87,13,2005-08
+25.28,37.42,0.0,Egypt,SHERRY,119,MARSHALL,2,2,77.82,18,2005-08
+25.93,42.9,0.0,Canada,CURTIS,410,IRBY,2,2,86.83,17,2005-08

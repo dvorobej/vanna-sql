@@ -163,7 +163,5 @@ Typical analysis:
 ## Limitations
 
 - Quality is judged by **result equivalence**, not SQL text equality. Different SQL that returns the same table is labeled `Everything matches`.
-- Conversely, syntactically similar SQL with different results is labeled `Not matching values`.
-- Failed or non-read-only SQL is lumped into `Not generated`; there is no separate label for execution errors vs. invalid SQL.
 - Each combo × fold run reinitializes Qdrant and reloads DDLs, so evaluation is computationally expensive (`len(models) × len(comment_styles) × len(description_styles)` combos × `n_folds` × LLM calls per test query).
 - Only uuids with pre-generated ground-truth scripts and results are evaluated.
