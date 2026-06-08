@@ -179,7 +179,7 @@ def combine_search_ranking_metrics(
     combined_df = combined_df.loc[index_order, list(RANKING_METRIC_NAMES)]
     combined_df.index.name = "description_style"
 
-    output_dir = get_database_processed_dir(database_name)
+    output_dir = get_database_processed_dir(database_name) / "metrics"
     output_dir.mkdir(parents=True, exist_ok=True)
     output_path = output_dir / f"combined_search_top_k_{column_mode}.xlsx"
     combined_df.to_excel(output_path)

@@ -34,7 +34,7 @@ def plot_combined_search_ranking_metrics(
 
     if output_path is None:
         output_path = (
-            combined_metrics_path.parent
+            combined_metrics_path.parent.parent
             / "plots"
             / combined_metrics_path.with_suffix(".png").name
         )
