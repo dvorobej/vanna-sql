@@ -3,11 +3,12 @@ from __future__ import annotations
 import csv
 import re
 from pathlib import Path
-from typing import Any
+from typing import Any, Literal
 
+import pandas as pd
 from tqdm import tqdm
 
-from src.dataset import render_table_ddls
+from src.dataset import get_database_processed_dir, render_table_ddls
 from src.vanna_connector import VannaClient, initialize_vanna
 
 DEFAULT_SEARCH_QUERY_COLUMNS = [
@@ -15,6 +16,9 @@ DEFAULT_SEARCH_QUERY_COLUMNS = [
     "query_business_related",
     "query_technical_related",
 ]
+
+RANKING_METRIC_NAMES = ("mrr", "map_at_k", "recall_at_k")
+DESCRIPTION_STYLE_ORDER = ("short", "business", "technical")
 
 
 def reciprocal_rank(relevant_id: str, predicted_ids: list[str]) -> float:
@@ -129,6 +133,57 @@ def compute_ranking_metrics(
         saved_paths.append(metrics_path)
 
     return saved_paths
+
+
+def combine_search_ranking_metrics(
+    metrics_paths: list[Path | str],
+    database_name: str,
+    column_mode: Literal["combined", "respective"],
+) -> Path:
+    """Combine per-style ranking metrics CSVs into one wide Excel file."""
+    if not metrics_paths:
+        raise ValueError("metrics_paths must contain at least one path.")
+
+    combined_rows: dict[str, dict[str, float]] = {}
+    for metrics_path in metrics_paths:
+        metrics_path = Path(metrics_path)
+        description_style = _description_style_from_ranking_metrics_path(metrics_path)
+        target_column = _column_filter_for_mode(column_mode, description_style)
+
+        metrics_df = pd.read_csv(metrics_path)
+        filtered = metrics_df[metrics_df["column"] == target_column]
+        if filtered.empty:
+            raise ValueError(
+                f"No rows with column={target_column!r} in {metrics_path}."
+            )
+
+        row_values: dict[str, float] = {}
+        for metric_name in RANKING_METRIC_NAMES:
+            metric_rows = filtered[filtered["metric"] == metric_name]
+            if metric_rows.empty:
+                raise ValueError(
+                    f"Metric {metric_name!r} missing for column={target_column!r} "
+                    f"in {metrics_path}."
+                )
+            row_values[metric_name] = float(metric_rows.iloc[0]["value"])
+
+        combined_rows[description_style] = row_values
+
+    index_order = [
+        style for style in DESCRIPTION_STYLE_ORDER if style in combined_rows
+    ]
+    index_order.extend(
+        style for style in combined_rows if style not in DESCRIPTION_STYLE_ORDER
+    )
+    combined_df = pd.DataFrame.from_dict(combined_rows, orient="index")
+    combined_df = combined_df.loc[index_order, list(RANKING_METRIC_NAMES)]
+    combined_df.index.name = "description_style"
+
+    output_dir = get_database_processed_dir(database_name)
+    output_dir.mkdir(parents=True, exist_ok=True)
+    output_path = output_dir / f"combined_search_top_k_{column_mode}.xlsx"
+    combined_df.to_excel(output_path)
+    return output_path
 
 
 def run_search_evaluation_pipeline(
@@ -323,6 +378,28 @@ def _style_name_from_search_result_path(path: Path) -> str:
     if not match:
         raise ValueError(f"Could not infer style name from search result file {path}.")
     return match.group(1)
+
+
+def _description_style_from_ranking_metrics_path(path: Path) -> str:
+    match = re.match(r"ranking_metrics_(.+)$", path.stem)
+    if not match:
+        raise ValueError(
+            f"Could not infer description style from ranking metrics file {path}."
+        )
+    return match.group(1)
+
+
+def _column_filter_for_mode(
+    column_mode: Literal["combined", "respective"],
+    description_style: str,
+) -> str:
+    if column_mode == "combined":
+        return "combined"
+    if column_mode == "respective":
+        return f"predicted_{description_style}"
+    raise ValueError(
+        f"Unknown column_mode={column_mode!r}. Supported: 'combined', 'respective'."
+    )
 
 
 def _parse_predicted_ids(value: str | None) -> list[str]:

@@ -5,6 +5,7 @@ loguru
 matplotlib
 notebook
 numpy
+openpyxl
 pandas
 pip
 pytest
