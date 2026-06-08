@@ -9,7 +9,7 @@ import pandas as pd
 from sklearn.model_selection import StratifiedKFold
 from tqdm import tqdm
 
-from src.dataset import get_sqlite_database_path, render_table_ddls
+from src.dataset import get_database_processed_dir, get_sqlite_database_path, render_table_ddls
 from src.script_generator import _is_read_only_sql, _normalize_result
 from src.search_metrics import (
     _dedupe_corpus_pairs,
@@ -24,6 +24,18 @@ LABEL_NOT_MATCHING_ROWS = "Not matching number of rows"
 LABEL_NOT_MATCHING_COLS = "Not matching number of columns"
 LABEL_NOT_MATCHING_VALUES = "Not matching values"
 LABEL_EVERYTHING_MATCHES = "Everything matches"
+
+GENERATION_LABEL_ORDER = (
+    LABEL_EVERYTHING_MATCHES,
+    LABEL_NOT_MATCHING_VALUES,
+    LABEL_NOT_MATCHING_COLS,
+    LABEL_NOT_MATCHING_ROWS,
+    LABEL_NOT_MATCHING_ROWS_AND_COLS,
+    LABEL_NOT_GENERATED,
+)
+DIFFICULTY_ORDER = ("easy", "medium", "hard")
+COMMENT_STYLES = ("inline", "yaml")
+DESCRIPTION_STYLES = ("short", "business", "technical")
 
 
 def run_generation_evaluation_pipeline(
@@ -245,6 +257,59 @@ def compute_generation_metrics(
     return saved_paths
 
 
+def combine_generation_metrics(
+    generation_metrics_paths: list[Path | str],
+    database_name: str,
+    source_column: str | None = None,
+) -> Path:
+    """Combine per-combo generation label CSVs into one wide Excel file."""
+    if not generation_metrics_paths:
+        raise ValueError("generation_metrics_paths must contain at least one path.")
+
+    combined_rows: list[dict[str, Any]] = []
+    for metrics_path in generation_metrics_paths:
+        metrics_path = Path(metrics_path)
+        combo_stem = _strip_source_column_suffix(metrics_path.stem, source_column)
+        comment_style, description_style, model_name = _parse_combo_from_metrics_stem(
+            combo_stem
+        )
+
+        metrics_df = pd.read_csv(metrics_path)
+        label_counts = _count_labels_by_difficulty(metrics_df)
+        for difficulty, label_row in label_counts.iterrows():
+            row = {
+                "difficulty": difficulty,
+                "model_name": model_name,
+                "comment_style": comment_style,
+                "description_style": description_style,
+            }
+            for label in GENERATION_LABEL_ORDER:
+                row[label] = int(label_row.get(label, 0))
+            combined_rows.append(row)
+
+    combined_df = pd.DataFrame(combined_rows)
+    combined_df["difficulty"] = pd.Categorical(
+        combined_df["difficulty"],
+        categories=list(DIFFICULTY_ORDER),
+        ordered=True,
+    )
+    combined_df = combined_df.sort_values(
+        ["difficulty", "model_name", "comment_style", "description_style"]
+    )
+    combined_df = combined_df.set_index(
+        ["difficulty", "model_name", "comment_style", "description_style"]
+    )
+    combined_df = combined_df.reindex(columns=list(GENERATION_LABEL_ORDER), fill_value=0)
+    combined_df = combined_df.astype(int)
+
+    output_suffix = "rewritten" if source_column is None else source_column
+    output_dir = get_database_processed_dir(database_name) / "metrics"
+    output_dir.mkdir(parents=True, exist_ok=True)
+    output_path = output_dir / f"combined_generation_{output_suffix}.xlsx"
+    combined_df.to_excel(output_path)
+    return output_path
+
+
 def _build_eval_rows(
     rows: list[dict[str, str]],
     description_column: str,
@@ -367,3 +432,50 @@ def _write_metrics_label_csv(path: Path, rows: list[dict[str, str]]) -> None:
         writer = csv.DictWriter(file, fieldnames=fieldnames)
         writer.writeheader()
         writer.writerows(rows)
+
+
+def _strip_source_column_suffix(stem: str, source_column: str | None) -> str:
+    if source_column is None:
+        return stem
+    suffix = f"_{source_column}"
+    if stem.endswith(suffix):
+        return stem[: -len(suffix)]
+    return stem
+
+
+def _parse_combo_from_metrics_stem(stem: str) -> tuple[str, str, str]:
+    parts = stem.split("_")
+    if len(parts) < 3:
+        raise ValueError(
+            f"Could not parse combo from metrics filename stem {stem!r}. "
+            "Expected format: {{comment_style}}_{{description_style}}_{{model_name}}."
+        )
+
+    comment_style = parts[0]
+    description_style = parts[1]
+    model_name = "_".join(parts[2:])
+
+    if comment_style not in COMMENT_STYLES:
+        raise ValueError(
+            f"Unknown comment_style={comment_style!r} in {stem!r}. "
+            f"Supported: {', '.join(COMMENT_STYLES)}."
+        )
+    if description_style not in DESCRIPTION_STYLES:
+        raise ValueError(
+            f"Unknown description_style={description_style!r} in {stem!r}. "
+            f"Supported: {', '.join(DESCRIPTION_STYLES)}."
+        )
+    return comment_style, description_style, model_name
+
+
+def _count_labels_by_difficulty(metrics_df: pd.DataFrame) -> pd.DataFrame:
+    if "difficulty" not in metrics_df.columns or "label" not in metrics_df.columns:
+        raise ValueError("Metrics CSV must contain 'difficulty' and 'label' columns.")
+
+    label_counts = (
+        metrics_df.groupby(["difficulty", "label"]).size().unstack(fill_value=0)
+    )
+    for label in GENERATION_LABEL_ORDER:
+        if label not in label_counts.columns:
+            label_counts[label] = 0
+    return label_counts[list(GENERATION_LABEL_ORDER)]
