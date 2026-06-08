@@ -113,9 +113,9 @@ class QdrantVectorStore(Qdrant_VectorStore):
             doc_list=doc_list,
             **kwargs,
         )
-        self.log(title="SQL Prompt", message=prompt)
+        # self.log(title="SQL Prompt", message=prompt)
         llm_response = self.submit_prompt(prompt, **kwargs)
-        self.log(title="LLM Response", message=llm_response)
+        # self.log(title="LLM Response", message=llm_response)
 
         if "intermediate_sql" in llm_response:
             if not allow_llm_to_see_data:
@@ -130,7 +130,7 @@ class QdrantVectorStore(Qdrant_VectorStore):
                     )
 
                 try:
-                    self.log(title="Running Intermediate SQL", message=intermediate_sql)
+                    # self.log(title="Running Intermediate SQL", message=intermediate_sql)
                     df = self.run_sql(intermediate_sql)
 
                     prompt = self.get_sql_prompt(
@@ -145,9 +145,9 @@ class QdrantVectorStore(Qdrant_VectorStore):
                         ],
                         **kwargs,
                     )
-                    self.log(title="Final SQL Prompt", message=prompt)
+                    # self.log(title="Final SQL Prompt", message=prompt)
                     llm_response = self.submit_prompt(prompt, **kwargs)
-                    self.log(title="LLM Response", message=llm_response)
+                    # self.log(title="LLM Response", message=llm_response)
                 except Exception as e:
                     return f"Error running intermediate SQL: {e}"
 

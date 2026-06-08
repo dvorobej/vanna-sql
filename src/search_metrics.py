@@ -35,17 +35,6 @@ def recall_at_k(relevant_id: str, predicted_ids: list[str], k: int) -> float:
     return 1.0 if relevant_id in predicted_ids[:k] else 0.0
 
 
-def combine_predicted_ids(*lists: list[str]) -> list[str]:
-    combined: list[str] = []
-    seen: set[str] = set()
-    for predicted_ids in lists:
-        for predicted_id in predicted_ids:
-            if predicted_id and predicted_id not in seen:
-                combined.append(predicted_id)
-                seen.add(predicted_id)
-    return combined
-
-
 def compute_ranking_metrics(
     search_result_paths: list[Path | str],
     k: int,
@@ -70,9 +59,11 @@ def compute_ranking_metrics(
 
         rows = _read_csv_rows(search_result_path)
         metrics_rows: list[dict[str, Any]] = []
+        column_scores: list[dict[str, list[float]]] = []
 
         for predicted_column in predicted_columns:
             scores = _metric_scores_for_column(rows, true_label_column, predicted_column, k)
+            column_scores.append(scores)
             metrics_rows.extend(
                 [
                     {
@@ -96,7 +87,7 @@ def compute_ranking_metrics(
                 ]
             )
 
-        combined_scores = _combined_metric_scores(rows, true_label_column, predicted_columns, k)
+        combined_scores = _pool_metric_scores(*column_scores)
         metrics_rows.extend(
             [
                 {
@@ -259,28 +250,17 @@ def _metric_scores_for_column(
     return {"mrr": mrr_scores, "map_at_k": map_scores, "recall_at_k": recall_scores}
 
 
-def _combined_metric_scores(
-    rows: list[dict[str, str]],
-    true_label_column: str,
-    predicted_columns: list[str],
-    k: int,
+def _pool_metric_scores(
+    *score_dicts: dict[str, list[float]],
 ) -> dict[str, list[float]]:
     mrr_scores: list[float] = []
     map_scores: list[float] = []
     recall_scores: list[float] = []
 
-    for row in rows:
-        relevant_id = row.get(true_label_column, "").strip()
-        if not relevant_id:
-            continue
-        per_column_predictions = [
-            _parse_predicted_ids(row.get(predicted_column, ""))
-            for predicted_column in predicted_columns
-        ]
-        combined_predictions = combine_predicted_ids(*per_column_predictions)
-        mrr_scores.append(reciprocal_rank(relevant_id, combined_predictions))
-        map_scores.append(average_precision_at_k(relevant_id, combined_predictions, k))
-        recall_scores.append(recall_at_k(relevant_id, combined_predictions, k))
+    for scores in score_dicts:
+        mrr_scores.extend(scores["mrr"])
+        map_scores.extend(scores["map_at_k"])
+        recall_scores.extend(scores["recall_at_k"])
 
     return {"mrr": mrr_scores, "map_at_k": map_scores, "recall_at_k": recall_scores}
 

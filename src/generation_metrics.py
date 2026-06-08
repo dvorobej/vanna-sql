@@ -56,112 +56,130 @@ def run_generation_evaluation_pipeline(
         raise ValueError(f"No rows with SQL scripts found in {scripts_dir}.")
 
     saved_paths: list[Path] = []
-    for model_key, model_name in models.items():
+    combo_configs = [
+        (model_key, model_name, comment_style, description_style)
+        for model_key, model_name in models.items()
+        for comment_style in comment_styles
+        for description_style in description_styles
+    ]
+    for model_key, model_name, comment_style, description_style in tqdm(
+        combo_configs,
+        desc="Generation evaluation combos",
+    ):
         combo_openai_config = _openai_config_for_model(openai_config, model_name)
-        for comment_style in comment_styles:
-            for description_style in description_styles:
-                combo = f"{comment_style}_{description_style}_{model_key}"
-                description_column = source_column or f"query_{description_style}"
-                if description_column not in filtered_rows[0]:
-                    raise ValueError(
-                        f"Column {description_column!r} was not found in {descriptions_csv_path}."
-                    )
+        combo = f"{comment_style}_{description_style}_{model_key}"
+        if source_column is not None:
+            combo = f"{combo}_{source_column}"
+        description_column = source_column or f"query_{description_style}"
+        if description_column not in filtered_rows[0]:
+            raise ValueError(
+                f"Column {description_column!r} was not found in {descriptions_csv_path}."
+            )
 
-                corpus_pairs = _dedupe_corpus_pairs(
-                    filtered_rows, description_column, scripts_dir
-                )
-                eval_rows = _build_eval_rows(filtered_rows, description_column)
-                if len(eval_rows) < n_folds:
-                    raise ValueError(
-                        f"Not enough evaluation rows ({len(eval_rows)}) for {n_folds} folds."
-                    )
+        corpus_pairs = _dedupe_corpus_pairs(
+            filtered_rows, description_column, scripts_dir
+        )
+        eval_rows = _build_eval_rows(filtered_rows, description_column)
+        if len(eval_rows) < n_folds:
+            raise ValueError(
+                f"Not enough evaluation rows ({len(eval_rows)}) for {n_folds} folds."
+            )
 
-                scripts_subdir = generation_dir / "prediction_scripts" / combo
-                results_subdir = generation_dir / "prediction_results" / combo
-                scripts_subdir.mkdir(parents=True, exist_ok=True)
-                results_subdir.mkdir(parents=True, exist_ok=True)
+        scripts_subdir = generation_dir / "prediction_scripts" / combo
+        results_subdir = generation_dir / "prediction_results" / combo
+        scripts_subdir.mkdir(parents=True, exist_ok=True)
+        results_subdir.mkdir(parents=True, exist_ok=True)
 
-                sqlite_path = get_sqlite_database_path(
-                    database_name=database_name,
-                    comment_style=comment_style,
-                    comment_variant=description_style,
-                )
-                combo_db_config = _db_config_for_sqlite_path(db_config, sqlite_path)
+        sqlite_path = get_sqlite_database_path(
+            database_name=database_name,
+            comment_style=comment_style,
+            comment_variant=description_style,
+        )
+        combo_db_config = _db_config_for_sqlite_path(db_config, sqlite_path)
 
-                difficulties = [row["difficulty"] for row in eval_rows]
+        difficulties = [row["difficulty"] for row in eval_rows]
+        try:
+            splitter = StratifiedKFold(
+                n_splits=n_folds,
+                shuffle=True,
+                random_state=42,
+            )
+            fold_splits = list(splitter.split(eval_rows, difficulties))
+        except ValueError as exc:
+            raise ValueError(
+                f"Stratified k-fold failed for combo {combo!r} with n_folds={n_folds}. "
+                "Try lowering n_folds so each difficulty class has enough samples."
+            ) from exc
+
+        for fold_index, (train_indices, test_indices) in enumerate(
+            tqdm(
+                fold_splits,
+                desc=f"Folds ({combo})",
+                leave=False,
+            )
+        ):
+            train_uuids = {eval_rows[index]["uuid"] for index in train_indices}
+            test_rows = [eval_rows[index] for index in test_indices]
+
+            client = initialize_vanna(
+                qdrant_config=qdrant_config,
+                openai_config=combo_openai_config,
+                db_config=combo_db_config,
+            )
+
+            if delete_collections:
+                for collection_name in collection_names:
+                    client.remove_collection(collection_name)
+
+            table_ddls = render_table_ddls(
+                database_name=database_name,
+                comment_style=comment_style,
+                comment_variant=description_style,
+            )
+            for ddl in tqdm(
+                table_ddls,
+                desc=f"Uploading DDL ({combo}, fold {fold_index + 1}/{n_folds})",
+                leave=False,
+            ):
+                client.add_ddl(ddl)
+
+            train_pairs = [
+                (row_uuid, description, sql)
+                for row_uuid, description, sql in corpus_pairs
+                if row_uuid in train_uuids and description.strip()
+            ]
+            for row_uuid, description, sql in tqdm(
+                train_pairs,
+                desc=f"Uploading SQL ({combo}, fold {fold_index + 1}/{n_folds})",
+                leave=False,
+            ):
+                client.add_question_sql(question=description, sql=sql)
+
+            for test_row in tqdm(
+                test_rows,
+                desc=f"Generating SQL ({combo}, fold {fold_index + 1}/{n_folds})",
+                leave=False,
+            ):
+                query = test_row["query"]
+                row_uuid = test_row["uuid"]
+                sql = client.generate_sql(query).strip()
+                (scripts_subdir / f"{row_uuid}.sql").write_text(sql, encoding="utf-8")
+
+                if not _is_read_only_sql(sql):
+                    continue
+
                 try:
-                    splitter = StratifiedKFold(
-                        n_splits=n_folds,
-                        shuffle=True,
-                        random_state=42,
-                    )
-                    fold_splits = list(splitter.split(eval_rows, difficulties))
-                except ValueError as exc:
-                    raise ValueError(
-                        f"Stratified k-fold failed for combo {combo!r} with n_folds={n_folds}. "
-                        "Try lowering n_folds so each difficulty class has enough samples."
-                    ) from exc
+                    result = client.run_sql(sql)
+                except Exception:
+                    continue
 
-                for fold_index, (train_indices, test_indices) in enumerate(fold_splits):
-                    train_uuids = {eval_rows[index]["uuid"] for index in train_indices}
-                    test_rows = [eval_rows[index] for index in test_indices]
+                if result is None or result.empty:
+                    continue
 
-                    client = initialize_vanna(
-                        qdrant_config=qdrant_config,
-                        openai_config=combo_openai_config,
-                        db_config=combo_db_config,
-                    )
+                result = _normalize_result(result)
+                result.to_csv(results_subdir / f"{row_uuid}.csv", index=False)
 
-                    if delete_collections:
-                        for collection_name in collection_names:
-                            client.remove_collection(collection_name)
-
-                    table_ddls = render_table_ddls(
-                        database_name=database_name,
-                        comment_style=comment_style,
-                        comment_variant=description_style,
-                    )
-                    for ddl in tqdm(
-                        table_ddls,
-                        desc=f"Uploading DDL ({combo}, fold {fold_index + 1}/{n_folds})",
-                    ):
-                        client.add_ddl(ddl)
-
-                    train_pairs = [
-                        (row_uuid, description, sql)
-                        for row_uuid, description, sql in corpus_pairs
-                        if row_uuid in train_uuids and description.strip()
-                    ]
-                    for row_uuid, description, sql in tqdm(
-                        train_pairs,
-                        desc=f"Uploading SQL ({combo}, fold {fold_index + 1}/{n_folds})",
-                    ):
-                        client.add_question_sql(question=description, sql=sql)
-
-                    for test_row in tqdm(
-                        test_rows,
-                        desc=f"Generating SQL ({combo}, fold {fold_index + 1}/{n_folds})",
-                    ):
-                        query = test_row["query"]
-                        row_uuid = test_row["uuid"]
-                        sql = client.generate_sql(query).strip()
-                        (scripts_subdir / f"{row_uuid}.sql").write_text(sql, encoding="utf-8")
-
-                        if not _is_read_only_sql(sql):
-                            continue
-
-                        try:
-                            result = client.run_sql(sql)
-                        except Exception:
-                            continue
-
-                        if result is None or result.empty:
-                            continue
-
-                        result = _normalize_result(result)
-                        result.to_csv(results_subdir / f"{row_uuid}.csv", index=False)
-
-                saved_paths.append(results_subdir)
+        saved_paths.append(results_subdir)
 
     return saved_paths
 

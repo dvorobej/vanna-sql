@@ -35,3 +35,31 @@ Then we would need another function, that will do the following:
 - As the result you should have a .csv with columns 'uuid', 'difficulty', 'label' for all uuid that have an SQL.
 - After checking this for each result from ground truth, you should save the result as a .csv in generated/metrics/{name of subfolder from where you took predicted results, like yaml_short + model name}.csv.
 
+
+# generation
+
+
+I want you to add code to @src/generation_metrics.py that will do the following:
+- it should take paths to generation_metrics_paths. It should also take a string, that should be deleted from the end of each file path, if the filename ends with this.
+- Then it should combine all datasets into one,  as columns we should have all possible labels from @src/generation_metrics.py like 'No matching values', 'Not generated' and so on. As index - difficulty, then model name (parsed from path), then comment style (parsed from path), then description style. As values - counts (values from initial .csv files)
+- Then you should save the result in processed/{database_name}/metrics/combined_search_top_k.xlsx, if special
+parameter called source_column was passed (not None) then as combined_search_top_k_{source_column}.xlsx. 
+
+Then I want you to add to file @src/plots.py a code, that will take a path to this combined metrics file and make a plot, it should also take style of comment and description as params and plot only those (actually you can make it into a list of tuples, each should have each own plot). The result should consist of 3 subplots in rows for each difficulty level, all the models should be present on one plot. It should be a bar plot, where we should have label like 'Everything matches' and then we have each models bar with their names at top (close to each other), then some distance and then next label and so on. Labels should always go in the same order. Use all labels. Some models for some labels may have 0 values, it okay, still plot them. The result should be saved in processed/{database_name}/plots/combined_search_top_k.png. (Use the same name as from the passed throug param)
+
+Also add the cells to notebook 4_generation_evaluation.ipynb that will call each of these functions.
+If you have any question - ask them please.
+
+
+# search
+
+I want you to add code to @src/search_metrics.py that will do the following:
+- it should take paths to metrics_paths, and mode for column it can be either 'combined', then it should use rows with column 'combined', or 'respective' then it should parse the type from the name of the file (like technical) and then for this file use 'predicted_technical' and so on.
+- then it should combine all datasets into one. As index use combination of description and comment style parsed from the name of each file. Then save the result in processed/{database_name}/combined_search_top_k_{combined/respective}.xlsx
+
+
+
+Then update @plots.py, so that it have a function that will receive a path to the combined file, load it and make 3 subplots (for each metric), it should be just a barplot that will use as a height value of the metric and as a name of the column style + description. Then save the result with the same name in processed/{database_name}/plots/combined_search_top_k_{combined/respective}.png ( Use the same name as from the passed throug param)
+
+Also add the cells to notebook 3_search_evaluation.ipynb that will call each of these functions.
+If you have any questions - ask them please.

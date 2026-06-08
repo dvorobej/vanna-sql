@@ -1,8 +1,0 @@
-SELECT
-  p01,
-  p02,
-  p05,
-  p06
-FROM pay
-ORDER BY p05 DESC
-LIMIT 10;

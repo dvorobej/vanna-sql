@@ -1,8 +1,0 @@
-SELECT
-  p02,
-  p05,
-  p06
-FROM pay
-WHERE p05 > 5.00
-ORDER BY p06 DESC
-LIMIT 20;

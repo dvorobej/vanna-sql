@@ -1,4 +1,0 @@
-city_avg_monthly_amount,city_name,country_avg_monthly_amount,country_name,customer_id,first_name,growth_to_previous_month,last_name,max_payment,monthly_amount,payment_count,payment_month,previous_monthly_amount,staff_count,store_id,suspicious_activity
-22.96,Aurora,16.4,United States,537,CLINTON,18.97,BUFORD,8.99,23.96,4,2005-06,4.99,2,2,1
-41.91,London,30.7,United Kingdom,512,CECIL,25.96,VINES,9.99,62.87,13,2005-08,36.91,2,1,1
-8.49,Aurora,9.67,United States,330,SCOTT,11.98,SHELLEY,7.99,11.98,2,2005-05,,2,1,1
