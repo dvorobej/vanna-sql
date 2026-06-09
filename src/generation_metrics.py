@@ -188,7 +188,7 @@ def run_generation_evaluation_pipeline(
                 if result is None or result.empty:
                     continue
 
-                result = _normalize_result(result)
+                # result = _normalize_result(result)
                 result.to_csv(results_subdir / f"{row_uuid}.csv", index=False)
 
         saved_paths.append(results_subdir)
@@ -238,8 +238,10 @@ def compute_generation_metrics(
             if not predicted_path.exists():
                 label = LABEL_NOT_GENERATED
             else:
-                ground_truth_df = _normalize_result(pd.read_csv(ground_truth_path))
-                predicted_df = _normalize_result(pd.read_csv(predicted_path))
+                ground_truth_df = pd.read_csv(ground_truth_path)
+                predicted_df = pd.read_csv(predicted_path)
+                # ground_truth_df = _normalize_result(pd.read_csv(ground_truth_path))
+                # predicted_df = _normalize_result(pd.read_csv(predicted_path))
                 label = _compare_result_label(ground_truth_df, predicted_df)
 
             metrics_rows.append(

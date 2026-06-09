@@ -1,0 +1,102 @@
+uuid,difficulty,label
+f1140c84-b66d-490e-9d83-3de6d176eb54,easy,Not matching number of columns
+3cda7385-21da-4f07-abde-73f56b1349a0,easy,Not matching number of rows
+c83b36a8-ef82-457d-b1d6-02d545d29bbc,easy,Not matching number of rows
+062cd950-c5ed-4e87-813b-52cad44d2c5e,easy,Everything matches
+4c5c111e-4f35-4ce4-8b66-cbd766a6f310,easy,Not matching number of rows
+9cc40573-ad05-4c35-b394-299be6964d46,easy,Not matching number of rows
+53027735-3f07-4adb-a8a3-b78d9ada5676,easy,Everything matches
+9d371810-66c5-4696-a6ed-857f99475c7e,easy,Not matching number of columns
+f982df31-d473-49d5-9bcd-12c1d3561eb6,easy,Everything matches
+187f8866-9b52-45b9-b5d2-2cfeebf5d495,easy,Everything matches
+db5f1c75-e149-4210-826f-6e1dccf7725d,easy,Not matching number of rows
+79e12197-f44c-43ea-9c97-67f51a473bd7,easy,Everything matches
+98792c89-cae4-4298-b795-c79e2370f712,easy,Everything matches
+3080029d-8559-4016-b50b-8199996248ce,easy,Everything matches
+982ba9e1-cfce-4cfc-bed5-750ba378ed8a,easy,Everything matches
+59e5d8aa-300d-4a1a-9629-e0fe566459b7,easy,Everything matches
+5f1d9bf6-a244-498b-853b-cae76b3d16f2,easy,Not matching number of rows
+824f809c-a611-41d7-ad15-4bfaad97d1cb,easy,Not matching number of columns
+56190d33-c39e-4bcf-8560-7f53438d3dcb,easy,Not matching number of rows
+adb8be8e-6d37-4b7e-bc1e-511e4bb2437a,easy,Everything matches
+54d06772-c15c-4ff4-95dc-8c127270eca4,easy,Everything matches
+9536c50d-7d7e-4214-a08b-5739fbf47a3d,easy,Everything matches
+0ee3ed2a-6a50-41a0-bc46-c1687b8fcd18,easy,Not matching number of rows
+81458735-6b3d-469c-98fc-0934c4bfd524,easy,Everything matches
+1e58a7d0-fb6b-46c7-927b-c48f719e9f0c,easy,Everything matches
+dd708062-a3f4-4363-bac1-3e619a07ab59,easy,Not matching number of rows
+bfe74843-ebd6-490d-9779-a6c9f52396cc,easy,Not matching number of rows
+e54b25a5-2b79-48a8-b29c-47bd764eac70,easy,Everything matches
+6b233993-1821-486b-bae6-6736b5c152a5,easy,Not matching number of rows
+fede62ca-dc15-4370-9c70-a929528257b4,easy,Everything matches
+0a8f6dd8-39f4-44fe-a449-7cd3546530cc,easy,Everything matches
+add1f6d1-a6a3-49ce-ba42-4784a1123ebd,easy,Everything matches
+860f2a0b-68d8-4602-a89b-15d085c2c12b,easy,Not matching number of rows
+9477ef72-9342-4ead-85a9-077ffe8d96e8,easy,Not matching number of rows
+3458d6c5-410a-425b-9a37-8ee7e99626ec,easy,Everything matches
+4a627a1c-3a60-4d99-bc76-88b4717ec3e5,easy,Not matching number of rows
+210279ab-780e-4d75-98e5-54eee16f2073,easy,Everything matches
+18bcec9e-269f-4430-b47d-c692f7858ae3,easy,Not matching number of rows
+c75df632-75e8-4937-943b-0d039d96395a,easy,Not matching number of rows
+34dfc2f5-6501-4a3a-8ec9-4f0b189031d0,easy,Not matching number of rows
+6130e0c2-a4ea-4efa-9e93-a38a5aebfd97,medium,Not matching values
+717eeaa6-5571-4ef4-9441-aced5366f73b,medium,Everything matches
+811cc219-5a88-438e-89be-e46f8bb6b258,medium,Not matching number of rows
+4ac6187d-d713-4981-8240-f28015b9cd45,medium,Not matching values
+de6977c8-6590-4563-bc72-f2c5ed9fb3b3,medium,Not generated
+8bb5591a-7cbe-4e8e-9e8e-3b3303cdcf1f,medium,Not matching values
+02995c27-32cb-4ab2-88b5-d0153dc9a792,medium,Not matching values
+4c7a5af3-637f-4716-81fc-a90c31cc38c6,medium,Not matching number of columns
+07412620-0707-4f40-b0ae-931aa2ab237e,medium,Everything matches
+a1bc79ce-940f-48fd-84e4-83218e6247e6,medium,Not matching values
+05016dbf-f992-45ed-93a4-c220e4bf00f6,medium,Not matching number of columns
+14ea802a-8694-4f9f-bc3b-e0de2ecb031e,medium,Not matching number of columns
+a47e29e3-2d22-49dd-b385-0dad86f4611b,medium,Everything matches
+4f51a323-4056-443f-9b13-19d98f1dfd7f,medium,Not matching number of columns
+3407c7ce-37f3-43fe-b816-a2b30961fea6,medium,Not matching number of columns
+e51692f5-c39b-46a3-9661-e8b473c31bb9,medium,Not matching number of rows and cols
+c3acf841-a2dd-4989-a806-4f1b1aa68686,medium,Not matching number of columns
+5a5d10ab-1cc1-43f6-a460-619bf82a0cdc,medium,Everything matches
+d2a8ea02-8047-4b4f-ac56-980cbcd2b5b2,medium,Not matching values
+00130eee-286f-4b45-9c94-54402b4ce350,medium,Not matching number of rows
+ef47b801-671a-4951-afb2-7d93e9b12b61,medium,Not matching number of columns
+4b659cf9-490f-473b-9d23-48238df2fee5,medium,Everything matches
+dca9c42b-c628-4adc-890a-67ba36f33429,medium,Not matching number of rows
+603d4ca5-92b7-4e42-aed6-c1e0eae6b534,medium,Not matching values
+538b741e-6528-462a-9627-e50619160a04,medium,Not matching values
+1c38904b-8d40-4b88-9f2d-f0c8500501d9,medium,Everything matches
+f63d90c6-31ae-4390-b1dc-3196556326b4,medium,Not matching number of columns
+29503d07-da5c-4af6-8d58-f0a16875c547,medium,Not matching values
+4fae3dfa-5503-484b-b5cb-9cdadb877730,medium,Not matching values
+7ba6e0d4-5bca-4f62-bb0b-fbcfa3566b1b,medium,Not matching number of columns
+ccf5c8e3-4ef4-4ca0-9c42-68ef4ce80257,medium,Everything matches
+3528705d-4911-4960-94ac-c57836ff86bd,medium,Not generated
+cfe28b3e-71a6-4d99-88ff-02d604ae54f2,medium,Not matching values
+dcc95f64-4aa0-4eb7-a496-16f10244e565,medium,Not matching number of columns
+015bd43f-e43d-4c8d-825f-5b9c9fe9ae77,medium,Not matching number of rows
+06e4781c-1539-44dc-8811-63c372360608,medium,Not matching values
+ef913e98-7f33-4a1b-bb83-d018e9ad135e,medium,Not matching values
+8cd24075-338b-48d7-aad5-b2f219063aa3,medium,Not matching number of columns
+7bb74f81-c711-4132-ada5-903d3093186c,medium,Everything matches
+dec326d9-466b-4214-918e-07a1c3e59995,hard,Not matching number of rows and cols
+99a15afe-fede-4bb2-9081-387686200fda,hard,Not matching number of columns
+a6c57b8d-91a1-4402-b697-00121b36cc6f,hard,Not matching number of rows and cols
+d27b4b40-2818-4db4-8abb-6b0f8b4e1a4a,hard,Not matching number of rows and cols
+6e04dd06-0dc2-4738-9dc4-7c8dcf7ce99a,hard,Not generated
+b0634f53-99c5-4f96-b645-a701f0a08f07,hard,Not matching number of rows and cols
+d42366d3-9fd5-4973-9987-8ce8d22404d2,hard,Not generated
+764aa863-587b-49b3-8d6f-6b0c3fffb0e3,hard,Not matching number of rows and cols
+ed6c3600-2f2d-42fe-9ceb-237084133046,hard,Not generated
+096863c7-69b8-4b59-abc0-31638412714c,hard,Not matching number of rows and cols
+ca15089d-78f5-4c9a-8da6-25ca8d9049f3,hard,Not matching number of columns
+6715ebfb-2651-4355-8551-f92c9040d8a9,hard,Not matching number of rows and cols
+60ef9dca-2132-4f1a-baa6-609198cd3efe,hard,Not matching number of rows and cols
+39f961de-ddcc-4b8b-a3dd-82d7a40901e1,hard,Not matching number of rows and cols
+161a1957-09ae-48b2-8b71-c53731d2f91b,hard,Not matching number of rows and cols
+62362b67-fb2a-42b1-9bbb-08d862360577,hard,Not matching number of rows and cols
+3cf8b997-4630-47be-b8a9-d0a7ed8643b4,hard,Not matching number of rows and cols
+423d32a9-b883-441b-ba7c-5ed0fcdbb004,hard,Not matching number of rows and cols
+4ee62825-4805-4e79-b6dd-aea6768949a2,hard,Not matching number of rows and cols
+39bc0273-0e5b-47b8-b569-2e8d1a2682c8,hard,Not matching number of rows and cols
+faf551a9-a513-40b5-ab61-b7031e2ffc87,hard,Not matching number of rows
+894da50d-631b-4818-ab5f-b02703d2a328,hard,Not generated

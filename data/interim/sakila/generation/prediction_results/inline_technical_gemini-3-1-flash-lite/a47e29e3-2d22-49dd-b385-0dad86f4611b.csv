@@ -1,0 +1,2 @@
+customer_id,store_id,payment_count,average_payment,max_payment,share_of_large_payments_in_total
+454,2,10,5.290000000000001,9.99,0.18884688090737237

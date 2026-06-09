@@ -1,2 +1,2 @@
-average_payment,first_name,large_payment_count,last_name,payment_count,total_amount
-5.290000000000001,ALEX,1,GRESHAM,10,52.90000000000001
+first_name,last_name,payment_count,total_amount,average_payment,large_payment_count
+ALEX,GRESHAM,10,52.90000000000001,5.290000000000001,1

@@ -1,0 +1,2 @@
+customer_id,first_name,last_name,payment_count,total_amount,max_single_payment,risk_level
+454,ALEX,GRESHAM,10,52.90000000000001,9.99,обычный

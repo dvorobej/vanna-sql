@@ -1,0 +1,170 @@
+customer_id,customer_first_name,customer_last_name,country_name,city_name,payment_month,month_total_amount,payment_count,personal_avg_prev_months_amount,amount_deviation_multiplier,rank_in_country_month,customers_in_country_month,top_staff_first_name,top_staff_last_name
+454,ALEX,GRESHAM,Mexico,Uruapan,2005-06,52.9,10,7.99,6.62,1,590,Jon,Stephens
+176,JUNE,CARROLL,Algeria,Skikda,2005-06,42.92,8,21.95,1.96,3,590,Mike,Hillyer
+26,JESSICA,HALL,Holy See (Vatican City State),Citt del Vaticano,2005-06,41.93,7,5.98,7.01,4,590,Mike,Hillyer
+526,KARL,SEAL,United States,Cape Coral,2005-06,41.91,9,12.97,3.23,5,590,Jon,Stephens
+322,JASON,MORRISSEY,Argentina,Baha Blanca,2005-06,40.93,7,5.98,6.84,6,590,Mike,Hillyer
+550,GUY,BROWNLEE,China,Zhoushan,2005-06,39.94,6,7.99,5.0,7,590,Mike,Hillyer
+267,MARGIE,WADE,China,Lengshuijiang,2005-06,38.91,9,16.97,2.29,8,590,Jon,Stephens
+236,MARCIA,DEAN,Philippines,Tanza,2005-06,37.92,8,8.97,4.23,11,590,Jon,Stephens
+234,CLAUDIA,FULLER,Kuwait,Jalib al-Shuyukh,2005-06,36.92,8,4.99,7.4,12,590,Jon,Stephens
+193,KATIE,ELLIOTT,Kenya,Kisumu,2005-06,35.94,6,3.98,9.03,13,590,Jon,Stephens
+403,MIKE,WAY,India,Valparai,2005-06,35.94,6,3.98,9.03,13,590,Mike,Hillyer
+293,MAE,FLETCHER,Spain,Donostia-San Sebastin,2005-06,35.93,7,14.97,2.4,16,590,Mike,Hillyer
+316,STEVEN,CURLEY,India,Miraj,2005-06,35.93,7,15.97,2.25,16,590,Jon,Stephens
+431,JOEL,FRANCISCO,Bolivia,Sucre,2005-06,35.93,7,2.99,12.02,15,590,Jon,Stephens
+213,GINA,WILLIAMSON,Yemen,Taizz,2005-06,35.91,9,0.99,36.27,19,590,Mike,Hillyer
+338,DENNIS,GILMAN,South Africa,Paarl,2005-06,34.93,7,0.99,35.28,22,590,Mike,Hillyer
+384,ERNEST,STEPP,China,Huaian,2005-06,34.93,7,11.96,2.92,21,590,Mike,Hillyer
+260,CHRISTY,VARGAS,China,Datong,2005-06,34.92,8,8.99,3.88,23,590,Mike,Hillyer
+25,DEBORAH,WALKER,Pakistan,Shikarpur,2005-06,33.94,6,10.98,3.09,24,590,Mike,Hillyer
+576,MORRIS,MCCARTER,Taiwan,Fengshan,2005-06,33.93,7,3.98,8.53,25,590,Jon,Stephens
+510,BEN,EASTER,Russian Federation,Kamyin,2005-06,33.92,8,19.97,1.7,26,590,Jon,Stephens
+561,IAN,STILL,United States,Garland,2005-06,33.91,9,9.98,3.4,27,590,Mike,Hillyer
+571,JOHNNIE,CHISHOLM,Poland,Plock,2005-06,32.94,6,13.98,2.36,28,590,Mike,Hillyer
+46,CATHERINE,CAMPBELL,Russian Federation,Moscow,2005-06,32.93,7,10.97,3.0,29,590,Jon,Stephens
+149,VALERIE,BLACK,United States,Brockton,2005-06,32.93,7,4.99,6.6,29,590,Jon,Stephens
+171,DOLORES,WAGNER,Malaysia,Ipoh,2005-06,32.93,7,9.99,3.3,29,590,Jon,Stephens
+570,IVAN,CROMWELL,Mexico,Monclova,2005-06,32.93,7,7.99,4.12,29,590,Jon,Stephens
+295,DAISY,BATES,Russian Federation,Kolpino,2005-06,32.91,9,3.99,8.25,33,590,Mike,Hillyer
+21,MICHELLE,CLARK,Bangladesh,Tangail,2005-06,31.95,5,8.97,3.56,34,590,Mike,Hillyer
+204,ROSEMARY,SCHMIDT,Turkey,Usak,2005-06,31.94,6,12.96,2.46,36,590,Mike,Hillyer
+1,MARY,SMITH,Japan,Sasebo,2005-06,31.93,7,3.98,8.02,40,590,Mike,Hillyer
+200,JEANNE,LAWSON,Turkmenistan,Ashgabat,2005-06,31.93,7,9.99,3.2,38,590,Jon,Stephens
+299,JAMES,GANNON,Japan,Hiroshima,2005-06,31.93,7,14.98,2.13,40,590,Mike,Hillyer
+491,RICK,MATTOX,Egypt,Mit Ghamr,2005-06,31.93,7,3.98,8.02,38,590,Jon,Stephens
+197,SUE,PETERS,China,Changzhou,2005-06,31.92,8,20.92,1.53,42,590,Jon,Stephens
+467,ALVIN,DELOACH,Mexico,Cuauhtmoc,2005-06,30.96,4,4.99,6.2,44,590,Mike,Hillyer
+89,JULIA,FLORES,Argentina,La Plata,2005-06,30.95,5,9.97,3.1,47,590,Mike,Hillyer
+589,TRACY,HERRMANN,Ecuador,Loja,2005-06,30.95,5,10.97,2.82,45,590,Mike,Hillyer
+590,SETH,HANNON,Bahrain,al-Manama,2005-06,30.95,5,3.99,7.76,45,590,Mike,Hillyer
+327,LARRY,THRASHER,Turkey,Adana,2005-06,30.94,6,6.99,4.43,48,590,Jon,Stephens
+368,HARRY,ARCE,Iran,Najafabad,2005-06,30.94,6,17.96,1.72,48,590,Mike,Hillyer
+256,MABEL,HOLLAND,Myanmar,Monywa,2005-06,30.93,7,14.95,2.07,50,590,Jon,Stephens
+343,DOUGLAS,GRAF,Mexico,Mexicali,2005-06,30.93,7,7.98,3.88,51,590,Mike,Hillyer
+27,SHIRLEY,ALLEN,Philippines,Davao,2005-06,30.92,8,2.99,10.34,52,590,Jon,Stephens
+457,BILL,GAVIN,United States,Rockford,2005-06,30.91,9,7.99,3.87,53,590,Mike,Hillyer
+75,TAMMY,SANDERS,Taiwan,Changhwa,2005-06,29.95,5,5.98,5.01,54,590,Mike,Hillyer
+120,SYLVIA,ORTIZ,Colombia,Dos Quebradas,2005-06,29.94,6,8.98,3.33,55,590,Mike,Hillyer
+242,GLENDA,FRAZIER,China,Qinhuangdao,2005-06,29.94,6,11.97,2.5,55,590,Mike,Hillyer
+253,TERRY,CARLSON,Japan,Miyakonojo,2005-06,29.94,6,10.97,2.73,55,590,Jon,Stephens
+148,ELEANOR,HUNT,Runion,Saint-Denis,2005-07,100.78,22,13.97,7.21,1,599,Mike,Hillyer
+470,GORDON,ALLARD,Yemen,Hodeida,2005-07,96.83,17,6.48,14.94,2,599,Mike,Hillyer
+522,ARNOLD,HAVENS,Philippines,Santa Rosa,2005-07,96.82,18,11.48,8.44,3,599,Jon,Stephens
+137,RHONDA,KENNEDY,Netherlands,Apeldoorn,2005-07,96.81,19,11.48,8.44,4,599,Mike,Hillyer
+144,CLARA,SHAW,Belarus,Molodetno,2005-07,93.82,18,14.46,6.49,5,599,Jon,Stephens
+459,TOMMY,COLLAZO,Iran,Qomsheh,2005-07,89.82,18,14.46,6.21,6,599,Mike,Hillyer
+257,MARSHA,DOUGLAS,Mozambique,Beira,2005-07,88.82,18,7.48,11.88,7,599,Jon,Stephens
+295,DAISY,BATES,Russian Federation,Kolpino,2005-07,87.82,18,18.45,4.76,8,599,Mike,Hillyer
+526,KARL,SEAL,United States,Cape Coral,2005-07,86.81,19,27.44,3.16,9,599,Jon,Stephens
+595,TERRENCE,GUNDERSON,China,Jinzhou,2005-07,86.81,19,7.49,11.6,10,599,Mike,Hillyer
+178,MARION,SNYDER,Brazil,Santa Brbara dOeste,2005-07,85.82,18,44.92,1.91,11,599,Mike,Hillyer
+102,CRYSTAL,FORD,Israel,Ashdod,2005-07,84.79,21,9.98,8.5,12,599,Mike,Hillyer
+346,ARTHUR,SIMPKINS,Russian Federation,Maikop,2005-07,83.85,15,10.98,7.64,13,599,Jon,Stephens
+209,TONYA,CHAPMAN,India,Bhilwara,2005-07,82.83,17,16.97,4.88,14,599,Jon,Stephens
+366,BRANDON,HUEY,Turkey,Balikesir,2005-07,82.81,19,4.99,16.61,15,599,Jon,Stephens
+50,DIANE,COLLINS,Sudan,Omdurman,2005-07,80.83,17,18.46,4.38,16,599,Jon,Stephens
+225,ARLENE,HARVEY,India,Ambattur,2005-07,80.83,17,8.49,9.53,16,599,Mike,Hillyer
+469,WESLEY,BULL,Spain,Ourense (Orense),2005-07,80.82,18,14.97,5.4,19,599,Jon,Stephens
+494,RAMON,CHOATE,Ecuador,Robamba,2005-07,80.82,18,3.99,20.26,18,599,Jon,Stephens
+479,ZACHARY,HITE,United States,Akron,2005-07,79.85,15,17.96,4.45,20,599,Jon,Stephens
+92,TINA,SIMMONS,Brazil,Goinia,2005-07,78.85,15,12.98,6.08,21,599,Jon,Stephens
+332,STEPHEN,QUALLS,Bangladesh,Dhaka,2005-07,78.83,17,10.98,7.18,22,599,Jon,Stephens
+484,ROBERTO,VU,China,Yinchuan,2005-07,77.85,15,14.97,5.2,23,599,Jon,Stephens
+372,STEVE,MACKENZIE,Indonesia,Probolinggo,2005-07,77.84,16,8.98,8.67,24,599,Jon,Stephens
+309,CHRISTOPHER,GRECO,Italy,Brescia,2005-07,76.84,16,16.97,4.53,25,599,Jon,Stephens
+286,VELMA,LUCAS,Nigeria,Effon-Alaiye,2005-07,76.83,17,10.49,7.33,26,599,Jon,Stephens
+2,PATRICIA,JOHNSON,United States,San Bernardino,2005-07,75.86,14,3.99,19.01,27,599,Jon,Stephens
+591,KENT,ARSENAULT,Brazil,Juiz de Fora,2005-07,75.85,15,8.97,8.46,28,599,Mike,Hillyer
+508,MILTON,HOWLAND,India,Vijayawada,2005-07,74.86,14,5.49,13.65,29,599,Jon,Stephens
+292,MISTY,LAMBERT,United Arab Emirates,Sharja,2005-07,74.84,16,7.98,9.38,30,599,Mike,Hillyer
+462,WARREN,SHERROD,Russian Federation,Usolje-Sibirskoje,2005-07,74.84,16,13.98,5.36,31,599,Mike,Hillyer
+39,DEBRA,NELSON,Brazil,Vila Velha,2005-07,73.85,15,26.94,2.74,32,599,Jon,Stephens
+502,BRETT,CORNWELL,India,Siliguri (Shiliguri),2005-07,73.85,15,8.97,8.24,32,599,Jon,Stephens
+210,ELLA,OLIVER,Yemen,Aden,2005-07,73.82,18,3.49,21.18,34,599,Jon,Stephens
+30,MELISSA,KING,Taiwan,Lungtan,2005-07,73.81,19,12.96,5.7,35,599,Jon,Stephens
+236,MARCIA,DEAN,Philippines,Tanza,2005-07,73.8,20,23.45,3.15,36,599,Jon,Stephens
+181,ANA,BRADLEY,United States,Memphis,2005-07,72.88,12,13.48,5.41,37,599,Mike,Hillyer
+245,COURTNEY,DAY,South Korea,Uijongbu,2005-07,72.84,16,18.96,3.84,38,599,Mike,Hillyer
+475,PEDRO,CHESTNUT,Ukraine,ostka,2005-07,71.85,15,5.98,12.02,39,599,Mike,Hillyer
+446,THEODORE,CULP,India,Uluberia,2005-07,71.83,17,13.96,5.15,40,599,Jon,Stephens
+566,CASEY,MENA,Turkey,Tokat,2005-07,71.82,18,13.97,5.14,41,599,Mike,Hillyer
+585,PERRY,SWAFFORD,Argentina,Quilmes,2005-07,70.87,13,13.96,5.08,42,599,Jon,Stephens
+172,BERNICE,WILLIS,Turkey,Batman,2005-07,70.86,14,7.97,8.89,43,599,Mike,Hillyer
+41,STEPHANIE,MITCHELL,Armenia,Yerevan,2005-07,70.85,15,12.98,5.46,44,599,Mike,Hillyer
+558,JIMMIE,EGGLESTON,Poland,Wroclaw,2005-07,70.85,15,27.95,2.53,45,599,Mike,Hillyer
+573,BYRON,BOX,Kazakstan,Zhezqazghan,2005-07,70.85,15,11.98,5.92,45,599,Jon,Stephens
+265,JENNIE,TERRY,Czech Republic,Olomouc,2005-07,70.84,16,8.48,8.35,47,599,Mike,Hillyer
+348,ROGER,QUINTANILLA,Taiwan,Hsichuh,2005-07,70.84,16,7.48,9.48,47,599,Jon,Stephens
+168,REGINA,BERRY,China,Jinchang,2005-07,70.83,17,5.49,12.91,49,599,Jon,Stephens
+71,KATHY,JAMES,Philippines,Baybay,2005-07,70.82,18,13.48,5.26,50,599,Mike,Hillyer
+75,TAMMY,SANDERS,Taiwan,Changhwa,2005-07,70.8,20,17.97,3.94,51,599,Mike,Hillyer
+482,MAURICE,CRAWLEY,Mexico,Coatzacoalcos,2005-07,69.88,12,8.48,8.25,52,599,Jon,Stephens
+49,JOYCE,EDWARDS,Saudi Arabia,Jedda,2005-07,69.87,13,18.96,3.69,53,599,Jon,Stephens
+100,ROBIN,HAYES,Russian Federation,Jelets,2005-07,69.87,13,9.98,7.0,53,599,Jon,Stephens
+532,NEIL,RENNER,Vietnam,Cam Ranh,2005-07,69.86,14,5.99,11.67,55,599,Jon,Stephens
+363,ROY,WHITING,Kenya,Nyeri,2005-07,69.85,15,13.47,5.19,56,599,Jon,Stephens
+376,RANDY,GAITHER,Russian Federation,Kurgan,2005-07,69.85,15,1.49,47.04,57,599,Mike,Hillyer
+360,RALPH,MADRIGAL,Puerto Rico,Arecibo,2005-07,69.83,17,12.47,5.6,58,599,Mike,Hillyer
+583,MARSHALL,THORN,United Kingdom,Southampton,2005-07,68.88,12,29.94,2.3,59,599,Jon,Stephens
+3,LINDA,WILLIAMS,Greece,Athenai,2005-07,68.87,13,15.47,4.45,60,599,Jon,Stephens
+148,ELEANOR,HUNT,Runion,Saint-Denis,2005-08,87.82,18,42.91,2.05,1,599,Jon,Stephens
+410,CURTIS,IRBY,Canada,Richmond Hill,2005-08,86.83,17,38.9,2.23,2,599,Mike,Hillyer
+526,KARL,SEAL,United States,Cape Coral,2005-08,79.86,14,47.23,1.69,3,599,Mike,Hillyer
+21,MICHELLE,CLARK,Bangladesh,Tangail,2005-08,79.83,17,24.28,3.29,4,599,Mike,Hillyer
+15,HELEN,HARRIS,India,Bhopal,2005-08,79.82,18,25.44,3.14,5,599,Jon,Stephens
+119,SHERRY,MARSHALL,Egypt,Shubra al-Khayma,2005-08,77.82,18,25.28,3.08,6,599,Jon,Stephens
+147,JOANNE,ROBERTSON,Japan,Urawa,2005-08,76.85,15,16.94,4.54,7,599,Jon,Stephens
+373,LOUIS,LEONE,Philippines,Tanauan,2005-08,76.85,15,27.94,2.75,7,599,Jon,Stephens
+259,LENA,JENSEN,India,Halisahar,2005-08,75.84,16,31.61,2.4,9,599,Mike,Hillyer
+569,DAVE,GARDINER,China,Leshan,2005-08,75.82,18,19.62,3.86,10,599,Mike,Hillyer
+137,RHONDA,KENNEDY,Netherlands,Apeldoorn,2005-08,74.85,15,39.92,1.88,11,599,Mike,Hillyer
+144,CLARA,SHAW,Belarus,Molodetno,2005-08,72.84,16,40.91,1.78,12,599,Mike,Hillyer
+468,TIM,CARY,India,Bijapur,2005-08,71.86,14,34.58,2.08,13,599,Jon,Stephens
+181,ANA,BRADLEY,United States,Memphis,2005-08,71.84,16,33.28,2.16,14,599,Jon,Stephens
+266,NORA,HERRERA,Austria,Salzburg,2005-08,71.83,17,15.63,4.6,15,599,Mike,Hillyer
+78,LORI,WOOD,India,Rae Bareli,2005-08,70.86,14,35.42,2.0,16,599,Jon,Stephens
+198,ELSIE,KELLEY,Nigeria,Ikerre,2005-08,70.84,16,23.6,3.0,17,599,Mike,Hillyer
+513,DUANE,TUBBS,Nauru,Yangor,2005-08,69.86,14,26.28,2.66,18,599,Mike,Hillyer
+532,NEIL,RENNER,Vietnam,Cam Ranh,2005-08,69.86,14,27.28,2.56,18,599,Jon,Stephens
+274,NAOMI,JENNINGS,India,Karnal,2005-08,69.84,16,27.27,2.56,20,599,Mike,Hillyer
+342,HAROLD,MARTINO,Brazil,Boa Vista,2005-08,69.83,17,30.43,2.3,21,599,Jon,Stephens
+487,HECTOR,POINDEXTER,Russian Federation,Pjatigorsk,2005-08,68.89,11,25.43,2.71,22,599,Mike,Hillyer
+45,JANET,PHILLIPS,Chile,Antofagasta,2005-08,68.88,12,19.62,3.51,23,599,Mike,Hillyer
+280,TRACEY,BARRETT,Nigeria,Owo,2005-08,68.88,12,16.62,4.15,23,599,Mike,Hillyer
+29,ANGELA,HERNANDEZ,Japan,Shimonoseki,2005-08,68.84,16,23.6,2.92,25,599,Mike,Hillyer
+150,DANIELLE,DANIELS,Mexico,Hidalgo,2005-08,68.84,16,12.3,5.6,26,599,Jon,Stephens
+459,TOMMY,COLLAZO,Iran,Qomsheh,2005-08,67.88,12,39.58,1.72,27,599,Mike,Hillyer
+121,JOSEPHINE,GOMEZ,India,Etawah,2005-08,67.86,14,13.96,4.86,28,599,Jon,Stephens
+439,ALEXANDER,FENNELL,Italy,Bergamo,2005-08,67.85,15,27.93,2.43,29,599,Jon,Stephens
+565,JAIME,NETTLES,Peru,Hunuco,2005-08,66.87,13,19.95,3.35,30,599,Jon,Stephens
+279,DIANNE,SHELTON,Iran,Tabriz,2005-08,66.86,14,21.28,3.14,31,599,Mike,Hillyer
+445,MICHEAL,FORMAN,Argentina,Escobar,2005-08,66.86,14,17.94,3.73,31,599,Mike,Hillyer
+160,ERIN,DUNN,Russian Federation,Ljubertsy,2005-08,66.85,15,19.94,3.35,33,599,Mike,Hillyer
+469,WESLEY,BULL,Spain,Ourense (Orense),2005-08,66.85,15,36.92,1.81,34,599,Mike,Hillyer
+306,CHARLES,KOWALSKI,Malaysia,Sungai Petani,2005-08,65.86,14,24.27,2.71,35,599,Jon,Stephens
+46,CATHERINE,CAMPBELL,Russian Federation,Moscow,2005-08,65.84,16,25.61,2.57,36,599,Jon,Stephens
+197,SUE,PETERS,China,Changzhou,2005-08,65.84,16,29.59,2.23,36,599,Mike,Hillyer
+349,JOE,GILLILAND,Philippines,Imus,2005-08,64.89,11,23.61,2.75,38,599,Jon,Stephens
+54,TERESA,ROGERS,Japan,Iwakuni,2005-08,64.86,14,21.28,3.05,39,599,Mike,Hillyer
+403,MIKE,WAY,India,Valparai,2005-08,64.85,15,33.93,1.91,40,599,Mike,Hillyer
+141,DEBBIE,REYES,Japan,Fukuyama,2005-08,64.83,17,21.95,2.95,41,599,Mike,Hillyer
+187,BRITTANY,RILEY,Ukraine,Sumy,2005-08,63.91,9,31.94,2.0,42,599,Jon,Stephens
+362,NICHOLAS,BARFIELD,Brazil,Belm,2005-08,63.89,11,27.26,2.34,43,599,Mike,Hillyer
+146,JAMIE,RICE,United States,Sterling Heights,2005-08,63.87,13,25.28,2.53,44,599,Mike,Hillyer
+416,JEFFERY,PINSON,Pakistan,Dadu,2005-08,63.87,13,19.27,3.31,44,599,Mike,Hillyer
+550,GUY,BROWNLEE,China,Zhoushan,2005-08,63.87,13,30.94,2.06,44,599,Jon,Stephens
+436,TROY,QUIGLEY,Canada,Vancouver,2005-08,63.86,14,26.95,2.37,47,599,Jon,Stephens
+535,JAVIER,ELROD,Chad,NDjamna,2005-08,63.85,15,23.94,2.67,48,599,Jon,Stephens
+112,ROSA,REYNOLDS,United States,Lancaster,2005-08,62.87,13,23.61,2.66,49,599,Jon,Stephens
+273,PRISCILLA,LOWE,Mexico,Salamanca,2005-08,62.87,13,31.59,1.99,51,599,Mike,Hillyer
+372,STEVE,MACKENZIE,Indonesia,Probolinggo,2005-08,62.87,13,31.93,1.97,51,599,Jon,Stephens
+512,CECIL,VINES,United Kingdom,London,2005-08,62.87,13,25.94,2.42,49,599,Jon,Stephens
+211,STACEY,MONTGOMERY,China,Fuyu,2005-08,62.86,14,27.94,2.25,53,599,Jon,Stephens
+277,OLGA,JIMENEZ,Nigeria,Ogbomosho,2005-08,61.88,12,27.6,2.24,54,599,Mike,Hillyer
+575,ISAAC,OGLESBY,Mexico,Cuernavaca,2005-08,61.88,12,21.61,2.86,54,599,Jon,Stephens
+499,MARC,OUTLAW,Italy,Brindisi,2005-08,61.87,13,20.61,3.0,56,599,Mike,Hillyer
+51,ALICE,STEWART,United States,Fontana,2005-08,61.84,16,25.61,2.41,57,599,Jon,Stephens
+237,TANYA,GILBERT,South Korea,Naju,2005-08,60.89,11,27.93,2.18,60,599,Jon,Stephens
+263,HILDA,HOPKINS,Philippines,Mandaluyong,2005-08,60.89,11,20.28,3.0,58,599,Jon,Stephens
+293,MAE,FLETCHER,Spain,Donostia-San Sebastin,2005-08,60.89,11,32.6,1.87,58,599,Mike,Hillyer

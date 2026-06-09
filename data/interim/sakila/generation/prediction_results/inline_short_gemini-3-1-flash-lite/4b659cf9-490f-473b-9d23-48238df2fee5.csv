@@ -1,0 +1,2 @@
+customer_id,first_name,last_name,payment_count,total_amount,average_payment,max_payment,share_large_payments
+148,ELEANOR,HUNT,22,100.78,4.58,10.99,0.1364

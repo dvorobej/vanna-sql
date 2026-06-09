@@ -1,2 +1,2 @@
-average_payment,first_name,last_name,payment_count,payments_above_8,total_amount
-3.2627272727272736,BRENDA,WRIGHT,11,0,35.89000000000001
+first_name,last_name,payment_count,total_amount,average_payment,payments_above_8
+BRENDA,WRIGHT,11,35.89000000000001,3.2627272727272736,0

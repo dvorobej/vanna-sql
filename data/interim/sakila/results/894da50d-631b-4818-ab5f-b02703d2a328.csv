@@ -1,503 +1,503 @@
-customer_first_name,customer_id,customer_last_name,foreign_store_payment_share,largest_payment,major_categories,month_amount_rank,payment_count,payment_month,total_amount
-ADAM,367,GOOCH,1.0,8.99,"Comedy (8.99), Horror (7.98), Games (5.99), Foreign (4.99)",2,11,2005-07,46.89
-ADRIAN,525,CLARY,1.0,7.99,"Music (17.97), Games (11.98)",1,11,2005-07,49.89
-ALAN,389,KAHN,1.0,8.99,"Classics (9.98), Sports (9.98), Family (8.99)",2,11,2005-07,50.89
-ALBERT,352,CROUSE,1.0,4.99,"Drama (4.99), Family (4.99), Foreign (4.99)",3,5,2005-06,20.95
-ALBERT,352,CROUSE,1.0,7.99,"Documentary (7.99), Sci-Fi (6.99), Horror (5.99), Sports (5.99)",1,9,2005-07,43.91
-ALEX,454,GRESHAM,1.0,9.99,"Games (9.99), Action (7.99), Sports (7.98), Comedy (5.99)",1,10,2005-06,52.9
-ALFREDO,567,MCADAMS,1.0,7.99,"Travel (15.97), Animation (7.99)",1,11,2005-07,40.89
-ALICE,51,STEWART,1.0,9.99,"Music (10.98), Games (9.99), Comedy (7.99), Family (7.98)",2,12,2005-07,58.88
-ALICIA,152,MILLS,1.0,7.99,"Children (8.98), Sci-Fi (7.99)",2,6,2005-07,25.94
-ALLEN,412,BUTTERFIELD,1.0,8.99,"Family (8.99), Sports (8.99)",2,7,2005-07,26.93
-ALLEN,412,BUTTERFIELD,1.0,8.99,"Travel (10.98), Sci-Fi (8.99), Action (7.98)",1,8,2005-08,43.92
-ALLISON,228,STANLEY,1.0,8.99,"Sports (18.97), Documentary (10.98)",1,15,2005-07,54.85
-ALVIN,467,DELOACH,1.0,8.99,"Children (16.97), Horror (14.98), Games (11.98)",1,13,2005-07,66.87
-AMANDA,40,CARTER,1.0,8.99,"Action (8.99), Children (8.98), Drama (6.99)",2,11,2005-07,40.89
-AMBER,139,DIXON,1.0,7.99,"Documentary (13.98), Drama (12.98)",1,12,2005-07,51.88
-AMY,32,LOPEZ,1.0,9.99,"Comedy (12.97), Games (9.99), Family (8.97)",1,15,2005-07,58.85
-ANA,181,BRADLEY,1.0,9.99,"Family (19.97), Documentary (11.98), Drama (8.99)",1,12,2005-07,72.88
-ANDREA,81,HENDERSON,1.0,7.99,"Comedy (11.98), Sports (11.97), Sci-Fi (7.99)",1,12,2005-08,55.88
-ANDREA,81,HENDERSON,1.0,9.99,"New (9.99), Horror (9.97)",2,6,2005-07,23.94
-ANDREW,333,PURDY,1.0,10.99,"Comedy (15.98), Games (14.97)",1,13,2005-07,51.87
-ANDY,582,VANHORN,1.0,9.99,"Sci-Fi (17.97), Animation (12.98)",1,10,2005-07,53.9
-ANGEL,503,BARCLAY,1.0,6.99,"Games (11.98), Sci-Fi (11.96)",2,10,2005-07,41.9
-ANGELA,29,HERNANDEZ,1.0,10.99,"Comedy (10.99), New (6.99), Sports (6.99)",2,11,2005-07,46.89
-ANGELA,29,HERNANDEZ,1.0,7.99,Children (13.97),3,7,2005-06,21.93
-ANITA,136,MORALES,1.0,10.99,"Drama (10.99), Classics (10.98)",1,7,2005-08,31.93
-ANITA,136,MORALES,1.0,8.99,"New (8.99), Action (5.99)",2,6,2005-07,24.94
-ANN,48,EVANS,1.0,7.99,"Foreign (13.98), Music (10.98)",1,8,2005-07,44.92
-ANNETTE,175,OLSON,1.0,7.99,"Games (9.98), New (8.98), Horror (7.99)",1,11,2005-07,46.89
-ANNIE,97,RUSSELL,1.0,5.99,"Foreign (10.98), Documentary (5.98), New (5.98)",1,12,2005-07,40.88
-APRIL,142,BURNS,1.0,7.99,"Children (7.99), Drama (7.98), Action (5.99)",1,10,2005-07,41.9
-ARLENE,225,HARVEY,1.0,7.99,"Games (20.97), Drama (15.97), Horror (9.98)",1,17,2005-07,80.83
-ARNOLD,522,HAVENS,1.0,9.99,"New (11.98), Documentary (10.98), Horror (9.99), Animation (9.98), Games (9.98)",1,18,2005-07,96.82
-ARTHUR,346,SIMPKINS,1.0,8.99,"Classics (17.98), Action (13.98), Horror (10.98)",1,15,2005-07,83.85
-ASHLEY,63,RICHARDSON,1.0,8.99,"Drama (12.97), New (9.98), Comedy (8.99), Documentary (8.98)",1,14,2005-07,64.86
-AUDREY,173,RAY,1.0,8.99,"New (8.99), Games (8.98), Family (8.97), Classics (7.99)",1,14,2005-07,57.86
-BARRY,438,LOVELACE,1.0,8.99,"Documentary (12.97), Animation (10.97), Action (6.98)",1,14,2005-07,54.86
-BEATRICE,170,ARNOLD,1.0,9.99,"Children (9.99), Family (8.98), New (7.99), Classics (4.99)",1,12,2005-07,56.88
-BENJAMIN,364,VARNEY,1.0,4.99,"Classics (8.98), Sports (7.98)",3,5,2005-06,19.95
-BERNARD,440,COLBY,1.0,9.99,"Drama (10.98), Games (10.98), Animation (7.98)",1,12,2005-07,47.88
-BERNICE,172,WILLIS,1.0,7.99,"Children (13.98), Travel (11.98), Action (8.98), Animation (8.98)",1,14,2005-07,70.86
-BESSIE,221,MORRISON,1.0,10.99,"Family (10.99), Classics (5.99)",3,5,2005-06,23.95
-BESSIE,221,MORRISON,1.0,8.99,"Comedy (20.97), Documentary (10.98)",1,12,2005-07,58.88
-BETH,199,FRANKLIN,1.0,8.99,"Children (11.98), Travel (9.98), Action (7.98)",1,12,2005-07,52.88
-BETTY,14,WHITE,1.0,7.99,"Drama (8.98), Games (7.99), Action (6.99), Children (4.99)",1,12,2005-07,50.88
-BEVERLY,73,BROOKS,1.0,9.99,"Family (9.99), Children (7.98), Classics (7.98)",1,10,2005-07,46.9
-BILL,457,GAVIN,1.0,7.99,"Foreign (7.99), Music (6.97), Drama (4.99)",2,9,2005-06,30.91
-BILLIE,278,HORTON,1.0,8.99,"Music (8.99), Drama (7.98), Family (7.98)",1,9,2005-07,37.91
-BOB,564,PFEIFFER,1.0,10.99,"Horror (10.99), Games (9.98)",2,9,2005-07,37.91
-BOBBY,381,BOUDREAU,1.0,4.99,"Animation (8.97), Drama (5.98), Music (5.98)",2,14,2005-07,37.86
-BONNIE,88,HUGHES,1.0,8.99,"Family (14.97), Music (9.98)",1,11,2005-07,44.89
-BRAD,517,MCCURDY,1.0,7.99,"Games (10.97), Documentary (9.98), Sci-Fi (7.99)",1,12,2005-07,50.88
-BRAD,517,MCCURDY,1.0,8.99,"Animation (8.99), Family (7.98)",3,5,2005-06,22.95
-BRADLEY,426,MOTLEY,1.0,10.99,"New (16.98), Foreign (10.99), Documentary (10.98)",1,11,2005-07,65.89
-BRANDON,366,HUEY,1.0,6.99,"Classics (12.98), Action (11.98), Comedy (11.98), Sci-Fi (7.96)",1,19,2005-07,82.81
-BRANDY,276,GRAVES,1.0,8.99,"Documentary (16.97), Drama (8.99)",2,11,2005-07,45.89
-BRENT,493,HARKINS,1.0,7.99,"Foreign (8.98), Horror (7.99), New (7.99)",2,8,2005-07,42.92
-BRETT,502,CORNWELL,1.0,8.99,"Sci-Fi (10.98), Foreign (8.99), Music (8.99), Animation (7.98)",1,15,2005-07,73.85
-BRITTANY,187,RILEY,1.0,10.99,"Music (15.98), Sci-Fi (8.99), Documentary (8.98)",2,11,2005-07,63.89
-BRUCE,365,SCHWARZ,1.0,7.99,"Animation (9.98), Documentary (4.99), Drama (4.99), Foreign (4.99)",1,10,2005-07,44.9
-BRYAN,400,HARDISON,1.0,6.99,"Sci-Fi (9.98), Travel (6.99), Classics (5.99), Comedy (5.99)",1,10,2005-07,51.9
-BYRON,573,BOX,1.0,10.99,"Horror (11.96), Sports (10.99), Documentary (10.98), Games (7.99)",1,15,2005-07,70.85
-CARL,345,ARTIS,1.0,8.99,"Horror (11.98), Foreign (8.99), Travel (7.99)",1,10,2005-07,49.9
-CARLA,202,GUTIERREZ,1.0,8.99,"Foreign (11.98), Horror (8.99), Documentary (7.98)",1,13,2005-07,52.87
-CARMEN,111,OWENS,1.0,6.99,"Travel (9.98), Animation (4.99)",3,6,2005-06,22.94
-CAROLE,275,BARNETT,1.0,6.99,"Games (11.97), Comedy (6.99), Horror (6.98), Sports (6.98)",1,16,2005-08,59.84
-CAROLE,275,BARNETT,1.0,9.99,"Games (9.99), Drama (5.99), Classics (5.98)",2,9,2005-07,32.91
-CAROLYN,42,PEREZ,1.0,6.99,"Documentary (10.98), Classics (6.99), Horror (6.98), Sci-Fi (6.98)",1,16,2005-07,61.84
-CASEY,566,MENA,1.0,9.99,"New (11.98), Games (9.99), Sci-Fi (9.98), Animation (7.98)",1,18,2005-07,71.82
-CATHERINE,46,CAMPBELL,1.0,8.99,"Foreign (8.99), Drama (4.99), Horror (4.99)",2,7,2005-06,32.93
-CHAD,419,CARBONE,1.0,5.99,"Sports (10.98), Classics (4.99), Foreign (4.99)",2,13,2005-07,39.87
-CHARLENE,220,ALVAREZ,1.0,10.99,"Drama (18.98), New (15.98)",1,12,2005-07,59.88
-CHARLES,306,KOWALSKI,1.0,6.99,"Action (11.98), Sci-Fi (11.98), Sports (6.98)",2,14,2005-07,53.86
-CHARLIE,495,BESS,1.0,9.99,"Action (17.98), New (8.98), Family (7.99)",1,11,2005-07,56.89
-CHARLOTTE,130,HUNTER,1.0,6.99,"Games (9.98), Classics (2.99)",3,6,2005-06,21.94
-CHERYL,59,MURPHY,1.0,8.99,"Travel (14.97), Games (8.99), Sports (8.99)",1,11,2005-07,60.89
-CHRIS,394,BROTHERS,1.0,6.99,"Animation (11.98), Sci-Fi (6.99), Children (4.99)",1,10,2005-07,38.9
-CHRISTINA,70,RAMIREZ,1.0,7.99,"Documentary (8.98), Family (5.99)",2,7,2005-07,26.93
-CHRISTINA,70,RAMIREZ,1.0,9.99,"Sports (13.97), Horror (9.99)",1,9,2005-08,43.91
-CHRISTINE,43,ROBERTS,1.0,4.99,"New (12.97), Travel (12.97)",1,12,2005-07,47.88
-CHRISTOPHER,309,GRECO,1.0,8.99,"Sports (13.98), Travel (13.97), Music (10.98)",1,16,2005-07,76.84
-CHRISTY,260,VARGAS,1.0,10.99,"Music (14.97), Sports (7.99)",3,8,2005-06,34.92
-CINDY,113,FISHER,1.0,8.99,"Documentary (9.98), Drama (7.98)",3,6,2005-06,27.94
-CLARA,144,SHAW,1.0,5.99,"Horror (5.99), New (4.99), Sports (4.99)",3,6,2005-06,22.94
-CLARA,144,SHAW,1.0,9.99,"Action (26.97), Classics (18.97), Children (13.98)",1,18,2005-07,93.82
-CLAUDE,528,HERZOG,1.0,9.99,"Action (13.98), Sports (8.99), Comedy (7.99)",1,11,2005-07,56.89
-CLAUDIA,234,FULLER,1.0,6.99,"Classics (13.97), Foreign (8.98)",2,8,2005-06,36.92
-CLIFFORD,447,BOWENS,1.0,8.99,"Action (12.97), Games (8.99), Animation (8.97)",1,11,2005-07,50.89
-CLIFTON,577,MALCOLM,1.0,8.99,"Family (8.99), Sci-Fi (7.99), Action (6.99), Horror (6.99)",1,11,2005-07,52.89
-CLYDE,485,TOBIAS,1.0,6.99,"Animation (18.96), Foreign (11.98), Travel (8.97)",1,18,2005-07,63.82
-COLLEEN,227,BURTON,1.0,7.99,"Documentary (13.97), Animation (10.98)",1,12,2005-07,44.88
-CONNIE,106,WALLACE,1.0,7.99,"Horror (11.97), Classics (10.98)",2,10,2005-07,41.9
-CONSTANCE,232,REID,1.0,10.99,"Sci-Fi (14.96), Games (10.99), Family (5.99)",1,14,2005-07,57.86
-COREY,480,HAUSER,1.0,9.99,"Comedy (12.98), Horror (7.99), Documentary (6.99)",1,8,2005-07,43.92
-CORY,527,MEEHAN,1.0,8.99,Sports (13.98),2,9,2005-07,26.91
-COURTNEY,245,DAY,1.0,10.99,"Children (13.97), Animation (12.98), Sports (11.98)",1,16,2005-07,72.84
-CRYSTAL,102,FORD,1.0,6.99,"Sports (15.97), Sci-Fi (14.97), Action (13.97)",1,21,2005-07,84.79
-CYNTHIA,28,YOUNG,1.0,9.99,"Music (9.99), Action (7.98), Travel (7.97)",1,14,2005-07,51.86
-DAISY,295,BATES,1.0,8.99,"Sports (8.99), Foreign (5.99), Family (5.98)",3,9,2005-06,32.91
-DAISY,295,BATES,1.0,9.99,"Comedy (14.98), Sci-Fi (13.97), Classics (12.98), Sports (11.98)",1,18,2005-07,87.82
-DALE,407,RATCLIFF,1.0,9.99,"Action (13.97), Drama (10.98)",2,11,2005-07,49.89
-DAN,477,PAINE,1.0,10.99,"Animation (14.98), Family (10.99), Children (8.99)",1,10,2005-07,58.9
-DANA,179,HART,1.0,8.99,"Documentary (14.97), Action (8.99), Music (7.99), Family (7.98)",1,14,2005-07,68.86
-DANIEL,310,CABRAL,1.0,6.99,"Foreign (6.99), Children (5.99), Music (4.99)",2,6,2005-06,27.94
-DANIELLE,150,DANIELS,1.0,9.99,"Sci-Fi (14.97), Sports (12.98), Travel (12.98)",1,16,2005-08,68.84
-DARLENE,157,ROSE,1.0,5.99,"Games (8.98), Music (7.98), Documentary (7.96), Horror (5.99)",2,17,2005-07,52.83
-DARRELL,463,POWER,1.0,7.99,"Classics (7.99), Animation (6.99), Sci-Fi (6.97)",2,10,2005-07,30.9
-DARRYL,530,ASHCRAFT,1.0,4.99,"Animation (8.98), Classics (4.99), Sci-Fi (4.99)",2,9,2005-07,30.91
-DARYL,579,LARUE,1.0,9.99,"Action (10.98), Drama (9.99), Foreign (9.99), New (8.99)",1,14,2005-07,65.86
-DAVE,569,GARDINER,1.0,9.99,"New (18.98), Sports (11.96), Animation (8.97)",1,18,2005-08,75.82
-DEAN,471,SAUER,1.0,4.99,"Classics (4.99), Documentary (4.99), Sports (4.99)",3,5,2005-06,20.95
-DEAN,471,SAUER,1.0,7.99,"Music (12.98), Horror (10.98), Sports (8.98)",1,12,2005-08,55.88
-DEBBIE,141,REYES,1.0,7.99,"Travel (12.98), Horror (9.98)",2,11,2005-07,41.89
-DEBORAH,25,WALKER,1.0,8.99,"Games (11.98), Sci-Fi (6.99)",2,6,2005-06,33.94
-DENISE,74,KELLY,1.0,7.99,"Travel (14.97), Sci-Fi (11.98)",1,10,2005-07,47.9
-DENNIS,338,GILMAN,1.0,6.99,"Music (10.98), Animation (6.99)",3,7,2005-06,34.93
-DEREK,461,BLAKELY,1.0,7.99,"Sci-Fi (16.96), New (12.97)",1,14,2005-08,52.86
-DERRICK,476,BOURQUE,1.0,7.99,"Games (7.99), Animation (7.98), Foreign (7.98)",1,9,2005-07,39.91
-DIANE,50,COLLINS,1.0,10.99,"Drama (16.97), Foreign (15.97), Children (14.98)",1,17,2005-07,80.83
-DIANNE,279,SHELTON,1.0,7.99,"Sci-Fi (17.96), Comedy (13.98), Animation (9.98)",1,14,2005-08,66.86
-DIANNE,279,SHELTON,1.0,9.99,"Comedy (9.99), Animation (7.99), Action (5.99)",2,9,2005-07,42.91
-DOLORES,171,WAGNER,1.0,6.99,"Documentary (11.97), Foreign (6.99)",3,7,2005-06,32.93
-DON,433,BONE,1.0,8.99,"Foreign (18.97), Games (14.97)",1,14,2005-07,65.86
-DOROTHY,10,TAYLOR,1.0,4.99,Games (9.97),3,5,2005-06,15.95
-DOROTHY,10,TAYLOR,1.0,7.99,"Sports (12.98), Action (7.98), Foreign (7.98)",1,11,2005-07,45.89
-DOUGLAS,343,GRAF,1.0,8.99,"Sci-Fi (8.99), Foreign (7.98)",2,7,2005-06,30.93
-DUANE,513,TUBBS,1.0,9.99,"Horror (14.98), Comedy (13.97), Music (10.98)",2,13,2005-07,60.87
-DWAYNE,554,OLVERA,1.0,9.99,"Animation (16.97), Sports (10.98), Classics (7.99)",1,12,2005-08,56.88
-DWIGHT,555,LOMBARDI,1.0,7.99,"Drama (8.98), Comedy (7.99)",2,6,2005-07,29.94
-EARL,396,SHANKS,1.0,6.99,"Drama (9.97), New (6.99), Children (5.98)",2,12,2005-07,39.88
-EDDIE,434,TOMLIN,1.0,7.99,"Family (7.99), Drama (6.98)",3,7,2005-06,28.93
-EDGAR,507,RHOADS,1.0,6.99,"Horror (11.97), Drama (9.98), Animation (5.99)",1,15,2005-07,49.85
-EDITH,117,MCDONALD,1.0,6.99,"Children (11.98), Sports (5.98), Foreign (4.99)",1,10,2005-08,36.9
-EDITH,117,MCDONALD,1.0,9.99,"Foreign (12.98), Games (9.99)",2,5,2005-07,26.95
-EDWARD,317,BAUGH,1.0,8.99,"Sci-Fi (11.98), Drama (8.99), Documentary (7.99)",1,12,2005-07,50.88
-EDWIN,432,BURK,1.0,6.99,"Games (15.97), Documentary (7.98), Sci-Fi (6.99)",1,12,2005-07,56.88
-EILEEN,205,CARR,1.0,7.99,"Classics (7.99), Documentary (7.99), Foreign (7.99)",1,8,2005-07,45.92
-ELAINE,127,STEVENS,1.0,10.99,"Family (23.97), Sci-Fi (8.98)",1,12,2005-08,56.88
-ELAINE,127,STEVENS,1.0,6.99,"New (10.98), Animation (9.98)",2,7,2005-07,36.93
-ELEANOR,148,HUNT,1.0,10.99,"Horror (14.97), Travel (12.97), Sci-Fi (12.96), Action (10.99)",1,22,2005-07,100.78
-ELEANOR,148,HUNT,1.0,6.99,"Classics (6.99), Horror (5.99)",3,5,2005-06,22.95
-ELIZABETH,5,BROWN,1.0,8.99,"New (14.97), Classics (14.96)",1,16,2005-07,59.84
-ELLA,210,OLIVER,1.0,8.99,"New (21.96), Sports (12.98), Action (9.97)",1,18,2005-07,73.82
-ELLEN,126,SIMPSON,1.0,7.99,"Family (13.98), Action (10.96)",2,13,2005-07,48.87
-ELMER,516,NOE,1.0,10.99,"Horror (10.99), Foreign (4.99)",2,6,2005-06,22.94
-ELMER,516,NOE,1.0,6.99,"Drama (6.99), Music (6.99), Travel (5.99), Animation (4.99)",1,9,2005-07,46.91
-ELSIE,198,KELLEY,1.0,5.99,"Foreign (13.97), Documentary (6.97), Music (5.99)",2,15,2005-07,52.85
-ELSIE,198,KELLEY,1.0,6.99,"Games (12.98), Family (9.98), Sci-Fi (9.98), Foreign (5.99)",1,16,2005-08,70.84
-EMILY,99,DIAZ,1.0,7.99,"Sports (15.97), Family (10.98), New (7.98)",1,15,2005-07,56.85
-ERIC,331,ROBERT,1.0,10.99,"Drama (13.98), Sci-Fi (11.98), Music (10.99)",1,12,2005-07,63.88
-ERICA,169,MATTHEWS,1.0,9.99,"Sports (11.98), Animation (9.99), Foreign (8.99)",1,10,2005-07,49.9
-ERIK,529,GUILLEN,1.0,7.99,"Travel (15.97), Classics (7.99), Animation (6.99)",2,13,2005-07,53.87
-ERIN,160,DUNN,1.0,7.99,"Documentary (11.97), Music (10.98), Foreign (8.98), Drama (7.99)",1,15,2005-08,66.85
-ETHEL,125,WEBB,1.0,9.99,"Documentary (12.97), Animation (10.98), Action (8.97), Games (7.99)",1,16,2005-07,65.84
-EVERETT,559,BANDA,1.0,7.99,"Animation (9.98), Travel (7.98), New (5.99)",2,12,2005-07,41.88
-FERNANDO,536,CHURCHILL,1.0,8.99,"Sports (13.98), Family (9.98), Documentary (5.98)",1,12,2005-07,51.88
-FLORENCE,107,WOODS,1.0,7.99,"Family (10.97), Sci-Fi (8.98), Comedy (7.99), Drama (6.99)",1,14,2005-07,61.86
-FLOYD,465,GANDY,1.0,6.99,"Foreign (14.97), Animation (8.98)",1,9,2005-08,42.91
-FRANCIS,425,SIKES,1.0,8.99,"Action (17.97), Drama (15.97)",1,17,2005-07,67.83
-FRANCISCO,443,SKIDMORE,1.0,9.99,"Horror (18.98), Animation (10.98)",1,10,2005-07,54.9
-FRED,369,WHEAT,1.0,7.99,"Foreign (10.97), Documentary (7.99), Sci-Fi (7.98)",1,12,2005-07,45.88
-FREDDIE,597,DUGGAN,1.0,6.99,"Foreign (10.98), Travel (7.98), Games (6.99)",1,12,2005-08,47.88
-GABRIEL,518,HARDER,1.0,7.99,"Animation (9.98), Documentary (7.99), Drama (7.98), Sci-Fi (6.99)",1,13,2005-07,55.87
-GAIL,155,KNIGHT,1.0,7.99,Documentary (15.98),2,5,2005-06,27.95
-GARY,324,COY,1.0,7.99,"Music (16.96), Comedy (7.99), Games (6.99)",1,12,2005-07,50.88
-GEORGE,314,LINTON,1.0,6.99,"Documentary (15.96), Action (12.96), Children (10.98)",1,18,2005-07,67.82
-GEORGIA,231,JACOBS,1.0,9.99,"Children (11.98), Music (8.98)",2,11,2005-07,36.89
-GERALD,356,FULTZ,1.0,6.99,"Games (8.97), Drama (6.99), New (6.99), Family (5.99)",2,13,2005-07,50.87
-GERALDINE,161,PERKINS,1.0,6.99,"Foreign (6.99), Travel (6.99), Music (5.98), Animation (4.99)",2,10,2005-07,41.9
-GERTRUDE,207,CASTILLO,1.0,9.99,"Comedy (12.98), New (11.97), Family (8.98)",1,15,2005-07,58.85
-GILBERT,497,SLEDGE,1.0,9.99,"Family (12.98), Children (11.98), Games (10.98)",1,14,2005-07,67.86
-GINA,213,WILLIAMSON,1.0,6.99,"Family (7.98), Foreign (6.99), Documentary (5.99)",2,9,2005-06,35.91
-GLADYS,103,HAMILTON,1.0,6.99,"Sports (11.98), Animation (10.97), Documentary (7.98), Foreign (7.98)",1,15,2005-07,68.85
-GLEN,486,TALBERT,1.0,8.99,"Drama (9.98), Sports (8.99), Documentary (7.99), Games (5.98)",1,12,2005-07,58.88
-GLENN,415,PULLEN,1.0,8.99,"Sports (11.98), Action (6.98), Animation (5.99)",1,11,2005-07,40.89
-GORDON,470,ALLARD,1.0,10.99,"Sci-Fi (17.98), Games (15.97), Sports (9.98), Travel (9.98)",1,17,2005-07,96.83
-GRACE,114,ELLIS,1.0,10.99,"New (15.98), Foreign (9.97), Sports (7.98)",1,15,2005-07,61.85
-GREGORY,335,MAULDIN,1.0,8.99,"Sci-Fi (13.97), Documentary (11.98), Comedy (9.98)",1,15,2005-07,55.85
-GUY,550,BROWNLEE,1.0,10.99,"Animation (17.98), Action (9.99)",3,6,2005-06,39.94
-GWENDOLYN,264,MAY,1.0,8.99,"Sci-Fi (18.97), Drama (9.98)",1,12,2005-07,51.88
-HAROLD,342,MARTINO,1.0,8.99,"Comedy (16.98), Family (8.98)",2,12,2005-07,45.88
-HAZEL,138,WARREN,1.0,9.99,"Sports (18.96), Family (9.96)",2,15,2005-07,47.85
-HECTOR,487,POINDEXTER,1.0,7.99,"Action (9.97), Documentary (9.96), Foreign (7.99)",2,14,2005-07,46.86
-HEIDI,241,LARSON,1.0,6.99,"Family (10.97), New (10.97), Foreign (7.98)",1,15,2005-07,53.85
-HELEN,15,HARRIS,1.0,7.99,"Comedy (8.98), Classics (8.97), Horror (7.99)",2,9,2005-07,40.91
-HELEN,15,HARRIS,1.0,8.99,"Travel (13.97), Children (12.98), Sports (12.97)",1,18,2005-08,79.82
-HERBERT,428,KRUGER,1.0,6.99,"Music (15.97), Action (7.98), Classics (5.99)",1,11,2005-07,49.89
-HERMAN,481,DEVORE,1.0,10.99,"Music (19.97), Animation (10.99)",1,13,2005-07,57.87
-HILDA,263,HOPKINS,1.0,4.99,"Music (7.98), Sci-Fi (7.98), Horror (6.98)",2,13,2005-07,43.87
-HILDA,263,HOPKINS,1.0,9.99,"Children (17.98), Foreign (13.98)",1,11,2005-08,60.89
-HOLLY,186,FOX,1.0,4.99,"Classics (10.97), Animation (4.99)",3,6,2005-06,25.94
-HOLLY,186,FOX,1.0,8.99,"Comedy (15.98), Drama (11.97)",1,14,2005-08,55.86
-HUGH,552,WALDROP,1.0,8.99,"Sports (13.98), Travel (10.98)",1,9,2005-07,48.91
-IAN,561,STILL,1.0,5.99,"Animation (12.97), Music (7.98)",1,9,2005-06,33.91
-IDA,183,ANDREWS,1.0,5.99,"Documentary (10.97), Classics (4.99), Drama (4.99)",1,11,2005-07,34.89
-IRENE,76,PRICE,1.0,6.99,Children (6.99),3,6,2005-06,12.94
-IRENE,76,PRICE,1.0,6.99,Drama (13.96),2,9,2005-07,25.91
-IVAN,570,CROMWELL,1.0,6.99,"Travel (10.98), Sci-Fi (6.99)",2,7,2005-06,32.93
-JACK,351,FOUST,1.0,7.99,"Classics (9.98), Games (9.97), Sports (8.98)",1,13,2005-07,50.87
-JACKIE,235,LYNCH,1.0,6.99,"Animation (17.96), Action (11.97), Horror (7.98)",1,15,2005-07,62.85
-JACOB,420,LANCE,1.0,4.99,"Music (9.98), Animation (4.99), Children (4.99)",1,11,2005-07,39.89
-JACQUELINE,86,LONG,1.0,10.99,"Horror (20.98), Foreign (13.98)",1,12,2005-07,64.88
-JACQUELINE,86,LONG,1.0,4.99,"Animation (7.98), Classics (4.99)",3,7,2005-06,24.93
-JAIME,565,NETTLES,1.0,10.99,"Music (12.98), Sci-Fi (10.99), Comedy (6.99), Classics (6.98)",1,13,2005-08,66.87
-JAMIE,531,WAUGH,1.0,6.99,"Sports (13.96), Music (12.98), Comedy (10.98)",1,14,2005-07,64.86
-JANET,45,PHILLIPS,1.0,10.99,"Documentary (10.99), Sci-Fi (8.99), Travel (7.99), Action (7.98)",1,12,2005-08,68.88
-JANET,45,PHILLIPS,1.0,4.99,"Action (4.99), Sports (4.99)",3,5,2005-06,17.95
-JANET,45,PHILLIPS,1.0,9.99,"Classics (10.98), Music (7.99)",2,9,2005-07,37.91
-JANICE,66,WARD,1.0,6.99,"Family (7.98), Action (6.99)",3,7,2005-06,29.93
-JANICE,66,WARD,1.0,8.99,"Classics (8.99), Drama (8.98), Foreign (8.98), Travel (7.98)",1,13,2005-07,60.87
-JARED,524,ELY,1.0,8.99,"Animation (10.98), Travel (9.98), Documentary (8.99)",1,8,2005-07,48.92
-JASON,322,MORRISSEY,1.0,8.99,"Travel (11.98), Family (8.99)",2,7,2005-06,40.93
-JAVIER,535,ELROD,1.0,8.99,"Sports (9.98), New (8.99), Action (6.99)",2,11,2005-07,48.89
-JAY,450,ROBB,1.0,4.99,"Documentary (4.99), Sci-Fi (4.99), Sports (4.99)",3,7,2005-06,22.93
-JEAN,58,BELL,1.0,8.99,"Sports (10.98), Games (8.99), Action (6.99), Animation (6.99)",1,11,2005-08,58.89
-JEAN,58,BELL,1.0,9.99,"Foreign (9.99), Documentary (9.98)",2,9,2005-07,38.91
-JEANETTE,191,GREENE,1.0,6.99,"Documentary (6.99), Games (5.99), Sci-Fi (5.99), Music (4.99)",1,9,2005-07,39.91
-JEANNE,200,LAWSON,1.0,6.99,"Games (8.98), Classics (4.99), Comedy (4.99)",3,7,2005-06,31.93
-JEFF,418,EAST,1.0,10.99,"New (10.99), Foreign (8.97), Drama (7.99)",2,10,2005-07,45.9
-JEFFERY,416,PINSON,1.0,7.99,"Foreign (7.99), Games (5.99), Horror (5.98)",2,10,2005-07,36.9
-JEFFERY,416,PINSON,1.0,8.99,"Travel (11.98), Sci-Fi (8.99), Classics (7.97), Action (6.99)",1,13,2005-08,63.87
-JEFFREY,328,SPEAR,1.0,6.99,"Games (7.98), Horror (5.99)",3,5,2005-06,21.95
-JENNIE,265,TERRY,1.0,9.99,"New (10.97), Games (9.99), Comedy (8.98), Family (7.98)",1,16,2005-07,70.84
-JENNIFER,6,DAVIS,1.0,7.99,"New (7.99), Music (5.99)",2,9,2005-07,26.91
-JENNIFER,6,DAVIS,1.0,7.99,"Sports (11.98), Drama (10.98), Comedy (6.99)",1,12,2005-08,48.88
-JENNY,282,CASTRO,1.0,9.99,"Foreign (18.97), Horror (12.98), Sports (9.98)",1,15,2005-07,64.85
-JEREMY,374,HURTADO,1.0,7.99,"Family (14.97), Games (6.99)",2,10,2005-07,38.9
-JEROME,464,KENYON,1.0,6.99,"Comedy (10.98), Music (6.99)",1,6,2005-07,32.94
-JERRY,337,JORDON,1.0,8.99,"Sci-Fi (14.97), Travel (13.98), Documentary (9.98)",1,12,2005-07,62.88
-JESSICA,26,HALL,1.0,9.99,"Sci-Fi (9.99), Drama (6.99), Foreign (5.99)",3,7,2005-06,41.93
-JESSIE,533,MILAM,1.0,9.99,"Sci-Fi (22.97), New (9.99)",1,13,2005-07,58.87
-JESUS,427,MCCARTNEY,1.0,7.99,"Documentary (12.98), Games (7.99), Classics (6.98)",1,10,2005-07,49.9
-JILL,159,HAWKINS,1.0,7.99,"New (7.99), Classics (6.98), Travel (6.98)",1,10,2005-07,38.9
-JIM,451,REA,1.0,6.99,"Action (6.99), New (6.99)",3,7,2005-06,22.93
-JIMMY,397,SCHRADER,1.0,6.99,"Travel (12.98), Drama (9.97), Sci-Fi (7.98)",1,13,2005-07,50.87
-JOAN,62,COOPER,1.0,6.99,"Games (7.98), Action (5.99)",2,7,2005-06,24.93
-JOANN,164,GARDNER,1.0,6.99,"Drama (6.99), Music (4.99), Sci-Fi (4.99), Travel (4.99)",1,10,2005-07,38.9
-JOANNE,147,ROBERTSON,1.0,7.99,"Games (7.99), Action (5.98), Animation (5.96)",2,13,2005-07,31.87
-JOANNE,147,ROBERTSON,1.0,8.99,"Action (12.97), New (11.98), Documentary (9.98), Comedy (8.99)",1,15,2005-08,76.85
-JOE,349,GILLILAND,1.0,5.99,"Travel (16.96), Sports (10.98)",2,12,2005-07,45.88
-JOEL,431,FRANCISCO,1.0,8.99,"Children (8.99), Animation (7.98), New (6.99)",1,7,2005-06,35.93
-JOHN,300,FARNSWORTH,1.0,10.99,"Travel (10.99), New (10.98), Documentary (7.98)",1,14,2005-07,59.86
-JON,455,WILES,1.0,8.99,"Games (8.99), Documentary (6.99), New (5.99), Action (4.99)",1,9,2005-07,45.91
-JORDAN,560,ARCHULETA,1.0,9.99,"Action (13.97), Drama (9.99), Family (6.98)",1,14,2005-07,59.86
-JORGE,473,OLIVARES,1.0,8.99,"Comedy (19.97), Sci-Fi (7.99), Children (4.99)",1,13,2005-07,57.87
-JOSEPH,307,JOY,1.0,10.99,"Family (14.98), Animation (6.99), Sports (6.99), Travel (6.99)",1,13,2005-07,62.87
-JOSEPHINE,121,GOMEZ,1.0,8.99,"Comedy (8.99), Animation (6.99)",2,9,2005-07,31.91
-JOSEPHINE,121,GOMEZ,1.0,9.99,"Documentary (21.97), Children (9.99), Sports (8.99)",1,14,2005-08,67.86
-JOY,230,GEORGE,1.0,8.99,"Classics (9.98), Sports (4.99)",3,6,2005-06,20.94
-JOY,230,GEORGE,1.0,9.99,"Sports (9.99), Games (8.98), Animation (7.98), New (7.98)",1,15,2005-07,58.85
-JOYCE,49,EDWARDS,1.0,10.99,"Family (17.96), New (12.97), Children (8.99)",1,13,2005-07,69.87
-JUANITA,135,MASON,1.0,7.99,"Children (16.97), Comedy (7.99), Games (7.99)",1,14,2005-07,57.86
-JUDITH,64,COX,1.0,6.99,"Documentary (17.95), Animation (13.96)",1,19,2005-07,59.81
-JUDY,69,GRAY,1.0,8.99,"Sci-Fi (14.97), Family (12.98)",1,11,2005-07,47.89
-JULIA,89,FLORES,1.0,8.99,Action (16.98),2,5,2005-06,30.95
-JULIA,89,FLORES,1.0,8.99,"Drama (18.97), Comedy (11.98), Games (9.98)",1,17,2005-07,68.83
-JULIAN,574,VEST,1.0,6.99,Children (8.97),3,5,2005-06,15.95
-JULIAN,574,VEST,1.0,7.99,"Sci-Fi (10.98), Drama (8.98), New (7.99), Music (5.98)",1,15,2005-07,64.85
-JULIE,52,SANCHEZ,1.0,7.99,"Documentary (11.97), Games (8.98), Horror (5.99)",1,12,2005-07,48.88
-JULIO,545,NOLAND,1.0,8.99,"Animation (12.97), Family (11.98)",1,9,2005-07,42.91
-JUSTIN,354,NGO,1.0,8.99,"Drama (14.96), Games (9.98), Children (7.98), Documentary (6.98)",1,19,2005-07,67.81
-KAREN,13,JACKSON,1.0,11.99,"Drama (12.98), Sci-Fi (12.98), Animation (9.99)",1,13,2005-07,61.87
-KARL,526,SEAL,1.0,7.99,"Animation (14.98), Documentary (9.98)",3,9,2005-06,41.91
-KARL,526,SEAL,1.0,7.99,"Games (12.98), Horror (12.98), Documentary (10.98), Animation (10.97)",1,19,2005-07,86.81
-KATHERINE,61,RIVERA,1.0,7.99,"Sci-Fi (14.98), New (6.99)",1,6,2005-07,32.94
-KATHLEEN,36,ADAMS,1.0,6.99,"Music (14.97), Family (6.99)",2,13,2005-07,40.87
-KATHLEEN,36,ADAMS,1.0,9.99,"Classics (16.98), Comedy (9.98)",1,11,2005-08,48.89
-KATHRYN,82,COLEMAN,1.0,9.99,"Action (11.98), Animation (10.98), Horror (9.99)",1,11,2005-07,64.89
-KATHY,71,JAMES,1.0,8.99,"Action (18.97), Music (11.97), Travel (7.98)",1,18,2005-07,70.82
-KATIE,193,ELLIOTT,1.0,8.99,"Animation (8.99), Family (6.99), Music (6.99)",2,6,2005-06,35.94
-KEITH,357,RICO,1.0,8.99,"Travel (9.97), Family (8.99), Documentary (5.99)",1,12,2005-07,42.88
-KELLY,546,KNOTT,1.0,9.99,"Animation (10.98), Sci-Fi (6.99), Sports (5.98)",1,10,2005-07,39.9
-KEN,563,PREWITT,1.0,7.99,"Music (16.97), Sports (9.98), Children (8.98)",1,16,2005-07,60.84
-KENNETH,315,GOODEN,1.0,9.99,"Games (9.99), Sci-Fi (6.99), Sports (6.99)",1,8,2005-07,47.92
-KENT,591,ARSENAULT,1.0,11.99,"Sports (19.96), Animation (15.97), New (11.99)",1,15,2005-07,75.85
-KEVIN,321,SCHULER,1.0,8.99,"Sci-Fi (12.98), Comedy (8.99), Foreign (5.99)",1,10,2005-07,50.9
-KIM,118,CRUZ,1.0,7.99,"Sports (8.98), Foreign (6.98), Games (6.98)",1,11,2005-07,37.89
-KRISTIN,214,JOHNSTON,1.0,7.99,"Sports (13.98), Music (4.99)",2,8,2005-07,35.92
-KRISTINA,290,CHAMBERS,1.0,7.99,"Action (8.98), Games (7.98), Sports (5.99), Horror (5.98)",1,14,2005-07,51.86
-KRISTINA,290,CHAMBERS,1.0,8.99,"Sci-Fi (8.99), Children (6.99)",3,5,2005-06,25.95
-KURT,547,EMMONS,1.0,4.99,"Horror (12.97), Children (4.99), Music (4.99)",1,10,2005-07,41.9
-KYLE,424,SPURLOCK,1.0,8.99,"Drama (19.96), Animation (9.97)",1,16,2005-07,58.84
-LARRY,327,THRASHER,1.0,6.99,"Children (6.99), Drama (5.99), Documentary (4.99)",2,6,2005-06,30.94
-LARRY,327,THRASHER,1.0,9.99,"Comedy (17.97), Children (7.99), Action (7.98)",1,13,2005-08,58.87
-LAURA,22,RODRIGUEZ,1.0,9.99,"Foreign (17.98), Sports (11.98)",1,10,2005-08,54.9
-LAURIE,192,LAWRENCE,1.0,7.99,"Classics (12.98), Comedy (7.99)",2,10,2005-07,35.9
-LAURIE,192,LAWRENCE,1.0,7.99,"Horror (12.97), Comedy (8.98), Music (7.99)",1,10,2005-08,52.9
-LEE,421,HAWKS,1.0,8.99,"Horror (13.98), Music (7.99), Sci-Fi (6.98)",1,12,2005-07,57.88
-LEO,466,EBERT,1.0,8.99,"Music (12.98), Comedy (10.98)",2,5,2005-06,28.95
-LEON,460,BOSTIC,1.0,10.99,"Foreign (14.98), Animation (11.98), Drama (8.99)",1,12,2005-08,54.88
-LEON,460,BOSTIC,1.0,7.99,"Horror (12.98), Music (10.98)",2,8,2005-07,41.92
-LEONA,281,OBRIEN,1.0,6.99,"Animation (12.98), Family (4.99)",1,8,2005-07,27.92
-LEONARD,405,SCHOFIELD,1.0,5.99,"Documentary (6.98), Horror (5.99), Games (4.99)",3,6,2005-06,26.94
-LEROY,442,BUSTAMANTE,1.0,5.99,"New (11.97), Drama (9.97), Animation (8.97)",1,16,2005-07,60.84
-LILLIAN,98,GRIFFIN,1.0,5.99,"New (5.99), Games (4.99), Sci-Fi (4.99)",3,6,2005-06,25.94
-LILLIE,233,KIM,1.0,8.99,"Drama (9.98), Family (9.98), Classics (5.99), Horror (5.99)",1,13,2005-07,55.87
-LINDA,3,WILLIAMS,1.0,10.99,"Action (18.97), Games (10.98), Animation (7.99)",1,13,2005-07,68.87
-LISA,11,ANDERSON,1.0,9.99,"Games (10.97), Drama (9.99), Children (9.98)",1,11,2005-07,53.89
-LLOYD,458,DOWD,1.0,7.99,"Music (7.99), New (5.99), Children (3.99)",1,9,2005-07,31.91
-LOIS,91,BUTLER,1.0,4.99,"Comedy (17.96), Action (7.98), Drama (5.98)",1,19,2005-07,59.81
-LONNIE,542,TIRADO,1.0,9.99,"New (11.98), Music (9.99), Children (8.99)",1,8,2005-07,47.92
-LORETTA,189,CARPENTER,1.0,5.99,"Sci-Fi (6.98), Travel (5.99), Family (5.98), Animation (4.99)",1,10,2005-07,37.9
-LORRAINE,165,STEPHENS,1.0,7.99,"Classics (11.96), Games (7.99), Music (6.99)",1,12,2005-07,49.88
-LOUIS,373,LEONE,1.0,8.99,"New (13.98), Animation (11.97), Classics (7.99), Drama (5.99)",2,16,2005-07,68.84
-LUCILLE,145,HOLMES,1.0,8.99,"Animation (20.95), Sports (7.99)",1,15,2005-07,55.85
-LUCY,208,WHEELER,1.0,6.99,"New (11.98), Sci-Fi (5.99), Children (5.98)",1,13,2005-07,46.87
-LUIS,402,YANEZ,1.0,7.99,"Children (11.98), New (8.97), Sci-Fi (7.99)",1,12,2005-07,52.88
-LYDIA,243,BURKE,1.0,5.99,"Documentary (10.97), Classics (6.98), Games (5.99)",1,13,2005-07,45.87
-LYNN,166,PAYNE,1.0,8.99,"Classics (16.97), Sports (16.97)",1,13,2005-07,56.87
-MANUEL,408,MURRELL,1.0,6.99,"Sports (9.98), Children (7.98), Games (6.99)",2,12,2005-07,45.88
-MARC,499,OUTLAW,1.0,6.99,"Children (11.98), Comedy (4.99), Drama (4.99)",2,12,2005-07,43.88
-MARC,499,OUTLAW,1.0,8.99,"New (18.97), Foreign (17.97)",1,13,2005-08,61.87
-MARCIA,236,DEAN,1.0,5.99,"Family (13.97), New (13.97), Animation (8.98)",1,20,2005-07,73.8
-MARCIA,236,DEAN,1.0,8.99,"Family (8.99), Foreign (6.99), Sci-Fi (5.99)",3,8,2005-06,37.92
-MARIA,7,MILLER,1.0,8.99,"Horror (16.98), Sports (16.97)",1,11,2005-07,59.89
-MARIE,44,TURNER,1.0,9.99,"Animation (14.97), Children (13.98)",1,10,2005-07,53.9
-MARILYN,80,ROSS,1.0,8.99,"New (15.97), Sports (12.98), Documentary (6.99)",1,12,2005-07,61.88
-MARIO,441,CHEATHAM,1.0,10.99,"Comedy (19.98), New (14.96)",1,17,2005-07,66.83
-MARION,588,OCAMPO,1.0,5.99,"Classics (10.97), Drama (9.98), Children (7.98)",1,14,2005-07,52.86
-MARION,588,OCAMPO,1.0,7.99,"Children (7.99), Foreign (6.99)",3,5,2005-06,24.95
-MARJORIE,128,TUCKER,1.0,6.99,"Comedy (14.97), Animation (10.98), Action (8.98)",1,16,2005-07,65.84
-MARK,312,RINEHART,1.0,6.99,"Action (6.99), Comedy (6.99), Children (5.99), Games (4.99)",1,11,2005-07,48.89
-MARLENE,240,WELCH,1.0,8.99,"New (24.96), Action (4.99)",1,12,2005-07,51.88
-MARSHA,257,DOUGLAS,1.0,6.99,"Foreign (17.96), Classics (12.98), Children (11.98), Documentary (10.98)",1,18,2005-07,88.82
-MARTHA,38,GONZALEZ,1.0,5.99,"Children (14.96), Drama (11.98), Classics (7.98)",1,18,2005-07,65.82
-MARY,1,SMITH,1.0,9.99,"Comedy (14.98), Classics (6.98)",2,7,2005-06,31.93
-MATHEW,539,BOLIN,1.0,7.99,"Sports (19.96), Family (7.99)",1,12,2005-07,55.88
-MATTHEW,323,MAHAN,1.0,7.99,"Travel (15.96), Action (10.97), Children (7.99)",1,15,2005-07,58.85
-MAUREEN,226,LITTLE,1.0,9.99,"Comedy (9.99), Animation (7.98), Horror (5.99)",1,9,2005-07,41.91
-MAURICE,482,CRAWLEY,1.0,8.99,"Action (15.98), Sci-Fi (15.98), Classics (9.98)",1,12,2005-07,69.88
-MAX,553,PITT,1.0,6.99,"Games (13.97), Horror (10.97), Sci-Fi (7.98), Action (6.99)",1,16,2005-07,68.84
-MAXINE,254,SILVA,1.0,7.99,"Sci-Fi (10.98), Comedy (7.99), Family (6.98), Horror (5.99)",1,13,2005-07,55.87
-MELINDA,223,FERNANDEZ,1.0,7.99,"Sci-Fi (7.99), Children (5.99), Documentary (5.99)",2,7,2005-07,32.93
-MELISSA,30,KING,1.0,9.99,"Drama (12.97), Comedy (11.97), Games (9.99), Family (7.98)",1,19,2005-07,73.81
-MELVIN,422,ELLINGTON,1.0,9.99,"Games (12.98), Children (9.98), Sci-Fi (9.98)",1,13,2005-08,56.87
-MICHAEL,302,SILVERMAN,1.0,8.99,"Action (16.98), Comedy (13.97), Horror (9.98)",1,15,2005-07,67.85
-MICHEAL,445,FORMAN,1.0,8.99,"Children (9.98), Animation (6.97)",2,10,2005-07,29.9
-MICHEAL,445,FORMAN,1.0,9.99,"Sci-Fi (20.96), Travel (11.98), Sports (9.99)",1,14,2005-08,66.86
-MICHELE,154,GRANT,1.0,7.99,"Drama (11.97), Comedy (9.98), Documentary (7.99)",1,14,2005-07,55.86
-MICHELLE,21,CLARK,1.0,10.99,Foreign (15.98),2,5,2005-06,31.95
-MICHELLE,21,CLARK,1.0,9.99,"Documentary (16.97), Sci-Fi (15.96), Horror (9.99)",1,17,2005-08,79.83
-MIGUEL,448,BETANCOURT,1.0,7.99,"Drama (9.98), New (7.99)",3,5,2005-06,24.95
-MIKE,403,WAY,1.0,7.99,"Children (10.98), Classics (10.98), Sci-Fi (10.98)",2,12,2005-07,61.88
-MIKE,403,WAY,1.0,8.99,"Foreign (13.98), Sci-Fi (6.99)",3,6,2005-06,35.94
-MILTON,508,HOWLAND,1.0,9.99,"Documentary (20.97), Action (14.97), Family (9.99)",1,14,2005-07,74.86
-MIRIAM,285,MCKINNEY,1.0,9.99,"Sci-Fi (18.97), Sports (14.98), Drama (12.98)",1,13,2005-07,68.87
-MISTY,292,LAMBERT,1.0,8.99,"Classics (15.97), New (12.98), Travel (12.97)",1,16,2005-07,74.84
-MITCHELL,520,WESTMORELAND,1.0,10.99,"Family (16.97), Sports (9.98), Drama (7.99)",1,14,2005-07,60.86
-MONICA,131,HICKS,1.0,8.99,"Comedy (8.99), Action (7.98), Travel (7.98)",1,12,2005-07,49.88
-MORRIS,576,MCCARTER,1.0,8.99,"Action (11.97), New (10.97), Games (9.98)",1,15,2005-07,63.85
-MORRIS,576,MCCARTER,1.0,8.99,"Games (8.99), Children (6.99), Comedy (4.99)",2,7,2005-06,33.93
-MYRTLE,258,FLEMING,1.0,9.99,"Drama (20.97), Foreign (8.98)",2,10,2005-07,44.9
-NATALIE,216,MEYER,1.0,6.99,"Drama (6.99), Travel (3.99)",3,5,2005-06,15.95
-NATALIE,216,MEYER,1.0,8.99,"Classics (8.99), Travel (7.99)",2,6,2005-07,32.94
-NATHAN,406,RUNYON,1.0,7.99,"Horror (11.98), Animation (5.98)",2,7,2005-06,26.93
-NATHAN,406,RUNYON,1.0,8.99,"Animation (15.96), Music (9.98), Comedy (7.99), Classics (6.98)",1,18,2005-07,68.82
-NATHANIEL,504,ADAM,1.0,9.99,"Drama (26.97), Sports (11.97)",1,11,2005-07,57.89
-NEIL,532,RENNER,1.0,8.99,"Classics (16.97), Drama (15.97), Sports (8.99)",1,14,2005-07,69.86
-NELLIE,238,GARRETT,1.0,8.99,"New (12.98), Classics (9.98)",1,9,2005-07,42.91
-NELSON,549,CHRISTENSON,1.0,9.99,"Games (9.99), Comedy (7.99), Drama (7.99)",1,9,2005-07,41.91
-NICHOLAS,362,BARFIELD,1.0,8.99,"Animation (16.97), Sports (12.97), Games (9.98)",2,15,2005-07,61.85
-NORA,266,HERRERA,1.0,8.99,"Drama (14.97), Animation (7.98), Horror (6.99), Music (6.99)",1,17,2005-08,71.83
-NORMAN,411,CURRIER,1.0,5.99,"Animation (14.95), Music (5.99)",1,12,2005-07,32.88
-OLGA,277,JIMENEZ,1.0,5.99,"Comedy (8.98), Documentary (4.99), Games (4.99)",3,7,2005-06,28.93
-PAMELA,37,BAKER,1.0,9.99,"Classics (13.98), Comedy (9.99)",2,6,2005-07,36.94
-PATRICIA,2,JOHNSON,1.0,10.99,"Sports (19.97), Travel (15.98), Classics (9.98)",1,14,2005-07,75.86
-PATSY,262,DAVIDSON,1.0,7.99,"Animation (12.98), Foreign (10.98)",1,11,2005-07,47.89
-PAULA,95,BRYANT,1.0,6.99,"Comedy (11.98), Action (10.98)",1,9,2005-07,43.91
-PAULINE,133,HENRY,1.0,6.99,"Drama (10.95), Documentary (9.98), Action (6.99)",1,13,2005-07,47.87
-PEDRO,475,CHESTNUT,1.0,9.99,"Games (15.98), Action (15.97), Animation (12.98)",1,15,2005-07,71.85
-PEGGY,101,MYERS,1.0,8.99,"Sci-Fi (14.97), Games (6.99), Children (5.99)",1,12,2005-07,53.88
-PENNY,271,NEAL,1.0,7.99,"Sports (7.99), Documentary (4.99), Travel (3.99)",1,9,2005-07,30.91
-PERRY,585,SWAFFORD,1.0,9.99,"Sports (25.96), Foreign (12.98)",1,13,2005-07,70.87
-PHILIP,393,CAUSEY,1.0,6.99,"Games (7.98), Music (6.99)",3,5,2005-06,19.95
-PHILIP,393,CAUSEY,1.0,8.99,"New (16.97), Foreign (8.99), Sci-Fi (8.99)",1,13,2005-07,60.87
-PHILLIP,385,HOLM,1.0,8.99,"Travel (10.97), Sports (9.98), Horror (8.99)",1,11,2005-07,44.89
-PHYLLIS,93,FOSTER,1.0,8.99,"Family (8.99), Classics (7.98), Music (7.98)",1,12,2005-08,48.88
-PRISCILLA,273,LOWE,1.0,6.99,"Animation (6.99), Music (6.99)",3,5,2005-06,21.95
-PRISCILLA,273,LOWE,1.0,8.99,"Sci-Fi (9.97), Sports (8.99), Action (8.98), Classics (7.99)",1,15,2005-07,67.85
-RACHEL,79,BARNES,1.0,9.99,"Drama (15.97), New (12.98)",1,13,2005-07,53.87
-RALPH,360,MADRIGAL,1.0,9.99,"Music (14.97), Travel (10.98), Action (9.97)",1,17,2005-07,69.83
-RAMON,494,CHOATE,1.0,8.99,"Sports (21.97), Documentary (10.97), Animation (9.98)",1,18,2005-07,80.82
-RAMONA,296,HALE,1.0,7.99,"Games (10.98), Animation (7.99), Action (6.99), Comedy (5.99)",1,12,2005-07,54.88
-RANDALL,437,NEUMANN,1.0,8.99,"Foreign (20.96), Games (5.98)",1,10,2005-07,44.9
-RANDY,376,GAITHER,1.0,8.99,"New (20.97), Sci-Fi (8.99), Travel (8.98)",1,15,2005-07,69.85
-RAUL,509,FORTIER,1.0,8.99,"Sci-Fi (8.99), Classics (7.98), Horror (6.99)",1,9,2005-07,41.91
-RAYMOND,334,MCWHORTER,1.0,7.99,"Animation (18.97), Action (7.98)",1,11,2005-07,53.89
-REGINA,168,BERRY,1.0,6.99,"Comedy (11.98), Drama (10.98), New (8.98), Animation (7.98)",1,17,2005-07,70.83
-RENEE,182,LANE,1.0,8.99,"Games (11.98), Action (6.99), Documentary (5.98)",1,12,2005-07,39.88
-RHONDA,137,KENNEDY,1.0,8.99,"Games (20.97), Sports (16.97), Horror (11.98)",1,19,2005-07,96.81
-RICARDO,489,MEADOR,1.0,9.99,"Games (13.98), Foreign (11.98), Comedy (9.99)",1,10,2005-08,55.9
-RICHARD,305,MCCRARY,1.0,8.99,"Documentary (12.98), Horror (9.98)",1,10,2005-07,44.9
-RICK,491,MATTOX,1.0,4.99,"Sci-Fi (9.98), Sports (8.98)",2,7,2005-06,31.93
-RICK,491,MATTOX,1.0,8.99,"Sports (16.97), Drama (8.99), Action (6.99)",1,11,2005-07,60.89
-RICKY,435,SHELBY,1.0,8.99,"Music (10.98), Foreign (8.99), Animation (5.98)",1,10,2005-07,43.9
-RITA,104,GRAHAM,1.0,7.99,"Animation (14.98), New (9.98)",1,10,2005-07,44.9
-ROBERT,301,BAUGHMAN,1.0,6.99,"Sci-Fi (15.97), Comedy (11.98)",1,10,2005-07,48.9
-ROBERTA,185,HARPER,1.0,9.99,"Classics (12.97), Animation (10.98), Children (9.99)",1,12,2005-07,50.88
-ROBERTO,484,VU,1.0,9.99,"Sports (13.97), Action (10.98), Travel (9.98), Comedy (8.99)",1,15,2005-07,77.85
-ROBIN,100,HAYES,1.0,8.99,"Classics (11.98), Comedy (10.98), Travel (9.98), Games (8.99)",1,13,2005-07,69.87
-RODNEY,409,MOELLER,1.0,7.99,"Family (13.98), Drama (9.98), Music (7.98)",1,15,2005-07,58.85
-ROGER,348,QUINTANILLA,1.0,9.99,"Animation (17.97), Documentary (9.98), Drama (9.98)",1,16,2005-07,70.84
-ROLAND,521,SOUTH,1.0,7.99,"Family (11.98), New (7.99)",2,9,2005-07,31.91
-RON,519,DELUCA,1.0,7.99,"New (11.97), Children (8.98), Documentary (7.99)",1,13,2005-07,51.87
-RONNIE,456,RICKETTS,1.0,6.99,"Sci-Fi (7.98), New (5.99)",2,7,2005-06,25.93
-ROSA,112,REYNOLDS,1.0,6.99,"Classics (16.96), Travel (8.98)",2,11,2005-07,50.89
-ROSE,65,HOWARD,1.0,6.99,"Animation (12.97), Action (10.97)",2,9,2005-07,37.91
-ROSS,580,GREY,1.0,6.99,"Family (10.98), Foreign (8.97), Classics (6.99)",1,15,2005-07,49.85
-ROY,363,WHITING,1.0,4.99,"Comedy (9.98), Action (4.99)",3,5,2005-06,22.95
-ROY,363,WHITING,1.0,8.99,"Foreign (20.97), Action (12.97), Family (7.98)",1,15,2005-07,69.85
-RUBEN,501,GEARY,1.0,7.99,"New (16.97), Comedy (9.98)",1,9,2005-07,36.91
-RUBY,90,WASHINGTON,1.0,9.99,"Sci-Fi (15.98), Music (9.98)",1,12,2005-07,51.88
-RUSSELL,380,BRINSON,1.0,10.99,"Sports (10.99), New (8.99), Animation (7.98), Family (7.98)",1,14,2005-07,58.86
-RUSSELL,380,BRINSON,1.0,4.99,"Sports (7.98), Documentary (4.99), New (3.99)",3,8,2005-06,27.92
-SALLY,167,PIERCE,1.0,4.99,"Sports (9.98), Family (7.98), Music (7.98)",1,15,2005-07,48.85
-SALVADOR,584,TEEL,1.0,7.99,"Comedy (9.96), Horror (7.99), Travel (7.98)",2,12,2005-07,44.88
-SAM,490,MCDUFFIE,1.0,8.99,"Horror (10.98), Foreign (10.97), Action (8.99), Animation (8.98)",1,14,2005-07,64.86
-SAMUEL,358,MARLOW,1.0,5.99,"Comedy (5.99), Family (2.99), Foreign (2.99)",3,6,2005-06,18.94
-SARA,84,PERRY,1.0,9.99,"Foreign (14.98), Animation (11.98), Horror (8.99)",1,12,2005-07,64.88
-SARAH,23,LEWIS,1.0,9.99,"Sci-Fi (19.96), Animation (8.98), Classics (7.99)",1,13,2005-07,60.87
-SERGIO,587,STANFIELD,1.0,8.99,"New (8.99), Foreign (6.99), Music (6.99), Documentary (6.98)",1,10,2005-07,48.9
-SETH,590,HANNON,1.0,5.99,"Action (8.98), Sci-Fi (7.98), Sports (7.98), Travel (5.98)",1,14,2005-07,56.86
-SETH,590,HANNON,1.0,9.99,"New (9.99), Sports (9.98)",2,5,2005-06,30.95
-SHANE,488,MILLARD,1.0,8.99,"Documentary (14.98), Drama (8.98), Horror (6.99)",1,11,2005-07,50.89
-SHANNON,123,FREEMAN,1.0,4.99,"Action (4.99), Foreign (4.99)",3,5,2005-06,14.95
-SHANNON,123,FREEMAN,1.0,8.99,New (22.96),1,10,2005-07,45.9
-SHARON,20,ROBINSON,1.0,6.99,"New (11.98), Documentary (9.98)",2,10,2005-07,42.9
-SHAWN,390,HEATON,1.0,5.99,"Comedy (11.98), Family (8.98), Travel (7.98)",2,14,2005-07,56.86
-SHEILA,124,WELLS,1.0,8.99,"Children (9.98), Drama (8.99)",1,8,2005-07,37.92
-SHELLY,294,WATTS,1.0,7.99,"Animation (9.98), Games (7.99), Action (7.98)",2,10,2005-07,47.9
-SHELLY,294,WATTS,1.0,7.99,"Comedy (16.97), Horror (12.98)",1,13,2005-08,57.87
-SHERRI,297,RHODES,1.0,8.99,"Children (11.98), Documentary (9.98), Animation (8.98)",2,13,2005-07,48.87
-SHERRI,297,RHODES,1.0,8.99,"Sci-Fi (8.99), Animation (4.99)",3,5,2005-06,23.95
-SHERRY,119,MARSHALL,1.0,6.99,"New (11.98), Sports (8.98), Children (7.98), Sci-Fi (7.98), Family (6.99)",1,18,2005-08,77.82
-SHIRLEY,27,ALLEN,1.0,4.99,"Comedy (4.99), Documentary (4.99), Sports (4.99), Foreign (4.98)",3,8,2005-06,30.92
-SIDNEY,572,BURLESON,1.0,6.99,"Family (12.97), Sports (10.97)",1,11,2005-07,46.89
-SONIA,284,GREGORY,1.0,8.99,"Action (18.97), Family (8.98), Sci-Fi (8.98)",1,12,2005-07,60.88
-STACEY,211,MONTGOMERY,1.0,8.99,"Animation (12.98), Music (10.97), Sci-Fi (9.97)",2,16,2005-07,62.84
-STACY,180,CUNNINGHAM,1.0,9.99,"Family (16.97), Comedy (7.99)",2,10,2005-07,40.9
-STANLEY,404,SCROGGINS,1.0,8.99,"Documentary (12.97), Animation (9.98), New (8.99)",1,14,2005-07,59.86
-STELLA,247,MORENO,1.0,6.99,"Foreign (6.99), Sci-Fi (6.99), Drama (5.99)",2,7,2005-07,33.93
-STEPHANIE,41,MITCHELL,1.0,9.99,"Animation (16.96), Sci-Fi (14.97), Games (10.98)",1,15,2005-07,70.85
-STEPHEN,332,QUALLS,1.0,8.99,"Games (18.97), Action (13.98), Horror (10.97)",1,17,2005-07,78.83
-STEVE,372,MACKENZIE,1.0,8.99,"Action (10.98), Travel (9.98), Horror (8.99), Music (7.99), Family (6.99)",1,16,2005-07,77.84
-SUSAN,8,WILSON,1.0,5.99,"Classics (8.97), Drama (7.97), Foreign (4.99)",2,12,2005-07,35.88
-SUZANNE,153,NICHOLS,1.0,9.99,"Games (15.98), Classics (7.99)",2,10,2005-07,39.9
-SYLVIA,120,ORTIZ,1.0,9.99,"Action (9.99), Drama (4.99)",3,6,2005-06,29.94
-TAMARA,229,NGUYEN,1.0,7.99,"Drama (12.98), Sci-Fi (5.99), Action (5.98)",1,13,2005-07,49.87
-TAMMY,75,SANDERS,1.0,7.99,"Sports (7.99), Documentary (6.99)",3,5,2005-06,29.95
-TAMMY,75,SANDERS,1.0,9.99,"Family (17.97), Animation (9.97), Classics (9.97)",1,20,2005-07,70.8
-TANYA,237,GILBERT,1.0,8.99,"Family (16.96), Sci-Fi (6.99), Music (6.98), New (6.98)",1,15,2005-07,64.85
-TARA,203,RYAN,1.0,10.99,"Drama (17.98), Action (13.98)",1,7,2005-07,40.93
-TED,538,BREAUX,1.0,8.99,"Action (8.99), Documentary (8.99), Sports (8.97)",1,14,2005-07,51.86
-TERESA,54,ROGERS,1.0,10.99,"Animation (20.95), Family (18.97)",1,14,2005-08,64.86
-TERRENCE,595,GUNDERSON,1.0,10.99,"New (15.98), Music (12.97), Family (9.99), Children (9.98)",1,19,2005-07,86.81
-TERRI,206,VASQUEZ,1.0,6.99,"Foreign (11.98), Animation (10.98), Documentary (10.97)",1,13,2005-07,60.87
-TERRY,355,GRISSOM,1.0,6.99,"Foreign (10.98), Sci-Fi (10.98), New (7.98)",1,11,2005-07,52.89
-THELMA,122,MURRAY,1.0,7.99,"Drama (13.98), Horror (10.97), Sci-Fi (9.98)",1,15,2005-07,61.85
-THELMA,122,MURRAY,1.0,7.99,Horror (12.98),3,7,2005-06,25.93
-THEODORE,446,CULP,1.0,6.99,"Action (6.99), Children (6.98)",2,6,2005-06,20.94
-THEODORE,446,CULP,1.0,9.99,"Foreign (22.95), Sci-Fi (9.99), Sports (8.98)",1,17,2005-07,71.83
-THERESA,72,WATSON,1.0,5.99,"Animation (9.98), Family (5.99), Music (5.98)",2,10,2005-07,36.9
-THOMAS,308,GRIGSBY,1.0,6.99,"Animation (15.97), Documentary (11.98)",1,13,2005-08,53.87
-THOMAS,308,GRIGSBY,1.0,7.99,"Games (7.99), Music (5.98)",3,5,2005-06,19.95
-TIMOTHY,325,BUNN,1.0,9.99,"Documentary (12.98), New (8.97)",1,10,2005-07,41.9
-TINA,92,SIMMONS,1.0,8.99,"Horror (26.96), New (14.98)",1,15,2005-07,78.85
-TODD,386,TAN,1.0,8.99,"Action (15.97), Music (7.98), Animation (6.99)",1,13,2005-07,54.87
-TOMMY,459,COLLAZO,1.0,10.99,"Comedy (38.95), Action (7.98)",1,18,2005-07,89.82
-TOMMY,459,COLLAZO,1.0,9.99,"Family (9.99), Documentary (5.98)",3,7,2005-06,25.93
-TONI,291,HOLT,1.0,7.99,"Drama (10.98), Music (8.98), Comedy (7.99)",1,12,2005-07,52.88
-TONY,401,CARRANZA,1.0,8.99,"Children (9.98), Sports (7.99)",1,9,2005-07,35.91
-TONYA,209,CHAPMAN,1.0,8.99,"Classics (15.97), Children (14.97), Documentary (11.97)",1,17,2005-07,82.83
-TRACEY,280,BARRETT,1.0,7.99,"Drama (8.98), Children (7.98), Foreign (5.98)",2,11,2005-07,34.89
-TRACEY,280,BARRETT,1.0,9.99,"New (14.98), Sci-Fi (10.98), Sports (10.98)",1,12,2005-08,68.88
-TRACY,108,COLE,1.0,6.99,"Comedy (11.97), Foreign (9.98), Sci-Fi (9.98)",1,13,2005-07,51.87
-TRACY,108,COLE,1.0,8.99,"Drama (9.98), Comedy (8.99)",3,5,2005-06,24.95
-TRAVIS,417,ESTEP,1.0,9.99,Sci-Fi (21.97),2,7,2005-07,35.93
-TROY,436,QUIGLEY,1.0,9.99,"Comedy (14.98), Games (9.99), Documentary (5.99)",2,12,2005-07,52.88
-TYLER,496,WREN,1.0,5.99,"Foreign (7.98), Drama (6.98), Children (5.99)",2,8,2005-07,29.92
-TYLER,496,WREN,1.0,7.99,"Sports (18.97), Animation (11.98)",1,9,2005-08,46.91
-VALERIE,149,BLACK,1.0,7.99,"Sports (12.98), Classics (7.99)",2,7,2005-06,32.93
-VELMA,286,LUCAS,1.0,9.99,"Documentary (17.97), Sci-Fi (16.98), Drama (11.97)",1,17,2005-07,76.83
-VERA,218,MCCOY,1.0,8.99,"Action (8.99), Classics (6.99), Drama (6.99)",1,8,2005-07,37.92
-VERNON,483,CHAPA,1.0,9.99,"Sports (9.99), Comedy (9.98), Foreign (7.99)",1,9,2005-07,48.91
-VICTOR,382,BARKLEY,1.0,9.99,"Documentary (13.96), Travel (9.99)",1,10,2005-07,39.9
-VICTORIA,116,GIBSON,1.0,4.99,"Animation (8.98), Documentary (4.99)",3,6,2005-06,20.94
-VICTORIA,116,GIBSON,1.0,6.99,"Family (15.97), Foreign (7.98)",2,10,2005-07,41.9
-VIOLA,244,HANSON,1.0,5.99,"Drama (9.98), New (9.98), Comedy (5.99), Sci-Fi (5.99)",1,14,2005-07,54.86
-VIRGIL,581,WOFFORD,1.0,8.99,"Animation (12.97), Classics (11.98), Travel (7.99)",1,14,2005-07,57.86
-VIRGINIA,35,GREEN,1.0,6.99,"Sports (13.97), Action (10.97), Drama (6.99), Animation (5.99)",1,16,2005-07,68.84
-VIVIAN,184,RUIZ,1.0,6.99,"Animation (7.98), Action (6.99), Music (6.99)",2,9,2005-07,36.91
-WADE,598,DELVALLE,1.0,6.99,"Comedy (13.97), Drama (11.98), Foreign (9.98)",1,16,2005-07,64.84
-WALTER,339,PERRYMAN,1.0,6.99,"Foreign (6.99), Family (4.99), Games (4.99)",3,5,2005-06,25.95
-WALTER,339,PERRYMAN,1.0,7.99,"Sports (9.98), Animation (7.99), Foreign (6.97), Family (5.99)",1,13,2005-07,52.87
-WANDA,87,PATTERSON,1.0,8.99,"Sci-Fi (13.98), Action (7.99), Drama (7.99)",1,11,2005-07,56.89
-WANDA,87,PATTERSON,1.0,9.99,"Games (9.99), Travel (7.98)",3,5,2005-06,25.95
-WARREN,462,SHERROD,1.0,8.99,"Family (16.98), Games (13.98), Sports (8.99)",1,16,2005-07,74.84
-WAYNE,370,TRUONG,1.0,7.99,"Games (7.99), Sports (7.99)",2,8,2005-07,27.92
-WENDY,115,HARRISON,1.0,6.99,"Drama (11.98), Sports (11.97), Classics (7.98)",1,15,2005-07,50.85
-WESLEY,469,BULL,1.0,10.99,"Games (21.95), New (10.99), Documentary (8.98)",1,18,2005-07,80.82
-WILLARD,578,LUMPKIN,1.0,6.99,"New (10.98), Sci-Fi (9.98), Foreign (6.99)",1,11,2005-07,45.89
-WILLIE,219,HOWELL,1.0,7.99,"Horror (15.98), Foreign (9.98), Sports (6.99)",1,15,2005-07,64.85
-ZACHARY,479,HITE,1.0,8.99,"Horror (17.97), Comedy (13.97), Sports (12.98)",1,15,2005-07,79.85
+customer_id,customer_first_name,customer_last_name,payment_month,total_amount,payment_count,foreign_store_payment_share,largest_payment,month_amount_rank,major_categories
+1,MARY,SMITH,2005-06,31.93,7,1.0,9.99,2,"Comedy (14.98), Classics (6.98)"
+2,PATRICIA,JOHNSON,2005-07,75.86,14,1.0,10.99,1,"Sports (19.97), Travel (15.98), Classics (9.98)"
+3,LINDA,WILLIAMS,2005-07,68.87,13,1.0,10.99,1,"Action (18.97), Games (10.98), Animation (7.99)"
+5,ELIZABETH,BROWN,2005-07,59.84,16,1.0,8.99,1,"New (14.97), Classics (14.96)"
+6,JENNIFER,DAVIS,2005-07,26.91,9,1.0,7.99,2,"New (7.99), Music (5.99)"
+6,JENNIFER,DAVIS,2005-08,48.88,12,1.0,7.99,1,"Sports (11.98), Drama (10.98), Comedy (6.99)"
+7,MARIA,MILLER,2005-07,59.89,11,1.0,8.99,1,"Horror (16.98), Sports (16.97)"
+8,SUSAN,WILSON,2005-07,35.88,12,1.0,5.99,2,"Classics (8.97), Drama (7.97), Foreign (4.99)"
+10,DOROTHY,TAYLOR,2005-06,15.95,5,1.0,4.99,3,Games (9.97)
+10,DOROTHY,TAYLOR,2005-07,45.89,11,1.0,7.99,1,"Sports (12.98), Action (7.98), Foreign (7.98)"
+11,LISA,ANDERSON,2005-07,53.89,11,1.0,9.99,1,"Games (10.97), Drama (9.99), Children (9.98)"
+13,KAREN,JACKSON,2005-07,61.87,13,1.0,11.99,1,"Drama (12.98), Sci-Fi (12.98), Animation (9.99)"
+14,BETTY,WHITE,2005-07,50.88,12,1.0,7.99,1,"Drama (8.98), Games (7.99), Action (6.99), Children (4.99)"
+15,HELEN,HARRIS,2005-07,40.91,9,1.0,7.99,2,"Comedy (8.98), Classics (8.97), Horror (7.99)"
+15,HELEN,HARRIS,2005-08,79.82,18,1.0,8.99,1,"Travel (13.97), Children (12.98), Sports (12.97)"
+20,SHARON,ROBINSON,2005-07,42.9,10,1.0,6.99,2,"New (11.98), Documentary (9.98)"
+21,MICHELLE,CLARK,2005-06,31.95,5,1.0,10.99,2,Foreign (15.98)
+21,MICHELLE,CLARK,2005-08,79.83,17,1.0,9.99,1,"Documentary (16.97), Sci-Fi (15.96), Horror (9.99)"
+22,LAURA,RODRIGUEZ,2005-08,54.9,10,1.0,9.99,1,"Foreign (17.98), Sports (11.98)"
+23,SARAH,LEWIS,2005-07,60.87,13,1.0,9.99,1,"Sci-Fi (19.96), Animation (8.98), Classics (7.99)"
+25,DEBORAH,WALKER,2005-06,33.94,6,1.0,8.99,2,"Games (11.98), Sci-Fi (6.99)"
+26,JESSICA,HALL,2005-06,41.93,7,1.0,9.99,3,"Sci-Fi (9.99), Drama (6.99), Foreign (5.99)"
+27,SHIRLEY,ALLEN,2005-06,30.92,8,1.0,4.99,3,"Comedy (4.99), Documentary (4.99), Sports (4.99), Foreign (4.98)"
+28,CYNTHIA,YOUNG,2005-07,51.86,14,1.0,9.99,1,"Music (9.99), Action (7.98), Travel (7.97)"
+29,ANGELA,HERNANDEZ,2005-06,21.93,7,1.0,7.99,3,Children (13.97)
+29,ANGELA,HERNANDEZ,2005-07,46.89,11,1.0,10.99,2,"Comedy (10.99), New (6.99), Sports (6.99)"
+30,MELISSA,KING,2005-07,73.81,19,1.0,9.99,1,"Drama (12.97), Comedy (11.97), Games (9.99), Family (7.98)"
+32,AMY,LOPEZ,2005-07,58.85,15,1.0,9.99,1,"Comedy (12.97), Games (9.99), Family (8.97)"
+35,VIRGINIA,GREEN,2005-07,68.84,16,1.0,6.99,1,"Sports (13.97), Action (10.97), Drama (6.99), Animation (5.99)"
+36,KATHLEEN,ADAMS,2005-07,40.87,13,1.0,6.99,2,"Music (14.97), Family (6.99)"
+36,KATHLEEN,ADAMS,2005-08,48.89,11,1.0,9.99,1,"Classics (16.98), Comedy (9.98)"
+37,PAMELA,BAKER,2005-07,36.94,6,1.0,9.99,2,"Classics (13.98), Comedy (9.99)"
+38,MARTHA,GONZALEZ,2005-07,65.82,18,1.0,5.99,1,"Children (14.96), Drama (11.98), Classics (7.98)"
+40,AMANDA,CARTER,2005-07,40.89,11,1.0,8.99,2,"Action (8.99), Children (8.98), Drama (6.99)"
+41,STEPHANIE,MITCHELL,2005-07,70.85,15,1.0,9.99,1,"Animation (16.96), Sci-Fi (14.97), Games (10.98)"
+42,CAROLYN,PEREZ,2005-07,61.84,16,1.0,6.99,1,"Documentary (10.98), Classics (6.99), Horror (6.98), Sci-Fi (6.98)"
+43,CHRISTINE,ROBERTS,2005-07,47.88,12,1.0,4.99,1,"New (12.97), Travel (12.97)"
+44,MARIE,TURNER,2005-07,53.9,10,1.0,9.99,1,"Animation (14.97), Children (13.98)"
+45,JANET,PHILLIPS,2005-06,17.95,5,1.0,4.99,3,"Action (4.99), Sports (4.99)"
+45,JANET,PHILLIPS,2005-07,37.91,9,1.0,9.99,2,"Classics (10.98), Music (7.99)"
+45,JANET,PHILLIPS,2005-08,68.88,12,1.0,10.99,1,"Documentary (10.99), Sci-Fi (8.99), Travel (7.99), Action (7.98)"
+46,CATHERINE,CAMPBELL,2005-06,32.93,7,1.0,8.99,2,"Foreign (8.99), Drama (4.99), Horror (4.99)"
+48,ANN,EVANS,2005-07,44.92,8,1.0,7.99,1,"Foreign (13.98), Music (10.98)"
+49,JOYCE,EDWARDS,2005-07,69.87,13,1.0,10.99,1,"Family (17.96), New (12.97), Children (8.99)"
+50,DIANE,COLLINS,2005-07,80.83,17,1.0,10.99,1,"Drama (16.97), Foreign (15.97), Children (14.98)"
+51,ALICE,STEWART,2005-07,58.88,12,1.0,9.99,2,"Music (10.98), Games (9.99), Comedy (7.99), Family (7.98)"
+52,JULIE,SANCHEZ,2005-07,48.88,12,1.0,7.99,1,"Documentary (11.97), Games (8.98), Horror (5.99)"
+54,TERESA,ROGERS,2005-08,64.86,14,1.0,10.99,1,"Animation (20.95), Family (18.97)"
+58,JEAN,BELL,2005-07,38.91,9,1.0,9.99,2,"Foreign (9.99), Documentary (9.98)"
+58,JEAN,BELL,2005-08,58.89,11,1.0,8.99,1,"Sports (10.98), Games (8.99), Action (6.99), Animation (6.99)"
+59,CHERYL,MURPHY,2005-07,60.89,11,1.0,8.99,1,"Travel (14.97), Games (8.99), Sports (8.99)"
+61,KATHERINE,RIVERA,2005-07,32.94,6,1.0,7.99,1,"Sci-Fi (14.98), New (6.99)"
+62,JOAN,COOPER,2005-06,24.93,7,1.0,6.99,2,"Games (7.98), Action (5.99)"
+63,ASHLEY,RICHARDSON,2005-07,64.86,14,1.0,8.99,1,"Drama (12.97), New (9.98), Comedy (8.99), Documentary (8.98)"
+64,JUDITH,COX,2005-07,59.81,19,1.0,6.99,1,"Documentary (17.95), Animation (13.96)"
+65,ROSE,HOWARD,2005-07,37.91,9,1.0,6.99,2,"Animation (12.97), Action (10.97)"
+66,JANICE,WARD,2005-06,29.93,7,1.0,6.99,3,"Family (7.98), Action (6.99)"
+66,JANICE,WARD,2005-07,60.87,13,1.0,8.99,1,"Classics (8.99), Drama (8.98), Foreign (8.98), Travel (7.98)"
+69,JUDY,GRAY,2005-07,47.89,11,1.0,8.99,1,"Sci-Fi (14.97), Family (12.98)"
+70,CHRISTINA,RAMIREZ,2005-07,26.93,7,1.0,7.99,2,"Documentary (8.98), Family (5.99)"
+70,CHRISTINA,RAMIREZ,2005-08,43.91,9,1.0,9.99,1,"Sports (13.97), Horror (9.99)"
+71,KATHY,JAMES,2005-07,70.82,18,1.0,8.99,1,"Action (18.97), Music (11.97), Travel (7.98)"
+72,THERESA,WATSON,2005-07,36.9,10,1.0,5.99,2,"Animation (9.98), Family (5.99), Music (5.98)"
+73,BEVERLY,BROOKS,2005-07,46.9,10,1.0,9.99,1,"Family (9.99), Children (7.98), Classics (7.98)"
+74,DENISE,KELLY,2005-07,47.9,10,1.0,7.99,1,"Travel (14.97), Sci-Fi (11.98)"
+75,TAMMY,SANDERS,2005-06,29.95,5,1.0,7.99,3,"Sports (7.99), Documentary (6.99)"
+75,TAMMY,SANDERS,2005-07,70.8,20,1.0,9.99,1,"Family (17.97), Animation (9.97), Classics (9.97)"
+76,IRENE,PRICE,2005-06,12.94,6,1.0,6.99,3,Children (6.99)
+76,IRENE,PRICE,2005-07,25.91,9,1.0,6.99,2,Drama (13.96)
+79,RACHEL,BARNES,2005-07,53.87,13,1.0,9.99,1,"Drama (15.97), New (12.98)"
+80,MARILYN,ROSS,2005-07,61.88,12,1.0,8.99,1,"New (15.97), Sports (12.98), Documentary (6.99)"
+81,ANDREA,HENDERSON,2005-07,23.94,6,1.0,9.99,2,"New (9.99), Horror (9.97)"
+81,ANDREA,HENDERSON,2005-08,55.88,12,1.0,7.99,1,"Comedy (11.98), Sports (11.97), Sci-Fi (7.99)"
+82,KATHRYN,COLEMAN,2005-07,64.89,11,1.0,9.99,1,"Action (11.98), Animation (10.98), Horror (9.99)"
+84,SARA,PERRY,2005-07,64.88,12,1.0,9.99,1,"Foreign (14.98), Animation (11.98), Horror (8.99)"
+86,JACQUELINE,LONG,2005-06,24.93,7,1.0,4.99,3,"Animation (7.98), Classics (4.99)"
+86,JACQUELINE,LONG,2005-07,64.88,12,1.0,10.99,1,"Horror (20.98), Foreign (13.98)"
+87,WANDA,PATTERSON,2005-06,25.95,5,1.0,9.99,3,"Games (9.99), Travel (7.98)"
+87,WANDA,PATTERSON,2005-07,56.89,11,1.0,8.99,1,"Sci-Fi (13.98), Action (7.99), Drama (7.99)"
+88,BONNIE,HUGHES,2005-07,44.89,11,1.0,8.99,1,"Family (14.97), Music (9.98)"
+89,JULIA,FLORES,2005-06,30.95,5,1.0,8.99,2,Action (16.98)
+89,JULIA,FLORES,2005-07,68.83,17,1.0,8.99,1,"Drama (18.97), Comedy (11.98), Games (9.98)"
+90,RUBY,WASHINGTON,2005-07,51.88,12,1.0,9.99,1,"Sci-Fi (15.98), Music (9.98)"
+91,LOIS,BUTLER,2005-07,59.81,19,1.0,4.99,1,"Comedy (17.96), Action (7.98), Drama (5.98)"
+92,TINA,SIMMONS,2005-07,78.85,15,1.0,8.99,1,"Horror (26.96), New (14.98)"
+93,PHYLLIS,FOSTER,2005-08,48.88,12,1.0,8.99,1,"Family (8.99), Classics (7.98), Music (7.98)"
+95,PAULA,BRYANT,2005-07,43.91,9,1.0,6.99,1,"Comedy (11.98), Action (10.98)"
+97,ANNIE,RUSSELL,2005-07,40.88,12,1.0,5.99,1,"Foreign (10.98), Documentary (5.98), New (5.98)"
+98,LILLIAN,GRIFFIN,2005-06,25.94,6,1.0,5.99,3,"New (5.99), Games (4.99), Sci-Fi (4.99)"
+99,EMILY,DIAZ,2005-07,56.85,15,1.0,7.99,1,"Sports (15.97), Family (10.98), New (7.98)"
+100,ROBIN,HAYES,2005-07,69.87,13,1.0,8.99,1,"Classics (11.98), Comedy (10.98), Travel (9.98), Games (8.99)"
+101,PEGGY,MYERS,2005-07,53.88,12,1.0,8.99,1,"Sci-Fi (14.97), Games (6.99), Children (5.99)"
+102,CRYSTAL,FORD,2005-07,84.79,21,1.0,6.99,1,"Sports (15.97), Sci-Fi (14.97), Action (13.97)"
+103,GLADYS,HAMILTON,2005-07,68.85,15,1.0,6.99,1,"Sports (11.98), Animation (10.97), Documentary (7.98), Foreign (7.98)"
+104,RITA,GRAHAM,2005-07,44.9,10,1.0,7.99,1,"Animation (14.98), New (9.98)"
+106,CONNIE,WALLACE,2005-07,41.9,10,1.0,7.99,2,"Horror (11.97), Classics (10.98)"
+107,FLORENCE,WOODS,2005-07,61.86,14,1.0,7.99,1,"Family (10.97), Sci-Fi (8.98), Comedy (7.99), Drama (6.99)"
+108,TRACY,COLE,2005-06,24.95,5,1.0,8.99,3,"Drama (9.98), Comedy (8.99)"
+108,TRACY,COLE,2005-07,51.87,13,1.0,6.99,1,"Comedy (11.97), Foreign (9.98), Sci-Fi (9.98)"
+111,CARMEN,OWENS,2005-06,22.94,6,1.0,6.99,3,"Travel (9.98), Animation (4.99)"
+112,ROSA,REYNOLDS,2005-07,50.89,11,1.0,6.99,2,"Classics (16.96), Travel (8.98)"
+113,CINDY,FISHER,2005-06,27.94,6,1.0,8.99,3,"Documentary (9.98), Drama (7.98)"
+114,GRACE,ELLIS,2005-07,61.85,15,1.0,10.99,1,"New (15.98), Foreign (9.97), Sports (7.98)"
+115,WENDY,HARRISON,2005-07,50.85,15,1.0,6.99,1,"Drama (11.98), Sports (11.97), Classics (7.98)"
+116,VICTORIA,GIBSON,2005-06,20.94,6,1.0,4.99,3,"Animation (8.98), Documentary (4.99)"
+116,VICTORIA,GIBSON,2005-07,41.9,10,1.0,6.99,2,"Family (15.97), Foreign (7.98)"
+117,EDITH,MCDONALD,2005-07,26.95,5,1.0,9.99,2,"Foreign (12.98), Games (9.99)"
+117,EDITH,MCDONALD,2005-08,36.9,10,1.0,6.99,1,"Children (11.98), Sports (5.98), Foreign (4.99)"
+118,KIM,CRUZ,2005-07,37.89,11,1.0,7.99,1,"Sports (8.98), Foreign (6.98), Games (6.98)"
+119,SHERRY,MARSHALL,2005-08,77.82,18,1.0,6.99,1,"New (11.98), Sports (8.98), Children (7.98), Sci-Fi (7.98), Family (6.99)"
+120,SYLVIA,ORTIZ,2005-06,29.94,6,1.0,9.99,3,"Action (9.99), Drama (4.99)"
+121,JOSEPHINE,GOMEZ,2005-07,31.91,9,1.0,8.99,2,"Comedy (8.99), Animation (6.99)"
+121,JOSEPHINE,GOMEZ,2005-08,67.86,14,1.0,9.99,1,"Documentary (21.97), Children (9.99), Sports (8.99)"
+122,THELMA,MURRAY,2005-06,25.93,7,1.0,7.99,3,Horror (12.98)
+122,THELMA,MURRAY,2005-07,61.85,15,1.0,7.99,1,"Drama (13.98), Horror (10.97), Sci-Fi (9.98)"
+123,SHANNON,FREEMAN,2005-06,14.95,5,1.0,4.99,3,"Action (4.99), Foreign (4.99)"
+123,SHANNON,FREEMAN,2005-07,45.9,10,1.0,8.99,1,New (22.96)
+124,SHEILA,WELLS,2005-07,37.92,8,1.0,8.99,1,"Children (9.98), Drama (8.99)"
+125,ETHEL,WEBB,2005-07,65.84,16,1.0,9.99,1,"Documentary (12.97), Animation (10.98), Action (8.97), Games (7.99)"
+126,ELLEN,SIMPSON,2005-07,48.87,13,1.0,7.99,2,"Family (13.98), Action (10.96)"
+127,ELAINE,STEVENS,2005-07,36.93,7,1.0,6.99,2,"New (10.98), Animation (9.98)"
+127,ELAINE,STEVENS,2005-08,56.88,12,1.0,10.99,1,"Family (23.97), Sci-Fi (8.98)"
+128,MARJORIE,TUCKER,2005-07,65.84,16,1.0,6.99,1,"Comedy (14.97), Animation (10.98), Action (8.98)"
+130,CHARLOTTE,HUNTER,2005-06,21.94,6,1.0,6.99,3,"Games (9.98), Classics (2.99)"
+131,MONICA,HICKS,2005-07,49.88,12,1.0,8.99,1,"Comedy (8.99), Action (7.98), Travel (7.98)"
+133,PAULINE,HENRY,2005-07,47.87,13,1.0,6.99,1,"Drama (10.95), Documentary (9.98), Action (6.99)"
+135,JUANITA,MASON,2005-07,57.86,14,1.0,7.99,1,"Children (16.97), Comedy (7.99), Games (7.99)"
+136,ANITA,MORALES,2005-07,24.94,6,1.0,8.99,2,"New (8.99), Action (5.99)"
+136,ANITA,MORALES,2005-08,31.93,7,1.0,10.99,1,"Drama (10.99), Classics (10.98)"
+137,RHONDA,KENNEDY,2005-07,96.81,19,1.0,8.99,1,"Games (20.97), Sports (16.97), Horror (11.98)"
+138,HAZEL,WARREN,2005-07,47.85,15,1.0,9.99,2,"Sports (18.96), Family (9.96)"
+139,AMBER,DIXON,2005-07,51.88,12,1.0,7.99,1,"Documentary (13.98), Drama (12.98)"
+141,DEBBIE,REYES,2005-07,41.89,11,1.0,7.99,2,"Travel (12.98), Horror (9.98)"
+142,APRIL,BURNS,2005-07,41.9,10,1.0,7.99,1,"Children (7.99), Drama (7.98), Action (5.99)"
+144,CLARA,SHAW,2005-06,22.94,6,1.0,5.99,3,"Horror (5.99), New (4.99), Sports (4.99)"
+144,CLARA,SHAW,2005-07,93.82,18,1.0,9.99,1,"Action (26.97), Classics (18.97), Children (13.98)"
+145,LUCILLE,HOLMES,2005-07,55.85,15,1.0,8.99,1,"Animation (20.95), Sports (7.99)"
+147,JOANNE,ROBERTSON,2005-07,31.87,13,1.0,7.99,2,"Games (7.99), Action (5.98), Animation (5.96)"
+147,JOANNE,ROBERTSON,2005-08,76.85,15,1.0,8.99,1,"Action (12.97), New (11.98), Documentary (9.98), Comedy (8.99)"
+148,ELEANOR,HUNT,2005-06,22.95,5,1.0,6.99,3,"Classics (6.99), Horror (5.99)"
+148,ELEANOR,HUNT,2005-07,100.78,22,1.0,10.99,1,"Horror (14.97), Travel (12.97), Sci-Fi (12.96), Action (10.99)"
+149,VALERIE,BLACK,2005-06,32.93,7,1.0,7.99,2,"Sports (12.98), Classics (7.99)"
+150,DANIELLE,DANIELS,2005-08,68.84,16,1.0,9.99,1,"Sci-Fi (14.97), Sports (12.98), Travel (12.98)"
+152,ALICIA,MILLS,2005-07,25.94,6,1.0,7.99,2,"Children (8.98), Sci-Fi (7.99)"
+153,SUZANNE,NICHOLS,2005-07,39.9,10,1.0,9.99,2,"Games (15.98), Classics (7.99)"
+154,MICHELE,GRANT,2005-07,55.86,14,1.0,7.99,1,"Drama (11.97), Comedy (9.98), Documentary (7.99)"
+155,GAIL,KNIGHT,2005-06,27.95,5,1.0,7.99,2,Documentary (15.98)
+157,DARLENE,ROSE,2005-07,52.83,17,1.0,5.99,2,"Games (8.98), Music (7.98), Documentary (7.96), Horror (5.99)"
+159,JILL,HAWKINS,2005-07,38.9,10,1.0,7.99,1,"New (7.99), Classics (6.98), Travel (6.98)"
+160,ERIN,DUNN,2005-08,66.85,15,1.0,7.99,1,"Documentary (11.97), Music (10.98), Foreign (8.98), Drama (7.99)"
+161,GERALDINE,PERKINS,2005-07,41.9,10,1.0,6.99,2,"Foreign (6.99), Travel (6.99), Music (5.98), Animation (4.99)"
+164,JOANN,GARDNER,2005-07,38.9,10,1.0,6.99,1,"Drama (6.99), Music (4.99), Sci-Fi (4.99), Travel (4.99)"
+165,LORRAINE,STEPHENS,2005-07,49.88,12,1.0,7.99,1,"Classics (11.96), Games (7.99), Music (6.99)"
+166,LYNN,PAYNE,2005-07,56.87,13,1.0,8.99,1,"Classics (16.97), Sports (16.97)"
+167,SALLY,PIERCE,2005-07,48.85,15,1.0,4.99,1,"Sports (9.98), Family (7.98), Music (7.98)"
+168,REGINA,BERRY,2005-07,70.83,17,1.0,6.99,1,"Comedy (11.98), Drama (10.98), New (8.98), Animation (7.98)"
+169,ERICA,MATTHEWS,2005-07,49.9,10,1.0,9.99,1,"Sports (11.98), Animation (9.99), Foreign (8.99)"
+170,BEATRICE,ARNOLD,2005-07,56.88,12,1.0,9.99,1,"Children (9.99), Family (8.98), New (7.99), Classics (4.99)"
+171,DOLORES,WAGNER,2005-06,32.93,7,1.0,6.99,3,"Documentary (11.97), Foreign (6.99)"
+172,BERNICE,WILLIS,2005-07,70.86,14,1.0,7.99,1,"Children (13.98), Travel (11.98), Action (8.98), Animation (8.98)"
+173,AUDREY,RAY,2005-07,57.86,14,1.0,8.99,1,"New (8.99), Games (8.98), Family (8.97), Classics (7.99)"
+175,ANNETTE,OLSON,2005-07,46.89,11,1.0,7.99,1,"Games (9.98), New (8.98), Horror (7.99)"
+179,DANA,HART,2005-07,68.86,14,1.0,8.99,1,"Documentary (14.97), Action (8.99), Music (7.99), Family (7.98)"
+180,STACY,CUNNINGHAM,2005-07,40.9,10,1.0,9.99,2,"Family (16.97), Comedy (7.99)"
+181,ANA,BRADLEY,2005-07,72.88,12,1.0,9.99,1,"Family (19.97), Documentary (11.98), Drama (8.99)"
+182,RENEE,LANE,2005-07,39.88,12,1.0,8.99,1,"Games (11.98), Action (6.99), Documentary (5.98)"
+183,IDA,ANDREWS,2005-07,34.89,11,1.0,5.99,1,"Documentary (10.97), Classics (4.99), Drama (4.99)"
+184,VIVIAN,RUIZ,2005-07,36.91,9,1.0,6.99,2,"Animation (7.98), Action (6.99), Music (6.99)"
+185,ROBERTA,HARPER,2005-07,50.88,12,1.0,9.99,1,"Classics (12.97), Animation (10.98), Children (9.99)"
+186,HOLLY,FOX,2005-06,25.94,6,1.0,4.99,3,"Classics (10.97), Animation (4.99)"
+186,HOLLY,FOX,2005-08,55.86,14,1.0,8.99,1,"Comedy (15.98), Drama (11.97)"
+187,BRITTANY,RILEY,2005-07,63.89,11,1.0,10.99,2,"Music (15.98), Sci-Fi (8.99), Documentary (8.98)"
+189,LORETTA,CARPENTER,2005-07,37.9,10,1.0,5.99,1,"Sci-Fi (6.98), Travel (5.99), Family (5.98), Animation (4.99)"
+191,JEANETTE,GREENE,2005-07,39.91,9,1.0,6.99,1,"Documentary (6.99), Games (5.99), Sci-Fi (5.99), Music (4.99)"
+192,LAURIE,LAWRENCE,2005-07,35.9,10,1.0,7.99,2,"Classics (12.98), Comedy (7.99)"
+192,LAURIE,LAWRENCE,2005-08,52.9,10,1.0,7.99,1,"Horror (12.97), Comedy (8.98), Music (7.99)"
+193,KATIE,ELLIOTT,2005-06,35.94,6,1.0,8.99,2,"Animation (8.99), Family (6.99), Music (6.99)"
+198,ELSIE,KELLEY,2005-07,52.85,15,1.0,5.99,2,"Foreign (13.97), Documentary (6.97), Music (5.99)"
+198,ELSIE,KELLEY,2005-08,70.84,16,1.0,6.99,1,"Games (12.98), Family (9.98), Sci-Fi (9.98), Foreign (5.99)"
+199,BETH,FRANKLIN,2005-07,52.88,12,1.0,8.99,1,"Children (11.98), Travel (9.98), Action (7.98)"
+200,JEANNE,LAWSON,2005-06,31.93,7,1.0,6.99,3,"Games (8.98), Classics (4.99), Comedy (4.99)"
+202,CARLA,GUTIERREZ,2005-07,52.87,13,1.0,8.99,1,"Foreign (11.98), Horror (8.99), Documentary (7.98)"
+203,TARA,RYAN,2005-07,40.93,7,1.0,10.99,1,"Drama (17.98), Action (13.98)"
+205,EILEEN,CARR,2005-07,45.92,8,1.0,7.99,1,"Classics (7.99), Documentary (7.99), Foreign (7.99)"
+206,TERRI,VASQUEZ,2005-07,60.87,13,1.0,6.99,1,"Foreign (11.98), Animation (10.98), Documentary (10.97)"
+207,GERTRUDE,CASTILLO,2005-07,58.85,15,1.0,9.99,1,"Comedy (12.98), New (11.97), Family (8.98)"
+208,LUCY,WHEELER,2005-07,46.87,13,1.0,6.99,1,"New (11.98), Sci-Fi (5.99), Children (5.98)"
+209,TONYA,CHAPMAN,2005-07,82.83,17,1.0,8.99,1,"Classics (15.97), Children (14.97), Documentary (11.97)"
+210,ELLA,OLIVER,2005-07,73.82,18,1.0,8.99,1,"New (21.96), Sports (12.98), Action (9.97)"
+211,STACEY,MONTGOMERY,2005-07,62.84,16,1.0,8.99,2,"Animation (12.98), Music (10.97), Sci-Fi (9.97)"
+213,GINA,WILLIAMSON,2005-06,35.91,9,1.0,6.99,2,"Family (7.98), Foreign (6.99), Documentary (5.99)"
+214,KRISTIN,JOHNSTON,2005-07,35.92,8,1.0,7.99,2,"Sports (13.98), Music (4.99)"
+216,NATALIE,MEYER,2005-06,15.95,5,1.0,6.99,3,"Drama (6.99), Travel (3.99)"
+216,NATALIE,MEYER,2005-07,32.94,6,1.0,8.99,2,"Classics (8.99), Travel (7.99)"
+218,VERA,MCCOY,2005-07,37.92,8,1.0,8.99,1,"Action (8.99), Classics (6.99), Drama (6.99)"
+219,WILLIE,HOWELL,2005-07,64.85,15,1.0,7.99,1,"Horror (15.98), Foreign (9.98), Sports (6.99)"
+220,CHARLENE,ALVAREZ,2005-07,59.88,12,1.0,10.99,1,"Drama (18.98), New (15.98)"
+221,BESSIE,MORRISON,2005-06,23.95,5,1.0,10.99,3,"Family (10.99), Classics (5.99)"
+221,BESSIE,MORRISON,2005-07,58.88,12,1.0,8.99,1,"Comedy (20.97), Documentary (10.98)"
+223,MELINDA,FERNANDEZ,2005-07,32.93,7,1.0,7.99,2,"Sci-Fi (7.99), Children (5.99), Documentary (5.99)"
+225,ARLENE,HARVEY,2005-07,80.83,17,1.0,7.99,1,"Games (20.97), Drama (15.97), Horror (9.98)"
+226,MAUREEN,LITTLE,2005-07,41.91,9,1.0,9.99,1,"Comedy (9.99), Animation (7.98), Horror (5.99)"
+227,COLLEEN,BURTON,2005-07,44.88,12,1.0,7.99,1,"Documentary (13.97), Animation (10.98)"
+228,ALLISON,STANLEY,2005-07,54.85,15,1.0,8.99,1,"Sports (18.97), Documentary (10.98)"
+229,TAMARA,NGUYEN,2005-07,49.87,13,1.0,7.99,1,"Drama (12.98), Sci-Fi (5.99), Action (5.98)"
+230,JOY,GEORGE,2005-06,20.94,6,1.0,8.99,3,"Classics (9.98), Sports (4.99)"
+230,JOY,GEORGE,2005-07,58.85,15,1.0,9.99,1,"Sports (9.99), Games (8.98), Animation (7.98), New (7.98)"
+231,GEORGIA,JACOBS,2005-07,36.89,11,1.0,9.99,2,"Children (11.98), Music (8.98)"
+232,CONSTANCE,REID,2005-07,57.86,14,1.0,10.99,1,"Sci-Fi (14.96), Games (10.99), Family (5.99)"
+233,LILLIE,KIM,2005-07,55.87,13,1.0,8.99,1,"Drama (9.98), Family (9.98), Classics (5.99), Horror (5.99)"
+234,CLAUDIA,FULLER,2005-06,36.92,8,1.0,6.99,2,"Classics (13.97), Foreign (8.98)"
+235,JACKIE,LYNCH,2005-07,62.85,15,1.0,6.99,1,"Animation (17.96), Action (11.97), Horror (7.98)"
+236,MARCIA,DEAN,2005-06,37.92,8,1.0,8.99,3,"Family (8.99), Foreign (6.99), Sci-Fi (5.99)"
+236,MARCIA,DEAN,2005-07,73.8,20,1.0,5.99,1,"Family (13.97), New (13.97), Animation (8.98)"
+237,TANYA,GILBERT,2005-07,64.85,15,1.0,8.99,1,"Family (16.96), Sci-Fi (6.99), Music (6.98), New (6.98)"
+238,NELLIE,GARRETT,2005-07,42.91,9,1.0,8.99,1,"New (12.98), Classics (9.98)"
+240,MARLENE,WELCH,2005-07,51.88,12,1.0,8.99,1,"New (24.96), Action (4.99)"
+241,HEIDI,LARSON,2005-07,53.85,15,1.0,6.99,1,"Family (10.97), New (10.97), Foreign (7.98)"
+243,LYDIA,BURKE,2005-07,45.87,13,1.0,5.99,1,"Documentary (10.97), Classics (6.98), Games (5.99)"
+244,VIOLA,HANSON,2005-07,54.86,14,1.0,5.99,1,"Drama (9.98), New (9.98), Comedy (5.99), Sci-Fi (5.99)"
+245,COURTNEY,DAY,2005-07,72.84,16,1.0,10.99,1,"Children (13.97), Animation (12.98), Sports (11.98)"
+247,STELLA,MORENO,2005-07,33.93,7,1.0,6.99,2,"Foreign (6.99), Sci-Fi (6.99), Drama (5.99)"
+254,MAXINE,SILVA,2005-07,55.87,13,1.0,7.99,1,"Sci-Fi (10.98), Comedy (7.99), Family (6.98), Horror (5.99)"
+257,MARSHA,DOUGLAS,2005-07,88.82,18,1.0,6.99,1,"Foreign (17.96), Classics (12.98), Children (11.98), Documentary (10.98)"
+258,MYRTLE,FLEMING,2005-07,44.9,10,1.0,9.99,2,"Drama (20.97), Foreign (8.98)"
+260,CHRISTY,VARGAS,2005-06,34.92,8,1.0,10.99,3,"Music (14.97), Sports (7.99)"
+262,PATSY,DAVIDSON,2005-07,47.89,11,1.0,7.99,1,"Animation (12.98), Foreign (10.98)"
+263,HILDA,HOPKINS,2005-07,43.87,13,1.0,4.99,2,"Music (7.98), Sci-Fi (7.98), Horror (6.98)"
+263,HILDA,HOPKINS,2005-08,60.89,11,1.0,9.99,1,"Children (17.98), Foreign (13.98)"
+264,GWENDOLYN,MAY,2005-07,51.88,12,1.0,8.99,1,"Sci-Fi (18.97), Drama (9.98)"
+265,JENNIE,TERRY,2005-07,70.84,16,1.0,9.99,1,"New (10.97), Games (9.99), Comedy (8.98), Family (7.98)"
+266,NORA,HERRERA,2005-08,71.83,17,1.0,8.99,1,"Drama (14.97), Animation (7.98), Horror (6.99), Music (6.99)"
+271,PENNY,NEAL,2005-07,30.91,9,1.0,7.99,1,"Sports (7.99), Documentary (4.99), Travel (3.99)"
+273,PRISCILLA,LOWE,2005-06,21.95,5,1.0,6.99,3,"Animation (6.99), Music (6.99)"
+273,PRISCILLA,LOWE,2005-07,67.85,15,1.0,8.99,1,"Sci-Fi (9.97), Sports (8.99), Action (8.98), Classics (7.99)"
+275,CAROLE,BARNETT,2005-07,32.91,9,1.0,9.99,2,"Games (9.99), Drama (5.99), Classics (5.98)"
+275,CAROLE,BARNETT,2005-08,59.84,16,1.0,6.99,1,"Games (11.97), Comedy (6.99), Horror (6.98), Sports (6.98)"
+276,BRANDY,GRAVES,2005-07,45.89,11,1.0,8.99,2,"Documentary (16.97), Drama (8.99)"
+277,OLGA,JIMENEZ,2005-06,28.93,7,1.0,5.99,3,"Comedy (8.98), Documentary (4.99), Games (4.99)"
+278,BILLIE,HORTON,2005-07,37.91,9,1.0,8.99,1,"Music (8.99), Drama (7.98), Family (7.98)"
+279,DIANNE,SHELTON,2005-07,42.91,9,1.0,9.99,2,"Comedy (9.99), Animation (7.99), Action (5.99)"
+279,DIANNE,SHELTON,2005-08,66.86,14,1.0,7.99,1,"Sci-Fi (17.96), Comedy (13.98), Animation (9.98)"
+280,TRACEY,BARRETT,2005-07,34.89,11,1.0,7.99,2,"Drama (8.98), Children (7.98), Foreign (5.98)"
+280,TRACEY,BARRETT,2005-08,68.88,12,1.0,9.99,1,"New (14.98), Sci-Fi (10.98), Sports (10.98)"
+281,LEONA,OBRIEN,2005-07,27.92,8,1.0,6.99,1,"Animation (12.98), Family (4.99)"
+282,JENNY,CASTRO,2005-07,64.85,15,1.0,9.99,1,"Foreign (18.97), Horror (12.98), Sports (9.98)"
+284,SONIA,GREGORY,2005-07,60.88,12,1.0,8.99,1,"Action (18.97), Family (8.98), Sci-Fi (8.98)"
+285,MIRIAM,MCKINNEY,2005-07,68.87,13,1.0,9.99,1,"Sci-Fi (18.97), Sports (14.98), Drama (12.98)"
+286,VELMA,LUCAS,2005-07,76.83,17,1.0,9.99,1,"Documentary (17.97), Sci-Fi (16.98), Drama (11.97)"
+290,KRISTINA,CHAMBERS,2005-06,25.95,5,1.0,8.99,3,"Sci-Fi (8.99), Children (6.99)"
+290,KRISTINA,CHAMBERS,2005-07,51.86,14,1.0,7.99,1,"Action (8.98), Games (7.98), Sports (5.99), Horror (5.98)"
+291,TONI,HOLT,2005-07,52.88,12,1.0,7.99,1,"Drama (10.98), Music (8.98), Comedy (7.99)"
+292,MISTY,LAMBERT,2005-07,74.84,16,1.0,8.99,1,"Classics (15.97), New (12.98), Travel (12.97)"
+294,SHELLY,WATTS,2005-07,47.9,10,1.0,7.99,2,"Animation (9.98), Games (7.99), Action (7.98)"
+294,SHELLY,WATTS,2005-08,57.87,13,1.0,7.99,1,"Comedy (16.97), Horror (12.98)"
+295,DAISY,BATES,2005-06,32.91,9,1.0,8.99,3,"Sports (8.99), Foreign (5.99), Family (5.98)"
+295,DAISY,BATES,2005-07,87.82,18,1.0,9.99,1,"Comedy (14.98), Sci-Fi (13.97), Classics (12.98), Sports (11.98)"
+296,RAMONA,HALE,2005-07,54.88,12,1.0,7.99,1,"Games (10.98), Animation (7.99), Action (6.99), Comedy (5.99)"
+297,SHERRI,RHODES,2005-06,23.95,5,1.0,8.99,3,"Sci-Fi (8.99), Animation (4.99)"
+297,SHERRI,RHODES,2005-07,48.87,13,1.0,8.99,2,"Children (11.98), Documentary (9.98), Animation (8.98)"
+300,JOHN,FARNSWORTH,2005-07,59.86,14,1.0,10.99,1,"Travel (10.99), New (10.98), Documentary (7.98)"
+301,ROBERT,BAUGHMAN,2005-07,48.9,10,1.0,6.99,1,"Sci-Fi (15.97), Comedy (11.98)"
+302,MICHAEL,SILVERMAN,2005-07,67.85,15,1.0,8.99,1,"Action (16.98), Comedy (13.97), Horror (9.98)"
+305,RICHARD,MCCRARY,2005-07,44.9,10,1.0,8.99,1,"Documentary (12.98), Horror (9.98)"
+306,CHARLES,KOWALSKI,2005-07,53.86,14,1.0,6.99,2,"Action (11.98), Sci-Fi (11.98), Sports (6.98)"
+307,JOSEPH,JOY,2005-07,62.87,13,1.0,10.99,1,"Family (14.98), Animation (6.99), Sports (6.99), Travel (6.99)"
+308,THOMAS,GRIGSBY,2005-06,19.95,5,1.0,7.99,3,"Games (7.99), Music (5.98)"
+308,THOMAS,GRIGSBY,2005-08,53.87,13,1.0,6.99,1,"Animation (15.97), Documentary (11.98)"
+309,CHRISTOPHER,GRECO,2005-07,76.84,16,1.0,8.99,1,"Sports (13.98), Travel (13.97), Music (10.98)"
+310,DANIEL,CABRAL,2005-06,27.94,6,1.0,6.99,2,"Foreign (6.99), Children (5.99), Music (4.99)"
+312,MARK,RINEHART,2005-07,48.89,11,1.0,6.99,1,"Action (6.99), Comedy (6.99), Children (5.99), Games (4.99)"
+314,GEORGE,LINTON,2005-07,67.82,18,1.0,6.99,1,"Documentary (15.96), Action (12.96), Children (10.98)"
+315,KENNETH,GOODEN,2005-07,47.92,8,1.0,9.99,1,"Games (9.99), Sci-Fi (6.99), Sports (6.99)"
+317,EDWARD,BAUGH,2005-07,50.88,12,1.0,8.99,1,"Sci-Fi (11.98), Drama (8.99), Documentary (7.99)"
+321,KEVIN,SCHULER,2005-07,50.9,10,1.0,8.99,1,"Sci-Fi (12.98), Comedy (8.99), Foreign (5.99)"
+322,JASON,MORRISSEY,2005-06,40.93,7,1.0,8.99,2,"Travel (11.98), Family (8.99)"
+323,MATTHEW,MAHAN,2005-07,58.85,15,1.0,7.99,1,"Travel (15.96), Action (10.97), Children (7.99)"
+324,GARY,COY,2005-07,50.88,12,1.0,7.99,1,"Music (16.96), Comedy (7.99), Games (6.99)"
+325,TIMOTHY,BUNN,2005-07,41.9,10,1.0,9.99,1,"Documentary (12.98), New (8.97)"
+327,LARRY,THRASHER,2005-06,30.94,6,1.0,6.99,2,"Children (6.99), Drama (5.99), Documentary (4.99)"
+327,LARRY,THRASHER,2005-08,58.87,13,1.0,9.99,1,"Comedy (17.97), Children (7.99), Action (7.98)"
+328,JEFFREY,SPEAR,2005-06,21.95,5,1.0,6.99,3,"Games (7.98), Horror (5.99)"
+331,ERIC,ROBERT,2005-07,63.88,12,1.0,10.99,1,"Drama (13.98), Sci-Fi (11.98), Music (10.99)"
+332,STEPHEN,QUALLS,2005-07,78.83,17,1.0,8.99,1,"Games (18.97), Action (13.98), Horror (10.97)"
+333,ANDREW,PURDY,2005-07,51.87,13,1.0,10.99,1,"Comedy (15.98), Games (14.97)"
+334,RAYMOND,MCWHORTER,2005-07,53.89,11,1.0,7.99,1,"Animation (18.97), Action (7.98)"
+335,GREGORY,MAULDIN,2005-07,55.85,15,1.0,8.99,1,"Sci-Fi (13.97), Documentary (11.98), Comedy (9.98)"
+337,JERRY,JORDON,2005-07,62.88,12,1.0,8.99,1,"Sci-Fi (14.97), Travel (13.98), Documentary (9.98)"
+338,DENNIS,GILMAN,2005-06,34.93,7,1.0,6.99,3,"Music (10.98), Animation (6.99)"
+339,WALTER,PERRYMAN,2005-06,25.95,5,1.0,6.99,3,"Foreign (6.99), Family (4.99), Games (4.99)"
+339,WALTER,PERRYMAN,2005-07,52.87,13,1.0,7.99,1,"Sports (9.98), Animation (7.99), Foreign (6.97), Family (5.99)"
+342,HAROLD,MARTINO,2005-07,45.88,12,1.0,8.99,2,"Comedy (16.98), Family (8.98)"
+343,DOUGLAS,GRAF,2005-06,30.93,7,1.0,8.99,2,"Sci-Fi (8.99), Foreign (7.98)"
+345,CARL,ARTIS,2005-07,49.9,10,1.0,8.99,1,"Horror (11.98), Foreign (8.99), Travel (7.99)"
+346,ARTHUR,SIMPKINS,2005-07,83.85,15,1.0,8.99,1,"Classics (17.98), Action (13.98), Horror (10.98)"
+348,ROGER,QUINTANILLA,2005-07,70.84,16,1.0,9.99,1,"Animation (17.97), Documentary (9.98), Drama (9.98)"
+349,JOE,GILLILAND,2005-07,45.88,12,1.0,5.99,2,"Travel (16.96), Sports (10.98)"
+351,JACK,FOUST,2005-07,50.87,13,1.0,7.99,1,"Classics (9.98), Games (9.97), Sports (8.98)"
+352,ALBERT,CROUSE,2005-06,20.95,5,1.0,4.99,3,"Drama (4.99), Family (4.99), Foreign (4.99)"
+352,ALBERT,CROUSE,2005-07,43.91,9,1.0,7.99,1,"Documentary (7.99), Sci-Fi (6.99), Horror (5.99), Sports (5.99)"
+354,JUSTIN,NGO,2005-07,67.81,19,1.0,8.99,1,"Drama (14.96), Games (9.98), Children (7.98), Documentary (6.98)"
+355,TERRY,GRISSOM,2005-07,52.89,11,1.0,6.99,1,"Foreign (10.98), Sci-Fi (10.98), New (7.98)"
+356,GERALD,FULTZ,2005-07,50.87,13,1.0,6.99,2,"Games (8.97), Drama (6.99), New (6.99), Family (5.99)"
+357,KEITH,RICO,2005-07,42.88,12,1.0,8.99,1,"Travel (9.97), Family (8.99), Documentary (5.99)"
+358,SAMUEL,MARLOW,2005-06,18.94,6,1.0,5.99,3,"Comedy (5.99), Family (2.99), Foreign (2.99)"
+360,RALPH,MADRIGAL,2005-07,69.83,17,1.0,9.99,1,"Music (14.97), Travel (10.98), Action (9.97)"
+362,NICHOLAS,BARFIELD,2005-07,61.85,15,1.0,8.99,2,"Animation (16.97), Sports (12.97), Games (9.98)"
+363,ROY,WHITING,2005-06,22.95,5,1.0,4.99,3,"Comedy (9.98), Action (4.99)"
+363,ROY,WHITING,2005-07,69.85,15,1.0,8.99,1,"Foreign (20.97), Action (12.97), Family (7.98)"
+364,BENJAMIN,VARNEY,2005-06,19.95,5,1.0,4.99,3,"Classics (8.98), Sports (7.98)"
+365,BRUCE,SCHWARZ,2005-07,44.9,10,1.0,7.99,1,"Animation (9.98), Documentary (4.99), Drama (4.99), Foreign (4.99)"
+366,BRANDON,HUEY,2005-07,82.81,19,1.0,6.99,1,"Classics (12.98), Action (11.98), Comedy (11.98), Sci-Fi (7.96)"
+367,ADAM,GOOCH,2005-07,46.89,11,1.0,8.99,2,"Comedy (8.99), Horror (7.98), Games (5.99), Foreign (4.99)"
+369,FRED,WHEAT,2005-07,45.88,12,1.0,7.99,1,"Foreign (10.97), Documentary (7.99), Sci-Fi (7.98)"
+370,WAYNE,TRUONG,2005-07,27.92,8,1.0,7.99,2,"Games (7.99), Sports (7.99)"
+372,STEVE,MACKENZIE,2005-07,77.84,16,1.0,8.99,1,"Action (10.98), Travel (9.98), Horror (8.99), Music (7.99), Family (6.99)"
+373,LOUIS,LEONE,2005-07,68.84,16,1.0,8.99,2,"New (13.98), Animation (11.97), Classics (7.99), Drama (5.99)"
+374,JEREMY,HURTADO,2005-07,38.9,10,1.0,7.99,2,"Family (14.97), Games (6.99)"
+376,RANDY,GAITHER,2005-07,69.85,15,1.0,8.99,1,"New (20.97), Sci-Fi (8.99), Travel (8.98)"
+380,RUSSELL,BRINSON,2005-06,27.92,8,1.0,4.99,3,"Sports (7.98), Documentary (4.99), New (3.99)"
+380,RUSSELL,BRINSON,2005-07,58.86,14,1.0,10.99,1,"Sports (10.99), New (8.99), Animation (7.98), Family (7.98)"
+381,BOBBY,BOUDREAU,2005-07,37.86,14,1.0,4.99,2,"Animation (8.97), Drama (5.98), Music (5.98)"
+382,VICTOR,BARKLEY,2005-07,39.9,10,1.0,9.99,1,"Documentary (13.96), Travel (9.99)"
+385,PHILLIP,HOLM,2005-07,44.89,11,1.0,8.99,1,"Travel (10.97), Sports (9.98), Horror (8.99)"
+386,TODD,TAN,2005-07,54.87,13,1.0,8.99,1,"Action (15.97), Music (7.98), Animation (6.99)"
+389,ALAN,KAHN,2005-07,50.89,11,1.0,8.99,2,"Classics (9.98), Sports (9.98), Family (8.99)"
+390,SHAWN,HEATON,2005-07,56.86,14,1.0,5.99,2,"Comedy (11.98), Family (8.98), Travel (7.98)"
+393,PHILIP,CAUSEY,2005-06,19.95,5,1.0,6.99,3,"Games (7.98), Music (6.99)"
+393,PHILIP,CAUSEY,2005-07,60.87,13,1.0,8.99,1,"New (16.97), Foreign (8.99), Sci-Fi (8.99)"
+394,CHRIS,BROTHERS,2005-07,38.9,10,1.0,6.99,1,"Animation (11.98), Sci-Fi (6.99), Children (4.99)"
+396,EARL,SHANKS,2005-07,39.88,12,1.0,6.99,2,"Drama (9.97), New (6.99), Children (5.98)"
+397,JIMMY,SCHRADER,2005-07,50.87,13,1.0,6.99,1,"Travel (12.98), Drama (9.97), Sci-Fi (7.98)"
+400,BRYAN,HARDISON,2005-07,51.9,10,1.0,6.99,1,"Sci-Fi (9.98), Travel (6.99), Classics (5.99), Comedy (5.99)"
+401,TONY,CARRANZA,2005-07,35.91,9,1.0,8.99,1,"Children (9.98), Sports (7.99)"
+402,LUIS,YANEZ,2005-07,52.88,12,1.0,7.99,1,"Children (11.98), New (8.97), Sci-Fi (7.99)"
+403,MIKE,WAY,2005-06,35.94,6,1.0,8.99,3,"Foreign (13.98), Sci-Fi (6.99)"
+403,MIKE,WAY,2005-07,61.88,12,1.0,7.99,2,"Children (10.98), Classics (10.98), Sci-Fi (10.98)"
+404,STANLEY,SCROGGINS,2005-07,59.86,14,1.0,8.99,1,"Documentary (12.97), Animation (9.98), New (8.99)"
+405,LEONARD,SCHOFIELD,2005-06,26.94,6,1.0,5.99,3,"Documentary (6.98), Horror (5.99), Games (4.99)"
+406,NATHAN,RUNYON,2005-06,26.93,7,1.0,7.99,2,"Horror (11.98), Animation (5.98)"
+406,NATHAN,RUNYON,2005-07,68.82,18,1.0,8.99,1,"Animation (15.96), Music (9.98), Comedy (7.99), Classics (6.98)"
+407,DALE,RATCLIFF,2005-07,49.89,11,1.0,9.99,2,"Action (13.97), Drama (10.98)"
+408,MANUEL,MURRELL,2005-07,45.88,12,1.0,6.99,2,"Sports (9.98), Children (7.98), Games (6.99)"
+409,RODNEY,MOELLER,2005-07,58.85,15,1.0,7.99,1,"Family (13.98), Drama (9.98), Music (7.98)"
+411,NORMAN,CURRIER,2005-07,32.88,12,1.0,5.99,1,"Animation (14.95), Music (5.99)"
+412,ALLEN,BUTTERFIELD,2005-07,26.93,7,1.0,8.99,2,"Family (8.99), Sports (8.99)"
+412,ALLEN,BUTTERFIELD,2005-08,43.92,8,1.0,8.99,1,"Travel (10.98), Sci-Fi (8.99), Action (7.98)"
+415,GLENN,PULLEN,2005-07,40.89,11,1.0,8.99,1,"Sports (11.98), Action (6.98), Animation (5.99)"
+416,JEFFERY,PINSON,2005-07,36.9,10,1.0,7.99,2,"Foreign (7.99), Games (5.99), Horror (5.98)"
+416,JEFFERY,PINSON,2005-08,63.87,13,1.0,8.99,1,"Travel (11.98), Sci-Fi (8.99), Classics (7.97), Action (6.99)"
+417,TRAVIS,ESTEP,2005-07,35.93,7,1.0,9.99,2,Sci-Fi (21.97)
+418,JEFF,EAST,2005-07,45.9,10,1.0,10.99,2,"New (10.99), Foreign (8.97), Drama (7.99)"
+419,CHAD,CARBONE,2005-07,39.87,13,1.0,5.99,2,"Sports (10.98), Classics (4.99), Foreign (4.99)"
+420,JACOB,LANCE,2005-07,39.89,11,1.0,4.99,1,"Music (9.98), Animation (4.99), Children (4.99)"
+421,LEE,HAWKS,2005-07,57.88,12,1.0,8.99,1,"Horror (13.98), Music (7.99), Sci-Fi (6.98)"
+422,MELVIN,ELLINGTON,2005-08,56.87,13,1.0,9.99,1,"Games (12.98), Children (9.98), Sci-Fi (9.98)"
+424,KYLE,SPURLOCK,2005-07,58.84,16,1.0,8.99,1,"Drama (19.96), Animation (9.97)"
+425,FRANCIS,SIKES,2005-07,67.83,17,1.0,8.99,1,"Action (17.97), Drama (15.97)"
+426,BRADLEY,MOTLEY,2005-07,65.89,11,1.0,10.99,1,"New (16.98), Foreign (10.99), Documentary (10.98)"
+427,JESUS,MCCARTNEY,2005-07,49.9,10,1.0,7.99,1,"Documentary (12.98), Games (7.99), Classics (6.98)"
+428,HERBERT,KRUGER,2005-07,49.89,11,1.0,6.99,1,"Music (15.97), Action (7.98), Classics (5.99)"
+431,JOEL,FRANCISCO,2005-06,35.93,7,1.0,8.99,1,"Children (8.99), Animation (7.98), New (6.99)"
+432,EDWIN,BURK,2005-07,56.88,12,1.0,6.99,1,"Games (15.97), Documentary (7.98), Sci-Fi (6.99)"
+433,DON,BONE,2005-07,65.86,14,1.0,8.99,1,"Foreign (18.97), Games (14.97)"
+434,EDDIE,TOMLIN,2005-06,28.93,7,1.0,7.99,3,"Family (7.99), Drama (6.98)"
+435,RICKY,SHELBY,2005-07,43.9,10,1.0,8.99,1,"Music (10.98), Foreign (8.99), Animation (5.98)"
+436,TROY,QUIGLEY,2005-07,52.88,12,1.0,9.99,2,"Comedy (14.98), Games (9.99), Documentary (5.99)"
+437,RANDALL,NEUMANN,2005-07,44.9,10,1.0,8.99,1,"Foreign (20.96), Games (5.98)"
+438,BARRY,LOVELACE,2005-07,54.86,14,1.0,8.99,1,"Documentary (12.97), Animation (10.97), Action (6.98)"
+440,BERNARD,COLBY,2005-07,47.88,12,1.0,9.99,1,"Drama (10.98), Games (10.98), Animation (7.98)"
+441,MARIO,CHEATHAM,2005-07,66.83,17,1.0,10.99,1,"Comedy (19.98), New (14.96)"
+442,LEROY,BUSTAMANTE,2005-07,60.84,16,1.0,5.99,1,"New (11.97), Drama (9.97), Animation (8.97)"
+443,FRANCISCO,SKIDMORE,2005-07,54.9,10,1.0,9.99,1,"Horror (18.98), Animation (10.98)"
+445,MICHEAL,FORMAN,2005-07,29.9,10,1.0,8.99,2,"Children (9.98), Animation (6.97)"
+445,MICHEAL,FORMAN,2005-08,66.86,14,1.0,9.99,1,"Sci-Fi (20.96), Travel (11.98), Sports (9.99)"
+446,THEODORE,CULP,2005-06,20.94,6,1.0,6.99,2,"Action (6.99), Children (6.98)"
+446,THEODORE,CULP,2005-07,71.83,17,1.0,9.99,1,"Foreign (22.95), Sci-Fi (9.99), Sports (8.98)"
+447,CLIFFORD,BOWENS,2005-07,50.89,11,1.0,8.99,1,"Action (12.97), Games (8.99), Animation (8.97)"
+448,MIGUEL,BETANCOURT,2005-06,24.95,5,1.0,7.99,3,"Drama (9.98), New (7.99)"
+450,JAY,ROBB,2005-06,22.93,7,1.0,4.99,3,"Documentary (4.99), Sci-Fi (4.99), Sports (4.99)"
+451,JIM,REA,2005-06,22.93,7,1.0,6.99,3,"Action (6.99), New (6.99)"
+454,ALEX,GRESHAM,2005-06,52.9,10,1.0,9.99,1,"Games (9.99), Action (7.99), Sports (7.98), Comedy (5.99)"
+455,JON,WILES,2005-07,45.91,9,1.0,8.99,1,"Games (8.99), Documentary (6.99), New (5.99), Action (4.99)"
+456,RONNIE,RICKETTS,2005-06,25.93,7,1.0,6.99,2,"Sci-Fi (7.98), New (5.99)"
+457,BILL,GAVIN,2005-06,30.91,9,1.0,7.99,2,"Foreign (7.99), Music (6.97), Drama (4.99)"
+458,LLOYD,DOWD,2005-07,31.91,9,1.0,7.99,1,"Music (7.99), New (5.99), Children (3.99)"
+459,TOMMY,COLLAZO,2005-06,25.93,7,1.0,9.99,3,"Family (9.99), Documentary (5.98)"
+459,TOMMY,COLLAZO,2005-07,89.82,18,1.0,10.99,1,"Comedy (38.95), Action (7.98)"
+460,LEON,BOSTIC,2005-07,41.92,8,1.0,7.99,2,"Horror (12.98), Music (10.98)"
+460,LEON,BOSTIC,2005-08,54.88,12,1.0,10.99,1,"Foreign (14.98), Animation (11.98), Drama (8.99)"
+461,DEREK,BLAKELY,2005-08,52.86,14,1.0,7.99,1,"Sci-Fi (16.96), New (12.97)"
+462,WARREN,SHERROD,2005-07,74.84,16,1.0,8.99,1,"Family (16.98), Games (13.98), Sports (8.99)"
+463,DARRELL,POWER,2005-07,30.9,10,1.0,7.99,2,"Classics (7.99), Animation (6.99), Sci-Fi (6.97)"
+464,JEROME,KENYON,2005-07,32.94,6,1.0,6.99,1,"Comedy (10.98), Music (6.99)"
+465,FLOYD,GANDY,2005-08,42.91,9,1.0,6.99,1,"Foreign (14.97), Animation (8.98)"
+466,LEO,EBERT,2005-06,28.95,5,1.0,8.99,2,"Music (12.98), Comedy (10.98)"
+467,ALVIN,DELOACH,2005-07,66.87,13,1.0,8.99,1,"Children (16.97), Horror (14.98), Games (11.98)"
+469,WESLEY,BULL,2005-07,80.82,18,1.0,10.99,1,"Games (21.95), New (10.99), Documentary (8.98)"
+470,GORDON,ALLARD,2005-07,96.83,17,1.0,10.99,1,"Sci-Fi (17.98), Games (15.97), Sports (9.98), Travel (9.98)"
+471,DEAN,SAUER,2005-06,20.95,5,1.0,4.99,3,"Classics (4.99), Documentary (4.99), Sports (4.99)"
+471,DEAN,SAUER,2005-08,55.88,12,1.0,7.99,1,"Music (12.98), Horror (10.98), Sports (8.98)"
+473,JORGE,OLIVARES,2005-07,57.87,13,1.0,8.99,1,"Comedy (19.97), Sci-Fi (7.99), Children (4.99)"
+475,PEDRO,CHESTNUT,2005-07,71.85,15,1.0,9.99,1,"Games (15.98), Action (15.97), Animation (12.98)"
+476,DERRICK,BOURQUE,2005-07,39.91,9,1.0,7.99,1,"Games (7.99), Animation (7.98), Foreign (7.98)"
+477,DAN,PAINE,2005-07,58.9,10,1.0,10.99,1,"Animation (14.98), Family (10.99), Children (8.99)"
+479,ZACHARY,HITE,2005-07,79.85,15,1.0,8.99,1,"Horror (17.97), Comedy (13.97), Sports (12.98)"
+480,COREY,HAUSER,2005-07,43.92,8,1.0,9.99,1,"Comedy (12.98), Horror (7.99), Documentary (6.99)"
+481,HERMAN,DEVORE,2005-07,57.87,13,1.0,10.99,1,"Music (19.97), Animation (10.99)"
+482,MAURICE,CRAWLEY,2005-07,69.88,12,1.0,8.99,1,"Action (15.98), Sci-Fi (15.98), Classics (9.98)"
+483,VERNON,CHAPA,2005-07,48.91,9,1.0,9.99,1,"Sports (9.99), Comedy (9.98), Foreign (7.99)"
+484,ROBERTO,VU,2005-07,77.85,15,1.0,9.99,1,"Sports (13.97), Action (10.98), Travel (9.98), Comedy (8.99)"
+485,CLYDE,TOBIAS,2005-07,63.82,18,1.0,6.99,1,"Animation (18.96), Foreign (11.98), Travel (8.97)"
+486,GLEN,TALBERT,2005-07,58.88,12,1.0,8.99,1,"Drama (9.98), Sports (8.99), Documentary (7.99), Games (5.98)"
+487,HECTOR,POINDEXTER,2005-07,46.86,14,1.0,7.99,2,"Action (9.97), Documentary (9.96), Foreign (7.99)"
+488,SHANE,MILLARD,2005-07,50.89,11,1.0,8.99,1,"Documentary (14.98), Drama (8.98), Horror (6.99)"
+489,RICARDO,MEADOR,2005-08,55.9,10,1.0,9.99,1,"Games (13.98), Foreign (11.98), Comedy (9.99)"
+490,SAM,MCDUFFIE,2005-07,64.86,14,1.0,8.99,1,"Horror (10.98), Foreign (10.97), Action (8.99), Animation (8.98)"
+491,RICK,MATTOX,2005-06,31.93,7,1.0,4.99,2,"Sci-Fi (9.98), Sports (8.98)"
+491,RICK,MATTOX,2005-07,60.89,11,1.0,8.99,1,"Sports (16.97), Drama (8.99), Action (6.99)"
+493,BRENT,HARKINS,2005-07,42.92,8,1.0,7.99,2,"Foreign (8.98), Horror (7.99), New (7.99)"
+494,RAMON,CHOATE,2005-07,80.82,18,1.0,8.99,1,"Sports (21.97), Documentary (10.97), Animation (9.98)"
+495,CHARLIE,BESS,2005-07,56.89,11,1.0,9.99,1,"Action (17.98), New (8.98), Family (7.99)"
+496,TYLER,WREN,2005-07,29.92,8,1.0,5.99,2,"Foreign (7.98), Drama (6.98), Children (5.99)"
+496,TYLER,WREN,2005-08,46.91,9,1.0,7.99,1,"Sports (18.97), Animation (11.98)"
+497,GILBERT,SLEDGE,2005-07,67.86,14,1.0,9.99,1,"Family (12.98), Children (11.98), Games (10.98)"
+499,MARC,OUTLAW,2005-07,43.88,12,1.0,6.99,2,"Children (11.98), Comedy (4.99), Drama (4.99)"
+499,MARC,OUTLAW,2005-08,61.87,13,1.0,8.99,1,"New (18.97), Foreign (17.97)"
+501,RUBEN,GEARY,2005-07,36.91,9,1.0,7.99,1,"New (16.97), Comedy (9.98)"
+502,BRETT,CORNWELL,2005-07,73.85,15,1.0,8.99,1,"Sci-Fi (10.98), Foreign (8.99), Music (8.99), Animation (7.98)"
+503,ANGEL,BARCLAY,2005-07,41.9,10,1.0,6.99,2,"Games (11.98), Sci-Fi (11.96)"
+504,NATHANIEL,ADAM,2005-07,57.89,11,1.0,9.99,1,"Drama (26.97), Sports (11.97)"
+507,EDGAR,RHOADS,2005-07,49.85,15,1.0,6.99,1,"Horror (11.97), Drama (9.98), Animation (5.99)"
+508,MILTON,HOWLAND,2005-07,74.86,14,1.0,9.99,1,"Documentary (20.97), Action (14.97), Family (9.99)"
+509,RAUL,FORTIER,2005-07,41.91,9,1.0,8.99,1,"Sci-Fi (8.99), Classics (7.98), Horror (6.99)"
+513,DUANE,TUBBS,2005-07,60.87,13,1.0,9.99,2,"Horror (14.98), Comedy (13.97), Music (10.98)"
+516,ELMER,NOE,2005-06,22.94,6,1.0,10.99,2,"Horror (10.99), Foreign (4.99)"
+516,ELMER,NOE,2005-07,46.91,9,1.0,6.99,1,"Drama (6.99), Music (6.99), Travel (5.99), Animation (4.99)"
+517,BRAD,MCCURDY,2005-06,22.95,5,1.0,8.99,3,"Animation (8.99), Family (7.98)"
+517,BRAD,MCCURDY,2005-07,50.88,12,1.0,7.99,1,"Games (10.97), Documentary (9.98), Sci-Fi (7.99)"
+518,GABRIEL,HARDER,2005-07,55.87,13,1.0,7.99,1,"Animation (9.98), Documentary (7.99), Drama (7.98), Sci-Fi (6.99)"
+519,RON,DELUCA,2005-07,51.87,13,1.0,7.99,1,"New (11.97), Children (8.98), Documentary (7.99)"
+520,MITCHELL,WESTMORELAND,2005-07,60.86,14,1.0,10.99,1,"Family (16.97), Sports (9.98), Drama (7.99)"
+521,ROLAND,SOUTH,2005-07,31.91,9,1.0,7.99,2,"Family (11.98), New (7.99)"
+522,ARNOLD,HAVENS,2005-07,96.82,18,1.0,9.99,1,"New (11.98), Documentary (10.98), Horror (9.99), Animation (9.98), Games (9.98)"
+524,JARED,ELY,2005-07,48.92,8,1.0,8.99,1,"Animation (10.98), Travel (9.98), Documentary (8.99)"
+525,ADRIAN,CLARY,2005-07,49.89,11,1.0,7.99,1,"Music (17.97), Games (11.98)"
+526,KARL,SEAL,2005-06,41.91,9,1.0,7.99,3,"Animation (14.98), Documentary (9.98)"
+526,KARL,SEAL,2005-07,86.81,19,1.0,7.99,1,"Games (12.98), Horror (12.98), Documentary (10.98), Animation (10.97)"
+527,CORY,MEEHAN,2005-07,26.91,9,1.0,8.99,2,Sports (13.98)
+528,CLAUDE,HERZOG,2005-07,56.89,11,1.0,9.99,1,"Action (13.98), Sports (8.99), Comedy (7.99)"
+529,ERIK,GUILLEN,2005-07,53.87,13,1.0,7.99,2,"Travel (15.97), Classics (7.99), Animation (6.99)"
+530,DARRYL,ASHCRAFT,2005-07,30.91,9,1.0,4.99,2,"Animation (8.98), Classics (4.99), Sci-Fi (4.99)"
+531,JAMIE,WAUGH,2005-07,64.86,14,1.0,6.99,1,"Sports (13.96), Music (12.98), Comedy (10.98)"
+532,NEIL,RENNER,2005-07,69.86,14,1.0,8.99,1,"Classics (16.97), Drama (15.97), Sports (8.99)"
+533,JESSIE,MILAM,2005-07,58.87,13,1.0,9.99,1,"Sci-Fi (22.97), New (9.99)"
+535,JAVIER,ELROD,2005-07,48.89,11,1.0,8.99,2,"Sports (9.98), New (8.99), Action (6.99)"
+536,FERNANDO,CHURCHILL,2005-07,51.88,12,1.0,8.99,1,"Sports (13.98), Family (9.98), Documentary (5.98)"
+538,TED,BREAUX,2005-07,51.86,14,1.0,8.99,1,"Action (8.99), Documentary (8.99), Sports (8.97)"
+539,MATHEW,BOLIN,2005-07,55.88,12,1.0,7.99,1,"Sports (19.96), Family (7.99)"
+542,LONNIE,TIRADO,2005-07,47.92,8,1.0,9.99,1,"New (11.98), Music (9.99), Children (8.99)"
+545,JULIO,NOLAND,2005-07,42.91,9,1.0,8.99,1,"Animation (12.97), Family (11.98)"
+546,KELLY,KNOTT,2005-07,39.9,10,1.0,9.99,1,"Animation (10.98), Sci-Fi (6.99), Sports (5.98)"
+547,KURT,EMMONS,2005-07,41.9,10,1.0,4.99,1,"Horror (12.97), Children (4.99), Music (4.99)"
+549,NELSON,CHRISTENSON,2005-07,41.91,9,1.0,9.99,1,"Games (9.99), Comedy (7.99), Drama (7.99)"
+550,GUY,BROWNLEE,2005-06,39.94,6,1.0,10.99,3,"Animation (17.98), Action (9.99)"
+552,HUGH,WALDROP,2005-07,48.91,9,1.0,8.99,1,"Sports (13.98), Travel (10.98)"
+553,MAX,PITT,2005-07,68.84,16,1.0,6.99,1,"Games (13.97), Horror (10.97), Sci-Fi (7.98), Action (6.99)"
+554,DWAYNE,OLVERA,2005-08,56.88,12,1.0,9.99,1,"Animation (16.97), Sports (10.98), Classics (7.99)"
+555,DWIGHT,LOMBARDI,2005-07,29.94,6,1.0,7.99,2,"Drama (8.98), Comedy (7.99)"
+559,EVERETT,BANDA,2005-07,41.88,12,1.0,7.99,2,"Animation (9.98), Travel (7.98), New (5.99)"
+560,JORDAN,ARCHULETA,2005-07,59.86,14,1.0,9.99,1,"Action (13.97), Drama (9.99), Family (6.98)"
+561,IAN,STILL,2005-06,33.91,9,1.0,5.99,1,"Animation (12.97), Music (7.98)"
+563,KEN,PREWITT,2005-07,60.84,16,1.0,7.99,1,"Music (16.97), Sports (9.98), Children (8.98)"
+564,BOB,PFEIFFER,2005-07,37.91,9,1.0,10.99,2,"Horror (10.99), Games (9.98)"
+565,JAIME,NETTLES,2005-08,66.87,13,1.0,10.99,1,"Music (12.98), Sci-Fi (10.99), Comedy (6.99), Classics (6.98)"
+566,CASEY,MENA,2005-07,71.82,18,1.0,9.99,1,"New (11.98), Games (9.99), Sci-Fi (9.98), Animation (7.98)"
+567,ALFREDO,MCADAMS,2005-07,40.89,11,1.0,7.99,1,"Travel (15.97), Animation (7.99)"
+569,DAVE,GARDINER,2005-08,75.82,18,1.0,9.99,1,"New (18.98), Sports (11.96), Animation (8.97)"
+570,IVAN,CROMWELL,2005-06,32.93,7,1.0,6.99,2,"Travel (10.98), Sci-Fi (6.99)"
+572,SIDNEY,BURLESON,2005-07,46.89,11,1.0,6.99,1,"Family (12.97), Sports (10.97)"
+573,BYRON,BOX,2005-07,70.85,15,1.0,10.99,1,"Horror (11.96), Sports (10.99), Documentary (10.98), Games (7.99)"
+574,JULIAN,VEST,2005-06,15.95,5,1.0,6.99,3,Children (8.97)
+574,JULIAN,VEST,2005-07,64.85,15,1.0,7.99,1,"Sci-Fi (10.98), Drama (8.98), New (7.99), Music (5.98)"
+576,MORRIS,MCCARTER,2005-06,33.93,7,1.0,8.99,2,"Games (8.99), Children (6.99), Comedy (4.99)"
+576,MORRIS,MCCARTER,2005-07,63.85,15,1.0,8.99,1,"Action (11.97), New (10.97), Games (9.98)"
+577,CLIFTON,MALCOLM,2005-07,52.89,11,1.0,8.99,1,"Family (8.99), Sci-Fi (7.99), Action (6.99), Horror (6.99)"
+578,WILLARD,LUMPKIN,2005-07,45.89,11,1.0,6.99,1,"New (10.98), Sci-Fi (9.98), Foreign (6.99)"
+579,DARYL,LARUE,2005-07,65.86,14,1.0,9.99,1,"Action (10.98), Drama (9.99), Foreign (9.99), New (8.99)"
+580,ROSS,GREY,2005-07,49.85,15,1.0,6.99,1,"Family (10.98), Foreign (8.97), Classics (6.99)"
+581,VIRGIL,WOFFORD,2005-07,57.86,14,1.0,8.99,1,"Animation (12.97), Classics (11.98), Travel (7.99)"
+582,ANDY,VANHORN,2005-07,53.9,10,1.0,9.99,1,"Sci-Fi (17.97), Animation (12.98)"
+584,SALVADOR,TEEL,2005-07,44.88,12,1.0,7.99,2,"Comedy (9.96), Horror (7.99), Travel (7.98)"
+585,PERRY,SWAFFORD,2005-07,70.87,13,1.0,9.99,1,"Sports (25.96), Foreign (12.98)"
+587,SERGIO,STANFIELD,2005-07,48.9,10,1.0,8.99,1,"New (8.99), Foreign (6.99), Music (6.99), Documentary (6.98)"
+588,MARION,OCAMPO,2005-06,24.95,5,1.0,7.99,3,"Children (7.99), Foreign (6.99)"
+588,MARION,OCAMPO,2005-07,52.86,14,1.0,5.99,1,"Classics (10.97), Drama (9.98), Children (7.98)"
+590,SETH,HANNON,2005-06,30.95,5,1.0,9.99,2,"New (9.99), Sports (9.98)"
+590,SETH,HANNON,2005-07,56.86,14,1.0,5.99,1,"Action (8.98), Sci-Fi (7.98), Sports (7.98), Travel (5.98)"
+591,KENT,ARSENAULT,2005-07,75.85,15,1.0,11.99,1,"Sports (19.96), Animation (15.97), New (11.99)"
+595,TERRENCE,GUNDERSON,2005-07,86.81,19,1.0,10.99,1,"New (15.98), Music (12.97), Family (9.99), Children (9.98)"
+597,FREDDIE,DUGGAN,2005-08,47.88,12,1.0,6.99,1,"Foreign (10.98), Travel (7.98), Games (6.99)"
+598,WADE,DELVALLE,2005-07,64.84,16,1.0,6.99,1,"Comedy (13.97), Drama (11.98), Foreign (9.98)"

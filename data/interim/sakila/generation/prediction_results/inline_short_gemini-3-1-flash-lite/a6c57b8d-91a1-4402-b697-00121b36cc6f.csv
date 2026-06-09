@@ -1,0 +1,660 @@
+customer_name,country,city,payment_month,monthly_amount,deviation_from_personal_avg,country_rank,top_staff_name
+WILLIE MARKHAM,Argentina,Almirante Brown,2005-05,15.97,-8.22,1,Mike Hillyer
+MARIAN MENDOZA,Brazil,Maring,2005-05,30.95,4.01,1,Mike Hillyer
+TROY QUIGLEY,Canada,Vancouver,2005-05,17.97,-18.21,1,Mike Hillyer
+EDUARDO HIATT,China,Jining,2005-05,21.96,-10.72,1,Mike Hillyer
+NAOMI JENNINGS,India,Karnal,2005-05,24.94,-12.98,1,Mike Hillyer
+MINNIE ROMERO,Indonesia,Ciomas,2005-05,33.94,-1.73,1,Mike Hillyer
+OSCAR AQUINO,Iran,Sirjan,2005-05,18.97,-5.98,1,Jon Stephens
+FREDERICK ISBELL,Japan,Tsuyama,2005-05,26.95,0.5,1,Jon Stephens
+BOBBIE CRAIG,Mexico,Valle de Santiago,2005-05,21.96,1.77,1,Jon Stephens
+BILLY POULIN,Philippines,Cabuyao,2005-05,25.94,-11.47,1,Mike Hillyer
+PAUL TROUT,Russian Federation,Kursk,2005-05,26.95,-3.24,1,Jon Stephens
+EDNA WEST,South Africa,Klerksdorp,2005-05,27.93,1.0,1,Mike Hillyer
+COURTNEY DAY,South Korea,Uijongbu,2005-05,28.94,-3.48,1,Jon Stephens
+KIRK STCLAIR,Taiwan,Tsaotun,2005-05,13.98,-2.22,1,Mike Hillyer
+COREY HAUSER,Turkey,Gaziantep,2005-05,17.97,-7.48,1,Jon Stephens
+BETTY WHITE,United States,Citrus Heights,2005-05,20.95,-7.23,1,Mike Hillyer
+YVONNE WATKINS,Venezuela,Ocumare del Tuy,2005-05,10.98,-12.22,1,Mike Hillyer
+WILLIAM SATTERFIELD,Yemen,Sanaa,2005-05,8.97,-16.22,1,Jon Stephens
+CLAYTON BARBEE,Brazil,Alvorada,2005-05,20.95,-3.24,2,Jon Stephens
+DAVE GARDINER,China,Leshan,2005-05,20.95,-12.72,2,Mike Hillyer
+GEORGIA JACOBS,India,Uttarpara-Kotrung,2005-05,21.97,-5.72,2,Mike Hillyer
+LESLIE SEWARD,Indonesia,Pontianak,2005-05,28.93,-9.23,2,Mike Hillyer
+HARRY ARCE,Iran,Najafabad,2005-05,17.96,-21.45,2,Mike Hillyer
+HEATHER MORRIS,Japan,Nagareyama,2005-05,26.94,0.01,2,Jon Stephens
+FRED WHEAT,Mexico,Jurez,2005-05,18.96,-2.98,2,Mike Hillyer
+BEN EASTER,Russian Federation,Kamyin,2005-05,19.97,-10.72,2,Mike Hillyer
+RUTH MARTINEZ,South Africa,Kimberley,2005-05,26.94,-4.5,2,Jon Stephens
+SUE PETERS,China,Changzhou,2005-05,20.92,-17.73,3,Mike Hillyer
+TIM CARY,India,Bijapur,2005-05,20.95,-22.95,3,Jon Stephens
+CLARENCE GAMEZ,Japan,Izumisano,2005-05,24.95,-1.23,3,Mike Hillyer
+DELORES HANSEN,Russian Federation,Jaroslavl,2005-05,19.95,-3.0,3,Mike Hillyer
+EDWIN BURK,South Africa,Newcastle,2005-05,22.97,-6.22,3,Mike Hillyer
+MICHELE GRANT,China,Yuncheng,2005-05,19.97,-12.71,4,Jon Stephens
+RAMONA HALE,India,Patiala,2005-05,18.96,-12.72,4,Mike Hillyer
+DORA MEDINA,China,Tianjin,2005-05,18.96,-7.98,5,Mike Hillyer
+JUNE CARROLL,Algeria,Skikda,2005-06,42.92,-0.49,1,Mike Hillyer
+JASON MORRISSEY,Argentina,Baha Blanca,2005-06,40.93,8.75,1,Mike Hillyer
+JOEL FRANCISCO,Bolivia,Sucre,2005-06,35.93,12.74,1,Jon Stephens
+MARION SNYDER,Brazil,Santa Brbara dOeste,2005-06,44.92,-18.29,1,Jon Stephens
+GUY BROWNLEE,China,Zhoushan,2005-06,39.94,0.77,1,Mike Hillyer
+SYLVIA ORTIZ,Colombia,Dos Quebradas,2005-06,29.94,-4.73,1,Mike Hillyer
+MIKE WAY,India,Valparai,2005-06,35.94,-5.72,1,Mike Hillyer
+LEWIS LYMAN,Israel,Ashqelon,2005-06,31.94,3.0,1,Jon Stephens
+DOLORES WAGNER,Malaysia,Ipoh,2005-06,32.93,4.25,1,Jon Stephens
+ALEX GRESHAM,Mexico,Uruapan,2005-06,52.9,14.98,1,Jon Stephens
+PETER MENARD,Netherlands,Ede,2005-06,37.93,2.34,1,Jon Stephens
+OLGA JIMENEZ,Nigeria,Ogbomosho,2005-06,28.93,-7.24,1,Jon Stephens
+DEBORAH WALKER,Pakistan,Shikarpur,2005-06,33.94,5.01,1,Mike Hillyer
+MARCIA DEAN,Philippines,Tanza,2005-06,37.92,-5.73,1,Jon Stephens
+BEN EASTER,Russian Federation,Kamyin,2005-06,33.92,3.23,1,Jon Stephens
+JOYCE EDWARDS,Saudi Arabia,Jedda,2005-06,23.95,-8.73,1,Jon Stephens
+DENNIS GILMAN,South Africa,Paarl,2005-06,34.93,6.25,1,Mike Hillyer
+MAE FLETCHER,Spain,Donostia-San Sebastin,2005-06,35.93,-3.74,1,Mike Hillyer
+ROSEMARY SCHMIDT,Turkey,Usak,2005-06,31.94,-4.97,1,Mike Hillyer
+KARL SEAL,United States,Cape Coral,2005-06,41.91,-13.48,1,Jon Stephens
+GINA WILLIAMSON,Yemen,Taizz,2005-06,35.91,8.73,1,Mike Hillyer
+MARGIE WADE,China,Lengshuijiang,2005-06,38.91,1.0,2,Jon Stephens
+WANDA PATTERSON,Colombia,Sincelejo,2005-06,25.95,-9.23,2,Jon Stephens
+STEVEN CURLEY,India,Miraj,2005-06,35.93,2.75,2,Jon Stephens
+CATHERINE CAMPBELL,Russian Federation,Moscow,2005-06,32.93,-2.74,2,Jon Stephens
+LARRY THRASHER,Turkey,Adana,2005-06,30.94,3.5,2,Jon Stephens
+IAN STILL,United States,Garland,2005-06,33.91,9.98,2,Mike Hillyer
+ERNEST STEPP,China,Huaian,2005-06,34.93,12.49,3,Mike Hillyer
+BRENDA WRIGHT,India,Kamarhati,2005-06,35.89,0.98,3,Jon Stephens
+DAISY BATES,Russian Federation,Kolpino,2005-06,32.91,-7.5,3,Mike Hillyer
+VALERIE BLACK,United States,Brockton,2005-06,32.93,2.49,3,Jon Stephens
+CHRISTY VARGAS,China,Datong,2005-06,34.92,4.25,4,Mike Hillyer
+SUE PETERS,China,Changzhou,2005-06,31.92,-6.73,5,Jon Stephens
+VERA MCCOY,Afghanistan,Kabul,2005-07,37.92,15.31,1,Jon Stephens
+MARIO CHEATHAM,Algeria,Batna,2005-07,66.83,39.9,1,Jon Stephens
+ANTHONY SCHWAB,American Samoa,Tafuna,2005-07,39.89,15.96,1,Jon Stephens
+CLAUDE HERZOG,Angola,Benguela,2005-07,56.89,28.95,1,Jon Stephens
+PERRY SWAFFORD,Argentina,Quilmes,2005-07,70.87,33.28,1,Jon Stephens
+STEPHANIE MITCHELL,Armenia,Yerevan,2005-07,70.85,32.26,1,Mike Hillyer
+AUDREY RAY,Austria,Graz,2005-07,57.86,27.93,1,Jon Stephens
+RAYMOND MCWHORTER,Azerbaijan,Sumqayit,2005-07,53.89,20.21,1,Mike Hillyer
+SETH HANNON,Bahrain,al-Manama,2005-07,56.86,29.42,1,Mike Hillyer
+STEPHEN QUALLS,Bangladesh,Dhaka,2005-07,78.83,39.26,1,Jon Stephens
+CLARA SHAW,Belarus,Molodetno,2005-07,93.82,44.92,1,Jon Stephens
+JON WILES,Bolivia,El Alto,2005-07,45.91,23.97,1,Mike Hillyer
+TINA SIMMONS,Brazil,Goinia,2005-07,78.85,45.42,1,Jon Stephens
+LOIS BUTLER,Brunei,Bandar Seri Begawan,2005-07,59.81,32.65,1,Jon Stephens
+ALLISON STANLEY,Cambodia,Phnom Penh,2005-07,54.85,32.66,1,Mike Hillyer
+ALBERT CROUSE,Cameroon,Bamenda,2005-07,43.91,19.72,1,Mike Hillyer
+DERRICK BOURQUE,Canada,Gatineau,2005-07,39.91,16.21,1,Jon Stephens
+JEROME KENYON,Chile,Rancagua,2005-07,32.94,14.48,1,Mike Hillyer
+TERRENCE GUNDERSON,China,Jinzhou,2005-07,86.81,57.39,1,Mike Hillyer
+SAM MCDUFFIE,Colombia,Sogamoso,2005-07,64.86,35.42,1,Jon Stephens
+JENNIE TERRY,Czech Republic,Olomouc,2005-07,70.84,37.41,1,Mike Hillyer
+RANDALL NEUMANN,Dominican Republic,La Romana,2005-07,44.9,19.96,1,Jon Stephens
+RAMON CHOATE,Ecuador,Robamba,2005-07,80.82,45.65,1,Jon Stephens
+RICK MATTOX,Egypt,Mit Ghamr,2005-07,60.89,29.71,1,Jon Stephens
+EDWARD BAUGH,Faroe Islands,Trshavn,2005-07,50.88,22.45,1,Mike Hillyer
+VIRGINIA GREEN,France,Toulouse,2005-07,68.84,36.42,1,Mike Hillyer
+CHRISTINE ROBERTS,French Polynesia,Faaa,2005-07,47.88,23.94,1,Mike Hillyer
+ALMA AUSTIN,Germany,Mannheim,2005-07,63.86,25.95,1,Jon Stephens
+LINDA WILLIAMS,Greece,Athenai,2005-07,68.87,34.94,1,Jon Stephens
+GERTRUDE CASTILLO,Greenland,Nuuk,2005-07,58.85,24.44,1,Jon Stephens
+TERRANCE ROUSH,Hungary,Szkesfehrvr,2005-07,61.85,24.94,1,Mike Hillyer
+TONYA CHAPMAN,India,Bhilwara,2005-07,82.83,42.41,1,Jon Stephens
+STEVE MACKENZIE,Indonesia,Probolinggo,2005-07,77.84,38.18,1,Jon Stephens
+TOMMY COLLAZO,Iran,Qomsheh,2005-07,89.82,43.16,1,Mike Hillyer
+DARYL LARUE,Iraq,Mosul,2005-07,65.86,28.95,1,Jon Stephens
+CRYSTAL FORD,Israel,Ashdod,2005-07,84.79,50.37,1,Mike Hillyer
+CHRISTOPHER GRECO,Italy,Brescia,2005-07,76.84,39.92,1,Jon Stephens
+MIRIAM MCKINNEY,Japan,Otsu,2005-07,68.87,23.62,1,Mike Hillyer
+BYRON BOX,Kazakstan,Zhezqazghan,2005-07,70.85,40.67,1,Jon Stephens
+ROY WHITING,Kenya,Nyeri,2005-07,69.85,33.92,1,Jon Stephens
+SARAH LEWIS,Latvia,Liepaja,2005-07,60.87,31.69,1,Jon Stephens
+EVELYN MORGAN,Liechtenstein,Vaduz,2005-07,49.85,21.17,1,Jon Stephens
+FELIX GAFFNEY,Lithuania,Vilnius,2005-07,26.9,9.71,1,Jon Stephens
+LYNN PAYNE,Malawi,Lilongwe,2005-07,56.87,25.94,1,Mike Hillyer
+CHARLES KOWALSKI,Malaysia,Sungai Petani,2005-07,53.86,19.19,1,Jon Stephens
+MAURICE CRAWLEY,Mexico,Coatzacoalcos,2005-07,69.88,35.2,1,Jon Stephens
+MARTHA GONZALEZ,Moldova,Chisinau,2005-07,65.82,23.27,1,Jon Stephens
+MARSHA DOUGLAS,Mozambique,Beira,2005-07,88.82,50.91,1,Jon Stephens
+DUANE TUBBS,Nauru,Yangor,2005-07,60.87,23.7,1,Jon Stephens
+KEVIN SCHULER,Nepal,Birgunj,2005-07,50.9,21.71,1,Jon Stephens
+RHONDA KENNEDY,Netherlands,Apeldoorn,2005-07,96.81,48.16,1,Mike Hillyer
+SUSAN WILSON,New Zealand,Hamilton,2005-07,35.88,12.69,1,Mike Hillyer
+VELMA LUCAS,Nigeria,Effon-Alaiye,2005-07,76.83,47.4,1,Jon Stephens
+DARLENE ROSE,North Korea,Pyongyang,2005-07,52.83,24.41,1,Jon Stephens
+GENE SANBORN,Oman,Salala,2005-07,51.85,27.42,1,Mike Hillyer
+MELINDA FERNANDEZ,Pakistan,Mandi Bahauddin,2005-07,32.93,12.72,1,Jon Stephens
+CARL ARTIS,Paraguay,San Lorenzo,2005-07,49.9,23.21,1,Jon Stephens
+THELMA MURRAY,Peru,Lima,2005-07,61.85,30.18,1,Jon Stephens
+ARNOLD HAVENS,Philippines,Santa Rosa,2005-07,96.82,54.9,1,Jon Stephens
+JIMMIE EGGLESTON,Poland,Wroclaw,2005-07,70.85,25.61,1,Mike Hillyer
+RALPH MADRIGAL,Puerto Rico,Arecibo,2005-07,69.83,32.17,1,Mike Hillyer
+KEN PREWITT,Romania,Bucuresti,2005-07,60.84,33.16,1,Jon Stephens
+ELEANOR HUNT,Runion,Saint-Denis,2005-07,100.78,46.64,1,Mike Hillyer
+DAISY BATES,Russian Federation,Kolpino,2005-07,87.82,47.41,1,Mike Hillyer
+JOSE ANDREW,Saint Vincent and the Grenadines,Kingstown,2005-07,46.88,22.69,1,Mike Hillyer
+JOYCE EDWARDS,Saudi Arabia,Jedda,2005-07,69.87,37.19,1,Jon Stephens
+KEITH RICO,Slovakia,Bratislava,2005-07,42.88,20.45,1,Mike Hillyer
+ETHEL WEBB,South Africa,Boksburg,2005-07,65.84,31.92,1,Mike Hillyer
+COURTNEY DAY,South Korea,Uijongbu,2005-07,72.84,40.42,1,Mike Hillyer
+WESLEY BULL,Spain,Ourense (Orense),2005-07,80.82,36.42,1,Jon Stephens
+MANUEL MURRELL,Sri Lanka,Jaffna,2005-07,45.88,16.71,1,Jon Stephens
+DIANE COLLINS,Sudan,Omdurman,2005-07,80.83,38.42,1,Jon Stephens
+JANICE WARD,Sweden,Malm,2005-07,60.87,24.71,1,Mike Hillyer
+WADE DELVALLE,Switzerland,Lausanne,2005-07,64.84,36.91,1,Mike Hillyer
+MELISSA KING,Taiwan,Lungtan,2005-07,73.81,32.59,1,Jon Stephens
+CHARLENE ALVAREZ,Tanzania,Zanzibar,2005-07,59.88,31.2,1,Jon Stephens
+JACQUELINE LONG,Thailand,Songkhla,2005-07,64.88,27.71,1,Mike Hillyer
+HENRY BILLINGSLEY,Tonga,Nukualofa,2005-07,28.94,10.49,1,Jon Stephens
+GREGORY MAULDIN,Tunisia,Sousse,2005-07,55.85,29.92,1,Mike Hillyer
+BRANDON HUEY,Turkey,Balikesir,2005-07,82.81,45.9,1,Jon Stephens
+DAWN SULLIVAN,Tuvalu,Funafuti,2005-07,48.9,18.72,1,Jon Stephens
+PEDRO CHESTNUT,Ukraine,ostka,2005-07,71.85,37.26,1,Mike Hillyer
+MISTY LAMBERT,United Arab Emirates,Sharja,2005-07,74.84,45.16,1,Mike Hillyer
+MARSHALL THORN,United Kingdom,Southampton,2005-07,68.88,29.62,1,Jon Stephens
+KARL SEAL,United States,Cape Coral,2005-07,86.81,31.42,1,Jon Stephens
+MATHEW BOLIN,Venezuela,Valencia,2005-07,55.88,33.19,1,Jon Stephens
+NEIL RENNER,Vietnam,Cam Ranh,2005-07,69.86,31.94,1,Jon Stephens
+NATHAN RUNYON,"Virgin Islands, U.S.",Charlotte Amalie,2005-07,68.82,38.15,1,Jon Stephens
+GORDON ALLARD,Yemen,Hodeida,2005-07,96.83,56.66,1,Mike Hillyer
+MAX PITT,Yugoslavia,Novi Sad,2005-07,68.84,41.9,1,Jon Stephens
+BARRY LOVELACE,Zambia,Kitwe,2005-07,54.86,21.44,1,Jon Stephens
+JUDY GRAY,Algeria,Bchar,2005-07,47.89,23.95,2,Jon Stephens
+JULIA FLORES,Argentina,La Plata,2005-07,68.83,35.16,2,Jon Stephens
+JILL HAWKINS,Austria,Linz,2005-07,38.9,21.7,2,Jon Stephens
+ANDREW PURDY,Azerbaijan,Baku,2005-07,51.87,24.44,2,Jon Stephens
+KENT ARSENAULT,Brazil,Juiz de Fora,2005-07,75.85,30.94,2,Mike Hillyer
+ELMER NOE,Cambodia,Battambang,2005-07,46.91,23.72,2,Jon Stephens
+LORETTA CARPENTER,Canada,Oshawa,2005-07,37.9,14.46,2,Mike Hillyer
+ROBERTO VU,China,Yinchuan,2005-07,77.85,42.93,2,Jon Stephens
+JACKIE LYNCH,Colombia,Buenaventura,2005-07,62.85,39.41,2,Jon Stephens
+PATSY DAVIDSON,Ecuador,Portoviejo,2005-07,47.89,17.96,2,Mike Hillyer
+LILLIE KIM,Egypt,Idfu,2005-07,55.87,25.95,2,Mike Hillyer
+LUIS YANEZ,France,Brest,2005-07,52.88,32.93,2,Jon Stephens
+GRACE ELLIS,Germany,Duisburg,2005-07,61.85,28.18,2,Mike Hillyer
+ARLENE HARVEY,India,Ambattur,2005-07,80.83,50.65,2,Mike Hillyer
+JORGE OLIVARES,Indonesia,Lhokseumawe,2005-07,57.87,24.21,2,Jon Stephens
+ROBERTA HARPER,Iran,Shahr-e Kord,2005-07,50.88,29.69,2,Mike Hillyer
+KENNETH GOODEN,Israel,Bat Yam,2005-07,47.92,27.46,2,Jon Stephens
+BESSIE MORRISON,Italy,Syrakusa,2005-07,58.88,25.7,2,Mike Hillyer
+JAMIE WAUGH,Japan,Kuwana,2005-07,64.86,35.17,2,Jon Stephens
+PRISCILLA LOWE,Mexico,Salamanca,2005-07,67.85,28.44,2,Mike Hillyer
+ANNIE RUSSELL,Mozambique,Tete,2005-07,40.88,21.27,2,Jon Stephens
+GLENN PULLEN,Netherlands,Amersfoort,2005-07,40.89,17.45,2,Jon Stephens
+GLADYS HAMILTON,Nigeria,Ilorin,2005-07,68.85,32.18,2,Jon Stephens
+EILEEN CARR,Paraguay,Ciudad del Este,2005-07,45.92,18.98,2,Jon Stephens
+DAVID ROYAL,Peru,Callao,2005-07,52.88,23.95,2,Mike Hillyer
+MARCIA DEAN,Philippines,Tanza,2005-07,73.8,30.15,2,Jon Stephens
+MARJORIE TUCKER,Poland,Jastrzebie-Zdrj,2005-07,65.84,33.92,2,Jon Stephens
+JENNY CASTRO,Puerto Rico,Ponce,2005-07,64.85,39.17,2,Jon Stephens
+JOY GEORGE,Romania,Botosani,2005-07,58.85,27.68,2,Jon Stephens
+ARTHUR SIMPKINS,Russian Federation,Maikop,2005-07,83.85,44.93,2,Jon Stephens
+PEGGY MYERS,Saudi Arabia,Abha,2005-07,53.88,21.96,2,Jon Stephens
+EDWIN BURK,South Africa,Newcastle,2005-07,56.88,27.69,2,Mike Hillyer
+TANYA GILBERT,South Korea,Naju,2005-07,64.85,28.68,2,Jon Stephens
+JULIE SANCHEZ,Spain,A Corua (La Corua),2005-07,48.88,23.2,2,Jon Stephens
+GAIL KNIGHT,Switzerland,Bern,2005-07,42.9,17.46,2,Mike Hillyer
+ROGER QUINTANILLA,Taiwan,Hsichuh,2005-07,70.84,34.18,2,Jon Stephens
+HERMAN DEVORE,Tanzania,Mwanza,2005-07,57.87,28.94,2,Mike Hillyer
+CAROLYN PEREZ,Thailand,Pak Kret,2005-07,61.84,33.91,2,Jon Stephens
+CASEY MENA,Turkey,Tokat,2005-07,71.82,36.41,2,Mike Hillyer
+KATHRYN COLEMAN,Ukraine,Simferopol,2005-07,64.89,32.21,2,Jon Stephens
+TOM MILNER,United Arab Emirates,Abu Dhabi,2005-07,45.87,20.2,2,Jon Stephens
+GILBERT SLEDGE,United Kingdom,York,2005-07,67.86,36.68,2,Mike Hillyer
+ZACHARY HITE,United States,Akron,2005-07,79.85,43.43,2,Jon Stephens
+KRISTINA CHAMBERS,Venezuela,Valle de la Pascua,2005-07,51.86,24.43,2,Jon Stephens
+MITCHELL WESTMORELAND,Vietnam,Nha Trang,2005-07,60.86,27.19,2,Mike Hillyer
+ELLA OLIVER,Yemen,Aden,2005-07,73.82,39.4,2,Jon Stephens
+MARIA MILLER,Yugoslavia,Kragujevac,2005-07,59.89,21.97,2,Jon Stephens
+WILLIE HOWELL,Argentina,Vicente Lpez,2005-07,64.85,40.66,3,Jon Stephens
+DEBRA NELSON,Brazil,Vila Velha,2005-07,73.85,26.61,3,Jon Stephens
+REGINA BERRY,China,Jinchang,2005-07,70.83,37.16,3,Jon Stephens
+WANDA PATTERSON,Colombia,Sincelejo,2005-07,56.89,21.71,3,Jon Stephens
+RITA GRAHAM,France,Toulon,2005-07,44.9,21.71,3,Jon Stephens
+COLLEEN BURTON,Germany,Saarbrcken,2005-07,44.88,24.19,3,Mike Hillyer
+MILTON HOWLAND,India,Vijayawada,2005-07,74.86,43.17,3,Jon Stephens
+JARED ELY,Indonesia,Purwakarta,2005-07,48.92,26.97,3,Mike Hillyer
+DOROTHY TAYLOR,Iran,Esfahan,2005-07,45.89,20.95,3,Jon Stephens
+ADRIAN CLARY,Italy,Udine,2005-07,49.89,31.94,3,Jon Stephens
+JULIAN VEST,Japan,Akishima,2005-07,64.85,37.42,3,Mike Hillyer
+FRANCIS SIKES,Mexico,San Juan Bautista Tuxtepec,2005-07,67.83,41.65,3,Mike Hillyer
+VIVIAN RUIZ,Netherlands,s-Hertogenbosch,2005-07,36.91,14.22,3,Jon Stephens
+SONIA GREGORY,Nigeria,Benin City,2005-07,60.88,30.7,3,Mike Hillyer
+KATHY JAMES,Philippines,Baybay,2005-07,70.82,38.4,3,Mike Hillyer
+RUSSELL BRINSON,Poland,Tychy,2005-07,58.86,24.7,3,Mike Hillyer
+WARREN SHERROD,Russian Federation,Usolje-Sibirskoje,2005-07,74.84,34.92,3,Mike Hillyer
+MARK RINEHART,Saudi Arabia,Tabuk,2005-07,48.89,22.71,3,Mike Hillyer
+LUCILLE HOLMES,South Africa,Soshanguve,2005-07,55.85,28.67,3,Mike Hillyer
+EMILY DIAZ,South Korea,Kimchon,2005-07,56.85,34.16,3,Jon Stephens
+NELSON CHRISTENSON,Spain,Santiago de Compostela,2005-07,41.91,22.46,3,Jon Stephens
+KATHERINE RIVERA,Switzerland,Basel,2005-07,32.94,13.32,3,Jon Stephens
+TAMMY SANDERS,Taiwan,Changhwa,2005-07,70.8,34.15,3,Mike Hillyer
+BERNICE WILLIS,Turkey,Batman,2005-07,70.86,34.44,3,Mike Hillyer
+BRITTANY RILEY,Ukraine,Sumy,2005-07,63.89,23.96,3,Jon Stephens
+LILLIAN GRIFFIN,United Arab Emirates,al-Ayn,2005-07,40.91,14.22,3,Jon Stephens
+DAN PAINE,United Kingdom,Stockport,2005-07,58.9,31.46,3,Jon Stephens
+PATRICIA JOHNSON,United States,San Bernardino,2005-07,75.86,43.68,3,Jon Stephens
+CINDY FISHER,Venezuela,Cuman,2005-07,43.89,15.46,3,Jon Stephens
+BETH FRANKLIN,Vietnam,Haiphong,2005-07,52.88,27.69,3,Jon Stephens
+GINA WILLIAMSON,Yemen,Taizz,2005-07,51.88,24.7,3,Jon Stephens
+ERIC ROBERT,Argentina,Santa F,2005-07,63.88,33.2,4,Mike Hillyer
+GEORGE LINTON,Brazil,Sorocaba,2005-07,67.82,34.9,4,Jon Stephens
+MICHAEL SILVERMAN,China,Tiefa,2005-07,67.85,35.92,4,Mike Hillyer
+LEON BOSTIC,Colombia,Florencia,2005-07,41.92,14.48,4,Mike Hillyer
+LAUREN HUDSON,France,Le Mans,2005-07,32.93,15.23,4,Jon Stephens
+BRETT CORNWELL,India,Siliguri (Shiliguri),2005-07,73.85,39.19,4,Jon Stephens
+LONNIE TIRADO,Indonesia,Pangkal Pinang,2005-07,47.92,24.22,4,Jon Stephens
+KATHLEEN ADAMS,Iran,Arak,2005-07,40.87,17.69,4,Jon Stephens
+JERRY JORDON,Japan,Onomichi,2005-07,62.88,27.2,4,Jon Stephens
+ALVIN DELOACH,Mexico,Cuauhtmoc,2005-07,66.87,31.94,4,Jon Stephens
+RODNEY MOELLER,Nigeria,Deba Habe,2005-07,58.85,32.66,4,Mike Hillyer
+LOUIS LEONE,Philippines,Tanauan,2005-07,68.84,28.68,4,Mike Hillyer
+JOHNNIE CHISHOLM,Poland,Plock,2005-07,48.91,18.47,4,Mike Hillyer
+ROBIN HAYES,Russian Federation,Jelets,2005-07,69.87,44.43,4,Jon Stephens
+DALE RATCLIFF,South Africa,Rustenburg,2005-07,49.89,21.71,4,Mike Hillyer
+FERNANDO CHURCHILL,South Korea,Tonghae,2005-07,51.88,22.44,4,Mike Hillyer
+CHRIS BROTHERS,Spain,Gijn,2005-07,38.9,18.95,4,Mike Hillyer
+MORRIS MCCARTER,Taiwan,Fengshan,2005-07,63.85,30.43,4,Mike Hillyer
+GABRIEL HARDER,Turkey,Sivas,2005-07,55.87,27.94,4,Jon Stephens
+TODD TAN,Ukraine,Kamjanets-Podilskyi,2005-07,54.87,25.44,4,Mike Hillyer
+APRIL BURNS,United Kingdom,Dundee,2005-07,41.9,18.46,4,Mike Hillyer
+ANA BRADLEY,United States,Memphis,2005-07,72.88,29.96,4,Mike Hillyer
+HARVEY GUAJARDO,Vietnam,Vinh,2005-07,41.9,18.46,4,Mike Hillyer
+FLORENCE WOODS,Argentina,Merlo,2005-07,61.86,30.68,5,Jon Stephens
+JUSTIN NGO,Brazil,Santo Andr,2005-07,67.81,37.4,5,Mike Hillyer
+EDUARDO HIATT,China,Jining,2005-07,65.86,33.18,5,Mike Hillyer
+STACY CUNNINGHAM,Colombia,Pereira,2005-07,40.9,17.46,5,Jon Stephens
+THEODORE CULP,India,Uluberia,2005-07,71.83,42.66,5,Jon Stephens
+VICTORIA GIBSON,Indonesia,Pemalang,2005-07,41.9,13.97,5,Jon Stephens
+STANLEY SCROGGINS,Japan,Omiya,2005-07,59.86,24.94,5,Mike Hillyer
+SARA PERRY,Mexico,Atlixco,2005-07,64.88,29.46,5,Jon Stephens
+CONSTANCE REID,Nigeria,Zaria,2005-07,57.86,33.92,5,Jon Stephens
+VIOLA HANSON,Philippines,Lapu-Lapu,2005-07,54.86,23.69,5,Jon Stephens
+SIDNEY BURLESON,Poland,Czestochowa,2005-07,46.89,19.7,5,Mike Hillyer
+RANDY GAITHER,Russian Federation,Kurgan,2005-07,69.85,42.17,5,Mike Hillyer
+BONNIE HUGHES,South Korea,Cheju,2005-07,44.89,22.94,5,Mike Hillyer
+ELIZABETH BROWN,Taiwan,Nantou,2005-07,59.84,23.93,5,Mike Hillyer
+EDGAR RHOADS,Turkey,Eskisehir,2005-07,49.85,25.91,5,Mike Hillyer
+MONICA HICKS,Ukraine,Mukateve,2005-07,49.88,17.71,5,Mike Hillyer
+ASHLEY RICHARDSON,United States,Lincoln,2005-07,64.86,27.28,5,Jon Stephens
+JORDAN ARCHULETA,Argentina,Avellaneda,2005-07,59.86,28.18,6,Jon Stephens
+JOSEPH JOY,Brazil,Angra dos Reis,2005-07,62.87,29.2,6,Mike Hillyer
+CLYDE TOBIAS,China,Shaoguan,2005-07,63.82,34.89,6,Mike Hillyer
+BRADLEY MOTLEY,India,Purnea (Purnia),2005-07,65.89,34.21,6,Mike Hillyer
+TARA RYAN,Indonesia,Gorontalo,2005-07,40.93,18.73,6,Jon Stephens
+LISA ANDERSON,Japan,Sagamihara,2005-07,53.89,27.45,6,Jon Stephens
+GLEN TALBERT,Mexico,Acua,2005-07,58.88,30.45,6,Jon Stephens
+ROSS GREY,Philippines,Iligan,2005-07,49.85,24.92,6,Mike Hillyer
+RUBEN GEARY,Poland,Lublin,2005-07,36.91,14.46,6,Jon Stephens
+DANA HART,Russian Federation,Kirovo-Tepetsk,2005-07,68.86,35.43,6,Mike Hillyer
+CLIFTON MALCOLM,Taiwan,Tanshui,2005-07,52.89,23.21,6,Mike Hillyer
+VERNON CHAPA,Turkey,Denizli,2005-07,48.91,26.71,6,Mike Hillyer
+JULIO NOLAND,Ukraine,Konotop,2005-07,42.91,20.46,6,Jon Stephens
+ALICE STEWART,United States,Fontana,2005-07,58.88,24.21,6,Mike Hillyer
+LYDIA BURKE,Argentina,San Miguel de Tucumn,2005-07,45.87,25.18,7,Jon Stephens
+NICHOLAS BARFIELD,Brazil,Belm,2005-07,61.85,25.43,7,Mike Hillyer
+STACEY MONTGOMERY,China,Fuyu,2005-07,62.84,26.17,7,Jon Stephens
+CHERYL MURPHY,India,Mysore,2005-07,60.89,27.46,7,Mike Hillyer
+NORMAN CURRIER,Indonesia,Cianjur,2005-07,32.88,13.94,7,Mike Hillyer
+RACHEL BARNES,Japan,Kamakura,2005-07,53.87,32.68,7,Mike Hillyer
+MATTHEW MAHAN,Mexico,Cuautla,2005-07,58.85,30.18,7,Jon Stephens
+ALLAN CORNISH,Philippines,Tarlac,2005-07,29.94,10.24,7,Mike Hillyer
+BRIAN WYMAN,Poland,Bydgoszcz,2005-07,24.94,11.72,7,Mike Hillyer
+PHILIP CAUSEY,Russian Federation,Korolev,2005-07,60.87,30.45,7,Jon Stephens
+BRAD MCCURDY,Taiwan,Chungho,2005-07,50.88,24.44,7,Mike Hillyer
+COREY HAUSER,Turkey,Gaziantep,2005-07,43.92,18.48,7,Jon Stephens
+NATHANIEL ADAM,United States,Joliet,2005-07,57.89,24.46,7,Jon Stephens
+WILLIE MARKHAM,Argentina,Almirante Brown,2005-07,39.91,15.72,8,Jon Stephens
+MAXINE SILVA,Brazil,Poos de Caldas,2005-07,55.87,26.7,8,Mike Hillyer
+LEROY BUSTAMANTE,China,Tongliao,2005-07,60.84,31.17,8,Mike Hillyer
+JOHN FARNSWORTH,India,Parbhani,2005-07,59.86,26.69,8,Mike Hillyer
+TERRY GRISSOM,Japan,Matsue,2005-07,52.89,34.94,8,Mike Hillyer
+VIRGIL WOFFORD,Mexico,Jos Azueta,2005-07,57.86,30.93,8,Mike Hillyer
+NORMA GONZALES,Philippines,Bislig,2005-07,28.93,10.23,8,Jon Stephens
+MARIE TURNER,Russian Federation,Lipetsk,2005-07,53.9,26.46,8,Jon Stephens
+BEVERLY BROOKS,Taiwan,Chiayi,2005-07,46.9,23.21,8,Mike Hillyer
+BRENT HARKINS,Turkey,Sultanbeyli,2005-07,42.92,15.48,8,Mike Hillyer
+VALERIE BLACK,United States,Brockton,2005-07,54.89,24.46,8,Mike Hillyer
+DARRYL ASHCRAFT,Argentina,Ezeiza,2005-07,30.91,12.47,9,Jon Stephens
+FRANCISCO SKIDMORE,Brazil,So Leopoldo,2005-07,54.9,30.21,9,Mike Hillyer
+JUDITH COX,China,Daxian,2005-07,59.81,35.89,9,Mike Hillyer
+AMY LOPEZ,India,Jhansi,2005-07,58.85,26.92,9,Mike Hillyer
+MARLENE WELCH,Japan,Iwaki,2005-07,51.88,22.45,9,Mike Hillyer
+DOUGLAS GRAF,Mexico,Mexicali,2005-07,54.91,26.22,9,Jon Stephens
+CLIFFORD BOWENS,Russian Federation,Nabereznyje Telny,2005-07,50.89,22.46,9,Mike Hillyer
+JOANN GARDNER,Turkey,Tarsus,2005-07,38.9,22.19,9,Mike Hillyer
+TONI HOLT,United States,Roanoke,2005-07,52.88,28.94,9,Jon Stephens
+JESUS MCCARTNEY,Brazil,Guaruj,2005-07,49.9,21.21,10,Jon Stephens
+JESSIE MILAM,China,Binzhou,2005-07,58.87,24.2,10,Jon Stephens
+LEE HAWKS,India,Pudukkottai,2005-07,57.88,28.2,10,Jon Stephens
+GWENDOLYN MAY,Japan,Higashiosaka,2005-07,51.88,19.96,10,Mike Hillyer
+ANDY VANHORN,Mexico,Huejutla de Reyes,2005-07,53.9,26.21,10,Jon Stephens
+JIMMY SCHRADER,Russian Federation,Atinsk,2005-07,50.87,24.44,10,Jon Stephens
+SHEILA WELLS,Turkey,Ktahya,2005-07,37.92,19.47,10,Mike Hillyer
+BRYAN HARDISON,United States,Dallas,2005-07,51.9,20.72,10,Jon Stephens
+TAMARA NGUYEN,Brazil,Anpolis,2005-07,49.87,18.95,11,Jon Stephens
+KYLE SPURLOCK,China,Shanwei,2005-07,58.84,31.41,11,Mike Hillyer
+JUANITA MASON,India,Pune,2005-07,57.86,30.43,11,Mike Hillyer
+RON DELUCA,Japan,Isesaki,2005-07,51.87,25.93,11,Jon Stephens
+RONALD WEINER,Mexico,San Felipe del Progreso,2005-07,52.88,19.71,11,Mike Hillyer
+JACK FOUST,Russian Federation,Zeleznogorsk,2005-07,50.87,28.43,11,Jon Stephens
+BILLIE HORTON,Turkey,Inegl,2005-07,37.91,15.73,11,Jon Stephens
+ROSA REYNOLDS,United States,Lancaster,2005-07,50.89,17.47,11,Jon Stephens
+ELLEN SIMPSON,Brazil,Po,2005-07,48.87,19.44,12,Mike Hillyer
+CHARLIE BESS,China,Baiyin,2005-07,56.89,26.95,12,Mike Hillyer
+BEATRICE ARNOLD,India,Udaipur,2005-07,56.88,26.95,12,Mike Hillyer
+MARY SMITH,Japan,Sasebo,2005-07,50.88,21.21,12,Mike Hillyer
+TRACY COLE,Mexico,Huixquilucan,2005-07,51.87,19.94,12,Jon Stephens
+HERBERT KRUGER,Russian Federation,Syktyvkar,2005-07,49.89,30.19,12,Mike Hillyer
+LESLIE GORDON,Turkey,Kilis,2005-07,33.91,11.47,12,Mike Hillyer
+BETTY WHITE,United States,Citrus Heights,2005-07,50.88,22.7,12,Mike Hillyer
+DENISE KELLY,Brazil,Rio Claro,2005-07,47.9,21.97,13,Jon Stephens
+MICHELE GRANT,China,Yuncheng,2005-07,55.86,23.19,13,Jon Stephens
+STEVEN CURLEY,India,Miraj,2005-07,55.88,22.7,13,Jon Stephens
+FREDERICK ISBELL,Japan,Tsuyama,2005-07,45.91,19.46,13,Jon Stephens
+SHANE MILLARD,Mexico,La Paz,2005-07,50.89,18.96,13,Jon Stephens
+ROBERT BAUGHMAN,Russian Federation,Kaliningrad,2005-07,48.9,25.7,13,Jon Stephens
+SHELLY WATTS,United States,Dayton,2005-07,47.9,19.47,13,Jon Stephens
+FRANCES PARKER,Brazil,Juazeiro do Norte,2005-07,47.9,20.71,14,Jon Stephens
+HEIDI LARSON,China,Xiangfan,2005-07,53.85,23.19,14,Mike Hillyer
+RAMONA HALE,India,Patiala,2005-07,54.88,23.2,14,Mike Hillyer
+BRUCE SCHWARZ,Japan,Okinawa,2005-07,44.9,18.96,14,Mike Hillyer
+WENDY HARRISON,Mexico,Nezahualcyotl,2005-07,50.85,28.67,14,Mike Hillyer
+BEN EASTER,Russian Federation,Kamyin,2005-07,46.9,16.22,14,Mike Hillyer
+RICHARD MCCRARY,United States,Arlington,2005-07,44.9,17.46,14,Mike Hillyer
+DANIEL CABRAL,Brazil,Ibirit,2005-07,41.92,17.47,15,Mike Hillyer
+WALTER PERRYMAN,China,Xinxiang,2005-07,52.87,20.95,15,Jon Stephens
+ERIK GUILLEN,India,Bhimavaram,2005-07,53.87,24.19,15,Jon Stephens
+PHILLIP HOLM,Japan,Tama,2005-07,44.89,19.46,15,Mike Hillyer
+SERGIO STANFIELD,Mexico,Celaya,2005-07,48.9,21.96,15,Jon Stephens
+DELORES HANSEN,Russian Federation,Jaroslavl,2005-07,46.89,23.94,15,Jon Stephens
+RENE MCALISTER,United States,Garden Grove,2005-07,44.88,16.45,15,Jon Stephens
+TIMOTHY BUNN,Brazil,Braslia,2005-07,41.9,18.96,16,Jon Stephens
+MARION OCAMPO,China,Weifang,2005-07,52.86,23.93,16,Mike Hillyer
+CARLA GUTIERREZ,India,Bhusawal,2005-07,52.87,18.29,16,Jon Stephens
+KURT EMMONS,Japan,Kanazawa,2005-07,41.9,16.96,16,Jon Stephens
+PAULINE HENRY,Mexico,Torren,2005-07,47.87,23.19,16,Jon Stephens
+PAUL TROUT,Russian Federation,Kursk,2005-07,45.92,15.73,16,Jon Stephens
+SCOTT SHELLEY,United States,Aurora,2005-07,41.88,18.94,16,Jon Stephens
+JEREMY HURTADO,Brazil,Vitria de Santo Anto,2005-07,38.9,13.72,17,Mike Hillyer
+TED BREAUX,China,Baicheng,2005-07,51.86,22.43,17,Jon Stephens
+CYNTHIA YOUNG,India,Munger (Monghyr),2005-07,51.86,24.69,17,Jon Stephens
+WILLARD LUMPKIN,Mexico,Carmen,2005-07,45.89,21.7,17,Mike Hillyer
+ANN EVANS,Russian Federation,Niznekamsk,2005-07,44.92,25.71,17,Jon Stephens
+CLINTON BUFORD,United States,Aurora,2005-07,40.88,16.19,17,Jon Stephens
+IDA ANDREWS,Brazil,Luzinia,2005-07,34.89,15.7,18,Mike Hillyer
+ALAN KAHN,China,Emeishan,2005-07,50.89,19.71,18,Mike Hillyer
+GERALD FULTZ,India,Satna,2005-07,50.87,20.45,18,Jon Stephens
+FRED WHEAT,Mexico,Jurez,2005-07,45.88,23.94,18,Jon Stephens
+DONNA THOMPSON,Russian Federation,Elista,2005-07,43.91,19.21,18,Jon Stephens
+VICTOR BARKLEY,United States,Manchester,2005-07,39.9,16.96,18,Mike Hillyer
+ANTONIO MEEK,Brazil,Bag,2005-07,33.93,14.22,19,Jon Stephens
+GARY COY,China,Yuzhou,2005-07,50.88,25.69,19,Mike Hillyer
+SHERRI RHODES,India,Ahmadnagar,2005-07,48.87,16.7,19,Mike Hillyer
+IVAN CROMWELL,Mexico,Monclova,2005-07,44.86,20.17,19,Mike Hillyer
+CONNIE WALLACE,Russian Federation,Ivanovo,2005-07,41.9,16.71,19,Mike Hillyer
+JACOB LANCE,United States,El Monte,2005-07,39.89,19.94,19,Jon Stephens
+FELICIA SUTTON,China,Korla,2005-07,50.83,21.92,20,Jon Stephens
+SALLY PIERCE,India,Chandrapur,2005-07,48.85,18.93,20,Mike Hillyer
+VINCENT RALSTON,Mexico,Allende,2005-07,40.9,14.46,20,Mike Hillyer
+JEANETTE GREENE,Russian Federation,Novoterkassk,2005-07,39.91,21.46,20,Mike Hillyer
+RENEE LANE,United States,Compton,2005-07,39.88,15.45,20,Jon Stephens
+ERICA MATTHEWS,China,Pingxiang,2005-07,49.9,25.96,21,Jon Stephens
+BERNARD COLBY,India,Dhule (Dhulia),2005-07,47.88,19.95,21,Mike Hillyer
+BENJAMIN VARNEY,Mexico,Guadalajara,2005-07,35.92,11.98,21,Mike Hillyer
+RAY HOULE,Russian Federation,Dzerzinsk,2005-07,33.93,13.99,21,Mike Hillyer
+KIM CRUZ,United States,Grand Prairie,2005-07,37.89,17.19,21,Mike Hillyer
+LORRAINE STEPHENS,China,Hami,2005-07,49.88,28.18,22,Jon Stephens
+ADAM GOOCH,India,Adoni,2005-07,46.89,21.45,22,Mike Hillyer
+HUGH WALDROP,China,Haining,2005-07,48.91,26.21,23,Mike Hillyer
+LUCY WHEELER,India,Balurghat,2005-07,46.87,25.43,23,Jon Stephens
+DORA MEDINA,China,Tianjin,2005-07,47.92,20.98,24,Mike Hillyer
+SHANNON FREEMAN,India,Varanasi (Benares),2005-07,45.9,20.71,24,Mike Hillyer
+HAZEL WARREN,China,Hohhot,2005-07,47.85,20.19,25,Mike Hillyer
+PAULA BRYANT,India,Pathankot,2005-07,43.91,24.46,25,Mike Hillyer
+RICKY SHELBY,China,Junan,2005-07,43.9,20.96,26,Mike Hillyer
+NELLIE GARRETT,India,Shimoga,2005-07,42.91,19.21,26,Mike Hillyer
+KELLY KNOTT,China,Sanya,2005-07,43.89,16.96,27,Mike Hillyer
+RAUL FORTIER,India,Chapra,2005-07,41.91,16.71,27,Mike Hillyer
+BOB PFEIFFER,China,Xintai,2005-07,37.91,14.97,28,Jon Stephens
+NANCY THOMAS,India,Yamuna Nagar,2005-07,39.87,13.94,28,Jon Stephens
+CHAD CARBONE,India,Katihar,2005-07,39.87,17.43,28,Mike Hillyer
+PAMELA BAKER,China,Nanyang,2005-07,36.94,13.0,29,Mike Hillyer
+LEONA OBRIEN,China,Fuzhou,2005-07,27.92,15.21,30,Jon Stephens
+LAURIE LAWRENCE,India,Firozabad,2005-07,35.9,12.21,30,Mike Hillyer
+TIFFANY JORDAN,China,Enshi,2005-07,22.93,7.97,31,Mike Hillyer
+PENNY NEAL,India,Kumbakonam,2005-07,30.91,13.71,31,Mike Hillyer
+EDITH MCDONALD,India,Gandhinagar,2005-07,26.95,9.0,32,Mike Hillyer
+LESTER KRAUS,India,Kanchrapara,2005-07,26.93,10.47,33,Jon Stephens
+ANITA MORALES,India,Hubli-Dharwad,2005-07,24.94,9.23,34,Mike Hillyer
+MARTIN BALES,Angola,Namibe,2005-08,38.9,12.97,1,Mike Hillyer
+BOBBY BOUDREAU,Anguilla,South Hill,2005-08,44.87,18.21,1,Jon Stephens
+MICHEAL FORMAN,Argentina,Escobar,2005-08,66.86,32.61,1,Mike Hillyer
+NORA HERRERA,Austria,Salzburg,2005-08,71.83,42.15,1,Mike Hillyer
+RAYMOND MCWHORTER,Azerbaijan,Sumqayit,2005-08,53.87,20.19,1,Mike Hillyer
+MICHELLE CLARK,Bangladesh,Tangail,2005-08,79.83,41.67,1,Mike Hillyer
+CORY MEEHAN,Belarus,Mogiljov,2005-08,43.9,17.64,1,Mike Hillyer
+JOEL FRANCISCO,Bolivia,Sucre,2005-08,35.91,12.72,1,Mike Hillyer
+HAROLD MARTINO,Brazil,Boa Vista,2005-08,69.83,26.27,1,Jon Stephens
+LAWRENCE LAWTON,Cameroon,Yaound,2005-08,42.87,18.69,1,Jon Stephens
+CURTIS IRBY,Canada,Richmond Hill,2005-08,86.83,31.95,1,Mike Hillyer
+JAVIER ELROD,Chad,NDjamna,2005-08,63.85,29.93,1,Jon Stephens
+JANET PHILLIPS,Chile,Antofagasta,2005-08,68.88,36.95,1,Mike Hillyer
+DAVE GARDINER,China,Leshan,2005-08,75.82,42.15,1,Mike Hillyer
+LEON BOSTIC,Colombia,Florencia,2005-08,54.88,27.44,1,Jon Stephens
+AARON SELBY,"Congo, The Democratic Republic of the",Mwene-Ditu,2005-08,51.88,24.19,1,Mike Hillyer
+TRACY HERRMANN,Ecuador,Loja,2005-08,49.9,17.47,1,Mike Hillyer
+SHERRY MARSHALL,Egypt,Shubra al-Khayma,2005-08,77.82,39.41,1,Jon Stephens
+MARCUS HIDALGO,Estonia,Tartu,2005-08,51.86,22.94,1,Mike Hillyer
+SEAN DOUGLASS,Ethiopia,Addis Abeba,2005-08,49.89,19.3,1,Mike Hillyer
+EDWARD BAUGH,Faroe Islands,Trshavn,2005-08,44.89,16.46,1,Mike Hillyer
+ERIKA PENA,Finland,Oulu,2005-08,45.89,20.46,1,Mike Hillyer
+ROSE HOWARD,French Guiana,Cayenne,2005-08,46.91,20.97,1,Mike Hillyer
+GLORIA COOK,French Polynesia,Papeete,2005-08,58.88,26.2,1,Jon Stephens
+SALVADOR TEEL,Gambia,Banjul,2005-08,58.87,26.45,1,Jon Stephens
+MIGUEL BETANCOURT,Germany,Erlangen,2005-08,54.9,21.97,1,Mike Hillyer
+ENRIQUE FORSYTHE,Greece,Patras,2005-08,46.87,22.94,1,Mike Hillyer
+GERTRUDE CASTILLO,Greenland,Nuuk,2005-08,56.88,22.47,1,Jon Stephens
+JESSICA HALL,Holy See (Vatican City State),Citt del Vaticano,2005-08,57.88,19.72,1,Mike Hillyer
+HELEN HARRIS,India,Bhopal,2005-08,79.82,36.25,1,Jon Stephens
+STEVE MACKENZIE,Indonesia,Probolinggo,2005-08,62.87,23.21,1,Jon Stephens
+DIANNE SHELTON,Iran,Tabriz,2005-08,66.86,34.19,1,Mike Hillyer
+GERALDINE PERKINS,Israel,Tel Aviv-Jaffa,2005-08,45.88,17.7,1,Mike Hillyer
+ALEXANDER FENNELL,Italy,Bergamo,2005-08,67.85,29.94,1,Jon Stephens
+JOANNE ROBERTSON,Japan,Urawa,2005-08,76.85,44.94,1,Jon Stephens
+IRENE PRICE,Kazakstan,Pavlodar,2005-08,35.94,16.5,1,Jon Stephens
+CLAUDIA FULLER,Kuwait,Jalib al-Shuyukh,2005-08,53.87,26.18,1,Jon Stephens
+ANDREA HENDERSON,Madagascar,Mahajanga,2005-08,55.88,32.44,1,Mike Hillyer
+LYNN PAYNE,Malawi,Lilongwe,2005-08,50.9,19.97,1,Jon Stephens
+CHARLES KOWALSKI,Malaysia,Sungai Petani,2005-08,65.86,31.19,1,Jon Stephens
+DANIELLE DANIELS,Mexico,Hidalgo,2005-08,68.84,42.4,1,Jon Stephens
+LAURA RODRIGUEZ,Morocco,Sal,2005-08,54.9,27.7,1,Mike Hillyer
+MABEL HOLLAND,Myanmar,Monywa,2005-08,53.88,25.71,1,Jon Stephens
+DUANE TUBBS,Nauru,Yangor,2005-08,69.86,32.69,1,Mike Hillyer
+RHONDA KENNEDY,Netherlands,Apeldoorn,2005-08,74.85,26.2,1,Mike Hillyer
+SUSAN WILSON,New Zealand,Hamilton,2005-08,35.92,12.73,1,Mike Hillyer
+ELSIE KELLEY,Nigeria,Ikerre,2005-08,70.84,35.43,1,Mike Hillyer
+DARLENE ROSE,North Korea,Pyongyang,2005-08,53.89,25.47,1,Mike Hillyer
+MARGARET MOORE,Oman,Masqat,2005-08,31.92,10.73,1,Jon Stephens
+JEFFERY PINSON,Pakistan,Dadu,2005-08,63.87,33.45,1,Mike Hillyer
+CARL ARTIS,Paraguay,San Lorenzo,2005-08,42.93,16.24,1,Mike Hillyer
+JAIME NETTLES,Peru,Hunuco,2005-08,66.87,35.19,1,Jon Stephens
+LOUIS LEONE,Philippines,Tanauan,2005-08,76.85,36.69,1,Jon Stephens
+LEAH CURTIS,Poland,Kalisz,2005-08,44.88,18.69,1,Jon Stephens
+ELEANOR HUNT,Runion,Saint-Denis,2005-08,87.82,33.69,1,Jon Stephens
+HECTOR POINDEXTER,Russian Federation,Pjatigorsk,2005-08,68.89,28.98,1,Mike Hillyer
+TRAVIS ESTEP,Saudi Arabia,al-Qatif,2005-08,48.87,21.93,1,Mike Hillyer
+RONNIE RICKETTS,Senegal,Ziguinchor,2005-08,44.9,19.71,1,Mike Hillyer
+DEAN SAUER,South Africa,Johannesburg,2005-08,55.88,28.45,1,Mike Hillyer
+TANYA GILBERT,South Korea,Naju,2005-08,60.89,24.72,1,Jon Stephens
+WESLEY BULL,Spain,Ourense (Orense),2005-08,66.85,22.45,1,Mike Hillyer
+MANUEL MURRELL,Sri Lanka,Jaffna,2005-08,46.88,17.71,1,Mike Hillyer
+ROGER QUINTANILLA,Taiwan,Hsichuh,2005-08,60.85,24.19,1,Jon Stephens
+YOLANDA WEAVER,Tanzania,Tabora,2005-08,49.88,23.45,1,Jon Stephens
+SHAWN HEATON,Thailand,Nakhon Sawan,2005-08,59.88,21.71,1,Jon Stephens
+BERNICE WILLIS,Turkey,Batman,2005-08,58.87,22.45,1,Jon Stephens
+JEANNE LAWSON,Turkmenistan,Ashgabat,2005-08,53.92,20.49,1,Mike Hillyer
+BRITTANY RILEY,Ukraine,Sumy,2005-08,63.91,23.98,1,Jon Stephens
+CECIL VINES,United Kingdom,London,2005-08,62.87,24.62,1,Jon Stephens
+ANA BRADLEY,United States,Memphis,2005-08,71.84,28.92,1,Jon Stephens
+CARMEN OWENS,Venezuela,Caracas,2005-08,38.91,15.22,1,Jon Stephens
+NEIL RENNER,Vietnam,Cam Ranh,2005-08,69.86,31.94,1,Jon Stephens
+ELLA OLIVER,Yemen,Aden,2005-08,56.9,22.48,1,Jon Stephens
+MARIA MILLER,Yugoslavia,Kragujevac,2005-08,59.88,21.96,1,Mike Hillyer
+JORDAN ARCHULETA,Argentina,Avellaneda,2005-08,56.89,25.21,2,Mike Hillyer
+NICHOLAS BARFIELD,Brazil,Belm,2005-08,63.89,27.47,2,Mike Hillyer
+TROY QUIGLEY,Canada,Vancouver,2005-08,63.86,27.69,2,Jon Stephens
+ANDRE RAPP,Chile,Coquimbo,2005-08,53.88,22.2,2,Jon Stephens
+SUE PETERS,China,Changzhou,2005-08,65.84,27.19,2,Mike Hillyer
+STACY CUNNINGHAM,Colombia,Pereira,2005-08,43.91,20.47,2,Mike Hillyer
+JESSE SCHILLING,"Congo, The Democratic Republic of the",Lubumbashi,2005-08,42.89,17.46,2,Jon Stephens
+PATSY DAVIDSON,Ecuador,Portoviejo,2005-08,45.88,15.95,2,Jon Stephens
+EVERETT BANDA,Egypt,Bilbays,2005-08,55.88,18.97,2,Mike Hillyer
+VICKI FIELDS,Germany,Witten,2005-08,48.88,21.69,2,Jon Stephens
+LENA JENSEN,India,Halisahar,2005-08,75.84,33.17,2,Mike Hillyer
+JORGE OLIVARES,Indonesia,Lhokseumawe,2005-08,50.86,17.2,2,Jon Stephens
+KATHLEEN ADAMS,Iran,Arak,2005-08,48.89,25.71,2,Jon Stephens
+MARC OUTLAW,Italy,Brindisi,2005-08,61.87,30.95,2,Mike Hillyer
+ANGELA HERNANDEZ,Japan,Shimonoseki,2005-08,68.84,33.93,2,Mike Hillyer
+JEAN BELL,Malaysia,Kuching,2005-08,58.89,30.21,2,Mike Hillyer
+PRISCILLA LOWE,Mexico,Salamanca,2005-08,62.87,23.46,2,Mike Hillyer
+AMANDA CARTER,Morocco,Nador,2005-08,47.89,20.21,2,Mike Hillyer
+BARBARA JONES,Myanmar,Myingyan,2005-08,42.89,15.63,2,Jon Stephens
+DUSTIN GILLETTE,Netherlands,Emmen,2005-08,42.88,17.94,2,Mike Hillyer
+TRACEY BARRETT,Nigeria,Owo,2005-08,68.88,39.2,2,Mike Hillyer
+SHARON ROBINSON,Pakistan,Mardan,2005-08,45.87,16.95,2,Jon Stephens
+FREDDIE DUGGAN,Peru,Sullana,2005-08,47.88,24.19,2,Mike Hillyer
+JOE GILLILAND,Philippines,Imus,2005-08,64.89,30.96,2,Jon Stephens
+SIDNEY BURLESON,Poland,Czestochowa,2005-08,40.9,13.71,2,Mike Hillyer
+ERIN DUNN,Russian Federation,Ljubertsy,2005-08,66.85,31.27,2,Mike Hillyer
+CHRISTINA RAMIREZ,Saudi Arabia,al-Hawiya,2005-08,43.91,23.71,2,Mike Hillyer
+RUTH MARTINEZ,South Africa,Kimberley,2005-08,54.91,23.47,2,Mike Hillyer
+FERNANDO CHURCHILL,South Korea,Tonghae,2005-08,46.92,17.48,2,Mike Hillyer
+MAE FLETCHER,Spain,Donostia-San Sebastin,2005-08,60.89,21.22,2,Mike Hillyer
+ELIZABETH BROWN,Taiwan,Nantou,2005-08,53.87,17.96,2,Mike Hillyer
+CHARLENE ALVAREZ,Tanzania,Zanzibar,2005-08,48.88,20.2,2,Mike Hillyer
+JACQUELINE LONG,Thailand,Songkhla,2005-08,56.87,19.7,2,Jon Stephens
+LARRY THRASHER,Turkey,Adana,2005-08,58.87,31.43,2,Mike Hillyer
+JULIO NOLAND,Ukraine,Konotop,2005-08,38.91,16.46,2,Jon Stephens
+SANDRA MARTIN,United Kingdom,Southend-on-Sea,2005-08,48.9,18.72,2,Mike Hillyer
+JAMIE RICE,United States,Sterling Heights,2005-08,63.87,28.94,2,Mike Hillyer
+MITCHELL WESTMORELAND,Vietnam,Nha Trang,2005-08,53.86,20.19,2,Mike Hillyer
+LEONARD SCHOFIELD,Argentina,Tandil,2005-08,43.88,16.71,3,Mike Hillyer
+ELLEN SIMPSON,Brazil,Po,2005-08,50.89,21.46,3,Jon Stephens
+DARRELL POWER,Canada,Halifax,2005-08,42.9,19.96,3,Jon Stephens
+GUY BROWNLEE,China,Zhoushan,2005-08,63.87,24.7,3,Jon Stephens
+EMMA BOYD,Egypt,Qalyub,2005-08,40.91,17.22,3,Mike Hillyer
+TIM CARY,India,Bijapur,2005-08,71.86,27.96,3,Jon Stephens
+VICTORIA GIBSON,Indonesia,Pemalang,2005-08,43.9,15.97,3,Jon Stephens
+DARREN WINDHAM,Italy,Livorno,2005-08,51.87,24.68,3,Mike Hillyer
+TERESA ROGERS,Japan,Iwakuni,2005-08,64.86,32.68,3,Mike Hillyer
+ISAAC OGLESBY,Mexico,Cuernavaca,2005-08,61.88,30.2,3,Jon Stephens
+VIVIAN RUIZ,Netherlands,s-Hertogenbosch,2005-08,39.91,17.22,3,Mike Hillyer
+GLENN PULLEN,Netherlands,Amersfoort,2005-08,39.91,16.47,3,Jon Stephens
+OLGA JIMENEZ,Nigeria,Ogbomosho,2005-08,61.88,25.71,3,Mike Hillyer
+MELINDA FERNANDEZ,Pakistan,Mandi Bahauddin,2005-08,33.93,13.72,3,Mike Hillyer
+HILDA HOPKINS,Philippines,Mandaluyong,2005-08,60.89,30.46,3,Jon Stephens
+RUBEN GEARY,Poland,Lublin,2005-08,35.92,13.47,3,Mike Hillyer
+CATHERINE CAMPBELL,Russian Federation,Moscow,2005-08,65.84,30.18,3,Jon Stephens
+DALE RATCLIFF,South Africa,Rustenburg,2005-08,50.87,22.69,3,Jon Stephens
+JULIE SANCHEZ,Spain,A Corua (La Corua),2005-08,38.89,13.21,3,Jon Stephens
+CLIFTON MALCOLM,Taiwan,Tanshui,2005-08,44.88,15.2,3,Jon Stephens
+BRENT HARKINS,Turkey,Sultanbeyli,2005-08,45.91,18.47,3,Jon Stephens
+ROSA REYNOLDS,United States,Lancaster,2005-08,62.87,29.45,3,Jon Stephens
+GREG ROBINS,Vietnam,Nam Dinh,2005-08,52.9,18.72,3,Jon Stephens
+DARRYL ASHCRAFT,Argentina,Ezeiza,2005-08,35.91,17.47,4,Mike Hillyer
+JANE BENNETT,Brazil,Araatuba,2005-08,47.89,22.71,4,Jon Stephens
+LORETTA CARPENTER,Canada,Oshawa,2005-08,35.94,12.49,4,Mike Hillyer
+STACEY MONTGOMERY,China,Fuyu,2005-08,62.86,26.19,4,Jon Stephens
+LORI WOOD,India,Rae Bareli,2005-08,70.86,23.63,4,Jon Stephens
+JEFFREY SPEAR,Indonesia,Ciparay,2005-08,40.89,18.2,4,Mike Hillyer
+ANNA HILL,Italy,Alessandria,2005-08,37.91,15.21,4,Mike Hillyer
+DEBBIE REYES,Japan,Fukuyama,2005-08,64.83,32.16,4,Mike Hillyer
+JIM REA,Mexico,El Fuerte,2005-08,60.84,28.67,4,Jon Stephens
+JO FOWLER,Nigeria,Oyo,2005-08,29.93,11.48,4,Jon Stephens
+EDDIE TOMLIN,Philippines,Ozamis,2005-08,52.9,20.72,4,Jon Stephens
+ELAINE STEVENS,Russian Federation,Smolensk,2005-08,56.88,29.94,4,Mike Hillyer
+LUCILLE HOLMES,South Africa,Soshanguve,2005-08,45.9,18.72,4,Jon Stephens
+GABRIEL HARDER,Turkey,Sivas,2005-08,45.9,17.97,4,Mike Hillyer
+ALICE STEWART,United States,Fontana,2005-08,61.84,27.17,4,Jon Stephens
+CODY NOLEN,Brazil,So Bernardo do Campo,2005-08,45.9,21.21,5,Mike Hillyer
+GLENDA FRAZIER,China,Qinhuangdao,2005-08,59.86,24.69,5,Jon Stephens
+NAOMI JENNINGS,India,Karnal,2005-08,69.84,31.93,5,Mike Hillyer
+JAY ROBB,Indonesia,Surakarta,2005-08,34.9,12.71,5,Mike Hillyer
+STANLEY SCROGGINS,Japan,Omiya,2005-08,57.89,22.97,5,Jon Stephens
+STELLA MORENO,Mexico,Coacalco de Berriozbal,2005-08,48.89,22.7,5,Mike Hillyer
+DEREK BLAKELY,Philippines,Gingoog,2005-08,52.86,28.43,5,Mike Hillyer
+JIMMY SCHRADER,Russian Federation,Atinsk,2005-08,45.87,19.44,5,Mike Hillyer
+DWIGHT LOMBARDI,South Africa,Chatsworth,2005-08,42.9,17.96,5,Mike Hillyer
+BILLIE HORTON,Turkey,Inegl,2005-08,33.88,11.69,5,Mike Hillyer
+CAROLE BARNETT,United States,Peoria,2005-08,59.84,32.67,5,Jon Stephens
+JEREMY HURTADO,Brazil,Vitria de Santo Anto,2005-08,44.9,19.72,6,Jon Stephens
+MELVIN ELLINGTON,China,Laohekou,2005-08,56.87,33.18,6,Mike Hillyer
+JOSEPHINE GOMEZ,India,Etawah,2005-08,67.86,40.43,6,Jon Stephens
+NORMAN CURRIER,Indonesia,Cianjur,2005-08,30.92,11.98,6,Jon Stephens
+RICARDO MEADOR,Japan,Okayama,2005-08,55.9,30.95,6,Jon Stephens
+ANDY VANHORN,Mexico,Huejutla de Reyes,2005-08,43.9,16.21,6,Mike Hillyer
+CRAIG MORRELL,Philippines,Cavite,2005-08,50.89,19.96,6,Jon Stephens
+CLIFFORD BOWENS,Russian Federation,Nabereznyje Telny,2005-08,44.88,16.45,6,Mike Hillyer
+LOUISE JENKINS,South Africa,Springs,2005-08,38.92,14.73,6,Jon Stephens
+SHELLY WATTS,United States,Dayton,2005-08,57.87,29.44,6,Jon Stephens
+CLAYTON BARBEE,Brazil,Alvorada,2005-08,37.89,13.71,7,Jon Stephens
+ALAN KAHN,China,Emeishan,2005-08,54.89,23.71,7,Jon Stephens
+MIKE WAY,India,Valparai,2005-08,64.85,23.19,7,Mike Hillyer
+TERRY CARLSON,Japan,Miyakonojo,2005-08,52.89,20.96,7,Jon Stephens
+FLOYD GANDY,Mexico,Zapopan,2005-08,42.91,25.45,7,Mike Hillyer
+ROSS GREY,Philippines,Iligan,2005-08,47.9,22.97,7,Mike Hillyer
+CONNIE WALLACE,Russian Federation,Ivanovo,2005-08,43.91,18.72,7,Mike Hillyer
+THOMAS GRIGSBY,United States,Kansas City,2005-08,53.87,27.43,7,Mike Hillyer
+NATALIE MEYER,Brazil,Aparecida de Goinia,2005-08,35.91,13.46,8,Jon Stephens
+REGINA BERRY,China,Jinchang,2005-08,52.87,19.2,8,Mike Hillyer
+JOHN FARNSWORTH,India,Parbhani,2005-08,58.89,25.72,8,Mike Hillyer
+EARL SHANKS,Japan,Iwatsuki,2005-08,51.89,23.96,8,Jon Stephens
+JONATHAN SCARBOROUGH,Mexico,Pachuca de Soto,2005-08,28.91,10.71,8,Jon Stephens
+THERESA WATSON,Philippines,Taguig,2005-08,46.84,21.92,8,Jon Stephens
+JUAN FRALEY,Russian Federation,Teboksary,2005-08,29.91,11.47,8,Jon Stephens
+KRISTIN JOHNSTON,United States,Sunnyvale,2005-08,53.86,25.44,8,Jon Stephens
+LEO EBERT,China,Dongying,2005-08,48.9,22.71,9,Mike Hillyer
+ERIK GUILLEN,India,Bhimavaram,2005-08,57.88,28.2,9,Jon Stephens
+ANGEL BARCLAY,Japan,Ueda,2005-08,48.85,19.93,9,Mike Hillyer
+NATHANIEL ADAM,United States,Joliet,2005-08,50.88,17.45,9,Jon Stephens
+PHYLLIS FOSTER,China,Zalantun,2005-08,48.88,25.94,10,Jon Stephens
+DWAYNE OLVERA,India,Rajkot,2005-08,56.88,31.44,10,Jon Stephens
+PHILLIP HOLM,Japan,Tama,2005-08,43.9,18.47,10,Mike Hillyer
+JENNIFER DAVIS,United States,Laredo,2005-08,48.88,25.45,10,Mike Hillyer
+BRANDY GRAVES,United States,Warren,2005-08,48.88,18.2,10,Jon Stephens
+HAZEL WARREN,China,Hohhot,2005-08,48.86,21.2,11,Mike Hillyer
+GERALD FULTZ,India,Satna,2005-08,56.87,26.45,11,Jon Stephens
+TYLER WREN,China,Rizhao,2005-08,46.91,25.46,12,Mike Hillyer
+HOLLY FOX,India,Haldia,2005-08,55.86,27.94,12,Mike Hillyer
+VERONICA STONE,United States,Greensboro,2005-08,47.87,16.2,12,Mike Hillyer
+PAMELA BAKER,China,Nanyang,2005-08,43.88,19.94,13,Jon Stephens
+LAURIE LAWRENCE,India,Firozabad,2005-08,52.9,29.21,13,Mike Hillyer
+BILL GAVIN,United States,Rockford,2005-08,43.91,16.22,13,Mike Hillyer
+KELLY TORRES,China,Xiangtan,2005-08,41.92,16.98,14,Mike Hillyer
+GEORGIA JACOBS,India,Uttarpara-Kotrung,2005-08,50.89,23.21,14,Mike Hillyer
+RICHARD MCCRARY,United States,Arlington,2005-08,42.9,15.46,14,Jon Stephens
+GARY COY,China,Yuzhou,2005-08,41.91,16.72,15,Mike Hillyer
+SHERRI RHODES,India,Ahmadnagar,2005-08,50.87,18.7,15,Mike Hillyer
+RENEE LANE,United States,Compton,2005-08,38.92,14.49,15,Mike Hillyer
+ROLAND SOUTH,China,Yingkou,2005-08,41.89,16.63,16,Jon Stephens
+ADAM GOOCH,India,Adoni,2005-08,49.92,24.48,16,Jon Stephens
+JOAN COOPER,United States,Saint Louis,2005-08,36.91,15.72,16,Jon Stephens
+BOB PFEIFFER,China,Xintai,2005-08,41.88,18.94,17,Jon Stephens
+CARLOS COUGHLIN,India,Bhavnagar,2005-08,47.88,21.19,17,Jon Stephens
+DONALD MAHON,China,Ezhou,2005-08,38.91,16.47,18,Jon Stephens
+LEE HAWKS,India,Pudukkottai,2005-08,45.91,16.23,18,Mike Hillyer
+MEGAN PALMER,China,Laiwu,2005-08,37.9,14.72,19,Mike Hillyer
+ALLEN BUTTERFIELD,India,Hoshiarpur,2005-08,43.92,22.72,19,Mike Hillyer
+FRANKLIN TROUTMAN,China,Zaoyang,2005-08,36.89,18.2,20,Mike Hillyer
+CHAD CARBONE,India,Katihar,2005-08,43.9,21.46,20,Mike Hillyer
+HUGH WALDROP,China,Haining,2005-08,34.91,12.21,21,Jon Stephens
+MILDRED BAILEY,India,Jaipur,2005-08,40.9,18.71,21,Mike Hillyer
+AGNES BISHOP,India,Sambhal,2005-08,37.91,13.22,22,Mike Hillyer
+ALICIA MILLS,India,Nagaon,2005-08,37.89,18.19,23,Mike Hillyer
+SAMUEL MARLOW,India,Ranchi,2005-08,36.93,16.73,24,Mike Hillyer
+CHRISTIAN JUNG,India,Amroha,2005-08,36.91,15.47,25,Jon Stephens
+EDITH MCDONALD,India,Gandhinagar,2005-08,36.9,18.95,26,Mike Hillyer
+WAYNE TRUONG,India,Gulbarga,2005-08,35.9,12.3,27,Mike Hillyer
+MARVIN YEE,India,Berhampore (Baharampur),2005-08,33.89,14.94,28,Mike Hillyer
+ANITA MORALES,India,Hubli-Dharwad,2005-08,31.93,16.22,29,Jon Stephens
+PENNY NEAL,India,Kumbakonam,2005-08,25.93,8.73,30,Mike Hillyer

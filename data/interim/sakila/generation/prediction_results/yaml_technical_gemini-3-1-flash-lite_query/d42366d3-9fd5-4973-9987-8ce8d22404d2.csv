@@ -1,0 +1,69 @@
+payment_month,customer_id,country_name,city_name,payment_count,payment_sum,personal_avg_sum_2m,off_home_store_share,distinct_staff_count,country_rank
+2005-08,445,Argentina,Escobar,14,66.86,17.94,0.4286,2,1
+2005-08,266,Austria,Salzburg,17,71.83,20.96,0.7059,2,1
+2005-08,569,China,Leshan,18,75.82,18.96,0.4444,2,1
+2005-08,596,Greece,Patras,13,46.87,12.96,0.3846,2,1
+2005-08,15,India,Bhopal,18,79.82,25.44,0.5556,2,1
+2005-08,147,Japan,Urawa,15,76.85,24.42,0.4,2,1
+2005-08,150,Mexico,Hidalgo,16,68.84,12.97,0.3125,2,1
+2005-08,22,Morocco,Sal,10,54.9,17.46,0.2,2,1
+2005-08,160,Russian Federation,Ljubertsy,15,66.85,19.94,0.5333,2,1
+2005-07,441,Algeria,Batna,17,66.83,7.49,0.5882,2,1
+2005-07,528,Angola,Benguela,11,56.89,12.97,0.5455,2,1
+2005-07,173,Austria,Graz,14,57.86,12.47,0.6429,2,1
+2005-07,334,Azerbaijan,Sumqayit,11,53.89,13.48,0.5455,2,1
+2005-07,144,Belarus,Molodetno,18,93.82,14.46,0.6667,2,1
+2005-07,455,Bolivia,El Alto,9,45.91,4.97,0.4444,2,1
+2005-07,92,Brazil,Goinia,15,78.85,12.98,0.5333,2,1
+2005-07,228,Cambodia,Phnom Penh,15,54.85,9.97,0.6,2,1
+2005-07,352,Cameroon,Bamenda,9,43.91,11.97,0.3333,2,1
+2005-07,45,Chile,Antofagasta,9,37.91,10.47,0.2222,2,1
+2005-07,595,China,Jinzhou,19,86.81,7.49,0.3684,2,1
+2005-07,484,China,Yinchuan,15,77.85,14.97,0.6667,2,2
+2005-07,168,China,Jinchang,17,70.83,5.49,0.5882,2,3
+2005-07,490,Colombia,Sogamoso,14,64.86,7.99,0.5,2,1
+2005-07,494,Ecuador,Robamba,18,80.82,3.99,0.2778,2,1
+2005-07,491,Egypt,Mit Ghamr,11,60.89,17.96,0.3636,2,1
+2005-07,35,France,Toulouse,16,68.84,14.46,0.6875,2,1
+2005-07,43,French Polynesia,Faaa,12,47.88,7.49,0.5833,2,1
+2005-07,3,Greece,Athenai,13,68.87,15.47,0.4615,2,1
+2005-07,209,India,Bhilwara,17,82.83,16.97,0.4706,2,1
+2005-07,225,India,Ambattur,17,80.83,8.49,0.4706,2,2
+2005-07,508,India,Vijayawada,14,74.86,5.49,0.2143,2,3
+2005-07,372,Indonesia,Probolinggo,16,77.84,8.98,0.625,2,1
+2005-07,459,Iran,Qomsheh,18,89.82,14.46,0.3333,2,1
+2005-07,102,Israel,Ashdod,21,84.79,9.98,0.5714,2,1
+2005-07,309,Italy,Brescia,16,76.84,16.97,0.5,2,1
+2005-07,531,Japan,Kuwana,14,64.86,5.49,0.2857,2,1
+2005-07,573,Kazakstan,Zhezqazghan,15,70.85,11.98,0.5333,2,1
+2005-07,363,Kenya,Nyeri,15,69.85,13.47,0.3333,2,1
+2005-07,306,Malaysia,Sungai Petani,14,53.86,9.48,0.5714,2,1
+2005-07,482,Mexico,Coatzacoalcos,12,69.88,8.48,0.6667,2,1
+2005-07,273,Mexico,Salamanca,15,67.85,13.47,0.5333,2,2
+2005-07,40,Morocco,Nador,11,40.89,10.98,0.3636,2,1
+2005-07,257,Mozambique,Beira,18,88.82,7.48,0.4444,2,1
+2005-07,137,Netherlands,Apeldoorn,19,96.81,11.48,0.5789,2,1
+2005-07,286,Nigeria,Effon-Alaiye,17,76.83,10.49,0.4706,2,1
+2005-07,20,Pakistan,Mardan,10,42.9,13.47,0.3,2,1
+2005-07,345,Paraguay,San Lorenzo,10,49.9,6.97,0.6,2,1
+2005-07,122,Peru,Lima,15,61.85,15.96,0.4667,2,1
+2005-07,522,Philippines,Santa Rosa,18,96.82,11.48,0.3889,2,1
+2005-07,360,Puerto Rico,Arecibo,17,69.83,12.47,0.5882,2,1
+2005-07,563,Romania,Bucuresti,16,60.84,8.48,0.375,2,1
+2005-07,295,Russian Federation,Kolpino,18,87.82,18.45,0.5556,2,1
+2005-07,346,Russian Federation,Maikop,15,83.85,10.98,0.6667,2,2
+2005-07,49,Saudi Arabia,Jedda,13,69.87,18.96,0.4615,2,1
+2005-07,125,South Africa,Boksburg,16,65.84,11.98,0.4375,2,1
+2005-07,245,South Korea,Uijongbu,16,72.84,18.96,0.5,2,1
+2005-07,469,Spain,Ourense (Orense),18,80.82,14.97,0.3889,2,1
+2005-07,50,Sudan,Omdurman,17,80.83,18.46,0.5882,2,1
+2005-07,220,Tanzania,Zanzibar,12,59.88,2.99,0.25,2,1
+2005-07,86,Thailand,Songkhla,12,64.88,13.46,0.5833,2,1
+2005-07,366,Turkey,Balikesir,19,82.81,4.99,0.5263,2,1
+2005-07,292,United Arab Emirates,Sharja,16,74.84,7.98,0.625,2,1
+2005-07,526,United States,Cape Coral,19,86.81,27.44,0.4211,2,1
+2005-07,479,United States,Akron,15,79.85,17.96,0.4667,2,2
+2005-07,539,Venezuela,Valencia,12,55.88,7.98,0.5833,2,1
+2005-07,532,Vietnam,Cam Ranh,14,69.86,5.99,0.5,2,1
+2005-07,470,Yemen,Hodeida,17,96.83,6.48,0.2353,2,1
+2005-07,553,Yugoslavia,Novi Sad,16,68.84,12.48,0.625,2,1

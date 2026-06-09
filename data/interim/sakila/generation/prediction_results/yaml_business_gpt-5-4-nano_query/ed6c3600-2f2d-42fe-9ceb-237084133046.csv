@@ -1,0 +1,24 @@
+customer_id,day_date,day_amount,day_payment_count,mean_amount_prev_30d,stddev_amount_prev_30d,mean_count_prev_30d,stddev_count_prev_30d,country_name,city_name,share_off_home_staff,most_freq_staff_name,main_category,risk_score,risk_rank_within_day
+268,2005-07-10,12.97,3,4.49,2.15,1.1,0.3,India,Palghat (Palakkad),1.0,Jon Stephens,Children,4,1
+558,2005-07-12,15.97,3,6.44,3.57,1.18,0.57,Poland,Wroclaw,0.6667,Jon Stephens,Comedy,2,1
+86,2005-08-01,20.97,3,6.49,3.23,1.2,0.4,Thailand,Songkhla,0.0,Jon Stephens,Comedy,4,1
+560,2005-08-01,17.97,3,5.99,3.12,1.4,0.66,Argentina,Avellaneda,0.3333,Mike Hillyer,Animation,2,2
+147,2005-08-01,16.98,2,3.19,3.37,1.3,0.46,Japan,Urawa,0.5,Jon Stephens,Comedy,2,3
+469,2005-08-01,15.96,4,6.74,4.24,1.5,0.5,Spain,Ourense (Orense),1.0,Mike Hillyer,Games,2,4
+208,2005-08-01,10.98,2,4.26,2.18,1.18,0.39,India,Balurghat,1.0,Jon Stephens,Animation,2,5
+397,2005-08-01,7.97,3,5.09,3.47,1.3,0.46,Russian Federation,Atinsk,0.3333,Mike Hillyer,Children,2,6
+419,2005-08-02,13.96,4,4.29,2.19,1.4,0.66,India,Katihar,0.5,Jon Stephens,Classics,4,1
+502,2005-08-02,12.95,5,6.57,3.96,1.33,0.62,India,Siliguri (Shiliguri),0.2,Mike Hillyer,Documentary,2,2
+306,2005-08-02,11.97,3,5.53,3.36,1.36,0.48,Malaysia,Sungai Petani,0.6667,Jon Stephens,Comedy,2,3
+73,2005-08-02,10.97,3,5.19,2.75,1.1,0.3,Taiwan,Chiayi,0.3333,Jon Stephens,Drama,2,4
+389,2005-08-02,10.97,3,5.08,3.39,1.09,0.29,China,Emeishan,0.6667,Jon Stephens,Action,2,4
+373,2005-08-18,20.96,4,7.68,3.95,1.6,0.66,Philippines,Tanauan,0.5,Jon Stephens,Animation,4,1
+21,2005-08-20,32.96,4,5.58,4.07,1.6,0.66,Bangladesh,Tangail,0.25,Mike Hillyer,Documentary,4,1
+306,2005-08-20,16.96,4,6.44,3.75,1.55,0.66,Malaysia,Sungai Petani,0.25,Mike Hillyer,Documentary,2,2
+119,2005-08-21,14.96,4,5.99,3.28,1.4,0.66,Egypt,Shubra al-Khayma,1.0,Jon Stephens,Action,2,1
+204,2005-08-22,17.97,3,5.59,2.11,1.3,0.46,Turkey,Usak,0.3333,Mike Hillyer,Action,4,1
+52,2005-08-22,15.97,3,4.79,2.18,1.4,0.49,Spain,A Corua (La Corua),0.6667,Jon Stephens,Comedy,4,2
+494,2005-08-22,26.96,4,7.48,5.27,1.7,0.78,Ecuador,Robamba,0.5,Jon Stephens,Children,2,3
+374,2005-08-22,20.96,4,4.09,2.84,1.0,0.0,Brazil,Vitria de Santo Anto,0.25,Jon Stephens,Animation,2,4
+317,2005-08-22,12.97,3,5.71,3.59,1.36,0.48,Faroe Islands,Trshavn,1.0,Mike Hillyer,Animation,2,5
+302,2005-08-23,16.96,4,7.38,5.12,1.6,0.8,China,Tiefa,0.75,Jon Stephens,Sports,2,1

@@ -1,620 +1,620 @@
-avg_30d_payment_amount,avg_30d_payment_count,city_name,country_day_amount_rank,country_name,customer_first_name,customer_id,customer_last_name,customer_store_id,daily_payment_amount,daily_payment_count,last_payment_id,last_payment_staff_store_id,last_payment_ts,last_staff_first_name,last_staff_id,last_staff_last_name,linked_rental_count,overdue_return_share,payment_day,suspicious_reason
-0.99,1.0,A Corua (La Corua),1,Spain,JULIE,52,SANCHEZ,1,4.99,1,1426,1,2005-06-15 01:38:31.000,Mike,1,Hillyer,1,0.0,2005-06-15,amount_over_3x
-0.99,1.0,Adoni,3,India,ADAM,367,GOOCH,1,8.99,1,9921,1,2005-07-07 14:11:55.000,Mike,1,Hillyer,1,1.0,2005-07-07,amount_over_3x
-0.99,1.0,Adoni,5,India,ADAM,367,GOOCH,1,2.99,1,9919,1,2005-05-31 11:38:29.000,Mike,1,Hillyer,1,0.0,2005-05-31,amount_over_3x
-0.99,1.0,Ahmadnagar,4,India,SHERRI,297,RHODES,1,3.99,1,8048,1,2005-05-30 16:57:29.000,Mike,1,Hillyer,1,1.0,2005-05-30,amount_over_3x
-0.99,1.0,Akishima,4,Japan,JULIAN,574,VEST,2,7.97,3,15369,1,2005-06-16 21:20:52.000,Mike,1,Hillyer,3,0.3333,2005-06-16,amount_over_3x
-0.99,1.0,Allappuzha (Alleppey),8,India,ANNETTE,175,OLSON,1,4.99,1,4740,2,2005-06-21 04:49:07.000,Jon,2,Stephens,1,0.0,2005-06-21,amount_over_3x
-0.99,1.0,Arak,2,Iran,KATHLEEN,36,ADAMS,2,9.98,2,989,2,2005-07-08 14:54:42.000,Jon,2,Stephens,2,0.0,2005-07-08,amount_over_3x
-0.99,1.0,Arecibo,1,Puerto Rico,RALPH,360,MADRIGAL,2,4.99,1,9710,2,2005-05-29 14:07:58.000,Jon,2,Stephens,1,0.0,2005-05-29,amount_over_3x
-0.99,1.0,Ashqelon,2,Israel,LEWIS,478,LYMAN,1,4.99,1,12908,2,2005-06-18 13:00:51.000,Jon,2,Stephens,1,1.0,2005-06-18,amount_over_3x
-0.99,1.0,Atinsk,4,Russian Federation,JIMMY,397,SCHRADER,1,5.99,1,10741,1,2005-06-16 18:07:48.000,Mike,1,Hillyer,1,1.0,2005-06-16,amount_over_3x
-0.99,1.0,Atlixco,1,Mexico,SARA,84,PERRY,2,11.98,2,2271,1,2005-05-29 23:24:30.000,Mike,1,Hillyer,2,0.5,2005-05-29,amount_over_3x
-0.99,1.0,Benguela,1,Angola,CLAUDE,528,HERZOG,1,5.99,1,14207,1,2005-05-28 06:14:46.000,Mike,1,Hillyer,1,1.0,2005-05-28,amount_over_3x
-0.99,1.0,Benin City,1,Nigeria,SONIA,284,GREGORY,1,6.99,1,7682,1,2005-05-31 20:13:45.000,Mike,1,Hillyer,1,1.0,2005-05-31,amount_over_3x
-0.99,1.0,Blumenau,5,Brazil,TERRI,206,VASQUEZ,1,5.99,1,5570,2,2005-06-18 20:58:46.000,Jon,2,Stephens,1,1.0,2005-06-18,amount_over_3x
-0.99,1.0,Botosani,1,Romania,JOY,230,GEORGE,2,4.99,1,6187,1,2005-05-31 10:28:33.000,Mike,1,Hillyer,1,0.0,2005-05-31,amount_over_3x
-0.99,1.0,Botshabelo,2,South Africa,ESTHER,132,CRAWFORD,2,5.98,2,3560,1,2005-06-18 15:18:49.000,Mike,1,Hillyer,2,0.0,2005-06-18,amount_over_3x
-0.99,1.0,Carmen,6,Mexico,WILLARD,578,LUMPKIN,2,6.99,1,15486,2,2005-06-16 21:53:52.000,Jon,2,Stephens,1,1.0,2005-06-16,amount_over_3x
-0.99,1.0,Charlotte Amalie,1,"Virgin Islands, U.S.",NATHAN,406,RUNYON,1,8.98,2,10975,2,2005-06-17 22:50:36.000,Jon,2,Stephens,2,0.5,2005-06-17,amount_over_3x
-0.99,1.0,Citrus Heights,1,United States,BETTY,14,WHITE,2,9.99,1,359,1,2005-05-27 04:34:41.000,Mike,1,Hillyer,1,1.0,2005-05-27,amount_over_3x
-0.99,1.0,Compton,5,United States,RENEE,182,LANE,1,3.99,1,4949,2,2005-05-27 15:51:30.000,Jon,2,Stephens,1,1.0,2005-05-27,amount_over_3x
-0.99,1.0,Cuman,1,Venezuela,CINDY,113,FISHER,2,4.99,1,3031,2,2005-06-17 16:46:11.000,Jon,2,Stephens,1,0.0,2005-06-17,amount_over_3x
-0.99,1.0,Dadu,2,Pakistan,JEFFERY,416,PINSON,2,3.99,1,11240,2,2005-05-29 05:53:23.000,Jon,2,Stephens,1,1.0,2005-05-29,amount_over_3x
-0.99,1.0,Donostia-San Sebastin,2,Spain,MAE,293,FLETCHER,2,4.99,1,7923,1,2005-05-30 12:10:59.000,Mike,1,Hillyer,1,1.0,2005-05-30,amount_over_3x
-0.99,1.0,El Fuerte,6,Mexico,JIM,451,REA,1,2.99,1,12161,2,2005-05-27 01:29:31.000,Jon,2,Stephens,1,0.0,2005-05-27,amount_over_3x
-0.99,1.0,Eskisehir,3,Turkey,EDGAR,507,RHOADS,2,4.99,1,13662,2,2005-05-29 04:10:17.000,Jon,2,Stephens,1,1.0,2005-05-29,amount_over_3x
-0.99,1.0,Ezeiza,6,Argentina,DARRYL,530,ASHCRAFT,2,2.98,2,14261,1,2005-06-15 23:11:10.000,Mike,1,Hillyer,2,0.5,2005-06-15,amount_over_3x
-0.99,1.0,Florencia,2,Colombia,LEON,460,BOSTIC,1,4.99,1,12420,2,2005-07-06 15:35:26.000,Jon,2,Stephens,1,1.0,2005-07-06,amount_over_3x
-0.99,1.0,Gandhinagar,12,India,EDITH,117,MCDONALD,1,2.99,1,3150,1,2005-06-16 17:18:44.000,Mike,1,Hillyer,1,0.0,2005-06-16,amount_over_3x
-0.99,1.0,Gaziantep,1,Turkey,COREY,480,HAUSER,1,16.98,2,12959,2,2005-05-29 21:36:00.000,Jon,2,Stephens,2,1.0,2005-05-29,amount_over_3x
-0.99,1.0,Gaziantep,3,Turkey,COREY,480,HAUSER,1,7.99,1,12962,2,2005-07-06 00:23:43.000,Jon,2,Stephens,1,1.0,2005-07-06,amount_over_3x
-0.99,1.0,Gorontalo,3,Indonesia,TARA,203,RYAN,1,4.99,1,5497,1,2005-06-15 03:24:14.000,Mike,1,Hillyer,1,0.0,2005-06-15,amount_over_3x
-0.99,1.0,Haining,6,China,HUGH,552,WALDROP,2,4.99,1,14808,2,2005-06-21 15:30:11.000,Jon,2,Stephens,1,0.0,2005-06-21,amount_over_3x
-0.99,1.0,Hoshiarpur,1,India,ALLEN,412,BUTTERFIELD,2,18.97,3,11159,1,2005-07-29 15:54:22.000,Mike,1,Hillyer,3,0.6667,2005-07-29,amount_over_3x
-0.99,1.0,Hoshiarpur,5,India,ALLEN,412,BUTTERFIELD,2,4.99,1,11150,1,2005-05-27 02:52:21.000,Mike,1,Hillyer,1,0.0,2005-05-27,amount_over_3x
-0.99,1.0,Hsichuh,2,Taiwan,ROGER,348,QUINTANILLA,2,2.99,1,9400,1,2005-06-16 09:42:48.000,Mike,1,Hillyer,1,0.0,2005-06-16,amount_over_3x
-0.99,1.0,Huejutla de Reyes,8,Mexico,ANDY,582,VANHORN,2,2.99,1,15589,1,2005-06-16 14:55:53.000,Mike,1,Hillyer,1,0.0,2005-06-16,amount_over_3x
-0.99,1.0,Ibirit,1,Brazil,DANIEL,310,CABRAL,2,4.99,1,8413,2,2005-06-14 23:09:38.000,Jon,2,Stephens,1,1.0,2005-06-14,amount_over_3x
-0.99,1.0,Ikerre,2,Nigeria,ELSIE,198,KELLEY,2,7.98,2,5358,2,2005-05-28 18:25:02.000,Jon,2,Stephens,2,0.0,2005-05-28,amount_over_3x
-0.99,1.0,Ikerre,5,Nigeria,ELSIE,198,KELLEY,2,2.99,1,5362,2,2005-07-06 13:14:28.000,Jon,2,Stephens,1,1.0,2005-07-06,amount_over_3x
-0.99,1.0,Iligan,4,Philippines,ROSS,580,GREY,1,3.98,2,15537,2,2005-07-06 17:52:19.000,Jon,2,Stephens,2,1.0,2005-07-06,amount_over_3x
-0.99,1.0,Jakarta,2,Indonesia,SUZANNE,153,NICHOLS,2,10.98,2,4160,1,2005-06-20 05:49:27.000,Mike,1,Hillyer,2,0.5,2005-06-20,amount_over_3x
-0.99,1.0,Jelets,1,Russian Federation,ROBIN,100,HAYES,1,11.97,3,2691,1,2005-06-15 18:17:28.000,Mike,1,Hillyer,3,0.6667,2005-06-15,amount_over_3x
-0.99,1.0,Jinchang,8,China,REGINA,168,BERRY,1,4.99,1,4549,1,2005-05-28 00:07:50.000,Mike,1,Hillyer,1,1.0,2005-05-28,amount_over_3x
-0.99,1.0,Juiz de Fora,3,Brazil,KENT,591,ARSENAULT,1,7.98,2,15819,2,2005-06-21 19:14:58.000,Jon,2,Stephens,2,0.5,2005-06-21,amount_over_3x
-0.99,1.0,Junan,4,China,RICKY,435,SHELBY,2,9.98,2,11723,1,2005-07-06 20:26:15.000,Mike,1,Hillyer,2,0.5,2005-07-06,amount_over_3x
-0.99,1.0,Jurez,1,Mexico,FRED,369,WHEAT,2,6.99,1,9980,1,2005-07-05 23:37:13.000,Mike,1,Hillyer,1,1.0,2005-07-05,amount_over_3x
-0.99,1.0,Kanazawa,1,Japan,KURT,547,EMMONS,1,8.99,1,14687,2,2005-05-27 18:35:20.000,Jon,2,Stephens,1,1.0,2005-05-27,amount_over_3x
-0.99,1.0,Kimchon,1,South Korea,EMILY,99,DIAZ,2,4.99,1,2665,1,2005-06-17 01:13:11.000,Mike,1,Hillyer,1,0.0,2005-06-17,amount_over_3x
-0.99,1.0,Kirovo-Tepetsk,1,Russian Federation,DANA,179,HART,1,6.99,1,4863,1,2005-05-29 10:57:57.000,Mike,1,Hillyer,1,1.0,2005-05-29,amount_over_3x
-0.99,1.0,Konotop,1,Ukraine,JULIO,545,NOLAND,2,3.99,1,14640,2,2005-05-29 04:22:41.000,Jon,2,Stephens,1,1.0,2005-05-29,amount_over_3x
-0.99,1.0,Ktahya,1,Turkey,SHEILA,124,WELLS,1,14.97,3,3339,2,2005-05-31 18:13:57.000,Jon,2,Stephens,3,0.6667,2005-05-31,amount_over_3x
-0.99,1.0,Kurgan,8,Russian Federation,RANDY,376,GAITHER,1,2.99,1,10178,2,2005-07-06 11:05:55.000,Jon,2,Stephens,1,0.0,2005-07-06,amount_over_3x
-0.99,1.0,Lancaster,5,United States,ROSA,112,REYNOLDS,2,2.99,1,3000,2,2005-05-29 02:26:27.000,Jon,2,Stephens,1,1.0,2005-05-29,amount_over_3x
-0.99,1.0,Laohekou,7,China,MELVIN,422,ELLINGTON,1,5.98,2,11400,1,2005-06-17 04:26:23.000,Mike,1,Hillyer,2,0.5,2005-06-17,amount_over_3x
-0.99,1.0,Liaocheng,4,China,CARRIE,129,PORTER,1,9.97,3,3473,2,2005-06-19 18:58:53.000,Jon,2,Stephens,3,0.6667,2005-06-19,amount_over_3x
-0.99,1.0,Lima,1,Peru,THELMA,122,MURRAY,1,4.99,1,3281,2,2005-05-31 19:15:11.000,Jon,2,Stephens,1,0.0,2005-05-31,amount_over_3x
-0.99,1.0,Lincoln,5,United States,ASHLEY,63,RICHARDSON,1,8.99,1,1710,2,2005-07-06 20:34:10.000,Jon,2,Stephens,1,1.0,2005-07-06,amount_over_3x
-0.99,1.0,Linz,1,Austria,JILL,159,HAWKINS,1,5.99,1,4330,2,2005-07-06 20:11:10.000,Jon,2,Stephens,1,1.0,2005-07-06,amount_over_3x
-0.99,1.0,Luzinia,3,Brazil,IDA,183,ANDREWS,2,7.98,2,4977,2,2005-06-18 20:31:00.000,Jon,2,Stephens,2,1.0,2005-06-18,amount_over_3x
-0.99,1.0,Mahajanga,1,Madagascar,ANDREA,81,HENDERSON,1,7.98,2,2198,1,2005-06-19 23:11:48.000,Mike,1,Hillyer,2,1.0,2005-06-19,amount_over_3x
-0.99,1.0,Meixian,9,China,RUBY,90,WASHINGTON,2,6.99,1,2442,2,2005-06-19 05:02:36.000,Jon,2,Stephens,1,1.0,2005-06-19,amount_over_3x
-0.99,1.0,NDjamna,1,Chad,JAVIER,535,ELROD,1,2.99,1,14397,2,2005-05-28 06:41:58.000,Jon,2,Stephens,1,1.0,2005-05-28,amount_over_3x
-0.99,1.0,Naju,1,South Korea,TANYA,237,GILBERT,1,4.99,1,6387,1,2005-05-26 04:49:17.000,Mike,1,Hillyer,1,0.0,2005-05-26,amount_over_3x
-0.99,1.0,Nam Dinh,1,Vietnam,GREG,472,ROBINS,1,2.99,1,12750,2,2005-05-26 14:19:09.000,Jon,2,Stephens,1,0.0,2005-05-26,amount_over_3x
-0.99,1.0,Namibe,2,Angola,MARTIN,383,BALES,1,8.99,1,10367,1,2005-05-29 11:47:02.000,Mike,1,Hillyer,1,1.0,2005-05-29,amount_over_3x
-0.99,1.0,Nantou,1,Taiwan,ELIZABETH,5,BROWN,1,8.98,2,110,1,2005-05-31 19:46:38.000,Mike,1,Hillyer,2,1.0,2005-05-31,amount_over_3x
-0.99,1.0,Nanyang,6,China,PAMELA,37,BAKER,1,2.99,1,1012,1,2005-05-30 11:58:50.000,Mike,1,Hillyer,1,0.0,2005-05-30,amount_over_3x
-0.99,1.0,Niznekamsk,2,Russian Federation,ANN,48,EVANS,1,2.99,1,1313,1,2005-05-26 20:48:48.000,Mike,1,Hillyer,1,0.0,2005-05-26,amount_over_3x
-0.99,1.0,Olomouc,1,Czech Republic,JENNIE,265,TERRY,2,7.99,1,7153,2,2005-06-17 13:06:56.000,Jon,2,Stephens,1,1.0,2005-06-17,amount_over_3x
-0.99,1.0,Ourense (Orense),1,Spain,WESLEY,469,BULL,2,12.98,2,12652,2,2005-05-28 04:34:17.000,Jon,2,Stephens,2,0.5,2005-05-28,amount_over_3x
-0.99,1.0,Paarl,3,South Africa,DENNIS,338,GILMAN,1,4.99,1,9127,2,2005-06-15 22:39:34.000,Jon,2,Stephens,1,1.0,2005-06-15,amount_over_3x
-0.99,1.0,Parbhani,4,India,JOHN,300,FARNSWORTH,1,3.99,1,8137,1,2005-05-29 14:18:32.000,Mike,1,Hillyer,1,1.0,2005-05-29,amount_over_3x
-0.99,1.0,Pudukkottai,9,India,LEE,421,HAWKS,1,4.99,1,11373,1,2005-06-16 12:39:51.000,Mike,1,Hillyer,1,0.0,2005-06-16,amount_over_3x
-0.99,1.0,Purnea (Purnia),2,India,BRADLEY,426,MOTLEY,1,14.98,2,11508,1,2005-06-16 23:45:59.000,Mike,1,Hillyer,2,1.0,2005-06-16,amount_over_3x
-0.99,1.0,Purwakarta,2,Indonesia,JARED,524,ELY,1,4.99,1,14099,1,2005-05-30 22:15:24.000,Mike,1,Hillyer,1,0.0,2005-05-30,amount_over_3x
-0.99,1.0,Pyongyang,1,North Korea,DARLENE,157,ROSE,2,4.99,1,4262,1,2005-05-28 18:49:12.000,Mike,1,Hillyer,1,0.0,2005-05-28,amount_over_3x
-0.99,1.0,Pyongyang,1,North Korea,DARLENE,157,ROSE,2,9.98,2,4266,2,2005-07-07 22:51:04.000,Jon,2,Stephens,2,1.0,2005-07-07,amount_over_3x
-0.99,1.0,San Lorenzo,2,Paraguay,CARL,345,ARTIS,1,5.98,2,9316,1,2005-06-15 20:05:49.000,Mike,1,Hillyer,2,0.0,2005-06-15,amount_over_3x
-0.99,1.0,Sanaa,1,Yemen,WILLIAM,303,SATTERFIELD,2,2.99,1,8218,1,2005-05-30 05:01:30.000,Mike,1,Hillyer,1,1.0,2005-05-30,amount_over_3x
-0.99,1.0,Santa F,3,Argentina,ERIC,331,ROBERT,1,2.99,1,8933,1,2005-05-31 00:06:20.000,Mike,1,Hillyer,1,0.0,2005-05-31,amount_over_3x
-0.99,1.0,Santiago de Compostela,1,Spain,NELSON,549,CHRISTENSON,1,8.98,2,14730,1,2005-05-30 10:30:38.000,Mike,1,Hillyer,2,0.5,2005-05-30,amount_over_3x
-0.99,1.0,Shanwei,2,China,KYLE,424,SPURLOCK,2,11.98,2,11452,1,2005-06-20 21:32:32.000,Mike,1,Hillyer,2,0.5,2005-06-20,amount_over_3x
-0.99,1.0,Sharja,1,United Arab Emirates,MISTY,292,LAMBERT,2,3.99,1,7896,1,2005-06-17 04:35:19.000,Mike,1,Hillyer,1,1.0,2005-06-17,amount_over_3x
-0.99,1.0,Shenzhen,2,China,EUGENE,378,CULPEPPER,1,10.98,2,10231,1,2005-06-16 10:13:35.000,Mike,1,Hillyer,2,0.5,2005-06-16,amount_over_3x
-0.99,1.0,Shubra al-Khayma,1,Egypt,SHERRY,119,MARSHALL,1,5.99,1,3189,1,2005-05-26 11:51:09.000,Mike,1,Hillyer,1,1.0,2005-05-26,amount_over_3x
-0.99,1.0,Skikda,1,Algeria,JUNE,176,CARROLL,1,6.99,1,4764,2,2005-05-27 09:34:39.000,Jon,2,Stephens,1,1.0,2005-05-27,amount_over_3x
-0.99,1.0,Smolensk,7,Russian Federation,ELAINE,127,STEVENS,2,4.99,1,3416,1,2005-06-15 09:06:24.000,Mike,1,Hillyer,1,0.0,2005-06-15,amount_over_3x
-0.99,1.0,Soshanguve,3,South Africa,LUCILLE,145,HOLMES,1,4.99,1,3922,2,2005-06-18 06:29:52.000,Jon,2,Stephens,1,0.0,2005-06-18,amount_over_3x
-0.99,1.0,South Hill,1,Anguilla,BOBBY,381,BOUDREAU,2,2.99,1,10308,2,2005-05-27 13:46:46.000,Jon,2,Stephens,1,0.0,2005-05-27,amount_over_3x
-0.99,1.0,Southport,2,United Kingdom,ARMANDO,556,GRUBER,2,5.99,1,14891,2,2005-05-29 13:08:06.000,Jon,2,Stephens,1,1.0,2005-05-29,amount_over_3x
-0.99,1.0,Springs,2,South Africa,LOUISE,83,JENKINS,1,3.98,2,2246,2,2005-05-30 23:11:51.000,Jon,2,Stephens,2,0.0,2005-05-30,amount_over_3x
-0.99,1.0,Taizz,1,Yemen,GINA,213,WILLIAMSON,1,4.99,1,5775,2,2005-06-17 07:15:41.000,Jon,2,Stephens,1,0.0,2005-06-17,amount_over_3x
-0.99,1.0,Tonghae,2,South Korea,FERNANDO,536,CHURCHILL,2,6.99,1,14429,1,2005-05-30 12:32:39.000,Mike,1,Hillyer,1,1.0,2005-05-30,amount_over_3x
-0.99,1.0,Tongliao,1,China,LEROY,442,BUSTAMANTE,1,12.98,2,11917,1,2005-05-28 17:37:50.000,Mike,1,Hillyer,2,1.0,2005-05-28,amount_over_3x
-0.99,1.0,Uluberia,5,India,THEODORE,446,CULP,2,4.99,1,12027,1,2005-05-27 06:15:33.000,Mike,1,Hillyer,1,0.0,2005-05-27,amount_over_3x
-0.99,1.0,Urawa,4,Japan,JOANNE,147,ROBERTSON,2,7.98,2,3981,1,2005-06-18 19:36:50.000,Mike,1,Hillyer,2,1.0,2005-06-18,amount_over_3x
-0.99,1.0,Usak,1,Turkey,ROSEMARY,204,SCHMIDT,1,4.99,1,5517,2,2005-05-27 12:48:38.000,Jon,2,Stephens,1,0.0,2005-05-27,amount_over_3x
-0.99,1.0,Uttarpara-Kotrung,2,India,GEORGIA,231,JACOBS,1,12.98,2,6224,1,2005-07-06 16:30:30.000,Mike,1,Hillyer,2,0.5,2005-07-06,amount_over_3x
-0.99,1.0,Vicente Lpez,3,Argentina,WILLIE,219,HOWELL,2,3.99,1,5923,2,2005-06-18 17:12:01.000,Jon,2,Stephens,1,1.0,2005-06-18,amount_over_3x
-0.99,1.0,Vitria de Santo Anto,3,Brazil,JEREMY,374,HURTADO,2,3.98,2,10125,2,2005-05-30 11:35:06.000,Jon,2,Stephens,2,0.0,2005-05-30,amount_over_3x
-0.99,1.0,Yantai,4,China,KAY,272,CALDWELL,1,6.99,1,7348,1,2005-05-27 13:32:39.000,Mike,1,Hillyer,1,1.0,2005-05-27,amount_over_3x
-0.99,1.0,Yingkou,15,China,ROLAND,521,SOUTH,2,3.98,2,14023,2,2005-07-07 22:57:30.000,Jon,2,Stephens,2,0.0,2005-07-07,amount_over_3x
-0.99,1.0,Zanzibar,2,Tanzania,CHARLENE,220,ALVAREZ,2,2.99,1,5951,2,2005-07-08 21:37:31.000,Jon,2,Stephens,1,0.0,2005-07-08,amount_over_3x
-0.99,1.0,Zapopan,7,Mexico,FLOYD,465,GANDY,1,2.99,1,12543,1,2005-06-15 12:12:42.000,Mike,1,Hillyer,1,1.0,2005-06-15,amount_over_3x
-1.24,1.0,Santo Andr,6,Brazil,JUSTIN,354,NGO,2,4.99,1,9555,1,2005-06-18 06:31:29.000,Mike,1,Hillyer,1,1.0,2005-06-18,amount_over_3x
-1.32,1.0,Batman,1,Turkey,BERNICE,172,WILLIS,1,17.97,3,4664,2,2005-07-08 19:33:49.000,Jon,2,Stephens,3,0.6667,2005-07-08,amount_over_3x
-1.32,1.0,Bhimavaram,6,India,ERIK,529,GUILLEN,2,7.97,3,14236,2,2005-07-07 23:07:44.000,Jon,2,Stephens,3,0.6667,2005-07-07,amount_over_3x
-1.32,1.0,Pavlodar,1,Kazakstan,IRENE,76,PRICE,2,6.99,1,2065,1,2005-06-16 20:04:28.000,Mike,1,Hillyer,1,1.0,2005-06-16,amount_over_3x
-1.49,1.0,Balikesir,4,Turkey,BRANDON,366,HUEY,1,7.98,2,9885,1,2005-07-06 16:19:56.000,Mike,1,Hillyer,2,0.5,2005-07-06,amount_over_3x
-1.49,1.0,Haldia,5,India,HOLLY,186,FOX,2,7.98,2,5046,1,2005-06-15 09:36:19.000,Mike,1,Hillyer,2,0.5,2005-06-15,amount_over_3x
-1.49,1.0,Hohhot,7,China,HAZEL,138,WARREN,1,7.99,1,3724,1,2005-06-19 15:14:55.000,Mike,1,Hillyer,1,1.0,2005-06-19,amount_over_3x
-1.49,1.0,Huaian,14,China,ERNEST,384,STEPP,2,5.99,1,10412,2,2005-08-17 10:19:51.000,Jon,2,Stephens,1,1.0,2005-08-17,amount_over_3x
-1.49,1.0,Parbhani,2,India,JOHN,300,FARNSWORTH,1,13.98,2,8144,1,2005-07-10 10:09:17.000,Mike,1,Hillyer,2,0.5,2005-07-10,amount_over_3x
-1.49,1.0,Salinas,3,United States,CASSANDRA,269,WALTERS,1,6.99,1,7276,2,2005-05-28 23:15:48.000,Jon,2,Stephens,1,1.0,2005-05-28,amount_over_3x
-1.49,1.5,Nuuk,1,Greenland,GERTRUDE,207,CASTILLO,1,6.99,1,5599,2,2005-05-29 21:56:15.000,Jon,2,Stephens,1,1.0,2005-05-29,amount_over_3x
-1.49,1.5,al-Qadarif,1,Sudan,JOHNNY,395,TURPIN,2,4.99,1,10697,1,2005-06-20 11:51:59.000,Mike,1,Hillyer,1,0.0,2005-06-20,amount_over_3x
-1.66,1.0,Daxian,13,China,JUDITH,64,COX,2,4.99,1,1740,1,2005-07-07 15:38:25.000,Mike,1,Hillyer,1,0.0,2005-07-07,amount_over_3x
-1.66,1.0,Hsichuh,3,Taiwan,ROGER,348,QUINTANILLA,2,8.99,1,9401,1,2005-06-17 14:19:00.000,Mike,1,Hillyer,1,1.0,2005-06-17,amount_over_3x
-1.66,1.0,Kurgan,1,Russian Federation,RANDY,376,GAITHER,1,13.97,3,10181,1,2005-07-07 17:51:59.000,Mike,1,Hillyer,3,0.6667,2005-07-07,amount_over_3x
-1.66,1.0,Nabereznyje Telny,2,Russian Federation,CLIFFORD,447,BOWENS,1,7.98,2,12060,1,2005-06-17 13:04:00.000,Mike,1,Hillyer,2,0.5,2005-06-17,amount_over_3x
-1.66,1.0,Nam Dinh,2,Vietnam,GREG,472,ROBINS,1,4.99,1,12752,2,2005-05-30 23:55:36.000,Jon,2,Stephens,1,0.0,2005-05-30,amount_over_3x
-1.66,1.0,Rustenburg,4,South Africa,DALE,407,RATCLIFF,1,4.99,1,11009,1,2005-07-09 04:58:26.000,Mike,1,Hillyer,1,0.0,2005-07-09,amount_over_3x
-1.66,1.0,Shahr-e Kord,1,Iran,ROBERTA,185,HARPER,1,4.99,1,5023,1,2005-06-18 19:44:08.000,Mike,1,Hillyer,1,0.0,2005-06-18,amount_over_3x
-1.66,1.0,Tama,3,Japan,PHILLIP,385,HOLM,1,9.98,2,10424,2,2005-07-06 21:54:55.000,Jon,2,Stephens,2,0.5,2005-07-06,amount_over_3x
-1.66,1.0,s-Hertogenbosch,3,Netherlands,VIVIAN,184,RUIZ,1,6.99,1,5003,2,2005-07-08 19:42:03.000,Jon,2,Stephens,1,1.0,2005-07-08,amount_over_3x
-1.74,1.0,Pune,5,India,JUANITA,135,MASON,2,7.99,1,3642,2,2005-07-09 04:01:02.000,Jon,2,Stephens,1,1.0,2005-07-09,amount_over_3x
-1.79,1.0,Grand Prairie,2,United States,KIM,118,CRUZ,1,9.98,2,3177,2,2005-07-28 13:32:17.000,Jon,2,Stephens,2,1.0,2005-07-28,amount_over_3x
-1.99,1.0,Aden,2,Yemen,ELLA,210,OLIVER,2,9.98,2,5692,2,2005-07-06 18:41:33.000,Jon,2,Stephens,2,0.5,2005-07-06,amount_over_3x
-1.99,1.0,Bamenda,1,Cameroon,ALBERT,352,CROUSE,1,14.97,3,9514,1,2005-06-16 19:11:45.000,Mike,1,Hillyer,3,0.0,2005-06-16,amount_over_3x
-1.99,1.0,Bergamo,1,Italy,ALEXANDER,439,FENNELL,2,9.99,1,11831,1,2005-05-29 15:17:28.000,Mike,1,Hillyer,1,1.0,2005-05-29,amount_over_3x
-1.99,1.0,El Fuerte,9,Mexico,JIM,451,REA,1,7.98,2,12165,1,2005-06-17 07:42:22.000,Mike,1,Hillyer,2,0.5,2005-06-17,amount_over_3x
-1.99,1.0,Huejutla de Reyes,2,Mexico,ANDY,582,VANHORN,2,7.99,1,15590,1,2005-06-18 11:15:27.000,Mike,1,Hillyer,1,1.0,2005-06-18,amount_over_3x
-1.99,1.0,Ilorin,1,Nigeria,GLADYS,103,HAMILTON,1,11.98,2,2776,1,2005-07-06 16:51:21.000,Mike,1,Hillyer,2,1.0,2005-07-06,amount_over_3x
-1.99,1.0,Ktahya,2,Turkey,SHEILA,124,WELLS,1,7.99,1,3341,1,2005-07-07 18:44:23.000,Mike,1,Hillyer,1,1.0,2005-07-07,amount_over_3x
-1.99,1.0,La Plata,1,Argentina,JULIA,89,FLORES,1,5.99,1,2411,1,2005-05-29 08:30:36.000,Mike,1,Hillyer,1,1.0,2005-05-29,amount_over_3x
-1.99,1.0,Matsue,1,Japan,TERRY,355,GRISSOM,2,12.98,2,9591,1,2005-07-06 11:31:24.000,Mike,1,Hillyer,2,1.0,2005-07-06,amount_over_3x
-1.99,1.0,Mit Ghamr,2,Egypt,RICK,491,MATTOX,2,7.98,2,13236,1,2005-06-15 14:38:15.000,Mike,1,Hillyer,2,0.5,2005-06-15,amount_over_3x
-1.99,1.0,Nanyang,6,China,PAMELA,37,BAKER,1,6.98,2,1014,2,2005-06-16 21:08:46.000,Jon,2,Stephens,2,0.5,2005-06-16,amount_over_3x
-1.99,1.0,Ponce,1,Puerto Rico,JENNY,282,CASTRO,2,6.99,1,7626,2,2005-05-26 18:56:26.000,Jon,2,Stephens,1,1.0,2005-05-26,amount_over_3x
-1.99,1.0,Santiago de los Caballeros,1,Dominican Republic,MYRTLE,258,FLEMING,1,8.99,1,6958,2,2005-06-20 04:50:45.000,Jon,2,Stephens,1,1.0,2005-06-20,amount_over_3x
-1.99,1.0,Santo Andr,2,Brazil,JUSTIN,354,NGO,2,6.99,1,9556,1,2005-06-19 17:52:14.000,Mike,1,Hillyer,1,1.0,2005-06-19,amount_over_3x
-1.99,1.0,Sasebo,1,Japan,MARY,1,SMITH,1,16.97,3,5,2,2005-06-15 21:08:46.000,Jon,2,Stephens,3,0.6667,2005-06-15,amount_over_3x
-1.99,1.0,Shimonoseki,1,Japan,ANGELA,29,HERNANDEZ,2,15.95,5,787,2,2005-06-19 19:18:09.000,Jon,2,Stephens,5,0.4,2005-06-19,amount_over_3x_and_count_at_least_5
-1.99,1.0,Songkhla,2,Thailand,JACQUELINE,86,LONG,2,5.98,2,2327,2,2005-06-16 21:43:45.000,Jon,2,Stephens,2,0.0,2005-06-16,amount_over_3x
-1.99,1.0,Tallahassee,9,United States,CAROLINE,248,BOWMAN,1,5.98,2,6705,1,2005-07-08 18:18:23.000,Mike,1,Hillyer,2,0.5,2005-07-08,amount_over_3x
-1.99,1.0,Tarlac,2,Philippines,ALLAN,548,CORNISH,1,5.98,2,14716,2,2005-07-06 13:36:48.000,Jon,2,Stephens,2,0.5,2005-07-06,amount_over_3x
-1.99,1.0,Tsaotun,1,Taiwan,KIRK,586,STCLAIR,1,6.99,1,15694,2,2005-07-05 23:30:36.000,Jon,2,Stephens,1,1.0,2005-07-05,amount_over_3x
-1.99,1.0,Ueda,3,Japan,ANGEL,503,BARCLAY,1,5.99,1,13546,1,2005-05-27 06:03:39.000,Mike,1,Hillyer,1,1.0,2005-05-27,amount_over_3x
-1.99,1.0,Valparai,1,India,MIKE,403,WAY,1,13.98,2,10879,1,2005-06-15 05:38:09.000,Mike,1,Hillyer,2,0.5,2005-06-15,amount_over_3x
-1.99,1.0,Zanzibar,1,Tanzania,CHARLENE,220,ALVAREZ,2,6.97,3,5954,2,2005-07-10 18:02:02.000,Jon,2,Stephens,3,0.0,2005-07-10,amount_over_3x
-1.99,1.0,Zapopan,1,Mexico,FLOYD,465,GANDY,1,13.98,2,12545,1,2005-06-17 23:37:29.000,Mike,1,Hillyer,2,0.5,2005-06-17,amount_over_3x
-1.99,1.0,Zeleznogorsk,4,Russian Federation,JACK,351,FOUST,1,5.99,1,9487,2,2005-06-16 20:04:50.000,Jon,2,Stephens,1,1.0,2005-06-16,amount_over_3x
-1.99,1.2,Mogiljov,1,Belarus,CORY,527,MEEHAN,1,11.97,3,14189,1,2005-07-11 03:34:29.000,Mike,1,Hillyer,3,0.6667,2005-07-11,amount_over_3x
-1.99,1.33,London,1,United Kingdom,MATTIE,252,HOFFMAN,2,6.97,3,6799,2,2005-07-27 07:51:11.000,Jon,2,Stephens,3,0.0,2005-07-27,amount_over_3x
-1.99,1.33,Yingkou,6,China,ROLAND,521,SOUTH,2,7.98,2,14025,2,2005-07-09 22:35:49.000,Jon,2,Stephens,2,0.5,2005-07-09,amount_over_3x
-1.99,1.5,Hagonoy,3,Philippines,IRMA,255,PEARSON,2,8.99,1,6878,2,2005-07-27 19:07:43.000,Jon,2,Stephens,1,1.0,2005-07-27,amount_over_3x
-12.14,2.5,Maikop,1,Russian Federation,ARTHUR,346,SIMPKINS,1,19.95,5,9367,1,2005-08-23 15:15:19.000,Mike,1,Hillyer,5,0.4,2005-08-23,count_at_least_5
-13.97,2.67,San Bernardino,1,United States,PATRICIA,2,JOHNSON,1,30.95,5,47,2,2005-07-30 22:39:53.000,Jon,2,Stephens,5,0.8,2005-07-30,count_at_least_5
-13.98,2.0,Dhaka,1,Bangladesh,STEPHEN,332,QUALLS,1,9.95,5,8967,1,2005-07-09 21:45:17.000,Mike,1,Hillyer,5,0.4,2005-07-09,count_at_least_5
-2.19,1.0,Bradford,4,United Kingdom,ANNE,85,POWELL,2,7.99,1,2315,2,2005-07-30 21:16:33.000,Jon,2,Stephens,1,1.0,2005-07-30,amount_over_3x
-2.19,1.0,El Alto,1,Bolivia,JON,455,WILES,2,11.98,2,12289,1,2005-07-08 23:46:38.000,Mike,1,Hillyer,2,0.5,2005-07-08,amount_over_3x
-2.19,1.0,Oyo,1,Nigeria,JO,250,FOWLER,2,10.98,2,6754,1,2005-08-21 17:20:55.000,Mike,1,Hillyer,2,0.5,2005-08-21,amount_over_3x
-2.24,1.0,Changzhou,2,China,SUE,197,PETERS,2,6.98,2,5321,2,2005-05-29 07:00:59.000,Jon,2,Stephens,2,0.5,2005-05-29,amount_over_3x
-2.24,1.0,Springs,3,South Africa,LOUISE,83,JENKINS,1,10.98,2,2262,2,2005-08-17 10:27:19.000,Jon,2,Stephens,2,1.0,2005-08-17,amount_over_3x
-2.24,1.0,Teboksary,5,Russian Federation,JUAN,350,FRALEY,1,6.98,2,9470,1,2005-07-06 18:59:31.000,Mike,1,Hillyer,2,0.5,2005-07-06,amount_over_3x
-2.24,1.0,Toulon,1,France,RITA,104,GRAHAM,1,11.98,2,2807,2,2005-07-07 22:56:17.000,Jon,2,Stephens,2,0.5,2005-07-07,amount_over_3x
-2.32,1.0,Arecibo,1,Puerto Rico,RALPH,360,MADRIGAL,2,6.99,1,9712,2,2005-06-18 16:24:45.000,Jon,2,Stephens,1,1.0,2005-06-18,amount_over_3x
-2.32,1.0,Klerksdorp,5,South Africa,EDNA,109,WEST,2,6.99,1,2955,2,2005-08-17 23:52:26.000,Jon,2,Stephens,1,1.0,2005-08-17,amount_over_3x
-2.32,1.0,Pavlodar,1,Kazakstan,IRENE,76,PRICE,2,13.97,3,2075,2,2005-07-29 06:28:19.000,Jon,2,Stephens,3,0.6667,2005-07-29,amount_over_3x
-2.32,1.0,Santa F,2,Argentina,ERIC,331,ROBERT,1,9.98,2,8936,1,2005-06-19 05:06:14.000,Mike,1,Hillyer,2,1.0,2005-06-19,amount_over_3x
-2.32,1.0,Shenzhen,17,China,EUGENE,378,CULPEPPER,1,6.98,2,10241,1,2005-07-31 13:20:08.000,Mike,1,Hillyer,2,0.5,2005-07-31,amount_over_3x
-2.32,1.0,Taizz,2,Yemen,GINA,213,WILLIAMSON,1,6.98,2,5777,1,2005-06-18 23:44:08.000,Mike,1,Hillyer,2,0.5,2005-06-18,amount_over_3x
-2.32,1.0,Uluberia,6,India,THEODORE,446,CULP,2,8.98,2,12029,2,2005-06-18 10:59:36.000,Jon,2,Stephens,2,0.5,2005-06-18,amount_over_3x
-2.32,1.17,Laredo,3,United States,JENNIFER,6,DAVIS,2,13.98,2,157,1,2005-07-11 15:01:54.000,Mike,1,Hillyer,2,1.0,2005-07-11,amount_over_3x
-2.32,1.33,Sawhaj,1,Egypt,ALFRED,423,CASILLAS,2,24.95,5,11437,2,2005-07-27 21:39:42.000,Jon,2,Stephens,5,0.8,2005-07-27,amount_over_3x_and_count_at_least_5
-2.42,1.0,Firozabad,12,India,LAURIE,192,LAWRENCE,1,7.99,1,5205,2,2005-07-29 02:29:36.000,Jon,2,Stephens,1,1.0,2005-07-29,amount_over_3x
-2.49,1.0,Adana,1,Turkey,LARRY,327,THRASHER,2,7.98,2,8841,1,2005-08-17 19:33:24.000,Mike,1,Hillyer,2,0.5,2005-08-17,amount_over_3x
-2.49,1.0,Alvorada,3,Brazil,CLAYTON,551,BARBEE,2,9.99,1,14791,2,2005-07-27 04:51:15.000,Jon,2,Stephens,1,1.0,2005-07-27,amount_over_3x
-2.49,1.0,Athenai,1,Greece,LINDA,3,WILLIAMS,1,15.98,2,63,1,2005-06-16 15:19:10.000,Mike,1,Hillyer,2,1.0,2005-06-16,amount_over_3x
-2.49,1.0,Bern,1,Switzerland,GAIL,155,KNIGHT,1,7.99,1,4213,1,2005-06-16 02:16:47.000,Mike,1,Hillyer,1,1.0,2005-06-16,amount_over_3x
-2.49,1.0,Daxian,2,China,JUDITH,64,COX,2,13.97,3,1743,2,2005-07-08 23:54:49.000,Jon,2,Stephens,3,1.0,2005-07-08,amount_over_3x
-2.49,1.0,Kanchrapara,1,India,LESTER,492,KRAUS,2,9.98,2,13263,2,2005-06-17 08:43:32.000,Jon,2,Stephens,2,0.5,2005-06-17,amount_over_3x
-2.49,1.0,Rustenburg,1,South Africa,DALE,407,RATCLIFF,1,9.99,1,11010,2,2005-07-10 04:23:11.000,Jon,2,Stephens,1,1.0,2005-07-10,amount_over_3x
-2.49,1.0,Sawhaj,1,Egypt,ALFRED,423,CASILLAS,2,13.98,2,11427,2,2005-06-19 17:04:35.000,Jon,2,Stephens,2,1.0,2005-06-19,amount_over_3x
-2.49,1.0,Shahr-e Kord,2,Iran,ROBERTA,185,HARPER,1,9.98,2,5025,1,2005-06-21 08:51:44.000,Mike,1,Hillyer,2,0.5,2005-06-21,amount_over_3x
-2.49,1.0,Vicente Lpez,3,Argentina,WILLIE,219,HOWELL,2,8.98,2,5926,2,2005-07-08 21:13:56.000,Jon,2,Stephens,2,1.0,2005-07-08,amount_over_3x
-2.49,1.0,Zaoyang,6,China,FRANKLIN,514,TROUTMAN,2,8.98,2,13846,2,2005-07-06 17:20:24.000,Jon,2,Stephens,2,0.5,2005-07-06,amount_over_3x
-2.49,1.5,Bellevue,1,United States,WILMA,212,RICHARDS,2,9.99,1,5756,2,2005-06-19 15:58:38.000,Jon,2,Stephens,1,1.0,2005-06-19,amount_over_3x
-2.49,1.5,Hodeida,1,Yemen,GORDON,470,ALLARD,1,7.99,1,12693,2,2005-06-16 05:15:12.000,Jon,2,Stephens,1,1.0,2005-06-16,amount_over_3x
-2.59,1.0,Benin City,1,Nigeria,SONIA,284,GREGORY,1,15.98,2,7689,2,2005-07-08 22:16:18.000,Jon,2,Stephens,2,1.0,2005-07-08,amount_over_3x
-2.59,1.0,Cuman,1,Venezuela,CINDY,113,FISHER,2,16.97,3,3036,1,2005-06-20 21:21:15.000,Mike,1,Hillyer,3,0.6667,2005-06-20,amount_over_3x
-2.59,1.0,South Hill,1,Anguilla,BOBBY,381,BOUDREAU,2,7.98,2,10313,1,2005-06-18 17:14:42.000,Mike,1,Hillyer,2,0.5,2005-06-18,amount_over_3x
-2.59,1.0,s-Hertogenbosch,1,Netherlands,VIVIAN,184,RUIZ,1,9.98,2,5006,2,2005-07-12 12:47:22.000,Jon,2,Stephens,2,0.5,2005-07-12,amount_over_3x
-2.65,1.33,al-Qadarif,1,Sudan,JOHNNY,395,TURPIN,2,7.98,2,10699,1,2005-06-21 14:37:55.000,Mike,1,Hillyer,2,0.5,2005-06-21,amount_over_3x
-2.66,1.0,Benguela,1,Angola,CLAUDE,528,HERZOG,1,9.98,2,14209,2,2005-05-29 16:44:08.000,Jon,2,Stephens,2,1.0,2005-05-29,amount_over_3x
-2.66,1.0,Dundee,1,United Kingdom,APRIL,142,BURNS,1,9.98,2,3838,1,2005-07-08 03:27:59.000,Mike,1,Hillyer,2,0.5,2005-07-08,amount_over_3x
-2.66,1.0,Patras,1,Greece,ENRIQUE,596,FORSYTHE,1,8.97,3,15967,1,2005-07-11 12:09:51.000,Mike,1,Hillyer,3,0.3333,2005-07-11,amount_over_3x
-2.66,1.0,Qomsheh,1,Iran,TOMMY,459,COLLAZO,1,29.95,5,12395,1,2005-07-28 11:47:23.000,Mike,1,Hillyer,5,0.6,2005-07-28,amount_over_3x_and_count_at_least_5
-2.66,1.0,Sivas,2,Turkey,GABRIEL,518,HARDER,1,7.99,1,13943,2,2005-07-07 02:19:44.000,Jon,2,Stephens,1,1.0,2005-07-07,amount_over_3x
-2.74,1.0,Ashdod,1,Israel,CRYSTAL,102,FORD,1,8.99,1,2740,2,2005-06-18 17:21:24.000,Jon,2,Stephens,1,1.0,2005-06-18,amount_over_3x
-2.74,1.0,Southend-on-Sea,1,United Kingdom,SANDRA,16,MARTIN,2,14.98,2,423,1,2005-06-17 07:50:53.000,Mike,1,Hillyer,2,1.0,2005-06-17,amount_over_3x
-2.74,1.0,Udaipur,5,India,BEATRICE,170,ARNOLD,1,8.99,1,4608,2,2005-06-18 16:59:34.000,Jon,2,Stephens,1,1.0,2005-06-18,amount_over_3x
-2.79,1.0,Bandar Seri Begawan,1,Brunei,LOIS,91,BUTLER,2,12.97,3,2477,1,2005-07-07 17:52:38.000,Mike,1,Hillyer,3,0.0,2005-07-07,amount_over_3x
-2.79,1.0,Peoria,2,United States,CAROLE,275,BARNETT,2,10.98,2,7444,2,2005-07-08 21:26:11.000,Jon,2,Stephens,2,0.5,2005-07-08,amount_over_3x
-2.79,1.2,Escobar,2,Argentina,MICHEAL,445,FORMAN,1,8.99,1,12007,1,2005-07-29 23:26:19.000,Mike,1,Hillyer,1,1.0,2005-07-29,amount_over_3x
-2.79,1.2,Huaian,1,China,ERNEST,384,STEPP,2,13.98,2,10400,2,2005-06-18 23:44:21.000,Jon,2,Stephens,2,1.0,2005-06-18,amount_over_3x
-2.79,1.2,Wroclaw,1,Poland,JIMMIE,558,EGGLESTON,1,12.98,2,14958,2,2005-08-17 20:29:56.000,Jon,2,Stephens,2,1.0,2005-08-17,amount_over_3x
-2.79,1.4,Xiangfan,4,China,HEIDI,241,LARSON,2,8.97,3,6511,1,2005-07-09 21:34:32.000,Mike,1,Hillyer,3,1.0,2005-07-09,amount_over_3x
-2.82,1.0,Manchester,2,United States,VICTOR,382,BARKLEY,2,21.97,3,10357,1,2005-07-30 07:31:01.000,Mike,1,Hillyer,3,0.6667,2005-07-30,amount_over_3x
-2.98,2.0,Fontana,3,United States,ALICE,51,STEWART,1,9.99,1,1397,1,2005-07-06 01:02:39.000,Mike,1,Hillyer,1,1.0,2005-07-06,amount_over_3x
-2.98,2.0,Lublin,1,Poland,RUBEN,501,GEARY,1,13.98,2,13493,1,2005-06-21 16:44:31.000,Mike,1,Hillyer,2,1.0,2005-06-21,amount_over_3x
-2.99,1.0,Ahmadnagar,1,India,SHERRI,297,RHODES,1,16.97,3,8053,2,2005-06-18 11:29:22.000,Jon,2,Stephens,3,0.3333,2005-06-18,amount_over_3x
-2.99,1.0,Alessandria,1,Italy,ANNA,33,HILL,2,10.99,1,908,1,2005-06-15 09:46:33.000,Mike,1,Hillyer,1,1.0,2005-06-15,amount_over_3x
-2.99,1.0,Amroha,7,India,CHRISTIAN,534,JUNG,1,10.98,2,14385,2,2005-07-30 22:31:31.000,Jon,2,Stephens,2,1.0,2005-07-30,amount_over_3x
-2.99,1.0,Ashqelon,1,Israel,LEWIS,478,LYMAN,1,20.97,3,12911,2,2005-06-19 17:34:39.000,Jon,2,Stephens,3,1.0,2005-06-19,amount_over_3x
-2.99,1.0,Bat Yam,2,Israel,KENNETH,315,GOODEN,2,11.98,2,8542,2,2005-07-09 07:25:35.000,Jon,2,Stephens,2,1.0,2005-07-09,amount_over_3x
-2.99,1.0,Beira,1,Mozambique,MARSHA,257,DOUGLAS,2,11.98,2,6925,2,2005-07-08 05:39:42.000,Jon,2,Stephens,2,0.5,2005-07-08,amount_over_3x
-2.99,1.0,Brindisi,1,Italy,MARC,499,OUTLAW,2,9.98,2,13435,2,2005-06-16 22:18:43.000,Jon,2,Stephens,2,0.5,2005-06-16,amount_over_3x
-2.99,1.0,Buenaventura,1,Colombia,JACKIE,235,LYNCH,1,14.97,3,6325,1,2005-07-06 22:47:09.000,Mike,1,Hillyer,3,0.6667,2005-07-06,amount_over_3x
-2.99,1.0,Citrus Heights,3,United States,BETTY,14,WHITE,2,13.97,3,368,1,2005-07-09 19:14:32.000,Mike,1,Hillyer,3,0.6667,2005-07-09,amount_over_3x
-2.99,1.0,Coatzacoalcos,2,Mexico,MAURICE,482,CRAWLEY,1,9.98,2,13016,1,2005-07-09 23:03:21.000,Mike,1,Hillyer,2,0.0,2005-07-09,amount_over_3x
-2.99,1.0,Compton,5,United States,RENEE,182,LANE,1,8.98,2,4952,2,2005-06-17 20:36:50.000,Jon,2,Stephens,2,0.5,2005-06-17,amount_over_3x
-2.99,1.0,Davao,1,Philippines,SHIRLEY,27,ALLEN,2,9.98,2,721,2,2005-06-15 21:17:17.000,Jon,2,Stephens,2,0.5,2005-06-15,amount_over_3x
-2.99,1.0,Donostia-San Sebastin,1,Spain,MAE,293,FLETCHER,2,8.99,1,7924,2,2005-05-31 04:53:40.000,Jon,2,Stephens,1,1.0,2005-05-31,amount_over_3x
-2.99,1.0,Fengshan,1,Taiwan,MORRIS,576,MCCARTER,2,9.98,2,15428,2,2005-06-18 18:58:12.000,Jon,2,Stephens,2,0.5,2005-06-18,amount_over_3x
-2.99,1.0,Garden Grove,3,United States,RENE,593,MCALISTER,2,8.99,1,15874,1,2005-05-30 23:29:22.000,Mike,1,Hillyer,1,1.0,2005-05-30,amount_over_3x
-2.99,1.0,Haiphong,1,Vietnam,BETH,199,FRANKLIN,2,11.98,2,5398,2,2005-07-08 06:04:23.000,Jon,2,Stephens,2,0.5,2005-07-08,amount_over_3x
-2.99,1.0,Huaian,5,China,ERNEST,384,STEPP,2,11.97,3,10417,2,2005-08-22 20:20:04.000,Jon,2,Stephens,3,0.6667,2005-08-22,amount_over_3x
-2.99,1.0,Hubli-Dharwad,5,India,ANITA,136,MORALES,2,8.99,1,3671,1,2005-07-12 06:50:52.000,Mike,1,Hillyer,1,1.0,2005-07-12,amount_over_3x
-2.99,1.0,Ibirit,1,Brazil,DANIEL,310,CABRAL,2,10.98,2,8416,2,2005-06-17 17:35:30.000,Jon,2,Stephens,2,1.0,2005-06-17,amount_over_3x
-2.99,1.0,Idfu,1,Egypt,LILLIE,233,KIM,2,10.97,3,6273,2,2005-06-18 18:52:30.000,Jon,2,Stephens,3,0.3333,2005-06-18,amount_over_3x
-2.99,1.0,Imus,1,Philippines,JOE,349,GILLILAND,2,15.98,2,9438,1,2005-06-20 13:59:21.000,Mike,1,Hillyer,2,1.0,2005-06-20,amount_over_3x
-2.99,1.0,Iwaki,1,Japan,MARLENE,240,WELCH,1,18.97,3,6488,2,2005-07-27 19:20:25.000,Jon,2,Stephens,3,0.6667,2005-07-27,amount_over_3x
-2.99,1.0,Jedda,1,Saudi Arabia,JOYCE,49,EDWARDS,2,9.99,1,1334,2,2005-06-15 04:44:10.000,Jon,2,Stephens,1,1.0,2005-06-15,amount_over_3x
-2.99,1.0,Kabul,1,Afghanistan,VERA,218,MCCOY,1,13.98,2,5911,1,2005-07-27 10:09:39.000,Mike,1,Hillyer,2,0.5,2005-07-27,amount_over_3x
-2.99,1.0,Klerksdorp,1,South Africa,EDNA,109,WEST,2,15.97,3,2939,1,2005-05-31 16:07:09.000,Mike,1,Hillyer,3,0.6667,2005-05-31,amount_over_3x
-2.99,1.0,Konotop,1,Ukraine,JULIO,545,NOLAND,2,14.98,2,14643,1,2005-07-06 23:00:09.000,Mike,1,Hillyer,2,1.0,2005-07-06,amount_over_3x
-2.99,1.0,La Romana,1,Dominican Republic,RANDALL,437,NEUMANN,2,10.98,2,11775,1,2005-05-28 21:48:51.000,Mike,1,Hillyer,2,0.5,2005-05-28,amount_over_3x
-2.99,1.0,Lausanne,1,Switzerland,WADE,598,DELVALLE,1,12.97,3,16012,1,2005-07-06 22:53:57.000,Mike,1,Hillyer,3,0.3333,2005-07-06,amount_over_3x
-2.99,1.0,Le Mans,1,France,LAUREN,162,HUDSON,2,9.98,2,4412,1,2005-07-29 12:03:27.000,Mike,1,Hillyer,2,0.5,2005-07-29,amount_over_3x
-2.99,1.0,Lima,1,Peru,THELMA,122,MURRAY,1,8.98,2,3283,2,2005-06-15 18:55:34.000,Jon,2,Stephens,2,1.0,2005-06-15,amount_over_3x
-2.99,1.0,Manchester,3,United States,VICTOR,382,BARKLEY,2,10.96,4,10347,1,2005-06-18 23:56:44.000,Mike,1,Hillyer,4,0.25,2005-06-18,amount_over_3x
-2.99,1.0,Mandaluyong,2,Philippines,HILDA,263,HOPKINS,1,8.99,1,7100,2,2005-06-17 20:54:36.000,Jon,2,Stephens,1,1.0,2005-06-17,amount_over_3x
-2.99,1.0,Mardan,1,Pakistan,SHARON,20,ROBINSON,2,8.98,2,516,2,2005-05-28 07:16:25.000,Jon,2,Stephens,2,1.0,2005-05-28,amount_over_3x
-2.99,1.0,Monclova,1,Mexico,IVAN,570,CROMWELL,2,11.97,3,15280,2,2005-07-30 21:26:18.000,Jon,2,Stephens,3,0.6667,2005-07-30,amount_over_3x
-2.99,1.0,Niznekamsk,1,Russian Federation,ANN,48,EVANS,1,9.99,1,1315,2,2005-06-16 12:18:41.000,Jon,2,Stephens,1,1.0,2005-06-16,amount_over_3x
-2.99,1.0,Owo,1,Nigeria,TRACEY,280,BARRETT,2,20.95,5,7596,2,2005-07-29 18:58:24.000,Jon,2,Stephens,5,0.6,2005-07-29,amount_over_3x_and_count_at_least_5
-2.99,1.0,Po,1,Brazil,ELLEN,126,SIMPSON,1,18.97,3,3392,1,2005-07-06 15:08:08.000,Mike,1,Hillyer,3,0.6667,2005-07-06,amount_over_3x
-2.99,1.0,Richmond Hill,1,Canada,CURTIS,410,IRBY,2,10.98,2,11088,2,2005-06-18 16:10:46.000,Jon,2,Stephens,2,1.0,2005-06-18,amount_over_3x
-2.99,1.0,Salala,1,Oman,GENE,498,SANBORN,1,8.99,1,13406,1,2005-05-27 16:21:26.000,Mike,1,Hillyer,1,1.0,2005-05-27,amount_over_3x
-2.99,1.0,Sambhal,1,India,AGNES,217,BISHOP,2,8.99,1,5882,2,2005-05-31 19:42:02.000,Jon,2,Stephens,1,1.0,2005-05-31,amount_over_3x
-2.99,1.0,San Bernardino,3,United States,PATRICIA,2,JOHNSON,1,9.98,2,36,1,2005-07-10 12:38:56.000,Mike,1,Hillyer,2,0.5,2005-07-10,amount_over_3x
-2.99,1.0,Shaoguan,1,China,CLYDE,485,TOBIAS,1,11.98,2,13087,1,2005-06-16 15:01:36.000,Mike,1,Hillyer,2,0.5,2005-06-16,amount_over_3x
-2.99,1.0,Simferopol,1,Ukraine,KATHRYN,82,COLEMAN,1,8.99,1,2219,2,2005-05-26 19:47:49.000,Jon,2,Stephens,1,1.0,2005-05-26,amount_over_3x
-2.99,1.0,Sirjan,1,Iran,OSCAR,449,AQUINO,2,9.98,2,12121,1,2005-07-06 23:00:49.000,Mike,1,Hillyer,2,0.5,2005-07-06,amount_over_3x
-2.99,1.0,So Bernardo do Campo,2,Brazil,CODY,544,NOLEN,2,12.98,2,14620,2,2005-06-15 18:30:46.000,Jon,2,Stephens,2,1.0,2005-06-15,amount_over_3x
-2.99,1.0,Sousse,1,Tunisia,GREGORY,335,MAULDIN,1,17.96,4,9049,1,2005-07-07 20:56:47.000,Mike,1,Hillyer,4,0.5,2005-07-07,amount_over_3x
-2.99,1.0,Sullana,1,Peru,FREDDIE,597,DUGGAN,1,8.99,1,15985,2,2005-05-28 03:09:28.000,Jon,2,Stephens,1,1.0,2005-05-28,amount_over_3x
-2.99,1.0,Tabuk,1,Saudi Arabia,MARK,312,RINEHART,2,11.98,2,8458,2,2005-05-31 10:48:17.000,Jon,2,Stephens,2,0.5,2005-05-31,amount_over_3x
-2.99,1.0,Taguig,1,Philippines,THERESA,72,WATSON,2,10.97,3,1947,1,2005-07-09 20:59:09.000,Mike,1,Hillyer,3,0.3333,2005-07-09,amount_over_3x
-2.99,1.0,Tangail,1,Bangladesh,MICHELLE,21,CLARK,1,15.97,3,549,1,2005-06-18 15:37:55.000,Mike,1,Hillyer,3,0.6667,2005-06-18,amount_over_3x
-2.99,1.0,Teboksary,1,Russian Federation,JUAN,350,FRALEY,1,14.97,3,9480,1,2005-08-17 11:29:52.000,Mike,1,Hillyer,3,0.6667,2005-08-17,amount_over_3x
-2.99,1.0,Tegal,1,Indonesia,LLOYD,458,DOWD,1,15.97,3,12366,1,2005-07-12 11:06:28.000,Mike,1,Hillyer,3,1.0,2005-07-12,amount_over_3x
-2.99,1.0,Touliu,1,Taiwan,AMBER,139,DIXON,1,8.98,2,3757,2,2005-06-19 14:49:42.000,Jon,2,Stephens,2,0.5,2005-06-19,amount_over_3x
-2.99,1.0,Valencia,2,Venezuela,MATHEW,539,BOLIN,1,9.97,3,14511,2,2005-06-15 19:08:16.000,Jon,2,Stephens,3,0.6667,2005-06-15,amount_over_3x
-2.99,1.0,Valle de la Pascua,1,Venezuela,KRISTINA,290,CHAMBERS,1,20.97,3,7847,2,2005-06-15 21:55:58.000,Jon,2,Stephens,3,0.6667,2005-06-15,amount_over_3x
-2.99,1.0,Ziguinchor,1,Senegal,RONNIE,456,RICKETTS,2,12.98,2,12309,2,2005-06-17 22:26:23.000,Jon,2,Stephens,2,1.0,2005-06-17,amount_over_3x
-2.99,1.14,Munger (Monghyr),6,India,CYNTHIA,28,YOUNG,1,8.98,2,761,1,2005-07-10 15:49:12.000,Mike,1,Hillyer,2,1.0,2005-07-10,amount_over_3x
-2.99,1.14,Shenzhen,7,China,EUGENE,378,CULPEPPER,1,9.98,2,10243,1,2005-08-02 08:21:27.000,Mike,1,Hillyer,2,0.0,2005-08-02,amount_over_3x
-2.99,1.17,Crdoba,2,Argentina,KIMBERLY,24,LEE,2,11.98,2,651,1,2005-08-18 22:22:45.000,Mike,1,Hillyer,2,0.5,2005-08-18,amount_over_3x
-2.99,1.17,Kumbakonam,4,India,PENNY,271,NEAL,1,12.98,2,7339,2,2005-07-31 22:11:43.000,Jon,2,Stephens,2,1.0,2005-07-31,amount_over_3x
-2.99,1.17,Oulu,1,Finland,ERIKA,298,PENA,1,8.98,2,8093,1,2005-07-28 10:13:15.000,Mike,1,Hillyer,2,0.5,2005-07-28,amount_over_3x
-2.99,1.17,Surakarta,3,Indonesia,JAY,450,ROBB,1,10.97,3,12154,1,2005-08-20 13:49:52.000,Mike,1,Hillyer,3,0.0,2005-08-20,amount_over_3x
-2.99,1.33,Bhimavaram,1,India,ERIK,529,GUILLEN,2,20.97,3,14241,1,2005-07-12 22:08:46.000,Mike,1,Hillyer,3,1.0,2005-07-12,amount_over_3x
-2.99,1.33,Bucuresti,1,Romania,KEN,563,PREWITT,2,29.93,7,15085,1,2005-07-08 19:46:58.000,Mike,1,Hillyer,7,0.5714,2005-07-08,amount_over_3x_and_count_at_least_5
-2.99,1.5,Zanzibar,1,Tanzania,CHARLENE,220,ALVAREZ,2,8.99,1,5956,2,2005-07-12 18:51:41.000,Jon,2,Stephens,1,1.0,2005-07-12,amount_over_3x
-3.13,1.14,Witten,1,Germany,VICKI,201,FIELDS,1,16.97,3,5465,2,2005-08-20 08:27:27.000,Jon,2,Stephens,3,0.6667,2005-08-20,amount_over_3x
-3.15,1.33,Izumisano,2,Japan,CLARENCE,391,GAMEZ,1,12.98,2,10602,1,2005-07-10 04:52:04.000,Mike,1,Hillyer,2,0.5,2005-07-10,amount_over_3x
-3.16,1.0,Qalyub,1,Egypt,EMMA,134,BOYD,1,20.96,4,3630,2,2005-08-02 22:24:31.000,Jon,2,Stephens,4,0.5,2005-08-02,amount_over_3x
-3.16,1.0,Vitria de Santo Anto,3,Brazil,JEREMY,374,HURTADO,2,13.97,3,10134,2,2005-07-10 22:52:42.000,Jon,2,Stephens,3,0.6667,2005-07-10,amount_over_3x
-3.16,1.17,Grand Prairie,3,United States,KIM,118,CRUZ,1,11.98,2,3179,2,2005-07-29 19:22:40.000,Jon,2,Stephens,2,1.0,2005-07-29,amount_over_3x
-3.19,1.2,Isesaki,3,Japan,RON,519,DELUCA,2,11.98,2,13976,2,2005-07-30 21:43:28.000,Jon,2,Stephens,2,1.0,2005-07-30,amount_over_3x
-3.19,1.3,Urawa,1,Japan,JOANNE,147,ROBERTSON,2,16.98,2,3998,2,2005-08-01 20:08:49.000,Jon,2,Stephens,2,1.0,2005-08-01,amount_over_3x
-3.24,1.0,Battambang,1,Cambodia,ELMER,516,NOE,2,10.99,1,13892,1,2005-06-16 14:52:02.000,Mike,1,Hillyer,1,1.0,2005-06-16,amount_over_3x
-3.24,1.0,Shimoga,3,India,NELLIE,238,GARRETT,1,16.97,3,6430,1,2005-07-29 08:20:49.000,Mike,1,Hillyer,3,0.6667,2005-07-29,amount_over_3x
-3.24,1.0,Sultanbeyli,1,Turkey,BRENT,493,HARKINS,1,10.98,2,13282,1,2005-07-06 07:52:54.000,Mike,1,Hillyer,2,0.5,2005-07-06,amount_over_3x
-3.24,1.13,Serpuhov,3,Russian Federation,ALFREDO,567,MCADAMS,2,14.98,2,15201,1,2005-07-30 23:06:33.000,Mike,1,Hillyer,2,1.0,2005-07-30,amount_over_3x
-3.24,1.25,Ezhou,2,China,DONALD,313,MAHON,2,12.98,2,8487,2,2005-06-19 14:12:22.000,Jon,2,Stephens,2,0.5,2005-06-19,amount_over_3x
-3.24,1.25,Ikerre,1,Nigeria,ELSIE,198,KELLEY,2,14.97,3,5368,2,2005-07-12 21:01:22.000,Jon,2,Stephens,3,0.6667,2005-07-12,amount_over_3x
-3.24,1.25,Stara Zagora,1,Bulgaria,JESSIE,215,BANKS,2,9.96,4,5856,1,2005-08-23 15:37:31.000,Mike,1,Hillyer,4,0.0,2005-08-23,amount_over_3x
-3.27,1.29,Valle de Santiago,3,Mexico,BOBBIE,288,CRAIG,1,9.99,1,7804,1,2005-08-02 02:31:15.000,Mike,1,Hillyer,1,1.0,2005-08-02,amount_over_3x
-3.32,1.0,Faaa,1,French Polynesia,CHRISTINE,43,ROBERTS,2,9.98,2,1185,1,2005-07-09 19:59:10.000,Mike,1,Hillyer,2,0.5,2005-07-09,amount_over_3x
-3.32,1.0,La Plata,1,Argentina,JULIA,89,FLORES,1,16.98,2,2413,2,2005-06-15 16:45:07.000,Jon,2,Stephens,2,1.0,2005-06-15,amount_over_3x
-3.32,1.0,Zapopan,1,Mexico,FLOYD,465,GANDY,1,16.97,3,12554,2,2005-08-17 22:55:32.000,Jon,2,Stephens,3,0.6667,2005-08-17,amount_over_3x
-3.32,1.17,Kragujevac,1,Yugoslavia,MARIA,7,MILLER,1,10.98,2,187,1,2005-07-08 18:47:38.000,Mike,1,Hillyer,2,0.5,2005-07-08,amount_over_3x
-3.32,1.22,Tandil,2,Argentina,LEONARD,405,SCHOFIELD,1,9.98,2,10961,2,2005-08-01 22:59:10.000,Jon,2,Stephens,2,0.5,2005-08-01,amount_over_3x
-3.32,1.33,Botshabelo,1,South Africa,ESTHER,132,CRAWFORD,2,9.98,2,3563,1,2005-06-20 18:23:30.000,Mike,1,Hillyer,2,0.0,2005-06-20,amount_over_3x
-3.32,1.33,Juiz de Fora,1,Brazil,KENT,591,ARSENAULT,1,11.99,1,15821,2,2005-07-07 20:45:51.000,Jon,2,Stephens,1,1.0,2005-07-07,amount_over_3x
-3.32,1.33,San Felipe de Puerto Plata,1,Dominican Republic,JEFF,418,EAST,2,11.97,3,11301,1,2005-07-08 22:32:53.000,Mike,1,Hillyer,3,0.3333,2005-07-08,amount_over_3x
-3.39,1.0,Rio Claro,5,Brazil,DENISE,74,KELLY,1,10.97,3,2002,2,2005-07-10 21:30:22.000,Jon,2,Stephens,3,0.3333,2005-07-10,amount_over_3x
-3.39,1.4,al-Qadarif,1,Sudan,JOHNNY,395,TURPIN,2,10.98,2,10702,1,2005-07-07 21:12:36.000,Mike,1,Hillyer,2,0.5,2005-07-07,amount_over_3x
-3.42,1.14,Monywa,1,Myanmar,MABEL,256,HOLLAND,2,11.98,2,6898,1,2005-06-18 15:00:04.000,Mike,1,Hillyer,2,0.5,2005-06-18,amount_over_3x
-3.49,1.0,Arecibo,1,Puerto Rico,RALPH,360,MADRIGAL,2,10.98,2,9714,2,2005-06-19 18:19:33.000,Jon,2,Stephens,2,1.0,2005-06-19,amount_over_3x
-3.49,1.0,Birgunj,1,Nepal,KEVIN,321,SCHULER,1,10.98,2,8679,1,2005-07-06 20:26:40.000,Mike,1,Hillyer,2,1.0,2005-07-06,amount_over_3x
-3.49,1.0,Chatsworth,2,South Africa,DWIGHT,555,LOMBARDI,1,15.98,2,14879,2,2005-07-31 20:00:34.000,Jon,2,Stephens,2,1.0,2005-07-31,amount_over_3x
-3.49,1.0,Ciparay,3,Indonesia,JEFFREY,328,SPEAR,2,11.98,2,8861,2,2005-07-29 20:19:45.000,Jon,2,Stephens,2,1.0,2005-07-29,amount_over_3x
-3.49,1.0,Hami,2,China,LORRAINE,165,STEPHENS,2,10.98,2,4471,1,2005-07-06 13:57:56.000,Mike,1,Hillyer,2,0.5,2005-07-06,amount_over_3x
-3.49,1.0,Hubli-Dharwad,4,India,ANITA,136,MORALES,2,10.99,1,3674,2,2005-08-17 18:27:22.000,Jon,2,Stephens,1,1.0,2005-08-17,amount_over_3x
-3.49,1.0,Huejutla de Reyes,1,Mexico,ANDY,582,VANHORN,2,20.96,4,15597,1,2005-07-27 22:53:52.000,Mike,1,Hillyer,4,0.5,2005-07-27,amount_over_3x
-3.49,1.0,Meixian,4,China,RUBY,90,WASHINGTON,2,13.97,3,2450,1,2005-07-27 17:21:52.000,Mike,1,Hillyer,3,1.0,2005-07-27,amount_over_3x
-3.49,1.0,Papeete,1,French Polynesia,GLORIA,56,COOK,1,10.98,2,1544,2,2005-07-06 13:19:34.000,Jon,2,Stephens,2,0.5,2005-07-06,amount_over_3x
-3.49,1.0,Phnom Penh,1,Cambodia,ALLISON,228,STANLEY,2,17.96,4,6143,2,2005-07-06 14:45:22.000,Jon,2,Stephens,4,0.5,2005-07-06,amount_over_3x
-3.49,1.0,Torren,2,Mexico,PAULINE,133,HENRY,1,19.96,4,3595,2,2005-07-08 17:54:18.000,Jon,2,Stephens,4,0.5,2005-07-08,amount_over_3x
-3.49,1.0,Yangor,1,Nauru,DUANE,513,TUBBS,2,12.97,3,13814,2,2005-07-07 12:12:36.000,Jon,2,Stephens,3,0.0,2005-07-07,amount_over_3x
-3.49,1.0,al-Hawiya,1,Saudi Arabia,CHRISTINA,70,RAMIREZ,2,12.98,2,1897,2,2005-07-27 17:10:05.000,Jon,2,Stephens,2,0.5,2005-07-27,amount_over_3x
-3.49,1.0,guas Lindas de Gois,4,Brazil,CHARLOTTE,130,HUNTER,1,10.98,2,3519,2,2005-07-31 08:33:08.000,Jon,2,Stephens,2,0.5,2005-07-31,amount_over_3x
-3.49,1.17,Balikesir,1,Turkey,BRANDON,366,HUEY,1,11.98,2,9890,1,2005-07-11 21:18:16.000,Mike,1,Hillyer,2,1.0,2005-07-11,amount_over_3x
-3.49,1.33,Luzinia,1,Brazil,IDA,183,ANDREWS,2,13.97,3,4989,2,2005-07-31 15:18:19.000,Jon,2,Stephens,3,0.3333,2005-07-31,amount_over_3x
-3.49,1.33,Salala,1,Oman,GENE,498,SANBORN,1,16.97,3,13424,1,2005-07-27 14:23:55.000,Mike,1,Hillyer,3,0.6667,2005-07-27,amount_over_3x
-3.49,1.33,Sanya,1,China,KELLY,546,KNOTT,1,19.97,3,14672,2,2005-07-12 22:11:21.000,Jon,2,Stephens,3,0.6667,2005-07-12,amount_over_3x
-3.49,1.5,Korla,3,China,FELICIA,283,SUTTON,1,10.98,2,7656,2,2005-06-19 23:06:00.000,Jon,2,Stephens,2,0.5,2005-06-19,amount_over_3x
-3.56,1.0,Emeishan,1,China,ALAN,389,KAHN,1,13.98,2,10541,2,2005-07-28 14:15:54.000,Jon,2,Stephens,2,0.5,2005-07-28,amount_over_3x
-3.59,1.0,Alessandria,2,Italy,ANNA,33,HILL,2,11.97,3,917,1,2005-07-30 14:26:11.000,Mike,1,Hillyer,3,0.3333,2005-07-30,amount_over_3x
-3.59,1.0,Jurez,4,Mexico,FRED,369,WHEAT,2,10.98,2,9985,2,2005-07-10 03:15:24.000,Jon,2,Stephens,2,0.5,2005-07-10,amount_over_3x
-3.59,1.0,Kamyin,2,Russian Federation,BEN,510,EASTER,2,18.98,2,13748,2,2005-07-28 07:28:03.000,Jon,2,Stephens,2,1.0,2005-07-28,amount_over_3x
-3.59,1.0,Touliu,2,Taiwan,AMBER,139,DIXON,1,10.98,2,3772,2,2005-08-19 22:16:16.000,Jon,2,Stephens,2,1.0,2005-08-19,amount_over_3x
-3.59,1.2,Lubumbashi,1,"Congo, The Democratic Republic of the",JESSE,387,SCHILLING,2,15.97,3,10494,1,2005-08-19 10:19:19.000,Mike,1,Hillyer,3,0.6667,2005-08-19,amount_over_3x
-3.59,1.4,Gijn,1,Spain,CHRIS,394,BROTHERS,2,14.98,2,10690,2,2005-08-18 13:22:25.000,Jon,2,Stephens,2,0.5,2005-08-18,amount_over_3x
-3.59,1.4,Hohhot,3,China,HAZEL,138,WARREN,1,11.97,3,3734,2,2005-07-28 21:10:30.000,Jon,2,Stephens,3,0.6667,2005-07-28,amount_over_3x
-3.65,1.33,Escobar,1,Argentina,MICHEAL,445,FORMAN,1,17.98,2,12014,1,2005-08-02 18:22:05.000,Mike,1,Hillyer,2,1.0,2005-08-02,amount_over_3x
-3.65,1.67,Garland,4,United States,IAN,561,STILL,2,10.99,1,15037,1,2005-07-29 09:20:16.000,Mike,1,Hillyer,1,1.0,2005-07-29,amount_over_3x
-3.66,1.0,Lengshuijiang,4,China,MARGIE,267,WADE,1,15.97,3,7229,2,2005-07-30 20:18:53.000,Jon,2,Stephens,3,1.0,2005-07-30,amount_over_3x
-3.66,1.0,Toulon,1,France,RITA,104,GRAHAM,1,11.96,4,2821,1,2005-08-19 22:41:44.000,Mike,1,Hillyer,4,0.5,2005-08-19,amount_over_3x
-3.66,1.17,Oyo,3,Nigeria,JO,250,FOWLER,2,11.98,2,6756,2,2005-08-22 17:52:05.000,Jon,2,Stephens,2,1.0,2005-08-22,amount_over_3x
-3.7,1.14,Linz,1,Austria,JILL,159,HAWKINS,1,12.98,2,4339,1,2005-07-31 14:55:11.000,Mike,1,Hillyer,2,0.5,2005-07-31,amount_over_3x
-3.7,1.29,Rae Bareli,3,India,LORI,78,WOOD,1,15.97,3,2127,1,2005-07-28 13:34:08.000,Mike,1,Hillyer,3,1.0,2005-07-28,amount_over_3x
-3.74,1.0,Zalantun,2,China,PHYLLIS,93,FOSTER,1,19.96,4,2548,1,2005-08-20 19:32:29.000,Mike,1,Hillyer,4,0.5,2005-08-20,amount_over_3x
-3.74,1.25,Charlotte Amalie,1,"Virgin Islands, U.S.",NATHAN,406,RUNYON,1,23.96,4,10989,2,2005-07-27 23:54:52.000,Jon,2,Stephens,4,0.5,2005-07-27,amount_over_3x
-3.74,1.25,Mwanza,1,Tanzania,HERMAN,481,DEVORE,1,16.96,4,12988,1,2005-07-08 10:11:45.000,Mike,1,Hillyer,4,0.75,2005-07-08,amount_over_3x
-3.79,1.0,Chiayi,1,Taiwan,BEVERLY,73,BROOKS,2,12.98,2,1978,1,2005-07-12 10:39:55.000,Mike,1,Hillyer,2,0.5,2005-07-12,amount_over_3x
-3.79,1.0,Coquimbo,1,Chile,ANDRE,515,RAPP,1,15.97,3,13880,2,2005-08-17 16:48:36.000,Jon,2,Stephens,3,0.6667,2005-08-17,amount_over_3x
-3.79,1.0,Halisahar,5,India,LENA,259,JENSEN,2,12.98,2,6993,1,2005-07-28 08:20:55.000,Mike,1,Hillyer,2,0.5,2005-07-28,amount_over_3x
-3.79,1.0,Omiya,1,Japan,STANLEY,404,SCROGGINS,2,21.96,4,10920,1,2005-07-08 23:38:40.000,Mike,1,Hillyer,4,0.5,2005-07-08,amount_over_3x
-3.79,1.2,Antofagasta,1,Chile,JANET,45,PHILLIPS,1,14.98,2,1237,1,2005-07-09 20:11:49.000,Mike,1,Hillyer,2,1.0,2005-07-09,amount_over_3x
-3.79,1.2,Aparecida de Goinia,1,Brazil,NATALIE,216,MEYER,1,14.98,2,5866,2,2005-07-11 20:25:05.000,Jon,2,Stephens,2,1.0,2005-07-11,amount_over_3x
-3.82,1.17,Bratislava,1,Slovakia,KEITH,357,RICO,1,16.97,3,9649,2,2005-07-11 22:53:12.000,Jon,2,Stephens,3,0.6667,2005-07-11,amount_over_3x
-3.82,1.5,Shanwei,5,China,KYLE,424,SPURLOCK,2,14.96,4,11466,1,2005-07-30 23:02:36.000,Mike,1,Hillyer,4,0.5,2005-07-30,amount_over_3x
-3.84,1.29,Adana,2,Turkey,LARRY,327,THRASHER,2,11.97,3,8847,1,2005-08-22 22:41:14.000,Mike,1,Hillyer,3,0.6667,2005-08-22,amount_over_3x
-3.84,1.29,Southend-on-Sea,1,United Kingdom,SANDRA,16,MARTIN,2,12.98,2,442,1,2005-08-18 15:39:46.000,Mike,1,Hillyer,2,0.5,2005-08-18,amount_over_3x
-3.84,1.57,Xiangfan,1,China,HEIDI,241,LARSON,2,14.97,3,6515,2,2005-07-11 14:56:57.000,Jon,2,Stephens,3,0.6667,2005-07-11,amount_over_3x
-3.85,1.0,Battambang,1,Cambodia,ELMER,516,NOE,2,13.98,2,13898,1,2005-07-12 19:53:51.000,Mike,1,Hillyer,2,1.0,2005-07-12,amount_over_3x
-3.85,1.0,Higashiosaka,2,Japan,GWENDOLYN,264,MAY,1,12.97,3,7136,1,2005-07-11 22:29:29.000,Mike,1,Hillyer,3,0.3333,2005-07-11,amount_over_3x
-3.85,1.14,Esfahan,2,Iran,DOROTHY,10,TAYLOR,1,11.97,3,265,1,2005-07-09 21:58:57.000,Mike,1,Hillyer,3,0.3333,2005-07-09,amount_over_3x
-3.86,1.38,Tangail,1,Bangladesh,MICHELLE,21,CLARK,1,11.98,2,567,1,2005-08-18 23:34:22.000,Mike,1,Hillyer,2,1.0,2005-08-18,amount_over_3x
-3.98,2.0,Xintai,3,China,BOB,564,PFEIFFER,2,13.98,2,15108,2,2005-07-27 19:01:03.000,Jon,2,Stephens,2,0.5,2005-07-27,amount_over_3x
-3.98,2.0,Yamuna Nagar,6,India,NANCY,12,THOMAS,1,11.97,3,321,2,2005-07-30 13:49:43.000,Jon,2,Stephens,3,0.6667,2005-07-30,amount_over_3x
-3.99,1.0,Arlington,3,United States,RICHARD,305,MCCRARY,1,12.98,2,8272,1,2005-06-17 23:51:21.000,Mike,1,Hillyer,2,0.5,2005-06-17,amount_over_3x
-3.99,1.0,Avellaneda,2,Argentina,JORDAN,560,ARCHULETA,1,13.97,3,14997,1,2005-07-07 23:32:39.000,Mike,1,Hillyer,3,0.3333,2005-07-07,amount_over_3x
-3.99,1.0,Birgunj,1,Nepal,KEVIN,321,SCHULER,1,17.97,3,8690,2,2005-08-17 20:15:31.000,Jon,2,Stephens,3,1.0,2005-08-17,amount_over_3x
-3.99,1.0,Ciomas,1,Indonesia,MINNIE,239,ROMERO,2,11.98,2,6443,1,2005-05-28 17:47:58.000,Mike,1,Hillyer,2,0.5,2005-05-28,amount_over_3x
-3.99,1.0,Jinchang,1,China,REGINA,168,BERRY,1,11.98,2,4553,2,2005-07-07 19:43:28.000,Jon,2,Stephens,2,1.0,2005-07-07,amount_over_3x
-3.99,1.0,Karnal,5,India,NAOMI,274,JENNINGS,1,14.97,3,7416,2,2005-07-29 10:00:48.000,Jon,2,Stephens,3,0.6667,2005-07-29,amount_over_3x
-3.99,1.0,Kisumu,1,Kenya,KATIE,193,ELLIOTT,2,11.98,2,5224,2,2005-06-19 22:52:14.000,Jon,2,Stephens,2,0.5,2005-06-19,amount_over_3x
-3.99,1.0,Kuching,1,Malaysia,JEAN,58,BELL,1,14.98,2,1603,2,2005-07-27 19:32:45.000,Jon,2,Stephens,2,0.5,2005-07-27,amount_over_3x
-3.99,1.0,Mahajanga,1,Madagascar,ANDREA,81,HENDERSON,1,16.97,3,2212,2,2005-08-21 23:02:02.000,Jon,2,Stephens,3,0.6667,2005-08-21,amount_over_3x
-3.99,1.0,Mexicali,2,Mexico,DOUGLAS,343,GRAF,1,11.98,2,9273,1,2005-06-16 02:47:07.000,Mike,1,Hillyer,2,0.5,2005-06-16,amount_over_3x
-3.99,1.0,Nantou,3,Taiwan,ELIZABETH,5,BROWN,1,12.97,3,120,2,2005-07-09 08:51:42.000,Jon,2,Stephens,3,0.6667,2005-07-09,amount_over_3x
-3.99,1.0,Nuuk,1,Greenland,GERTRUDE,207,CASTILLO,1,12.98,2,5604,2,2005-07-06 09:38:33.000,Jon,2,Stephens,2,1.0,2005-07-06,amount_over_3x
-3.99,1.0,Ocumare del Tuy,1,Venezuela,YVONNE,174,WATKINS,2,12.98,2,4728,1,2005-07-29 19:18:30.000,Mike,1,Hillyer,2,1.0,2005-07-29,amount_over_3x
-3.99,1.0,Osmaniye,1,Turkey,KAREN,13,JACKSON,2,11.98,2,334,1,2005-06-20 12:45:33.000,Mike,1,Hillyer,2,0.5,2005-06-20,amount_over_3x
-3.99,1.0,Paarl,1,South Africa,DENNIS,338,GILMAN,1,11.98,2,9130,1,2005-06-17 22:44:35.000,Mike,1,Hillyer,2,0.5,2005-06-17,amount_over_3x
-3.99,1.0,Portoviejo,2,Ecuador,PATSY,262,DAVIDSON,2,15.98,2,7073,2,2005-06-19 23:06:28.000,Jon,2,Stephens,2,1.0,2005-06-19,amount_over_3x
-3.99,1.0,Qinhuangdao,1,China,GLENDA,242,FRAZIER,1,14.97,3,6539,1,2005-06-15 21:21:58.000,Mike,1,Hillyer,3,0.6667,2005-06-15,amount_over_3x
-3.99,1.0,Rancagua,1,Chile,JEROME,464,KENYON,1,11.98,2,12538,2,2005-08-20 17:31:18.000,Jon,2,Stephens,2,0.5,2005-08-20,amount_over_3x
-3.99,1.0,Salamanca,2,Mexico,PRISCILLA,273,LOWE,2,11.98,2,7371,2,2005-06-16 17:56:10.000,Jon,2,Stephens,2,0.5,2005-06-16,amount_over_3x
-3.99,1.0,Sivas,2,Turkey,GABRIEL,518,HARDER,1,11.98,2,13945,2,2005-07-08 22:54:21.000,Jon,2,Stephens,2,0.5,2005-07-08,amount_over_3x
-3.99,1.0,Smolensk,2,Russian Federation,ELAINE,127,STEVENS,2,11.98,2,3420,2,2005-07-08 17:04:24.000,Jon,2,Stephens,2,1.0,2005-07-08,amount_over_3x
-3.99,1.0,Soshanguve,1,South Africa,LUCILLE,145,HOLMES,1,20.97,3,3927,2,2005-07-07 21:33:16.000,Jon,2,Stephens,3,0.6667,2005-07-07,amount_over_3x
-3.99,1.0,Tuguegarao,1,Philippines,DEANNA,261,BYRD,1,18.97,3,7051,2,2005-06-17 16:33:32.000,Jon,2,Stephens,3,1.0,2005-06-17,amount_over_3x
-3.99,1.0,Uijongbu,1,South Korea,COURTNEY,245,DAY,1,17.95,5,6640,2,2005-07-27 16:05:00.000,Jon,2,Stephens,5,0.6,2005-07-27,amount_over_3x_and_count_at_least_5
-3.99,1.0,Usak,1,Turkey,ROSEMARY,204,SCHMIDT,1,12.98,2,5523,2,2005-06-17 04:18:48.000,Jon,2,Stephens,2,1.0,2005-06-17,amount_over_3x
-3.99,1.13,Cabuyao,3,Philippines,BILLY,371,POULIN,1,13.98,2,10042,1,2005-07-30 09:20:59.000,Mike,1,Hillyer,2,0.5,2005-07-30,amount_over_3x
-3.99,1.14,Sullana,1,Peru,FREDDIE,597,DUGGAN,1,16.96,4,16000,1,2005-08-02 13:28:30.000,Mike,1,Hillyer,4,0.5,2005-08-02,amount_over_3x
-3.99,1.2,Araatuba,1,Brazil,JANE,77,BENNETT,2,12.98,2,2092,2,2005-06-18 19:29:21.000,Jon,2,Stephens,2,1.0,2005-06-18,amount_over_3x
-3.99,1.2,Ilorin,3,Nigeria,GLADYS,103,HAMILTON,1,11.97,3,2779,1,2005-07-07 19:24:39.000,Mike,1,Hillyer,3,0.6667,2005-07-07,amount_over_3x
-3.99,1.2,Omdurman,1,Sudan,DIANE,50,COLLINS,1,21.97,3,1370,1,2005-07-10 21:58:30.000,Mike,1,Hillyer,3,0.6667,2005-07-10,amount_over_3x
-3.99,1.25,Chisinau,1,Moldova,MARTHA,38,GONZALEZ,1,12.97,3,1041,1,2005-07-07 16:36:16.000,Mike,1,Hillyer,3,0.6667,2005-07-07,amount_over_3x
-3.99,1.25,Koriyama,1,Japan,TONY,401,CARRANZA,2,14.97,3,10844,1,2005-07-29 17:58:58.000,Mike,1,Hillyer,3,0.3333,2005-07-29,amount_over_3x
-3.99,1.25,San Miguel de Tucumn,1,Argentina,LYDIA,243,BURKE,1,13.97,3,6582,2,2005-07-31 17:22:36.000,Jon,2,Stephens,3,0.3333,2005-07-31,amount_over_3x
-3.99,1.29,Davao,1,Philippines,SHIRLEY,27,ALLEN,2,18.97,3,739,1,2005-07-31 14:39:52.000,Mike,1,Hillyer,3,1.0,2005-07-31,amount_over_3x
-3.99,1.33,Hanoi,1,Vietnam,PATRICK,340,NEWSOM,1,15.96,4,9199,1,2005-07-29 13:14:24.000,Mike,1,Hillyer,4,0.0,2005-07-29,amount_over_3x
-3.99,1.4,Lubumbashi,1,"Congo, The Democratic Republic of the",JESSE,387,SCHILLING,2,12.98,2,10485,1,2005-07-12 03:52:39.000,Mike,1,Hillyer,2,1.0,2005-07-12,amount_over_3x
-3.99,1.5,Araatuba,2,Brazil,JANE,77,BENNETT,2,14.98,2,2108,1,2005-08-17 21:31:46.000,Mike,1,Hillyer,2,1.0,2005-08-17,amount_over_3x
-3.99,1.5,Haldia,2,India,HOLLY,186,FOX,2,14.98,2,5062,1,2005-08-18 10:42:52.000,Mike,1,Hillyer,2,1.0,2005-08-18,amount_over_3x
-3.99,1.5,Halle/Saale,1,Germany,VICKIE,251,BREWER,2,11.97,3,6762,2,2005-05-31 22:17:11.000,Jon,2,Stephens,3,0.3333,2005-05-31,amount_over_3x
-3.99,1.5,Matamoros,2,Mexico,SAMANTHA,177,DUNCAN,2,12.98,2,4807,1,2005-07-11 16:51:39.000,Mike,1,Hillyer,2,0.5,2005-07-11,amount_over_3x
-4.09,1.0,Vitria de Santo Anto,1,Brazil,JEREMY,374,HURTADO,2,20.96,4,10149,2,2005-08-22 21:45:57.000,Jon,2,Stephens,4,0.5,2005-08-22,amount_over_3x
-4.11,1.25,Malm,1,Sweden,JANICE,66,WARD,2,13.96,4,1820,2,2005-08-21 11:29:43.000,Jon,2,Stephens,4,0.25,2005-08-21,amount_over_3x
-4.11,1.38,Baicheng,3,China,TED,538,BREAUX,2,18.97,3,14497,2,2005-07-31 15:29:00.000,Jon,2,Stephens,3,0.6667,2005-07-31,amount_over_3x
-4.13,1.29,Jaipur,2,India,MILDRED,60,BAILEY,1,13.98,2,1662,1,2005-08-02 19:12:40.000,Mike,1,Hillyer,2,0.5,2005-08-02,amount_over_3x
-4.13,1.43,Bilbays,1,Egypt,EVERETT,559,BANDA,2,13.97,3,14985,2,2005-08-19 19:43:08.000,Jon,2,Stephens,3,1.0,2005-08-19,amount_over_3x
-4.15,1.33,Johannesburg,2,South Africa,DEAN,471,SAUER,1,13.98,2,12742,1,2005-08-20 23:46:24.000,Mike,1,Hillyer,2,1.0,2005-08-20,amount_over_3x
-4.15,1.33,Richmond Hill,1,Canada,CURTIS,410,IRBY,2,17.96,4,11096,1,2005-07-09 17:01:08.000,Mike,1,Hillyer,4,0.5,2005-07-09,amount_over_3x
-4.16,1.0,Allappuzha (Alleppey),4,India,ANNETTE,175,OLSON,1,16.96,4,4750,1,2005-07-29 22:09:08.000,Mike,1,Hillyer,4,0.75,2005-07-29,amount_over_3x
-4.16,1.0,Kaliningrad,2,Russian Federation,ROBERT,301,BAUGHMAN,2,12.98,2,8187,1,2005-08-22 18:39:11.000,Mike,1,Hillyer,2,1.0,2005-08-22,amount_over_3x
-4.16,1.17,Caracas,1,Venezuela,CARMEN,111,OWENS,1,13.98,2,2982,2,2005-07-06 22:19:17.000,Jon,2,Stephens,2,1.0,2005-07-06,amount_over_3x
-4.16,1.17,Daugavpils,1,Latvia,RYAN,347,SALISBURY,2,15.96,4,9383,2,2005-07-28 21:42:08.000,Jon,2,Stephens,4,0.25,2005-07-28,amount_over_3x
-4.16,1.17,Moscow,1,Russian Federation,CATHERINE,46,CAMPBELL,2,13.98,2,1264,2,2005-06-20 08:06:18.000,Jon,2,Stephens,2,0.5,2005-06-20,amount_over_3x
-4.19,1.0,Hidalgo,4,Mexico,DANIELLE,150,DANIELS,2,12.97,3,4098,2,2005-08-18 17:37:11.000,Jon,2,Stephens,3,0.3333,2005-08-18,amount_over_3x
-4.19,1.2,Bilbays,1,Egypt,EVERETT,559,BANDA,2,12.98,2,14980,1,2005-08-01 17:03:28.000,Mike,1,Hillyer,2,1.0,2005-08-01,amount_over_3x
-4.19,1.2,Toulon,1,France,RITA,104,GRAHAM,1,15.97,3,2810,1,2005-07-08 21:32:30.000,Mike,1,Hillyer,3,0.3333,2005-07-08,amount_over_3x
-4.21,1.56,Gingoog,1,Philippines,DEREK,461,BLAKELY,1,22.95,5,12465,2,2005-08-22 23:35:41.000,Jon,2,Stephens,5,0.4,2005-08-22,amount_over_3x_and_count_at_least_5
-4.24,1.0,Cam Ranh,1,Vietnam,NEIL,532,RENNER,2,15.97,3,14314,2,2005-07-09 14:44:23.000,Jon,2,Stephens,3,0.6667,2005-07-09,amount_over_3x
-4.24,1.25,Ede,1,Netherlands,PETER,341,MENARD,1,12.98,2,9228,1,2005-07-29 18:12:49.000,Mike,1,Hillyer,2,1.0,2005-07-29,amount_over_3x
-4.24,1.25,Soshanguve,1,South Africa,LUCILLE,145,HOLMES,1,15.96,4,3946,2,2005-08-19 17:49:13.000,Jon,2,Stephens,4,0.5,2005-08-19,amount_over_3x
-4.24,1.5,Allende,2,Mexico,VINCENT,414,RALSTON,1,17.95,5,11211,1,2005-08-19 22:18:42.000,Mike,1,Hillyer,5,0.6,2005-08-19,amount_over_3x_and_count_at_least_5
-4.27,1.29,Citt del Vaticano,1,Holy See (Vatican City State),JESSICA,26,HALL,2,23.96,4,716,1,2005-08-21 20:12:30.000,Mike,1,Hillyer,4,0.75,2005-08-21,amount_over_3x
-4.27,1.29,Portoviejo,1,Ecuador,PATSY,262,DAVIDSON,2,26.96,4,7083,1,2005-07-12 17:23:01.000,Mike,1,Hillyer,4,1.0,2005-07-12,amount_over_3x
-4.29,1.4,Katihar,3,India,CHAD,419,CARBONE,1,13.96,4,11344,1,2005-08-02 19:58:48.000,Mike,1,Hillyer,4,0.0,2005-08-02,amount_over_3x
-4.32,1.0,Brescia,1,Italy,CHRISTOPHER,309,GRECO,1,20.97,3,8386,2,2005-06-19 12:50:56.000,Jon,2,Stephens,3,1.0,2005-06-19,amount_over_3x
-4.32,1.0,Brest,1,France,LUIS,402,YANEZ,1,16.97,3,10862,2,2005-07-06 12:37:16.000,Jon,2,Stephens,3,1.0,2005-07-06,amount_over_3x
-4.32,1.0,Mosul,1,Iraq,DARYL,579,LARUE,2,12.98,2,15511,1,2005-07-08 22:18:29.000,Mike,1,Hillyer,2,0.5,2005-07-08,amount_over_3x
-4.32,1.0,Ozamis,1,Philippines,EDDIE,434,TOMLIN,1,15.97,3,11696,1,2005-06-18 22:15:09.000,Mike,1,Hillyer,3,1.0,2005-06-18,amount_over_3x
-4.32,1.0,Qinhuangdao,2,China,GLENDA,242,FRAZIER,1,15.97,3,6554,2,2005-08-01 16:18:45.000,Jon,2,Stephens,3,0.3333,2005-08-01,amount_over_3x
-4.32,1.0,Salzburg,1,Austria,NORA,266,HERRERA,2,16.97,3,7195,1,2005-08-02 16:15:07.000,Mike,1,Hillyer,3,0.6667,2005-08-02,amount_over_3x
-4.32,1.0,Udine,1,Italy,ADRIAN,525,CLARY,2,14.98,2,14122,2,2005-07-11 22:17:16.000,Jon,2,Stephens,2,1.0,2005-07-11,amount_over_3x
-4.32,1.17,Amroha,3,India,CHRISTIAN,534,JUNG,1,13.97,3,14388,1,2005-08-01 21:56:41.000,Mike,1,Hillyer,3,0.6667,2005-08-01,amount_over_3x
-4.32,1.44,Hamilton,1,New Zealand,SUSAN,8,WILSON,2,12.98,2,225,2,2005-08-02 14:42:45.000,Jon,2,Stephens,2,0.5,2005-08-02,amount_over_3x
-4.36,1.25,Wroclaw,1,Poland,JIMMIE,558,EGGLESTON,1,13.98,2,14962,1,2005-08-21 06:53:53.000,Mike,1,Hillyer,2,1.0,2005-08-21,amount_over_3x
-4.39,1.0,Ogbomosho,1,Nigeria,OLGA,277,JIMENEZ,2,13.97,3,7502,1,2005-06-21 10:57:27.000,Mike,1,Hillyer,3,0.3333,2005-06-21,amount_over_3x
-4.39,1.2,Pune,5,India,JUANITA,135,MASON,2,13.97,3,3649,1,2005-07-27 22:12:41.000,Mike,1,Hillyer,3,0.3333,2005-07-27,amount_over_3x
-4.41,1.43,Garden Grove,6,United States,RENE,593,MCALISTER,2,13.98,2,15890,1,2005-07-30 23:31:31.000,Mike,1,Hillyer,2,1.0,2005-07-30,amount_over_3x
-4.41,1.43,Pjatigorsk,4,Russian Federation,HECTOR,487,POINDEXTER,2,14.97,3,13153,1,2005-07-30 23:45:09.000,Mike,1,Hillyer,3,0.6667,2005-07-30,amount_over_3x
-4.41,1.57,Yaound,1,Cameroon,LAWRENCE,361,LAWTON,2,15.96,4,9763,1,2005-08-02 16:40:47.000,Mike,1,Hillyer,4,0.5,2005-08-02,amount_over_3x
-4.42,1.0,Idfu,2,Egypt,LILLIE,233,KIM,2,13.98,2,6282,2,2005-07-27 15:54:19.000,Jon,2,Stephens,2,0.5,2005-07-27,amount_over_3x
-4.49,1.0,Brockton,1,United States,VALERIE,149,BLACK,1,18.97,3,4064,2,2005-06-18 15:17:59.000,Jon,2,Stephens,3,1.0,2005-06-18,amount_over_3x
-4.49,1.0,Gulbarga,3,India,WAYNE,370,TRUONG,2,15.97,3,10005,1,2005-07-27 09:47:53.000,Mike,1,Hillyer,3,1.0,2005-07-27,amount_over_3x
-4.49,1.0,Joliet,1,United States,NATHANIEL,504,ADAM,1,16.98,2,13583,1,2005-07-06 10:49:30.000,Mike,1,Hillyer,2,1.0,2005-07-06,amount_over_3x
-4.49,1.0,Lipetsk,1,Russian Federation,MARIE,44,TURNER,1,24.96,4,1217,2,2005-07-10 20:46:13.000,Jon,2,Stephens,4,0.75,2005-07-10,amount_over_3x
-4.49,1.0,al-Manama,1,Bahrain,SETH,590,HANNON,2,16.98,2,15797,1,2005-06-20 07:33:29.000,Mike,1,Hillyer,2,1.0,2005-06-20,amount_over_3x
-4.49,1.17,Udaipur,1,India,BEATRICE,170,ARNOLD,1,15.97,3,4616,2,2005-07-10 15:17:33.000,Jon,2,Stephens,3,0.6667,2005-07-10,amount_over_3x
-4.49,1.25,Munger (Monghyr),3,India,CYNTHIA,28,YOUNG,1,15.96,4,770,2,2005-07-31 21:14:02.000,Jon,2,Stephens,4,0.25,2005-07-31,amount_over_3x
-4.49,1.5,San Felipe del Progreso,2,Mexico,RONALD,319,WEINER,2,16.95,5,8648,1,2005-08-17 19:44:46.000,Mike,1,Hillyer,5,0.6,2005-08-17,amount_over_3x_and_count_at_least_5
-4.54,1.33,Duisburg,1,Germany,GRACE,114,ELLIS,2,15.98,2,3078,1,2005-07-29 12:32:20.000,Mike,1,Hillyer,2,0.5,2005-07-29,amount_over_3x
-4.54,1.56,Kurashiki,3,Japan,REBECCA,34,SCOTT,2,13.98,2,951,2,2005-08-21 20:54:32.000,Jon,2,Stephens,2,1.0,2005-08-21,amount_over_3x
-4.56,1.14,Bayugan,2,Philippines,MELANIE,188,ARMSTRONG,1,16.96,4,5117,2,2005-08-01 20:22:44.000,Jon,2,Stephens,4,0.25,2005-08-01,amount_over_3x
-4.59,1.0,Baiyin,1,China,CHARLIE,495,BESS,2,13.97,3,13343,1,2005-07-29 15:49:48.000,Mike,1,Hillyer,3,1.0,2005-07-29,amount_over_3x
-4.59,1.0,Hsichuh,1,Taiwan,ROGER,348,QUINTANILLA,2,20.96,4,9408,1,2005-07-08 17:01:48.000,Mike,1,Hillyer,4,0.75,2005-07-08,amount_over_3x
-4.59,1.0,Rustenburg,1,South Africa,DALE,407,RATCLIFF,1,22.96,4,11016,1,2005-07-28 23:04:10.000,Mike,1,Hillyer,4,0.5,2005-07-28,amount_over_3x
-4.59,1.2,Korolev,1,Russian Federation,PHILIP,393,CAUSEY,1,22.97,3,10651,2,2005-07-08 16:27:24.000,Jon,2,Stephens,3,1.0,2005-07-08,amount_over_3x
-4.59,1.2,Sucre,1,Bolivia,JOEL,431,FRANCISCO,2,15.98,2,11627,2,2005-06-21 13:20:31.000,Jon,2,Stephens,2,1.0,2005-06-21,amount_over_3x
-4.59,1.2,Warren,4,United States,BRANDY,276,GRAVES,1,16.96,4,7481,1,2005-07-30 13:38:17.000,Mike,1,Hillyer,4,0.5,2005-07-30,amount_over_3x
-4.61,1.13,Najafabad,2,Iran,HARRY,368,ARCE,1,17.96,4,9969,2,2005-08-19 21:33:35.000,Jon,2,Stephens,4,0.25,2005-08-19,amount_over_3x
-4.61,1.38,Kisumu,1,Kenya,KATIE,193,ELLIOTT,2,16.97,3,5241,2,2005-08-22 21:01:48.000,Jon,2,Stephens,3,0.3333,2005-08-22,amount_over_3x
-4.65,1.33,El Fuerte,4,Mexico,JIM,451,REA,1,16.97,3,12173,2,2005-07-08 22:15:48.000,Jon,2,Stephens,3,1.0,2005-07-08,amount_over_3x
-4.65,1.33,Huaian,1,China,ERNEST,384,STEPP,2,18.97,3,10403,2,2005-06-20 16:48:58.000,Jon,2,Stephens,3,1.0,2005-06-20,amount_over_3x
-4.65,1.33,Isesaki,1,Japan,RON,519,DELUCA,2,23.95,5,13981,1,2005-07-31 20:39:38.000,Mike,1,Hillyer,5,0.6,2005-07-31,amount_over_3x_and_count_at_least_5
-4.65,1.33,Leshan,3,China,DAVE,569,GARDINER,2,14.96,4,15248,1,2005-08-02 17:35:10.000,Mike,1,Hillyer,4,0.5,2005-08-02,amount_over_3x
-4.65,1.33,So Bernardo do Campo,1,Brazil,CODY,544,NOLEN,2,15.98,2,14628,1,2005-07-30 03:46:26.000,Mike,1,Hillyer,2,1.0,2005-07-30,amount_over_3x
-4.65,1.33,Yuncheng,1,China,MICHELE,154,GRANT,2,14.97,3,4197,1,2005-07-27 07:19:34.000,Mike,1,Hillyer,3,0.3333,2005-07-27,amount_over_3x
-4.65,1.5,Baku,1,Azerbaijan,ANDREW,333,PURDY,2,15.98,2,9002,2,2005-07-30 18:03:13.000,Jon,2,Stephens,2,1.0,2005-07-30,amount_over_3x
-4.65,1.5,Nha Trang,1,Vietnam,MITCHELL,520,WESTMORELAND,2,16.97,3,14010,1,2005-08-18 18:29:51.000,Mike,1,Hillyer,3,1.0,2005-08-18,amount_over_3x
-4.66,1.0,Hino,1,Japan,KRISTEN,194,CHAVEZ,2,14.97,3,5249,1,2005-06-18 20:01:43.000,Mike,1,Hillyer,3,0.6667,2005-06-18,amount_over_3x
-4.7,1.14,Nabereznyje Telny,2,Russian Federation,CLIFFORD,447,BOWENS,1,17.97,3,12072,1,2005-07-30 15:56:39.000,Mike,1,Hillyer,3,1.0,2005-07-30,amount_over_3x
-4.74,1.13,Cayenne,1,French Guiana,ROSE,65,HOWARD,2,19.97,3,1782,2,2005-08-02 21:35:00.000,Jon,2,Stephens,3,0.6667,2005-08-02,amount_over_3x
-4.74,1.13,Sterling Heights,1,United States,JAMIE,146,RICE,1,19.97,3,3962,1,2005-07-11 19:07:29.000,Mike,1,Hillyer,3,0.6667,2005-07-11,amount_over_3x
-4.74,1.25,Chapra,1,India,RAUL,509,FORTIER,1,21.97,3,13722,1,2005-07-28 23:37:57.000,Mike,1,Hillyer,3,1.0,2005-07-28,amount_over_3x
-4.74,1.25,Quilmes,1,Argentina,PERRY,585,SWAFFORD,1,14.98,2,15672,1,2005-07-08 10:41:06.000,Mike,1,Hillyer,2,0.5,2005-07-08,amount_over_3x
-4.74,1.38,Pune,2,India,JUANITA,135,MASON,2,14.98,2,3653,1,2005-07-30 04:37:36.000,Mike,1,Hillyer,2,1.0,2005-07-30,amount_over_3x
-4.74,1.5,Touliu,1,Taiwan,AMBER,139,DIXON,1,17.97,3,3762,1,2005-07-09 19:26:22.000,Mike,1,Hillyer,3,0.6667,2005-07-09,amount_over_3x
-4.79,1.0,Baicheng,1,China,TED,538,BREAUX,2,16.97,3,14487,1,2005-07-09 23:57:44.000,Mike,1,Hillyer,3,0.3333,2005-07-09,amount_over_3x
-4.79,1.4,A Corua (La Corua),1,Spain,JULIE,52,SANCHEZ,1,15.97,3,1451,2,2005-08-22 06:35:50.000,Jon,2,Stephens,3,0.6667,2005-08-22,amount_over_3x
-4.82,1.0,Nha Trang,1,Vietnam,MITCHELL,520,WESTMORELAND,2,19.97,3,13997,1,2005-07-10 17:45:13.000,Mike,1,Hillyer,3,0.6667,2005-07-10,amount_over_3x
-4.82,1.0,Pingxiang,2,China,ERICA,169,MATTHEWS,2,14.98,2,4591,2,2005-07-12 02:20:09.000,Jon,2,Stephens,2,0.5,2005-07-12,amount_over_3x
-4.82,1.33,Ciparay,2,Indonesia,JEFFREY,328,SPEAR,2,14.97,3,8869,1,2005-08-20 16:17:27.000,Mike,1,Hillyer,3,0.6667,2005-08-20,amount_over_3x
-4.82,1.5,Pyongyang,1,North Korea,DARLENE,157,ROSE,2,12.95,5,4277,1,2005-07-29 22:31:24.000,Mike,1,Hillyer,5,0.2,2005-07-29,count_at_least_5
-4.84,1.29,Liepaja,1,Latvia,SARAH,23,LEWIS,2,15.98,2,619,2,2005-07-30 14:26:46.000,Jon,2,Stephens,2,1.0,2005-07-30,amount_over_3x
-4.86,1.13,Nam Dinh,1,Vietnam,GREG,472,ROBINS,1,18.97,3,12764,1,2005-07-11 18:08:41.000,Mike,1,Hillyer,3,1.0,2005-07-11,amount_over_3x
-4.86,1.25,Ondo,2,Nigeria,BERTHA,156,FERGUSON,1,14.96,4,4260,1,2005-08-22 23:26:32.000,Mike,1,Hillyer,4,0.5,2005-08-22,amount_over_3x
-4.86,1.5,Adana,1,Turkey,LARRY,327,THRASHER,2,23.97,3,8850,2,2005-08-23 19:51:30.000,Jon,2,Stephens,3,1.0,2005-08-23,amount_over_3x
-4.98,1.56,Santo Andr,2,Brazil,JUSTIN,354,NGO,2,18.97,3,9574,1,2005-07-29 13:19:25.000,Mike,1,Hillyer,3,0.6667,2005-07-29,amount_over_3x
-4.98,1.75,Vancouver,1,Canada,TROY,436,QUIGLEY,1,15.98,2,11755,2,2005-07-28 18:32:49.000,Jon,2,Stephens,2,1.0,2005-07-28,amount_over_3x
-4.98,1.78,Changhwa,1,Taiwan,TAMMY,75,SANDERS,2,15.97,3,2046,2,2005-07-30 23:59:21.000,Jon,2,Stephens,3,0.6667,2005-07-30,amount_over_3x
-4.98,1.8,Compton,1,United States,RENEE,182,LANE,1,14.97,3,4965,2,2005-07-28 16:50:26.000,Jon,2,Stephens,3,0.3333,2005-07-28,amount_over_3x
-4.99,1.0,Apeldoorn,1,Netherlands,RHONDA,137,KENNEDY,2,17.97,3,3688,2,2005-07-06 18:06:12.000,Jon,2,Stephens,3,1.0,2005-07-06,amount_over_3x
-4.99,1.0,Athenai,1,Greece,LINDA,3,WILLIAMS,1,16.98,2,69,2,2005-07-27 20:23:12.000,Jon,2,Stephens,2,1.0,2005-07-27,amount_over_3x
-4.99,1.0,Bern,1,Switzerland,GAIL,155,KNIGHT,1,15.97,3,4220,2,2005-07-11 05:29:22.000,Jon,2,Stephens,3,0.3333,2005-07-11,amount_over_3x
-4.99,1.0,Denizli,1,Turkey,VERNON,483,CHAPA,2,14.98,2,13044,2,2005-07-12 21:44:16.000,Jon,2,Stephens,2,0.5,2005-07-12,amount_over_3x
-4.99,1.0,Donostia-San Sebastin,1,Spain,MAE,293,FLETCHER,2,15.98,2,7926,1,2005-06-16 22:14:21.000,Mike,1,Hillyer,2,1.0,2005-06-16,amount_over_3x
-4.99,1.0,Kursk,1,Russian Federation,PAUL,311,TROUT,2,20.97,3,8447,1,2005-07-31 21:56:10.000,Mike,1,Hillyer,3,0.6667,2005-07-31,amount_over_3x
-4.99,1.0,Lincoln,1,United States,ASHLEY,63,RICHARDSON,1,16.97,3,1714,2,2005-07-10 16:34:48.000,Jon,2,Stephens,3,0.6667,2005-07-10,amount_over_3x
-4.99,1.0,NDjamna,1,Chad,JAVIER,535,ELROD,1,16.97,3,14405,2,2005-07-08 21:30:53.000,Jon,2,Stephens,3,0.6667,2005-07-08,amount_over_3x
-4.99,1.13,Gatineau,1,Canada,DERRICK,476,BOURQUE,1,21.97,3,12880,1,2005-08-01 23:07:56.000,Mike,1,Hillyer,3,1.0,2005-08-01,amount_over_3x
-4.99,1.13,Sogamoso,1,Colombia,SAM,490,MCDUFFIE,1,16.97,3,13222,2,2005-07-12 22:40:48.000,Jon,2,Stephens,3,0.3333,2005-07-12,amount_over_3x
-4.99,1.14,Touliu,1,Taiwan,AMBER,139,DIXON,1,21.95,5,3778,1,2005-08-22 16:59:05.000,Mike,1,Hillyer,5,0.4,2005-08-22,amount_over_3x_and_count_at_least_5
-4.99,1.2,Baybay,1,Philippines,KATHY,71,JAMES,1,18.97,3,1920,2,2005-07-10 15:46:50.000,Jon,2,Stephens,3,0.3333,2005-07-10,amount_over_3x
-4.99,1.25,Adoni,3,India,ADAM,367,GOOCH,1,14.97,3,9935,2,2005-08-18 08:07:25.000,Jon,2,Stephens,3,0.3333,2005-08-18,amount_over_3x
-4.99,1.33,Bellevue,1,United States,WILMA,212,RICHARDS,2,21.97,3,5759,2,2005-07-08 21:32:17.000,Jon,2,Stephens,3,1.0,2005-07-08,amount_over_3x
-4.99,1.33,Gandhinagar,1,India,EDITH,117,MCDONALD,1,17.96,4,3163,1,2005-08-18 17:24:02.000,Mike,1,Hillyer,4,0.5,2005-08-18,amount_over_3x
-4.99,1.38,El Monte,2,United States,JACOB,420,LANCE,1,20.97,3,11367,1,2005-08-01 20:36:29.000,Mike,1,Hillyer,3,0.3333,2005-08-01,amount_over_3x
-4.99,1.4,Dundee,1,United Kingdom,APRIL,142,BURNS,1,16.97,3,3845,1,2005-07-30 21:04:59.000,Mike,1,Hillyer,3,0.6667,2005-07-30,amount_over_3x
-4.99,1.43,Rockford,2,United States,BILL,457,GAVIN,2,17.98,2,12354,1,2005-08-21 09:25:13.000,Mike,1,Hillyer,2,1.0,2005-08-21,amount_over_3x
-4.99,1.5,Hodeida,1,Yemen,GORDON,470,ALLARD,1,15.97,3,12696,1,2005-07-06 20:32:27.000,Mike,1,Hillyer,3,0.6667,2005-07-06,amount_over_3x
-5.1,1.33,Imus,1,Philippines,JOE,349,GILLILAND,2,18.97,3,9453,2,2005-08-02 22:46:47.000,Jon,2,Stephens,3,0.3333,2005-08-02,amount_over_3x
-5.1,1.44,Greensboro,3,United States,VERONICA,158,STONE,1,15.96,4,4314,1,2005-08-02 19:47:56.000,Mike,1,Hillyer,4,0.75,2005-08-02,amount_over_3x
-5.11,1.25,Sumy,1,Ukraine,BRITTANY,187,RILEY,2,15.98,2,5086,2,2005-07-10 16:39:24.000,Jon,2,Stephens,2,1.0,2005-07-10,amount_over_3x
-5.13,1.29,Iwakuni,2,Japan,TERESA,54,ROGERS,1,15.97,3,1502,1,2005-08-02 10:55:14.000,Mike,1,Hillyer,3,0.6667,2005-08-02,amount_over_3x
-5.13,1.43,Atlixco,1,Mexico,SARA,84,PERRY,2,18.97,3,2284,2,2005-07-11 23:27:52.000,Jon,2,Stephens,3,0.6667,2005-07-11,amount_over_3x
-5.15,1.5,Atinsk,2,Russian Federation,JIMMY,397,SCHRADER,1,14.94,6,10765,1,2005-08-18 23:29:25.000,Mike,1,Hillyer,6,0.1667,2005-08-18,count_at_least_5
-5.15,1.5,Huixquilucan,1,Mexico,TRACY,108,COLE,1,15.97,3,2921,1,2005-07-29 23:10:28.000,Mike,1,Hillyer,3,0.3333,2005-07-29,amount_over_3x
-5.15,1.67,Ikerre,1,Nigeria,ELSIE,198,KELLEY,2,22.94,6,5384,2,2005-08-17 18:19:44.000,Jon,2,Stephens,6,0.3333,2005-08-17,amount_over_3x_and_count_at_least_5
-5.16,1.17,Salamanca,1,Mexico,PRISCILLA,273,LOWE,2,15.98,2,7377,2,2005-07-09 21:28:07.000,Jon,2,Stephens,2,1.0,2005-07-09,amount_over_3x
-5.16,1.17,So Bernardo do Campo,2,Brazil,CODY,544,NOLEN,2,18.97,3,14635,2,2005-08-21 19:31:09.000,Jon,2,Stephens,3,0.3333,2005-08-21,amount_over_3x
-5.16,1.17,Tabriz,1,Iran,DIANNE,279,SHELTON,2,18.96,4,7575,1,2005-08-19 16:14:41.000,Mike,1,Hillyer,4,0.25,2005-08-19,amount_over_3x
-5.18,2.0,Cavite,3,Philippines,CRAIG,388,MORRELL,2,17.96,4,10523,1,2005-08-18 22:31:21.000,Mike,1,Hillyer,4,0.75,2005-08-18,amount_over_3x
-5.21,1.33,Dos Quebradas,1,Colombia,SYLVIA,120,ORTIZ,2,19.97,3,3251,2,2005-08-21 12:48:48.000,Jon,2,Stephens,3,0.6667,2005-08-21,amount_over_3x
-5.21,1.56,Peoria,1,United States,CAROLE,275,BARNETT,2,19.96,4,7464,2,2005-08-21 22:12:45.000,Jon,2,Stephens,4,0.5,2005-08-21,amount_over_3x
-5.21,1.56,Pjatigorsk,2,Russian Federation,HECTOR,487,POINDEXTER,2,16.97,3,13157,1,2005-08-01 23:24:53.000,Mike,1,Hillyer,3,0.6667,2005-08-01,amount_over_3x
-5.23,1.75,Uruapan,1,Mexico,ALEX,454,GRESHAM,2,27.96,4,12275,1,2005-08-20 12:53:12.000,Mike,1,Hillyer,4,0.75,2005-08-20,amount_over_3x
-5.24,1.0,Callao,1,Peru,DAVID,304,ROYAL,2,15.98,2,8251,2,2005-07-08 17:07:11.000,Jon,2,Stephens,2,1.0,2005-07-08,amount_over_3x
-5.24,1.25,Boa Vista,1,Brazil,HAROLD,342,MARTINO,1,19.97,3,9245,2,2005-07-12 16:33:28.000,Jon,2,Stephens,3,0.6667,2005-07-12,amount_over_3x
-5.24,1.25,Loja,1,Ecuador,TRACY,589,HERRMANN,1,17.98,2,15770,1,2005-06-19 13:57:08.000,Mike,1,Hillyer,2,1.0,2005-06-19,amount_over_3x
-5.24,1.25,al-Ayn,1,United Arab Emirates,LILLIAN,98,GRIFFIN,1,16.97,3,2653,2,2005-07-29 22:14:04.000,Jon,2,Stephens,3,0.6667,2005-07-29,amount_over_3x
-5.24,1.38,Olomouc,1,Czech Republic,JENNIE,265,TERRY,2,18.97,3,7179,2,2005-08-21 16:03:27.000,Jon,2,Stephens,3,0.6667,2005-08-21,amount_over_3x
-5.32,1.0,Halisahar,1,India,LENA,259,JENSEN,2,18.97,3,6985,2,2005-06-16 21:11:00.000,Jon,2,Stephens,3,1.0,2005-06-16,amount_over_3x
-5.32,1.0,Memphis,1,United States,ANA,181,BRADLEY,2,15.98,2,4926,1,2005-07-29 13:03:31.000,Mike,1,Hillyer,2,1.0,2005-07-29,amount_over_3x
-5.32,1.11,Dayton,3,United States,SHELLY,294,WATTS,2,20.95,5,7970,2,2005-08-01 15:45:11.000,Jon,2,Stephens,5,0.6,2005-08-01,amount_over_3x_and_count_at_least_5
-5.32,1.11,Firozabad,3,India,LAURIE,192,LAWRENCE,1,24.96,4,5216,2,2005-08-21 20:43:21.000,Jon,2,Stephens,4,0.75,2005-08-21,amount_over_3x
-5.32,1.17,Halisahar,1,India,LENA,259,JENSEN,2,21.97,3,6996,1,2005-07-30 21:48:44.000,Mike,1,Hillyer,3,1.0,2005-07-30,amount_over_3x
-5.32,1.17,Parbhani,2,India,JOHN,300,FARNSWORTH,1,18.97,3,8150,1,2005-07-28 23:31:05.000,Mike,1,Hillyer,3,0.6667,2005-07-28,amount_over_3x
-5.32,1.5,Batna,1,Algeria,MARIO,441,CHEATHAM,1,18.95,5,11903,2,2005-07-29 13:46:14.000,Jon,2,Stephens,5,0.6,2005-07-29,amount_over_3x_and_count_at_least_5
-5.32,1.5,Mwene-Ditu,1,"Congo, The Democratic Republic of the",AARON,375,SELBY,2,18.97,3,10169,2,2005-08-02 05:06:17.000,Jon,2,Stephens,3,1.0,2005-08-02,amount_over_3x
-5.41,1.86,Shanwei,2,China,KYLE,424,SPURLOCK,2,20.97,3,11469,1,2005-07-31 18:13:22.000,Mike,1,Hillyer,3,0.6667,2005-07-31,amount_over_3x
-5.49,1.0,Bamenda,1,Cameroon,ALBERT,352,CROUSE,1,22.96,4,9521,1,2005-07-27 23:06:41.000,Mike,1,Hillyer,4,0.5,2005-07-27,amount_over_3x
-5.49,1.17,Ashgabat,1,Turkmenistan,JEANNE,200,LAWSON,2,16.98,2,5439,1,2005-08-20 21:31:52.000,Mike,1,Hillyer,2,1.0,2005-08-20,amount_over_3x
-5.49,1.17,Ocumare del Tuy,1,Venezuela,YVONNE,174,WATKINS,2,16.97,3,4733,1,2005-08-01 13:02:58.000,Mike,1,Hillyer,3,0.3333,2005-08-01,amount_over_3x
-5.49,1.17,Vila Velha,1,Brazil,DEBRA,39,NELSON,1,23.97,3,1077,2,2005-07-08 12:54:15.000,Jon,2,Stephens,3,1.0,2005-07-08,amount_over_3x
-5.49,1.33,Blumenau,1,Brazil,TERRI,206,VASQUEZ,1,18.97,3,5590,2,2005-08-19 17:26:55.000,Jon,2,Stephens,3,1.0,2005-08-19,amount_over_3x
-5.49,1.5,Coacalco de Berriozbal,2,Mexico,STELLA,247,MORENO,1,17.97,3,6695,1,2005-08-18 12:48:45.000,Mike,1,Hillyer,3,0.3333,2005-08-18,amount_over_3x
-5.49,1.5,Graz,1,Austria,AUDREY,173,RAY,1,16.97,3,4707,2,2005-07-29 22:33:34.000,Jon,2,Stephens,3,0.6667,2005-07-29,amount_over_3x
-5.49,1.5,Tabriz,1,Iran,DIANNE,279,SHELTON,2,20.97,3,7563,1,2005-07-09 18:15:32.000,Mike,1,Hillyer,3,0.6667,2005-07-09,amount_over_3x
-5.54,1.44,Mukateve,1,Ukraine,MONICA,131,HICKS,2,18.96,4,3555,1,2005-08-19 22:26:26.000,Mike,1,Hillyer,4,0.5,2005-08-19,amount_over_3x
-5.58,1.6,Tangail,1,Bangladesh,MICHELLE,21,CLARK,1,32.96,4,574,2,2005-08-20 23:24:07.000,Jon,2,Stephens,4,1.0,2005-08-20,amount_over_3x
-5.59,1.3,Usak,1,Turkey,ROSEMARY,204,SCHMIDT,1,17.97,3,5550,2,2005-08-22 23:48:56.000,Jon,2,Stephens,3,0.3333,2005-08-22,amount_over_3x
-5.59,1.4,Yangor,1,Nauru,DUANE,513,TUBBS,2,25.96,4,13821,1,2005-07-29 21:15:38.000,Mike,1,Hillyer,4,0.5,2005-07-29,amount_over_3x
-5.61,1.25,Santiago de los Caballeros,1,Dominican Republic,MYRTLE,258,FLEMING,1,20.95,5,6973,1,2005-08-01 06:52:50.000,Mike,1,Hillyer,5,0.8,2005-08-01,amount_over_3x_and_count_at_least_5
-5.61,1.75,Botshabelo,1,South Africa,ESTHER,132,CRAWFORD,2,22.96,4,3581,1,2005-08-01 15:44:20.000,Mike,1,Hillyer,4,1.0,2005-08-01,amount_over_3x
-5.65,1.33,Hidalgo,1,Mexico,DANIELLE,150,DANIELS,2,21.95,5,4103,1,2005-08-19 21:23:19.000,Mike,1,Hillyer,5,0.8,2005-08-19,amount_over_3x_and_count_at_least_5
-5.65,1.33,Kimberley,1,South Africa,RUTH,19,MARTINEZ,1,17.98,2,504,1,2005-07-31 23:40:35.000,Mike,1,Hillyer,2,1.0,2005-07-31,amount_over_3x
-5.65,1.33,Molodetno,1,Belarus,CLARA,144,SHAW,1,17.97,3,3891,2,2005-07-09 20:16:51.000,Jon,2,Stephens,3,0.6667,2005-07-09,amount_over_3x
-5.65,1.33,Naju,1,South Korea,TANYA,237,GILBERT,1,16.97,3,6399,2,2005-07-28 18:49:43.000,Jon,2,Stephens,3,0.3333,2005-07-28,amount_over_3x
-5.74,1.13,Plock,1,Poland,JOHNNIE,571,CHISHOLM,2,17.98,2,15300,1,2005-07-12 16:37:28.000,Mike,1,Hillyer,2,1.0,2005-07-12,amount_over_3x
-5.74,1.25,Chungho,1,Taiwan,BRAD,517,MCCURDY,2,17.96,4,13923,2,2005-07-07 20:13:58.000,Jon,2,Stephens,4,0.0,2005-07-07,amount_over_3x
-5.74,1.25,Livorno,1,Italy,DARREN,541,WINDHAM,2,18.95,5,14575,1,2005-08-22 23:56:37.000,Mike,1,Hillyer,5,0.8,2005-08-22,amount_over_3x_and_count_at_least_5
-5.78,1.8,Poos de Caldas,2,Brazil,MAXINE,254,SILVA,2,19.96,4,6853,2,2005-07-10 21:59:32.000,Jon,2,Stephens,4,0.5,2005-07-10,amount_over_3x
-5.78,2.2,Liaocheng,1,China,CARRIE,129,PORTER,1,26.96,4,3490,2,2005-07-31 23:24:31.000,Jon,2,Stephens,4,1.0,2005-07-31,amount_over_3x
-5.82,1.5,Kurgan,2,Russian Federation,RANDY,376,GAITHER,1,18.97,3,10187,2,2005-07-12 17:33:53.000,Jon,2,Stephens,3,0.6667,2005-07-12,amount_over_3x
-5.84,1.43,Antofagasta,1,Chile,JANET,45,PHILLIPS,1,27.95,5,1249,2,2005-08-02 22:35:15.000,Jon,2,Stephens,5,0.8,2005-08-02,amount_over_3x_and_count_at_least_5
-5.84,1.43,Shimonoseki,1,Japan,ANGELA,29,HERNANDEZ,2,21.96,4,808,2,2005-08-18 17:16:07.000,Jon,2,Stephens,4,0.5,2005-08-18,amount_over_3x
-5.84,1.57,Mannheim,1,Germany,ALMA,196,AUSTIN,1,22.97,3,5306,2,2005-07-31 21:29:28.000,Jon,2,Stephens,3,1.0,2005-07-31,amount_over_3x
-5.98,1.67,Korla,1,China,FELICIA,283,SUTTON,1,17.96,4,7660,2,2005-07-06 09:01:56.000,Jon,2,Stephens,4,0.25,2005-07-06,amount_over_3x
-5.98,1.71,Shaoguan,2,China,CLYDE,485,TOBIAS,1,17.96,4,13103,2,2005-07-30 12:20:59.000,Jon,2,Stephens,4,0.75,2005-07-30,amount_over_3x
-5.98,1.75,Tanshui,1,Taiwan,CLIFTON,577,MALCOLM,2,21.97,3,15471,1,2005-07-28 17:10:02.000,Mike,1,Hillyer,3,1.0,2005-07-28,amount_over_3x
-5.98,2.0,Pereira,1,Colombia,STACY,180,CUNNINGHAM,2,17.98,2,4895,1,2005-07-08 21:55:25.000,Mike,1,Hillyer,2,1.0,2005-07-08,amount_over_3x
-5.99,1.0,Emmen,1,Netherlands,DUSTIN,474,GILLETTE,2,12.95,5,12822,2,2005-07-08 19:53:22.000,Jon,2,Stephens,5,0.4,2005-07-08,count_at_least_5
-5.99,1.2,Lengshuijiang,1,China,MARGIE,267,WADE,1,22.96,4,7218,2,2005-06-19 16:55:59.000,Jon,2,Stephens,4,0.75,2005-06-19,amount_over_3x
-5.99,1.2,Southampton,1,United Kingdom,MARSHALL,583,THORN,1,17.97,3,15621,2,2005-07-06 23:33:41.000,Jon,2,Stephens,3,0.3333,2005-07-06,amount_over_3x
-5.99,1.38,Ilorin,1,Nigeria,GLADYS,103,HAMILTON,1,25.95,5,2799,2,2005-08-23 22:43:07.000,Jon,2,Stephens,5,0.8,2005-08-23,amount_over_3x_and_count_at_least_5
-5.99,1.4,Avellaneda,1,Argentina,JORDAN,560,ARCHULETA,1,17.97,3,15010,1,2005-08-01 19:28:01.000,Mike,1,Hillyer,3,0.6667,2005-08-01,amount_over_3x
-5.99,1.43,Ivanovo,1,Russian Federation,CONNIE,106,WALLACE,1,20.97,3,2866,1,2005-08-01 09:01:40.000,Mike,1,Hillyer,3,1.0,2005-08-01,amount_over_3x
-6.13,1.71,Saint-Denis,1,Runion,ELEANOR,148,HUNT,1,19.98,2,4026,2,2005-07-12 16:37:55.000,Jon,2,Stephens,2,1.0,2005-07-12,amount_over_3x
-6.19,1.4,Kalisz,1,Poland,LEAH,270,CURTIS,1,18.97,3,7319,2,2005-08-01 16:08:52.000,Jon,2,Stephens,3,0.6667,2005-08-01,amount_over_3x
-6.24,1.25,Salamanca,1,Mexico,PRISCILLA,273,LOWE,2,19.96,4,7382,1,2005-07-12 13:35:02.000,Mike,1,Hillyer,4,0.75,2005-07-12,amount_over_3x
-6.32,1.5,Zanzibar,1,Tanzania,CHARLENE,220,ALVAREZ,2,18.98,2,5961,2,2005-07-30 22:20:29.000,Jon,2,Stephens,2,1.0,2005-07-30,amount_over_3x
-6.42,1.14,Simferopol,1,Ukraine,KATHRYN,82,COLEMAN,1,19.97,3,2235,1,2005-07-30 21:54:22.000,Mike,1,Hillyer,3,1.0,2005-07-30,amount_over_3x
-6.43,1.33,Omiya,1,Japan,STANLEY,404,SCROGGINS,2,27.95,5,10940,2,2005-08-22 19:28:02.000,Jon,2,Stephens,5,0.4,2005-08-22,amount_over_3x_and_count_at_least_5
-6.48,1.63,Owo,1,Nigeria,TRACEY,280,BARRETT,2,20.97,3,7605,1,2005-08-19 19:40:37.000,Mike,1,Hillyer,3,0.6667,2005-08-19,amount_over_3x
-6.49,1.2,Songkhla,1,Thailand,JACQUELINE,86,LONG,2,20.97,3,2347,2,2005-08-01 13:58:47.000,Jon,2,Stephens,3,0.6667,2005-08-01,amount_over_3x
-6.49,1.5,Funafuti,1,Tuvalu,DAWN,105,SULLIVAN,1,22.96,4,2840,2,2005-07-30 12:56:44.000,Jon,2,Stephens,4,0.75,2005-07-30,amount_over_3x
-6.56,1.57,Qomsheh,1,Iran,TOMMY,459,COLLAZO,1,20.98,2,12397,2,2005-07-29 11:19:59.000,Jon,2,Stephens,2,1.0,2005-07-29,amount_over_3x
-6.56,1.57,Zhezqazghan,1,Kazakstan,BYRON,573,BOX,1,24.96,4,15356,2,2005-07-31 16:42:16.000,Jon,2,Stephens,4,0.5,2005-07-31,amount_over_3x
-6.57,1.33,Siliguri (Shiliguri),4,India,BRETT,502,CORNWELL,1,12.95,5,13538,1,2005-08-02 20:14:23.000,Mike,1,Hillyer,5,0.2,2005-08-02,count_at_least_5
-6.65,1.22,Kragujevac,1,Yugoslavia,MARIA,7,MILLER,1,22.96,4,198,2,2005-08-01 15:52:00.000,Jon,2,Stephens,4,0.75,2005-08-01,amount_over_3x
-6.65,1.5,Saint-Denis,1,Runion,ELEANOR,148,HUNT,1,20.96,4,4030,2,2005-07-28 19:10:03.000,Jon,2,Stephens,4,0.25,2005-07-28,amount_over_3x
-6.65,1.67,Cuernavaca,1,Mexico,ISAAC,575,OGLESBY,2,22.97,3,15417,2,2005-08-18 23:29:00.000,Jon,2,Stephens,3,1.0,2005-08-18,amount_over_3x
-6.74,1.0,Novi Sad,1,Yugoslavia,MAX,553,PITT,1,22.95,5,14836,2,2005-07-06 21:21:34.000,Jon,2,Stephens,5,0.2,2005-07-06,amount_over_3x_and_count_at_least_5
-6.74,1.25,Sumy,1,Ukraine,BRITTANY,187,RILEY,2,26.97,3,5096,1,2005-08-18 14:04:41.000,Mike,1,Hillyer,3,1.0,2005-08-18,amount_over_3x
-6.74,1.25,Zhoushan,1,China,GUY,550,BROWNLEE,2,20.98,2,14754,1,2005-06-21 05:18:27.000,Mike,1,Hillyer,2,1.0,2005-06-21,amount_over_3x
-6.74,1.5,Omdurman,1,Sudan,DIANE,50,COLLINS,1,26.95,5,1382,2,2005-07-31 23:57:43.000,Jon,2,Stephens,5,0.4,2005-07-31,amount_over_3x_and_count_at_least_5
-6.84,1.71,Charlotte Amalie,1,"Virgin Islands, U.S.",NATHAN,406,RUNYON,1,11.95,5,10997,2,2005-07-30 23:40:22.000,Jon,2,Stephens,5,0.2,2005-07-30,count_at_least_5
-6.85,1.14,Maikop,1,Russian Federation,ARTHUR,346,SIMPKINS,1,22.96,4,9352,2,2005-07-29 18:25:03.000,Jon,2,Stephens,4,0.75,2005-07-29,amount_over_3x
-6.87,1.78,Urawa,1,Japan,JOANNE,147,ROBERTSON,2,20.97,3,4011,2,2005-08-23 20:53:20.000,Jon,2,Stephens,3,0.6667,2005-08-23,amount_over_3x
-6.98,1.75,Tabora,1,Tanzania,YOLANDA,190,WEAVER,2,24.96,4,5166,2,2005-08-02 15:56:51.000,Jon,2,Stephens,4,0.75,2005-08-02,amount_over_3x
-6.99,1.33,San Juan Bautista Tuxtepec,1,Mexico,FRANCIS,425,SIKES,2,27.96,4,11488,1,2005-07-08 22:35:30.000,Mike,1,Hillyer,4,1.0,2005-07-08,amount_over_3x
-7.15,1.67,Nakhon Sawan,1,Thailand,SHAWN,390,HEATON,1,27.94,6,10584,2,2005-08-20 15:52:52.000,Jon,2,Stephens,6,0.6667,2005-08-20,amount_over_3x_and_count_at_least_5
-7.18,1.6,Davao,1,Philippines,SHIRLEY,27,ALLEN,2,21.97,3,745,2,2005-08-17 19:52:43.000,Jon,2,Stephens,3,1.0,2005-08-17,amount_over_3x
-7.23,1.63,Lhokseumawe,1,Indonesia,JORGE,473,OLIVARES,2,19.95,5,12803,2,2005-08-02 19:51:53.000,Jon,2,Stephens,5,0.2,2005-08-02,count_at_least_5
-7.27,1.71,Baybay,1,Philippines,KATHY,71,JAMES,1,18.95,5,1931,1,2005-07-29 20:47:27.000,Mike,1,Hillyer,5,0.6,2005-07-29,count_at_least_5
-7.32,1.67,Elista,1,Russian Federation,DONNA,17,THOMPSON,1,21.96,4,461,1,2005-07-30 23:43:32.000,Mike,1,Hillyer,4,0.5,2005-07-30,amount_over_3x
-7.48,1.7,Robamba,1,Ecuador,RAMON,494,CHOATE,2,26.96,4,13329,2,2005-08-22 19:28:04.000,Jon,2,Stephens,4,0.75,2005-08-22,amount_over_3x
-7.48,1.75,Belm,1,Brazil,NICHOLAS,362,BARFIELD,1,25.96,4,9803,1,2005-08-21 23:28:58.000,Mike,1,Hillyer,4,0.5,2005-08-21,amount_over_3x
-7.58,2.4,Bucuresti,1,Romania,KEN,563,PREWITT,2,22.96,4,15092,2,2005-07-29 21:47:40.000,Jon,2,Stephens,4,1.0,2005-07-29,amount_over_3x
-7.61,1.5,Santa Rosa,1,Philippines,ARNOLD,522,HAVENS,2,29.95,5,14064,1,2005-07-30 20:44:10.000,Mike,1,Hillyer,5,0.6,2005-07-30,amount_over_3x_and_count_at_least_5
-7.84,1.57,Bijapur,1,India,TIM,468,CARY,1,32.95,5,12645,1,2005-08-21 18:03:51.000,Mike,1,Hillyer,5,0.6,2005-08-21,amount_over_3x_and_count_at_least_5
-7.98,1.63,Hodeida,1,Yemen,GORDON,470,ALLARD,1,23.97,3,12718,1,2005-08-18 22:37:39.000,Mike,1,Hillyer,3,1.0,2005-08-18,amount_over_3x
-7.98,1.8,Ruse,1,Bulgaria,TYRONE,540,ASHER,1,24.96,4,14546,2,2005-08-02 20:10:01.000,Jon,2,Stephens,4,0.75,2005-08-02,amount_over_3x
-7.98,2.0,Etawah,2,India,JOSEPHINE,121,GOMEZ,1,25.96,4,3276,1,2005-08-21 12:52:54.000,Mike,1,Hillyer,4,1.0,2005-08-21,amount_over_3x
-7.99,1.4,Goinia,1,Brazil,TINA,92,SIMMONS,2,23.96,4,2516,2,2005-07-10 21:32:14.000,Jon,2,Stephens,4,0.75,2005-07-10,amount_over_3x
-8.1,1.33,Memphis,1,United States,ANA,181,BRADLEY,2,26.95,5,4935,1,2005-08-01 20:53:45.000,Mike,1,Hillyer,5,0.8,2005-08-01,amount_over_3x_and_count_at_least_5
-8.18,1.6,NDjamna,1,Chad,JAVIER,535,ELROD,1,11.95,5,14421,2,2005-08-18 22:32:39.000,Jon,2,Stephens,5,0.4,2005-08-18,count_at_least_5
-8.23,1.88,Changhwa,1,Taiwan,TAMMY,75,SANDERS,2,14.95,5,2057,1,2005-08-18 19:10:41.000,Mike,1,Hillyer,5,0.6,2005-08-18,count_at_least_5
-8.32,1.83,Nuuk,1,Greenland,GERTRUDE,207,CASTILLO,1,25.96,4,5628,2,2005-08-20 18:02:41.000,Jon,2,Stephens,4,0.75,2005-08-20,amount_over_3x
-8.38,2.0,Fengshan,1,Taiwan,MORRIS,576,MCCARTER,2,21.95,5,15446,1,2005-07-31 17:41:05.000,Mike,1,Hillyer,5,0.6,2005-07-31,count_at_least_5
-8.39,1.4,Citt del Vaticano,1,Holy See (Vatican City State),JESSICA,26,HALL,2,20.95,5,698,1,2005-07-07 22:39:02.000,Mike,1,Hillyer,5,0.6,2005-07-07,count_at_least_5
-8.49,1.5,Lincoln,2,United States,ASHLEY,63,RICHARDSON,1,13.95,5,1723,2,2005-07-31 22:19:16.000,Jon,2,Stephens,5,0.4,2005-07-31,count_at_least_5
-8.99,1.5,Beira,1,Mozambique,MARSHA,257,DOUGLAS,2,18.95,5,6934,2,2005-07-27 21:01:16.000,Jon,2,Stephens,5,0.4,2005-07-27,count_at_least_5
-9.23,2.25,Tokat,1,Turkey,CASEY,566,MENA,1,17.95,5,15174,1,2005-07-29 21:10:37.000,Mike,1,Hillyer,5,0.8,2005-07-29,count_at_least_5
-9.31,2.5,Liaocheng,4,China,CARRIE,129,PORTER,1,14.95,5,3495,2,2005-08-01 22:48:57.000,Jon,2,Stephens,5,0.6,2005-08-01,count_at_least_5
-9.69,2.29,Beira,1,Mozambique,MARSHA,257,DOUGLAS,2,20.95,5,6950,1,2005-08-19 21:52:51.000,Mike,1,Hillyer,5,1.0,2005-08-19,count_at_least_5
+customer_id,customer_first_name,customer_last_name,country_name,city_name,payment_day,daily_payment_count,daily_payment_amount,avg_30d_payment_count,avg_30d_payment_amount,customer_store_id,last_payment_staff_store_id,last_staff_id,last_staff_first_name,last_staff_last_name,last_payment_id,last_payment_ts,linked_rental_count,overdue_return_share,country_day_amount_rank,suspicious_reason
+119,SHERRY,MARSHALL,Egypt,Shubra al-Khayma,2005-05-26,1,5.99,1.0,0.99,1,1,1,Mike,Hillyer,3189,2005-05-26 11:51:09.000,1,1.0,1,amount_over_3x
+282,JENNY,CASTRO,Puerto Rico,Ponce,2005-05-26,1,6.99,1.0,1.99,2,2,2,Jon,Stephens,7626,2005-05-26 18:56:26.000,1,1.0,1,amount_over_3x
+48,ANN,EVANS,Russian Federation,Niznekamsk,2005-05-26,1,2.99,1.0,0.99,1,1,1,Mike,Hillyer,1313,2005-05-26 20:48:48.000,1,0.0,2,amount_over_3x
+237,TANYA,GILBERT,South Korea,Naju,2005-05-26,1,4.99,1.0,0.99,1,1,1,Mike,Hillyer,6387,2005-05-26 04:49:17.000,1,0.0,1,amount_over_3x
+82,KATHRYN,COLEMAN,Ukraine,Simferopol,2005-05-26,1,8.99,1.0,2.99,1,2,2,Jon,Stephens,2219,2005-05-26 19:47:49.000,1,1.0,1,amount_over_3x
+472,GREG,ROBINS,Vietnam,Nam Dinh,2005-05-26,1,2.99,1.0,0.99,1,2,2,Jon,Stephens,12750,2005-05-26 14:19:09.000,1,0.0,1,amount_over_3x
+176,JUNE,CARROLL,Algeria,Skikda,2005-05-27,1,6.99,1.0,0.99,1,2,2,Jon,Stephens,4764,2005-05-27 09:34:39.000,1,1.0,1,amount_over_3x
+381,BOBBY,BOUDREAU,Anguilla,South Hill,2005-05-27,1,2.99,1.0,0.99,2,2,2,Jon,Stephens,10308,2005-05-27 13:46:46.000,1,0.0,1,amount_over_3x
+272,KAY,CALDWELL,China,Yantai,2005-05-27,1,6.99,1.0,0.99,1,1,1,Mike,Hillyer,7348,2005-05-27 13:32:39.000,1,1.0,4,amount_over_3x
+412,ALLEN,BUTTERFIELD,India,Hoshiarpur,2005-05-27,1,4.99,1.0,0.99,2,1,1,Mike,Hillyer,11150,2005-05-27 02:52:21.000,1,0.0,5,amount_over_3x
+446,THEODORE,CULP,India,Uluberia,2005-05-27,1,4.99,1.0,0.99,2,1,1,Mike,Hillyer,12027,2005-05-27 06:15:33.000,1,0.0,5,amount_over_3x
+547,KURT,EMMONS,Japan,Kanazawa,2005-05-27,1,8.99,1.0,0.99,1,2,2,Jon,Stephens,14687,2005-05-27 18:35:20.000,1,1.0,1,amount_over_3x
+503,ANGEL,BARCLAY,Japan,Ueda,2005-05-27,1,5.99,1.0,1.99,1,1,1,Mike,Hillyer,13546,2005-05-27 06:03:39.000,1,1.0,3,amount_over_3x
+451,JIM,REA,Mexico,El Fuerte,2005-05-27,1,2.99,1.0,0.99,1,2,2,Jon,Stephens,12161,2005-05-27 01:29:31.000,1,0.0,6,amount_over_3x
+498,GENE,SANBORN,Oman,Salala,2005-05-27,1,8.99,1.0,2.99,1,1,1,Mike,Hillyer,13406,2005-05-27 16:21:26.000,1,1.0,1,amount_over_3x
+204,ROSEMARY,SCHMIDT,Turkey,Usak,2005-05-27,1,4.99,1.0,0.99,1,2,2,Jon,Stephens,5517,2005-05-27 12:48:38.000,1,0.0,1,amount_over_3x
+14,BETTY,WHITE,United States,Citrus Heights,2005-05-27,1,9.99,1.0,0.99,2,1,1,Mike,Hillyer,359,2005-05-27 04:34:41.000,1,1.0,1,amount_over_3x
+182,RENEE,LANE,United States,Compton,2005-05-27,1,3.99,1.0,0.99,1,2,2,Jon,Stephens,4949,2005-05-27 15:51:30.000,1,1.0,5,amount_over_3x
+528,CLAUDE,HERZOG,Angola,Benguela,2005-05-28,1,5.99,1.0,0.99,1,1,1,Mike,Hillyer,14207,2005-05-28 06:14:46.000,1,1.0,1,amount_over_3x
+535,JAVIER,ELROD,Chad,NDjamna,2005-05-28,1,2.99,1.0,0.99,1,2,2,Jon,Stephens,14397,2005-05-28 06:41:58.000,1,1.0,1,amount_over_3x
+442,LEROY,BUSTAMANTE,China,Tongliao,2005-05-28,2,12.98,1.0,0.99,1,1,1,Mike,Hillyer,11917,2005-05-28 17:37:50.000,2,1.0,1,amount_over_3x
+168,REGINA,BERRY,China,Jinchang,2005-05-28,1,4.99,1.0,0.99,1,1,1,Mike,Hillyer,4549,2005-05-28 00:07:50.000,1,1.0,8,amount_over_3x
+437,RANDALL,NEUMANN,Dominican Republic,La Romana,2005-05-28,2,10.98,1.0,2.99,2,1,1,Mike,Hillyer,11775,2005-05-28 21:48:51.000,2,0.5,1,amount_over_3x
+239,MINNIE,ROMERO,Indonesia,Ciomas,2005-05-28,2,11.98,1.0,3.99,2,1,1,Mike,Hillyer,6443,2005-05-28 17:47:58.000,2,0.5,1,amount_over_3x
+198,ELSIE,KELLEY,Nigeria,Ikerre,2005-05-28,2,7.98,1.0,0.99,2,2,2,Jon,Stephens,5358,2005-05-28 18:25:02.000,2,0.0,2,amount_over_3x
+157,DARLENE,ROSE,North Korea,Pyongyang,2005-05-28,1,4.99,1.0,0.99,2,1,1,Mike,Hillyer,4262,2005-05-28 18:49:12.000,1,0.0,1,amount_over_3x
+20,SHARON,ROBINSON,Pakistan,Mardan,2005-05-28,2,8.98,1.0,2.99,2,2,2,Jon,Stephens,516,2005-05-28 07:16:25.000,2,1.0,1,amount_over_3x
+597,FREDDIE,DUGGAN,Peru,Sullana,2005-05-28,1,8.99,1.0,2.99,1,2,2,Jon,Stephens,15985,2005-05-28 03:09:28.000,1,1.0,1,amount_over_3x
+469,WESLEY,BULL,Spain,Ourense (Orense),2005-05-28,2,12.98,1.0,0.99,2,2,2,Jon,Stephens,12652,2005-05-28 04:34:17.000,2,0.5,1,amount_over_3x
+269,CASSANDRA,WALTERS,United States,Salinas,2005-05-28,1,6.99,1.0,1.49,1,2,2,Jon,Stephens,7276,2005-05-28 23:15:48.000,1,1.0,3,amount_over_3x
+528,CLAUDE,HERZOG,Angola,Benguela,2005-05-29,2,9.98,1.0,2.66,1,2,2,Jon,Stephens,14209,2005-05-29 16:44:08.000,2,1.0,1,amount_over_3x
+383,MARTIN,BALES,Angola,Namibe,2005-05-29,1,8.99,1.0,0.99,1,1,1,Mike,Hillyer,10367,2005-05-29 11:47:02.000,1,1.0,2,amount_over_3x
+89,JULIA,FLORES,Argentina,La Plata,2005-05-29,1,5.99,1.0,1.99,1,1,1,Mike,Hillyer,2411,2005-05-29 08:30:36.000,1,1.0,1,amount_over_3x
+197,SUE,PETERS,China,Changzhou,2005-05-29,2,6.98,1.0,2.24,2,2,2,Jon,Stephens,5321,2005-05-29 07:00:59.000,2,0.5,2,amount_over_3x
+207,GERTRUDE,CASTILLO,Greenland,Nuuk,2005-05-29,1,6.99,1.5,1.49,1,2,2,Jon,Stephens,5599,2005-05-29 21:56:15.000,1,1.0,1,amount_over_3x
+300,JOHN,FARNSWORTH,India,Parbhani,2005-05-29,1,3.99,1.0,0.99,1,1,1,Mike,Hillyer,8137,2005-05-29 14:18:32.000,1,1.0,4,amount_over_3x
+439,ALEXANDER,FENNELL,Italy,Bergamo,2005-05-29,1,9.99,1.0,1.99,2,1,1,Mike,Hillyer,11831,2005-05-29 15:17:28.000,1,1.0,1,amount_over_3x
+84,SARA,PERRY,Mexico,Atlixco,2005-05-29,2,11.98,1.0,0.99,2,1,1,Mike,Hillyer,2271,2005-05-29 23:24:30.000,2,0.5,1,amount_over_3x
+416,JEFFERY,PINSON,Pakistan,Dadu,2005-05-29,1,3.99,1.0,0.99,2,2,2,Jon,Stephens,11240,2005-05-29 05:53:23.000,1,1.0,2,amount_over_3x
+360,RALPH,MADRIGAL,Puerto Rico,Arecibo,2005-05-29,1,4.99,1.0,0.99,2,2,2,Jon,Stephens,9710,2005-05-29 14:07:58.000,1,0.0,1,amount_over_3x
+179,DANA,HART,Russian Federation,Kirovo-Tepetsk,2005-05-29,1,6.99,1.0,0.99,1,1,1,Mike,Hillyer,4863,2005-05-29 10:57:57.000,1,1.0,1,amount_over_3x
+480,COREY,HAUSER,Turkey,Gaziantep,2005-05-29,2,16.98,1.0,0.99,1,2,2,Jon,Stephens,12959,2005-05-29 21:36:00.000,2,1.0,1,amount_over_3x
+507,EDGAR,RHOADS,Turkey,Eskisehir,2005-05-29,1,4.99,1.0,0.99,2,2,2,Jon,Stephens,13662,2005-05-29 04:10:17.000,1,1.0,3,amount_over_3x
+545,JULIO,NOLAND,Ukraine,Konotop,2005-05-29,1,3.99,1.0,0.99,2,2,2,Jon,Stephens,14640,2005-05-29 04:22:41.000,1,1.0,1,amount_over_3x
+556,ARMANDO,GRUBER,United Kingdom,Southport,2005-05-29,1,5.99,1.0,0.99,2,2,2,Jon,Stephens,14891,2005-05-29 13:08:06.000,1,1.0,2,amount_over_3x
+112,ROSA,REYNOLDS,United States,Lancaster,2005-05-29,1,2.99,1.0,0.99,2,2,2,Jon,Stephens,3000,2005-05-29 02:26:27.000,1,1.0,5,amount_over_3x
+374,JEREMY,HURTADO,Brazil,Vitria de Santo Anto,2005-05-30,2,3.98,1.0,0.99,2,2,2,Jon,Stephens,10125,2005-05-30 11:35:06.000,2,0.0,3,amount_over_3x
+37,PAMELA,BAKER,China,Nanyang,2005-05-30,1,2.99,1.0,0.99,1,1,1,Mike,Hillyer,1012,2005-05-30 11:58:50.000,1,0.0,6,amount_over_3x
+297,SHERRI,RHODES,India,Ahmadnagar,2005-05-30,1,3.99,1.0,0.99,1,1,1,Mike,Hillyer,8048,2005-05-30 16:57:29.000,1,1.0,4,amount_over_3x
+524,JARED,ELY,Indonesia,Purwakarta,2005-05-30,1,4.99,1.0,0.99,1,1,1,Mike,Hillyer,14099,2005-05-30 22:15:24.000,1,0.0,2,amount_over_3x
+83,LOUISE,JENKINS,South Africa,Springs,2005-05-30,2,3.98,1.0,0.99,1,2,2,Jon,Stephens,2246,2005-05-30 23:11:51.000,2,0.0,2,amount_over_3x
+536,FERNANDO,CHURCHILL,South Korea,Tonghae,2005-05-30,1,6.99,1.0,0.99,2,1,1,Mike,Hillyer,14429,2005-05-30 12:32:39.000,1,1.0,2,amount_over_3x
+549,NELSON,CHRISTENSON,Spain,Santiago de Compostela,2005-05-30,2,8.98,1.0,0.99,1,1,1,Mike,Hillyer,14730,2005-05-30 10:30:38.000,2,0.5,1,amount_over_3x
+293,MAE,FLETCHER,Spain,Donostia-San Sebastin,2005-05-30,1,4.99,1.0,0.99,2,1,1,Mike,Hillyer,7923,2005-05-30 12:10:59.000,1,1.0,2,amount_over_3x
+593,RENE,MCALISTER,United States,Garden Grove,2005-05-30,1,8.99,1.0,2.99,2,1,1,Mike,Hillyer,15874,2005-05-30 23:29:22.000,1,1.0,3,amount_over_3x
+472,GREG,ROBINS,Vietnam,Nam Dinh,2005-05-30,1,4.99,1.0,1.66,1,2,2,Jon,Stephens,12752,2005-05-30 23:55:36.000,1,0.0,2,amount_over_3x
+303,WILLIAM,SATTERFIELD,Yemen,Sanaa,2005-05-30,1,2.99,1.0,0.99,2,1,1,Mike,Hillyer,8218,2005-05-30 05:01:30.000,1,1.0,1,amount_over_3x
+331,ERIC,ROBERT,Argentina,Santa F,2005-05-31,1,2.99,1.0,0.99,1,1,1,Mike,Hillyer,8933,2005-05-31 00:06:20.000,1,0.0,3,amount_over_3x
+251,VICKIE,BREWER,Germany,Halle/Saale,2005-05-31,3,11.97,1.5,3.99,2,2,2,Jon,Stephens,6762,2005-05-31 22:17:11.000,3,0.3333,1,amount_over_3x
+217,AGNES,BISHOP,India,Sambhal,2005-05-31,1,8.99,1.0,2.99,2,2,2,Jon,Stephens,5882,2005-05-31 19:42:02.000,1,1.0,1,amount_over_3x
+367,ADAM,GOOCH,India,Adoni,2005-05-31,1,2.99,1.0,0.99,1,1,1,Mike,Hillyer,9919,2005-05-31 11:38:29.000,1,0.0,5,amount_over_3x
+284,SONIA,GREGORY,Nigeria,Benin City,2005-05-31,1,6.99,1.0,0.99,1,1,1,Mike,Hillyer,7682,2005-05-31 20:13:45.000,1,1.0,1,amount_over_3x
+122,THELMA,MURRAY,Peru,Lima,2005-05-31,1,4.99,1.0,0.99,1,2,2,Jon,Stephens,3281,2005-05-31 19:15:11.000,1,0.0,1,amount_over_3x
+230,JOY,GEORGE,Romania,Botosani,2005-05-31,1,4.99,1.0,0.99,2,1,1,Mike,Hillyer,6187,2005-05-31 10:28:33.000,1,0.0,1,amount_over_3x
+312,MARK,RINEHART,Saudi Arabia,Tabuk,2005-05-31,2,11.98,1.0,2.99,2,2,2,Jon,Stephens,8458,2005-05-31 10:48:17.000,2,0.5,1,amount_over_3x
+109,EDNA,WEST,South Africa,Klerksdorp,2005-05-31,3,15.97,1.0,2.99,2,1,1,Mike,Hillyer,2939,2005-05-31 16:07:09.000,3,0.6667,1,amount_over_3x
+293,MAE,FLETCHER,Spain,Donostia-San Sebastin,2005-05-31,1,8.99,1.0,2.99,2,2,2,Jon,Stephens,7924,2005-05-31 04:53:40.000,1,1.0,1,amount_over_3x
+5,ELIZABETH,BROWN,Taiwan,Nantou,2005-05-31,2,8.98,1.0,0.99,1,1,1,Mike,Hillyer,110,2005-05-31 19:46:38.000,2,1.0,1,amount_over_3x
+124,SHEILA,WELLS,Turkey,Ktahya,2005-05-31,3,14.97,1.0,0.99,1,2,2,Jon,Stephens,3339,2005-05-31 18:13:57.000,3,0.6667,1,amount_over_3x
+310,DANIEL,CABRAL,Brazil,Ibirit,2005-06-14,1,4.99,1.0,0.99,2,2,2,Jon,Stephens,8413,2005-06-14 23:09:38.000,1,1.0,1,amount_over_3x
+89,JULIA,FLORES,Argentina,La Plata,2005-06-15,2,16.98,1.0,3.32,1,2,2,Jon,Stephens,2413,2005-06-15 16:45:07.000,2,1.0,1,amount_over_3x
+530,DARRYL,ASHCRAFT,Argentina,Ezeiza,2005-06-15,2,2.98,1.0,0.99,2,1,1,Mike,Hillyer,14261,2005-06-15 23:11:10.000,2,0.5,6,amount_over_3x
+544,CODY,NOLEN,Brazil,So Bernardo do Campo,2005-06-15,2,12.98,1.0,2.99,2,2,2,Jon,Stephens,14620,2005-06-15 18:30:46.000,2,1.0,2,amount_over_3x
+242,GLENDA,FRAZIER,China,Qinhuangdao,2005-06-15,3,14.97,1.0,3.99,1,1,1,Mike,Hillyer,6539,2005-06-15 21:21:58.000,3,0.6667,1,amount_over_3x
+491,RICK,MATTOX,Egypt,Mit Ghamr,2005-06-15,2,7.98,1.0,1.99,2,1,1,Mike,Hillyer,13236,2005-06-15 14:38:15.000,2,0.5,2,amount_over_3x
+403,MIKE,WAY,India,Valparai,2005-06-15,2,13.98,1.0,1.99,1,1,1,Mike,Hillyer,10879,2005-06-15 05:38:09.000,2,0.5,1,amount_over_3x
+186,HOLLY,FOX,India,Haldia,2005-06-15,2,7.98,1.0,1.49,2,1,1,Mike,Hillyer,5046,2005-06-15 09:36:19.000,2,0.5,5,amount_over_3x
+203,TARA,RYAN,Indonesia,Gorontalo,2005-06-15,1,4.99,1.0,0.99,1,1,1,Mike,Hillyer,5497,2005-06-15 03:24:14.000,1,0.0,3,amount_over_3x
+33,ANNA,HILL,Italy,Alessandria,2005-06-15,1,10.99,1.0,2.99,2,1,1,Mike,Hillyer,908,2005-06-15 09:46:33.000,1,1.0,1,amount_over_3x
+1,MARY,SMITH,Japan,Sasebo,2005-06-15,3,16.97,1.0,1.99,1,2,2,Jon,Stephens,5,2005-06-15 21:08:46.000,3,0.6667,1,amount_over_3x
+465,FLOYD,GANDY,Mexico,Zapopan,2005-06-15,1,2.99,1.0,0.99,1,1,1,Mike,Hillyer,12543,2005-06-15 12:12:42.000,1,1.0,7,amount_over_3x
+345,CARL,ARTIS,Paraguay,San Lorenzo,2005-06-15,2,5.98,1.0,0.99,1,1,1,Mike,Hillyer,9316,2005-06-15 20:05:49.000,2,0.0,2,amount_over_3x
+122,THELMA,MURRAY,Peru,Lima,2005-06-15,2,8.98,1.0,2.99,1,2,2,Jon,Stephens,3283,2005-06-15 18:55:34.000,2,1.0,1,amount_over_3x
+27,SHIRLEY,ALLEN,Philippines,Davao,2005-06-15,2,9.98,1.0,2.99,2,2,2,Jon,Stephens,721,2005-06-15 21:17:17.000,2,0.5,1,amount_over_3x
+100,ROBIN,HAYES,Russian Federation,Jelets,2005-06-15,3,11.97,1.0,0.99,1,1,1,Mike,Hillyer,2691,2005-06-15 18:17:28.000,3,0.6667,1,amount_over_3x
+127,ELAINE,STEVENS,Russian Federation,Smolensk,2005-06-15,1,4.99,1.0,0.99,2,1,1,Mike,Hillyer,3416,2005-06-15 09:06:24.000,1,0.0,7,amount_over_3x
+49,JOYCE,EDWARDS,Saudi Arabia,Jedda,2005-06-15,1,9.99,1.0,2.99,2,2,2,Jon,Stephens,1334,2005-06-15 04:44:10.000,1,1.0,1,amount_over_3x
+338,DENNIS,GILMAN,South Africa,Paarl,2005-06-15,1,4.99,1.0,0.99,1,2,2,Jon,Stephens,9127,2005-06-15 22:39:34.000,1,1.0,3,amount_over_3x
+52,JULIE,SANCHEZ,Spain,A Corua (La Corua),2005-06-15,1,4.99,1.0,0.99,1,1,1,Mike,Hillyer,1426,2005-06-15 01:38:31.000,1,0.0,1,amount_over_3x
+290,KRISTINA,CHAMBERS,Venezuela,Valle de la Pascua,2005-06-15,3,20.97,1.0,2.99,1,2,2,Jon,Stephens,7847,2005-06-15 21:55:58.000,3,0.6667,1,amount_over_3x
+539,MATHEW,BOLIN,Venezuela,Valencia,2005-06-15,3,9.97,1.0,2.99,1,2,2,Jon,Stephens,14511,2005-06-15 19:08:16.000,3,0.6667,2,amount_over_3x
+516,ELMER,NOE,Cambodia,Battambang,2005-06-16,1,10.99,1.0,3.24,2,1,1,Mike,Hillyer,13892,2005-06-16 14:52:02.000,1,1.0,1,amount_over_3x
+352,ALBERT,CROUSE,Cameroon,Bamenda,2005-06-16,3,14.97,1.0,1.99,1,1,1,Mike,Hillyer,9514,2005-06-16 19:11:45.000,3,0.0,1,amount_over_3x
+485,CLYDE,TOBIAS,China,Shaoguan,2005-06-16,2,11.98,1.0,2.99,1,1,1,Mike,Hillyer,13087,2005-06-16 15:01:36.000,2,0.5,1,amount_over_3x
+378,EUGENE,CULPEPPER,China,Shenzhen,2005-06-16,2,10.98,1.0,0.99,1,1,1,Mike,Hillyer,10231,2005-06-16 10:13:35.000,2,0.5,2,amount_over_3x
+37,PAMELA,BAKER,China,Nanyang,2005-06-16,2,6.98,1.0,1.99,1,2,2,Jon,Stephens,1014,2005-06-16 21:08:46.000,2,0.5,6,amount_over_3x
+3,LINDA,WILLIAMS,Greece,Athenai,2005-06-16,2,15.98,1.0,2.49,1,1,1,Mike,Hillyer,63,2005-06-16 15:19:10.000,2,1.0,1,amount_over_3x
+259,LENA,JENSEN,India,Halisahar,2005-06-16,3,18.97,1.0,5.32,2,2,2,Jon,Stephens,6985,2005-06-16 21:11:00.000,3,1.0,1,amount_over_3x
+426,BRADLEY,MOTLEY,India,Purnea (Purnia),2005-06-16,2,14.98,1.0,0.99,1,1,1,Mike,Hillyer,11508,2005-06-16 23:45:59.000,2,1.0,2,amount_over_3x
+421,LEE,HAWKS,India,Pudukkottai,2005-06-16,1,4.99,1.0,0.99,1,1,1,Mike,Hillyer,11373,2005-06-16 12:39:51.000,1,0.0,9,amount_over_3x
+117,EDITH,MCDONALD,India,Gandhinagar,2005-06-16,1,2.99,1.0,0.99,1,1,1,Mike,Hillyer,3150,2005-06-16 17:18:44.000,1,0.0,12,amount_over_3x
+499,MARC,OUTLAW,Italy,Brindisi,2005-06-16,2,9.98,1.0,2.99,2,2,2,Jon,Stephens,13435,2005-06-16 22:18:43.000,2,0.5,1,amount_over_3x
+574,JULIAN,VEST,Japan,Akishima,2005-06-16,3,7.97,1.0,0.99,2,1,1,Mike,Hillyer,15369,2005-06-16 21:20:52.000,3,0.3333,4,amount_over_3x
+76,IRENE,PRICE,Kazakstan,Pavlodar,2005-06-16,1,6.99,1.0,1.32,2,1,1,Mike,Hillyer,2065,2005-06-16 20:04:28.000,1,1.0,1,amount_over_3x
+273,PRISCILLA,LOWE,Mexico,Salamanca,2005-06-16,2,11.98,1.0,3.99,2,2,2,Jon,Stephens,7371,2005-06-16 17:56:10.000,2,0.5,2,amount_over_3x
+343,DOUGLAS,GRAF,Mexico,Mexicali,2005-06-16,2,11.98,1.0,3.99,1,1,1,Mike,Hillyer,9273,2005-06-16 02:47:07.000,2,0.5,2,amount_over_3x
+578,WILLARD,LUMPKIN,Mexico,Carmen,2005-06-16,1,6.99,1.0,0.99,2,2,2,Jon,Stephens,15486,2005-06-16 21:53:52.000,1,1.0,6,amount_over_3x
+582,ANDY,VANHORN,Mexico,Huejutla de Reyes,2005-06-16,1,2.99,1.0,0.99,2,1,1,Mike,Hillyer,15589,2005-06-16 14:55:53.000,1,0.0,8,amount_over_3x
+48,ANN,EVANS,Russian Federation,Niznekamsk,2005-06-16,1,9.99,1.0,2.99,1,2,2,Jon,Stephens,1315,2005-06-16 12:18:41.000,1,1.0,1,amount_over_3x
+351,JACK,FOUST,Russian Federation,Zeleznogorsk,2005-06-16,1,5.99,1.0,1.99,1,2,2,Jon,Stephens,9487,2005-06-16 20:04:50.000,1,1.0,4,amount_over_3x
+397,JIMMY,SCHRADER,Russian Federation,Atinsk,2005-06-16,1,5.99,1.0,0.99,1,1,1,Mike,Hillyer,10741,2005-06-16 18:07:48.000,1,1.0,4,amount_over_3x
+293,MAE,FLETCHER,Spain,Donostia-San Sebastin,2005-06-16,2,15.98,1.0,4.99,2,1,1,Mike,Hillyer,7926,2005-06-16 22:14:21.000,2,1.0,1,amount_over_3x
+155,GAIL,KNIGHT,Switzerland,Bern,2005-06-16,1,7.99,1.0,2.49,1,1,1,Mike,Hillyer,4213,2005-06-16 02:16:47.000,1,1.0,1,amount_over_3x
+348,ROGER,QUINTANILLA,Taiwan,Hsichuh,2005-06-16,1,2.99,1.0,0.99,2,1,1,Mike,Hillyer,9400,2005-06-16 09:42:48.000,1,0.0,2,amount_over_3x
+86,JACQUELINE,LONG,Thailand,Songkhla,2005-06-16,2,5.98,1.0,1.99,2,2,2,Jon,Stephens,2327,2005-06-16 21:43:45.000,2,0.0,2,amount_over_3x
+470,GORDON,ALLARD,Yemen,Hodeida,2005-06-16,1,7.99,1.5,2.49,1,2,2,Jon,Stephens,12693,2005-06-16 05:15:12.000,1,1.0,1,amount_over_3x
+310,DANIEL,CABRAL,Brazil,Ibirit,2005-06-17,2,10.98,1.0,2.99,2,2,2,Jon,Stephens,8416,2005-06-17 17:35:30.000,2,1.0,1,amount_over_3x
+422,MELVIN,ELLINGTON,China,Laohekou,2005-06-17,2,5.98,1.0,0.99,1,1,1,Mike,Hillyer,11400,2005-06-17 04:26:23.000,2,0.5,7,amount_over_3x
+265,JENNIE,TERRY,Czech Republic,Olomouc,2005-06-17,1,7.99,1.0,0.99,2,2,2,Jon,Stephens,7153,2005-06-17 13:06:56.000,1,1.0,1,amount_over_3x
+492,LESTER,KRAUS,India,Kanchrapara,2005-06-17,2,9.98,1.0,2.49,2,2,2,Jon,Stephens,13263,2005-06-17 08:43:32.000,2,0.5,1,amount_over_3x
+465,FLOYD,GANDY,Mexico,Zapopan,2005-06-17,2,13.98,1.0,1.99,1,1,1,Mike,Hillyer,12545,2005-06-17 23:37:29.000,2,0.5,1,amount_over_3x
+451,JIM,REA,Mexico,El Fuerte,2005-06-17,2,7.98,1.0,1.99,1,1,1,Mike,Hillyer,12165,2005-06-17 07:42:22.000,2,0.5,9,amount_over_3x
+261,DEANNA,BYRD,Philippines,Tuguegarao,2005-06-17,3,18.97,1.0,3.99,1,2,2,Jon,Stephens,7051,2005-06-17 16:33:32.000,3,1.0,1,amount_over_3x
+263,HILDA,HOPKINS,Philippines,Mandaluyong,2005-06-17,1,8.99,1.0,2.99,1,2,2,Jon,Stephens,7100,2005-06-17 20:54:36.000,1,1.0,2,amount_over_3x
+447,CLIFFORD,BOWENS,Russian Federation,Nabereznyje Telny,2005-06-17,2,7.98,1.0,1.66,1,1,1,Mike,Hillyer,12060,2005-06-17 13:04:00.000,2,0.5,2,amount_over_3x
+456,RONNIE,RICKETTS,Senegal,Ziguinchor,2005-06-17,2,12.98,1.0,2.99,2,2,2,Jon,Stephens,12309,2005-06-17 22:26:23.000,2,1.0,1,amount_over_3x
+338,DENNIS,GILMAN,South Africa,Paarl,2005-06-17,2,11.98,1.0,3.99,1,1,1,Mike,Hillyer,9130,2005-06-17 22:44:35.000,2,0.5,1,amount_over_3x
+99,EMILY,DIAZ,South Korea,Kimchon,2005-06-17,1,4.99,1.0,0.99,2,1,1,Mike,Hillyer,2665,2005-06-17 01:13:11.000,1,0.0,1,amount_over_3x
+348,ROGER,QUINTANILLA,Taiwan,Hsichuh,2005-06-17,1,8.99,1.0,1.66,2,1,1,Mike,Hillyer,9401,2005-06-17 14:19:00.000,1,1.0,3,amount_over_3x
+204,ROSEMARY,SCHMIDT,Turkey,Usak,2005-06-17,2,12.98,1.0,3.99,1,2,2,Jon,Stephens,5523,2005-06-17 04:18:48.000,2,1.0,1,amount_over_3x
+292,MISTY,LAMBERT,United Arab Emirates,Sharja,2005-06-17,1,3.99,1.0,0.99,2,1,1,Mike,Hillyer,7896,2005-06-17 04:35:19.000,1,1.0,1,amount_over_3x
+16,SANDRA,MARTIN,United Kingdom,Southend-on-Sea,2005-06-17,2,14.98,1.0,2.74,2,1,1,Mike,Hillyer,423,2005-06-17 07:50:53.000,2,1.0,1,amount_over_3x
+305,RICHARD,MCCRARY,United States,Arlington,2005-06-17,2,12.98,1.0,3.99,1,1,1,Mike,Hillyer,8272,2005-06-17 23:51:21.000,2,0.5,3,amount_over_3x
+182,RENEE,LANE,United States,Compton,2005-06-17,2,8.98,1.0,2.99,1,2,2,Jon,Stephens,4952,2005-06-17 20:36:50.000,2,0.5,5,amount_over_3x
+113,CINDY,FISHER,Venezuela,Cuman,2005-06-17,1,4.99,1.0,0.99,2,2,2,Jon,Stephens,3031,2005-06-17 16:46:11.000,1,0.0,1,amount_over_3x
+406,NATHAN,RUNYON,"Virgin Islands, U.S.",Charlotte Amalie,2005-06-17,2,8.98,1.0,0.99,1,2,2,Jon,Stephens,10975,2005-06-17 22:50:36.000,2,0.5,1,amount_over_3x
+213,GINA,WILLIAMSON,Yemen,Taizz,2005-06-17,1,4.99,1.0,0.99,1,2,2,Jon,Stephens,5775,2005-06-17 07:15:41.000,1,0.0,1,amount_over_3x
+381,BOBBY,BOUDREAU,Anguilla,South Hill,2005-06-18,2,7.98,1.0,2.59,2,1,1,Mike,Hillyer,10313,2005-06-18 17:14:42.000,2,0.5,1,amount_over_3x
+219,WILLIE,HOWELL,Argentina,Vicente Lpez,2005-06-18,1,3.99,1.0,0.99,2,2,2,Jon,Stephens,5923,2005-06-18 17:12:01.000,1,1.0,3,amount_over_3x
+21,MICHELLE,CLARK,Bangladesh,Tangail,2005-06-18,3,15.97,1.0,2.99,1,1,1,Mike,Hillyer,549,2005-06-18 15:37:55.000,3,0.6667,1,amount_over_3x
+77,JANE,BENNETT,Brazil,Araatuba,2005-06-18,2,12.98,1.2,3.99,2,2,2,Jon,Stephens,2092,2005-06-18 19:29:21.000,2,1.0,1,amount_over_3x
+183,IDA,ANDREWS,Brazil,Luzinia,2005-06-18,2,7.98,1.0,0.99,2,2,2,Jon,Stephens,4977,2005-06-18 20:31:00.000,2,1.0,3,amount_over_3x
+206,TERRI,VASQUEZ,Brazil,Blumenau,2005-06-18,1,5.99,1.0,0.99,1,2,2,Jon,Stephens,5570,2005-06-18 20:58:46.000,1,1.0,5,amount_over_3x
+354,JUSTIN,NGO,Brazil,Santo Andr,2005-06-18,1,4.99,1.0,1.24,2,1,1,Mike,Hillyer,9555,2005-06-18 06:31:29.000,1,1.0,6,amount_over_3x
+410,CURTIS,IRBY,Canada,Richmond Hill,2005-06-18,2,10.98,1.0,2.99,2,2,2,Jon,Stephens,11088,2005-06-18 16:10:46.000,2,1.0,1,amount_over_3x
+384,ERNEST,STEPP,China,Huaian,2005-06-18,2,13.98,1.2,2.79,2,2,2,Jon,Stephens,10400,2005-06-18 23:44:21.000,2,1.0,1,amount_over_3x
+233,LILLIE,KIM,Egypt,Idfu,2005-06-18,3,10.97,1.0,2.99,2,2,2,Jon,Stephens,6273,2005-06-18 18:52:30.000,3,0.3333,1,amount_over_3x
+297,SHERRI,RHODES,India,Ahmadnagar,2005-06-18,3,16.97,1.0,2.99,1,2,2,Jon,Stephens,8053,2005-06-18 11:29:22.000,3,0.3333,1,amount_over_3x
+170,BEATRICE,ARNOLD,India,Udaipur,2005-06-18,1,8.99,1.0,2.74,1,2,2,Jon,Stephens,4608,2005-06-18 16:59:34.000,1,1.0,5,amount_over_3x
+446,THEODORE,CULP,India,Uluberia,2005-06-18,2,8.98,1.0,2.32,2,2,2,Jon,Stephens,12029,2005-06-18 10:59:36.000,2,0.5,6,amount_over_3x
+185,ROBERTA,HARPER,Iran,Shahr-e Kord,2005-06-18,1,4.99,1.0,1.66,1,1,1,Mike,Hillyer,5023,2005-06-18 19:44:08.000,1,0.0,1,amount_over_3x
+102,CRYSTAL,FORD,Israel,Ashdod,2005-06-18,1,8.99,1.0,2.74,1,2,2,Jon,Stephens,2740,2005-06-18 17:21:24.000,1,1.0,1,amount_over_3x
+478,LEWIS,LYMAN,Israel,Ashqelon,2005-06-18,1,4.99,1.0,0.99,1,2,2,Jon,Stephens,12908,2005-06-18 13:00:51.000,1,1.0,2,amount_over_3x
+194,KRISTEN,CHAVEZ,Japan,Hino,2005-06-18,3,14.97,1.0,4.66,2,1,1,Mike,Hillyer,5249,2005-06-18 20:01:43.000,3,0.6667,1,amount_over_3x
+147,JOANNE,ROBERTSON,Japan,Urawa,2005-06-18,2,7.98,1.0,0.99,2,1,1,Mike,Hillyer,3981,2005-06-18 19:36:50.000,2,1.0,4,amount_over_3x
+582,ANDY,VANHORN,Mexico,Huejutla de Reyes,2005-06-18,1,7.99,1.0,1.99,2,1,1,Mike,Hillyer,15590,2005-06-18 11:15:27.000,1,1.0,2,amount_over_3x
+256,MABEL,HOLLAND,Myanmar,Monywa,2005-06-18,2,11.98,1.14,3.42,2,1,1,Mike,Hillyer,6898,2005-06-18 15:00:04.000,2,0.5,1,amount_over_3x
+434,EDDIE,TOMLIN,Philippines,Ozamis,2005-06-18,3,15.97,1.0,4.32,1,1,1,Mike,Hillyer,11696,2005-06-18 22:15:09.000,3,1.0,1,amount_over_3x
+360,RALPH,MADRIGAL,Puerto Rico,Arecibo,2005-06-18,1,6.99,1.0,2.32,2,2,2,Jon,Stephens,9712,2005-06-18 16:24:45.000,1,1.0,1,amount_over_3x
+132,ESTHER,CRAWFORD,South Africa,Botshabelo,2005-06-18,2,5.98,1.0,0.99,2,1,1,Mike,Hillyer,3560,2005-06-18 15:18:49.000,2,0.0,2,amount_over_3x
+145,LUCILLE,HOLMES,South Africa,Soshanguve,2005-06-18,1,4.99,1.0,0.99,1,2,2,Jon,Stephens,3922,2005-06-18 06:29:52.000,1,0.0,3,amount_over_3x
+576,MORRIS,MCCARTER,Taiwan,Fengshan,2005-06-18,2,9.98,1.0,2.99,2,2,2,Jon,Stephens,15428,2005-06-18 18:58:12.000,2,0.5,1,amount_over_3x
+149,VALERIE,BLACK,United States,Brockton,2005-06-18,3,18.97,1.0,4.49,1,2,2,Jon,Stephens,4064,2005-06-18 15:17:59.000,3,1.0,1,amount_over_3x
+382,VICTOR,BARKLEY,United States,Manchester,2005-06-18,4,10.96,1.0,2.99,2,1,1,Mike,Hillyer,10347,2005-06-18 23:56:44.000,4,0.25,3,amount_over_3x
+213,GINA,WILLIAMSON,Yemen,Taizz,2005-06-18,2,6.98,1.0,2.32,1,1,1,Mike,Hillyer,5777,2005-06-18 23:44:08.000,2,0.5,2,amount_over_3x
+331,ERIC,ROBERT,Argentina,Santa F,2005-06-19,2,9.98,1.0,2.32,1,1,1,Mike,Hillyer,8936,2005-06-19 05:06:14.000,2,1.0,2,amount_over_3x
+354,JUSTIN,NGO,Brazil,Santo Andr,2005-06-19,1,6.99,1.0,1.99,2,1,1,Mike,Hillyer,9556,2005-06-19 17:52:14.000,1,1.0,2,amount_over_3x
+267,MARGIE,WADE,China,Lengshuijiang,2005-06-19,4,22.96,1.2,5.99,1,2,2,Jon,Stephens,7218,2005-06-19 16:55:59.000,4,0.75,1,amount_over_3x
+313,DONALD,MAHON,China,Ezhou,2005-06-19,2,12.98,1.25,3.24,2,2,2,Jon,Stephens,8487,2005-06-19 14:12:22.000,2,0.5,2,amount_over_3x
+283,FELICIA,SUTTON,China,Korla,2005-06-19,2,10.98,1.5,3.49,1,2,2,Jon,Stephens,7656,2005-06-19 23:06:00.000,2,0.5,3,amount_over_3x
+129,CARRIE,PORTER,China,Liaocheng,2005-06-19,3,9.97,1.0,0.99,1,2,2,Jon,Stephens,3473,2005-06-19 18:58:53.000,3,0.6667,4,amount_over_3x
+138,HAZEL,WARREN,China,Hohhot,2005-06-19,1,7.99,1.0,1.49,1,1,1,Mike,Hillyer,3724,2005-06-19 15:14:55.000,1,1.0,7,amount_over_3x
+90,RUBY,WASHINGTON,China,Meixian,2005-06-19,1,6.99,1.0,0.99,2,2,2,Jon,Stephens,2442,2005-06-19 05:02:36.000,1,1.0,9,amount_over_3x
+589,TRACY,HERRMANN,Ecuador,Loja,2005-06-19,2,17.98,1.25,5.24,1,1,1,Mike,Hillyer,15770,2005-06-19 13:57:08.000,2,1.0,1,amount_over_3x
+262,PATSY,DAVIDSON,Ecuador,Portoviejo,2005-06-19,2,15.98,1.0,3.99,2,2,2,Jon,Stephens,7073,2005-06-19 23:06:28.000,2,1.0,2,amount_over_3x
+423,ALFRED,CASILLAS,Egypt,Sawhaj,2005-06-19,2,13.98,1.0,2.49,2,2,2,Jon,Stephens,11427,2005-06-19 17:04:35.000,2,1.0,1,amount_over_3x
+478,LEWIS,LYMAN,Israel,Ashqelon,2005-06-19,3,20.97,1.0,2.99,1,2,2,Jon,Stephens,12911,2005-06-19 17:34:39.000,3,1.0,1,amount_over_3x
+309,CHRISTOPHER,GRECO,Italy,Brescia,2005-06-19,3,20.97,1.0,4.32,1,2,2,Jon,Stephens,8386,2005-06-19 12:50:56.000,3,1.0,1,amount_over_3x
+29,ANGELA,HERNANDEZ,Japan,Shimonoseki,2005-06-19,5,15.95,1.0,1.99,2,2,2,Jon,Stephens,787,2005-06-19 19:18:09.000,5,0.4,1,amount_over_3x_and_count_at_least_5
+193,KATIE,ELLIOTT,Kenya,Kisumu,2005-06-19,2,11.98,1.0,3.99,2,2,2,Jon,Stephens,5224,2005-06-19 22:52:14.000,2,0.5,1,amount_over_3x
+81,ANDREA,HENDERSON,Madagascar,Mahajanga,2005-06-19,2,7.98,1.0,0.99,1,1,1,Mike,Hillyer,2198,2005-06-19 23:11:48.000,2,1.0,1,amount_over_3x
+360,RALPH,MADRIGAL,Puerto Rico,Arecibo,2005-06-19,2,10.98,1.0,3.49,2,2,2,Jon,Stephens,9714,2005-06-19 18:19:33.000,2,1.0,1,amount_over_3x
+139,AMBER,DIXON,Taiwan,Touliu,2005-06-19,2,8.98,1.0,2.99,1,2,2,Jon,Stephens,3757,2005-06-19 14:49:42.000,2,0.5,1,amount_over_3x
+212,WILMA,RICHARDS,United States,Bellevue,2005-06-19,1,9.99,1.5,2.49,2,2,2,Jon,Stephens,5756,2005-06-19 15:58:38.000,1,1.0,1,amount_over_3x
+590,SETH,HANNON,Bahrain,al-Manama,2005-06-20,2,16.98,1.0,4.49,2,1,1,Mike,Hillyer,15797,2005-06-20 07:33:29.000,2,1.0,1,amount_over_3x
+384,ERNEST,STEPP,China,Huaian,2005-06-20,3,18.97,1.33,4.65,2,2,2,Jon,Stephens,10403,2005-06-20 16:48:58.000,3,1.0,1,amount_over_3x
+424,KYLE,SPURLOCK,China,Shanwei,2005-06-20,2,11.98,1.0,0.99,2,1,1,Mike,Hillyer,11452,2005-06-20 21:32:32.000,2,0.5,2,amount_over_3x
+258,MYRTLE,FLEMING,Dominican Republic,Santiago de los Caballeros,2005-06-20,1,8.99,1.0,1.99,1,2,2,Jon,Stephens,6958,2005-06-20 04:50:45.000,1,1.0,1,amount_over_3x
+153,SUZANNE,NICHOLS,Indonesia,Jakarta,2005-06-20,2,10.98,1.0,0.99,2,1,1,Mike,Hillyer,4160,2005-06-20 05:49:27.000,2,0.5,2,amount_over_3x
+349,JOE,GILLILAND,Philippines,Imus,2005-06-20,2,15.98,1.0,2.99,2,1,1,Mike,Hillyer,9438,2005-06-20 13:59:21.000,2,1.0,1,amount_over_3x
+46,CATHERINE,CAMPBELL,Russian Federation,Moscow,2005-06-20,2,13.98,1.17,4.16,2,2,2,Jon,Stephens,1264,2005-06-20 08:06:18.000,2,0.5,1,amount_over_3x
+132,ESTHER,CRAWFORD,South Africa,Botshabelo,2005-06-20,2,9.98,1.33,3.32,2,1,1,Mike,Hillyer,3563,2005-06-20 18:23:30.000,2,0.0,1,amount_over_3x
+395,JOHNNY,TURPIN,Sudan,al-Qadarif,2005-06-20,1,4.99,1.5,1.49,2,1,1,Mike,Hillyer,10697,2005-06-20 11:51:59.000,1,0.0,1,amount_over_3x
+13,KAREN,JACKSON,Turkey,Osmaniye,2005-06-20,2,11.98,1.0,3.99,2,1,1,Mike,Hillyer,334,2005-06-20 12:45:33.000,2,0.5,1,amount_over_3x
+113,CINDY,FISHER,Venezuela,Cuman,2005-06-20,3,16.97,1.0,2.59,2,1,1,Mike,Hillyer,3036,2005-06-20 21:21:15.000,3,0.6667,1,amount_over_3x
+431,JOEL,FRANCISCO,Bolivia,Sucre,2005-06-21,2,15.98,1.2,4.59,2,2,2,Jon,Stephens,11627,2005-06-21 13:20:31.000,2,1.0,1,amount_over_3x
+591,KENT,ARSENAULT,Brazil,Juiz de Fora,2005-06-21,2,7.98,1.0,0.99,1,2,2,Jon,Stephens,15819,2005-06-21 19:14:58.000,2,0.5,3,amount_over_3x
+550,GUY,BROWNLEE,China,Zhoushan,2005-06-21,2,20.98,1.25,6.74,2,1,1,Mike,Hillyer,14754,2005-06-21 05:18:27.000,2,1.0,1,amount_over_3x
+552,HUGH,WALDROP,China,Haining,2005-06-21,1,4.99,1.0,0.99,2,2,2,Jon,Stephens,14808,2005-06-21 15:30:11.000,1,0.0,6,amount_over_3x
+175,ANNETTE,OLSON,India,Allappuzha (Alleppey),2005-06-21,1,4.99,1.0,0.99,1,2,2,Jon,Stephens,4740,2005-06-21 04:49:07.000,1,0.0,8,amount_over_3x
+185,ROBERTA,HARPER,Iran,Shahr-e Kord,2005-06-21,2,9.98,1.0,2.49,1,1,1,Mike,Hillyer,5025,2005-06-21 08:51:44.000,2,0.5,2,amount_over_3x
+277,OLGA,JIMENEZ,Nigeria,Ogbomosho,2005-06-21,3,13.97,1.0,4.39,2,1,1,Mike,Hillyer,7502,2005-06-21 10:57:27.000,3,0.3333,1,amount_over_3x
+501,RUBEN,GEARY,Poland,Lublin,2005-06-21,2,13.98,2.0,2.98,1,1,1,Mike,Hillyer,13493,2005-06-21 16:44:31.000,2,1.0,1,amount_over_3x
+395,JOHNNY,TURPIN,Sudan,al-Qadarif,2005-06-21,2,7.98,1.33,2.65,2,1,1,Mike,Hillyer,10699,2005-06-21 14:37:55.000,2,0.5,1,amount_over_3x
+369,FRED,WHEAT,Mexico,Jurez,2005-07-05,1,6.99,1.0,0.99,2,1,1,Mike,Hillyer,9980,2005-07-05 23:37:13.000,1,1.0,1,amount_over_3x
+586,KIRK,STCLAIR,Taiwan,Tsaotun,2005-07-05,1,6.99,1.0,1.99,1,2,2,Jon,Stephens,15694,2005-07-05 23:30:36.000,1,1.0,1,amount_over_3x
+159,JILL,HAWKINS,Austria,Linz,2005-07-06,1,5.99,1.0,0.99,1,2,2,Jon,Stephens,4330,2005-07-06 20:11:10.000,1,1.0,1,amount_over_3x
+126,ELLEN,SIMPSON,Brazil,Po,2005-07-06,3,18.97,1.0,2.99,1,1,1,Mike,Hillyer,3392,2005-07-06 15:08:08.000,3,0.6667,1,amount_over_3x
+228,ALLISON,STANLEY,Cambodia,Phnom Penh,2005-07-06,4,17.96,1.0,3.49,2,2,2,Jon,Stephens,6143,2005-07-06 14:45:22.000,4,0.5,1,amount_over_3x
+283,FELICIA,SUTTON,China,Korla,2005-07-06,4,17.96,1.67,5.98,1,2,2,Jon,Stephens,7660,2005-07-06 09:01:56.000,4,0.25,1,amount_over_3x
+165,LORRAINE,STEPHENS,China,Hami,2005-07-06,2,10.98,1.0,3.49,2,1,1,Mike,Hillyer,4471,2005-07-06 13:57:56.000,2,0.5,2,amount_over_3x
+435,RICKY,SHELBY,China,Junan,2005-07-06,2,9.98,1.0,0.99,2,1,1,Mike,Hillyer,11723,2005-07-06 20:26:15.000,2,0.5,4,amount_over_3x
+514,FRANKLIN,TROUTMAN,China,Zaoyang,2005-07-06,2,8.98,1.0,2.49,2,2,2,Jon,Stephens,13846,2005-07-06 17:20:24.000,2,0.5,6,amount_over_3x
+235,JACKIE,LYNCH,Colombia,Buenaventura,2005-07-06,3,14.97,1.0,2.99,1,1,1,Mike,Hillyer,6325,2005-07-06 22:47:09.000,3,0.6667,1,amount_over_3x
+460,LEON,BOSTIC,Colombia,Florencia,2005-07-06,1,4.99,1.0,0.99,1,2,2,Jon,Stephens,12420,2005-07-06 15:35:26.000,1,1.0,2,amount_over_3x
+402,LUIS,YANEZ,France,Brest,2005-07-06,3,16.97,1.0,4.32,1,2,2,Jon,Stephens,10862,2005-07-06 12:37:16.000,3,1.0,1,amount_over_3x
+56,GLORIA,COOK,French Polynesia,Papeete,2005-07-06,2,10.98,1.0,3.49,1,2,2,Jon,Stephens,1544,2005-07-06 13:19:34.000,2,0.5,1,amount_over_3x
+207,GERTRUDE,CASTILLO,Greenland,Nuuk,2005-07-06,2,12.98,1.0,3.99,1,2,2,Jon,Stephens,5604,2005-07-06 09:38:33.000,2,1.0,1,amount_over_3x
+231,GEORGIA,JACOBS,India,Uttarpara-Kotrung,2005-07-06,2,12.98,1.0,0.99,1,1,1,Mike,Hillyer,6224,2005-07-06 16:30:30.000,2,0.5,2,amount_over_3x
+449,OSCAR,AQUINO,Iran,Sirjan,2005-07-06,2,9.98,1.0,2.99,2,1,1,Mike,Hillyer,12121,2005-07-06 23:00:49.000,2,0.5,1,amount_over_3x
+355,TERRY,GRISSOM,Japan,Matsue,2005-07-06,2,12.98,1.0,1.99,2,1,1,Mike,Hillyer,9591,2005-07-06 11:31:24.000,2,1.0,1,amount_over_3x
+385,PHILLIP,HOLM,Japan,Tama,2005-07-06,2,9.98,1.0,1.66,1,2,2,Jon,Stephens,10424,2005-07-06 21:54:55.000,2,0.5,3,amount_over_3x
+321,KEVIN,SCHULER,Nepal,Birgunj,2005-07-06,2,10.98,1.0,3.49,1,1,1,Mike,Hillyer,8679,2005-07-06 20:26:40.000,2,1.0,1,amount_over_3x
+137,RHONDA,KENNEDY,Netherlands,Apeldoorn,2005-07-06,3,17.97,1.0,4.99,2,2,2,Jon,Stephens,3688,2005-07-06 18:06:12.000,3,1.0,1,amount_over_3x
+103,GLADYS,HAMILTON,Nigeria,Ilorin,2005-07-06,2,11.98,1.0,1.99,1,1,1,Mike,Hillyer,2776,2005-07-06 16:51:21.000,2,1.0,1,amount_over_3x
+198,ELSIE,KELLEY,Nigeria,Ikerre,2005-07-06,1,2.99,1.0,0.99,2,2,2,Jon,Stephens,5362,2005-07-06 13:14:28.000,1,1.0,5,amount_over_3x
+548,ALLAN,CORNISH,Philippines,Tarlac,2005-07-06,2,5.98,1.0,1.99,1,2,2,Jon,Stephens,14716,2005-07-06 13:36:48.000,2,0.5,2,amount_over_3x
+580,ROSS,GREY,Philippines,Iligan,2005-07-06,2,3.98,1.0,0.99,1,2,2,Jon,Stephens,15537,2005-07-06 17:52:19.000,2,1.0,4,amount_over_3x
+350,JUAN,FRALEY,Russian Federation,Teboksary,2005-07-06,2,6.98,1.0,2.24,1,1,1,Mike,Hillyer,9470,2005-07-06 18:59:31.000,2,0.5,5,amount_over_3x
+376,RANDY,GAITHER,Russian Federation,Kurgan,2005-07-06,1,2.99,1.0,0.99,1,2,2,Jon,Stephens,10178,2005-07-06 11:05:55.000,1,0.0,8,amount_over_3x
+598,WADE,DELVALLE,Switzerland,Lausanne,2005-07-06,3,12.97,1.0,2.99,1,1,1,Mike,Hillyer,16012,2005-07-06 22:53:57.000,3,0.3333,1,amount_over_3x
+493,BRENT,HARKINS,Turkey,Sultanbeyli,2005-07-06,2,10.98,1.0,3.24,1,1,1,Mike,Hillyer,13282,2005-07-06 07:52:54.000,2,0.5,1,amount_over_3x
+480,COREY,HAUSER,Turkey,Gaziantep,2005-07-06,1,7.99,1.0,0.99,1,2,2,Jon,Stephens,12962,2005-07-06 00:23:43.000,1,1.0,3,amount_over_3x
+366,BRANDON,HUEY,Turkey,Balikesir,2005-07-06,2,7.98,1.0,1.49,1,1,1,Mike,Hillyer,9885,2005-07-06 16:19:56.000,2,0.5,4,amount_over_3x
+545,JULIO,NOLAND,Ukraine,Konotop,2005-07-06,2,14.98,1.0,2.99,2,1,1,Mike,Hillyer,14643,2005-07-06 23:00:09.000,2,1.0,1,amount_over_3x
+583,MARSHALL,THORN,United Kingdom,Southampton,2005-07-06,3,17.97,1.2,5.99,1,2,2,Jon,Stephens,15621,2005-07-06 23:33:41.000,3,0.3333,1,amount_over_3x
+504,NATHANIEL,ADAM,United States,Joliet,2005-07-06,2,16.98,1.0,4.49,1,1,1,Mike,Hillyer,13583,2005-07-06 10:49:30.000,2,1.0,1,amount_over_3x
+51,ALICE,STEWART,United States,Fontana,2005-07-06,1,9.99,2.0,2.98,1,1,1,Mike,Hillyer,1397,2005-07-06 01:02:39.000,1,1.0,3,amount_over_3x
+63,ASHLEY,RICHARDSON,United States,Lincoln,2005-07-06,1,8.99,1.0,0.99,1,2,2,Jon,Stephens,1710,2005-07-06 20:34:10.000,1,1.0,5,amount_over_3x
+111,CARMEN,OWENS,Venezuela,Caracas,2005-07-06,2,13.98,1.17,4.16,1,2,2,Jon,Stephens,2982,2005-07-06 22:19:17.000,2,1.0,1,amount_over_3x
+470,GORDON,ALLARD,Yemen,Hodeida,2005-07-06,3,15.97,1.5,4.99,1,1,1,Mike,Hillyer,12696,2005-07-06 20:32:27.000,3,0.6667,1,amount_over_3x
+210,ELLA,OLIVER,Yemen,Aden,2005-07-06,2,9.98,1.0,1.99,2,2,2,Jon,Stephens,5692,2005-07-06 18:41:33.000,2,0.5,2,amount_over_3x
+553,MAX,PITT,Yugoslavia,Novi Sad,2005-07-06,5,22.95,1.0,6.74,1,2,2,Jon,Stephens,14836,2005-07-06 21:21:34.000,5,0.2,1,amount_over_3x_and_count_at_least_5
+560,JORDAN,ARCHULETA,Argentina,Avellaneda,2005-07-07,3,13.97,1.0,3.99,1,1,1,Mike,Hillyer,14997,2005-07-07 23:32:39.000,3,0.3333,2,amount_over_3x
+591,KENT,ARSENAULT,Brazil,Juiz de Fora,2005-07-07,1,11.99,1.33,3.32,1,2,2,Jon,Stephens,15821,2005-07-07 20:45:51.000,1,1.0,1,amount_over_3x
+91,LOIS,BUTLER,Brunei,Bandar Seri Begawan,2005-07-07,3,12.97,1.0,2.79,2,1,1,Mike,Hillyer,2477,2005-07-07 17:52:38.000,3,0.0,1,amount_over_3x
+168,REGINA,BERRY,China,Jinchang,2005-07-07,2,11.98,1.0,3.99,1,2,2,Jon,Stephens,4553,2005-07-07 19:43:28.000,2,1.0,1,amount_over_3x
+64,JUDITH,COX,China,Daxian,2005-07-07,1,4.99,1.0,1.66,2,1,1,Mike,Hillyer,1740,2005-07-07 15:38:25.000,1,0.0,13,amount_over_3x
+521,ROLAND,SOUTH,China,Yingkou,2005-07-07,2,3.98,1.0,0.99,2,2,2,Jon,Stephens,14023,2005-07-07 22:57:30.000,2,0.0,15,amount_over_3x
+104,RITA,GRAHAM,France,Toulon,2005-07-07,2,11.98,1.0,2.24,1,2,2,Jon,Stephens,2807,2005-07-07 22:56:17.000,2,0.5,1,amount_over_3x
+26,JESSICA,HALL,Holy See (Vatican City State),Citt del Vaticano,2005-07-07,5,20.95,1.4,8.39,2,1,1,Mike,Hillyer,698,2005-07-07 22:39:02.000,5,0.6,1,count_at_least_5
+367,ADAM,GOOCH,India,Adoni,2005-07-07,1,8.99,1.0,0.99,1,1,1,Mike,Hillyer,9921,2005-07-07 14:11:55.000,1,1.0,3,amount_over_3x
+529,ERIK,GUILLEN,India,Bhimavaram,2005-07-07,3,7.97,1.0,1.32,2,2,2,Jon,Stephens,14236,2005-07-07 23:07:44.000,3,0.6667,6,amount_over_3x
+38,MARTHA,GONZALEZ,Moldova,Chisinau,2005-07-07,3,12.97,1.25,3.99,1,1,1,Mike,Hillyer,1041,2005-07-07 16:36:16.000,3,0.6667,1,amount_over_3x
+513,DUANE,TUBBS,Nauru,Yangor,2005-07-07,3,12.97,1.0,3.49,2,2,2,Jon,Stephens,13814,2005-07-07 12:12:36.000,3,0.0,1,amount_over_3x
+103,GLADYS,HAMILTON,Nigeria,Ilorin,2005-07-07,3,11.97,1.2,3.99,1,1,1,Mike,Hillyer,2779,2005-07-07 19:24:39.000,3,0.6667,3,amount_over_3x
+157,DARLENE,ROSE,North Korea,Pyongyang,2005-07-07,2,9.98,1.0,0.99,2,2,2,Jon,Stephens,4266,2005-07-07 22:51:04.000,2,1.0,1,amount_over_3x
+376,RANDY,GAITHER,Russian Federation,Kurgan,2005-07-07,3,13.97,1.0,1.66,1,1,1,Mike,Hillyer,10181,2005-07-07 17:51:59.000,3,0.6667,1,amount_over_3x
+145,LUCILLE,HOLMES,South Africa,Soshanguve,2005-07-07,3,20.97,1.0,3.99,1,2,2,Jon,Stephens,3927,2005-07-07 21:33:16.000,3,0.6667,1,amount_over_3x
+395,JOHNNY,TURPIN,Sudan,al-Qadarif,2005-07-07,2,10.98,1.4,3.39,2,1,1,Mike,Hillyer,10702,2005-07-07 21:12:36.000,2,0.5,1,amount_over_3x
+517,BRAD,MCCURDY,Taiwan,Chungho,2005-07-07,4,17.96,1.25,5.74,2,2,2,Jon,Stephens,13923,2005-07-07 20:13:58.000,4,0.0,1,amount_over_3x
+335,GREGORY,MAULDIN,Tunisia,Sousse,2005-07-07,4,17.96,1.0,2.99,1,1,1,Mike,Hillyer,9049,2005-07-07 20:56:47.000,4,0.5,1,amount_over_3x
+124,SHEILA,WELLS,Turkey,Ktahya,2005-07-07,1,7.99,1.0,1.99,1,1,1,Mike,Hillyer,3341,2005-07-07 18:44:23.000,1,1.0,2,amount_over_3x
+518,GABRIEL,HARDER,Turkey,Sivas,2005-07-07,1,7.99,1.0,2.66,1,2,2,Jon,Stephens,13943,2005-07-07 02:19:44.000,1,1.0,2,amount_over_3x
+585,PERRY,SWAFFORD,Argentina,Quilmes,2005-07-08,2,14.98,1.25,4.74,1,1,1,Mike,Hillyer,15672,2005-07-08 10:41:06.000,2,0.5,1,amount_over_3x
+219,WILLIE,HOWELL,Argentina,Vicente Lpez,2005-07-08,2,8.98,1.0,2.49,2,2,2,Jon,Stephens,5926,2005-07-08 21:13:56.000,2,1.0,3,amount_over_3x
+455,JON,WILES,Bolivia,El Alto,2005-07-08,2,11.98,1.0,2.19,2,1,1,Mike,Hillyer,12289,2005-07-08 23:46:38.000,2,0.5,1,amount_over_3x
+39,DEBRA,NELSON,Brazil,Vila Velha,2005-07-08,3,23.97,1.17,5.49,1,2,2,Jon,Stephens,1077,2005-07-08 12:54:15.000,3,1.0,1,amount_over_3x
+535,JAVIER,ELROD,Chad,NDjamna,2005-07-08,3,16.97,1.0,4.99,1,2,2,Jon,Stephens,14405,2005-07-08 21:30:53.000,3,0.6667,1,amount_over_3x
+64,JUDITH,COX,China,Daxian,2005-07-08,3,13.97,1.0,2.49,2,2,2,Jon,Stephens,1743,2005-07-08 23:54:49.000,3,1.0,2,amount_over_3x
+180,STACY,CUNNINGHAM,Colombia,Pereira,2005-07-08,2,17.98,2.0,5.98,2,1,1,Mike,Hillyer,4895,2005-07-08 21:55:25.000,2,1.0,1,amount_over_3x
+418,JEFF,EAST,Dominican Republic,San Felipe de Puerto Plata,2005-07-08,3,11.97,1.33,3.32,2,1,1,Mike,Hillyer,11301,2005-07-08 22:32:53.000,3,0.3333,1,amount_over_3x
+104,RITA,GRAHAM,France,Toulon,2005-07-08,3,15.97,1.2,4.19,1,1,1,Mike,Hillyer,2810,2005-07-08 21:32:30.000,3,0.3333,1,amount_over_3x
+36,KATHLEEN,ADAMS,Iran,Arak,2005-07-08,2,9.98,1.0,0.99,2,2,2,Jon,Stephens,989,2005-07-08 14:54:42.000,2,0.0,2,amount_over_3x
+579,DARYL,LARUE,Iraq,Mosul,2005-07-08,2,12.98,1.0,4.32,2,1,1,Mike,Hillyer,15511,2005-07-08 22:18:29.000,2,0.5,1,amount_over_3x
+404,STANLEY,SCROGGINS,Japan,Omiya,2005-07-08,4,21.96,1.0,3.79,2,1,1,Mike,Hillyer,10920,2005-07-08 23:38:40.000,4,0.5,1,amount_over_3x
+425,FRANCIS,SIKES,Mexico,San Juan Bautista Tuxtepec,2005-07-08,4,27.96,1.33,6.99,2,1,1,Mike,Hillyer,11488,2005-07-08 22:35:30.000,4,1.0,1,amount_over_3x
+133,PAULINE,HENRY,Mexico,Torren,2005-07-08,4,19.96,1.0,3.49,1,2,2,Jon,Stephens,3595,2005-07-08 17:54:18.000,4,0.5,2,amount_over_3x
+451,JIM,REA,Mexico,El Fuerte,2005-07-08,3,16.97,1.33,4.65,1,2,2,Jon,Stephens,12173,2005-07-08 22:15:48.000,3,1.0,4,amount_over_3x
+257,MARSHA,DOUGLAS,Mozambique,Beira,2005-07-08,2,11.98,1.0,2.99,2,2,2,Jon,Stephens,6925,2005-07-08 05:39:42.000,2,0.5,1,amount_over_3x
+474,DUSTIN,GILLETTE,Netherlands,Emmen,2005-07-08,5,12.95,1.0,5.99,2,2,2,Jon,Stephens,12822,2005-07-08 19:53:22.000,5,0.4,1,count_at_least_5
+184,VIVIAN,RUIZ,Netherlands,s-Hertogenbosch,2005-07-08,1,6.99,1.0,1.66,1,2,2,Jon,Stephens,5003,2005-07-08 19:42:03.000,1,1.0,3,amount_over_3x
+284,SONIA,GREGORY,Nigeria,Benin City,2005-07-08,2,15.98,1.0,2.59,1,2,2,Jon,Stephens,7689,2005-07-08 22:16:18.000,2,1.0,1,amount_over_3x
+304,DAVID,ROYAL,Peru,Callao,2005-07-08,2,15.98,1.0,5.24,2,2,2,Jon,Stephens,8251,2005-07-08 17:07:11.000,2,1.0,1,amount_over_3x
+563,KEN,PREWITT,Romania,Bucuresti,2005-07-08,7,29.93,1.33,2.99,2,1,1,Mike,Hillyer,15085,2005-07-08 19:46:58.000,7,0.5714,1,amount_over_3x_and_count_at_least_5
+393,PHILIP,CAUSEY,Russian Federation,Korolev,2005-07-08,3,22.97,1.2,4.59,1,2,2,Jon,Stephens,10651,2005-07-08 16:27:24.000,3,1.0,1,amount_over_3x
+127,ELAINE,STEVENS,Russian Federation,Smolensk,2005-07-08,2,11.98,1.0,3.99,2,2,2,Jon,Stephens,3420,2005-07-08 17:04:24.000,2,1.0,2,amount_over_3x
+348,ROGER,QUINTANILLA,Taiwan,Hsichuh,2005-07-08,4,20.96,1.0,4.59,2,1,1,Mike,Hillyer,9408,2005-07-08 17:01:48.000,4,0.75,1,amount_over_3x
+481,HERMAN,DEVORE,Tanzania,Mwanza,2005-07-08,4,16.96,1.25,3.74,1,1,1,Mike,Hillyer,12988,2005-07-08 10:11:45.000,4,0.75,1,amount_over_3x
+220,CHARLENE,ALVAREZ,Tanzania,Zanzibar,2005-07-08,1,2.99,1.0,0.99,2,2,2,Jon,Stephens,5951,2005-07-08 21:37:31.000,1,0.0,2,amount_over_3x
+172,BERNICE,WILLIS,Turkey,Batman,2005-07-08,3,17.97,1.0,1.32,1,2,2,Jon,Stephens,4664,2005-07-08 19:33:49.000,3,0.6667,1,amount_over_3x
+518,GABRIEL,HARDER,Turkey,Sivas,2005-07-08,2,11.98,1.0,3.99,1,2,2,Jon,Stephens,13945,2005-07-08 22:54:21.000,2,0.5,2,amount_over_3x
+142,APRIL,BURNS,United Kingdom,Dundee,2005-07-08,2,9.98,1.0,2.66,1,1,1,Mike,Hillyer,3838,2005-07-08 03:27:59.000,2,0.5,1,amount_over_3x
+212,WILMA,RICHARDS,United States,Bellevue,2005-07-08,3,21.97,1.33,4.99,2,2,2,Jon,Stephens,5759,2005-07-08 21:32:17.000,3,1.0,1,amount_over_3x
+275,CAROLE,BARNETT,United States,Peoria,2005-07-08,2,10.98,1.0,2.79,2,2,2,Jon,Stephens,7444,2005-07-08 21:26:11.000,2,0.5,2,amount_over_3x
+248,CAROLINE,BOWMAN,United States,Tallahassee,2005-07-08,2,5.98,1.0,1.99,1,1,1,Mike,Hillyer,6705,2005-07-08 18:18:23.000,2,0.5,9,amount_over_3x
+199,BETH,FRANKLIN,Vietnam,Haiphong,2005-07-08,2,11.98,1.0,2.99,2,2,2,Jon,Stephens,5398,2005-07-08 06:04:23.000,2,0.5,1,amount_over_3x
+7,MARIA,MILLER,Yugoslavia,Kragujevac,2005-07-08,2,10.98,1.17,3.32,1,1,1,Mike,Hillyer,187,2005-07-08 18:47:38.000,2,0.5,1,amount_over_3x
+332,STEPHEN,QUALLS,Bangladesh,Dhaka,2005-07-09,5,9.95,2.0,13.98,1,1,1,Mike,Hillyer,8967,2005-07-09 21:45:17.000,5,0.4,1,count_at_least_5
+144,CLARA,SHAW,Belarus,Molodetno,2005-07-09,3,17.97,1.33,5.65,1,2,2,Jon,Stephens,3891,2005-07-09 20:16:51.000,3,0.6667,1,amount_over_3x
+410,CURTIS,IRBY,Canada,Richmond Hill,2005-07-09,4,17.96,1.33,4.15,2,1,1,Mike,Hillyer,11096,2005-07-09 17:01:08.000,4,0.5,1,amount_over_3x
+45,JANET,PHILLIPS,Chile,Antofagasta,2005-07-09,2,14.98,1.2,3.79,1,1,1,Mike,Hillyer,1237,2005-07-09 20:11:49.000,2,1.0,1,amount_over_3x
+538,TED,BREAUX,China,Baicheng,2005-07-09,3,16.97,1.0,4.79,2,1,1,Mike,Hillyer,14487,2005-07-09 23:57:44.000,3,0.3333,1,amount_over_3x
+241,HEIDI,LARSON,China,Xiangfan,2005-07-09,3,8.97,1.4,2.79,2,1,1,Mike,Hillyer,6511,2005-07-09 21:34:32.000,3,1.0,4,amount_over_3x
+521,ROLAND,SOUTH,China,Yingkou,2005-07-09,2,7.98,1.33,1.99,2,2,2,Jon,Stephens,14025,2005-07-09 22:35:49.000,2,0.5,6,amount_over_3x
+43,CHRISTINE,ROBERTS,French Polynesia,Faaa,2005-07-09,2,9.98,1.0,3.32,2,1,1,Mike,Hillyer,1185,2005-07-09 19:59:10.000,2,0.5,1,amount_over_3x
+135,JUANITA,MASON,India,Pune,2005-07-09,1,7.99,1.0,1.74,2,2,2,Jon,Stephens,3642,2005-07-09 04:01:02.000,1,1.0,5,amount_over_3x
+279,DIANNE,SHELTON,Iran,Tabriz,2005-07-09,3,20.97,1.5,5.49,2,1,1,Mike,Hillyer,7563,2005-07-09 18:15:32.000,3,0.6667,1,amount_over_3x
+10,DOROTHY,TAYLOR,Iran,Esfahan,2005-07-09,3,11.97,1.14,3.85,1,1,1,Mike,Hillyer,265,2005-07-09 21:58:57.000,3,0.3333,2,amount_over_3x
+315,KENNETH,GOODEN,Israel,Bat Yam,2005-07-09,2,11.98,1.0,2.99,2,2,2,Jon,Stephens,8542,2005-07-09 07:25:35.000,2,1.0,2,amount_over_3x
+273,PRISCILLA,LOWE,Mexico,Salamanca,2005-07-09,2,15.98,1.17,5.16,2,2,2,Jon,Stephens,7377,2005-07-09 21:28:07.000,2,1.0,1,amount_over_3x
+482,MAURICE,CRAWLEY,Mexico,Coatzacoalcos,2005-07-09,2,9.98,1.0,2.99,1,1,1,Mike,Hillyer,13016,2005-07-09 23:03:21.000,2,0.0,2,amount_over_3x
+72,THERESA,WATSON,Philippines,Taguig,2005-07-09,3,10.97,1.0,2.99,2,1,1,Mike,Hillyer,1947,2005-07-09 20:59:09.000,3,0.3333,1,amount_over_3x
+407,DALE,RATCLIFF,South Africa,Rustenburg,2005-07-09,1,4.99,1.0,1.66,1,1,1,Mike,Hillyer,11009,2005-07-09 04:58:26.000,1,0.0,4,amount_over_3x
+139,AMBER,DIXON,Taiwan,Touliu,2005-07-09,3,17.97,1.5,4.74,1,1,1,Mike,Hillyer,3762,2005-07-09 19:26:22.000,3,0.6667,1,amount_over_3x
+5,ELIZABETH,BROWN,Taiwan,Nantou,2005-07-09,3,12.97,1.0,3.99,1,2,2,Jon,Stephens,120,2005-07-09 08:51:42.000,3,0.6667,3,amount_over_3x
+14,BETTY,WHITE,United States,Citrus Heights,2005-07-09,3,13.97,1.0,2.99,2,1,1,Mike,Hillyer,368,2005-07-09 19:14:32.000,3,0.6667,3,amount_over_3x
+532,NEIL,RENNER,Vietnam,Cam Ranh,2005-07-09,3,15.97,1.0,4.24,2,2,2,Jon,Stephens,14314,2005-07-09 14:44:23.000,3,0.6667,1,amount_over_3x
+92,TINA,SIMMONS,Brazil,Goinia,2005-07-10,4,23.96,1.4,7.99,2,2,2,Jon,Stephens,2516,2005-07-10 21:32:14.000,4,0.75,1,amount_over_3x
+254,MAXINE,SILVA,Brazil,Poos de Caldas,2005-07-10,4,19.96,1.8,5.78,2,2,2,Jon,Stephens,6853,2005-07-10 21:59:32.000,4,0.5,2,amount_over_3x
+374,JEREMY,HURTADO,Brazil,Vitria de Santo Anto,2005-07-10,3,13.97,1.0,3.16,2,2,2,Jon,Stephens,10134,2005-07-10 22:52:42.000,3,0.6667,3,amount_over_3x
+74,DENISE,KELLY,Brazil,Rio Claro,2005-07-10,3,10.97,1.0,3.39,1,2,2,Jon,Stephens,2002,2005-07-10 21:30:22.000,3,0.3333,5,amount_over_3x
+170,BEATRICE,ARNOLD,India,Udaipur,2005-07-10,3,15.97,1.17,4.49,1,2,2,Jon,Stephens,4616,2005-07-10 15:17:33.000,3,0.6667,1,amount_over_3x
+300,JOHN,FARNSWORTH,India,Parbhani,2005-07-10,2,13.98,1.0,1.49,1,1,1,Mike,Hillyer,8144,2005-07-10 10:09:17.000,2,0.5,2,amount_over_3x
+28,CYNTHIA,YOUNG,India,Munger (Monghyr),2005-07-10,2,8.98,1.14,2.99,1,1,1,Mike,Hillyer,761,2005-07-10 15:49:12.000,2,1.0,6,amount_over_3x
+391,CLARENCE,GAMEZ,Japan,Izumisano,2005-07-10,2,12.98,1.33,3.15,1,1,1,Mike,Hillyer,10602,2005-07-10 04:52:04.000,2,0.5,2,amount_over_3x
+369,FRED,WHEAT,Mexico,Jurez,2005-07-10,2,10.98,1.0,3.59,2,2,2,Jon,Stephens,9985,2005-07-10 03:15:24.000,2,0.5,4,amount_over_3x
+71,KATHY,JAMES,Philippines,Baybay,2005-07-10,3,18.97,1.2,4.99,1,2,2,Jon,Stephens,1920,2005-07-10 15:46:50.000,3,0.3333,1,amount_over_3x
+44,MARIE,TURNER,Russian Federation,Lipetsk,2005-07-10,4,24.96,1.0,4.49,1,2,2,Jon,Stephens,1217,2005-07-10 20:46:13.000,4,0.75,1,amount_over_3x
+407,DALE,RATCLIFF,South Africa,Rustenburg,2005-07-10,1,9.99,1.0,2.49,1,2,2,Jon,Stephens,11010,2005-07-10 04:23:11.000,1,1.0,1,amount_over_3x
+50,DIANE,COLLINS,Sudan,Omdurman,2005-07-10,3,21.97,1.2,3.99,1,1,1,Mike,Hillyer,1370,2005-07-10 21:58:30.000,3,0.6667,1,amount_over_3x
+220,CHARLENE,ALVAREZ,Tanzania,Zanzibar,2005-07-10,3,6.97,1.0,1.99,2,2,2,Jon,Stephens,5954,2005-07-10 18:02:02.000,3,0.0,1,amount_over_3x
+187,BRITTANY,RILEY,Ukraine,Sumy,2005-07-10,2,15.98,1.25,5.11,2,2,2,Jon,Stephens,5086,2005-07-10 16:39:24.000,2,1.0,1,amount_over_3x
+63,ASHLEY,RICHARDSON,United States,Lincoln,2005-07-10,3,16.97,1.0,4.99,1,2,2,Jon,Stephens,1714,2005-07-10 16:34:48.000,3,0.6667,1,amount_over_3x
+2,PATRICIA,JOHNSON,United States,San Bernardino,2005-07-10,2,9.98,1.0,2.99,1,1,1,Mike,Hillyer,36,2005-07-10 12:38:56.000,2,0.5,3,amount_over_3x
+520,MITCHELL,WESTMORELAND,Vietnam,Nha Trang,2005-07-10,3,19.97,1.0,4.82,2,1,1,Mike,Hillyer,13997,2005-07-10 17:45:13.000,3,0.6667,1,amount_over_3x
+527,CORY,MEEHAN,Belarus,Mogiljov,2005-07-11,3,11.97,1.2,1.99,1,1,1,Mike,Hillyer,14189,2005-07-11 03:34:29.000,3,0.6667,1,amount_over_3x
+216,NATALIE,MEYER,Brazil,Aparecida de Goinia,2005-07-11,2,14.98,1.2,3.79,1,2,2,Jon,Stephens,5866,2005-07-11 20:25:05.000,2,1.0,1,amount_over_3x
+241,HEIDI,LARSON,China,Xiangfan,2005-07-11,3,14.97,1.57,3.84,2,2,2,Jon,Stephens,6515,2005-07-11 14:56:57.000,3,0.6667,1,amount_over_3x
+596,ENRIQUE,FORSYTHE,Greece,Patras,2005-07-11,3,8.97,1.0,2.66,1,1,1,Mike,Hillyer,15967,2005-07-11 12:09:51.000,3,0.3333,1,amount_over_3x
+525,ADRIAN,CLARY,Italy,Udine,2005-07-11,2,14.98,1.0,4.32,2,2,2,Jon,Stephens,14122,2005-07-11 22:17:16.000,2,1.0,1,amount_over_3x
+264,GWENDOLYN,MAY,Japan,Higashiosaka,2005-07-11,3,12.97,1.0,3.85,1,1,1,Mike,Hillyer,7136,2005-07-11 22:29:29.000,3,0.3333,2,amount_over_3x
+84,SARA,PERRY,Mexico,Atlixco,2005-07-11,3,18.97,1.43,5.13,2,2,2,Jon,Stephens,2284,2005-07-11 23:27:52.000,3,0.6667,1,amount_over_3x
+177,SAMANTHA,DUNCAN,Mexico,Matamoros,2005-07-11,2,12.98,1.5,3.99,2,1,1,Mike,Hillyer,4807,2005-07-11 16:51:39.000,2,0.5,2,amount_over_3x
+357,KEITH,RICO,Slovakia,Bratislava,2005-07-11,3,16.97,1.17,3.82,1,2,2,Jon,Stephens,9649,2005-07-11 22:53:12.000,3,0.6667,1,amount_over_3x
+155,GAIL,KNIGHT,Switzerland,Bern,2005-07-11,3,15.97,1.0,4.99,1,2,2,Jon,Stephens,4220,2005-07-11 05:29:22.000,3,0.3333,1,amount_over_3x
+366,BRANDON,HUEY,Turkey,Balikesir,2005-07-11,2,11.98,1.17,3.49,1,1,1,Mike,Hillyer,9890,2005-07-11 21:18:16.000,2,1.0,1,amount_over_3x
+146,JAMIE,RICE,United States,Sterling Heights,2005-07-11,3,19.97,1.13,4.74,1,1,1,Mike,Hillyer,3962,2005-07-11 19:07:29.000,3,0.6667,1,amount_over_3x
+6,JENNIFER,DAVIS,United States,Laredo,2005-07-11,2,13.98,1.17,2.32,2,1,1,Mike,Hillyer,157,2005-07-11 15:01:54.000,2,1.0,3,amount_over_3x
+472,GREG,ROBINS,Vietnam,Nam Dinh,2005-07-11,3,18.97,1.13,4.86,1,1,1,Mike,Hillyer,12764,2005-07-11 18:08:41.000,3,1.0,1,amount_over_3x
+342,HAROLD,MARTINO,Brazil,Boa Vista,2005-07-12,3,19.97,1.25,5.24,1,2,2,Jon,Stephens,9245,2005-07-12 16:33:28.000,3,0.6667,1,amount_over_3x
+516,ELMER,NOE,Cambodia,Battambang,2005-07-12,2,13.98,1.0,3.85,2,1,1,Mike,Hillyer,13898,2005-07-12 19:53:51.000,2,1.0,1,amount_over_3x
+546,KELLY,KNOTT,China,Sanya,2005-07-12,3,19.97,1.33,3.49,1,2,2,Jon,Stephens,14672,2005-07-12 22:11:21.000,3,0.6667,1,amount_over_3x
+169,ERICA,MATTHEWS,China,Pingxiang,2005-07-12,2,14.98,1.0,4.82,2,2,2,Jon,Stephens,4591,2005-07-12 02:20:09.000,2,0.5,2,amount_over_3x
+490,SAM,MCDUFFIE,Colombia,Sogamoso,2005-07-12,3,16.97,1.13,4.99,1,2,2,Jon,Stephens,13222,2005-07-12 22:40:48.000,3,0.3333,1,amount_over_3x
+387,JESSE,SCHILLING,"Congo, The Democratic Republic of the",Lubumbashi,2005-07-12,2,12.98,1.4,3.99,2,1,1,Mike,Hillyer,10485,2005-07-12 03:52:39.000,2,1.0,1,amount_over_3x
+262,PATSY,DAVIDSON,Ecuador,Portoviejo,2005-07-12,4,26.96,1.29,4.27,2,1,1,Mike,Hillyer,7083,2005-07-12 17:23:01.000,4,1.0,1,amount_over_3x
+529,ERIK,GUILLEN,India,Bhimavaram,2005-07-12,3,20.97,1.33,2.99,2,1,1,Mike,Hillyer,14241,2005-07-12 22:08:46.000,3,1.0,1,amount_over_3x
+136,ANITA,MORALES,India,Hubli-Dharwad,2005-07-12,1,8.99,1.0,2.99,2,1,1,Mike,Hillyer,3671,2005-07-12 06:50:52.000,1,1.0,5,amount_over_3x
+458,LLOYD,DOWD,Indonesia,Tegal,2005-07-12,3,15.97,1.0,2.99,1,1,1,Mike,Hillyer,12366,2005-07-12 11:06:28.000,3,1.0,1,amount_over_3x
+273,PRISCILLA,LOWE,Mexico,Salamanca,2005-07-12,4,19.96,1.25,6.24,2,1,1,Mike,Hillyer,7382,2005-07-12 13:35:02.000,4,0.75,1,amount_over_3x
+184,VIVIAN,RUIZ,Netherlands,s-Hertogenbosch,2005-07-12,2,9.98,1.0,2.59,1,2,2,Jon,Stephens,5006,2005-07-12 12:47:22.000,2,0.5,1,amount_over_3x
+198,ELSIE,KELLEY,Nigeria,Ikerre,2005-07-12,3,14.97,1.25,3.24,2,2,2,Jon,Stephens,5368,2005-07-12 21:01:22.000,3,0.6667,1,amount_over_3x
+571,JOHNNIE,CHISHOLM,Poland,Plock,2005-07-12,2,17.98,1.13,5.74,2,1,1,Mike,Hillyer,15300,2005-07-12 16:37:28.000,2,1.0,1,amount_over_3x
+148,ELEANOR,HUNT,Runion,Saint-Denis,2005-07-12,2,19.98,1.71,6.13,1,2,2,Jon,Stephens,4026,2005-07-12 16:37:55.000,2,1.0,1,amount_over_3x
+376,RANDY,GAITHER,Russian Federation,Kurgan,2005-07-12,3,18.97,1.5,5.82,1,2,2,Jon,Stephens,10187,2005-07-12 17:33:53.000,3,0.6667,2,amount_over_3x
+73,BEVERLY,BROOKS,Taiwan,Chiayi,2005-07-12,2,12.98,1.0,3.79,2,1,1,Mike,Hillyer,1978,2005-07-12 10:39:55.000,2,0.5,1,amount_over_3x
+220,CHARLENE,ALVAREZ,Tanzania,Zanzibar,2005-07-12,1,8.99,1.5,2.99,2,2,2,Jon,Stephens,5956,2005-07-12 18:51:41.000,1,1.0,1,amount_over_3x
+483,VERNON,CHAPA,Turkey,Denizli,2005-07-12,2,14.98,1.0,4.99,2,2,2,Jon,Stephens,13044,2005-07-12 21:44:16.000,2,0.5,1,amount_over_3x
+218,VERA,MCCOY,Afghanistan,Kabul,2005-07-27,2,13.98,1.0,2.99,1,1,1,Mike,Hillyer,5911,2005-07-27 10:09:39.000,2,0.5,1,amount_over_3x
+551,CLAYTON,BARBEE,Brazil,Alvorada,2005-07-27,1,9.99,1.0,2.49,2,2,2,Jon,Stephens,14791,2005-07-27 04:51:15.000,1,1.0,3,amount_over_3x
+352,ALBERT,CROUSE,Cameroon,Bamenda,2005-07-27,4,22.96,1.0,5.49,1,1,1,Mike,Hillyer,9521,2005-07-27 23:06:41.000,4,0.5,1,amount_over_3x
+154,MICHELE,GRANT,China,Yuncheng,2005-07-27,3,14.97,1.33,4.65,2,1,1,Mike,Hillyer,4197,2005-07-27 07:19:34.000,3,0.3333,1,amount_over_3x
+564,BOB,PFEIFFER,China,Xintai,2005-07-27,2,13.98,2.0,3.98,2,2,2,Jon,Stephens,15108,2005-07-27 19:01:03.000,2,0.5,3,amount_over_3x
+90,RUBY,WASHINGTON,China,Meixian,2005-07-27,3,13.97,1.0,3.49,2,1,1,Mike,Hillyer,2450,2005-07-27 17:21:52.000,3,1.0,4,amount_over_3x
+423,ALFRED,CASILLAS,Egypt,Sawhaj,2005-07-27,5,24.95,1.33,2.32,2,2,2,Jon,Stephens,11437,2005-07-27 21:39:42.000,5,0.8,1,amount_over_3x_and_count_at_least_5
+233,LILLIE,KIM,Egypt,Idfu,2005-07-27,2,13.98,1.0,4.42,2,2,2,Jon,Stephens,6282,2005-07-27 15:54:19.000,2,0.5,2,amount_over_3x
+3,LINDA,WILLIAMS,Greece,Athenai,2005-07-27,2,16.98,1.0,4.99,1,2,2,Jon,Stephens,69,2005-07-27 20:23:12.000,2,1.0,1,amount_over_3x
+370,WAYNE,TRUONG,India,Gulbarga,2005-07-27,3,15.97,1.0,4.49,2,1,1,Mike,Hillyer,10005,2005-07-27 09:47:53.000,3,1.0,3,amount_over_3x
+135,JUANITA,MASON,India,Pune,2005-07-27,3,13.97,1.2,4.39,2,1,1,Mike,Hillyer,3649,2005-07-27 22:12:41.000,3,0.3333,5,amount_over_3x
+240,MARLENE,WELCH,Japan,Iwaki,2005-07-27,3,18.97,1.0,2.99,1,2,2,Jon,Stephens,6488,2005-07-27 19:20:25.000,3,0.6667,1,amount_over_3x
+58,JEAN,BELL,Malaysia,Kuching,2005-07-27,2,14.98,1.0,3.99,1,2,2,Jon,Stephens,1603,2005-07-27 19:32:45.000,2,0.5,1,amount_over_3x
+582,ANDY,VANHORN,Mexico,Huejutla de Reyes,2005-07-27,4,20.96,1.0,3.49,2,1,1,Mike,Hillyer,15597,2005-07-27 22:53:52.000,4,0.5,1,amount_over_3x
+257,MARSHA,DOUGLAS,Mozambique,Beira,2005-07-27,5,18.95,1.5,8.99,2,2,2,Jon,Stephens,6934,2005-07-27 21:01:16.000,5,0.4,1,count_at_least_5
+498,GENE,SANBORN,Oman,Salala,2005-07-27,3,16.97,1.33,3.49,1,1,1,Mike,Hillyer,13424,2005-07-27 14:23:55.000,3,0.6667,1,amount_over_3x
+255,IRMA,PEARSON,Philippines,Hagonoy,2005-07-27,1,8.99,1.5,1.99,2,2,2,Jon,Stephens,6878,2005-07-27 19:07:43.000,1,1.0,3,amount_over_3x
+70,CHRISTINA,RAMIREZ,Saudi Arabia,al-Hawiya,2005-07-27,2,12.98,1.0,3.49,2,2,2,Jon,Stephens,1897,2005-07-27 17:10:05.000,2,0.5,1,amount_over_3x
+245,COURTNEY,DAY,South Korea,Uijongbu,2005-07-27,5,17.95,1.0,3.99,1,2,2,Jon,Stephens,6640,2005-07-27 16:05:00.000,5,0.6,1,amount_over_3x_and_count_at_least_5
+252,MATTIE,HOFFMAN,United Kingdom,London,2005-07-27,3,6.97,1.33,1.99,2,2,2,Jon,Stephens,6799,2005-07-27 07:51:11.000,3,0.0,1,amount_over_3x
+406,NATHAN,RUNYON,"Virgin Islands, U.S.",Charlotte Amalie,2005-07-27,4,23.96,1.25,3.74,1,2,2,Jon,Stephens,10989,2005-07-27 23:54:52.000,4,0.5,1,amount_over_3x
+436,TROY,QUIGLEY,Canada,Vancouver,2005-07-28,2,15.98,1.75,4.98,1,2,2,Jon,Stephens,11755,2005-07-28 18:32:49.000,2,1.0,1,amount_over_3x
+389,ALAN,KAHN,China,Emeishan,2005-07-28,2,13.98,1.0,3.56,1,2,2,Jon,Stephens,10541,2005-07-28 14:15:54.000,2,0.5,1,amount_over_3x
+138,HAZEL,WARREN,China,Hohhot,2005-07-28,3,11.97,1.4,3.59,1,2,2,Jon,Stephens,3734,2005-07-28 21:10:30.000,3,0.6667,3,amount_over_3x
+298,ERIKA,PENA,Finland,Oulu,2005-07-28,2,8.98,1.17,2.99,1,1,1,Mike,Hillyer,8093,2005-07-28 10:13:15.000,2,0.5,1,amount_over_3x
+509,RAUL,FORTIER,India,Chapra,2005-07-28,3,21.97,1.25,4.74,1,1,1,Mike,Hillyer,13722,2005-07-28 23:37:57.000,3,1.0,1,amount_over_3x
+300,JOHN,FARNSWORTH,India,Parbhani,2005-07-28,3,18.97,1.17,5.32,1,1,1,Mike,Hillyer,8150,2005-07-28 23:31:05.000,3,0.6667,2,amount_over_3x
+78,LORI,WOOD,India,Rae Bareli,2005-07-28,3,15.97,1.29,3.7,1,1,1,Mike,Hillyer,2127,2005-07-28 13:34:08.000,3,1.0,3,amount_over_3x
+259,LENA,JENSEN,India,Halisahar,2005-07-28,2,12.98,1.0,3.79,2,1,1,Mike,Hillyer,6993,2005-07-28 08:20:55.000,2,0.5,5,amount_over_3x
+459,TOMMY,COLLAZO,Iran,Qomsheh,2005-07-28,5,29.95,1.0,2.66,1,1,1,Mike,Hillyer,12395,2005-07-28 11:47:23.000,5,0.6,1,amount_over_3x_and_count_at_least_5
+347,RYAN,SALISBURY,Latvia,Daugavpils,2005-07-28,4,15.96,1.17,4.16,2,2,2,Jon,Stephens,9383,2005-07-28 21:42:08.000,4,0.25,1,amount_over_3x
+148,ELEANOR,HUNT,Runion,Saint-Denis,2005-07-28,4,20.96,1.5,6.65,1,2,2,Jon,Stephens,4030,2005-07-28 19:10:03.000,4,0.25,1,amount_over_3x
+510,BEN,EASTER,Russian Federation,Kamyin,2005-07-28,2,18.98,1.0,3.59,2,2,2,Jon,Stephens,13748,2005-07-28 07:28:03.000,2,1.0,2,amount_over_3x
+407,DALE,RATCLIFF,South Africa,Rustenburg,2005-07-28,4,22.96,1.0,4.59,1,1,1,Mike,Hillyer,11016,2005-07-28 23:04:10.000,4,0.5,1,amount_over_3x
+237,TANYA,GILBERT,South Korea,Naju,2005-07-28,3,16.97,1.33,5.65,1,2,2,Jon,Stephens,6399,2005-07-28 18:49:43.000,3,0.3333,1,amount_over_3x
+577,CLIFTON,MALCOLM,Taiwan,Tanshui,2005-07-28,3,21.97,1.75,5.98,2,1,1,Mike,Hillyer,15471,2005-07-28 17:10:02.000,3,1.0,1,amount_over_3x
+182,RENEE,LANE,United States,Compton,2005-07-28,3,14.97,1.8,4.98,1,2,2,Jon,Stephens,4965,2005-07-28 16:50:26.000,3,0.3333,1,amount_over_3x
+118,KIM,CRUZ,United States,Grand Prairie,2005-07-28,2,9.98,1.0,1.79,1,2,2,Jon,Stephens,3177,2005-07-28 13:32:17.000,2,1.0,2,amount_over_3x
+441,MARIO,CHEATHAM,Algeria,Batna,2005-07-29,5,18.95,1.5,5.32,1,2,2,Jon,Stephens,11903,2005-07-29 13:46:14.000,5,0.6,1,amount_over_3x_and_count_at_least_5
+445,MICHEAL,FORMAN,Argentina,Escobar,2005-07-29,1,8.99,1.2,2.79,1,1,1,Mike,Hillyer,12007,2005-07-29 23:26:19.000,1,1.0,2,amount_over_3x
+173,AUDREY,RAY,Austria,Graz,2005-07-29,3,16.97,1.5,5.49,1,2,2,Jon,Stephens,4707,2005-07-29 22:33:34.000,3,0.6667,1,amount_over_3x
+354,JUSTIN,NGO,Brazil,Santo Andr,2005-07-29,3,18.97,1.56,4.98,2,1,1,Mike,Hillyer,9574,2005-07-29 13:19:25.000,3,0.6667,2,amount_over_3x
+495,CHARLIE,BESS,China,Baiyin,2005-07-29,3,13.97,1.0,4.59,2,1,1,Mike,Hillyer,13343,2005-07-29 15:49:48.000,3,1.0,1,amount_over_3x
+162,LAUREN,HUDSON,France,Le Mans,2005-07-29,2,9.98,1.0,2.99,2,1,1,Mike,Hillyer,4412,2005-07-29 12:03:27.000,2,0.5,1,amount_over_3x
+114,GRACE,ELLIS,Germany,Duisburg,2005-07-29,2,15.98,1.33,4.54,2,1,1,Mike,Hillyer,3078,2005-07-29 12:32:20.000,2,0.5,1,amount_over_3x
+412,ALLEN,BUTTERFIELD,India,Hoshiarpur,2005-07-29,3,18.97,1.0,0.99,2,1,1,Mike,Hillyer,11159,2005-07-29 15:54:22.000,3,0.6667,1,amount_over_3x
+238,NELLIE,GARRETT,India,Shimoga,2005-07-29,3,16.97,1.0,3.24,1,1,1,Mike,Hillyer,6430,2005-07-29 08:20:49.000,3,0.6667,3,amount_over_3x
+175,ANNETTE,OLSON,India,Allappuzha (Alleppey),2005-07-29,4,16.96,1.0,4.16,1,1,1,Mike,Hillyer,4750,2005-07-29 22:09:08.000,4,0.75,4,amount_over_3x
+274,NAOMI,JENNINGS,India,Karnal,2005-07-29,3,14.97,1.0,3.99,1,2,2,Jon,Stephens,7416,2005-07-29 10:00:48.000,3,0.6667,5,amount_over_3x
+192,LAURIE,LAWRENCE,India,Firozabad,2005-07-29,1,7.99,1.0,2.42,1,2,2,Jon,Stephens,5205,2005-07-29 02:29:36.000,1,1.0,12,amount_over_3x
+328,JEFFREY,SPEAR,Indonesia,Ciparay,2005-07-29,2,11.98,1.0,3.49,2,2,2,Jon,Stephens,8861,2005-07-29 20:19:45.000,2,1.0,3,amount_over_3x
+459,TOMMY,COLLAZO,Iran,Qomsheh,2005-07-29,2,20.98,1.57,6.56,1,2,2,Jon,Stephens,12397,2005-07-29 11:19:59.000,2,1.0,1,amount_over_3x
+401,TONY,CARRANZA,Japan,Koriyama,2005-07-29,3,14.97,1.25,3.99,2,1,1,Mike,Hillyer,10844,2005-07-29 17:58:58.000,3,0.3333,1,amount_over_3x
+76,IRENE,PRICE,Kazakstan,Pavlodar,2005-07-29,3,13.97,1.0,2.32,2,2,2,Jon,Stephens,2075,2005-07-29 06:28:19.000,3,0.6667,1,amount_over_3x
+108,TRACY,COLE,Mexico,Huixquilucan,2005-07-29,3,15.97,1.5,5.15,1,1,1,Mike,Hillyer,2921,2005-07-29 23:10:28.000,3,0.3333,1,amount_over_3x
+513,DUANE,TUBBS,Nauru,Yangor,2005-07-29,4,25.96,1.4,5.59,2,1,1,Mike,Hillyer,13821,2005-07-29 21:15:38.000,4,0.5,1,amount_over_3x
+341,PETER,MENARD,Netherlands,Ede,2005-07-29,2,12.98,1.25,4.24,1,1,1,Mike,Hillyer,9228,2005-07-29 18:12:49.000,2,1.0,1,amount_over_3x
+280,TRACEY,BARRETT,Nigeria,Owo,2005-07-29,5,20.95,1.0,2.99,2,2,2,Jon,Stephens,7596,2005-07-29 18:58:24.000,5,0.6,1,amount_over_3x_and_count_at_least_5
+157,DARLENE,ROSE,North Korea,Pyongyang,2005-07-29,5,12.95,1.5,4.82,2,1,1,Mike,Hillyer,4277,2005-07-29 22:31:24.000,5,0.2,1,count_at_least_5
+71,KATHY,JAMES,Philippines,Baybay,2005-07-29,5,18.95,1.71,7.27,1,1,1,Mike,Hillyer,1931,2005-07-29 20:47:27.000,5,0.6,1,count_at_least_5
+563,KEN,PREWITT,Romania,Bucuresti,2005-07-29,4,22.96,2.4,7.58,2,2,2,Jon,Stephens,15092,2005-07-29 21:47:40.000,4,1.0,1,amount_over_3x
+346,ARTHUR,SIMPKINS,Russian Federation,Maikop,2005-07-29,4,22.96,1.14,6.85,1,2,2,Jon,Stephens,9352,2005-07-29 18:25:03.000,4,0.75,1,amount_over_3x
+566,CASEY,MENA,Turkey,Tokat,2005-07-29,5,17.95,2.25,9.23,1,1,1,Mike,Hillyer,15174,2005-07-29 21:10:37.000,5,0.8,1,count_at_least_5
+98,LILLIAN,GRIFFIN,United Arab Emirates,al-Ayn,2005-07-29,3,16.97,1.25,5.24,1,2,2,Jon,Stephens,2653,2005-07-29 22:14:04.000,3,0.6667,1,amount_over_3x
+181,ANA,BRADLEY,United States,Memphis,2005-07-29,2,15.98,1.0,5.32,2,1,1,Mike,Hillyer,4926,2005-07-29 13:03:31.000,2,1.0,1,amount_over_3x
+118,KIM,CRUZ,United States,Grand Prairie,2005-07-29,2,11.98,1.17,3.16,1,2,2,Jon,Stephens,3179,2005-07-29 19:22:40.000,2,1.0,3,amount_over_3x
+561,IAN,STILL,United States,Garland,2005-07-29,1,10.99,1.67,3.65,2,1,1,Mike,Hillyer,15037,2005-07-29 09:20:16.000,1,1.0,4,amount_over_3x
+174,YVONNE,WATKINS,Venezuela,Ocumare del Tuy,2005-07-29,2,12.98,1.0,3.99,2,1,1,Mike,Hillyer,4728,2005-07-29 19:18:30.000,2,1.0,1,amount_over_3x
+340,PATRICK,NEWSOM,Vietnam,Hanoi,2005-07-29,4,15.96,1.33,3.99,1,1,1,Mike,Hillyer,9199,2005-07-29 13:14:24.000,4,0.0,1,amount_over_3x
+333,ANDREW,PURDY,Azerbaijan,Baku,2005-07-30,2,15.98,1.5,4.65,2,2,2,Jon,Stephens,9002,2005-07-30 18:03:13.000,2,1.0,1,amount_over_3x
+544,CODY,NOLEN,Brazil,So Bernardo do Campo,2005-07-30,2,15.98,1.33,4.65,2,1,1,Mike,Hillyer,14628,2005-07-30 03:46:26.000,2,1.0,1,amount_over_3x
+485,CLYDE,TOBIAS,China,Shaoguan,2005-07-30,4,17.96,1.71,5.98,1,2,2,Jon,Stephens,13103,2005-07-30 12:20:59.000,4,0.75,2,amount_over_3x
+267,MARGIE,WADE,China,Lengshuijiang,2005-07-30,3,15.97,1.0,3.66,1,2,2,Jon,Stephens,7229,2005-07-30 20:18:53.000,3,1.0,4,amount_over_3x
+424,KYLE,SPURLOCK,China,Shanwei,2005-07-30,4,14.96,1.5,3.82,2,1,1,Mike,Hillyer,11466,2005-07-30 23:02:36.000,4,0.5,5,amount_over_3x
+259,LENA,JENSEN,India,Halisahar,2005-07-30,3,21.97,1.17,5.32,2,1,1,Mike,Hillyer,6996,2005-07-30 21:48:44.000,3,1.0,1,amount_over_3x
+135,JUANITA,MASON,India,Pune,2005-07-30,2,14.98,1.38,4.74,2,1,1,Mike,Hillyer,3653,2005-07-30 04:37:36.000,2,1.0,2,amount_over_3x
+12,NANCY,THOMAS,India,Yamuna Nagar,2005-07-30,3,11.97,2.0,3.98,1,2,2,Jon,Stephens,321,2005-07-30 13:49:43.000,3,0.6667,6,amount_over_3x
+534,CHRISTIAN,JUNG,India,Amroha,2005-07-30,2,10.98,1.0,2.99,1,2,2,Jon,Stephens,14385,2005-07-30 22:31:31.000,2,1.0,7,amount_over_3x
+33,ANNA,HILL,Italy,Alessandria,2005-07-30,3,11.97,1.0,3.59,2,1,1,Mike,Hillyer,917,2005-07-30 14:26:11.000,3,0.3333,2,amount_over_3x
+519,RON,DELUCA,Japan,Isesaki,2005-07-30,2,11.98,1.2,3.19,2,2,2,Jon,Stephens,13976,2005-07-30 21:43:28.000,2,1.0,3,amount_over_3x
+23,SARAH,LEWIS,Latvia,Liepaja,2005-07-30,2,15.98,1.29,4.84,2,2,2,Jon,Stephens,619,2005-07-30 14:26:46.000,2,1.0,1,amount_over_3x
+570,IVAN,CROMWELL,Mexico,Monclova,2005-07-30,3,11.97,1.0,2.99,2,2,2,Jon,Stephens,15280,2005-07-30 21:26:18.000,3,0.6667,1,amount_over_3x
+522,ARNOLD,HAVENS,Philippines,Santa Rosa,2005-07-30,5,29.95,1.5,7.61,2,1,1,Mike,Hillyer,14064,2005-07-30 20:44:10.000,5,0.6,1,amount_over_3x_and_count_at_least_5
+371,BILLY,POULIN,Philippines,Cabuyao,2005-07-30,2,13.98,1.13,3.99,1,1,1,Mike,Hillyer,10042,2005-07-30 09:20:59.000,2,0.5,3,amount_over_3x
+17,DONNA,THOMPSON,Russian Federation,Elista,2005-07-30,4,21.96,1.67,7.32,1,1,1,Mike,Hillyer,461,2005-07-30 23:43:32.000,4,0.5,1,amount_over_3x
+447,CLIFFORD,BOWENS,Russian Federation,Nabereznyje Telny,2005-07-30,3,17.97,1.14,4.7,1,1,1,Mike,Hillyer,12072,2005-07-30 15:56:39.000,3,1.0,2,amount_over_3x
+567,ALFREDO,MCADAMS,Russian Federation,Serpuhov,2005-07-30,2,14.98,1.13,3.24,2,1,1,Mike,Hillyer,15201,2005-07-30 23:06:33.000,2,1.0,3,amount_over_3x
+487,HECTOR,POINDEXTER,Russian Federation,Pjatigorsk,2005-07-30,3,14.97,1.43,4.41,2,1,1,Mike,Hillyer,13153,2005-07-30 23:45:09.000,3,0.6667,4,amount_over_3x
+75,TAMMY,SANDERS,Taiwan,Changhwa,2005-07-30,3,15.97,1.78,4.98,2,2,2,Jon,Stephens,2046,2005-07-30 23:59:21.000,3,0.6667,1,amount_over_3x
+220,CHARLENE,ALVAREZ,Tanzania,Zanzibar,2005-07-30,2,18.98,1.5,6.32,2,2,2,Jon,Stephens,5961,2005-07-30 22:20:29.000,2,1.0,1,amount_over_3x
+105,DAWN,SULLIVAN,Tuvalu,Funafuti,2005-07-30,4,22.96,1.5,6.49,1,2,2,Jon,Stephens,2840,2005-07-30 12:56:44.000,4,0.75,1,amount_over_3x
+82,KATHRYN,COLEMAN,Ukraine,Simferopol,2005-07-30,3,19.97,1.14,6.42,1,1,1,Mike,Hillyer,2235,2005-07-30 21:54:22.000,3,1.0,1,amount_over_3x
+142,APRIL,BURNS,United Kingdom,Dundee,2005-07-30,3,16.97,1.4,4.99,1,1,1,Mike,Hillyer,3845,2005-07-30 21:04:59.000,3,0.6667,1,amount_over_3x
+85,ANNE,POWELL,United Kingdom,Bradford,2005-07-30,1,7.99,1.0,2.19,2,2,2,Jon,Stephens,2315,2005-07-30 21:16:33.000,1,1.0,4,amount_over_3x
+2,PATRICIA,JOHNSON,United States,San Bernardino,2005-07-30,5,30.95,2.67,13.97,1,2,2,Jon,Stephens,47,2005-07-30 22:39:53.000,5,0.8,1,count_at_least_5
+382,VICTOR,BARKLEY,United States,Manchester,2005-07-30,3,21.97,1.0,2.82,2,1,1,Mike,Hillyer,10357,2005-07-30 07:31:01.000,3,0.6667,2,amount_over_3x
+276,BRANDY,GRAVES,United States,Warren,2005-07-30,4,16.96,1.2,4.59,1,1,1,Mike,Hillyer,7481,2005-07-30 13:38:17.000,4,0.5,4,amount_over_3x
+593,RENE,MCALISTER,United States,Garden Grove,2005-07-30,2,13.98,1.43,4.41,2,1,1,Mike,Hillyer,15890,2005-07-30 23:31:31.000,2,1.0,6,amount_over_3x
+406,NATHAN,RUNYON,"Virgin Islands, U.S.",Charlotte Amalie,2005-07-30,5,11.95,1.71,6.84,1,2,2,Jon,Stephens,10997,2005-07-30 23:40:22.000,5,0.2,1,count_at_least_5
+243,LYDIA,BURKE,Argentina,San Miguel de Tucumn,2005-07-31,3,13.97,1.25,3.99,1,2,2,Jon,Stephens,6582,2005-07-31 17:22:36.000,3,0.3333,1,amount_over_3x
+159,JILL,HAWKINS,Austria,Linz,2005-07-31,2,12.98,1.14,3.7,1,1,1,Mike,Hillyer,4339,2005-07-31 14:55:11.000,2,0.5,1,amount_over_3x
+183,IDA,ANDREWS,Brazil,Luzinia,2005-07-31,3,13.97,1.33,3.49,2,2,2,Jon,Stephens,4989,2005-07-31 15:18:19.000,3,0.3333,1,amount_over_3x
+130,CHARLOTTE,HUNTER,Brazil,guas Lindas de Gois,2005-07-31,2,10.98,1.0,3.49,1,2,2,Jon,Stephens,3519,2005-07-31 08:33:08.000,2,0.5,4,amount_over_3x
+129,CARRIE,PORTER,China,Liaocheng,2005-07-31,4,26.96,2.2,5.78,1,2,2,Jon,Stephens,3490,2005-07-31 23:24:31.000,4,1.0,1,amount_over_3x
+424,KYLE,SPURLOCK,China,Shanwei,2005-07-31,3,20.97,1.86,5.41,2,1,1,Mike,Hillyer,11469,2005-07-31 18:13:22.000,3,0.6667,2,amount_over_3x
+538,TED,BREAUX,China,Baicheng,2005-07-31,3,18.97,1.38,4.11,2,2,2,Jon,Stephens,14497,2005-07-31 15:29:00.000,3,0.6667,3,amount_over_3x
+378,EUGENE,CULPEPPER,China,Shenzhen,2005-07-31,2,6.98,1.0,2.32,1,1,1,Mike,Hillyer,10241,2005-07-31 13:20:08.000,2,0.5,17,amount_over_3x
+196,ALMA,AUSTIN,Germany,Mannheim,2005-07-31,3,22.97,1.57,5.84,1,2,2,Jon,Stephens,5306,2005-07-31 21:29:28.000,3,1.0,1,amount_over_3x
+28,CYNTHIA,YOUNG,India,Munger (Monghyr),2005-07-31,4,15.96,1.25,4.49,1,2,2,Jon,Stephens,770,2005-07-31 21:14:02.000,4,0.25,3,amount_over_3x
+271,PENNY,NEAL,India,Kumbakonam,2005-07-31,2,12.98,1.17,2.99,1,2,2,Jon,Stephens,7339,2005-07-31 22:11:43.000,2,1.0,4,amount_over_3x
+519,RON,DELUCA,Japan,Isesaki,2005-07-31,5,23.95,1.33,4.65,2,1,1,Mike,Hillyer,13981,2005-07-31 20:39:38.000,5,0.6,1,amount_over_3x_and_count_at_least_5
+573,BYRON,BOX,Kazakstan,Zhezqazghan,2005-07-31,4,24.96,1.57,6.56,1,2,2,Jon,Stephens,15356,2005-07-31 16:42:16.000,4,0.5,1,amount_over_3x
+27,SHIRLEY,ALLEN,Philippines,Davao,2005-07-31,3,18.97,1.29,3.99,2,1,1,Mike,Hillyer,739,2005-07-31 14:39:52.000,3,1.0,1,amount_over_3x
+311,PAUL,TROUT,Russian Federation,Kursk,2005-07-31,3,20.97,1.0,4.99,2,1,1,Mike,Hillyer,8447,2005-07-31 21:56:10.000,3,0.6667,1,amount_over_3x
+19,RUTH,MARTINEZ,South Africa,Kimberley,2005-07-31,2,17.98,1.33,5.65,1,1,1,Mike,Hillyer,504,2005-07-31 23:40:35.000,2,1.0,1,amount_over_3x
+555,DWIGHT,LOMBARDI,South Africa,Chatsworth,2005-07-31,2,15.98,1.0,3.49,1,2,2,Jon,Stephens,14879,2005-07-31 20:00:34.000,2,1.0,2,amount_over_3x
+50,DIANE,COLLINS,Sudan,Omdurman,2005-07-31,5,26.95,1.5,6.74,1,2,2,Jon,Stephens,1382,2005-07-31 23:57:43.000,5,0.4,1,amount_over_3x_and_count_at_least_5
+576,MORRIS,MCCARTER,Taiwan,Fengshan,2005-07-31,5,21.95,2.0,8.38,2,1,1,Mike,Hillyer,15446,2005-07-31 17:41:05.000,5,0.6,1,count_at_least_5
+63,ASHLEY,RICHARDSON,United States,Lincoln,2005-07-31,5,13.95,1.5,8.49,1,2,2,Jon,Stephens,1723,2005-07-31 22:19:16.000,5,0.4,2,count_at_least_5
+560,JORDAN,ARCHULETA,Argentina,Avellaneda,2005-08-01,3,17.97,1.4,5.99,1,1,1,Mike,Hillyer,15010,2005-08-01 19:28:01.000,3,0.6667,1,amount_over_3x
+405,LEONARD,SCHOFIELD,Argentina,Tandil,2005-08-01,2,9.98,1.22,3.32,1,2,2,Jon,Stephens,10961,2005-08-01 22:59:10.000,2,0.5,2,amount_over_3x
+476,DERRICK,BOURQUE,Canada,Gatineau,2005-08-01,3,21.97,1.13,4.99,1,1,1,Mike,Hillyer,12880,2005-08-01 23:07:56.000,3,1.0,1,amount_over_3x
+242,GLENDA,FRAZIER,China,Qinhuangdao,2005-08-01,3,15.97,1.0,4.32,1,2,2,Jon,Stephens,6554,2005-08-01 16:18:45.000,3,0.3333,2,amount_over_3x
+129,CARRIE,PORTER,China,Liaocheng,2005-08-01,5,14.95,2.5,9.31,1,2,2,Jon,Stephens,3495,2005-08-01 22:48:57.000,5,0.6,4,count_at_least_5
+258,MYRTLE,FLEMING,Dominican Republic,Santiago de los Caballeros,2005-08-01,5,20.95,1.25,5.61,1,1,1,Mike,Hillyer,6973,2005-08-01 06:52:50.000,5,0.8,1,amount_over_3x_and_count_at_least_5
+559,EVERETT,BANDA,Egypt,Bilbays,2005-08-01,2,12.98,1.2,4.19,2,1,1,Mike,Hillyer,14980,2005-08-01 17:03:28.000,2,1.0,1,amount_over_3x
+534,CHRISTIAN,JUNG,India,Amroha,2005-08-01,3,13.97,1.17,4.32,1,1,1,Mike,Hillyer,14388,2005-08-01 21:56:41.000,3,0.6667,3,amount_over_3x
+147,JOANNE,ROBERTSON,Japan,Urawa,2005-08-01,2,16.98,1.3,3.19,2,2,2,Jon,Stephens,3998,2005-08-01 20:08:49.000,2,1.0,1,amount_over_3x
+188,MELANIE,ARMSTRONG,Philippines,Bayugan,2005-08-01,4,16.96,1.14,4.56,1,2,2,Jon,Stephens,5117,2005-08-01 20:22:44.000,4,0.25,2,amount_over_3x
+270,LEAH,CURTIS,Poland,Kalisz,2005-08-01,3,18.97,1.4,6.19,1,2,2,Jon,Stephens,7319,2005-08-01 16:08:52.000,3,0.6667,1,amount_over_3x
+106,CONNIE,WALLACE,Russian Federation,Ivanovo,2005-08-01,3,20.97,1.43,5.99,1,1,1,Mike,Hillyer,2866,2005-08-01 09:01:40.000,3,1.0,1,amount_over_3x
+487,HECTOR,POINDEXTER,Russian Federation,Pjatigorsk,2005-08-01,3,16.97,1.56,5.21,2,1,1,Mike,Hillyer,13157,2005-08-01 23:24:53.000,3,0.6667,2,amount_over_3x
+132,ESTHER,CRAWFORD,South Africa,Botshabelo,2005-08-01,4,22.96,1.75,5.61,2,1,1,Mike,Hillyer,3581,2005-08-01 15:44:20.000,4,1.0,1,amount_over_3x
+86,JACQUELINE,LONG,Thailand,Songkhla,2005-08-01,3,20.97,1.2,6.49,2,2,2,Jon,Stephens,2347,2005-08-01 13:58:47.000,3,0.6667,1,amount_over_3x
+181,ANA,BRADLEY,United States,Memphis,2005-08-01,5,26.95,1.33,8.1,2,1,1,Mike,Hillyer,4935,2005-08-01 20:53:45.000,5,0.8,1,amount_over_3x_and_count_at_least_5
+420,JACOB,LANCE,United States,El Monte,2005-08-01,3,20.97,1.38,4.99,1,1,1,Mike,Hillyer,11367,2005-08-01 20:36:29.000,3,0.3333,2,amount_over_3x
+294,SHELLY,WATTS,United States,Dayton,2005-08-01,5,20.95,1.11,5.32,2,2,2,Jon,Stephens,7970,2005-08-01 15:45:11.000,5,0.6,3,amount_over_3x_and_count_at_least_5
+174,YVONNE,WATKINS,Venezuela,Ocumare del Tuy,2005-08-01,3,16.97,1.17,5.49,2,1,1,Mike,Hillyer,4733,2005-08-01 13:02:58.000,3,0.3333,1,amount_over_3x
+7,MARIA,MILLER,Yugoslavia,Kragujevac,2005-08-01,4,22.96,1.22,6.65,1,2,2,Jon,Stephens,198,2005-08-01 15:52:00.000,4,0.75,1,amount_over_3x
+445,MICHEAL,FORMAN,Argentina,Escobar,2005-08-02,2,17.98,1.33,3.65,1,1,1,Mike,Hillyer,12014,2005-08-02 18:22:05.000,2,1.0,1,amount_over_3x
+266,NORA,HERRERA,Austria,Salzburg,2005-08-02,3,16.97,1.0,4.32,2,1,1,Mike,Hillyer,7195,2005-08-02 16:15:07.000,3,0.6667,1,amount_over_3x
+540,TYRONE,ASHER,Bulgaria,Ruse,2005-08-02,4,24.96,1.8,7.98,1,2,2,Jon,Stephens,14546,2005-08-02 20:10:01.000,4,0.75,1,amount_over_3x
+361,LAWRENCE,LAWTON,Cameroon,Yaound,2005-08-02,4,15.96,1.57,4.41,2,1,1,Mike,Hillyer,9763,2005-08-02 16:40:47.000,4,0.5,1,amount_over_3x
+45,JANET,PHILLIPS,Chile,Antofagasta,2005-08-02,5,27.95,1.43,5.84,1,2,2,Jon,Stephens,1249,2005-08-02 22:35:15.000,5,0.8,1,amount_over_3x_and_count_at_least_5
+569,DAVE,GARDINER,China,Leshan,2005-08-02,4,14.96,1.33,4.65,2,1,1,Mike,Hillyer,15248,2005-08-02 17:35:10.000,4,0.5,3,amount_over_3x
+378,EUGENE,CULPEPPER,China,Shenzhen,2005-08-02,2,9.98,1.14,2.99,1,1,1,Mike,Hillyer,10243,2005-08-02 08:21:27.000,2,0.0,7,amount_over_3x
+375,AARON,SELBY,"Congo, The Democratic Republic of the",Mwene-Ditu,2005-08-02,3,18.97,1.5,5.32,2,2,2,Jon,Stephens,10169,2005-08-02 05:06:17.000,3,1.0,1,amount_over_3x
+134,EMMA,BOYD,Egypt,Qalyub,2005-08-02,4,20.96,1.0,3.16,1,2,2,Jon,Stephens,3630,2005-08-02 22:24:31.000,4,0.5,1,amount_over_3x
+65,ROSE,HOWARD,French Guiana,Cayenne,2005-08-02,3,19.97,1.13,4.74,2,2,2,Jon,Stephens,1782,2005-08-02 21:35:00.000,3,0.6667,1,amount_over_3x
+60,MILDRED,BAILEY,India,Jaipur,2005-08-02,2,13.98,1.29,4.13,1,1,1,Mike,Hillyer,1662,2005-08-02 19:12:40.000,2,0.5,2,amount_over_3x
+419,CHAD,CARBONE,India,Katihar,2005-08-02,4,13.96,1.4,4.29,1,1,1,Mike,Hillyer,11344,2005-08-02 19:58:48.000,4,0.0,3,amount_over_3x
+502,BRETT,CORNWELL,India,Siliguri (Shiliguri),2005-08-02,5,12.95,1.33,6.57,1,1,1,Mike,Hillyer,13538,2005-08-02 20:14:23.000,5,0.2,4,count_at_least_5
+473,JORGE,OLIVARES,Indonesia,Lhokseumawe,2005-08-02,5,19.95,1.63,7.23,2,2,2,Jon,Stephens,12803,2005-08-02 19:51:53.000,5,0.2,1,count_at_least_5
+54,TERESA,ROGERS,Japan,Iwakuni,2005-08-02,3,15.97,1.29,5.13,1,1,1,Mike,Hillyer,1502,2005-08-02 10:55:14.000,3,0.6667,2,amount_over_3x
+288,BOBBIE,CRAIG,Mexico,Valle de Santiago,2005-08-02,1,9.99,1.29,3.27,1,1,1,Mike,Hillyer,7804,2005-08-02 02:31:15.000,1,1.0,3,amount_over_3x
+8,SUSAN,WILSON,New Zealand,Hamilton,2005-08-02,2,12.98,1.44,4.32,2,2,2,Jon,Stephens,225,2005-08-02 14:42:45.000,2,0.5,1,amount_over_3x
+597,FREDDIE,DUGGAN,Peru,Sullana,2005-08-02,4,16.96,1.14,3.99,1,1,1,Mike,Hillyer,16000,2005-08-02 13:28:30.000,4,0.5,1,amount_over_3x
+349,JOE,GILLILAND,Philippines,Imus,2005-08-02,3,18.97,1.33,5.1,2,2,2,Jon,Stephens,9453,2005-08-02 22:46:47.000,3,0.3333,1,amount_over_3x
+190,YOLANDA,WEAVER,Tanzania,Tabora,2005-08-02,4,24.96,1.75,6.98,2,2,2,Jon,Stephens,5166,2005-08-02 15:56:51.000,4,0.75,1,amount_over_3x
+158,VERONICA,STONE,United States,Greensboro,2005-08-02,4,15.96,1.44,5.1,1,1,1,Mike,Hillyer,4314,2005-08-02 19:47:56.000,4,0.75,3,amount_over_3x
+77,JANE,BENNETT,Brazil,Araatuba,2005-08-17,2,14.98,1.5,3.99,2,1,1,Mike,Hillyer,2108,2005-08-17 21:31:46.000,2,1.0,2,amount_over_3x
+515,ANDRE,RAPP,Chile,Coquimbo,2005-08-17,3,15.97,1.0,3.79,1,2,2,Jon,Stephens,13880,2005-08-17 16:48:36.000,3,0.6667,1,amount_over_3x
+384,ERNEST,STEPP,China,Huaian,2005-08-17,1,5.99,1.0,1.49,2,2,2,Jon,Stephens,10412,2005-08-17 10:19:51.000,1,1.0,14,amount_over_3x
+136,ANITA,MORALES,India,Hubli-Dharwad,2005-08-17,1,10.99,1.0,3.49,2,2,2,Jon,Stephens,3674,2005-08-17 18:27:22.000,1,1.0,4,amount_over_3x
+465,FLOYD,GANDY,Mexico,Zapopan,2005-08-17,3,16.97,1.0,3.32,1,2,2,Jon,Stephens,12554,2005-08-17 22:55:32.000,3,0.6667,1,amount_over_3x
+319,RONALD,WEINER,Mexico,San Felipe del Progreso,2005-08-17,5,16.95,1.5,4.49,2,1,1,Mike,Hillyer,8648,2005-08-17 19:44:46.000,5,0.6,2,amount_over_3x_and_count_at_least_5
+321,KEVIN,SCHULER,Nepal,Birgunj,2005-08-17,3,17.97,1.0,3.99,1,2,2,Jon,Stephens,8690,2005-08-17 20:15:31.000,3,1.0,1,amount_over_3x
+198,ELSIE,KELLEY,Nigeria,Ikerre,2005-08-17,6,22.94,1.67,5.15,2,2,2,Jon,Stephens,5384,2005-08-17 18:19:44.000,6,0.3333,1,amount_over_3x_and_count_at_least_5
+27,SHIRLEY,ALLEN,Philippines,Davao,2005-08-17,3,21.97,1.6,7.18,2,2,2,Jon,Stephens,745,2005-08-17 19:52:43.000,3,1.0,1,amount_over_3x
+558,JIMMIE,EGGLESTON,Poland,Wroclaw,2005-08-17,2,12.98,1.2,2.79,1,2,2,Jon,Stephens,14958,2005-08-17 20:29:56.000,2,1.0,1,amount_over_3x
+350,JUAN,FRALEY,Russian Federation,Teboksary,2005-08-17,3,14.97,1.0,2.99,1,1,1,Mike,Hillyer,9480,2005-08-17 11:29:52.000,3,0.6667,1,amount_over_3x
+83,LOUISE,JENKINS,South Africa,Springs,2005-08-17,2,10.98,1.0,2.24,1,2,2,Jon,Stephens,2262,2005-08-17 10:27:19.000,2,1.0,3,amount_over_3x
+109,EDNA,WEST,South Africa,Klerksdorp,2005-08-17,1,6.99,1.0,2.32,2,2,2,Jon,Stephens,2955,2005-08-17 23:52:26.000,1,1.0,5,amount_over_3x
+327,LARRY,THRASHER,Turkey,Adana,2005-08-17,2,7.98,1.0,2.49,2,1,1,Mike,Hillyer,8841,2005-08-17 19:33:24.000,2,0.5,1,amount_over_3x
+24,KIMBERLY,LEE,Argentina,Crdoba,2005-08-18,2,11.98,1.17,2.99,2,1,1,Mike,Hillyer,651,2005-08-18 22:22:45.000,2,0.5,2,amount_over_3x
+21,MICHELLE,CLARK,Bangladesh,Tangail,2005-08-18,2,11.98,1.38,3.86,1,1,1,Mike,Hillyer,567,2005-08-18 23:34:22.000,2,1.0,1,amount_over_3x
+535,JAVIER,ELROD,Chad,NDjamna,2005-08-18,5,11.95,1.6,8.18,1,2,2,Jon,Stephens,14421,2005-08-18 22:32:39.000,5,0.4,1,count_at_least_5
+117,EDITH,MCDONALD,India,Gandhinagar,2005-08-18,4,17.96,1.33,4.99,1,1,1,Mike,Hillyer,3163,2005-08-18 17:24:02.000,4,0.5,1,amount_over_3x
+186,HOLLY,FOX,India,Haldia,2005-08-18,2,14.98,1.5,3.99,2,1,1,Mike,Hillyer,5062,2005-08-18 10:42:52.000,2,1.0,2,amount_over_3x
+367,ADAM,GOOCH,India,Adoni,2005-08-18,3,14.97,1.25,4.99,1,2,2,Jon,Stephens,9935,2005-08-18 08:07:25.000,3,0.3333,3,amount_over_3x
+29,ANGELA,HERNANDEZ,Japan,Shimonoseki,2005-08-18,4,21.96,1.43,5.84,2,2,2,Jon,Stephens,808,2005-08-18 17:16:07.000,4,0.5,1,amount_over_3x
+575,ISAAC,OGLESBY,Mexico,Cuernavaca,2005-08-18,3,22.97,1.67,6.65,2,2,2,Jon,Stephens,15417,2005-08-18 23:29:00.000,3,1.0,1,amount_over_3x
+247,STELLA,MORENO,Mexico,Coacalco de Berriozbal,2005-08-18,3,17.97,1.5,5.49,1,1,1,Mike,Hillyer,6695,2005-08-18 12:48:45.000,3,0.3333,2,amount_over_3x
+150,DANIELLE,DANIELS,Mexico,Hidalgo,2005-08-18,3,12.97,1.0,4.19,2,2,2,Jon,Stephens,4098,2005-08-18 17:37:11.000,3,0.3333,4,amount_over_3x
+388,CRAIG,MORRELL,Philippines,Cavite,2005-08-18,4,17.96,2.0,5.18,2,1,1,Mike,Hillyer,10523,2005-08-18 22:31:21.000,4,0.75,3,amount_over_3x
+397,JIMMY,SCHRADER,Russian Federation,Atinsk,2005-08-18,6,14.94,1.5,5.15,1,1,1,Mike,Hillyer,10765,2005-08-18 23:29:25.000,6,0.1667,2,count_at_least_5
+394,CHRIS,BROTHERS,Spain,Gijn,2005-08-18,2,14.98,1.4,3.59,2,2,2,Jon,Stephens,10690,2005-08-18 13:22:25.000,2,0.5,1,amount_over_3x
+75,TAMMY,SANDERS,Taiwan,Changhwa,2005-08-18,5,14.95,1.88,8.23,2,1,1,Mike,Hillyer,2057,2005-08-18 19:10:41.000,5,0.6,1,count_at_least_5
+187,BRITTANY,RILEY,Ukraine,Sumy,2005-08-18,3,26.97,1.25,6.74,2,1,1,Mike,Hillyer,5096,2005-08-18 14:04:41.000,3,1.0,1,amount_over_3x
+16,SANDRA,MARTIN,United Kingdom,Southend-on-Sea,2005-08-18,2,12.98,1.29,3.84,2,1,1,Mike,Hillyer,442,2005-08-18 15:39:46.000,2,0.5,1,amount_over_3x
+520,MITCHELL,WESTMORELAND,Vietnam,Nha Trang,2005-08-18,3,16.97,1.5,4.65,2,1,1,Mike,Hillyer,14010,2005-08-18 18:29:51.000,3,1.0,1,amount_over_3x
+470,GORDON,ALLARD,Yemen,Hodeida,2005-08-18,3,23.97,1.63,7.98,1,1,1,Mike,Hillyer,12718,2005-08-18 22:37:39.000,3,1.0,1,amount_over_3x
+206,TERRI,VASQUEZ,Brazil,Blumenau,2005-08-19,3,18.97,1.33,5.49,1,2,2,Jon,Stephens,5590,2005-08-19 17:26:55.000,3,1.0,1,amount_over_3x
+387,JESSE,SCHILLING,"Congo, The Democratic Republic of the",Lubumbashi,2005-08-19,3,15.97,1.2,3.59,2,1,1,Mike,Hillyer,10494,2005-08-19 10:19:19.000,3,0.6667,1,amount_over_3x
+559,EVERETT,BANDA,Egypt,Bilbays,2005-08-19,3,13.97,1.43,4.13,2,2,2,Jon,Stephens,14985,2005-08-19 19:43:08.000,3,1.0,1,amount_over_3x
+104,RITA,GRAHAM,France,Toulon,2005-08-19,4,11.96,1.0,3.66,1,1,1,Mike,Hillyer,2821,2005-08-19 22:41:44.000,4,0.5,1,amount_over_3x
+279,DIANNE,SHELTON,Iran,Tabriz,2005-08-19,4,18.96,1.17,5.16,2,1,1,Mike,Hillyer,7575,2005-08-19 16:14:41.000,4,0.25,1,amount_over_3x
+368,HARRY,ARCE,Iran,Najafabad,2005-08-19,4,17.96,1.13,4.61,1,2,2,Jon,Stephens,9969,2005-08-19 21:33:35.000,4,0.25,2,amount_over_3x
+150,DANIELLE,DANIELS,Mexico,Hidalgo,2005-08-19,5,21.95,1.33,5.65,2,1,1,Mike,Hillyer,4103,2005-08-19 21:23:19.000,5,0.8,1,amount_over_3x_and_count_at_least_5
+414,VINCENT,RALSTON,Mexico,Allende,2005-08-19,5,17.95,1.5,4.24,1,1,1,Mike,Hillyer,11211,2005-08-19 22:18:42.000,5,0.6,2,amount_over_3x_and_count_at_least_5
+257,MARSHA,DOUGLAS,Mozambique,Beira,2005-08-19,5,20.95,2.29,9.69,2,1,1,Mike,Hillyer,6950,2005-08-19 21:52:51.000,5,1.0,1,count_at_least_5
+280,TRACEY,BARRETT,Nigeria,Owo,2005-08-19,3,20.97,1.63,6.48,2,1,1,Mike,Hillyer,7605,2005-08-19 19:40:37.000,3,0.6667,1,amount_over_3x
+145,LUCILLE,HOLMES,South Africa,Soshanguve,2005-08-19,4,15.96,1.25,4.24,1,2,2,Jon,Stephens,3946,2005-08-19 17:49:13.000,4,0.5,1,amount_over_3x
+139,AMBER,DIXON,Taiwan,Touliu,2005-08-19,2,10.98,1.0,3.59,1,2,2,Jon,Stephens,3772,2005-08-19 22:16:16.000,2,1.0,2,amount_over_3x
+131,MONICA,HICKS,Ukraine,Mukateve,2005-08-19,4,18.96,1.44,5.54,2,1,1,Mike,Hillyer,3555,2005-08-19 22:26:26.000,4,0.5,1,amount_over_3x
+21,MICHELLE,CLARK,Bangladesh,Tangail,2005-08-20,4,32.96,1.6,5.58,1,2,2,Jon,Stephens,574,2005-08-20 23:24:07.000,4,1.0,1,amount_over_3x
+464,JEROME,KENYON,Chile,Rancagua,2005-08-20,2,11.98,1.0,3.99,1,2,2,Jon,Stephens,12538,2005-08-20 17:31:18.000,2,0.5,1,amount_over_3x
+93,PHYLLIS,FOSTER,China,Zalantun,2005-08-20,4,19.96,1.0,3.74,1,1,1,Mike,Hillyer,2548,2005-08-20 19:32:29.000,4,0.5,2,amount_over_3x
+201,VICKI,FIELDS,Germany,Witten,2005-08-20,3,16.97,1.14,3.13,1,2,2,Jon,Stephens,5465,2005-08-20 08:27:27.000,3,0.6667,1,amount_over_3x
+207,GERTRUDE,CASTILLO,Greenland,Nuuk,2005-08-20,4,25.96,1.83,8.32,1,2,2,Jon,Stephens,5628,2005-08-20 18:02:41.000,4,0.75,1,amount_over_3x
+328,JEFFREY,SPEAR,Indonesia,Ciparay,2005-08-20,3,14.97,1.33,4.82,2,1,1,Mike,Hillyer,8869,2005-08-20 16:17:27.000,3,0.6667,2,amount_over_3x
+450,JAY,ROBB,Indonesia,Surakarta,2005-08-20,3,10.97,1.17,2.99,1,1,1,Mike,Hillyer,12154,2005-08-20 13:49:52.000,3,0.0,3,amount_over_3x
+454,ALEX,GRESHAM,Mexico,Uruapan,2005-08-20,4,27.96,1.75,5.23,2,1,1,Mike,Hillyer,12275,2005-08-20 12:53:12.000,4,0.75,1,amount_over_3x
+471,DEAN,SAUER,South Africa,Johannesburg,2005-08-20,2,13.98,1.33,4.15,1,1,1,Mike,Hillyer,12742,2005-08-20 23:46:24.000,2,1.0,2,amount_over_3x
+390,SHAWN,HEATON,Thailand,Nakhon Sawan,2005-08-20,6,27.94,1.67,7.15,1,2,2,Jon,Stephens,10584,2005-08-20 15:52:52.000,6,0.6667,1,amount_over_3x_and_count_at_least_5
+200,JEANNE,LAWSON,Turkmenistan,Ashgabat,2005-08-20,2,16.98,1.17,5.49,2,1,1,Mike,Hillyer,5439,2005-08-20 21:31:52.000,2,1.0,1,amount_over_3x
+362,NICHOLAS,BARFIELD,Brazil,Belm,2005-08-21,4,25.96,1.75,7.48,1,1,1,Mike,Hillyer,9803,2005-08-21 23:28:58.000,4,0.5,1,amount_over_3x
+544,CODY,NOLEN,Brazil,So Bernardo do Campo,2005-08-21,3,18.97,1.17,5.16,2,2,2,Jon,Stephens,14635,2005-08-21 19:31:09.000,3,0.3333,2,amount_over_3x
+120,SYLVIA,ORTIZ,Colombia,Dos Quebradas,2005-08-21,3,19.97,1.33,5.21,2,2,2,Jon,Stephens,3251,2005-08-21 12:48:48.000,3,0.6667,1,amount_over_3x
+265,JENNIE,TERRY,Czech Republic,Olomouc,2005-08-21,3,18.97,1.38,5.24,2,2,2,Jon,Stephens,7179,2005-08-21 16:03:27.000,3,0.6667,1,amount_over_3x
+26,JESSICA,HALL,Holy See (Vatican City State),Citt del Vaticano,2005-08-21,4,23.96,1.29,4.27,2,1,1,Mike,Hillyer,716,2005-08-21 20:12:30.000,4,0.75,1,amount_over_3x
+468,TIM,CARY,India,Bijapur,2005-08-21,5,32.95,1.57,7.84,1,1,1,Mike,Hillyer,12645,2005-08-21 18:03:51.000,5,0.6,1,amount_over_3x_and_count_at_least_5
+121,JOSEPHINE,GOMEZ,India,Etawah,2005-08-21,4,25.96,2.0,7.98,1,1,1,Mike,Hillyer,3276,2005-08-21 12:52:54.000,4,1.0,2,amount_over_3x
+192,LAURIE,LAWRENCE,India,Firozabad,2005-08-21,4,24.96,1.11,5.32,1,2,2,Jon,Stephens,5216,2005-08-21 20:43:21.000,4,0.75,3,amount_over_3x
+34,REBECCA,SCOTT,Japan,Kurashiki,2005-08-21,2,13.98,1.56,4.54,2,2,2,Jon,Stephens,951,2005-08-21 20:54:32.000,2,1.0,3,amount_over_3x
+81,ANDREA,HENDERSON,Madagascar,Mahajanga,2005-08-21,3,16.97,1.0,3.99,1,2,2,Jon,Stephens,2212,2005-08-21 23:02:02.000,3,0.6667,1,amount_over_3x
+250,JO,FOWLER,Nigeria,Oyo,2005-08-21,2,10.98,1.0,2.19,2,1,1,Mike,Hillyer,6754,2005-08-21 17:20:55.000,2,0.5,1,amount_over_3x
+558,JIMMIE,EGGLESTON,Poland,Wroclaw,2005-08-21,2,13.98,1.25,4.36,1,1,1,Mike,Hillyer,14962,2005-08-21 06:53:53.000,2,1.0,1,amount_over_3x
+66,JANICE,WARD,Sweden,Malm,2005-08-21,4,13.96,1.25,4.11,2,2,2,Jon,Stephens,1820,2005-08-21 11:29:43.000,4,0.25,1,amount_over_3x
+275,CAROLE,BARNETT,United States,Peoria,2005-08-21,4,19.96,1.56,5.21,2,2,2,Jon,Stephens,7464,2005-08-21 22:12:45.000,4,0.5,1,amount_over_3x
+457,BILL,GAVIN,United States,Rockford,2005-08-21,2,17.98,1.43,4.99,2,1,1,Mike,Hillyer,12354,2005-08-21 09:25:13.000,2,1.0,2,amount_over_3x
+374,JEREMY,HURTADO,Brazil,Vitria de Santo Anto,2005-08-22,4,20.96,1.0,4.09,2,2,2,Jon,Stephens,10149,2005-08-22 21:45:57.000,4,0.5,1,amount_over_3x
+384,ERNEST,STEPP,China,Huaian,2005-08-22,3,11.97,1.0,2.99,2,2,2,Jon,Stephens,10417,2005-08-22 20:20:04.000,3,0.6667,5,amount_over_3x
+494,RAMON,CHOATE,Ecuador,Robamba,2005-08-22,4,26.96,1.7,7.48,2,2,2,Jon,Stephens,13329,2005-08-22 19:28:04.000,4,0.75,1,amount_over_3x
+541,DARREN,WINDHAM,Italy,Livorno,2005-08-22,5,18.95,1.25,5.74,2,1,1,Mike,Hillyer,14575,2005-08-22 23:56:37.000,5,0.8,1,amount_over_3x_and_count_at_least_5
+404,STANLEY,SCROGGINS,Japan,Omiya,2005-08-22,5,27.95,1.33,6.43,2,2,2,Jon,Stephens,10940,2005-08-22 19:28:02.000,5,0.4,1,amount_over_3x_and_count_at_least_5
+193,KATIE,ELLIOTT,Kenya,Kisumu,2005-08-22,3,16.97,1.38,4.61,2,2,2,Jon,Stephens,5241,2005-08-22 21:01:48.000,3,0.3333,1,amount_over_3x
+156,BERTHA,FERGUSON,Nigeria,Ondo,2005-08-22,4,14.96,1.25,4.86,1,1,1,Mike,Hillyer,4260,2005-08-22 23:26:32.000,4,0.5,2,amount_over_3x
+250,JO,FOWLER,Nigeria,Oyo,2005-08-22,2,11.98,1.17,3.66,2,2,2,Jon,Stephens,6756,2005-08-22 17:52:05.000,2,1.0,3,amount_over_3x
+461,DEREK,BLAKELY,Philippines,Gingoog,2005-08-22,5,22.95,1.56,4.21,1,2,2,Jon,Stephens,12465,2005-08-22 23:35:41.000,5,0.4,1,amount_over_3x_and_count_at_least_5
+301,ROBERT,BAUGHMAN,Russian Federation,Kaliningrad,2005-08-22,2,12.98,1.0,4.16,2,1,1,Mike,Hillyer,8187,2005-08-22 18:39:11.000,2,1.0,2,amount_over_3x
+52,JULIE,SANCHEZ,Spain,A Corua (La Corua),2005-08-22,3,15.97,1.4,4.79,1,2,2,Jon,Stephens,1451,2005-08-22 06:35:50.000,3,0.6667,1,amount_over_3x
+139,AMBER,DIXON,Taiwan,Touliu,2005-08-22,5,21.95,1.14,4.99,1,1,1,Mike,Hillyer,3778,2005-08-22 16:59:05.000,5,0.4,1,amount_over_3x_and_count_at_least_5
+204,ROSEMARY,SCHMIDT,Turkey,Usak,2005-08-22,3,17.97,1.3,5.59,1,2,2,Jon,Stephens,5550,2005-08-22 23:48:56.000,3,0.3333,1,amount_over_3x
+327,LARRY,THRASHER,Turkey,Adana,2005-08-22,3,11.97,1.29,3.84,2,1,1,Mike,Hillyer,8847,2005-08-22 22:41:14.000,3,0.6667,2,amount_over_3x
+215,JESSIE,BANKS,Bulgaria,Stara Zagora,2005-08-23,4,9.96,1.25,3.24,2,1,1,Mike,Hillyer,5856,2005-08-23 15:37:31.000,4,0.0,1,amount_over_3x
+147,JOANNE,ROBERTSON,Japan,Urawa,2005-08-23,3,20.97,1.78,6.87,2,2,2,Jon,Stephens,4011,2005-08-23 20:53:20.000,3,0.6667,1,amount_over_3x
+103,GLADYS,HAMILTON,Nigeria,Ilorin,2005-08-23,5,25.95,1.38,5.99,1,2,2,Jon,Stephens,2799,2005-08-23 22:43:07.000,5,0.8,1,amount_over_3x_and_count_at_least_5
+346,ARTHUR,SIMPKINS,Russian Federation,Maikop,2005-08-23,5,19.95,2.5,12.14,1,1,1,Mike,Hillyer,9367,2005-08-23 15:15:19.000,5,0.4,1,count_at_least_5
+327,LARRY,THRASHER,Turkey,Adana,2005-08-23,3,23.97,1.5,4.86,2,2,2,Jon,Stephens,8850,2005-08-23 19:51:30.000,3,1.0,1,amount_over_3x

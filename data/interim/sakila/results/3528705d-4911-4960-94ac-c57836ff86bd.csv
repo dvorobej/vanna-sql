@@ -1,3 +1,3 @@
-average_check,customer_first_name,customer_id,customer_last_name,payment_count,staff_first_name,staff_id,staff_last_name,staff_operation_share,total_amount
-3.59,ALEX,454,GRESHAM,5,Mike,1,Hillyer,0.5,17.95
-6.99,ALEX,454,GRESHAM,5,Jon,2,Stephens,0.5,34.95
+customer_id,customer_first_name,customer_last_name,staff_id,staff_first_name,staff_last_name,payment_count,total_amount,average_check,staff_operation_share
+454,ALEX,GRESHAM,1,Mike,Hillyer,5,17.95,3.59,0.5
+454,ALEX,GRESHAM,2,Jon,Stephens,5,34.95,6.99,0.5

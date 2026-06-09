@@ -1,283 +1,283 @@
-city_name,country_name,customer_id,customer_name,day_amount,deviation_from_personal_avg,payment_count,payment_date,staff_list,suspicion_rank_in_country
-A Corua (La Corua),Spain,52,JULIE SANCHEZ,15.97,14.37,3,2005-08-22,"Jon Stephens,Mike Hillyer",1
-Abha,Saudi Arabia,101,PEGGY MYERS,14.96,14.96,4,2005-07-09,"Mike Hillyer,Jon Stephens",1
-Abu Dhabi,United Arab Emirates,452,TOM MILNER,13.97,13.21,3,2005-07-06,"Jon Stephens,Mike Hillyer",2
-Adana,Turkey,327,LARRY THRASHER,23.97,22.67,3,2005-08-23,"Mike Hillyer,Jon Stephens",1
-Adoni,India,367,ADAM GOOCH,14.97,14.31,3,2005-08-18,"Mike Hillyer,Jon Stephens",24
-Ahmadnagar,India,297,SHERRI RHODES,14.97,13.54,3,2005-07-11,"Jon Stephens,Mike Hillyer",25
-Ahmadnagar,India,297,SHERRI RHODES,16.97,16.57,3,2005-06-18,"Mike Hillyer,Jon Stephens",14
-Allende,Mexico,414,VINCENT RALSTON,17.95,17.39,5,2005-08-19,"Jon Stephens,Mike Hillyer",12
-Antofagasta,Chile,45,JANET PHILLIPS,27.95,26.59,5,2005-08-02,"Jon Stephens,Mike Hillyer",1
-Apeldoorn,Netherlands,137,RHONDA KENNEDY,17.97,14.41,3,2005-08-23,"Jon Stephens,Mike Hillyer",3
-Apeldoorn,Netherlands,137,RHONDA KENNEDY,20.96,18.93,4,2005-07-30,"Jon Stephens,Mike Hillyer",1
-Arecibo,Puerto Rico,360,RALPH MADRIGAL,12.97,10.71,3,2005-08-19,"Jon Stephens,Mike Hillyer",1
-Ashqelon,Israel,478,LEWIS LYMAN,20.97,20.77,3,2005-06-19,"Mike Hillyer,Jon Stephens",1
-Asuncin,Paraguay,226,MAUREEN LITTLE,16.96,15.73,4,2005-08-23,"Jon Stephens,Mike Hillyer",1
-Athenai,Greece,3,LINDA WILLIAMS,24.96,24.06,4,2005-07-28,"Jon Stephens,Mike Hillyer",1
-Atlixco,Mexico,84,SARA PERRY,18.97,17.77,3,2005-07-11,"Mike Hillyer,Jon Stephens",10
-Atlixco,Mexico,84,SARA PERRY,19.96,17.76,4,2005-08-02,"Mike Hillyer,Jon Stephens",11
-Avellaneda,Argentina,560,JORDAN ARCHULETA,17.97,15.97,3,2005-08-01,"Jon Stephens,Mike Hillyer",3
-Baicheng,China,538,TED BREAUX,16.97,16.17,3,2005-07-09,"Jon Stephens,Mike Hillyer",17
-Baicheng,China,538,TED BREAUX,18.97,17.87,3,2005-07-31,"Mike Hillyer,Jon Stephens",10
-Bamenda,Cameroon,352,ALBERT CROUSE,22.96,22.59,4,2005-07-27,"Mike Hillyer,Jon Stephens",1
-Bandar Seri Begawan,Brunei,91,LOIS BUTLER,12.97,12.51,3,2005-07-07,"Jon Stephens,Mike Hillyer",1
-Batman,Turkey,172,BERNICE WILLIS,15.97,14.14,3,2005-07-30,"Jon Stephens,Mike Hillyer",6
-Batman,Turkey,172,BERNICE WILLIS,16.96,15.86,4,2005-07-27,"Mike Hillyer,Jon Stephens",5
-Batman,Turkey,172,BERNICE WILLIS,17.97,17.84,3,2005-07-08,"Mike Hillyer,Jon Stephens",2
-Batna,Algeria,441,MARIO CHEATHAM,18.95,17.89,5,2005-07-29,"Jon Stephens,Mike Hillyer",1
-Baybay,Philippines,71,KATHY JAMES,18.97,18.14,3,2005-07-10,"Mike Hillyer,Jon Stephens",6
-Bayugan,Philippines,188,MELANIE ARMSTRONG,16.96,15.9,4,2005-08-01,"Jon Stephens,Mike Hillyer",10
-Beira,Mozambique,257,MARSHA DOUGLAS,18.95,17.75,5,2005-07-27,"Jon Stephens,Mike Hillyer",2
-Beira,Mozambique,257,MARSHA DOUGLAS,20.95,18.69,5,2005-08-19,"Jon Stephens,Mike Hillyer",1
-Belm,Brazil,362,NICHOLAS BARFIELD,25.96,23.96,4,2005-08-21,"Jon Stephens,Mike Hillyer",1
-Benin City,Nigeria,284,SONIA GREGORY,14.97,13.87,3,2005-07-27,"Jon Stephens,Mike Hillyer",6
-Bern,Switzerland,155,GAIL KNIGHT,14.97,13.87,3,2005-08-21,"Mike Hillyer,Jon Stephens",2
-Bern,Switzerland,155,GAIL KNIGHT,15.97,14.97,3,2005-07-11,"Mike Hillyer,Jon Stephens",1
-Bhilwara,India,209,TONYA CHAPMAN,14.97,12.21,3,2005-08-01,"Jon Stephens,Mike Hillyer",31
-Bhimavaram,India,529,ERIK GUILLEN,20.97,20.37,3,2005-07-12,"Jon Stephens,Mike Hillyer",6
-Bhopal,India,15,HELEN HARRIS,14.97,12.81,3,2005-08-20,"Jon Stephens,Mike Hillyer",30
-Bijapur,India,468,TIM CARY,32.95,31.12,5,2005-08-21,"Jon Stephens,Mike Hillyer",1
-Binzhou,China,533,JESSIE MILAM,19.97,18.61,3,2005-08-17,"Jon Stephens,Mike Hillyer",7
-Blumenau,Brazil,206,TERRI VASQUEZ,18.97,17.87,3,2005-08-19,"Mike Hillyer,Jon Stephens",12
-Boa Vista,Brazil,342,HAROLD MARTINO,19.97,19.27,3,2005-07-12,"Jon Stephens,Mike Hillyer",6
-Botshabelo,South Africa,132,ESTHER CRAWFORD,22.96,21.46,4,2005-08-01,"Jon Stephens,Mike Hillyer",2
-Brockton,United States,149,VALERIE BLACK,18.97,18.37,3,2005-06-18,"Jon Stephens,Mike Hillyer",8
-Bucuresti,Romania,563,KEN PREWITT,29.93,29.63,7,2005-07-08,"Mike Hillyer,Jon Stephens",1
-Buenaventura,Colombia,235,JACKIE LYNCH,14.97,14.77,3,2005-07-06,"Jon Stephens,Mike Hillyer",3
-Cam Ranh,Vietnam,532,NEIL RENNER,18.97,17.17,3,2005-08-19,"Jon Stephens,Mike Hillyer",3
-Cavite,Philippines,388,CRAIG MORRELL,17.96,17.1,4,2005-08-18,"Jon Stephens,Mike Hillyer",9
-Chisinau,Moldova,38,MARTHA GONZALEZ,17.96,16.86,4,2005-07-27,"Mike Hillyer,Jon Stephens",1
-Chungho,Taiwan,517,BRAD MCCURDY,17.96,17.2,4,2005-07-07,"Jon Stephens,Mike Hillyer",7
-Ciparay,Indonesia,328,JEFFREY SPEAR,14.97,14.01,3,2005-08-20,"Mike Hillyer,Jon Stephens",4
-Citt del Vaticano,Holy See (Vatican City State),26,JESSICA HALL,23.96,22.96,4,2005-08-21,"Jon Stephens,Mike Hillyer",1
-Ciudad del Este,Paraguay,205,EILEEN CARR,15.96,15.16,4,2005-08-21,"Mike Hillyer,Jon Stephens",2
-Coacalco de Berriozbal,Mexico,247,STELLA MORENO,17.97,17.24,3,2005-08-18,"Jon Stephens,Mike Hillyer",13
-Cuauhtmoc,Mexico,467,ALVIN DELOACH,20.96,19.9,4,2005-07-28,"Mike Hillyer,Jon Stephens",6
-Cuernavaca,Mexico,575,ISAAC OGLESBY,22.97,21.64,3,2005-08-18,"Mike Hillyer,Jon Stephens",3
-Cuman,Venezuela,113,CINDY FISHER,16.97,16.54,3,2005-06-20,"Jon Stephens,Mike Hillyer",3
-Datong,China,260,CHRISTY VARGAS,16.97,16.54,3,2005-06-17,"Jon Stephens,Mike Hillyer",14
-Datong,China,260,CHRISTY VARGAS,17.97,16.41,3,2005-08-21,"Jon Stephens,Mike Hillyer",15
-Daugavpils,Latvia,347,RYAN SALISBURY,15.96,15.13,4,2005-07-28,"Mike Hillyer,Jon Stephens",1
-Davao,Philippines,27,SHIRLEY ALLEN,18.97,18.04,3,2005-07-31,"Jon Stephens,Mike Hillyer",7
-Davao,Philippines,27,SHIRLEY ALLEN,21.97,20.77,3,2005-08-17,"Mike Hillyer,Jon Stephens",3
-Dayton,United States,294,SHELLY WATTS,20.95,19.35,5,2005-08-01,"Jon Stephens,Mike Hillyer",4
-Dos Quebradas,Colombia,120,SYLVIA ORTIZ,19.97,18.41,3,2005-08-21,"Mike Hillyer,Jon Stephens",1
-El Fuerte,Mexico,451,JIM REA,16.97,16.04,3,2005-07-08,"Mike Hillyer,Jon Stephens",17
-El Fuerte,Mexico,451,JIM REA,19.96,18.4,4,2005-08-02,"Mike Hillyer,Jon Stephens",8
-El Monte,United States,420,JACOB LANCE,20.97,19.64,3,2005-08-01,"Jon Stephens,Mike Hillyer",3
-Elista,Russian Federation,17,DONNA THOMPSON,21.96,21.23,4,2005-07-30,"Jon Stephens,Mike Hillyer",3
-Etawah,India,121,JOSEPHINE GOMEZ,25.96,24.1,4,2005-08-21,"Mike Hillyer,Jon Stephens",2
-Fengshan,Taiwan,576,MORRIS MCCARTER,21.95,20.55,5,2005-07-31,"Jon Stephens,Mike Hillyer",3
-Firozabad,India,192,LAURIE LAWRENCE,24.96,23.36,4,2005-08-21,"Jon Stephens,Mike Hillyer",3
-Fontana,United States,51,ALICE STEWART,16.97,14.74,3,2005-08-21,"Jon Stephens,Mike Hillyer",15
-Fontana,United States,51,ALICE STEWART,16.97,16.54,3,2005-07-09,"Mike Hillyer,Jon Stephens",12
-Fuyu,China,211,STACEY MONTGOMERY,14.97,13.64,3,2005-07-10,"Mike Hillyer,Jon Stephens",31
-Gingoog,Philippines,461,DEREK BLAKELY,22.95,21.69,5,2005-08-22,"Mike Hillyer,Jon Stephens",2
-Goinia,Brazil,92,TINA SIMMONS,23.96,22.63,4,2005-07-10,"Jon Stephens,Mike Hillyer",2
-Greensboro,United States,158,VERONICA STONE,15.96,14.43,4,2005-08-02,"Jon Stephens,Mike Hillyer",17
-Guaruj,Brazil,427,JESUS MCCARTNEY,15.97,14.31,3,2005-08-01,"Mike Hillyer,Jon Stephens",15
-Gulbarga,India,370,WAYNE TRUONG,15.97,15.67,3,2005-07-27,"Mike Hillyer,Jon Stephens",19
-Haining,China,552,HUGH WALDROP,14.97,13.34,3,2005-08-02,"Mike Hillyer,Jon Stephens",34
-Haiphong,Vietnam,199,BETH FRANKLIN,16.97,15.21,3,2005-08-01,"Mike Hillyer,Jon Stephens",4
-Halisahar,India,259,LENA JENSEN,17.97,15.67,3,2005-08-20,"Mike Hillyer,Jon Stephens",18
-Halisahar,India,259,LENA JENSEN,18.96,15.8,4,2005-08-23,"Mike Hillyer,Jon Stephens",17
-Halisahar,India,259,LENA JENSEN,18.97,18.44,3,2005-06-16,"Mike Hillyer,Jon Stephens",9
-Halisahar,India,259,LENA JENSEN,21.97,20.91,3,2005-07-30,"Jon Stephens,Mike Hillyer",4
-Hidalgo,Mexico,150,DANIELLE DANIELS,14.96,12.9,4,2005-08-21,"Jon Stephens,Mike Hillyer",20
-Hidalgo,Mexico,150,DANIELLE DANIELS,21.95,20.82,5,2005-08-19,"Mike Hillyer,Jon Stephens",4
-Hodeida,Yemen,470,GORDON ALLARD,23.97,21.84,3,2005-08-18,"Jon Stephens,Mike Hillyer",1
-Hohhot,China,138,HAZEL WARREN,14.97,13.38,3,2005-08-01,"Jon Stephens,Mike Hillyer",33
-Hoshiarpur,India,412,ALLEN BUTTERFIELD,18.97,18.87,3,2005-07-29,"Jon Stephens,Mike Hillyer",8
-Hsichuh,Taiwan,348,ROGER QUINTANILLA,20.96,20.2,4,2005-07-08,"Jon Stephens,Mike Hillyer",4
-Huaian,China,384,ERNEST STEPP,18.97,18.04,3,2005-06-20,"Jon Stephens,Mike Hillyer",9
-Huejutla de Reyes,Mexico,582,ANDY VANHORN,15.97,15.04,3,2005-07-29,"Jon Stephens,Mike Hillyer",18
-Huejutla de Reyes,Mexico,582,ANDY VANHORN,20.96,20.73,4,2005-07-27,"Jon Stephens,Mike Hillyer",5
-Huixquilucan,Mexico,108,TRACY COLE,15.97,14.94,3,2005-07-29,"Jon Stephens,Mike Hillyer",19
-Hunuco,Peru,565,JAIME NETTLES,14.97,13.44,3,2005-08-02,"Jon Stephens,Mike Hillyer",2
-Ikerre,Nigeria,198,ELSIE KELLEY,14.97,14.54,3,2005-07-12,"Jon Stephens,Mike Hillyer",5
-Ikerre,Nigeria,198,ELSIE KELLEY,22.94,21.91,6,2005-08-17,"Mike Hillyer,Jon Stephens",2
-Ilorin,Nigeria,103,GLADYS HAMILTON,25.95,24.35,5,2005-08-23,"Mike Hillyer,Jon Stephens",1
-Imus,Philippines,349,JOE GILLILAND,18.97,17.44,3,2005-08-02,"Mike Hillyer,Jon Stephens",8
-Isesaki,Japan,519,RON DELUCA,23.95,23.02,5,2005-07-31,"Jon Stephens,Mike Hillyer",2
-Ivanovo,Russian Federation,106,CONNIE WALLACE,20.97,19.57,3,2005-08-01,"Jon Stephens,Mike Hillyer",6
-Iwaki,Japan,240,MARLENE WELCH,18.97,18.37,3,2005-07-27,"Mike Hillyer,Jon Stephens",6
-Iwakuni,Japan,54,TERESA ROGERS,15.97,14.77,3,2005-08-02,"Jon Stephens,Mike Hillyer",10
-Jaffna,Sri Lanka,408,MANUEL MURRELL,14.97,13.41,3,2005-08-20,"Mike Hillyer,Jon Stephens",1
-Jastrzebie-Zdrj,Poland,128,MARJORIE TUCKER,14.97,13.61,3,2005-07-30,"Jon Stephens,Mike Hillyer",3
-Jedda,Saudi Arabia,49,JOYCE EDWARDS,15.97,14.54,3,2005-08-21,"Jon Stephens,Mike Hillyer",3
-Jining,China,594,EDUARDO HIATT,16.97,15.34,3,2005-07-31,"Mike Hillyer,Jon Stephens",19
-Jinzhou,China,595,TERRENCE GUNDERSON,14.96,13.6,4,2005-07-27,"Mike Hillyer,Jon Stephens",32
-Jinzhou,China,595,TERRENCE GUNDERSON,18.97,16.71,3,2005-07-31,"Jon Stephens,Mike Hillyer",12
-Jos Azueta,Mexico,581,VIRGIL WOFFORD,17.96,17.2,4,2005-07-08,"Jon Stephens,Mike Hillyer",14
-Juazeiro do Norte,Brazil,47,FRANCES PARKER,15.97,15.97,3,2005-05-26,"Jon Stephens,Mike Hillyer",14
-Juiz de Fora,Brazil,591,KENT ARSENAULT,20.96,19.86,4,2005-07-27,"Mike Hillyer,Jon Stephens",4
-Juiz de Fora,Brazil,591,KENT ARSENAULT,21.96,20.36,4,2005-08-18,"Jon Stephens,Mike Hillyer",3
-Kalisz,Poland,270,LEAH CURTIS,18.97,17.94,3,2005-08-01,"Mike Hillyer,Jon Stephens",1
-Kamarhati,India,31,BRENDA WRIGHT,16.96,16.73,4,2005-06-18,"Mike Hillyer,Jon Stephens",12
-Kanazawa,Japan,547,KURT EMMONS,14.96,13.56,4,2005-08-02,"Mike Hillyer,Jon Stephens",13
-Kanchrapara,India,492,LESTER KRAUS,18.97,18.24,3,2005-07-07,"Jon Stephens,Mike Hillyer",10
-Kisumu,Kenya,193,KATIE ELLIOTT,16.97,15.74,3,2005-08-22,"Mike Hillyer,Jon Stephens",1
-Koriyama,Japan,401,TONY CARRANZA,14.97,14.44,3,2005-07-29,"Mike Hillyer,Jon Stephens",11
-Korla,China,283,FELICIA SUTTON,17.96,17.36,4,2005-07-06,"Mike Hillyer,Jon Stephens",11
-Kragujevac,Yugoslavia,7,MARIA MILLER,22.96,20.96,4,2005-08-01,"Jon Stephens,Mike Hillyer",2
-Kurgan,Russian Federation,376,RANDY GAITHER,18.97,17.81,3,2005-07-12,"Mike Hillyer,Jon Stephens",8
-Kursk,Russian Federation,311,PAUL TROUT,20.97,20.14,3,2005-07-31,"Mike Hillyer,Jon Stephens",5
-Kuwana,Japan,531,JAMIE WAUGH,26.96,24.8,4,2005-08-02,"Jon Stephens,Mike Hillyer",1
-La Plata,Argentina,89,JULIA FLORES,15.96,14.63,4,2005-07-28,"Jon Stephens,Mike Hillyer",4
-Lancaster,United States,112,ROSA REYNOLDS,16.97,15.34,3,2005-08-17,"Mike Hillyer,Jon Stephens",14
-Lancaster,United States,112,ROSA REYNOLDS,17.96,16.86,4,2005-07-31,"Jon Stephens,Mike Hillyer",9
-Laohekou,China,422,MELVIN ELLINGTON,14.96,13.2,4,2005-08-22,"Mike Hillyer,Jon Stephens",36
-Le Mans,France,162,LAUREN HUDSON,14.97,14.37,3,2005-07-31,"Mike Hillyer,Jon Stephens",2
-Lengshuijiang,China,267,MARGIE WADE,15.97,15.24,3,2005-07-30,"Jon Stephens,Mike Hillyer",20
-Lengshuijiang,China,267,MARGIE WADE,22.96,21.96,4,2005-06-19,"Jon Stephens,Mike Hillyer",2
-Leshan,China,569,DAVE GARDINER,14.96,14.03,4,2005-08-02,"Jon Stephens,Mike Hillyer",29
-Lhokseumawe,Indonesia,473,JORGE OLIVARES,19.95,18.02,5,2005-08-02,"Mike Hillyer,Jon Stephens",1
-Liaocheng,China,129,CARRIE PORTER,14.95,13.09,5,2005-08-01,"Jon Stephens,Mike Hillyer",37
-Liaocheng,China,129,CARRIE PORTER,21.96,20.0,4,2005-08-20,"Jon Stephens,Mike Hillyer",3
-Liaocheng,China,129,CARRIE PORTER,26.96,26.0,4,2005-07-31,"Jon Stephens,Mike Hillyer",1
-Lincoln,United States,63,ASHLEY RICHARDSON,16.97,16.47,3,2005-07-10,"Mike Hillyer,Jon Stephens",13
-Lipetsk,Russian Federation,44,MARIE TURNER,24.96,24.06,4,2005-07-10,"Mike Hillyer,Jon Stephens",1
-Livorno,Italy,541,DARREN WINDHAM,18.95,17.42,5,2005-08-22,"Jon Stephens,Mike Hillyer",1
-Lungtan,Taiwan,30,MELISSA KING,16.97,16.17,3,2005-07-09,"Jon Stephens,Mike Hillyer",8
-Lungtan,Taiwan,30,MELISSA KING,19.96,18.53,4,2005-07-28,"Jon Stephens,Mike Hillyer",5
-Maikop,Russian Federation,346,ARTHUR SIMPKINS,19.95,17.52,5,2005-08-23,"Jon Stephens,Mike Hillyer",9
-Maikop,Russian Federation,346,ARTHUR SIMPKINS,22.96,21.36,4,2005-07-29,"Jon Stephens,Mike Hillyer",2
-Malm,Sweden,66,JANICE WARD,18.97,16.97,3,2005-07-11,"Mike Hillyer,Jon Stephens",1
-Mannheim,Germany,196,ALMA AUSTIN,22.97,21.61,3,2005-07-31,"Mike Hillyer,Jon Stephens",1
-Maracabo,Venezuela,453,CALVIN MARTEL,18.96,17.7,4,2005-08-21,"Mike Hillyer,Jon Stephens",2
-Meixian,China,90,RUBY WASHINGTON,17.97,16.24,3,2005-08-01,"Jon Stephens,Mike Hillyer",16
-Memphis,United States,181,ANA BRADLEY,19.97,18.37,3,2005-07-30,"Jon Stephens,Mike Hillyer",7
-Memphis,United States,181,ANA BRADLEY,26.95,24.52,5,2005-08-01,"Jon Stephens,Mike Hillyer",2
-Miraj,India,316,STEVEN CURLEY,15.96,15.26,4,2005-07-27,"Jon Stephens,Mike Hillyer",20
-Miyakonojo,Japan,253,TERRY CARLSON,17.97,16.31,3,2005-08-21,"Jon Stephens,Mike Hillyer",8
-Monywa,Myanmar,256,MABEL HOLLAND,15.97,14.47,3,2005-08-23,"Jon Stephens,Mike Hillyer",1
-Moscow,Russian Federation,46,CATHERINE CAMPBELL,15.96,14.56,4,2005-08-18,"Jon Stephens,Mike Hillyer",13
-Moscow,Russian Federation,46,CATHERINE CAMPBELL,15.97,14.87,3,2005-08-01,"Jon Stephens,Mike Hillyer",12
-Mukateve,Ukraine,131,MONICA HICKS,18.96,17.3,4,2005-08-19,"Jon Stephens,Mike Hillyer",3
-Mwene-Ditu,"Congo, The Democratic Republic of the",375,AARON SELBY,18.97,17.91,3,2005-08-02,"Mike Hillyer,Jon Stephens",1
-Nabereznyje Telny,Russian Federation,447,CLIFFORD BOWENS,17.97,16.87,3,2005-07-30,"Jon Stephens,Mike Hillyer",10
-Nador,Morocco,40,AMANDA CARTER,13.97,13.07,3,2005-07-31,"Jon Stephens,Mike Hillyer",1
-Najafabad,Iran,368,HARRY ARCE,17.96,16.73,4,2005-08-19,"Mike Hillyer,Jon Stephens",6
-Nakhon Sawan,Thailand,390,SHAWN HEATON,27.94,26.51,6,2005-08-20,"Mike Hillyer,Jon Stephens",1
-Nam Dinh,Vietnam,472,GREG ROBINS,18.97,17.67,3,2005-07-11,"Mike Hillyer,Jon Stephens",2
-Nanyang,China,37,PAMELA BAKER,14.96,13.73,4,2005-08-20,"Jon Stephens,Mike Hillyer",30
-Nha Trang,Vietnam,520,MITCHELL WESTMORELAND,19.97,19.01,3,2005-07-10,"Jon Stephens,Mike Hillyer",1
-Novi Sad,Yugoslavia,553,MAX PITT,22.95,22.05,5,2005-07-06,"Jon Stephens,Mike Hillyer",1
-Ocumare del Tuy,Venezuela,174,YVONNE WATKINS,16.97,15.87,3,2005-08-01,"Mike Hillyer,Jon Stephens",4
-Omdurman,Sudan,50,DIANE COLLINS,26.95,25.15,5,2005-07-31,"Mike Hillyer,Jon Stephens",1
-Omiya,Japan,404,STANLEY SCROGGINS,21.96,21.33,4,2005-07-08,"Mike Hillyer,Jon Stephens",3
-Otsu,Japan,285,MIRIAM MCKINNEY,14.96,13.7,4,2005-07-11,"Mike Hillyer,Jon Stephens",12
-Owo,Nigeria,280,TRACEY BARRETT,20.95,20.55,5,2005-07-29,"Jon Stephens,Mike Hillyer",3
-Owo,Nigeria,280,TRACEY BARRETT,20.97,19.24,3,2005-08-19,"Mike Hillyer,Jon Stephens",4
-Peoria,United States,275,CAROLE BARNETT,19.96,18.4,4,2005-08-21,"Mike Hillyer,Jon Stephens",6
-Phnom Penh,Cambodia,228,ALLISON STANLEY,17.96,17.49,4,2005-07-06,"Jon Stephens,Mike Hillyer",1
-Pjatigorsk,Russian Federation,487,HECTOR POINDEXTER,16.97,15.41,3,2005-08-01,"Jon Stephens,Mike Hillyer",11
-Po,Brazil,126,ELLEN SIMPSON,18.97,18.87,3,2005-07-06,"Jon Stephens,Mike Hillyer",8
-Poos de Caldas,Brazil,254,MAXINE SILVA,19.96,19.0,4,2005-07-10,"Mike Hillyer,Jon Stephens",7
-Portoviejo,Ecuador,262,PATSY DAVIDSON,26.96,25.96,4,2005-07-12,"Jon Stephens,Mike Hillyer",1
-Probolinggo,Indonesia,372,STEVE MACKENZIE,15.97,14.57,3,2005-07-28,"Jon Stephens,Mike Hillyer",3
-Qalyub,Egypt,134,EMMA BOYD,20.96,20.33,4,2005-08-02,"Mike Hillyer,Jon Stephens",2
-Qinhuangdao,China,242,GLENDA FRAZIER,14.97,14.57,3,2005-06-15,"Jon Stephens,Mike Hillyer",22
-Qomsheh,Iran,459,TOMMY COLLAZO,22.96,19.97,4,2005-08-01,"Mike Hillyer,Jon Stephens",4
-Qomsheh,Iran,459,TOMMY COLLAZO,29.95,29.42,5,2005-07-28,"Mike Hillyer,Jon Stephens",1
-Rae Bareli,India,78,LORI WOOD,14.97,13.21,3,2005-08-01,"Jon Stephens,Mike Hillyer",26
-Rae Bareli,India,78,LORI WOOD,15.97,15.11,3,2005-07-28,"Jon Stephens,Mike Hillyer",21
-Rajkot,India,554,DWAYNE OLVERA,20.96,20.46,4,2005-08-17,"Jon Stephens,Mike Hillyer",5
-Rampur,India,336,JOSHUA MARK,16.97,16.14,3,2005-07-29,"Jon Stephens,Mike Hillyer",15
-Richmond Hill,Canada,410,CURTIS IRBY,17.96,17.13,4,2005-07-09,"Mike Hillyer,Jon Stephens",1
-Robamba,Ecuador,494,RAMON CHOATE,26.96,24.47,4,2005-08-22,"Mike Hillyer,Jon Stephens",2
-Ruse,Bulgaria,540,TYRONE ASHER,24.96,23.63,4,2005-08-02,"Mike Hillyer,Jon Stephens",1
-Rustenburg,South Africa,407,DALE RATCLIFF,17.97,16.14,3,2005-08-02,"Mike Hillyer,Jon Stephens",4
-Rustenburg,South Africa,407,DALE RATCLIFF,22.96,22.2,4,2005-07-28,"Jon Stephens,Mike Hillyer",1
-Salamanca,Mexico,273,PRISCILLA LOWE,19.96,18.3,4,2005-07-12,"Mike Hillyer,Jon Stephens",9
-Salzburg,Austria,266,NORA HERRERA,17.96,16.86,4,2005-08-18,"Mike Hillyer,Jon Stephens",1
-San Bernardino,United States,2,PATRICIA JOHNSON,16.96,14.4,4,2005-08-02,"Mike Hillyer,Jon Stephens",18
-San Bernardino,United States,2,PATRICIA JOHNSON,16.97,16.64,3,2005-07-27,"Jon Stephens,Mike Hillyer",11
-San Bernardino,United States,2,PATRICIA JOHNSON,30.95,29.55,5,2005-07-30,"Mike Hillyer,Jon Stephens",1
-San Felipe del Progreso,Mexico,319,RONALD WEINER,16.95,16.65,5,2005-08-17,"Mike Hillyer,Jon Stephens",15
-San Juan Bautista Tuxtepec,Mexico,425,FRANCIS SIKES,27.96,27.26,4,2005-07-08,"Jon Stephens,Mike Hillyer",2
-Santa Brbara dOeste,Brazil,178,MARION SNYDER,15.97,13.38,3,2005-08-21,"Mike Hillyer,Jon Stephens",17
-Santa Brbara dOeste,Brazil,178,MARION SNYDER,15.97,13.47,3,2005-07-12,"Mike Hillyer,Jon Stephens",16
-Santa F,Argentina,331,ERIC ROBERT,18.97,18.54,3,2005-07-06,"Mike Hillyer,Jon Stephens",2
-Santa F,Argentina,331,ERIC ROBERT,21.97,20.91,3,2005-07-07,"Mike Hillyer,Jon Stephens",1
-Santa Rosa,Philippines,522,ARNOLD HAVENS,18.96,15.73,4,2005-08-01,"Jon Stephens,Mike Hillyer",11
-Santa Rosa,Philippines,522,ARNOLD HAVENS,29.95,27.92,5,2005-07-30,"Mike Hillyer,Jon Stephens",1
-Santiago de los Caballeros,Dominican Republic,258,MYRTLE FLEMING,14.97,13.51,3,2005-08-20,"Mike Hillyer,Jon Stephens",2
-Santiago de los Caballeros,Dominican Republic,258,MYRTLE FLEMING,20.95,19.45,5,2005-08-01,"Jon Stephens,Mike Hillyer",1
-Santo Andr,Brazil,354,JUSTIN NGO,18.97,17.47,3,2005-07-29,"Jon Stephens,Mike Hillyer",13
-Sanya,China,546,KELLY KNOTT,19.97,19.27,3,2005-07-12,"Jon Stephens,Mike Hillyer",6
-Sasebo,Japan,1,MARY SMITH,16.97,16.84,3,2005-06-15,"Mike Hillyer,Jon Stephens",7
-Satna,India,356,GERALD FULTZ,14.96,13.2,4,2005-08-19,"Jon Stephens,Mike Hillyer",28
-Sawhaj,Egypt,423,ALFRED CASILLAS,24.95,24.72,5,2005-07-27,"Mike Hillyer,Jon Stephens",1
-Shanwei,China,424,KYLE SPURLOCK,14.96,14.2,4,2005-07-30,"Mike Hillyer,Jon Stephens",24
-Shanwei,China,424,KYLE SPURLOCK,20.97,19.71,3,2005-07-31,"Mike Hillyer,Jon Stephens",4
-Shaoguan,China,485,CLYDE TOBIAS,17.96,16.56,4,2005-07-30,"Jon Stephens,Mike Hillyer",13
-Shimonoseki,Japan,29,ANGELA HERNANDEZ,15.95,15.88,5,2005-06-19,"Mike Hillyer,Jon Stephens",9
-Shimonoseki,Japan,29,ANGELA HERNANDEZ,21.96,20.6,4,2005-08-18,"Mike Hillyer,Jon Stephens",4
-Shivapuri,India,68,NICOLE PETERSON,16.97,16.07,3,2005-07-31,"Mike Hillyer,Jon Stephens",16
-Shubra al-Khayma,Egypt,119,SHERRY MARSHALL,15.97,13.48,3,2005-08-22,"Mike Hillyer,Jon Stephens",3
-Siliguri (Shiliguri),India,502,BRETT CORNWELL,14.97,13.21,3,2005-07-28,"Mike Hillyer,Jon Stephens",27
-Simferopol,Ukraine,82,KATHRYN COLEMAN,19.97,18.47,3,2005-07-30,"Jon Stephens,Mike Hillyer",2
-Sirjan,Iran,449,OSCAR AQUINO,21.96,20.73,4,2005-08-01,"Jon Stephens,Mike Hillyer",2
-Skikda,Algeria,176,JUNE CARROLL,16.96,15.53,4,2005-06-18,"Mike Hillyer,Jon Stephens",2
-So Bernardo do Campo,Brazil,544,CODY NOLEN,18.97,17.94,3,2005-08-21,"Jon Stephens,Mike Hillyer",11
-Sogamoso,Colombia,490,SAM MCDUFFIE,16.97,15.64,3,2005-07-12,"Mike Hillyer,Jon Stephens",2
-Soshanguve,South Africa,145,LUCILLE HOLMES,15.96,14.83,4,2005-08-19,"Jon Stephens,Mike Hillyer",5
-Soshanguve,South Africa,145,LUCILLE HOLMES,20.97,20.57,3,2005-07-07,"Jon Stephens,Mike Hillyer",3
-Southampton,United Kingdom,583,MARSHALL THORN,17.97,16.97,3,2005-07-06,"Mike Hillyer,Jon Stephens",2
-Sterling Heights,United States,146,JAMIE RICE,17.96,16.73,4,2005-08-02,"Jon Stephens,Mike Hillyer",10
-Sterling Heights,United States,146,JAMIE RICE,19.97,18.71,3,2005-07-11,"Mike Hillyer,Jon Stephens",5
-Stockport,United Kingdom,477,DAN PAINE,15.97,14.84,3,2005-07-29,"Mike Hillyer,Jon Stephens",3
-Sullana,Peru,597,FREDDIE DUGGAN,16.96,16.03,4,2005-08-02,"Jon Stephens,Mike Hillyer",1
-Sumy,Ukraine,187,BRITTANY RILEY,26.97,26.07,3,2005-08-18,"Jon Stephens,Mike Hillyer",1
-Sungai Petani,Malaysia,306,CHARLES KOWALSKI,16.96,14.6,4,2005-08-20,"Mike Hillyer,Jon Stephens",1
-Sunnyvale,United States,214,KRISTIN JOHNSTON,15.97,14.71,3,2005-08-19,"Jon Stephens,Mike Hillyer",16
-Tabora,Tanzania,190,YOLANDA WEAVER,24.96,24.03,4,2005-08-02,"Mike Hillyer,Jon Stephens",1
-Tabriz,Iran,279,DIANNE SHELTON,18.96,17.93,4,2005-08-19,"Jon Stephens,Mike Hillyer",5
-Tabriz,Iran,279,DIANNE SHELTON,20.97,20.24,3,2005-07-09,"Mike Hillyer,Jon Stephens",3
-Tanauan,Philippines,373,LOUIS LEONE,20.96,18.4,4,2005-08-18,"Mike Hillyer,Jon Stephens",4
-Tangail,Bangladesh,21,MICHELLE CLARK,32.96,31.1,4,2005-08-20,"Mike Hillyer,Jon Stephens",1
-Tanshui,Taiwan,577,CLIFTON MALCOLM,21.97,21.17,3,2005-07-28,"Jon Stephens,Mike Hillyer",1
-Tanza,Philippines,236,MARCIA DEAN,17.97,15.38,3,2005-08-21,"Jon Stephens,Mike Hillyer",12
-Tegal,Indonesia,458,LLOYD DOWD,15.97,15.37,3,2005-07-12,"Mike Hillyer,Jon Stephens",2
-Tel Aviv-Jaffa,Israel,161,GERALDINE PERKINS,15.96,14.5,4,2005-08-22,"Mike Hillyer,Jon Stephens",2
-Tiefa,China,302,MICHAEL SILVERMAN,16.96,14.5,4,2005-08-23,"Jon Stephens,Mike Hillyer",23
-Tiefa,China,302,MICHAEL SILVERMAN,19.97,18.57,3,2005-07-30,"Mike Hillyer,Jon Stephens",8
-Tokat,Turkey,566,CASEY MENA,17.95,16.72,5,2005-07-29,"Mike Hillyer,Jon Stephens",3
-Torren,Mexico,133,PAULINE HENRY,19.96,19.49,4,2005-07-08,"Jon Stephens,Mike Hillyer",7
-Touliu,Taiwan,139,AMBER DIXON,17.97,17.34,3,2005-07-09,"Jon Stephens,Mike Hillyer",6
-Touliu,Taiwan,139,AMBER DIXON,21.95,20.79,5,2005-08-22,"Mike Hillyer,Jon Stephens",2
-Toulon,France,104,RITA GRAHAM,15.97,15.27,3,2005-07-08,"Jon Stephens,Mike Hillyer",1
-Tuguegarao,Philippines,261,DEANNA BYRD,18.97,18.31,3,2005-06-17,"Mike Hillyer,Jon Stephens",5
-Udaipur,India,170,BEATRICE ARNOLD,15.97,14.61,3,2005-07-31,"Jon Stephens,Mike Hillyer",23
-Udaipur,India,170,BEATRICE ARNOLD,15.97,15.07,3,2005-07-10,"Mike Hillyer,Jon Stephens",22
-Uijongbu,South Korea,245,COURTNEY DAY,17.95,17.29,5,2005-07-27,"Jon Stephens,Mike Hillyer",1
-Uluberia,India,446,THEODORE CULP,14.97,13.07,3,2005-07-30,"Jon Stephens,Mike Hillyer",29
-Uluberia,India,446,THEODORE CULP,17.96,16.66,4,2005-07-29,"Jon Stephens,Mike Hillyer",13
-Urawa,Japan,147,JOANNE ROBERTSON,20.97,18.91,3,2005-08-23,"Jon Stephens,Mike Hillyer",5
-Uruapan,Mexico,454,ALEX GRESHAM,27.96,27.26,4,2005-08-20,"Jon Stephens,Mike Hillyer",1
-Usak,Turkey,204,ROSEMARY SCHMIDT,17.97,16.11,3,2005-08-22,"Mike Hillyer,Jon Stephens",4
-Usolje-Sibirskoje,Russian Federation,462,WARREN SHERROD,19.96,18.43,4,2005-07-28,"Mike Hillyer,Jon Stephens",7
-Usolje-Sibirskoje,Russian Federation,462,WARREN SHERROD,22.97,20.84,3,2005-08-19,"Mike Hillyer,Jon Stephens",4
-Valle de la Pascua,Venezuela,290,KRISTINA CHAMBERS,20.97,20.87,3,2005-06-15,"Mike Hillyer,Jon Stephens",1
-Valparai,India,403,MIKE WAY,21.96,19.47,4,2005-08-02,"Mike Hillyer,Jon Stephens",7
-Vijayawada,India,508,MILTON HOWLAND,17.97,16.91,3,2005-07-27,"Mike Hillyer,Jon Stephens",11
-Vila Velha,Brazil,39,DEBRA NELSON,19.96,18.6,4,2005-07-29,"Jon Stephens,Mike Hillyer",9
-Vila Velha,Brazil,39,DEBRA NELSON,20.96,18.5,4,2005-08-01,"Mike Hillyer,Jon Stephens",10
-Vitria de Santo Anto,Brazil,374,JEREMY HURTADO,20.96,19.6,4,2005-08-22,"Jon Stephens,Mike Hillyer",5
-Warren,United States,276,BRANDY GRAVES,15.97,14.37,3,2005-08-18,"Jon Stephens,Mike Hillyer",19
-Wroclaw,Poland,558,JIMMIE EGGLESTON,15.97,13.61,3,2005-07-12,"Jon Stephens,Mike Hillyer",2
-Xiangfan,China,241,HEIDI LARSON,14.97,14.07,3,2005-07-11,"Mike Hillyer,Jon Stephens",26
-Yantai,China,272,KAY CALDWELL,16.97,15.77,3,2005-08-17,"Jon Stephens,Mike Hillyer",18
-Yinchuan,China,484,ROBERTO VU,14.97,14.07,3,2005-07-10,"Jon Stephens,Mike Hillyer",27
-York,United Kingdom,497,GILBERT SLEDGE,17.97,17.7,3,2005-06-18,"Jon Stephens,Mike Hillyer",1
-Yuncheng,China,154,MICHELE GRANT,14.97,14.04,3,2005-07-27,"Jon Stephens,Mike Hillyer",28
-Yuncheng,China,154,MICHELE GRANT,15.97,14.14,3,2005-08-22,"Jon Stephens,Mike Hillyer",25
-Zalantun,China,93,PHYLLIS FOSTER,19.96,19.46,4,2005-08-20,"Mike Hillyer,Jon Stephens",5
-Zapopan,Mexico,465,FLOYD GANDY,16.97,16.64,3,2005-08-17,"Mike Hillyer,Jon Stephens",16
-Zhoushan,China,550,GUY BROWNLEE,15.97,13.31,3,2005-08-23,"Jon Stephens,Mike Hillyer",35
-Zhoushan,China,550,GUY BROWNLEE,16.97,14.88,3,2005-08-21,"Jon Stephens,Mike Hillyer",21
-al-Ayn,United Arab Emirates,98,LILLIAN GRIFFIN,16.97,16.27,3,2005-07-29,"Mike Hillyer,Jon Stephens",1
-al-Qatif,Saudi Arabia,417,TRAVIS ESTEP,14.97,13.77,3,2005-08-21,"Jon Stephens,Mike Hillyer",4
-al-Qatif,Saudi Arabia,417,TRAVIS ESTEP,15.97,14.74,3,2005-08-02,"Mike Hillyer,Jon Stephens",2
-s-Hertogenbosch,Netherlands,184,VIVIAN RUIZ,15.97,15.37,3,2005-08-18,"Jon Stephens,Mike Hillyer",2
+customer_id,customer_name,country_name,city_name,payment_date,payment_count,day_amount,staff_list,deviation_from_personal_avg,suspicion_rank_in_country
+441,MARIO CHEATHAM,Algeria,Batna,2005-07-29,5,18.95,"Jon Stephens,Mike Hillyer",17.89,1
+176,JUNE CARROLL,Algeria,Skikda,2005-06-18,4,16.96,"Mike Hillyer,Jon Stephens",15.53,2
+331,ERIC ROBERT,Argentina,Santa F,2005-07-07,3,21.97,"Mike Hillyer,Jon Stephens",20.91,1
+331,ERIC ROBERT,Argentina,Santa F,2005-07-06,3,18.97,"Mike Hillyer,Jon Stephens",18.54,2
+560,JORDAN ARCHULETA,Argentina,Avellaneda,2005-08-01,3,17.97,"Jon Stephens,Mike Hillyer",15.97,3
+89,JULIA FLORES,Argentina,La Plata,2005-07-28,4,15.96,"Jon Stephens,Mike Hillyer",14.63,4
+266,NORA HERRERA,Austria,Salzburg,2005-08-18,4,17.96,"Mike Hillyer,Jon Stephens",16.86,1
+21,MICHELLE CLARK,Bangladesh,Tangail,2005-08-20,4,32.96,"Mike Hillyer,Jon Stephens",31.1,1
+362,NICHOLAS BARFIELD,Brazil,Belm,2005-08-21,4,25.96,"Jon Stephens,Mike Hillyer",23.96,1
+92,TINA SIMMONS,Brazil,Goinia,2005-07-10,4,23.96,"Jon Stephens,Mike Hillyer",22.63,2
+591,KENT ARSENAULT,Brazil,Juiz de Fora,2005-08-18,4,21.96,"Jon Stephens,Mike Hillyer",20.36,3
+591,KENT ARSENAULT,Brazil,Juiz de Fora,2005-07-27,4,20.96,"Mike Hillyer,Jon Stephens",19.86,4
+374,JEREMY HURTADO,Brazil,Vitria de Santo Anto,2005-08-22,4,20.96,"Jon Stephens,Mike Hillyer",19.6,5
+342,HAROLD MARTINO,Brazil,Boa Vista,2005-07-12,3,19.97,"Jon Stephens,Mike Hillyer",19.27,6
+254,MAXINE SILVA,Brazil,Poos de Caldas,2005-07-10,4,19.96,"Mike Hillyer,Jon Stephens",19.0,7
+126,ELLEN SIMPSON,Brazil,Po,2005-07-06,3,18.97,"Jon Stephens,Mike Hillyer",18.87,8
+39,DEBRA NELSON,Brazil,Vila Velha,2005-07-29,4,19.96,"Jon Stephens,Mike Hillyer",18.6,9
+39,DEBRA NELSON,Brazil,Vila Velha,2005-08-01,4,20.96,"Mike Hillyer,Jon Stephens",18.5,10
+544,CODY NOLEN,Brazil,So Bernardo do Campo,2005-08-21,3,18.97,"Jon Stephens,Mike Hillyer",17.94,11
+206,TERRI VASQUEZ,Brazil,Blumenau,2005-08-19,3,18.97,"Mike Hillyer,Jon Stephens",17.87,12
+354,JUSTIN NGO,Brazil,Santo Andr,2005-07-29,3,18.97,"Jon Stephens,Mike Hillyer",17.47,13
+47,FRANCES PARKER,Brazil,Juazeiro do Norte,2005-05-26,3,15.97,"Jon Stephens,Mike Hillyer",15.97,14
+427,JESUS MCCARTNEY,Brazil,Guaruj,2005-08-01,3,15.97,"Mike Hillyer,Jon Stephens",14.31,15
+178,MARION SNYDER,Brazil,Santa Brbara dOeste,2005-07-12,3,15.97,"Mike Hillyer,Jon Stephens",13.47,16
+178,MARION SNYDER,Brazil,Santa Brbara dOeste,2005-08-21,3,15.97,"Mike Hillyer,Jon Stephens",13.38,17
+91,LOIS BUTLER,Brunei,Bandar Seri Begawan,2005-07-07,3,12.97,"Jon Stephens,Mike Hillyer",12.51,1
+540,TYRONE ASHER,Bulgaria,Ruse,2005-08-02,4,24.96,"Mike Hillyer,Jon Stephens",23.63,1
+228,ALLISON STANLEY,Cambodia,Phnom Penh,2005-07-06,4,17.96,"Jon Stephens,Mike Hillyer",17.49,1
+352,ALBERT CROUSE,Cameroon,Bamenda,2005-07-27,4,22.96,"Mike Hillyer,Jon Stephens",22.59,1
+410,CURTIS IRBY,Canada,Richmond Hill,2005-07-09,4,17.96,"Mike Hillyer,Jon Stephens",17.13,1
+45,JANET PHILLIPS,Chile,Antofagasta,2005-08-02,5,27.95,"Jon Stephens,Mike Hillyer",26.59,1
+129,CARRIE PORTER,China,Liaocheng,2005-07-31,4,26.96,"Jon Stephens,Mike Hillyer",26.0,1
+267,MARGIE WADE,China,Lengshuijiang,2005-06-19,4,22.96,"Jon Stephens,Mike Hillyer",21.96,2
+129,CARRIE PORTER,China,Liaocheng,2005-08-20,4,21.96,"Jon Stephens,Mike Hillyer",20.0,3
+424,KYLE SPURLOCK,China,Shanwei,2005-07-31,3,20.97,"Mike Hillyer,Jon Stephens",19.71,4
+93,PHYLLIS FOSTER,China,Zalantun,2005-08-20,4,19.96,"Mike Hillyer,Jon Stephens",19.46,5
+546,KELLY KNOTT,China,Sanya,2005-07-12,3,19.97,"Jon Stephens,Mike Hillyer",19.27,6
+533,JESSIE MILAM,China,Binzhou,2005-08-17,3,19.97,"Jon Stephens,Mike Hillyer",18.61,7
+302,MICHAEL SILVERMAN,China,Tiefa,2005-07-30,3,19.97,"Mike Hillyer,Jon Stephens",18.57,8
+384,ERNEST STEPP,China,Huaian,2005-06-20,3,18.97,"Jon Stephens,Mike Hillyer",18.04,9
+538,TED BREAUX,China,Baicheng,2005-07-31,3,18.97,"Mike Hillyer,Jon Stephens",17.87,10
+283,FELICIA SUTTON,China,Korla,2005-07-06,4,17.96,"Mike Hillyer,Jon Stephens",17.36,11
+595,TERRENCE GUNDERSON,China,Jinzhou,2005-07-31,3,18.97,"Jon Stephens,Mike Hillyer",16.71,12
+485,CLYDE TOBIAS,China,Shaoguan,2005-07-30,4,17.96,"Jon Stephens,Mike Hillyer",16.56,13
+260,CHRISTY VARGAS,China,Datong,2005-06-17,3,16.97,"Jon Stephens,Mike Hillyer",16.54,14
+260,CHRISTY VARGAS,China,Datong,2005-08-21,3,17.97,"Jon Stephens,Mike Hillyer",16.41,15
+90,RUBY WASHINGTON,China,Meixian,2005-08-01,3,17.97,"Jon Stephens,Mike Hillyer",16.24,16
+538,TED BREAUX,China,Baicheng,2005-07-09,3,16.97,"Jon Stephens,Mike Hillyer",16.17,17
+272,KAY CALDWELL,China,Yantai,2005-08-17,3,16.97,"Jon Stephens,Mike Hillyer",15.77,18
+594,EDUARDO HIATT,China,Jining,2005-07-31,3,16.97,"Mike Hillyer,Jon Stephens",15.34,19
+267,MARGIE WADE,China,Lengshuijiang,2005-07-30,3,15.97,"Jon Stephens,Mike Hillyer",15.24,20
+550,GUY BROWNLEE,China,Zhoushan,2005-08-21,3,16.97,"Jon Stephens,Mike Hillyer",14.88,21
+242,GLENDA FRAZIER,China,Qinhuangdao,2005-06-15,3,14.97,"Jon Stephens,Mike Hillyer",14.57,22
+302,MICHAEL SILVERMAN,China,Tiefa,2005-08-23,4,16.96,"Jon Stephens,Mike Hillyer",14.5,23
+424,KYLE SPURLOCK,China,Shanwei,2005-07-30,4,14.96,"Mike Hillyer,Jon Stephens",14.2,24
+154,MICHELE GRANT,China,Yuncheng,2005-08-22,3,15.97,"Jon Stephens,Mike Hillyer",14.14,25
+241,HEIDI LARSON,China,Xiangfan,2005-07-11,3,14.97,"Mike Hillyer,Jon Stephens",14.07,26
+484,ROBERTO VU,China,Yinchuan,2005-07-10,3,14.97,"Jon Stephens,Mike Hillyer",14.07,27
+154,MICHELE GRANT,China,Yuncheng,2005-07-27,3,14.97,"Jon Stephens,Mike Hillyer",14.04,28
+569,DAVE GARDINER,China,Leshan,2005-08-02,4,14.96,"Jon Stephens,Mike Hillyer",14.03,29
+37,PAMELA BAKER,China,Nanyang,2005-08-20,4,14.96,"Jon Stephens,Mike Hillyer",13.73,30
+211,STACEY MONTGOMERY,China,Fuyu,2005-07-10,3,14.97,"Mike Hillyer,Jon Stephens",13.64,31
+595,TERRENCE GUNDERSON,China,Jinzhou,2005-07-27,4,14.96,"Mike Hillyer,Jon Stephens",13.6,32
+138,HAZEL WARREN,China,Hohhot,2005-08-01,3,14.97,"Jon Stephens,Mike Hillyer",13.38,33
+552,HUGH WALDROP,China,Haining,2005-08-02,3,14.97,"Mike Hillyer,Jon Stephens",13.34,34
+550,GUY BROWNLEE,China,Zhoushan,2005-08-23,3,15.97,"Jon Stephens,Mike Hillyer",13.31,35
+422,MELVIN ELLINGTON,China,Laohekou,2005-08-22,4,14.96,"Mike Hillyer,Jon Stephens",13.2,36
+129,CARRIE PORTER,China,Liaocheng,2005-08-01,5,14.95,"Jon Stephens,Mike Hillyer",13.09,37
+120,SYLVIA ORTIZ,Colombia,Dos Quebradas,2005-08-21,3,19.97,"Mike Hillyer,Jon Stephens",18.41,1
+490,SAM MCDUFFIE,Colombia,Sogamoso,2005-07-12,3,16.97,"Mike Hillyer,Jon Stephens",15.64,2
+235,JACKIE LYNCH,Colombia,Buenaventura,2005-07-06,3,14.97,"Jon Stephens,Mike Hillyer",14.77,3
+375,AARON SELBY,"Congo, The Democratic Republic of the",Mwene-Ditu,2005-08-02,3,18.97,"Mike Hillyer,Jon Stephens",17.91,1
+258,MYRTLE FLEMING,Dominican Republic,Santiago de los Caballeros,2005-08-01,5,20.95,"Jon Stephens,Mike Hillyer",19.45,1
+258,MYRTLE FLEMING,Dominican Republic,Santiago de los Caballeros,2005-08-20,3,14.97,"Mike Hillyer,Jon Stephens",13.51,2
+262,PATSY DAVIDSON,Ecuador,Portoviejo,2005-07-12,4,26.96,"Jon Stephens,Mike Hillyer",25.96,1
+494,RAMON CHOATE,Ecuador,Robamba,2005-08-22,4,26.96,"Mike Hillyer,Jon Stephens",24.47,2
+423,ALFRED CASILLAS,Egypt,Sawhaj,2005-07-27,5,24.95,"Mike Hillyer,Jon Stephens",24.72,1
+134,EMMA BOYD,Egypt,Qalyub,2005-08-02,4,20.96,"Mike Hillyer,Jon Stephens",20.33,2
+119,SHERRY MARSHALL,Egypt,Shubra al-Khayma,2005-08-22,3,15.97,"Mike Hillyer,Jon Stephens",13.48,3
+104,RITA GRAHAM,France,Toulon,2005-07-08,3,15.97,"Jon Stephens,Mike Hillyer",15.27,1
+162,LAUREN HUDSON,France,Le Mans,2005-07-31,3,14.97,"Mike Hillyer,Jon Stephens",14.37,2
+196,ALMA AUSTIN,Germany,Mannheim,2005-07-31,3,22.97,"Mike Hillyer,Jon Stephens",21.61,1
+3,LINDA WILLIAMS,Greece,Athenai,2005-07-28,4,24.96,"Jon Stephens,Mike Hillyer",24.06,1
+26,JESSICA HALL,Holy See (Vatican City State),Citt del Vaticano,2005-08-21,4,23.96,"Jon Stephens,Mike Hillyer",22.96,1
+468,TIM CARY,India,Bijapur,2005-08-21,5,32.95,"Jon Stephens,Mike Hillyer",31.12,1
+121,JOSEPHINE GOMEZ,India,Etawah,2005-08-21,4,25.96,"Mike Hillyer,Jon Stephens",24.1,2
+192,LAURIE LAWRENCE,India,Firozabad,2005-08-21,4,24.96,"Jon Stephens,Mike Hillyer",23.36,3
+259,LENA JENSEN,India,Halisahar,2005-07-30,3,21.97,"Jon Stephens,Mike Hillyer",20.91,4
+554,DWAYNE OLVERA,India,Rajkot,2005-08-17,4,20.96,"Jon Stephens,Mike Hillyer",20.46,5
+529,ERIK GUILLEN,India,Bhimavaram,2005-07-12,3,20.97,"Jon Stephens,Mike Hillyer",20.37,6
+403,MIKE WAY,India,Valparai,2005-08-02,4,21.96,"Mike Hillyer,Jon Stephens",19.47,7
+412,ALLEN BUTTERFIELD,India,Hoshiarpur,2005-07-29,3,18.97,"Jon Stephens,Mike Hillyer",18.87,8
+259,LENA JENSEN,India,Halisahar,2005-06-16,3,18.97,"Mike Hillyer,Jon Stephens",18.44,9
+492,LESTER KRAUS,India,Kanchrapara,2005-07-07,3,18.97,"Jon Stephens,Mike Hillyer",18.24,10
+508,MILTON HOWLAND,India,Vijayawada,2005-07-27,3,17.97,"Mike Hillyer,Jon Stephens",16.91,11
+31,BRENDA WRIGHT,India,Kamarhati,2005-06-18,4,16.96,"Mike Hillyer,Jon Stephens",16.73,12
+446,THEODORE CULP,India,Uluberia,2005-07-29,4,17.96,"Jon Stephens,Mike Hillyer",16.66,13
+297,SHERRI RHODES,India,Ahmadnagar,2005-06-18,3,16.97,"Mike Hillyer,Jon Stephens",16.57,14
+336,JOSHUA MARK,India,Rampur,2005-07-29,3,16.97,"Jon Stephens,Mike Hillyer",16.14,15
+68,NICOLE PETERSON,India,Shivapuri,2005-07-31,3,16.97,"Mike Hillyer,Jon Stephens",16.07,16
+259,LENA JENSEN,India,Halisahar,2005-08-23,4,18.96,"Mike Hillyer,Jon Stephens",15.8,17
+259,LENA JENSEN,India,Halisahar,2005-08-20,3,17.97,"Mike Hillyer,Jon Stephens",15.67,18
+370,WAYNE TRUONG,India,Gulbarga,2005-07-27,3,15.97,"Mike Hillyer,Jon Stephens",15.67,19
+316,STEVEN CURLEY,India,Miraj,2005-07-27,4,15.96,"Jon Stephens,Mike Hillyer",15.26,20
+78,LORI WOOD,India,Rae Bareli,2005-07-28,3,15.97,"Jon Stephens,Mike Hillyer",15.11,21
+170,BEATRICE ARNOLD,India,Udaipur,2005-07-10,3,15.97,"Mike Hillyer,Jon Stephens",15.07,22
+170,BEATRICE ARNOLD,India,Udaipur,2005-07-31,3,15.97,"Jon Stephens,Mike Hillyer",14.61,23
+367,ADAM GOOCH,India,Adoni,2005-08-18,3,14.97,"Mike Hillyer,Jon Stephens",14.31,24
+297,SHERRI RHODES,India,Ahmadnagar,2005-07-11,3,14.97,"Jon Stephens,Mike Hillyer",13.54,25
+78,LORI WOOD,India,Rae Bareli,2005-08-01,3,14.97,"Jon Stephens,Mike Hillyer",13.21,26
+502,BRETT CORNWELL,India,Siliguri (Shiliguri),2005-07-28,3,14.97,"Mike Hillyer,Jon Stephens",13.21,27
+356,GERALD FULTZ,India,Satna,2005-08-19,4,14.96,"Jon Stephens,Mike Hillyer",13.2,28
+446,THEODORE CULP,India,Uluberia,2005-07-30,3,14.97,"Jon Stephens,Mike Hillyer",13.07,29
+15,HELEN HARRIS,India,Bhopal,2005-08-20,3,14.97,"Jon Stephens,Mike Hillyer",12.81,30
+209,TONYA CHAPMAN,India,Bhilwara,2005-08-01,3,14.97,"Jon Stephens,Mike Hillyer",12.21,31
+473,JORGE OLIVARES,Indonesia,Lhokseumawe,2005-08-02,5,19.95,"Mike Hillyer,Jon Stephens",18.02,1
+458,LLOYD DOWD,Indonesia,Tegal,2005-07-12,3,15.97,"Mike Hillyer,Jon Stephens",15.37,2
+372,STEVE MACKENZIE,Indonesia,Probolinggo,2005-07-28,3,15.97,"Jon Stephens,Mike Hillyer",14.57,3
+328,JEFFREY SPEAR,Indonesia,Ciparay,2005-08-20,3,14.97,"Mike Hillyer,Jon Stephens",14.01,4
+459,TOMMY COLLAZO,Iran,Qomsheh,2005-07-28,5,29.95,"Mike Hillyer,Jon Stephens",29.42,1
+449,OSCAR AQUINO,Iran,Sirjan,2005-08-01,4,21.96,"Jon Stephens,Mike Hillyer",20.73,2
+279,DIANNE SHELTON,Iran,Tabriz,2005-07-09,3,20.97,"Mike Hillyer,Jon Stephens",20.24,3
+459,TOMMY COLLAZO,Iran,Qomsheh,2005-08-01,4,22.96,"Mike Hillyer,Jon Stephens",19.97,4
+279,DIANNE SHELTON,Iran,Tabriz,2005-08-19,4,18.96,"Jon Stephens,Mike Hillyer",17.93,5
+368,HARRY ARCE,Iran,Najafabad,2005-08-19,4,17.96,"Mike Hillyer,Jon Stephens",16.73,6
+478,LEWIS LYMAN,Israel,Ashqelon,2005-06-19,3,20.97,"Mike Hillyer,Jon Stephens",20.77,1
+161,GERALDINE PERKINS,Israel,Tel Aviv-Jaffa,2005-08-22,4,15.96,"Mike Hillyer,Jon Stephens",14.5,2
+541,DARREN WINDHAM,Italy,Livorno,2005-08-22,5,18.95,"Jon Stephens,Mike Hillyer",17.42,1
+531,JAMIE WAUGH,Japan,Kuwana,2005-08-02,4,26.96,"Jon Stephens,Mike Hillyer",24.8,1
+519,RON DELUCA,Japan,Isesaki,2005-07-31,5,23.95,"Jon Stephens,Mike Hillyer",23.02,2
+404,STANLEY SCROGGINS,Japan,Omiya,2005-07-08,4,21.96,"Mike Hillyer,Jon Stephens",21.33,3
+29,ANGELA HERNANDEZ,Japan,Shimonoseki,2005-08-18,4,21.96,"Mike Hillyer,Jon Stephens",20.6,4
+147,JOANNE ROBERTSON,Japan,Urawa,2005-08-23,3,20.97,"Jon Stephens,Mike Hillyer",18.91,5
+240,MARLENE WELCH,Japan,Iwaki,2005-07-27,3,18.97,"Mike Hillyer,Jon Stephens",18.37,6
+1,MARY SMITH,Japan,Sasebo,2005-06-15,3,16.97,"Mike Hillyer,Jon Stephens",16.84,7
+253,TERRY CARLSON,Japan,Miyakonojo,2005-08-21,3,17.97,"Jon Stephens,Mike Hillyer",16.31,8
+29,ANGELA HERNANDEZ,Japan,Shimonoseki,2005-06-19,5,15.95,"Mike Hillyer,Jon Stephens",15.88,9
+54,TERESA ROGERS,Japan,Iwakuni,2005-08-02,3,15.97,"Jon Stephens,Mike Hillyer",14.77,10
+401,TONY CARRANZA,Japan,Koriyama,2005-07-29,3,14.97,"Mike Hillyer,Jon Stephens",14.44,11
+285,MIRIAM MCKINNEY,Japan,Otsu,2005-07-11,4,14.96,"Mike Hillyer,Jon Stephens",13.7,12
+547,KURT EMMONS,Japan,Kanazawa,2005-08-02,4,14.96,"Mike Hillyer,Jon Stephens",13.56,13
+193,KATIE ELLIOTT,Kenya,Kisumu,2005-08-22,3,16.97,"Mike Hillyer,Jon Stephens",15.74,1
+347,RYAN SALISBURY,Latvia,Daugavpils,2005-07-28,4,15.96,"Mike Hillyer,Jon Stephens",15.13,1
+306,CHARLES KOWALSKI,Malaysia,Sungai Petani,2005-08-20,4,16.96,"Mike Hillyer,Jon Stephens",14.6,1
+454,ALEX GRESHAM,Mexico,Uruapan,2005-08-20,4,27.96,"Jon Stephens,Mike Hillyer",27.26,1
+425,FRANCIS SIKES,Mexico,San Juan Bautista Tuxtepec,2005-07-08,4,27.96,"Jon Stephens,Mike Hillyer",27.26,2
+575,ISAAC OGLESBY,Mexico,Cuernavaca,2005-08-18,3,22.97,"Mike Hillyer,Jon Stephens",21.64,3
+150,DANIELLE DANIELS,Mexico,Hidalgo,2005-08-19,5,21.95,"Mike Hillyer,Jon Stephens",20.82,4
+582,ANDY VANHORN,Mexico,Huejutla de Reyes,2005-07-27,4,20.96,"Jon Stephens,Mike Hillyer",20.73,5
+467,ALVIN DELOACH,Mexico,Cuauhtmoc,2005-07-28,4,20.96,"Mike Hillyer,Jon Stephens",19.9,6
+133,PAULINE HENRY,Mexico,Torren,2005-07-08,4,19.96,"Jon Stephens,Mike Hillyer",19.49,7
+451,JIM REA,Mexico,El Fuerte,2005-08-02,4,19.96,"Mike Hillyer,Jon Stephens",18.4,8
+273,PRISCILLA LOWE,Mexico,Salamanca,2005-07-12,4,19.96,"Mike Hillyer,Jon Stephens",18.3,9
+84,SARA PERRY,Mexico,Atlixco,2005-07-11,3,18.97,"Mike Hillyer,Jon Stephens",17.77,10
+84,SARA PERRY,Mexico,Atlixco,2005-08-02,4,19.96,"Mike Hillyer,Jon Stephens",17.76,11
+414,VINCENT RALSTON,Mexico,Allende,2005-08-19,5,17.95,"Jon Stephens,Mike Hillyer",17.39,12
+247,STELLA MORENO,Mexico,Coacalco de Berriozbal,2005-08-18,3,17.97,"Jon Stephens,Mike Hillyer",17.24,13
+581,VIRGIL WOFFORD,Mexico,Jos Azueta,2005-07-08,4,17.96,"Jon Stephens,Mike Hillyer",17.2,14
+319,RONALD WEINER,Mexico,San Felipe del Progreso,2005-08-17,5,16.95,"Mike Hillyer,Jon Stephens",16.65,15
+465,FLOYD GANDY,Mexico,Zapopan,2005-08-17,3,16.97,"Mike Hillyer,Jon Stephens",16.64,16
+451,JIM REA,Mexico,El Fuerte,2005-07-08,3,16.97,"Mike Hillyer,Jon Stephens",16.04,17
+582,ANDY VANHORN,Mexico,Huejutla de Reyes,2005-07-29,3,15.97,"Jon Stephens,Mike Hillyer",15.04,18
+108,TRACY COLE,Mexico,Huixquilucan,2005-07-29,3,15.97,"Jon Stephens,Mike Hillyer",14.94,19
+150,DANIELLE DANIELS,Mexico,Hidalgo,2005-08-21,4,14.96,"Jon Stephens,Mike Hillyer",12.9,20
+38,MARTHA GONZALEZ,Moldova,Chisinau,2005-07-27,4,17.96,"Mike Hillyer,Jon Stephens",16.86,1
+40,AMANDA CARTER,Morocco,Nador,2005-07-31,3,13.97,"Jon Stephens,Mike Hillyer",13.07,1
+257,MARSHA DOUGLAS,Mozambique,Beira,2005-08-19,5,20.95,"Jon Stephens,Mike Hillyer",18.69,1
+257,MARSHA DOUGLAS,Mozambique,Beira,2005-07-27,5,18.95,"Jon Stephens,Mike Hillyer",17.75,2
+256,MABEL HOLLAND,Myanmar,Monywa,2005-08-23,3,15.97,"Jon Stephens,Mike Hillyer",14.47,1
+137,RHONDA KENNEDY,Netherlands,Apeldoorn,2005-07-30,4,20.96,"Jon Stephens,Mike Hillyer",18.93,1
+184,VIVIAN RUIZ,Netherlands,s-Hertogenbosch,2005-08-18,3,15.97,"Jon Stephens,Mike Hillyer",15.37,2
+137,RHONDA KENNEDY,Netherlands,Apeldoorn,2005-08-23,3,17.97,"Jon Stephens,Mike Hillyer",14.41,3
+103,GLADYS HAMILTON,Nigeria,Ilorin,2005-08-23,5,25.95,"Mike Hillyer,Jon Stephens",24.35,1
+198,ELSIE KELLEY,Nigeria,Ikerre,2005-08-17,6,22.94,"Mike Hillyer,Jon Stephens",21.91,2
+280,TRACEY BARRETT,Nigeria,Owo,2005-07-29,5,20.95,"Jon Stephens,Mike Hillyer",20.55,3
+280,TRACEY BARRETT,Nigeria,Owo,2005-08-19,3,20.97,"Mike Hillyer,Jon Stephens",19.24,4
+198,ELSIE KELLEY,Nigeria,Ikerre,2005-07-12,3,14.97,"Jon Stephens,Mike Hillyer",14.54,5
+284,SONIA GREGORY,Nigeria,Benin City,2005-07-27,3,14.97,"Jon Stephens,Mike Hillyer",13.87,6
+226,MAUREEN LITTLE,Paraguay,Asuncin,2005-08-23,4,16.96,"Jon Stephens,Mike Hillyer",15.73,1
+205,EILEEN CARR,Paraguay,Ciudad del Este,2005-08-21,4,15.96,"Mike Hillyer,Jon Stephens",15.16,2
+597,FREDDIE DUGGAN,Peru,Sullana,2005-08-02,4,16.96,"Jon Stephens,Mike Hillyer",16.03,1
+565,JAIME NETTLES,Peru,Hunuco,2005-08-02,3,14.97,"Jon Stephens,Mike Hillyer",13.44,2
+522,ARNOLD HAVENS,Philippines,Santa Rosa,2005-07-30,5,29.95,"Mike Hillyer,Jon Stephens",27.92,1
+461,DEREK BLAKELY,Philippines,Gingoog,2005-08-22,5,22.95,"Mike Hillyer,Jon Stephens",21.69,2
+27,SHIRLEY ALLEN,Philippines,Davao,2005-08-17,3,21.97,"Mike Hillyer,Jon Stephens",20.77,3
+373,LOUIS LEONE,Philippines,Tanauan,2005-08-18,4,20.96,"Mike Hillyer,Jon Stephens",18.4,4
+261,DEANNA BYRD,Philippines,Tuguegarao,2005-06-17,3,18.97,"Mike Hillyer,Jon Stephens",18.31,5
+71,KATHY JAMES,Philippines,Baybay,2005-07-10,3,18.97,"Mike Hillyer,Jon Stephens",18.14,6
+27,SHIRLEY ALLEN,Philippines,Davao,2005-07-31,3,18.97,"Jon Stephens,Mike Hillyer",18.04,7
+349,JOE GILLILAND,Philippines,Imus,2005-08-02,3,18.97,"Mike Hillyer,Jon Stephens",17.44,8
+388,CRAIG MORRELL,Philippines,Cavite,2005-08-18,4,17.96,"Jon Stephens,Mike Hillyer",17.1,9
+188,MELANIE ARMSTRONG,Philippines,Bayugan,2005-08-01,4,16.96,"Jon Stephens,Mike Hillyer",15.9,10
+522,ARNOLD HAVENS,Philippines,Santa Rosa,2005-08-01,4,18.96,"Jon Stephens,Mike Hillyer",15.73,11
+236,MARCIA DEAN,Philippines,Tanza,2005-08-21,3,17.97,"Jon Stephens,Mike Hillyer",15.38,12
+270,LEAH CURTIS,Poland,Kalisz,2005-08-01,3,18.97,"Mike Hillyer,Jon Stephens",17.94,1
+558,JIMMIE EGGLESTON,Poland,Wroclaw,2005-07-12,3,15.97,"Jon Stephens,Mike Hillyer",13.61,2
+128,MARJORIE TUCKER,Poland,Jastrzebie-Zdrj,2005-07-30,3,14.97,"Jon Stephens,Mike Hillyer",13.61,3
+360,RALPH MADRIGAL,Puerto Rico,Arecibo,2005-08-19,3,12.97,"Jon Stephens,Mike Hillyer",10.71,1
+563,KEN PREWITT,Romania,Bucuresti,2005-07-08,7,29.93,"Mike Hillyer,Jon Stephens",29.63,1
+44,MARIE TURNER,Russian Federation,Lipetsk,2005-07-10,4,24.96,"Mike Hillyer,Jon Stephens",24.06,1
+346,ARTHUR SIMPKINS,Russian Federation,Maikop,2005-07-29,4,22.96,"Jon Stephens,Mike Hillyer",21.36,2
+17,DONNA THOMPSON,Russian Federation,Elista,2005-07-30,4,21.96,"Jon Stephens,Mike Hillyer",21.23,3
+462,WARREN SHERROD,Russian Federation,Usolje-Sibirskoje,2005-08-19,3,22.97,"Mike Hillyer,Jon Stephens",20.84,4
+311,PAUL TROUT,Russian Federation,Kursk,2005-07-31,3,20.97,"Mike Hillyer,Jon Stephens",20.14,5
+106,CONNIE WALLACE,Russian Federation,Ivanovo,2005-08-01,3,20.97,"Jon Stephens,Mike Hillyer",19.57,6
+462,WARREN SHERROD,Russian Federation,Usolje-Sibirskoje,2005-07-28,4,19.96,"Mike Hillyer,Jon Stephens",18.43,7
+376,RANDY GAITHER,Russian Federation,Kurgan,2005-07-12,3,18.97,"Mike Hillyer,Jon Stephens",17.81,8
+346,ARTHUR SIMPKINS,Russian Federation,Maikop,2005-08-23,5,19.95,"Jon Stephens,Mike Hillyer",17.52,9
+447,CLIFFORD BOWENS,Russian Federation,Nabereznyje Telny,2005-07-30,3,17.97,"Jon Stephens,Mike Hillyer",16.87,10
+487,HECTOR POINDEXTER,Russian Federation,Pjatigorsk,2005-08-01,3,16.97,"Jon Stephens,Mike Hillyer",15.41,11
+46,CATHERINE CAMPBELL,Russian Federation,Moscow,2005-08-01,3,15.97,"Jon Stephens,Mike Hillyer",14.87,12
+46,CATHERINE CAMPBELL,Russian Federation,Moscow,2005-08-18,4,15.96,"Jon Stephens,Mike Hillyer",14.56,13
+101,PEGGY MYERS,Saudi Arabia,Abha,2005-07-09,4,14.96,"Mike Hillyer,Jon Stephens",14.96,1
+417,TRAVIS ESTEP,Saudi Arabia,al-Qatif,2005-08-02,3,15.97,"Mike Hillyer,Jon Stephens",14.74,2
+49,JOYCE EDWARDS,Saudi Arabia,Jedda,2005-08-21,3,15.97,"Jon Stephens,Mike Hillyer",14.54,3
+417,TRAVIS ESTEP,Saudi Arabia,al-Qatif,2005-08-21,3,14.97,"Jon Stephens,Mike Hillyer",13.77,4
+407,DALE RATCLIFF,South Africa,Rustenburg,2005-07-28,4,22.96,"Jon Stephens,Mike Hillyer",22.2,1
+132,ESTHER CRAWFORD,South Africa,Botshabelo,2005-08-01,4,22.96,"Jon Stephens,Mike Hillyer",21.46,2
+145,LUCILLE HOLMES,South Africa,Soshanguve,2005-07-07,3,20.97,"Jon Stephens,Mike Hillyer",20.57,3
+407,DALE RATCLIFF,South Africa,Rustenburg,2005-08-02,3,17.97,"Mike Hillyer,Jon Stephens",16.14,4
+145,LUCILLE HOLMES,South Africa,Soshanguve,2005-08-19,4,15.96,"Jon Stephens,Mike Hillyer",14.83,5
+245,COURTNEY DAY,South Korea,Uijongbu,2005-07-27,5,17.95,"Jon Stephens,Mike Hillyer",17.29,1
+52,JULIE SANCHEZ,Spain,A Corua (La Corua),2005-08-22,3,15.97,"Jon Stephens,Mike Hillyer",14.37,1
+408,MANUEL MURRELL,Sri Lanka,Jaffna,2005-08-20,3,14.97,"Mike Hillyer,Jon Stephens",13.41,1
+50,DIANE COLLINS,Sudan,Omdurman,2005-07-31,5,26.95,"Mike Hillyer,Jon Stephens",25.15,1
+66,JANICE WARD,Sweden,Malm,2005-07-11,3,18.97,"Mike Hillyer,Jon Stephens",16.97,1
+155,GAIL KNIGHT,Switzerland,Bern,2005-07-11,3,15.97,"Mike Hillyer,Jon Stephens",14.97,1
+155,GAIL KNIGHT,Switzerland,Bern,2005-08-21,3,14.97,"Mike Hillyer,Jon Stephens",13.87,2
+577,CLIFTON MALCOLM,Taiwan,Tanshui,2005-07-28,3,21.97,"Jon Stephens,Mike Hillyer",21.17,1
+139,AMBER DIXON,Taiwan,Touliu,2005-08-22,5,21.95,"Mike Hillyer,Jon Stephens",20.79,2
+576,MORRIS MCCARTER,Taiwan,Fengshan,2005-07-31,5,21.95,"Jon Stephens,Mike Hillyer",20.55,3
+348,ROGER QUINTANILLA,Taiwan,Hsichuh,2005-07-08,4,20.96,"Jon Stephens,Mike Hillyer",20.2,4
+30,MELISSA KING,Taiwan,Lungtan,2005-07-28,4,19.96,"Jon Stephens,Mike Hillyer",18.53,5
+139,AMBER DIXON,Taiwan,Touliu,2005-07-09,3,17.97,"Jon Stephens,Mike Hillyer",17.34,6
+517,BRAD MCCURDY,Taiwan,Chungho,2005-07-07,4,17.96,"Jon Stephens,Mike Hillyer",17.2,7
+30,MELISSA KING,Taiwan,Lungtan,2005-07-09,3,16.97,"Jon Stephens,Mike Hillyer",16.17,8
+190,YOLANDA WEAVER,Tanzania,Tabora,2005-08-02,4,24.96,"Mike Hillyer,Jon Stephens",24.03,1
+390,SHAWN HEATON,Thailand,Nakhon Sawan,2005-08-20,6,27.94,"Mike Hillyer,Jon Stephens",26.51,1
+327,LARRY THRASHER,Turkey,Adana,2005-08-23,3,23.97,"Mike Hillyer,Jon Stephens",22.67,1
+172,BERNICE WILLIS,Turkey,Batman,2005-07-08,3,17.97,"Mike Hillyer,Jon Stephens",17.84,2
+566,CASEY MENA,Turkey,Tokat,2005-07-29,5,17.95,"Mike Hillyer,Jon Stephens",16.72,3
+204,ROSEMARY SCHMIDT,Turkey,Usak,2005-08-22,3,17.97,"Mike Hillyer,Jon Stephens",16.11,4
+172,BERNICE WILLIS,Turkey,Batman,2005-07-27,4,16.96,"Mike Hillyer,Jon Stephens",15.86,5
+172,BERNICE WILLIS,Turkey,Batman,2005-07-30,3,15.97,"Jon Stephens,Mike Hillyer",14.14,6
+187,BRITTANY RILEY,Ukraine,Sumy,2005-08-18,3,26.97,"Jon Stephens,Mike Hillyer",26.07,1
+82,KATHRYN COLEMAN,Ukraine,Simferopol,2005-07-30,3,19.97,"Jon Stephens,Mike Hillyer",18.47,2
+131,MONICA HICKS,Ukraine,Mukateve,2005-08-19,4,18.96,"Jon Stephens,Mike Hillyer",17.3,3
+98,LILLIAN GRIFFIN,United Arab Emirates,al-Ayn,2005-07-29,3,16.97,"Mike Hillyer,Jon Stephens",16.27,1
+452,TOM MILNER,United Arab Emirates,Abu Dhabi,2005-07-06,3,13.97,"Jon Stephens,Mike Hillyer",13.21,2
+497,GILBERT SLEDGE,United Kingdom,York,2005-06-18,3,17.97,"Jon Stephens,Mike Hillyer",17.7,1
+583,MARSHALL THORN,United Kingdom,Southampton,2005-07-06,3,17.97,"Mike Hillyer,Jon Stephens",16.97,2
+477,DAN PAINE,United Kingdom,Stockport,2005-07-29,3,15.97,"Mike Hillyer,Jon Stephens",14.84,3
+2,PATRICIA JOHNSON,United States,San Bernardino,2005-07-30,5,30.95,"Mike Hillyer,Jon Stephens",29.55,1
+181,ANA BRADLEY,United States,Memphis,2005-08-01,5,26.95,"Jon Stephens,Mike Hillyer",24.52,2
+420,JACOB LANCE,United States,El Monte,2005-08-01,3,20.97,"Jon Stephens,Mike Hillyer",19.64,3
+294,SHELLY WATTS,United States,Dayton,2005-08-01,5,20.95,"Jon Stephens,Mike Hillyer",19.35,4
+146,JAMIE RICE,United States,Sterling Heights,2005-07-11,3,19.97,"Mike Hillyer,Jon Stephens",18.71,5
+275,CAROLE BARNETT,United States,Peoria,2005-08-21,4,19.96,"Mike Hillyer,Jon Stephens",18.4,6
+181,ANA BRADLEY,United States,Memphis,2005-07-30,3,19.97,"Jon Stephens,Mike Hillyer",18.37,7
+149,VALERIE BLACK,United States,Brockton,2005-06-18,3,18.97,"Jon Stephens,Mike Hillyer",18.37,8
+112,ROSA REYNOLDS,United States,Lancaster,2005-07-31,4,17.96,"Jon Stephens,Mike Hillyer",16.86,9
+146,JAMIE RICE,United States,Sterling Heights,2005-08-02,4,17.96,"Jon Stephens,Mike Hillyer",16.73,10
+2,PATRICIA JOHNSON,United States,San Bernardino,2005-07-27,3,16.97,"Jon Stephens,Mike Hillyer",16.64,11
+51,ALICE STEWART,United States,Fontana,2005-07-09,3,16.97,"Mike Hillyer,Jon Stephens",16.54,12
+63,ASHLEY RICHARDSON,United States,Lincoln,2005-07-10,3,16.97,"Mike Hillyer,Jon Stephens",16.47,13
+112,ROSA REYNOLDS,United States,Lancaster,2005-08-17,3,16.97,"Mike Hillyer,Jon Stephens",15.34,14
+51,ALICE STEWART,United States,Fontana,2005-08-21,3,16.97,"Jon Stephens,Mike Hillyer",14.74,15
+214,KRISTIN JOHNSTON,United States,Sunnyvale,2005-08-19,3,15.97,"Jon Stephens,Mike Hillyer",14.71,16
+158,VERONICA STONE,United States,Greensboro,2005-08-02,4,15.96,"Jon Stephens,Mike Hillyer",14.43,17
+2,PATRICIA JOHNSON,United States,San Bernardino,2005-08-02,4,16.96,"Mike Hillyer,Jon Stephens",14.4,18
+276,BRANDY GRAVES,United States,Warren,2005-08-18,3,15.97,"Jon Stephens,Mike Hillyer",14.37,19
+290,KRISTINA CHAMBERS,Venezuela,Valle de la Pascua,2005-06-15,3,20.97,"Mike Hillyer,Jon Stephens",20.87,1
+453,CALVIN MARTEL,Venezuela,Maracabo,2005-08-21,4,18.96,"Mike Hillyer,Jon Stephens",17.7,2
+113,CINDY FISHER,Venezuela,Cuman,2005-06-20,3,16.97,"Jon Stephens,Mike Hillyer",16.54,3
+174,YVONNE WATKINS,Venezuela,Ocumare del Tuy,2005-08-01,3,16.97,"Mike Hillyer,Jon Stephens",15.87,4
+520,MITCHELL WESTMORELAND,Vietnam,Nha Trang,2005-07-10,3,19.97,"Jon Stephens,Mike Hillyer",19.01,1
+472,GREG ROBINS,Vietnam,Nam Dinh,2005-07-11,3,18.97,"Mike Hillyer,Jon Stephens",17.67,2
+532,NEIL RENNER,Vietnam,Cam Ranh,2005-08-19,3,18.97,"Jon Stephens,Mike Hillyer",17.17,3
+199,BETH FRANKLIN,Vietnam,Haiphong,2005-08-01,3,16.97,"Mike Hillyer,Jon Stephens",15.21,4
+470,GORDON ALLARD,Yemen,Hodeida,2005-08-18,3,23.97,"Jon Stephens,Mike Hillyer",21.84,1
+553,MAX PITT,Yugoslavia,Novi Sad,2005-07-06,5,22.95,"Jon Stephens,Mike Hillyer",22.05,1
+7,MARIA MILLER,Yugoslavia,Kragujevac,2005-08-01,4,22.96,"Jon Stephens,Mike Hillyer",20.96,2

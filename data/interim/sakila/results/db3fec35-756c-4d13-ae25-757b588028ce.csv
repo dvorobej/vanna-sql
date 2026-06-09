@@ -1,2 +1,2 @@
-average_check,customer_email,customer_id,customer_name,operations_at_least_5,staff_members,total_payments,total_transactions
-3.26,BRENDA.WRIGHT@sakilacustomer.org,31,BRENDA WRIGHT,2,"Jon Stephens,Mike Hillyer",35.89,11
+customer_id,customer_name,customer_email,total_transactions,total_payments,average_check,operations_at_least_5,staff_members
+31,BRENDA WRIGHT,BRENDA.WRIGHT@sakilacustomer.org,11,35.89,3.26,2,"Jon Stephens,Mike Hillyer"

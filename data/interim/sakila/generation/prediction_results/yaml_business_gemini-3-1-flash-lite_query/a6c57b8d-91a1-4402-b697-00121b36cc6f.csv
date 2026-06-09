@@ -1,0 +1,34 @@
+customer_id,country_name,city_name,payment_month,monthly_amount,payment_count,deviation_from_avg,country_rank,top_staff_name
+92,Brazil,Goinia,2005-07,78.85000000000001,15,45.42000000000001,2,Jon Stephens
+594,China,Jining,2005-07,65.86000000000001,14,33.17750000000001,1,Mike Hillyer
+595,China,Jinzhou,2005-07,86.80999999999999,19,57.38499999999999,1,Mike Hillyer
+484,China,Yinchuan,2005-07,77.85000000000001,15,42.92500000000001,2,Jon Stephens
+168,China,Jinchang,2005-07,70.83,17,37.162499999999994,3,Jon Stephens
+302,China,Tiefa,2005-07,67.85000000000001,15,35.9225,4,Mike Hillyer
+594,China,Jining,2005-07,65.86000000000001,14,33.17750000000001,5,Mike Hillyer
+209,India,Bhilwara,2005-07,82.83,17,42.41,1,Jon Stephens
+225,India,Ambattur,2005-07,80.83,17,50.644999999999996,2,Mike Hillyer
+508,India,Vijayawada,2005-07,74.86,14,43.17,3,Jon Stephens
+502,India,Siliguri (Shiliguri),2005-07,73.85000000000001,15,39.185,4,Jon Stephens
+446,India,Uluberia,2005-07,71.83,17,42.6575,5,Jon Stephens
+426,India,Purnea (Purnia),2005-07,65.89000000000001,11,34.20750000000001,6,Mike Hillyer
+531,Japan,Kuwana,2005-07,64.86000000000001,14,35.17250000000001,2,Jon Stephens
+574,Japan,Akishima,2005-07,64.85000000000002,15,37.420000000000016,3,Mike Hillyer
+482,Mexico,Coatzacoalcos,2005-07,69.88000000000001,12,35.2025,1,Jon Stephens
+369,Mexico,Jurez,2005-07,45.88000000000002,12,23.940000000000012,2,Jon Stephens
+425,Mexico,San Juan Bautista Tuxtepec,2005-07,67.83000000000001,17,41.64500000000001,3,Mike Hillyer
+286,Nigeria,Effon-Alaiye,2005-07,76.83000000000001,17,47.39750000000001,1,Jon Stephens
+522,Philippines,Santa Rosa,2005-07,96.82,18,54.90249999999999,1,Jon Stephens
+295,Russian Federation,Kolpino,2005-07,87.82000000000001,18,47.41250000000001,1,Mike Hillyer
+346,Russian Federation,Maikop,2005-07,83.85,15,44.92999999999999,2,Jon Stephens
+366,Turkey,Balikesir,2005-07,82.80999999999999,19,45.89999999999999,1,Jon Stephens
+479,United States,Akron,2005-07,79.85,15,43.425,2,Jon Stephens
+2,United States,San Bernardino,2005-07,75.86,14,43.677499999999995,3,Jon Stephens
+569,China,Leshan,2005-08,75.82,18,42.14999999999999,1,Mike Hillyer
+569,China,Leshan,2005-08,75.82,18,42.14999999999999,2,Mike Hillyer
+121,India,Etawah,2005-08,67.86,14,40.425,6,Jon Stephens
+147,Japan,Urawa,2005-08,76.85000000000001,15,44.935,1,Jon Stephens
+54,Japan,Iwakuni,2005-08,64.86000000000001,14,32.68250000000001,3,Mike Hillyer
+150,Mexico,Hidalgo,2005-08,68.84,16,42.4025,1,Jon Stephens
+198,Nigeria,Ikerre,2005-08,70.84,16,35.4325,1,Mike Hillyer
+471,South Africa,Johannesburg,2005-08,55.88000000000002,12,28.447500000000012,1,Mike Hillyer

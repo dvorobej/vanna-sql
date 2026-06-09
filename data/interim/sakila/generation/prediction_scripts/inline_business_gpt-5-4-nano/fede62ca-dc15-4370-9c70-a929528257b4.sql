@@ -1,0 +1,9 @@
+SELECT
+  p01 AS payment_id,
+  p03 AS staff_id,
+  p05 AS amount,
+  p06 AS payment_date
+FROM pay
+WHERE p05 > 8.00
+ORDER BY p05 DESC
+LIMIT 20;

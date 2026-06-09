@@ -1,0 +1,583 @@
+customer_id,customer_name,payment_date,customer_country,payment_count,day_payment_amount,avg_prev_30d_day_amount,exceed_ratio,involved_staff_count,involved_store_count,store_countries_involved,store_ids_involved,has_offcountry_store_payment,suspicion_rank_in_country
+441,MARIO CHEATHAM,2005-07-29,Algeria,5,18.95,5.32,3.563,2,2,"Australia,Canada","2,1",1,1
+176,JUNE CARROLL,2005-06-18,Algeria,4,16.96,7.15,2.371,2,2,"Canada,Australia","1,2",1,2
+441,MARIO CHEATHAM,2005-07-31,Algeria,3,15.97,7.27,2.198,1,1,Australia,2,1,3
+69,JUDY GRAY,2005-08-17,Algeria,3,9.97,4.65,2.143,1,1,Canada,1,1,4
+243,LYDIA BURKE,2005-07-31,Argentina,3,13.97,3.99,3.503,1,1,Australia,2,1,1
+560,JORDAN ARCHULETA,2005-07-07,Argentina,3,13.97,3.99,3.501,2,2,"Canada,Australia","1,2",1,2
+560,JORDAN ARCHULETA,2005-08-01,Argentina,3,17.97,5.99,3.002,2,2,"Australia,Canada","2,1",1,3
+331,ERIC ROBERT,2005-07-06,Argentina,3,18.97,6.49,2.925,2,2,"Canada,Australia","1,2",1,4
+322,JASON MORRISSEY,2005-07-30,Argentina,3,14.97,5.15,2.906,1,1,Canada,1,1,5
+445,MICHEAL FORMAN,2005-08-22,Argentina,3,15.97,6.49,2.463,1,1,Canada,1,1,6
+530,DARRYL ASHCRAFT,2005-07-27,Argentina,3,10.97,4.49,2.446,2,2,"Canada,Australia","1,2",1,7
+530,DARRYL ASHCRAFT,2005-08-18,Argentina,3,12.97,5.32,2.439,1,1,Canada,1,1,8
+219,WILLIE HOWELL,2005-07-09,Argentina,3,10.97,4.65,2.357,1,1,Australia,2,1,9
+331,ERIC ROBERT,2005-07-07,Argentina,3,21.97,10.65,2.064,2,2,"Canada,Australia","1,2",1,10
+41,STEPHANIE MITCHELL,2005-07-28,Armenia,4,17.96,8.23,2.182,2,2,"Australia,Canada","2,1",1,1
+266,NORA HERRERA,2005-08-02,Austria,3,16.97,4.32,3.925,2,2,"Australia,Canada","2,1",1,1
+173,AUDREY RAY,2005-07-29,Austria,3,16.97,5.49,3.094,1,1,Australia,2,1,2
+266,NORA HERRERA,2005-08-18,Austria,4,17.96,6.58,2.728,2,2,"Canada,Australia","1,2",1,3
+266,NORA HERRERA,2005-08-20,Austria,3,17.97,8.48,2.119,1,1,Canada,1,1,4
+173,AUDREY RAY,2005-08-23,Austria,3,12.97,6.24,2.08,2,2,"Australia,Canada","2,1",1,5
+173,AUDREY RAY,2005-07-10,Austria,3,9.97,4.84,2.058,2,2,"Canada,Australia","1,2",1,6
+333,ANDREW PURDY,2005-07-27,Azerbaijan,3,8.97,3.49,2.572,1,1,Australia,2,1,1
+21,MICHELLE CLARK,2005-08-20,Bangladesh,4,32.96,5.58,5.903,2,2,"Canada,Australia","1,2",1,1
+21,MICHELLE CLARK,2005-06-18,Bangladesh,3,15.97,2.99,5.341,2,2,"Australia,Canada","2,1",1,2
+21,MICHELLE CLARK,2005-08-19,Bangladesh,3,12.97,4.76,2.723,2,2,"Canada,Australia","1,2",1,3
+329,FRANK WAGGONER,2005-06-17,Bangladesh,3,7.97,2.99,2.666,2,2,"Canada,Australia","1,2",1,4
+332,STEPHEN QUALLS,2005-07-27,Bangladesh,4,24.96,11.97,2.086,1,1,Australia,2,1,5
+527,CORY MEEHAN,2005-07-11,Belarus,3,11.97,1.99,6.021,2,2,"Australia,Canada","2,1",1,1
+144,CLARA SHAW,2005-07-09,Belarus,3,17.97,5.65,3.179,1,1,Australia,2,1,2
+126,ELLEN SIMPSON,2005-07-06,Brazil,3,18.97,2.99,6.344,2,2,"Australia,Canada","2,1",1,1
+374,JEREMY HURTADO,2005-08-22,Brazil,4,20.96,4.09,5.125,2,2,"Australia,Canada","2,1",1,2
+374,JEREMY HURTADO,2005-07-10,Brazil,3,13.97,3.16,4.426,2,2,"Canada,Australia","1,2",1,3
+39,DEBRA NELSON,2005-07-08,Brazil,3,23.97,5.49,4.367,1,1,Australia,2,1,4
+183,IDA ANDREWS,2005-07-31,Brazil,3,13.97,3.49,4.007,2,2,"Australia,Canada","2,1",1,5
+342,HAROLD MARTINO,2005-07-12,Brazil,3,19.97,5.24,3.813,2,2,"Australia,Canada","2,1",1,6
+354,JUSTIN NGO,2005-07-29,Brazil,3,18.97,4.98,3.806,2,2,"Australia,Canada","2,1",1,7
+544,CODY NOLEN,2005-08-21,Brazil,3,18.97,5.16,3.68,2,2,"Australia,Canada","2,1",1,8
+362,NICHOLAS BARFIELD,2005-08-21,Brazil,4,25.96,7.48,3.469,2,2,"Australia,Canada","2,1",1,9
+206,TERRI VASQUEZ,2005-08-19,Brazil,3,18.97,5.49,3.457,2,2,"Canada,Australia","1,2",1,10
+254,MAXINE SILVA,2005-07-10,Brazil,4,19.96,5.78,3.452,2,2,"Canada,Australia","1,2",1,11
+74,DENISE KELLY,2005-07-10,Brazil,3,10.97,3.39,3.236,2,2,"Canada,Australia","1,2",1,12
+92,TINA SIMMONS,2005-07-10,Brazil,4,23.96,7.99,3.0,2,2,"Australia,Canada","2,1",1,13
+47,FRANCES PARKER,2005-07-11,Brazil,3,14.97,4.99,3.0,2,2,"Australia,Canada","2,1",1,14
+206,TERRI VASQUEZ,2005-07-06,Brazil,3,11.97,3.99,3.0,2,2,"Canada,Australia","1,2",1,15
+427,JESUS MCCARTNEY,2005-08-01,Brazil,3,15.97,5.54,2.88,2,2,"Canada,Australia","1,2",1,16
+254,MAXINE SILVA,2005-08-19,Brazil,4,13.96,4.86,2.872,2,2,"Canada,Australia","1,2",1,17
+551,CLAYTON BARBEE,2005-08-22,Brazil,3,14.97,5.24,2.86,2,2,"Canada,Australia","1,2",1,18
+178,MARION SNYDER,2005-07-09,Brazil,3,18.97,6.84,2.772,1,1,Canada,1,1,19
+77,JANE BENNETT,2005-08-02,Brazil,4,7.96,2.99,2.663,2,2,"Canada,Australia","1,2",1,20
+314,GEORGE LINTON,2005-07-28,Brazil,3,11.97,4.7,2.548,2,2,"Australia,Canada","2,1",1,21
+591,KENT ARSENAULT,2005-07-27,Brazil,4,20.96,8.24,2.544,2,2,"Canada,Australia","1,2",1,22
+39,DEBRA NELSON,2005-07-29,Brazil,4,19.96,8.19,2.438,2,2,"Australia,Canada","2,1",1,23
+591,KENT ARSENAULT,2005-08-18,Brazil,4,21.96,9.58,2.293,2,2,"Australia,Canada","2,1",1,24
+39,DEBRA NELSON,2005-08-01,Brazil,4,20.96,9.23,2.271,2,2,"Canada,Australia","1,2",1,25
+254,MAXINE SILVA,2005-07-09,Brazil,3,9.97,4.74,2.106,2,2,"Australia,Canada","2,1",1,26
+314,GEORGE LINTON,2005-08-21,Brazil,3,14.97,7.36,2.035,2,2,"Australia,Canada","2,1",1,27
+178,MARION SNYDER,2005-08-17,Brazil,3,17.97,8.98,2.001,1,1,Australia,2,1,28
+91,LOIS BUTLER,2005-07-07,Brunei,3,12.97,2.79,4.649,2,2,"Australia,Canada","2,1",1,1
+91,LOIS BUTLER,2005-08-19,Brunei,3,10.97,3.82,2.873,2,2,"Canada,Australia","1,2",1,2
+91,LOIS BUTLER,2005-08-22,Brunei,3,9.97,4.36,2.287,2,2,"Australia,Canada","2,1",1,3
+540,TYRONE ASHER,2005-08-02,Bulgaria,4,24.96,7.98,3.127,2,2,"Canada,Australia","1,2",1,1
+215,JESSIE BANKS,2005-08-23,Bulgaria,4,9.96,3.24,3.076,2,2,"Canada,Australia","1,2",1,2
+540,TYRONE ASHER,2005-07-11,Bulgaria,3,13.97,4.82,2.897,2,2,"Canada,Australia","1,2",1,3
+228,ALLISON STANLEY,2005-07-06,Cambodia,4,17.96,3.49,5.146,2,2,"Australia,Canada","2,1",1,1
+352,ALBERT CROUSE,2005-06-16,Cameroon,3,14.97,1.99,7.523,1,1,Canada,1,1,1
+352,ALBERT CROUSE,2005-07-27,Cameroon,4,22.96,5.49,4.182,2,2,"Canada,Australia","1,2",1,2
+361,LAWRENCE LAWTON,2005-08-02,Cameroon,4,15.96,4.41,3.617,2,2,"Australia,Canada","2,1",1,3
+361,LAWRENCE LAWTON,2005-07-12,Cameroon,3,7.97,3.39,2.352,2,2,"Australia,Canada","2,1",1,4
+476,DERRICK BOURQUE,2005-08-01,Canada,3,21.97,4.99,4.404,1,1,Canada,1,0,1
+410,CURTIS IRBY,2005-07-09,Canada,4,17.96,4.15,4.324,2,2,"Canada,Australia","1,2",1,2
+410,CURTIS IRBY,2005-08-02,Canada,3,18.97,8.98,2.113,1,1,Canada,1,0,3
+535,JAVIER ELROD,2005-07-08,Chad,3,16.97,4.99,3.401,2,2,"Canada,Australia","1,2",1,1
+45,JANET PHILLIPS,2005-08-02,Chile,5,27.95,5.84,4.784,2,2,"Australia,Canada","2,1",1,1
+515,ANDRE RAPP,2005-08-17,Chile,3,15.97,3.79,4.214,2,2,"Australia,Canada","2,1",1,2
+129,CARRIE PORTER,2005-06-19,China,3,9.97,0.99,10.071,2,2,"Canada,Australia","1,2",1,1
+546,KELLY KNOTT,2005-07-12,China,3,19.97,3.49,5.728,2,2,"Australia,Canada","2,1",1,2
+64,JUDITH COX,2005-07-08,China,3,13.97,2.49,5.61,2,2,"Canada,Australia","1,2",1,3
+93,PHYLLIS FOSTER,2005-08-20,China,4,19.96,3.74,5.337,2,2,"Canada,Australia","1,2",1,4
+129,CARRIE PORTER,2005-07-31,China,4,26.96,5.78,4.666,2,2,"Australia,Canada","2,1",1,5
+538,TED BREAUX,2005-07-31,China,3,18.97,4.11,4.614,2,2,"Canada,Australia","1,2",1,6
+267,MARGIE WADE,2005-07-30,China,3,15.97,3.66,4.367,2,2,"Australia,Canada","2,1",1,7
+384,ERNEST STEPP,2005-06-20,China,3,18.97,4.65,4.077,2,2,"Australia,Canada","2,1",1,8
+384,ERNEST STEPP,2005-08-22,China,3,11.97,2.99,4.003,2,2,"Canada,Australia","1,2",1,9
+90,RUBY WASHINGTON,2005-07-27,China,3,13.97,3.49,4.003,2,2,"Australia,Canada","2,1",1,10
+424,KYLE SPURLOCK,2005-07-30,China,4,14.96,3.82,3.918,2,2,"Canada,Australia","1,2",1,11
+241,HEIDI LARSON,2005-07-11,China,3,14.97,3.84,3.897,2,2,"Canada,Australia","1,2",1,12
+424,KYLE SPURLOCK,2005-07-31,China,3,20.97,5.41,3.876,2,2,"Canada,Australia","1,2",1,13
+267,MARGIE WADE,2005-06-19,China,4,22.96,5.99,3.834,2,2,"Australia,Canada","2,1",1,14
+242,GLENDA FRAZIER,2005-06-15,China,3,14.97,3.99,3.752,2,2,"Australia,Canada","2,1",1,15
+242,GLENDA FRAZIER,2005-08-01,China,3,15.97,4.32,3.694,1,1,Australia,2,1,16
+538,TED BREAUX,2005-07-09,China,3,16.97,4.79,3.543,2,2,"Australia,Canada","2,1",1,17
+138,HAZEL WARREN,2005-07-28,China,3,11.97,3.59,3.338,2,2,"Canada,Australia","1,2",1,18
+241,HEIDI LARSON,2005-07-09,China,3,8.97,2.79,3.22,2,2,"Australia,Canada","2,1",1,19
+154,MICHELE GRANT,2005-07-27,China,3,14.97,4.65,3.217,2,2,"Australia,Canada","2,1",1,20
+569,DAVE GARDINER,2005-08-02,China,4,14.96,4.65,3.215,2,2,"Australia,Canada","2,1",1,21
+495,CHARLIE BESS,2005-07-29,China,3,13.97,4.59,3.044,1,1,Canada,1,1,22
+485,CLYDE TOBIAS,2005-07-30,China,4,17.96,5.98,3.002,2,2,"Australia,Canada","2,1",1,23
+283,FELICIA SUTTON,2005-07-06,China,4,17.96,5.98,3.002,2,2,"Canada,Australia","1,2",1,24
+533,JESSIE MILAM,2005-07-12,China,3,13.97,4.7,2.971,1,1,Australia,2,1,25
+272,KAY CALDWELL,2005-08-17,China,3,16.97,5.99,2.833,2,2,"Australia,Canada","2,1",1,26
+138,HAZEL WARREN,2005-08-01,China,3,14.97,5.32,2.816,2,2,"Australia,Canada","2,1",1,27
+466,LEO EBERT,2005-08-20,China,3,13.97,4.99,2.801,1,1,Canada,1,1,28
+484,ROBERTO VU,2005-07-10,China,3,14.97,5.39,2.778,2,2,"Australia,Canada","2,1",1,29
+90,RUBY WASHINGTON,2005-08-01,China,3,17.97,6.49,2.771,2,2,"Australia,Canada","2,1",1,30
+588,MARION OCAMPO,2005-07-29,China,4,13.96,5.15,2.709,2,2,"Canada,Australia","1,2",1,31
+339,WALTER PERRYMAN,2005-08-17,China,3,12.97,4.82,2.69,2,2,"Canada,Australia","1,2",1,32
+260,CHRISTY VARGAS,2005-08-21,China,3,17.97,6.69,2.685,2,2,"Australia,Canada","2,1",1,33
+138,HAZEL WARREN,2005-07-31,China,3,11.97,4.49,2.669,1,1,Canada,1,1,34
+514,FRANKLIN TROUTMAN,2005-08-18,China,4,13.96,5.32,2.624,2,2,"Canada,Australia","1,2",1,35
+154,MICHELE GRANT,2005-08-22,China,3,15.97,6.1,2.619,2,2,"Australia,Canada","2,1",1,36
+260,CHRISTY VARGAS,2005-06-17,China,3,16.97,6.49,2.615,2,2,"Australia,Canada","2,1",1,37
+546,KELLY KNOTT,2005-08-22,China,3,11.97,4.61,2.594,1,1,Canada,1,1,38
+496,TYLER WREN,2005-07-07,China,3,8.97,3.49,2.57,1,1,Canada,1,1,39
+151,MEGAN PALMER,2005-08-22,China,3,13.97,5.56,2.515,2,2,"Canada,Australia","1,2",1,40
+302,MICHAEL SILVERMAN,2005-07-10,China,4,9.96,3.99,2.496,1,1,Australia,2,1,41
+533,JESSIE MILAM,2005-08-17,China,3,19.97,8.18,2.441,2,2,"Australia,Canada","2,1",1,42
+64,JUDITH COX,2005-07-31,China,3,13.97,5.73,2.438,1,1,Canada,1,1,43
+37,PAMELA BAKER,2005-08-20,China,4,14.96,6.16,2.431,2,2,"Australia,Canada","2,1",1,44
+550,GUY BROWNLEE,2005-08-21,China,3,16.97,6.98,2.43,2,2,"Australia,Canada","2,1",1,45
+594,EDUARDO HIATT,2005-07-31,China,3,16.97,6.98,2.43,2,2,"Canada,Australia","1,2",1,46
+521,ROLAND SOUTH,2005-08-17,China,3,11.97,4.99,2.4,2,2,"Australia,Canada","2,1",1,47
+569,DAVE GARDINER,2005-05-28,China,3,11.97,4.99,2.399,1,1,Canada,1,1,48
+302,MICHAEL SILVERMAN,2005-07-30,China,3,19.97,8.38,2.384,2,2,"Canada,Australia","1,2",1,49
+151,MEGAN PALMER,2005-07-31,China,3,10.97,4.73,2.318,1,1,Canada,1,1,50
+599,AUSTIN CINTRON,2005-08-23,China,3,14.97,6.48,2.309,1,1,Australia,2,1,51
+569,DAVE GARDINER,2005-07-30,China,3,9.97,4.32,2.306,2,2,"Canada,Australia","1,2",1,52
+302,MICHAEL SILVERMAN,2005-08-23,China,4,16.96,7.38,2.297,2,2,"Australia,Canada","2,1",1,53
+211,STACEY MONTGOMERY,2005-08-18,China,3,11.97,5.27,2.27,1,1,Australia,2,1,54
+595,TERRENCE GUNDERSON,2005-07-31,China,3,18.97,8.48,2.237,2,2,"Australia,Canada","2,1",1,55
+197,SUE PETERS,2005-08-02,China,4,17.96,8.15,2.205,1,1,Canada,1,1,56
+595,TERRENCE GUNDERSON,2005-07-27,China,4,14.96,6.82,2.194,2,2,"Canada,Australia","1,2",1,57
+550,GUY BROWNLEE,2005-08-17,China,3,12.97,5.98,2.168,2,2,"Canada,Australia","1,2",1,58
+389,ALAN KAHN,2005-08-02,China,3,10.97,5.08,2.159,2,2,"Canada,Australia","1,2",1,59
+168,REGINA BERRY,2005-07-29,China,3,10.97,5.13,2.138,2,2,"Australia,Canada","2,1",1,60
+168,REGINA BERRY,2005-07-30,China,3,11.97,5.86,2.043,2,2,"Australia,Canada","2,1",1,61
+550,GUY BROWNLEE,2005-08-23,China,3,15.97,7.98,2.001,2,2,"Australia,Canada","2,1",1,62
+235,JACKIE LYNCH,2005-07-06,Colombia,3,14.97,2.99,5.007,2,2,"Australia,Canada","2,1",1,1
+120,SYLVIA ORTIZ,2005-08-21,Colombia,3,19.97,5.21,3.834,2,2,"Canada,Australia","1,2",1,2
+490,SAM MCDUFFIE,2005-07-12,Colombia,3,16.97,4.99,3.402,2,2,"Canada,Australia","1,2",1,3
+460,LEON BOSTIC,2005-08-19,Colombia,3,13.97,5.85,2.39,2,2,"Canada,Australia","1,2",1,4
+387,JESSE SCHILLING,2005-08-19,"Congo, The Democratic Republic of the",3,15.97,3.59,4.451,2,2,"Canada,Australia","1,2",1,1
+375,AARON SELBY,2005-08-02,"Congo, The Democratic Republic of the",3,18.97,5.32,3.567,2,2,"Canada,Australia","1,2",1,2
+265,JENNIE TERRY,2005-08-21,Czech Republic,3,18.97,5.24,3.623,2,2,"Australia,Canada","2,1",1,1
+258,MYRTLE FLEMING,2005-08-01,Dominican Republic,5,20.95,5.61,3.733,2,2,"Australia,Canada","2,1",1,1
+418,JEFF EAST,2005-07-08,Dominican Republic,3,11.97,3.32,3.605,2,2,"Australia,Canada","2,1",1,2
+437,RANDALL NEUMANN,2005-08-20,Dominican Republic,3,12.97,5.32,2.437,2,2,"Australia,Canada","2,1",1,3
+262,PATSY DAVIDSON,2005-07-12,Ecuador,4,26.96,4.27,6.31,2,2,"Australia,Canada","2,1",1,1
+494,RAMON CHOATE,2005-08-22,Ecuador,4,26.96,7.48,3.603,2,2,"Canada,Australia","1,2",1,2
+494,RAMON CHOATE,2005-07-31,Ecuador,3,18.97,7.73,2.454,2,2,"Australia,Canada","2,1",1,3
+262,PATSY DAVIDSON,2005-08-23,Ecuador,4,14.96,7.15,2.092,2,2,"Canada,Australia","1,2",1,4
+423,ALFRED CASILLAS,2005-07-27,Egypt,5,24.95,2.32,10.754,2,2,"Canada,Australia","1,2",1,1
+134,EMMA BOYD,2005-08-02,Egypt,4,20.96,3.16,6.64,2,2,"Canada,Australia","1,2",1,2
+233,LILLIE KIM,2005-06-18,Egypt,3,10.97,2.99,3.669,2,2,"Australia,Canada","2,1",1,3
+559,EVERETT BANDA,2005-08-19,Egypt,3,13.97,4.13,3.384,2,2,"Canada,Australia","1,2",1,4
+119,SHERRY MARSHALL,2005-08-21,Egypt,4,14.96,5.99,2.499,1,1,Australia,2,1,5
+119,SHERRY MARSHALL,2005-08-22,Egypt,3,15.97,6.8,2.348,2,2,"Canada,Australia","1,2",1,6
+317,EDWARD BAUGH,2005-08-22,Faroe Islands,3,12.97,5.71,2.27,1,1,Canada,1,1,1
+402,LUIS YANEZ,2005-07-06,France,3,16.97,4.32,3.925,1,1,Australia,2,1,1
+104,RITA GRAHAM,2005-07-08,France,3,15.97,4.19,3.813,2,2,"Australia,Canada","2,1",1,2
+104,RITA GRAHAM,2005-08-19,France,4,11.96,3.66,3.271,1,1,Canada,1,1,3
+162,LAUREN HUDSON,2005-07-31,France,3,14.97,5.99,2.501,2,2,"Canada,Australia","1,2",1,4
+65,ROSE HOWARD,2005-08-02,French Guiana,3,19.97,4.74,4.214,2,2,"Australia,Canada","2,1",1,1
+584,SALVADOR TEEL,2005-08-18,Gambia,3,17.97,7.13,2.522,1,1,Australia,2,1,1
+584,SALVADOR TEEL,2005-08-21,Gambia,3,16.97,7.87,2.156,1,1,Australia,2,1,2
+201,VICKI FIELDS,2005-08-20,Germany,3,16.97,3.13,5.419,1,1,Australia,2,1,1
+196,ALMA AUSTIN,2005-07-31,Germany,3,22.97,5.84,3.932,2,2,"Canada,Australia","1,2",1,2
+251,VICKIE BREWER,2005-05-31,Germany,3,11.97,3.99,3.004,2,2,"Australia,Canada","2,1",1,3
+251,VICKIE BREWER,2005-08-19,Germany,3,12.97,4.99,2.601,2,2,"Australia,Canada","2,1",1,4
+114,GRACE ELLIS,2005-07-27,Germany,3,8.97,3.7,2.422,1,1,Australia,2,1,5
+196,ALMA AUSTIN,2005-07-09,Germany,3,13.97,5.82,2.401,1,1,Australia,2,1,6
+596,ENRIQUE FORSYTHE,2005-07-11,Greece,3,8.97,2.66,3.376,1,1,Canada,1,1,1
+3,LINDA WILLIAMS,2005-07-28,Greece,4,24.96,8.99,2.777,2,2,"Australia,Canada","2,1",1,2
+207,GERTRUDE CASTILLO,2005-08-20,Greenland,4,25.96,8.32,3.122,1,1,Australia,2,1,1
+26,JESSICA HALL,2005-08-21,Holy See (Vatican City State),4,23.96,4.27,5.607,2,2,"Australia,Canada","2,1",1,1
+26,JESSICA HALL,2005-07-07,Holy See (Vatican City State),5,20.95,8.39,2.498,2,2,"Canada,Australia","1,2",1,2
+289,VIOLET RODRIQUEZ,2005-08-19,Hong Kong,4,17.96,8.23,2.182,1,1,Australia,2,1,1
+412,ALLEN BUTTERFIELD,2005-07-29,India,3,18.97,0.99,19.162,2,2,"Australia,Canada","2,1",1,1
+529,ERIK GUILLEN,2005-07-12,India,3,20.97,2.99,7.021,2,2,"Australia,Canada","2,1",1,2
+529,ERIK GUILLEN,2005-07-07,India,3,7.97,1.32,6.023,1,1,Australia,2,1,3
+297,SHERRI RHODES,2005-06-18,India,3,16.97,2.99,5.676,2,2,"Canada,Australia","1,2",1,4
+238,NELLIE GARRETT,2005-07-29,India,3,16.97,3.24,5.238,1,1,Canada,1,1,5
+192,LAURIE LAWRENCE,2005-08-21,India,4,24.96,5.32,4.69,2,2,"Australia,Canada","2,1",1,6
+509,RAUL FORTIER,2005-07-28,India,3,21.97,4.74,4.637,1,1,Canada,1,1,7
+78,LORI WOOD,2005-07-28,India,3,15.97,3.7,4.315,2,2,"Australia,Canada","2,1",1,8
+468,TIM CARY,2005-08-21,India,5,32.95,7.84,4.202,2,2,"Australia,Canada","2,1",1,9
+259,LENA JENSEN,2005-07-30,India,3,21.97,5.32,4.128,2,2,"Australia,Canada","2,1",1,10
+175,ANNETTE OLSON,2005-07-29,India,4,16.96,4.16,4.08,1,1,Canada,1,1,11
+274,NAOMI JENNINGS,2005-07-29,India,3,14.97,3.99,3.752,1,1,Australia,2,1,12
+117,EDITH MCDONALD,2005-08-18,India,4,17.96,4.99,3.602,1,1,Canada,1,1,13
+300,JOHN FARNSWORTH,2005-07-28,India,3,18.97,5.32,3.565,1,1,Canada,1,1,14
+259,LENA JENSEN,2005-06-16,India,3,18.97,5.32,3.564,2,2,"Canada,Australia","1,2",1,15
+170,BEATRICE ARNOLD,2005-07-10,India,3,15.97,4.49,3.558,2,2,"Canada,Australia","1,2",1,16
+370,WAYNE TRUONG,2005-07-27,India,3,15.97,4.49,3.557,2,2,"Canada,Australia","1,2",1,17
+28,CYNTHIA YOUNG,2005-07-31,India,4,15.96,4.49,3.557,1,1,Australia,2,1,18
+419,CHAD CARBONE,2005-08-02,India,4,13.96,4.29,3.257,2,2,"Australia,Canada","2,1",1,19
+121,JOSEPHINE GOMEZ,2005-08-21,India,4,25.96,7.98,3.253,2,2,"Canada,Australia","1,2",1,20
+534,CHRISTIAN JUNG,2005-08-01,India,3,13.97,4.32,3.233,2,2,"Australia,Canada","2,1",1,21
+135,JUANITA MASON,2005-07-27,India,3,13.97,4.39,3.184,2,2,"Australia,Canada","2,1",1,22
+12,NANCY THOMAS,2005-07-30,India,3,11.97,3.98,3.008,1,1,Australia,2,1,23
+367,ADAM GOOCH,2005-08-18,India,3,14.97,4.99,3.002,2,2,"Canada,Australia","1,2",1,24
+224,PEARL GARZA,2005-08-21,India,3,12.97,4.49,2.892,1,1,Australia,2,1,25
+268,NINA SOTO,2005-07-10,India,3,12.97,4.49,2.889,1,1,Australia,2,1,26
+336,JOSHUA MARK,2005-07-29,India,3,16.97,6.24,2.722,2,2,"Australia,Canada","2,1",1,27
+15,HELEN HARRIS,2005-08-02,India,4,11.96,4.55,2.631,2,2,"Canada,Australia","1,2",1,28
+367,ADAM GOOCH,2005-07-10,India,3,12.97,4.99,2.599,1,1,Australia,2,1,29
+231,GEORGIA JACOBS,2005-08-18,India,3,13.97,5.39,2.593,2,2,"Canada,Australia","1,2",1,30
+492,LESTER KRAUS,2005-07-07,India,3,18.97,7.32,2.592,2,2,"Australia,Canada","2,1",1,31
+78,LORI WOOD,2005-08-01,India,3,14.97,5.87,2.549,2,2,"Australia,Canada","2,1",1,32
+68,NICOLE PETERSON,2005-07-31,India,3,16.97,6.73,2.521,2,2,"Canada,Australia","1,2",1,33
+297,SHERRI RHODES,2005-08-17,India,3,8.97,3.65,2.456,2,2,"Australia,Canada","2,1",1,34
+31,BRENDA WRIGHT,2005-06-18,India,4,16.96,6.98,2.43,2,2,"Canada,Australia","1,2",1,35
+403,MIKE WAY,2005-08-02,India,4,21.96,9.36,2.347,2,2,"Canada,Australia","1,2",1,36
+170,BEATRICE ARNOLD,2005-07-31,India,3,15.97,6.82,2.342,2,2,"Australia,Canada","2,1",1,37
+316,STEVEN CURLEY,2005-07-27,India,4,15.96,6.99,2.284,2,2,"Australia,Canada","2,1",1,38
+502,BRETT CORNWELL,2005-07-28,India,3,14.97,6.61,2.264,2,2,"Canada,Australia","1,2",1,39
+274,NAOMI JENNINGS,2005-08-20,India,3,17.97,7.98,2.251,1,1,Canada,1,1,40
+508,MILTON HOWLAND,2005-07-27,India,3,17.97,7.99,2.25,2,2,"Canada,Australia","1,2",1,41
+202,CARLA GUTIERREZ,2005-07-30,India,3,12.97,5.82,2.229,1,1,Australia,2,1,42
+209,TONYA CHAPMAN,2005-07-27,India,3,15.97,7.18,2.223,1,1,Canada,1,1,43
+167,SALLY PIERCE,2005-07-09,India,4,11.96,5.49,2.179,2,2,"Australia,Canada","2,1",1,44
+123,SHANNON FREEMAN,2005-07-28,India,4,12.96,5.99,2.164,2,2,"Canada,Australia","1,2",1,45
+297,SHERRI RHODES,2005-07-11,India,3,14.97,7.15,2.093,2,2,"Australia,Canada","2,1",1,46
+186,HOLLY FOX,2005-08-20,India,3,11.97,5.74,2.087,2,2,"Australia,Canada","2,1",1,47
+15,HELEN HARRIS,2005-08-20,India,3,14.97,7.21,2.078,2,2,"Australia,Canada","2,1",1,48
+446,THEODORE CULP,2005-07-12,India,4,13.96,6.78,2.058,2,2,"Australia,Canada","2,1",1,49
+458,LLOYD DOWD,2005-07-12,Indonesia,3,15.97,2.99,5.341,2,2,"Canada,Australia","1,2",1,1
+450,JAY ROBB,2005-08-20,Indonesia,3,10.97,2.99,3.671,2,2,"Australia,Canada","2,1",1,2
+328,JEFFREY SPEAR,2005-08-20,Indonesia,3,14.97,4.82,3.106,2,2,"Canada,Australia","1,2",1,3
+473,JORGE OLIVARES,2005-08-02,Indonesia,5,19.95,7.23,2.758,2,2,"Canada,Australia","1,2",1,4
+372,STEVE MACKENZIE,2005-07-09,Indonesia,3,10.97,3.99,2.749,1,1,Canada,1,1,5
+450,JAY ROBB,2005-08-22,Indonesia,3,10.97,4.24,2.59,2,2,"Australia,Canada","2,1",1,6
+506,LESLIE SEWARD,2005-07-08,Indonesia,3,23.97,9.32,2.573,1,1,Australia,2,1,7
+239,MINNIE ROMERO,2005-07-27,Indonesia,3,12.97,5.49,2.365,2,2,"Australia,Canada","2,1",1,8
+459,TOMMY COLLAZO,2005-07-28,Iran,5,29.95,2.66,11.274,2,2,"Canada,Australia","1,2",1,1
+368,HARRY ARCE,2005-08-19,Iran,4,17.96,4.61,3.893,2,2,"Canada,Australia","1,2",1,2
+279,DIANNE SHELTON,2005-07-09,Iran,3,20.97,5.49,3.823,2,2,"Canada,Australia","1,2",1,3
+279,DIANNE SHELTON,2005-08-19,Iran,4,18.96,5.16,3.678,2,2,"Australia,Canada","2,1",1,4
+10,DOROTHY TAYLOR,2005-07-09,Iran,3,11.97,3.85,3.113,2,2,"Canada,Australia","1,2",1,5
+459,TOMMY COLLAZO,2005-06-17,Iran,3,8.97,2.99,3.0,1,1,Australia,2,1,6
+279,DIANNE SHELTON,2005-06-21,Iran,3,8.97,2.99,3.0,1,1,Canada,1,1,7
+449,OSCAR AQUINO,2005-08-01,Iran,4,21.96,7.38,2.974,2,2,"Australia,Canada","2,1",1,8
+459,TOMMY COLLAZO,2005-08-01,Iran,4,22.96,8.98,2.556,2,2,"Canada,Australia","1,2",1,9
+449,OSCAR AQUINO,2005-07-28,Iran,3,13.97,5.65,2.471,1,1,Australia,2,1,10
+10,DOROTHY TAYLOR,2005-07-28,Iran,3,14.97,6.48,2.309,2,2,"Canada,Australia","1,2",1,11
+36,KATHLEEN ADAMS,2005-07-28,Iran,3,8.97,3.99,2.249,2,2,"Canada,Australia","1,2",1,12
+368,HARRY ARCE,2005-06-19,Iran,3,14.97,7.24,2.069,1,1,Canada,1,1,13
+478,LEWIS LYMAN,2005-06-19,Israel,3,20.97,2.99,7.013,2,2,"Canada,Australia","1,2",1,1
+102,CRYSTAL FORD,2005-07-09,Israel,3,17.97,6.39,2.814,1,1,Canada,1,1,2
+161,GERALDINE PERKINS,2005-08-22,Israel,4,15.96,6.27,2.546,2,2,"Canada,Australia","1,2",1,3
+478,LEWIS LYMAN,2005-07-31,Israel,3,10.97,4.49,2.443,2,2,"Canada,Australia","1,2",1,4
+309,CHRISTOPHER GRECO,2005-06-19,Italy,3,20.97,4.32,4.85,1,1,Australia,2,1,1
+33,ANNA HILL,2005-07-30,Italy,3,11.97,3.59,3.334,2,2,"Canada,Australia","1,2",1,2
+541,DARREN WINDHAM,2005-08-22,Italy,5,18.95,5.74,3.303,2,2,"Australia,Canada","2,1",1,3
+499,MARC OUTLAW,2005-08-17,Italy,3,14.97,6.18,2.422,2,2,"Australia,Canada","2,1",1,4
+499,MARC OUTLAW,2005-07-28,Italy,4,13.96,6.24,2.239,2,2,"Canada,Australia","1,2",1,5
+221,BESSIE MORRISON,2005-08-21,Italy,3,14.97,7.27,2.06,2,2,"Australia,Canada","2,1",1,6
+1,MARY SMITH,2005-06-15,Japan,3,16.97,1.99,8.528,2,2,"Canada,Australia","1,2",1,1
+574,JULIAN VEST,2005-06-16,Japan,3,7.97,0.99,8.051,2,2,"Canada,Australia","1,2",1,2
+29,ANGELA HERNANDEZ,2005-06-19,Japan,5,15.95,1.99,8.015,2,2,"Canada,Australia","1,2",1,3
+240,MARLENE WELCH,2005-07-27,Japan,3,18.97,2.99,6.344,2,2,"Canada,Australia","1,2",1,4
+404,STANLEY SCROGGINS,2005-07-08,Japan,4,21.96,3.79,5.794,2,2,"Canada,Australia","1,2",1,5
+519,RON DELUCA,2005-07-31,Japan,5,23.95,4.65,5.147,2,2,"Australia,Canada","2,1",1,6
+404,STANLEY SCROGGINS,2005-08-22,Japan,5,27.95,6.43,4.346,1,1,Australia,2,1,7
+29,ANGELA HERNANDEZ,2005-08-18,Japan,4,21.96,5.84,3.758,2,2,"Canada,Australia","1,2",1,8
+401,TONY CARRANZA,2005-07-29,Japan,3,14.97,3.99,3.754,2,2,"Canada,Australia","1,2",1,9
+264,GWENDOLYN MAY,2005-07-11,Japan,3,12.97,3.85,3.371,2,2,"Canada,Australia","1,2",1,10
+194,KRISTEN CHAVEZ,2005-06-18,Japan,3,14.97,4.66,3.215,1,1,Canada,1,1,11
+54,TERESA ROGERS,2005-08-02,Japan,3,15.97,5.13,3.113,2,2,"Australia,Canada","2,1",1,12
+147,JOANNE ROBERTSON,2005-08-23,Japan,3,20.97,6.87,3.052,2,2,"Australia,Canada","2,1",1,13
+531,JAMIE WAUGH,2005-08-02,Japan,4,26.96,9.27,2.91,2,2,"Australia,Canada","2,1",1,14
+253,TERRY CARLSON,2005-08-21,Japan,3,17.97,6.23,2.883,2,2,"Australia,Canada","2,1",1,15
+531,JAMIE WAUGH,2005-07-10,Japan,3,11.97,4.49,2.666,2,2,"Canada,Australia","1,2",1,16
+1,MARY SMITH,2005-08-22,Japan,3,10.97,4.19,2.621,2,2,"Canada,Australia","1,2",1,17
+147,JOANNE ROBERTSON,2005-08-20,Japan,3,13.97,5.49,2.546,1,1,Australia,2,1,18
+503,ANGEL BARCLAY,2005-08-22,Japan,4,11.96,4.74,2.525,2,2,"Canada,Australia","1,2",1,19
+547,KURT EMMONS,2005-08-02,Japan,4,14.96,5.99,2.499,2,2,"Canada,Australia","1,2",1,20
+285,MIRIAM MCKINNEY,2005-07-11,Japan,4,14.96,6.32,2.366,2,2,"Canada,Australia","1,2",1,21
+141,DEBBIE REYES,2005-08-01,Japan,3,10.97,4.65,2.357,1,1,Canada,1,1,22
+53,HEATHER MORRIS,2005-08-21,Japan,3,11.97,5.1,2.347,2,2,"Australia,Canada","2,1",1,23
+503,ANGEL BARCLAY,2005-08-23,Japan,4,12.96,5.54,2.34,1,1,Canada,1,1,24
+396,EARL SHANKS,2005-08-21,Japan,3,13.97,5.98,2.335,2,2,"Canada,Australia","1,2",1,25
+264,GWENDOLYN MAY,2005-07-31,Japan,3,12.97,5.56,2.333,2,2,"Australia,Canada","2,1",1,26
+396,EARL SHANKS,2005-06-15,Japan,3,13.97,5.99,2.332,1,1,Australia,2,1,27
+299,JAMES GANNON,2005-08-17,Japan,3,13.97,6.24,2.241,1,1,Canada,1,1,28
+29,ANGELA HERNANDEZ,2005-07-27,Japan,3,11.97,5.49,2.181,2,2,"Australia,Canada","2,1",1,29
+489,RICARDO MEADOR,2005-08-21,Japan,3,15.97,7.49,2.133,1,1,Australia,2,1,30
+147,JOANNE ROBERTSON,2005-08-22,Japan,3,12.97,6.11,2.123,2,2,"Australia,Canada","2,1",1,31
+574,JULIAN VEST,2005-07-09,Japan,3,12.97,6.15,2.108,2,2,"Australia,Canada","2,1",1,32
+76,IRENE PRICE,2005-07-29,Kazakstan,3,13.97,2.32,6.013,1,1,Australia,2,1,1
+573,BYRON BOX,2005-07-31,Kazakstan,4,24.96,6.56,3.807,1,1,Australia,2,1,2
+193,KATIE ELLIOTT,2005-08-22,Kenya,3,16.97,4.61,3.68,2,2,"Canada,Australia","1,2",1,1
+363,ROY WHITING,2005-07-12,Kenya,3,12.97,5.36,2.418,1,1,Australia,2,1,2
+234,CLAUDIA FULLER,2005-08-02,Kuwait,4,17.96,7.65,2.348,2,2,"Australia,Canada","2,1",1,1
+347,RYAN SALISBURY,2005-07-28,Latvia,4,15.96,4.16,3.841,2,2,"Canada,Australia","1,2",1,1
+23,SARAH LEWIS,2005-08-19,Latvia,3,14.97,6.42,2.333,1,1,Australia,2,1,2
+347,RYAN SALISBURY,2005-07-31,Latvia,3,11.97,5.98,2.0,1,1,Canada,1,1,3
+57,EVELYN MORGAN,2005-07-12,Liechtenstein,3,11.97,4.99,2.4,2,2,"Australia,Canada","2,1",1,1
+557,FELIX GAFFNEY,2005-07-12,Lithuania,4,10.96,4.98,2.199,2,2,"Canada,Australia","1,2",1,1
+81,ANDREA HENDERSON,2005-08-21,Madagascar,3,16.97,3.99,4.253,2,2,"Canada,Australia","1,2",1,1
+81,ANDREA HENDERSON,2005-08-23,Madagascar,4,14.96,5.65,2.646,2,2,"Canada,Australia","1,2",1,2
+306,CHARLES KOWALSKI,2005-08-20,Malaysia,4,16.96,6.44,2.634,2,2,"Canada,Australia","1,2",1,1
+171,DOLORES WAGNER,2005-08-19,Malaysia,4,14.96,6.24,2.398,2,2,"Canada,Australia","1,2",1,2
+306,CHARLES KOWALSKI,2005-08-02,Malaysia,3,11.97,5.53,2.164,2,2,"Australia,Canada","2,1",1,3
+582,ANDY VANHORN,2005-07-27,Mexico,4,20.96,3.49,6.006,2,2,"Australia,Canada","2,1",1,1
+133,PAULINE HENRY,2005-07-08,Mexico,4,19.96,3.49,5.719,2,2,"Australia,Canada","2,1",1,2
+454,ALEX GRESHAM,2005-08-20,Mexico,4,27.96,5.23,5.344,2,2,"Australia,Canada","2,1",1,3
+465,FLOYD GANDY,2005-08-17,Mexico,3,16.97,3.32,5.106,2,2,"Canada,Australia","1,2",1,4
+414,VINCENT RALSTON,2005-08-19,Mexico,5,17.95,4.24,4.238,2,2,"Australia,Canada","2,1",1,5
+570,IVAN CROMWELL,2005-07-30,Mexico,3,11.97,2.99,4.003,2,2,"Canada,Australia","1,2",1,6
+425,FRANCIS SIKES,2005-07-08,Mexico,4,27.96,6.99,4.002,2,2,"Australia,Canada","2,1",1,7
+150,DANIELLE DANIELS,2005-08-19,Mexico,5,21.95,5.65,3.883,2,2,"Canada,Australia","1,2",1,8
+319,RONALD WEINER,2005-08-17,Mexico,5,16.95,4.49,3.779,2,2,"Canada,Australia","1,2",1,9
+84,SARA PERRY,2005-07-11,Mexico,3,18.97,5.13,3.699,2,2,"Canada,Australia","1,2",1,10
+451,JIM REA,2005-07-08,Mexico,3,16.97,4.65,3.647,2,2,"Canada,Australia","1,2",1,11
+575,ISAAC OGLESBY,2005-08-18,Mexico,3,22.97,6.65,3.454,2,2,"Canada,Australia","1,2",1,12
+247,STELLA MORENO,2005-08-18,Mexico,3,17.97,5.49,3.276,2,2,"Australia,Canada","2,1",1,13
+273,PRISCILLA LOWE,2005-07-12,Mexico,4,19.96,6.24,3.2,2,2,"Canada,Australia","1,2",1,14
+108,TRACY COLE,2005-07-29,Mexico,3,15.97,5.15,3.1,2,2,"Australia,Canada","2,1",1,15
+150,DANIELLE DANIELS,2005-08-18,Mexico,3,12.97,4.19,3.095,1,1,Australia,2,1,16
+177,SAMANTHA DUNCAN,2005-06-16,Mexico,3,8.97,2.99,3.0,2,2,"Canada,Australia","1,2",1,17
+581,VIRGIL WOFFORD,2005-08-20,Mexico,3,12.97,4.39,2.956,1,1,Australia,2,1,18
+587,SERGIO STANFIELD,2005-07-31,Mexico,3,17.97,6.19,2.905,1,1,Australia,2,1,19
+84,SARA PERRY,2005-08-02,Mexico,4,19.96,7.32,2.727,2,2,"Canada,Australia","1,2",1,20
+467,ALVIN DELOACH,2005-07-28,Mexico,4,20.96,7.98,2.626,2,2,"Canada,Australia","1,2",1,21
+451,JIM REA,2005-08-02,Mexico,4,19.96,7.82,2.552,2,2,"Canada,Australia","1,2",1,22
+581,VIRGIL WOFFORD,2005-06-17,Mexico,3,11.97,4.99,2.399,2,2,"Australia,Canada","2,1",1,23
+273,PRISCILLA LOWE,2005-08-01,Mexico,3,19.97,8.48,2.355,1,1,Canada,1,1,24
+319,RONALD WEINER,2005-07-11,Mexico,3,12.97,5.74,2.261,2,2,"Australia,Canada","2,1",1,25
+570,IVAN CROMWELL,2005-07-31,Mexico,3,8.97,3.99,2.249,2,2,"Canada,Australia","1,2",1,26
+482,MAURICE CRAWLEY,2005-08-22,Mexico,3,12.97,6.13,2.116,2,2,"Australia,Canada","2,1",1,27
+323,MATTHEW MAHAN,2005-07-28,Mexico,3,12.97,6.19,2.097,2,2,"Australia,Canada","2,1",1,28
+414,VINCENT RALSTON,2005-07-31,Mexico,3,11.97,5.79,2.069,2,2,"Canada,Australia","1,2",1,29
+38,MARTHA GONZALEZ,2005-07-07,Moldova,3,12.97,3.99,3.253,2,2,"Canada,Australia","1,2",1,1
+38,MARTHA GONZALEZ,2005-07-27,Moldova,4,17.96,6.58,2.728,2,2,"Canada,Australia","1,2",1,2
+22,LAURA RODRIGUEZ,2005-08-23,Morocco,3,16.97,6.32,2.685,1,1,Canada,1,1,1
+40,AMANDA CARTER,2005-07-31,Morocco,3,13.97,5.38,2.595,2,2,"Australia,Canada","2,1",1,2
+97,ANNIE RUSSELL,2005-07-06,Mozambique,3,8.97,2.99,3.0,2,2,"Canada,Australia","1,2",1,1
+257,MARSHA DOUGLAS,2005-08-19,Mozambique,5,20.95,9.69,2.162,2,2,"Australia,Canada","2,1",1,2
+257,MARSHA DOUGLAS,2005-07-27,Mozambique,5,18.95,8.99,2.109,2,2,"Australia,Canada","2,1",1,3
+256,MABEL HOLLAND,2005-08-20,Myanmar,4,13.96,4.79,2.914,2,2,"Australia,Canada","2,1",1,1
+256,MABEL HOLLAND,2005-08-23,Myanmar,3,15.97,6.41,2.49,2,2,"Australia,Canada","2,1",1,2
+513,DUANE TUBBS,2005-07-29,Nauru,4,25.96,5.59,4.647,2,2,"Australia,Canada","2,1",1,1
+513,DUANE TUBBS,2005-07-07,Nauru,3,12.97,3.49,3.716,1,1,Australia,2,1,2
+513,DUANE TUBBS,2005-08-22,Nauru,4,24.96,9.11,2.741,2,2,"Australia,Canada","2,1",1,3
+321,KEVIN SCHULER,2005-08-17,Nepal,3,17.97,3.99,4.504,2,2,"Canada,Australia","1,2",1,1
+137,RHONDA KENNEDY,2005-07-06,Netherlands,3,17.97,4.99,3.601,1,1,Australia,2,1,1
+474,DUSTIN GILLETTE,2005-08-18,Netherlands,4,13.96,4.74,2.948,2,2,"Canada,Australia","1,2",1,2
+184,VIVIAN RUIZ,2005-08-18,Netherlands,3,15.97,5.99,2.668,2,2,"Australia,Canada","2,1",1,3
+137,RHONDA KENNEDY,2005-07-30,Netherlands,4,20.96,8.7,2.41,2,2,"Australia,Canada","2,1",1,4
+474,DUSTIN GILLETTE,2005-07-08,Netherlands,5,12.95,5.99,2.162,2,2,"Canada,Australia","1,2",1,5
+280,TRACEY BARRETT,2005-07-29,Nigeria,5,20.95,2.99,7.007,2,2,"Australia,Canada","2,1",1,1
+198,ELSIE KELLEY,2005-07-12,Nigeria,3,14.97,3.24,4.624,2,2,"Australia,Canada","2,1",1,2
+198,ELSIE KELLEY,2005-08-17,Nigeria,6,22.94,5.15,4.454,2,2,"Canada,Australia","1,2",1,3
+103,GLADYS HAMILTON,2005-08-23,Nigeria,5,25.95,5.99,4.335,2,2,"Canada,Australia","1,2",1,4
+280,TRACEY BARRETT,2005-08-19,Nigeria,3,20.97,6.48,3.234,2,2,"Canada,Australia","1,2",1,5
+277,OLGA JIMENEZ,2005-06-21,Nigeria,3,13.97,4.39,3.182,2,2,"Canada,Australia","1,2",1,6
+156,BERTHA FERGUSON,2005-08-22,Nigeria,4,14.96,4.86,3.077,2,2,"Canada,Australia","1,2",1,7
+103,GLADYS HAMILTON,2005-07-07,Nigeria,3,11.97,3.99,3.002,2,2,"Australia,Canada","2,1",1,8
+80,MARILYN ROSS,2005-08-01,Nigeria,3,16.97,6.88,2.468,1,1,Canada,1,1,9
+284,SONIA GREGORY,2005-07-27,Nigeria,3,14.97,6.59,2.272,2,2,"Australia,Canada","2,1",1,10
+157,DARLENE ROSE,2005-07-29,North Korea,5,12.95,4.82,2.688,2,2,"Australia,Canada","2,1",1,1
+157,DARLENE ROSE,2005-07-27,North Korea,3,10.97,4.24,2.589,2,2,"Canada,Australia","1,2",1,2
+498,GENE SANBORN,2005-07-27,Oman,3,16.97,3.49,4.867,1,1,Canada,1,1,1
+9,MARGARET MOORE,2005-08-18,Oman,3,10.97,4.39,2.501,2,2,"Canada,Australia","1,2",1,2
+25,DEBORAH WALKER,2005-07-30,Pakistan,3,12.97,5.23,2.479,2,2,"Australia,Canada","2,1",1,1
+20,SHARON ROBINSON,2005-08-19,Pakistan,3,12.97,5.7,2.275,2,2,"Australia,Canada","2,1",1,2
+416,JEFFERY PINSON,2005-08-01,Pakistan,3,13.97,6.15,2.272,1,1,Canada,1,1,3
+416,JEFFERY PINSON,2005-07-29,Pakistan,3,11.97,5.49,2.182,1,1,Australia,2,1,4
+345,CARL ARTIS,2005-07-07,Paraguay,3,10.97,3.99,2.752,2,2,"Australia,Canada","2,1",1,1
+205,EILEEN CARR,2005-08-21,Paraguay,4,15.96,5.99,2.666,2,2,"Canada,Australia","1,2",1,2
+226,MAUREEN LITTLE,2005-08-21,Paraguay,4,13.96,5.98,2.333,2,2,"Canada,Australia","1,2",1,3
+226,MAUREEN LITTLE,2005-08-23,Paraguay,4,16.96,7.38,2.298,2,2,"Australia,Canada","2,1",1,4
+597,FREDDIE DUGGAN,2005-08-02,Peru,4,16.96,3.99,4.252,2,2,"Australia,Canada","2,1",1,1
+565,JAIME NETTLES,2005-08-02,Peru,3,14.97,5.1,2.937,2,2,"Australia,Canada","2,1",1,2
+461,DEREK BLAKELY,2005-08-22,Philippines,5,22.95,4.21,5.456,2,2,"Canada,Australia","1,2",1,1
+27,SHIRLEY ALLEN,2005-07-31,Philippines,3,18.97,3.99,4.758,2,2,"Australia,Canada","2,1",1,2
+261,DEANNA BYRD,2005-06-17,Philippines,3,18.97,3.99,4.754,2,2,"Canada,Australia","1,2",1,3
+522,ARNOLD HAVENS,2005-07-30,Philippines,5,29.95,7.61,3.936,2,2,"Canada,Australia","1,2",1,4
+71,KATHY JAMES,2005-07-10,Philippines,3,18.97,4.99,3.803,2,2,"Canada,Australia","1,2",1,5
+349,JOE GILLILAND,2005-08-02,Philippines,3,18.97,5.1,3.721,2,2,"Canada,Australia","1,2",1,6
+188,MELANIE ARMSTRONG,2005-08-01,Philippines,4,16.96,4.56,3.719,2,2,"Australia,Canada","2,1",1,7
+434,EDDIE TOMLIN,2005-06-18,Philippines,3,15.97,4.32,3.694,2,2,"Australia,Canada","2,1",1,8
+72,THERESA WATSON,2005-07-09,Philippines,3,10.97,2.99,3.669,2,2,"Australia,Canada","2,1",1,9
+388,CRAIG MORRELL,2005-08-18,Philippines,4,17.96,5.18,3.467,2,2,"Australia,Canada","2,1",1,10
+27,SHIRLEY ALLEN,2005-08-17,Philippines,3,21.97,7.18,3.058,2,2,"Canada,Australia","1,2",1,11
+373,LOUIS LEONE,2005-07-30,Philippines,3,14.97,5.24,2.859,2,2,"Australia,Canada","2,1",1,12
+373,LOUIS LEONE,2005-08-18,Philippines,4,20.96,7.68,2.728,2,2,"Canada,Australia","1,2",1,13
+71,KATHY JAMES,2005-07-29,Philippines,5,18.95,7.27,2.607,1,1,Canada,1,1,14
+522,ARNOLD HAVENS,2005-06-20,Philippines,3,12.97,4.99,2.599,2,2,"Australia,Canada","2,1",1,15
+244,VIOLA HANSON,2005-07-31,Philippines,3,15.97,6.48,2.464,2,2,"Canada,Australia","1,2",1,16
+580,ROSS GREY,2005-07-30,Philippines,3,10.97,4.7,2.334,1,1,Canada,1,1,17
+261,DEANNA BYRD,2005-07-31,Philippines,3,14.97,6.98,2.145,2,2,"Australia,Canada","2,1",1,18
+72,THERESA WATSON,2005-08-17,Philippines,4,13.96,6.59,2.12,2,2,"Canada,Australia","1,2",1,19
+236,MARCIA DEAN,2005-08-21,Philippines,3,17.97,8.65,2.078,2,2,"Australia,Canada","2,1",1,20
+261,DEANNA BYRD,2005-08-20,Philippines,3,13.97,6.78,2.059,2,2,"Australia,Canada","2,1",1,21
+270,LEAH CURTIS,2005-08-01,Poland,3,18.97,6.19,3.067,2,2,"Canada,Australia","1,2",1,1
+380,RUSSELL BRINSON,2005-07-27,Poland,4,15.96,5.65,2.825,1,1,Australia,2,1,2
+380,RUSSELL BRINSON,2005-06-17,Poland,3,10.97,3.99,2.749,1,1,Canada,1,1,3
+558,JIMMIE EGGLESTON,2005-07-06,Poland,3,14.97,5.59,2.678,1,1,Canada,1,1,4
+128,MARJORIE TUCKER,2005-07-30,Poland,3,14.97,5.84,2.562,2,2,"Australia,Canada","2,1",1,5
+558,JIMMIE EGGLESTON,2005-07-12,Poland,3,15.97,6.44,2.479,2,2,"Australia,Canada","2,1",1,6
+572,SIDNEY BURLESON,2005-08-02,Poland,4,13.96,5.76,2.422,2,2,"Canada,Australia","1,2",1,7
+563,KEN PREWITT,2005-07-08,Romania,7,29.93,2.99,10.021,2,2,"Canada,Australia","1,2",1,1
+563,KEN PREWITT,2005-07-29,Romania,4,22.96,7.58,3.031,2,2,"Canada,Australia","1,2",1,2
+230,JOY GEORGE,2005-07-31,Romania,3,17.97,6.81,2.637,2,2,"Australia,Canada","2,1",1,3
+148,ELEANOR HUNT,2005-07-28,Runion,4,20.96,6.65,3.151,2,2,"Canada,Australia","1,2",1,1
+148,ELEANOR HUNT,2005-07-29,Runion,4,18.96,8.7,2.18,2,2,"Australia,Canada","2,1",1,2
+148,ELEANOR HUNT,2005-08-22,Runion,4,22.96,10.7,2.145,1,1,Australia,2,1,3
+148,ELEANOR HUNT,2005-06-19,Runion,3,13.97,6.99,2.0,1,1,Australia,2,1,4
+100,ROBIN HAYES,2005-06-15,Russian Federation,3,11.97,0.99,12.091,2,2,"Australia,Canada","2,1",1,1
+376,RANDY GAITHER,2005-07-07,Russian Federation,3,13.97,1.66,8.433,2,2,"Canada,Australia","1,2",1,2
+44,MARIE TURNER,2005-07-10,Russian Federation,4,24.96,4.49,5.559,2,2,"Canada,Australia","1,2",1,3
+350,JUAN FRALEY,2005-08-17,Russian Federation,3,14.97,2.99,5.007,2,2,"Australia,Canada","2,1",1,4
+393,PHILIP CAUSEY,2005-07-08,Russian Federation,3,22.97,4.59,5.007,1,1,Australia,2,1,5
+311,PAUL TROUT,2005-07-31,Russian Federation,3,20.97,4.99,4.202,2,2,"Canada,Australia","1,2",1,6
+447,CLIFFORD BOWENS,2005-07-30,Russian Federation,3,17.97,4.7,3.821,2,2,"Australia,Canada","2,1",1,7
+106,CONNIE WALLACE,2005-08-01,Russian Federation,3,20.97,5.99,3.503,2,2,"Australia,Canada","2,1",1,8
+487,HECTOR POINDEXTER,2005-07-30,Russian Federation,3,14.97,4.41,3.391,2,2,"Canada,Australia","1,2",1,9
+346,ARTHUR SIMPKINS,2005-07-29,Russian Federation,4,22.96,6.85,3.354,2,2,"Australia,Canada","2,1",1,10
+376,RANDY GAITHER,2005-07-12,Russian Federation,3,18.97,5.82,3.26,2,2,"Canada,Australia","1,2",1,11
+487,HECTOR POINDEXTER,2005-08-01,Russian Federation,3,16.97,5.21,3.259,2,2,"Australia,Canada","2,1",1,12
+17,DONNA THOMPSON,2005-07-30,Russian Federation,4,21.96,7.32,3.001,2,2,"Australia,Canada","2,1",1,13
+160,ERIN DUNN,2005-08-02,Russian Federation,3,13.97,4.7,2.973,1,1,Australia,2,1,14
+46,CATHERINE CAMPBELL,2005-08-01,Russian Federation,3,15.97,5.49,2.911,2,2,"Australia,Canada","2,1",1,15
+397,JIMMY SCHRADER,2005-08-18,Russian Federation,6,14.94,5.15,2.9,2,2,"Australia,Canada","2,1",1,16
+487,HECTOR POINDEXTER,2005-07-29,Russian Federation,3,9.97,3.49,2.858,2,2,"Australia,Canada","2,1",1,17
+462,WARREN SHERROD,2005-07-12,Russian Federation,4,20.96,7.49,2.799,1,1,Canada,1,1,18
+351,JACK FOUST,2005-07-08,Russian Federation,3,8.97,3.24,2.769,2,2,"Canada,Australia","1,2",1,19
+55,DORIS REED,2005-08-19,Russian Federation,3,13.97,5.16,2.71,2,2,"Canada,Australia","1,2",1,20
+430,RAY HOULE,2005-08-20,Russian Federation,3,9.97,3.74,2.668,2,2,"Australia,Canada","2,1",1,21
+301,ROBERT BAUGHMAN,2005-07-10,Russian Federation,3,10.97,4.16,2.639,1,1,Australia,2,1,22
+462,WARREN SHERROD,2005-08-19,Russian Federation,3,22.97,9.12,2.518,2,2,"Canada,Australia","1,2",1,23
+179,DANA HART,2005-08-20,Russian Federation,3,16.97,6.98,2.43,1,1,Australia,2,1,24
+55,DORIS REED,2005-06-20,Russian Federation,3,12.97,5.49,2.364,1,1,Canada,1,1,25
+510,BEN EASTER,2005-06-19,Russian Federation,3,10.97,4.66,2.356,2,2,"Canada,Australia","1,2",1,26
+46,CATHERINE CAMPBELL,2005-08-18,Russian Federation,4,15.96,6.98,2.285,2,2,"Australia,Canada","2,1",1,27
+222,DELORES HANSEN,2005-07-29,Russian Federation,3,13.97,6.19,2.258,2,2,"Canada,Australia","1,2",1,28
+295,DAISY BATES,2005-07-31,Russian Federation,3,18.97,8.61,2.204,1,1,Australia,2,1,29
+351,JACK FOUST,2005-08-23,Russian Federation,3,10.97,4.99,2.199,2,2,"Canada,Australia","1,2",1,30
+447,CLIFFORD BOWENS,2005-08-02,Russian Federation,3,12.97,5.99,2.166,2,2,"Australia,Canada","2,1",1,31
+100,ROBIN HAYES,2005-07-09,Russian Federation,3,18.97,9.18,2.066,1,1,Australia,2,1,32
+295,DAISY BATES,2005-07-09,Russian Federation,3,10.97,5.43,2.02,2,2,"Canada,Australia","1,2",1,33
+295,DAISY BATES,2005-07-11,Russian Federation,3,11.97,5.98,2.0,2,2,"Australia,Canada","2,1",1,34
+326,JOSE ANDREW,2005-07-29,Saint Vincent and the Grenadines,3,13.97,5.19,2.693,2,2,"Canada,Australia","1,2",1,1
+326,JOSE ANDREW,2005-08-02,Saint Vincent and the Grenadines,4,13.96,5.98,2.333,1,1,Australia,2,1,2
+417,TRAVIS ESTEP,2005-08-21,Saudi Arabia,3,14.97,5.98,2.502,2,2,"Australia,Canada","2,1",1,1
+49,JOYCE EDWARDS,2005-08-21,Saudi Arabia,3,15.97,7.15,2.233,2,2,"Australia,Canada","2,1",1,2
+417,TRAVIS ESTEP,2005-08-02,Saudi Arabia,3,15.97,7.38,2.163,2,2,"Canada,Australia","1,2",1,3
+357,KEITH RICO,2005-07-11,Slovakia,3,16.97,3.82,4.44,2,2,"Canada,Australia","1,2",1,1
+357,KEITH RICO,2005-08-01,Slovakia,4,13.96,5.36,2.604,2,2,"Australia,Canada","2,1",1,2
+109,EDNA WEST,2005-05-31,South Africa,3,15.97,2.99,5.341,1,1,Canada,1,1,1
+145,LUCILLE HOLMES,2005-07-07,South Africa,3,20.97,3.99,5.256,2,2,"Australia,Canada","2,1",1,2
+407,DALE RATCLIFF,2005-07-28,South Africa,4,22.96,4.59,5.002,2,2,"Australia,Canada","2,1",1,3
+132,ESTHER CRAWFORD,2005-08-01,South Africa,4,22.96,5.61,4.095,2,2,"Australia,Canada","2,1",1,4
+145,LUCILLE HOLMES,2005-08-19,South Africa,4,15.96,4.24,3.766,2,2,"Australia,Canada","2,1",1,5
+407,DALE RATCLIFF,2005-08-02,South Africa,3,17.97,6.86,2.62,2,2,"Canada,Australia","1,2",1,6
+471,DEAN SAUER,2005-08-21,South Africa,3,13.97,5.56,2.514,2,2,"Canada,Australia","1,2",1,7
+132,ESTHER CRAWFORD,2005-07-08,South Africa,3,11.97,4.82,2.484,2,2,"Canada,Australia","1,2",1,8
+125,ETHEL WEBB,2005-07-29,South Africa,3,10.97,5.15,2.129,2,2,"Australia,Canada","2,1",1,9
+245,COURTNEY DAY,2005-07-27,South Korea,5,17.95,3.99,4.499,2,2,"Australia,Canada","2,1",1,1
+237,TANYA GILBERT,2005-07-28,South Korea,3,16.97,5.65,3.002,2,2,"Canada,Australia","1,2",1,2
+88,BONNIE HUGHES,2005-07-06,South Korea,4,13.96,4.66,2.998,2,2,"Australia,Canada","2,1",1,3
+237,TANYA GILBERT,2005-08-20,South Korea,3,20.97,9.85,2.128,1,1,Australia,2,1,4
+52,JULIE SANCHEZ,2005-08-22,Spain,3,15.97,4.79,3.337,2,2,"Australia,Canada","2,1",1,1
+469,WESLEY BULL,2005-08-23,Spain,3,17.97,7.15,2.513,1,1,Canada,1,1,2
+469,WESLEY BULL,2005-08-01,Spain,4,15.96,6.74,2.37,1,1,Canada,1,1,3
+408,MANUEL MURRELL,2005-08-20,Sri Lanka,3,14.97,5.21,2.874,2,2,"Canada,Australia","1,2",1,1
+50,DIANE COLLINS,2005-07-10,Sudan,3,21.97,3.99,5.509,2,2,"Australia,Canada","2,1",1,1
+50,DIANE COLLINS,2005-07-31,Sudan,5,26.95,6.74,4.001,2,2,"Canada,Australia","1,2",1,2
+66,JANICE WARD,2005-08-21,Sweden,4,13.96,4.11,3.395,2,2,"Australia,Canada","2,1",1,1
+66,JANICE WARD,2005-07-11,Sweden,3,18.97,7.48,2.535,2,2,"Canada,Australia","1,2",1,2
+598,WADE DELVALLE,2005-07-06,Switzerland,3,12.97,2.99,4.338,2,2,"Canada,Australia","1,2",1,1
+155,GAIL KNIGHT,2005-07-11,Switzerland,3,15.97,4.99,3.2,2,2,"Canada,Australia","1,2",1,2
+155,GAIL KNIGHT,2005-08-21,Switzerland,3,14.97,6.59,2.273,2,2,"Canada,Australia","1,2",1,3
+598,WADE DELVALLE,2005-07-12,Switzerland,4,14.96,6.74,2.221,2,2,"Canada,Australia","1,2",1,4
+348,ROGER QUINTANILLA,2005-07-08,Taiwan,4,20.96,4.59,4.566,2,2,"Australia,Canada","2,1",1,1
+139,AMBER DIXON,2005-08-22,Taiwan,5,21.95,4.99,4.4,2,2,"Canada,Australia","1,2",1,2
+139,AMBER DIXON,2005-07-09,Taiwan,3,17.97,4.74,3.795,2,2,"Australia,Canada","2,1",1,3
+577,CLIFTON MALCOLM,2005-07-28,Taiwan,3,21.97,5.98,3.672,2,2,"Australia,Canada","2,1",1,4
+5,ELIZABETH BROWN,2005-07-09,Taiwan,3,12.97,3.99,3.251,2,2,"Canada,Australia","1,2",1,5
+75,TAMMY SANDERS,2005-07-30,Taiwan,3,15.97,4.98,3.205,1,1,Australia,2,1,6
+517,BRAD MCCURDY,2005-07-07,Taiwan,4,17.96,5.74,3.13,2,2,"Australia,Canada","2,1",1,7
+30,MELISSA KING,2005-07-09,Taiwan,3,16.97,5.98,2.837,2,2,"Australia,Canada","2,1",1,8
+576,MORRIS MCCARTER,2005-07-31,Taiwan,5,21.95,8.38,2.619,2,2,"Australia,Canada","2,1",1,9
+30,MELISSA KING,2005-07-28,Taiwan,4,19.96,8.58,2.326,2,2,"Australia,Canada","2,1",1,10
+73,BEVERLY BROOKS,2005-08-02,Taiwan,3,10.97,5.19,2.114,2,2,"Canada,Australia","1,2",1,11
+348,ROGER QUINTANILLA,2005-08-02,Taiwan,3,13.97,6.71,2.081,2,2,"Australia,Canada","2,1",1,12
+481,HERMAN DEVORE,2005-07-08,Tanzania,4,16.96,3.74,4.538,1,1,Canada,1,1,1
+190,YOLANDA WEAVER,2005-08-02,Tanzania,4,24.96,6.98,3.575,2,2,"Canada,Australia","1,2",1,2
+220,CHARLENE ALVAREZ,2005-07-10,Tanzania,3,6.97,1.99,3.503,1,1,Australia,2,1,3
+190,YOLANDA WEAVER,2005-07-27,Tanzania,3,13.97,6.49,2.154,2,2,"Canada,Australia","1,2",1,4
+390,SHAWN HEATON,2005-08-20,Thailand,6,27.94,7.15,3.908,2,2,"Canada,Australia","1,2",1,1
+86,JACQUELINE LONG,2005-08-01,Thailand,3,20.97,6.49,3.232,1,1,Australia,2,1,2
+42,CAROLYN PEREZ,2005-07-28,Thailand,3,10.97,4.13,2.655,1,1,Canada,1,1,3
+42,CAROLYN PEREZ,2005-07-29,Thailand,3,10.97,4.99,2.2,2,2,"Canada,Australia","1,2",1,4
+390,SHAWN HEATON,2005-07-07,Thailand,3,11.97,5.79,2.068,2,2,"Canada,Australia","1,2",1,5
+335,GREGORY MAULDIN,2005-07-07,Tunisia,4,17.96,2.99,6.007,2,2,"Australia,Canada","2,1",1,1
+124,SHEILA WELLS,2005-05-31,Turkey,3,14.97,0.99,15.121,1,1,Australia,2,1,1
+172,BERNICE WILLIS,2005-07-08,Turkey,3,17.97,1.32,13.579,2,2,"Canada,Australia","1,2",1,2
+327,LARRY THRASHER,2005-08-23,Turkey,3,23.97,4.86,4.932,2,2,"Canada,Australia","1,2",1,3
+204,ROSEMARY SCHMIDT,2005-08-22,Turkey,3,17.97,5.59,3.216,2,2,"Canada,Australia","1,2",1,4
+327,LARRY THRASHER,2005-08-22,Turkey,3,11.97,3.84,3.114,2,2,"Canada,Australia","1,2",1,5
+366,BRANDON HUEY,2005-07-12,Turkey,3,13.97,4.7,2.971,2,2,"Australia,Canada","2,1",1,6
+518,GABRIEL HARDER,2005-07-27,Turkey,4,14.96,5.99,2.499,2,2,"Canada,Australia","1,2",1,7
+480,COREY HAUSER,2005-08-19,Turkey,3,15.97,6.49,2.462,1,1,Australia,2,1,8
+566,CASEY MENA,2005-07-06,Turkey,3,9.97,4.24,2.351,2,2,"Australia,Canada","2,1",1,9
+366,BRANDON HUEY,2005-07-27,Turkey,4,14.96,7.32,2.045,2,2,"Australia,Canada","2,1",1,10
+200,JEANNE LAWSON,2005-08-23,Turkmenistan,3,17.97,7.11,2.527,2,2,"Australia,Canada","2,1",1,1
+105,DAWN SULLIVAN,2005-07-30,Tuvalu,4,22.96,6.49,3.54,1,1,Australia,2,1,1
+187,BRITTANY RILEY,2005-08-18,Ukraine,3,26.97,6.74,4.003,2,2,"Australia,Canada","2,1",1,1
+131,MONICA HICKS,2005-08-19,Ukraine,4,18.96,5.54,3.422,2,2,"Australia,Canada","2,1",1,2
+82,KATHRYN COLEMAN,2005-07-30,Ukraine,3,19.97,6.42,3.112,2,2,"Australia,Canada","2,1",1,3
+131,MONICA HICKS,2005-08-18,Ukraine,3,11.97,4.74,2.527,2,2,"Canada,Australia","1,2",1,4
+475,PEDRO CHESTNUT,2005-07-09,Ukraine,4,14.96,5.99,2.497,2,2,"Australia,Canada","2,1",1,5
+386,TODD TAN,2005-07-11,Ukraine,4,14.96,6.15,2.432,2,2,"Canada,Australia","1,2",1,6
+386,TODD TAN,2005-08-20,Ukraine,3,13.97,6.32,2.212,2,2,"Canada,Australia","1,2",1,7
+475,PEDRO CHESTNUT,2005-07-28,Ukraine,3,15.97,7.58,2.106,2,2,"Canada,Australia","1,2",1,8
+98,LILLIAN GRIFFIN,2005-07-29,United Arab Emirates,3,16.97,5.24,3.24,2,2,"Canada,Australia","1,2",1,1
+452,TOM MILNER,2005-07-06,United Arab Emirates,3,13.97,5.73,2.437,2,2,"Australia,Canada","2,1",1,2
+292,MISTY LAMBERT,2005-07-27,United Arab Emirates,3,11.97,5.49,2.181,2,2,"Australia,Canada","2,1",1,3
+252,MATTIE HOFFMAN,2005-07-27,United Kingdom,3,6.97,1.99,3.508,2,2,"Canada,Australia","1,2",1,1
+142,APRIL BURNS,2005-07-30,United Kingdom,3,16.97,4.99,3.404,1,1,Canada,1,1,2
+583,MARSHALL THORN,2005-07-06,United Kingdom,3,17.97,5.99,3.001,2,2,"Canada,Australia","1,2",1,3
+477,DAN PAINE,2005-07-29,United Kingdom,3,15.97,6.79,2.353,2,2,"Canada,Australia","1,2",1,4
+497,GILBERT SLEDGE,2005-06-18,United Kingdom,3,17.97,7.99,2.249,2,2,"Australia,Canada","2,1",1,5
+382,VICTOR BARKLEY,2005-07-30,United States,3,21.97,2.82,7.782,1,1,Canada,1,1,1
+14,BETTY WHITE,2005-07-09,United States,3,13.97,2.99,4.672,2,2,"Canada,Australia","1,2",1,2
+212,WILMA RICHARDS,2005-07-08,United States,3,21.97,4.99,4.406,1,1,Australia,2,1,3
+149,VALERIE BLACK,2005-06-18,United States,3,18.97,4.49,4.225,2,2,"Australia,Canada","2,1",1,4
+146,JAMIE RICE,2005-07-11,United States,3,19.97,4.74,4.214,2,2,"Canada,Australia","1,2",1,5
+420,JACOB LANCE,2005-08-01,United States,3,20.97,4.99,4.206,2,2,"Australia,Canada","2,1",1,6
+294,SHELLY WATTS,2005-08-01,United States,5,20.95,5.32,3.936,2,2,"Australia,Canada","2,1",1,7
+275,CAROLE BARNETT,2005-08-21,United States,4,19.96,5.21,3.834,2,2,"Canada,Australia","1,2",1,8
+276,BRANDY GRAVES,2005-07-30,United States,4,16.96,4.59,3.697,1,1,Canada,1,1,9
+382,VICTOR BARKLEY,2005-06-18,United States,4,10.96,2.99,3.666,1,1,Canada,1,1,10
+63,ASHLEY RICHARDSON,2005-07-10,United States,3,16.97,4.99,3.401,2,2,"Canada,Australia","1,2",1,11
+181,ANA BRADLEY,2005-08-01,United States,5,26.95,8.1,3.328,2,2,"Australia,Canada","2,1",1,12
+158,VERONICA STONE,2005-08-02,United States,4,15.96,5.1,3.131,2,2,"Australia,Canada","2,1",1,13
+182,RENEE LANE,2005-07-28,United States,3,14.97,4.98,3.005,1,1,Australia,2,1,14
+181,ANA BRADLEY,2005-07-30,United States,3,19.97,6.85,2.917,2,2,"Australia,Canada","2,1",1,15
+158,VERONICA STONE,2005-08-23,United States,3,14.97,5.28,2.834,1,1,Canada,1,1,16
+51,ALICE STEWART,2005-08-21,United States,3,16.97,6.07,2.794,2,2,"Australia,Canada","2,1",1,17
+51,ALICE STEWART,2005-07-09,United States,3,16.97,6.49,2.617,2,2,"Canada,Australia","1,2",1,18
+214,KRISTIN JOHNSTON,2005-08-19,United States,3,15.97,6.32,2.527,2,2,"Australia,Canada","2,1",1,19
+305,RICHARD MCCRARY,2005-08-02,United States,3,13.97,5.54,2.52,2,2,"Australia,Canada","2,1",1,20
+526,KARL SEAL,2005-06-17,United States,4,14.96,5.99,2.499,2,2,"Australia,Canada","2,1",1,21
+593,RENE MCALISTER,2005-08-01,United States,3,13.97,5.61,2.49,2,2,"Canada,Australia","1,2",1,22
+146,JAMIE RICE,2005-08-02,United States,4,17.96,7.39,2.432,2,2,"Australia,Canada","2,1",1,23
+146,JAMIE RICE,2005-08-17,United States,3,17.97,7.65,2.35,1,1,Canada,1,1,24
+276,BRANDY GRAVES,2005-08-18,United States,3,15.97,6.84,2.335,2,2,"Australia,Canada","2,1",1,25
+479,ZACHARY HITE,2005-06-17,United States,4,13.96,5.99,2.331,2,2,"Canada,Australia","1,2",1,26
+2,PATRICIA JOHNSON,2005-07-30,United States,5,30.95,13.97,2.215,2,2,"Canada,Australia","1,2",1,27
+269,CASSANDRA WALTERS,2005-07-12,United States,3,13.97,6.39,2.187,2,2,"Canada,Australia","1,2",1,28
+112,ROSA REYNOLDS,2005-07-31,United States,4,17.96,8.23,2.182,2,2,"Australia,Canada","2,1",1,29
+457,BILL GAVIN,2005-06-19,United States,3,9.97,4.59,2.172,1,1,Canada,1,1,30
+212,WILMA RICHARDS,2005-08-18,United States,3,12.97,5.98,2.168,2,2,"Canada,Australia","1,2",1,31
+6,JENNIFER DAVIS,2005-08-17,United States,3,8.97,4.24,2.118,1,1,Canada,1,1,32
+526,KARL SEAL,2005-07-27,United States,4,16.96,8.38,2.023,1,1,Australia,2,1,33
+290,KRISTINA CHAMBERS,2005-06-15,Venezuela,3,20.97,2.99,7.013,2,2,"Canada,Australia","1,2",1,1
+113,CINDY FISHER,2005-06-20,Venezuela,3,16.97,2.59,6.552,2,2,"Australia,Canada","2,1",1,2
+539,MATHEW BOLIN,2005-06-15,Venezuela,3,9.97,2.99,3.334,2,2,"Australia,Canada","2,1",1,3
+174,YVONNE WATKINS,2005-08-01,Venezuela,3,16.97,5.49,3.092,2,2,"Canada,Australia","1,2",1,4
+453,CALVIN MARTEL,2005-08-21,Venezuela,4,18.96,6.32,3.0,2,2,"Canada,Australia","1,2",1,5
+111,CARMEN OWENS,2005-08-02,Venezuela,3,12.97,4.99,2.601,2,2,"Canada,Australia","1,2",1,6
+520,MITCHELL WESTMORELAND,2005-07-10,Vietnam,3,19.97,4.82,4.14,2,2,"Australia,Canada","2,1",1,1
+340,PATRICK NEWSOM,2005-07-29,Vietnam,4,15.96,3.99,4.003,2,2,"Australia,Canada","2,1",1,2
+472,GREG ROBINS,2005-07-11,Vietnam,3,18.97,4.86,3.9,2,2,"Canada,Australia","1,2",1,3
+532,NEIL RENNER,2005-07-09,Vietnam,3,15.97,4.24,3.767,2,2,"Australia,Canada","2,1",1,4
+520,MITCHELL WESTMORELAND,2005-08-18,Vietnam,3,16.97,4.65,3.648,1,1,Canada,1,1,5
+340,PATRICK NEWSOM,2005-08-01,Vietnam,4,16.96,6.18,2.743,2,2,"Canada,Australia","1,2",1,6
+532,NEIL RENNER,2005-08-19,Vietnam,3,18.97,7.7,2.464,2,2,"Australia,Canada","2,1",1,7
+199,BETH FRANKLIN,2005-08-01,Vietnam,3,16.97,7.55,2.246,2,2,"Canada,Australia","1,2",1,8
+340,PATRICK NEWSOM,2005-08-22,Vietnam,3,15.97,7.35,2.172,2,2,"Canada,Australia","1,2",1,9
+472,GREG ROBINS,2005-08-21,Vietnam,3,14.97,6.99,2.142,2,2,"Canada,Australia","1,2",1,10
+406,NATHAN RUNYON,2005-07-27,"Virgin Islands, U.S.",4,23.96,3.74,6.411,2,2,"Australia,Canada","2,1",1,1
+470,GORDON ALLARD,2005-07-06,Yemen,3,15.97,4.99,3.204,1,1,Canada,1,1,1
+470,GORDON ALLARD,2005-08-18,Yemen,3,23.97,7.98,3.002,2,2,"Australia,Canada","2,1",1,2
+213,GINA WILLIAMSON,2005-07-30,Yemen,3,14.97,5.27,2.839,2,2,"Australia,Canada","2,1",1,3
+210,ELLA OLIVER,2005-07-07,Yemen,4,12.96,4.65,2.785,2,2,"Australia,Canada","2,1",1,4
+210,ELLA OLIVER,2005-07-08,Yemen,3,17.97,6.73,2.67,1,1,Canada,1,1,5
+7,MARIA MILLER,2005-08-01,Yugoslavia,4,22.96,6.65,3.45,2,2,"Australia,Canada","2,1",1,1
+553,MAX PITT,2005-07-06,Yugoslavia,5,22.95,6.74,3.405,2,2,"Australia,Canada","2,1",1,2

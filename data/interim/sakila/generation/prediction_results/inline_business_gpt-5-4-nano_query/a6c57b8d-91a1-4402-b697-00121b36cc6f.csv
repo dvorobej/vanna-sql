@@ -1,0 +1,74 @@
+customer_id,customer_name,country,city,payment_month,payment_sum,payment_count,deviation_from_personal_avg,country_month_customer_rank,top_staff_id,top_staff_first_name,top_staff_last_name
+441,MARIO CHEATHAM,Algeria,Batna,2005-07,66.83,17,39.9,1,2,Jon,Stephens
+528,CLAUDE HERZOG,Angola,Benguela,2005-07,56.89,11,28.95,1,2,Jon,Stephens
+89,JULIA FLORES,Argentina,La Plata,2005-07,68.83,17,35.16,2,1,Mike,Hillyer
+266,NORA HERRERA,Austria,Salzburg,2005-08,71.83,17,42.15,1,1,Mike,Hillyer
+590,SETH HANNON,Bahrain,al-Manama,2005-07,56.86,14,29.42,1,1,Mike,Hillyer
+21,MICHELLE CLARK,Bangladesh,Tangail,2005-08,79.83,17,41.67,1,1,Mike,Hillyer
+455,JON WILES,Bolivia,El Alto,2005-07,45.91,9,23.97,1,1,Mike,Hillyer
+92,TINA SIMMONS,Brazil,Goinia,2005-07,78.85,15,45.42,2,2,Jon,Stephens
+91,LOIS BUTLER,Brunei,Bandar Seri Begawan,2005-07,59.81,19,32.65,1,2,Jon,Stephens
+228,ALLISON STANLEY,Cambodia,Phnom Penh,2005-07,54.85,15,32.66,1,2,Jon,Stephens
+45,JANET PHILLIPS,Chile,Antofagasta,2005-08,68.88,12,36.95,1,1,Mike,Hillyer
+595,TERRENCE GUNDERSON,China,Jinzhou,2005-07,86.81,19,57.39,1,2,Jon,Stephens
+484,ROBERTO VU,China,Yinchuan,2005-07,77.85,15,42.93,2,2,Jon,Stephens
+168,REGINA BERRY,China,Jinchang,2005-07,70.83,17,37.16,3,2,Jon,Stephens
+302,MICHAEL SILVERMAN,China,Tiefa,2005-07,67.85,15,35.92,4,1,Mike,Hillyer
+594,EDUARDO HIATT,China,Jining,2005-07,65.86,14,33.18,5,1,Mike,Hillyer
+485,CLYDE TOBIAS,China,Shaoguan,2005-07,63.82,18,34.89,6,2,Jon,Stephens
+569,DAVE GARDINER,China,Leshan,2005-08,75.82,18,42.15,1,2,Jon,Stephens
+422,MELVIN ELLINGTON,China,Laohekou,2005-08,56.87,13,33.18,6,1,Mike,Hillyer
+490,SAM MCDUFFIE,Colombia,Sogamoso,2005-07,64.86,14,35.42,1,2,Jon,Stephens
+460,LEON BOSTIC,Colombia,Florencia,2005-08,54.88,12,27.44,1,2,Jon,Stephens
+265,JENNIE TERRY,Czech Republic,Olomouc,2005-07,70.84,16,37.41,1,1,Mike,Hillyer
+494,RAMON CHOATE,Ecuador,Robamba,2005-07,80.82,18,45.65,1,2,Jon,Stephens
+119,SHERRY MARSHALL,Egypt,Shubra al-Khayma,2005-08,77.82,18,39.41,1,2,Jon,Stephens
+35,VIRGINIA GREEN,France,Toulouse,2005-07,68.84,16,36.42,1,1,Mike,Hillyer
+3,LINDA WILLIAMS,Greece,Athenai,2005-07,68.87,13,34.94,1,2,Jon,Stephens
+209,TONYA CHAPMAN,India,Bhilwara,2005-07,82.83,17,42.41,1,2,Jon,Stephens
+225,ARLENE HARVEY,India,Ambattur,2005-07,80.83,17,50.65,2,1,Mike,Hillyer
+508,MILTON HOWLAND,India,Vijayawada,2005-07,74.86,14,43.17,3,2,Jon,Stephens
+502,BRETT CORNWELL,India,Siliguri (Shiliguri),2005-07,73.85,15,39.19,4,2,Jon,Stephens
+446,THEODORE CULP,India,Uluberia,2005-07,71.83,17,42.66,5,2,Jon,Stephens
+426,BRADLEY MOTLEY,India,Purnea (Purnia),2005-07,65.89,11,34.21,6,2,Jon,Stephens
+121,JOSEPHINE GOMEZ,India,Etawah,2005-08,67.86,14,40.43,6,2,Jon,Stephens
+102,CRYSTAL FORD,Israel,Ashdod,2005-07,84.79,21,50.37,1,2,Jon,Stephens
+309,CHRISTOPHER GRECO,Italy,Brescia,2005-07,76.84,16,39.92,1,2,Jon,Stephens
+531,JAMIE WAUGH,Japan,Kuwana,2005-07,64.86,14,35.17,2,2,Jon,Stephens
+574,JULIAN VEST,Japan,Akishima,2005-07,64.85,15,37.42,3,1,Mike,Hillyer
+147,JOANNE ROBERTSON,Japan,Urawa,2005-08,76.85,15,44.94,1,1,Mike,Hillyer
+54,TERESA ROGERS,Japan,Iwakuni,2005-08,64.86,14,32.68,3,1,Mike,Hillyer
+573,BYRON BOX,Kazakstan,Zhezqazghan,2005-07,70.85,15,40.67,1,2,Jon,Stephens
+81,ANDREA HENDERSON,Madagascar,Mahajanga,2005-08,55.88,12,32.44,1,2,Jon,Stephens
+482,MAURICE CRAWLEY,Mexico,Coatzacoalcos,2005-07,69.88,12,35.2,1,1,Mike,Hillyer
+425,FRANCIS SIKES,Mexico,San Juan Bautista Tuxtepec,2005-07,67.83,17,41.65,3,2,Jon,Stephens
+150,DANIELLE DANIELS,Mexico,Hidalgo,2005-08,68.84,16,42.4,1,2,Jon,Stephens
+22,LAURA RODRIGUEZ,Morocco,Sal,2005-08,54.9,10,27.7,1,2,Jon,Stephens
+257,MARSHA DOUGLAS,Mozambique,Beira,2005-07,88.82,18,50.91,1,2,Jon,Stephens
+286,VELMA LUCAS,Nigeria,Effon-Alaiye,2005-07,76.83,17,47.4,1,2,Jon,Stephens
+198,ELSIE KELLEY,Nigeria,Ikerre,2005-08,70.84,16,35.43,1,1,Mike,Hillyer
+280,TRACEY BARRETT,Nigeria,Owo,2005-08,68.88,12,39.2,2,2,Jon,Stephens
+498,GENE SANBORN,Oman,Salala,2005-07,51.85,15,27.42,1,1,Mike,Hillyer
+416,JEFFERY PINSON,Pakistan,Dadu,2005-08,63.87,13,33.45,1,1,Mike,Hillyer
+565,JAIME NETTLES,Peru,Hunuco,2005-08,66.87,13,35.19,1,2,Jon,Stephens
+522,ARNOLD HAVENS,Philippines,Santa Rosa,2005-07,96.82,18,54.9,1,2,Jon,Stephens
+563,KEN PREWITT,Romania,Bucuresti,2005-07,60.84,16,33.16,1,2,Jon,Stephens
+295,DAISY BATES,Russian Federation,Kolpino,2005-07,87.82,18,47.41,1,1,Mike,Hillyer
+346,ARTHUR SIMPKINS,Russian Federation,Maikop,2005-07,83.85,15,44.93,2,2,Jon,Stephens
+49,JOYCE EDWARDS,Saudi Arabia,Jedda,2005-07,69.87,13,37.19,1,2,Jon,Stephens
+471,DEAN SAUER,South Africa,Johannesburg,2005-08,55.88,12,28.45,1,2,Jon,Stephens
+245,COURTNEY DAY,South Korea,Uijongbu,2005-07,72.84,16,40.42,1,1,Mike,Hillyer
+598,WADE DELVALLE,Switzerland,Lausanne,2005-07,64.84,16,36.91,1,2,Jon,Stephens
+220,CHARLENE ALVAREZ,Tanzania,Zanzibar,2005-07,59.88,12,31.2,1,2,Jon,Stephens
+335,GREGORY MAULDIN,Tunisia,Sousse,2005-07,55.85,15,29.92,1,1,Mike,Hillyer
+366,BRANDON HUEY,Turkey,Balikesir,2005-07,82.81,19,45.9,1,1,Mike,Hillyer
+566,CASEY MENA,Turkey,Tokat,2005-07,71.82,18,36.41,2,1,Mike,Hillyer
+327,LARRY THRASHER,Turkey,Adana,2005-08,58.87,13,31.43,2,1,Mike,Hillyer
+475,PEDRO CHESTNUT,Ukraine,ostka,2005-07,71.85,15,37.26,1,2,Jon,Stephens
+292,MISTY LAMBERT,United Arab Emirates,Sharja,2005-07,74.84,16,45.16,1,1,Mike,Hillyer
+479,ZACHARY HITE,United States,Akron,2005-07,79.85,15,43.43,2,1,Mike,Hillyer
+2,PATRICIA JOHNSON,United States,San Bernardino,2005-07,75.86,14,43.68,3,2,Jon,Stephens
+539,MATHEW BOLIN,Venezuela,Valencia,2005-07,55.88,12,33.19,1,1,Mike,Hillyer
+406,NATHAN RUNYON,"Virgin Islands, U.S.",Charlotte Amalie,2005-07,68.82,18,38.15,1,1,Mike,Hillyer
+470,GORDON ALLARD,Yemen,Hodeida,2005-07,96.83,17,56.66,1,1,Mike,Hillyer
+553,MAX PITT,Yugoslavia,Novi Sad,2005-07,68.84,16,41.9,1,1,Mike,Hillyer

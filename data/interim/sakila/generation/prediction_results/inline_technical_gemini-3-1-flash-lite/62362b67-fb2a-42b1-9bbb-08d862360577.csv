@@ -1,0 +1,428 @@
+customer_id,country,city,activity_date,daily_amount,payment_count,staff_count,avg_prev_30d,global_suspicion_rank
+412,India,Hoshiarpur,2005-07-29,18.97,3,2,0.99,1
+480,Turkey,Gaziantep,2005-05-29,16.98,2,2,0.99,2
+124,Turkey,Ktahya,2005-05-31,14.97,3,1,0.99,3
+172,Turkey,Batman,2005-07-08,17.97,3,2,1.32,4
+231,India,Uttarpara-Kotrung,2005-07-06,12.98,2,2,0.99,5
+442,China,Tongliao,2005-05-28,12.98,2,2,0.99,5
+424,China,Shanwei,2005-06-20,11.98,2,2,0.99,7
+100,Russian Federation,Jelets,2005-06-15,11.97,3,2,0.99,8
+459,Iran,Qomsheh,2005-07-28,29.95,5,2,2.66,9
+378,China,Shenzhen,2005-06-16,10.98,2,2,0.99,10
+423,Egypt,Sawhaj,2005-07-27,24.95,5,2,2.32,11
+36,Iran,Arak,2005-07-08,9.98,2,1,0.99,12
+157,North Korea,Pyongyang,2005-07-07,9.98,2,2,0.99,12
+435,China,Junan,2005-07-06,9.98,2,1,0.99,12
+129,China,Liaocheng,2005-06-19,9.97,3,2,0.99,15
+563,Romania,Bucuresti,2005-07-08,29.93,7,2,2.99,16
+300,India,Parbhani,2005-07-10,13.98,2,2,1.49,17
+5,Taiwan,Nantou,2005-05-31,8.98,2,1,0.99,18
+406,"Virgin Islands, U.S.",Charlotte Amalie,2005-06-17,8.98,2,2,0.99,18
+549,Spain,Santiago de Compostela,2005-05-30,8.98,2,2,0.99,18
+1,Japan,Sasebo,2005-06-15,16.97,3,2,1.99,21
+376,Russian Federation,Kurgan,2005-07-07,13.97,3,2,1.66,22
+81,Madagascar,Mahajanga,2005-06-19,7.98,2,1,0.99,23
+147,Japan,Urawa,2005-06-18,7.98,2,1,0.99,23
+198,Nigeria,Ikerre,2005-05-28,7.98,2,2,0.99,23
+591,Brazil,Juiz de Fora,2005-06-21,7.98,2,1,0.99,23
+574,Japan,Akishima,2005-06-16,7.97,3,2,0.99,27
+29,Japan,Shimonoseki,2005-06-19,15.95,5,2,1.99,28
+382,United States,Manchester,2005-07-30,21.97,3,1,2.82,29
+352,Cameroon,Bamenda,2005-06-16,14.97,3,1,1.99,30
+403,India,Valparai,2005-06-15,13.98,2,2,1.99,31
+529,India,Bhimavaram,2005-07-12,20.97,3,2,2.99,32
+290,Venezuela,Valle de la Pascua,2005-06-15,20.97,3,2,2.99,33
+478,Israel,Ashqelon,2005-06-19,20.97,3,2,2.99,33
+280,Nigeria,Owo,2005-07-29,20.95,5,2,2.99,35
+134,Egypt,Qalyub,2005-08-02,20.96,4,2,3.16,36
+113,Venezuela,Cuman,2005-06-20,16.97,3,2,2.59,37
+355,Japan,Matsue,2005-07-06,12.98,2,1,1.99,38
+3,Greece,Athenai,2005-06-16,15.98,2,1,2.49,39
+406,"Virgin Islands, U.S.",Charlotte Amalie,2005-07-27,23.96,4,2,3.74,40
+126,Brazil,Po,2005-07-06,18.97,3,2,2.99,41
+240,Japan,Iwaki,2005-07-27,18.97,3,2,2.99,41
+262,Ecuador,Portoviejo,2005-07-12,26.96,4,2,4.27,43
+284,Nigeria,Benin City,2005-07-08,15.98,2,2,2.59,44
+345,Paraguay,San Lorenzo,2005-06-15,5.98,2,2,0.99,45
+529,India,Bhimavaram,2005-07-07,7.97,3,1,1.32,46
+6,United States,Laredo,2005-07-11,13.98,2,2,2.32,47
+527,Belarus,Mogiljov,2005-07-11,11.97,3,2,1.99,48
+103,Nigeria,Ilorin,2005-07-06,11.98,2,2,1.99,49
+76,Kazakstan,Pavlodar,2005-07-29,13.97,3,1,2.32,50
+335,Tunisia,Sousse,2005-07-07,17.96,4,2,2.99,51
+582,Mexico,Huejutla de Reyes,2005-07-27,20.96,4,2,3.49,52
+21,Bangladesh,Tangail,2005-08-20,32.96,4,2,5.58,53
+404,Japan,Omiya,2005-07-08,21.96,4,2,3.79,54
+546,China,Sanya,2005-07-12,19.97,3,2,3.49,55
+133,Mexico,Torren,2005-07-08,19.96,4,2,3.49,56
+297,India,Ahmadnagar,2005-06-18,16.97,3,2,2.99,57
+423,Egypt,Sawhaj,2005-06-19,13.98,2,2,2.49,58
+64,China,Daxian,2005-07-08,13.97,3,2,2.49,59
+26,Holy See (Vatican City State),Citt del Vaticano,2005-08-21,23.96,4,2,4.27,60
+118,United States,Grand Prairie,2005-07-28,9.98,2,2,1.79,61
+44,Russian Federation,Lipetsk,2005-07-10,24.96,4,2,4.49,62
+50,Sudan,Omdurman,2005-07-10,21.97,3,2,3.99,63
+16,United Kingdom,Southend-on-Sea,2005-06-17,14.98,2,2,2.74,64
+461,Philippines,Gingoog,2005-08-22,22.95,5,2,4.21,65
+201,Germany,Witten,2005-08-20,16.97,3,1,3.13,66
+186,India,Haldia,2005-06-15,7.98,2,1,1.49,67
+366,Turkey,Balikesir,2005-07-06,7.98,2,2,1.49,67
+349,Philippines,Imus,2005-06-20,15.98,2,2,2.99,69
+454,Mexico,Uruapan,2005-08-20,27.96,4,2,5.23,70
+21,Bangladesh,Tangail,2005-06-18,15.97,3,2,2.99,71
+109,South Africa,Klerksdorp,2005-05-31,15.97,3,1,2.99,71
+458,Indonesia,Tegal,2005-07-12,15.97,3,2,2.99,71
+93,China,Zalantun,2005-08-20,19.96,4,2,3.74,74
+147,Japan,Urawa,2005-08-01,16.98,2,2,3.19,75
+510,Russian Federation,Kamyin,2005-07-28,18.98,2,2,3.59,76
+145,South Africa,Soshanguve,2005-07-07,20.97,3,2,3.99,77
+238,India,Shimoga,2005-07-29,16.97,3,1,3.24,78
+519,Japan,Isesaki,2005-07-31,23.95,5,2,4.65,79
+228,Cambodia,Phnom Penh,2005-07-06,17.96,4,2,3.49,80
+374,Brazil,Vitria de Santo Anto,2005-08-22,20.96,4,2,4.09,81
+89,Argentina,La Plata,2005-06-15,16.98,2,2,3.32,82
+465,Mexico,Zapopan,2005-08-17,16.97,3,2,3.32,83
+384,China,Huaian,2005-06-18,13.98,2,2,2.79,84
+250,Nigeria,Oyo,2005-08-21,10.98,2,2,2.19,85
+545,Ukraine,Konotop,2005-07-06,14.98,2,2,2.99,86
+235,Colombia,Buenaventura,2005-07-06,14.97,3,2,2.99,87
+350,Russian Federation,Teboksary,2005-08-17,14.97,3,2,2.99,87
+393,Russian Federation,Korolev,2005-07-08,22.97,3,1,4.59,89
+407,South Africa,Rustenburg,2005-07-28,22.96,4,2,4.59,90
+327,Turkey,Adana,2005-08-23,23.97,3,2,4.86,91
+445,Argentina,Escobar,2005-08-02,17.98,2,2,3.65,92
+83,South Africa,Springs,2005-08-17,10.98,2,2,2.24,93
+498,Oman,Salala,2005-07-27,16.97,3,1,3.49,94
+309,Italy,Brescia,2005-06-19,20.97,3,1,4.32,95
+447,Russian Federation,Nabereznyje Telny,2005-06-17,7.98,2,2,1.66,96
+45,Chile,Antofagasta,2005-08-02,27.95,5,2,5.84,97
+27,Philippines,Davao,2005-07-31,18.97,3,2,3.99,98
+261,Philippines,Tuguegarao,2005-06-17,18.97,3,2,3.99,99
+501,Poland,Lublin,2005-06-21,13.98,2,2,2.98,100
+192,India,Firozabad,2005-08-21,24.96,4,2,5.32,101
+218,Afghanistan,Kabul,2005-07-27,13.98,2,2,2.99,102
+14,United States,Citrus Heights,2005-07-09,13.97,3,2,2.99,103
+129,China,Liaocheng,2005-07-31,26.96,4,2,5.78,104
+91,Brunei,Bandar Seri Begawan,2005-07-07,12.97,3,2,2.79,105
+513,Nauru,Yangor,2005-07-29,25.96,4,2,5.59,106
+509,India,Chapra,2005-07-28,21.97,3,1,4.74,107
+567,Russian Federation,Serpuhov,2005-07-30,14.98,2,1,3.24,108
+198,Nigeria,Ikerre,2005-07-12,14.97,3,2,3.24,109
+538,China,Baicheng,2005-07-31,18.97,3,2,4.11,110
+555,South Africa,Chatsworth,2005-07-31,15.98,2,1,3.49,111
+348,Taiwan,Hsichuh,2005-07-08,20.96,4,2,4.59,112
+481,Tanzania,Mwanza,2005-07-08,16.96,4,1,3.74,113
+321,Nepal,Birgunj,2005-08-17,17.97,3,2,3.99,114
+245,South Korea,Uijongbu,2005-07-27,17.95,5,2,3.99,115
+198,Nigeria,Ikerre,2005-08-17,22.94,6,2,5.15,116
+387,"Congo, The Democratic Republic of the",Lubumbashi,2005-08-19,15.97,3,2,3.59,117
+357,Slovakia,Bratislava,2005-07-11,16.97,3,2,3.82,118
+374,Brazil,Vitria de Santo Anto,2005-07-10,13.97,3,2,3.16,119
+212,United States,Bellevue,2005-07-08,21.97,3,1,4.99,120
+476,Canada,Gatineau,2005-08-01,21.97,3,1,4.99,121
+139,Taiwan,Touliu,2005-08-22,21.95,5,2,4.99,122
+39,Brazil,Vila Velha,2005-07-08,23.97,3,1,5.49,123
+267,China,Lengshuijiang,2005-07-30,15.97,3,2,3.66,124
+404,Japan,Omiya,2005-08-22,27.95,5,1,6.43,125
+271,India,Kumbakonam,2005-07-31,12.98,2,2,2.99,126
+544,Brazil,So Bernardo do Campo,2005-06-15,12.98,2,2,2.99,127
+598,Switzerland,Lausanne,2005-07-06,12.97,3,2,2.99,128
+103,Nigeria,Ilorin,2005-08-23,25.95,5,2,5.99,129
+410,Canada,Richmond Hill,2005-07-09,17.96,4,2,4.15,130
+78,India,Rae Bareli,2005-07-28,15.97,3,2,3.7,131
+331,Argentina,Santa F,2005-06-19,9.98,2,2,2.32,132
+81,Madagascar,Mahajanga,2005-08-21,16.97,3,2,3.99,133
+597,Peru,Sullana,2005-08-02,16.96,4,2,3.99,134
+414,Mexico,Allende,2005-08-19,17.95,5,2,4.24,135
+149,United States,Brockton,2005-06-18,18.97,3,2,4.49,136
+65,French Guiana,Cayenne,2005-08-02,19.97,3,2,4.74,137
+146,United States,Sterling Heights,2005-07-11,19.97,3,2,4.74,137
+515,Chile,Coquimbo,2005-08-17,15.97,3,2,3.79,139
+420,United States,El Monte,2005-08-01,20.97,3,2,4.99,140
+311,Russian Federation,Kursk,2005-07-31,20.97,3,2,4.99,141
+468,India,Bijapur,2005-08-21,32.95,5,2,7.84,142
+352,Cameroon,Bamenda,2005-07-27,22.96,4,2,5.49,143
+394,Spain,Gijn,2005-08-18,14.98,2,2,3.59,144
+520,Vietnam,Nha Trang,2005-07-10,19.97,3,2,4.82,145
+259,India,Halisahar,2005-07-30,21.97,3,2,5.32,146
+391,Japan,Izumisano,2005-07-10,12.98,2,2,3.15,147
+132,South Africa,Botshabelo,2005-08-01,22.96,4,2,5.61,148
+175,India,Allappuzha (Alleppey),2005-07-29,16.96,4,1,4.16,149
+384,China,Huaian,2005-06-20,18.97,3,2,4.65,150
+374,Brazil,Vitria de Santo Anto,2005-05-30,3.98,2,1,0.99,151
+521,China,Yingkou,2005-07-07,3.98,2,1,0.99,151
+580,Philippines,Iligan,2005-07-06,3.98,2,1,0.99,153
+521,China,Yingkou,2005-07-09,7.98,2,2,1.99,154
+451,Mexico,El Fuerte,2005-06-17,7.98,2,1,1.99,155
+491,Egypt,Mit Ghamr,2005-06-15,7.98,2,2,1.99,155
+313,China,Ezhou,2005-06-19,12.98,2,2,3.24,157
+24,Argentina,Crdoba,2005-08-18,11.98,2,2,2.99,158
+185,Iran,Shahr-e Kord,2005-06-21,9.98,2,1,2.49,159
+183,Brazil,Luzinia,2005-07-31,13.97,3,2,3.49,160
+199,Vietnam,Haiphong,2005-07-08,11.98,2,2,2.99,161
+315,Israel,Bat Yam,2005-07-09,11.98,2,2,2.99,161
+485,China,Shaoguan,2005-06-16,11.98,2,2,2.99,161
+262,Ecuador,Portoviejo,2005-06-19,15.98,2,2,3.99,164
+340,Vietnam,Hanoi,2005-07-29,15.96,4,2,3.99,165
+384,China,Huaian,2005-08-22,11.97,3,2,2.99,165
+570,Mexico,Monclova,2005-07-30,11.97,3,2,2.99,165
+187,Ukraine,Sumy,2005-08-18,26.97,3,2,6.74,168
+90,China,Meixian,2005-07-27,13.97,3,2,3.49,169
+425,Mexico,San Juan Bautista Tuxtepec,2005-07-08,27.96,4,2,6.99,170
+50,Sudan,Omdurman,2005-07-31,26.95,5,2,6.74,171
+45,Chile,Antofagasta,2005-07-09,14.98,2,1,3.79,172
+216,Brazil,Aparecida de Goinia,2005-07-11,14.98,2,2,3.79,172
+294,United States,Dayton,2005-08-01,20.95,5,2,5.32,174
+522,Philippines,Santa Rosa,2005-07-30,29.95,5,2,7.61,175
+275,United States,Peoria,2005-07-08,10.98,2,2,2.79,176
+196,Germany,Mannheim,2005-07-31,22.97,3,2,5.84,177
+389,China,Emeishan,2005-07-28,13.98,2,2,3.56,178
+266,Austria,Salzburg,2005-08-02,16.97,3,2,4.32,179
+424,China,Shanwei,2005-07-30,14.96,4,2,3.82,180
+390,Thailand,Nakhon Sawan,2005-08-20,27.94,6,2,7.15,181
+472,Vietnam,Nam Dinh,2005-07-11,18.97,3,2,4.86,182
+241,China,Xiangfan,2005-07-11,14.97,3,2,3.84,183
+368,Iran,Najafabad,2005-08-19,17.96,4,2,4.61,184
+150,Mexico,Hidalgo,2005-08-19,21.95,5,2,5.65,185
+424,China,Shanwei,2005-07-31,20.97,3,2,5.41,186
+446,India,Uluberia,2005-06-18,8.98,2,2,2.32,187
+347,Latvia,Daugavpils,2005-07-28,15.96,4,2,4.16,188
+267,China,Lengshuijiang,2005-06-19,22.96,4,2,5.99,189
+120,Colombia,Dos Quebradas,2005-08-21,19.97,3,2,5.21,190
+275,United States,Peoria,2005-08-21,19.96,4,2,5.21,191
+279,Iran,Tabriz,2005-07-09,20.97,3,2,5.49,192
+447,Russian Federation,Nabereznyje Telny,2005-07-30,17.97,3,2,4.7,193
+104,France,Toulon,2005-07-08,15.97,3,2,4.19,194
+342,Brazil,Boa Vista,2005-07-12,19.97,3,2,5.24,195
+573,Kazakstan,Zhezqazghan,2005-07-31,24.96,4,1,6.56,196
+354,Brazil,Santo Andr,2005-07-29,18.97,3,2,4.98,197
+71,Philippines,Baybay,2005-07-10,18.97,3,2,4.99,198
+118,United States,Grand Prairie,2005-07-29,11.98,2,2,3.16,199
+139,Taiwan,Touliu,2005-07-09,17.97,3,2,4.74,200
+504,United States,Joliet,2005-07-06,16.98,2,2,4.49,201
+319,Mexico,San Felipe del Progreso,2005-08-17,16.95,5,2,4.49,202
+532,Vietnam,Cam Ranh,2005-07-09,15.97,3,2,4.24,203
+145,South Africa,Soshanguve,2005-08-19,15.96,4,2,4.24,204
+186,India,Haldia,2005-08-18,14.98,2,1,3.99,205
+77,Brazil,Araatuba,2005-08-17,14.98,2,2,3.99,206
+29,Japan,Shimonoseki,2005-08-18,21.96,4,2,5.84,207
+519,Japan,Isesaki,2005-07-30,11.98,2,2,3.19,208
+142,United Kingdom,Dundee,2005-07-08,9.98,2,2,2.66,209
+528,Angola,Benguela,2005-05-29,9.98,2,1,2.66,209
+58,Malaysia,Kuching,2005-07-27,14.98,2,2,3.99,211
+401,Japan,Koriyama,2005-07-29,14.97,3,2,3.99,212
+242,China,Qinhuangdao,2005-06-15,14.97,3,2,3.99,213
+258,Dominican Republic,Santiago de los Caballeros,2005-08-01,20.95,5,2,5.61,214
+349,Philippines,Imus,2005-08-02,18.97,3,2,5.1,215
+188,Philippines,Bayugan,2005-08-01,16.96,4,2,4.56,216
+513,Nauru,Yangor,2005-07-07,12.97,3,1,3.49,217
+84,Mexico,Atlixco,2005-07-11,18.97,3,2,5.13,218
+276,United States,Warren,2005-07-30,16.96,4,1,4.59,219
+434,Philippines,Ozamis,2005-06-18,15.97,3,2,4.32,220
+242,China,Qinhuangdao,2005-08-01,15.97,3,1,4.32,221
+193,Kenya,Kisumu,2005-08-22,16.97,3,2,4.61,222
+544,Brazil,So Bernardo do Campo,2005-08-21,18.97,3,2,5.16,223
+279,Iran,Tabriz,2005-08-19,18.96,4,2,5.16,224
+577,Taiwan,Tanshui,2005-07-28,21.97,3,2,5.98,225
+310,Brazil,Ibirit,2005-06-17,10.98,2,1,2.99,226
+410,Canada,Richmond Hill,2005-06-18,10.98,2,2,2.99,226
+437,Dominican Republic,La Romana,2005-05-28,10.98,2,2,2.99,226
+534,India,Amroha,2005-07-30,10.98,2,2,2.99,226
+450,Indonesia,Surakarta,2005-08-20,10.97,3,2,2.99,230
+72,Philippines,Taguig,2005-07-09,10.97,3,2,2.99,231
+233,Egypt,Idfu,2005-06-18,10.97,3,2,2.99,231
+382,United States,Manchester,2005-06-18,10.96,4,1,2.99,233
+520,Vietnam,Nha Trang,2005-08-18,16.97,3,1,4.65,234
+451,Mexico,El Fuerte,2005-07-08,16.97,3,2,4.65,235
+516,Cambodia,Battambang,2005-07-12,13.98,2,2,3.85,236
+265,Czech Republic,Olomouc,2005-08-21,18.97,3,2,5.24,237
+361,Cameroon,Yaound,2005-08-02,15.96,4,2,4.41,238
+219,Argentina,Vicente Lpez,2005-07-08,8.98,2,1,2.49,239
+457,United States,Rockford,2005-08-21,17.98,2,2,4.99,240
+418,Dominican Republic,San Felipe de Puerto Plata,2005-07-08,11.97,3,2,3.32,241
+494,Ecuador,Robamba,2005-08-22,26.96,4,2,7.48,242
+117,India,Gandhinagar,2005-08-18,17.96,4,1,4.99,243
+190,Tanzania,Tabora,2005-08-02,24.96,4,2,6.98,244
+375,"Congo, The Democratic Republic of the",Mwene-Ditu,2005-08-02,18.97,3,2,5.32,245
+300,India,Parbhani,2005-07-28,18.97,3,1,5.32,246
+259,India,Halisahar,2005-06-16,18.97,3,2,5.32,247
+441,Algeria,Batna,2005-07-29,18.95,5,2,5.32,248
+170,India,Udaipur,2005-07-10,15.97,3,2,4.49,249
+370,India,Gulbarga,2005-07-27,15.97,3,2,4.49,250
+28,India,Munger (Monghyr),2005-07-31,15.96,4,1,4.49,251
+538,China,Baicheng,2005-07-09,16.97,3,2,4.79,252
+105,Tuvalu,Funafuti,2005-07-30,22.96,4,1,6.49,253
+114,Germany,Duisburg,2005-07-29,15.98,2,2,4.54,254
+564,China,Xintai,2005-07-27,13.98,2,2,3.98,255
+252,United Kingdom,London,2005-07-27,6.97,3,2,1.99,256
+37,China,Nanyang,2005-06-16,6.98,2,2,1.99,257
+256,Myanmar,Monywa,2005-06-18,11.98,2,2,3.42,258
+159,Austria,Linz,2005-07-31,12.98,2,1,3.7,259
+243,Argentina,San Miguel de Tucumn,2005-07-31,13.97,3,1,3.99,260
+106,Russian Federation,Ivanovo,2005-08-01,20.97,3,2,5.99,261
+560,Argentina,Avellaneda,2005-07-07,13.97,3,2,3.99,262
+362,Brazil,Belm,2005-08-21,25.96,4,2,7.48,263
+388,Philippines,Cavite,2005-08-18,17.96,4,2,5.18,264
+206,Brazil,Blumenau,2005-08-19,18.97,3,2,5.49,265
+575,Mexico,Cuernavaca,2005-08-18,22.97,3,2,6.65,266
+254,Brazil,Poos de Caldas,2005-07-10,19.96,4,2,5.78,267
+7,Yugoslavia,Kragujevac,2005-08-01,22.96,4,2,6.65,268
+366,Turkey,Balikesir,2005-07-11,11.98,2,1,3.49,269
+544,Brazil,So Bernardo do Campo,2005-07-30,15.98,2,1,4.65,270
+589,Ecuador,Loja,2005-06-19,17.98,2,2,5.24,271
+328,Indonesia,Ciparay,2005-07-29,11.98,2,2,3.49,272
+73,Taiwan,Chiayi,2005-07-12,12.98,2,1,3.79,273
+259,India,Halisahar,2005-07-28,12.98,2,2,3.79,273
+131,Ukraine,Mukateve,2005-08-19,18.96,4,2,5.54,275
+553,Yugoslavia,Novi Sad,2005-07-06,22.95,5,2,6.74,276
+142,United Kingdom,Dundee,2005-07-30,16.97,3,1,4.99,277
+3,Greece,Athenai,2005-07-27,16.98,2,2,4.99,278
+490,Colombia,Sogamoso,2005-07-12,16.97,3,2,4.99,279
+63,United States,Lincoln,2005-07-10,16.97,3,2,4.99,280
+535,Chad,NDjamna,2005-07-08,16.97,3,2,4.99,280
+66,Sweden,Malm,2005-08-21,13.96,4,2,4.11,282
+487,Russian Federation,Pjatigorsk,2005-07-30,14.97,3,2,4.41,283
+493,Turkey,Sultanbeyli,2005-07-06,10.98,2,2,3.24,284
+559,Egypt,Bilbays,2005-08-19,13.97,3,2,4.13,285
+596,Greece,Patras,2005-07-11,8.97,3,1,2.66,286
+264,Japan,Higashiosaka,2005-07-11,12.97,3,2,3.85,287
+46,Russian Federation,Moscow,2005-06-20,13.98,2,1,4.16,288
+111,Venezuela,Caracas,2005-07-06,13.98,2,2,4.16,288
+346,Russian Federation,Maikop,2005-07-29,22.96,4,2,6.85,290
+138,China,Hohhot,2005-07-28,11.97,3,2,3.59,291
+27,Philippines,Davao,2005-06-15,9.98,2,2,2.99,292
+162,France,Le Mans,2005-07-29,9.98,2,2,2.99,292
+499,Italy,Brindisi,2005-06-16,9.98,2,1,2.99,292
+576,Taiwan,Fengshan,2005-06-18,9.98,2,2,2.99,292
+52,Spain,A Corua (La Corua),2005-08-22,15.97,3,2,4.79,296
+539,Venezuela,Valencia,2005-06-15,9.97,3,2,2.99,297
+33,Italy,Alessandria,2005-07-30,11.97,3,2,3.59,298
+181,United States,Memphis,2005-08-01,26.95,5,2,8.1,299
+7,Yugoslavia,Kragujevac,2005-07-08,10.98,2,2,3.32,300
+541,Italy,Livorno,2005-08-22,18.95,5,2,5.74,301
+250,Nigeria,Oyo,2005-08-22,11.98,2,1,3.66,302
+247,Mexico,Coacalco de Berriozbal,2005-08-18,17.97,3,2,5.49,303
+104,France,Toulon,2005-08-19,11.96,4,1,3.66,304
+148,Runion,Saint-Denis,2005-07-12,19.98,2,2,6.13,305
+376,Russian Federation,Kurgan,2005-07-12,18.97,3,2,5.82,306
+487,Russian Federation,Pjatigorsk,2005-08-01,16.97,3,2,5.21,307
+177,Mexico,Matamoros,2005-07-11,12.98,2,2,3.99,308
+419,India,Katihar,2005-08-02,13.96,4,2,4.29,309
+387,"Congo, The Democratic Republic of the",Lubumbashi,2005-07-12,12.98,2,2,3.99,310
+77,Brazil,Araatuba,2005-06-18,12.98,2,2,3.99,311
+121,India,Etawah,2005-08-21,25.96,4,2,7.98,312
+174,Venezuela,Ocumare del Tuy,2005-07-29,12.98,2,2,3.99,312
+204,Turkey,Usak,2005-06-17,12.98,2,2,3.99,312
+305,United States,Arlington,2005-06-17,12.98,2,2,3.99,312
+38,Moldova,Chisinau,2005-07-07,12.97,3,2,3.99,316
+5,Taiwan,Nantou,2005-07-09,12.97,3,2,3.99,317
+98,United Arab Emirates,al-Ayn,2005-07-29,16.97,3,2,5.24,318
+74,Brazil,Rio Claro,2005-07-10,10.97,3,2,3.39,319
+280,Nigeria,Owo,2005-08-19,20.97,3,2,6.48,320
+534,India,Amroha,2005-08-01,13.97,3,2,4.32,321
+86,Thailand,Songkhla,2005-08-01,20.97,3,1,6.49,322
+241,China,Xiangfan,2005-07-09,8.97,3,2,2.79,323
+154,China,Yuncheng,2005-07-27,14.97,3,2,4.65,324
+204,Turkey,Usak,2005-08-22,17.97,3,2,5.59,325
+569,China,Leshan,2005-08-02,14.96,4,2,4.65,326
+194,Japan,Hino,2005-06-18,14.97,3,1,4.66,327
+436,Canada,Vancouver,2005-07-28,15.98,2,1,4.98,328
+327,Turkey,Adana,2005-08-17,7.98,2,2,2.49,329
+558,Poland,Wroclaw,2005-08-21,13.98,2,2,4.36,330
+470,Yemen,Hodeida,2005-07-06,15.97,3,1,4.99,331
+293,Spain,Donostia-San Sebastin,2005-06-16,15.98,2,1,4.99,332
+155,Switzerland,Bern,2005-07-11,15.97,3,2,4.99,333
+459,Iran,Qomsheh,2005-07-29,20.98,2,2,6.56,334
+273,Mexico,Salamanca,2005-07-12,19.96,4,2,6.24,335
+135,India,Pune,2005-07-27,13.97,3,2,4.39,336
+277,Nigeria,Ogbomosho,2005-06-21,13.97,3,2,4.39,337
+19,South Africa,Kimberley,2005-07-31,17.98,2,2,5.65,338
+144,Belarus,Molodetno,2005-07-09,17.97,3,1,5.65,339
+593,United States,Garden Grove,2005-07-30,13.98,2,2,4.41,340
+233,Egypt,Idfu,2005-07-27,13.98,2,2,4.42,341
+135,India,Pune,2005-07-30,14.98,2,2,4.74,342
+585,Argentina,Quilmes,2005-07-08,14.98,2,2,4.74,343
+148,Runion,Saint-Denis,2005-07-28,20.96,4,2,6.65,344
+283,China,Korla,2005-06-19,10.98,2,2,3.49,345
+130,Brazil,guas Lindas de Gois,2005-07-31,10.98,2,1,3.49,346
+56,French Polynesia,Papeete,2005-07-06,10.98,2,2,3.49,347
+165,China,Hami,2005-07-06,10.98,2,2,3.49,347
+321,Nepal,Birgunj,2005-07-06,10.98,2,2,3.49,347
+571,Poland,Plock,2005-07-12,17.98,2,2,5.74,350
+158,United States,Greensboro,2005-08-02,15.96,4,2,5.1,351
+517,Taiwan,Chungho,2005-07-07,17.96,4,2,5.74,352
+540,Bulgaria,Ruse,2005-08-02,24.96,4,2,7.98,353
+187,Ukraine,Sumy,2005-07-10,15.98,2,2,5.11,354
+301,Russian Federation,Kaliningrad,2005-08-22,12.98,2,1,4.16,355
+207,Greenland,Nuuk,2005-08-20,25.96,4,1,8.32,356
+197,China,Changzhou,2005-05-29,6.98,2,2,2.24,357
+550,China,Zhoushan,2005-06-21,20.98,2,2,6.74,358
+327,Turkey,Adana,2005-08-22,11.97,3,2,3.84,359
+54,Japan,Iwakuni,2005-08-02,15.97,3,2,5.13,360
+10,Iran,Esfahan,2005-07-09,11.97,3,2,3.85,361
+82,Ukraine,Simferopol,2005-07-30,19.97,3,2,6.42,362
+328,Indonesia,Ciparay,2005-08-20,14.97,3,2,4.82,363
+169,China,Pingxiang,2005-07-12,14.98,2,1,4.82,364
+21,Bangladesh,Tangail,2005-08-18,11.98,2,2,3.86,365
+108,Mexico,Huixquilucan,2005-07-29,15.97,3,2,5.15,366
+273,Mexico,Salamanca,2005-07-09,15.98,2,2,5.16,367
+559,Egypt,Bilbays,2005-08-01,12.98,2,1,4.19,368
+150,Mexico,Hidalgo,2005-08-18,12.97,3,1,4.19,369
+173,Austria,Graz,2005-07-29,16.97,3,1,5.49,370
+174,Venezuela,Ocumare del Tuy,2005-08-01,16.97,3,2,5.49,371
+381,Anguilla,South Hill,2005-06-18,7.98,2,2,2.59,372
+34,Japan,Kurashiki,2005-08-21,13.98,2,2,4.54,373
+156,Nigeria,Ondo,2005-08-22,14.96,4,2,4.86,374
+215,Bulgaria,Stara Zagora,2005-08-23,9.96,4,2,3.24,375
+270,Poland,Kalisz,2005-08-01,18.97,3,2,6.19,376
+139,Taiwan,Touliu,2005-08-19,10.98,2,2,3.59,377
+27,Philippines,Davao,2005-08-17,21.97,3,2,7.18,378
+147,Japan,Urawa,2005-08-23,20.97,3,2,6.87,379
+304,Peru,Callao,2005-07-08,15.98,2,2,5.24,380
+495,China,Baiyin,2005-07-29,13.97,3,1,4.59,381
+563,Romania,Bucuresti,2005-07-29,22.96,4,2,7.58,382
+530,Argentina,Ezeiza,2005-06-15,2.98,2,2,0.99,383
+395,Sudan,al-Qadarif,2005-06-21,7.98,2,1,2.65,384
+180,Colombia,Pereira,2005-07-08,17.98,2,2,5.98,385
+132,South Africa,Botshabelo,2005-06-20,9.98,2,2,3.32,386
+8,New Zealand,Hamilton,2005-08-02,12.98,2,2,4.32,387
+248,United States,Tallahassee,2005-07-08,5.98,2,2,1.99,388
+548,Philippines,Tarlac,2005-07-06,5.98,2,2,1.99,388
+298,Finland,Oulu,2005-07-28,8.98,2,2,2.99,390
+405,Argentina,Tandil,2005-08-01,9.98,2,2,3.32,391
+28,India,Munger (Monghyr),2005-07-10,8.98,2,2,2.99,392
+378,China,Shenzhen,2005-07-31,6.98,2,2,2.32,393
+220,Tanzania,Zanzibar,2005-07-30,18.98,2,1,6.32,394
+251,Germany,Halle/Saale,2005-05-31,11.97,3,2,3.99,395
+20,Pakistan,Mardan,2005-05-28,8.98,2,1,2.99,396
+122,Peru,Lima,2005-06-15,8.98,2,2,2.99,396
+139,Taiwan,Touliu,2005-06-19,8.98,2,2,2.99,396
+182,United States,Compton,2005-06-17,8.98,2,2,2.99,396
+43,French Polynesia,Faaa,2005-07-09,9.98,2,1,3.32,400
+13,Turkey,Osmaniye,2005-06-20,11.98,2,1,3.99,401
+127,Russian Federation,Smolensk,2005-07-08,11.98,2,2,3.99,401
+168,China,Jinchang,2005-07-07,11.98,2,2,3.99,401
+193,Kenya,Kisumu,2005-06-19,11.98,2,1,3.99,401
+338,South Africa,Paarl,2005-06-17,11.98,2,2,3.99,401
+343,Mexico,Mexicali,2005-06-16,11.98,2,2,3.99,401
+464,Chile,Rancagua,2005-08-20,11.98,2,2,3.99,401
+518,Turkey,Sivas,2005-07-08,11.98,2,1,3.99,401
+470,Yemen,Hodeida,2005-08-18,23.97,3,2,7.98,409
+579,Iraq,Mosul,2005-07-08,12.98,2,1,4.32,410
+560,Argentina,Avellaneda,2005-08-01,17.97,3,2,5.99,411
+485,China,Shaoguan,2005-07-30,17.96,4,2,5.98,412
+181,United States,Memphis,2005-07-29,15.98,2,1,5.32,413
+237,South Korea,Naju,2005-07-28,16.97,3,2,5.65,414
+283,China,Korla,2005-07-06,17.96,4,2,5.98,415
+103,Nigeria,Ilorin,2005-07-07,11.97,3,2,3.99,416
+367,India,Adoni,2005-08-18,14.97,3,2,4.99,417
+17,Russian Federation,Elista,2005-07-30,21.96,4,2,7.32,418
+583,United Kingdom,Southampton,2005-07-06,17.97,3,2,5.99,419
+92,Brazil,Goinia,2005-07-10,23.96,4,2,7.99,420
+47,Brazil,Juazeiro do Norte,2005-07-11,14.97,3,2,4.99,421
+97,Mozambique,Tete,2005-07-06,8.97,3,2,2.99,421
+177,Mexico,Matamoros,2005-06-16,8.97,3,2,2.99,421
+206,Brazil,Blumenau,2005-07-06,11.97,3,2,3.99,421
+279,Iran,Tabriz,2005-06-21,8.97,3,1,2.99,421
+453,Venezuela,Maracabo,2005-08-21,18.96,4,2,6.32,421
+459,Iran,Qomsheh,2005-06-17,8.97,3,1,2.99,421

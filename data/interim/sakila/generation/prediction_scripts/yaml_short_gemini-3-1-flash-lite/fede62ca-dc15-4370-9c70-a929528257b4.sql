@@ -1,0 +1,12 @@
+SELECT
+  p01,
+  p02,
+  p03,
+  p04,
+  p05,
+  p06,
+  p07
+FROM pay
+WHERE p05 > 8.00
+ORDER BY p05 DESC
+LIMIT 20;

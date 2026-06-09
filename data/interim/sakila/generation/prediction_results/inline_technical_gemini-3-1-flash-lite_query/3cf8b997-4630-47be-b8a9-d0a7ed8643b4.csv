@@ -1,0 +1,55 @@
+store_id,city,country,month,total_amount,payment_count,deviation,store_rank,top_staff_name
+1,Saint-Denis,Runion,2005-07,100.77999999999997,22,86.81,1,Mike Hillyer
+1,Hodeida,Yemen,2005-07,96.82999999999998,17,90.35,2,Mike Hillyer
+1,Molodetno,Belarus,2005-07,93.81999999999998,18,79.36,3,Jon Stephens
+1,Qomsheh,Iran,2005-07,89.81999999999998,18,75.36,4,Mike Hillyer
+1,Kolpino,Russian Federation,2005-07,87.82000000000001,18,69.37,5,Mike Hillyer
+1,Jinzhou,China,2005-07,86.80999999999999,19,79.33,6,Mike Hillyer
+1,Ashdod,Israel,2005-07,84.78999999999999,21,74.82,7,Mike Hillyer
+1,Maikop,Russian Federation,2005-07,83.85,15,72.88,8,Jon Stephens
+1,Balikesir,Turkey,2005-07,82.80999999999999,19,77.83,9,Jon Stephens
+1,Omdurman,Sudan,2005-07,80.83,17,62.38,10,Jon Stephens
+1,Ambattur,India,2005-07,80.83,17,72.35,10,Mike Hillyer
+1,Akron,United States,2005-07,79.85,15,61.89,12,Jon Stephens
+1,Yinchuan,China,2005-07,77.85000000000001,15,62.89,13,Jon Stephens
+1,Brescia,Italy,2005-07,76.83999999999999,16,59.87,14,Jon Stephens
+1,Effon-Alaiye,Nigeria,2005-07,76.83000000000001,17,66.35,15,Jon Stephens
+1,San Bernardino,United States,2005-07,75.86,14,71.87,16,Jon Stephens
+1,Siliguri (Shiliguri),India,2005-07,73.85000000000001,15,64.89,17,Jon Stephens
+1,Tanza,Philippines,2005-07,73.8,20,50.36,18,Jon Stephens
+1,Uijongbu,South Korea,2005-07,72.84,16,53.89,19,Mike Hillyer
+1,Tokat,Turkey,2005-07,71.82000000000001,18,57.85,20,Mike Hillyer
+1,Batman,Turkey,2005-07,70.86,14,62.89,21,Mike Hillyer
+1,Zhezqazghan,Kazakstan,2005-07,70.85000000000001,15,58.88,22,Jon Stephens
+1,Jinchang,China,2005-07,70.83,17,65.35,23,Jon Stephens
+1,Baybay,Philippines,2005-07,70.82000000000001,18,57.35,24,Mike Hillyer
+1,Coatzacoalcos,Mexico,2005-07,69.88000000000001,12,61.41,25,Jon Stephens
+1,Jelets,Russian Federation,2005-07,69.87,13,59.9,26,Jon Stephens
+1,Tangail,Bangladesh,2005-08,79.83,17,47.9,1,Mike Hillyer
+1,Bhopal,India,2005-08,79.82000000000001,18,54.38,2,Jon Stephens
+1,Shubra al-Khayma,Egypt,2005-08,77.82000000000001,18,46.89,3,Jon Stephens
+1,Rae Bareli,India,2005-08,70.86000000000001,14,35.45,4,Jon Stephens
+2,Santa Rosa,Philippines,2005-07,96.82,18,85.35,1,Jon Stephens
+2,Apeldoorn,Netherlands,2005-07,96.80999999999999,19,85.34,2,Mike Hillyer
+2,Beira,Mozambique,2005-07,88.82,18,81.35,3,Jon Stephens
+2,Cape Coral,United States,2005-07,86.81,19,59.37,4,Jon Stephens
+2,Bhilwara,India,2005-07,82.83,17,65.87,5,Jon Stephens
+2,Robamba,Ecuador,2005-07,80.82000000000001,18,76.83,6,Jon Stephens
+2,Ourense (Orense),Spain,2005-07,80.82,18,65.86,7,Jon Stephens
+2,Goinia,Brazil,2005-07,78.85000000000001,15,65.88,8,Jon Stephens
+2,Probolinggo,Indonesia,2005-07,77.84000000000002,16,68.87,9,Jon Stephens
+2,Vijayawada,India,2005-07,74.86,14,69.38,10,Jon Stephens
+2,Sharja,United Arab Emirates,2005-07,74.84,16,66.87,11,Mike Hillyer
+2,Usolje-Sibirskoje,Russian Federation,2005-07,74.83999999999999,16,60.87,12,Mike Hillyer
+2,Aden,Yemen,2005-07,73.82000000000001,18,70.34,13,Jon Stephens
+2,Memphis,United States,2005-07,72.88,12,59.41,14,Mike Hillyer
+2,Uluberia,India,2005-07,71.83,17,57.88,15,Jon Stephens
+2,Olomouc,Czech Republic,2005-07,70.84,16,62.36,16,Mike Hillyer
+2,Hsichuh,Taiwan,2005-07,70.84,16,63.37,16,Jon Stephens
+2,Changhwa,Taiwan,2005-07,70.80000000000001,20,52.84,18,Mike Hillyer
+2,Jedda,Saudi Arabia,2005-07,69.87,13,50.92,19,Jon Stephens
+2,Richmond Hill,Canada,2005-08,86.82999999999998,17,47.93,1,Mike Hillyer
+2,Urawa,Japan,2005-08,76.85000000000001,15,52.44,2,Jon Stephens
+2,Leshan,China,2005-08,75.82,18,56.87,3,Mike Hillyer
+2,Salzburg,Austria,2005-08,71.83,17,50.88,4,Mike Hillyer
+2,Ikerre,Nigeria,2005-08,70.84,16,43.92,5,Mike Hillyer

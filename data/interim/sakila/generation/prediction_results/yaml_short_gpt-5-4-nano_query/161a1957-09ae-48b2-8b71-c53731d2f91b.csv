@@ -1,0 +1,250 @@
+customer_id,country,city,spike_date,payment_count,day_sum,personal_avg_prev_30,deviation_from_personal_avg,staff_list,suspicious_rank_in_country
+441,Algeria,Batna,2005-07-29,5,18.95,5.32,13.63,"Jon Stephens,Mike Hillyer",1
+176,Algeria,Skikda,2005-06-18,4,16.96,7.15,9.81,"Mike Hillyer,Jon Stephens",2
+331,Argentina,Santa F,2005-07-06,3,18.97,6.49,12.49,"Mike Hillyer,Jon Stephens",1
+560,Argentina,Avellaneda,2005-08-01,3,17.97,5.99,11.98,"Jon Stephens,Mike Hillyer",2
+331,Argentina,Santa F,2005-07-07,3,21.97,10.65,11.32,"Mike Hillyer,Jon Stephens",3
+266,Austria,Salzburg,2005-08-18,4,17.96,6.58,11.38,"Mike Hillyer,Jon Stephens",1
+21,Bangladesh,Tangail,2005-08-20,4,32.96,5.58,27.38,"Mike Hillyer,Jon Stephens",1
+362,Brazil,Belm,2005-08-21,4,25.96,7.48,18.48,"Jon Stephens,Mike Hillyer",1
+374,Brazil,Vitria de Santo Anto,2005-08-22,4,20.96,4.09,16.87,"Jon Stephens,Mike Hillyer",2
+126,Brazil,Po,2005-07-06,3,18.97,2.99,15.98,"Jon Stephens,Mike Hillyer",3
+92,Brazil,Goinia,2005-07-10,4,23.96,7.99,15.97,"Jon Stephens,Mike Hillyer",4
+342,Brazil,Boa Vista,2005-07-12,3,19.97,5.24,14.73,"Jon Stephens,Mike Hillyer",5
+254,Brazil,Poos de Caldas,2005-07-10,4,19.96,5.78,14.18,"Mike Hillyer,Jon Stephens",6
+354,Brazil,Santo Andr,2005-07-29,3,18.97,4.98,13.99,"Jon Stephens,Mike Hillyer",7
+544,Brazil,So Bernardo do Campo,2005-08-21,3,18.97,5.16,13.82,"Jon Stephens,Mike Hillyer",8
+206,Brazil,Blumenau,2005-08-19,3,18.97,5.49,13.48,"Mike Hillyer,Jon Stephens",9
+591,Brazil,Juiz de Fora,2005-07-27,4,20.96,8.24,12.72,"Mike Hillyer,Jon Stephens",10
+591,Brazil,Juiz de Fora,2005-08-18,4,21.96,9.58,12.38,"Jon Stephens,Mike Hillyer",11
+39,Brazil,Vila Velha,2005-07-29,4,19.96,8.19,11.77,"Jon Stephens,Mike Hillyer",12
+39,Brazil,Vila Velha,2005-08-01,4,20.96,9.23,11.73,"Mike Hillyer,Jon Stephens",13
+427,Brazil,Guaruj,2005-08-01,3,15.97,5.54,10.43,"Mike Hillyer,Jon Stephens",14
+91,Brunei,Bandar Seri Begawan,2005-07-07,3,12.97,2.79,10.18,"Jon Stephens,Mike Hillyer",1
+540,Bulgaria,Ruse,2005-08-02,4,24.96,7.98,16.98,"Mike Hillyer,Jon Stephens",1
+228,Cambodia,Phnom Penh,2005-07-06,4,17.96,3.49,14.47,"Jon Stephens,Mike Hillyer",1
+352,Cameroon,Bamenda,2005-07-27,4,22.96,5.49,17.47,"Mike Hillyer,Jon Stephens",1
+410,Canada,Richmond Hill,2005-07-09,4,17.96,4.15,13.81,"Mike Hillyer,Jon Stephens",1
+45,Chile,Antofagasta,2005-08-02,5,27.95,5.84,22.11,"Jon Stephens,Mike Hillyer",1
+129,China,Liaocheng,2005-07-31,4,26.96,5.78,21.18,"Jon Stephens,Mike Hillyer",1
+267,China,Lengshuijiang,2005-06-19,4,22.96,5.99,16.97,"Jon Stephens,Mike Hillyer",2
+546,China,Sanya,2005-07-12,3,19.97,3.49,16.48,"Jon Stephens,Mike Hillyer",3
+93,China,Zalantun,2005-08-20,4,19.96,3.74,16.22,"Mike Hillyer,Jon Stephens",4
+424,China,Shanwei,2005-07-31,3,20.97,5.41,15.56,"Mike Hillyer,Jon Stephens",5
+538,China,Baicheng,2005-07-31,3,18.97,4.11,14.86,"Mike Hillyer,Jon Stephens",6
+384,China,Huaian,2005-06-20,3,18.97,4.65,14.32,"Jon Stephens,Mike Hillyer",7
+267,China,Lengshuijiang,2005-07-30,3,15.97,3.66,12.31,"Jon Stephens,Mike Hillyer",8
+538,China,Baicheng,2005-07-09,3,16.97,4.79,12.18,"Jon Stephens,Mike Hillyer",9
+485,China,Shaoguan,2005-07-30,4,17.96,5.98,11.98,"Jon Stephens,Mike Hillyer",10
+283,China,Korla,2005-07-06,4,17.96,5.98,11.98,"Mike Hillyer,Jon Stephens",11
+533,China,Binzhou,2005-08-17,3,19.97,8.18,11.79,"Jon Stephens,Mike Hillyer",12
+302,China,Tiefa,2005-07-30,3,19.97,8.38,11.59,"Mike Hillyer,Jon Stephens",13
+90,China,Meixian,2005-08-01,3,17.97,6.49,11.49,"Jon Stephens,Mike Hillyer",14
+260,China,Datong,2005-08-21,3,17.97,6.69,11.28,"Jon Stephens,Mike Hillyer",15
+424,China,Shanwei,2005-07-30,4,14.96,3.82,11.14,"Mike Hillyer,Jon Stephens",16
+241,China,Xiangfan,2005-07-11,3,14.97,3.84,11.13,"Mike Hillyer,Jon Stephens",17
+242,China,Qinhuangdao,2005-06-15,3,14.97,3.99,10.98,"Jon Stephens,Mike Hillyer",18
+272,China,Yantai,2005-08-17,3,16.97,5.99,10.98,"Jon Stephens,Mike Hillyer",19
+595,China,Jinzhou,2005-07-31,3,18.97,8.48,10.49,"Jon Stephens,Mike Hillyer",20
+260,China,Datong,2005-06-17,3,16.97,6.49,10.48,"Jon Stephens,Mike Hillyer",21
+154,China,Yuncheng,2005-07-27,3,14.97,4.65,10.32,"Jon Stephens,Mike Hillyer",22
+569,China,Leshan,2005-08-02,4,14.96,4.65,10.31,"Jon Stephens,Mike Hillyer",23
+550,China,Zhoushan,2005-08-21,3,16.97,6.98,9.99,"Jon Stephens,Mike Hillyer",24
+594,China,Jining,2005-07-31,3,16.97,6.98,9.99,"Mike Hillyer,Jon Stephens",25
+154,China,Yuncheng,2005-08-22,3,15.97,6.1,9.87,"Jon Stephens,Mike Hillyer",26
+138,China,Hohhot,2005-08-01,3,14.97,5.32,9.65,"Jon Stephens,Mike Hillyer",27
+484,China,Yinchuan,2005-07-10,3,14.97,5.39,9.58,"Jon Stephens,Mike Hillyer",28
+302,China,Tiefa,2005-08-23,4,16.96,7.38,9.58,"Jon Stephens,Mike Hillyer",29
+37,China,Nanyang,2005-08-20,4,14.96,6.16,8.81,"Jon Stephens,Mike Hillyer",30
+595,China,Jinzhou,2005-07-27,4,14.96,6.82,8.14,"Mike Hillyer,Jon Stephens",31
+550,China,Zhoushan,2005-08-23,3,15.97,7.98,7.99,"Jon Stephens,Mike Hillyer",32
+120,Colombia,Dos Quebradas,2005-08-21,3,19.97,5.21,14.76,"Mike Hillyer,Jon Stephens",1
+490,Colombia,Sogamoso,2005-07-12,3,16.97,4.99,11.98,"Mike Hillyer,Jon Stephens",2
+235,Colombia,Buenaventura,2005-07-06,3,14.97,2.99,11.98,"Jon Stephens,Mike Hillyer",3
+375,"Congo, The Democratic Republic of the",Mwene-Ditu,2005-08-02,3,18.97,5.32,13.65,"Mike Hillyer,Jon Stephens",1
+258,Dominican Republic,Santiago de los Caballeros,2005-08-01,5,20.95,5.61,15.34,"Jon Stephens,Mike Hillyer",1
+262,Ecuador,Portoviejo,2005-07-12,4,26.96,4.27,22.69,"Jon Stephens,Mike Hillyer",1
+494,Ecuador,Robamba,2005-08-22,4,26.96,7.48,19.48,"Mike Hillyer,Jon Stephens",2
+423,Egypt,Sawhaj,2005-07-27,5,24.95,2.32,22.63,"Mike Hillyer,Jon Stephens",1
+134,Egypt,Qalyub,2005-08-02,4,20.96,3.16,17.8,"Mike Hillyer,Jon Stephens",2
+119,Egypt,Shubra al-Khayma,2005-08-22,3,15.97,6.8,9.17,"Mike Hillyer,Jon Stephens",3
+104,France,Toulon,2005-07-08,3,15.97,4.19,11.78,"Jon Stephens,Mike Hillyer",1
+162,France,Le Mans,2005-07-31,3,14.97,5.99,8.98,"Mike Hillyer,Jon Stephens",2
+196,Germany,Mannheim,2005-07-31,3,22.97,5.84,17.13,"Mike Hillyer,Jon Stephens",1
+3,Greece,Athenai,2005-07-28,4,24.96,8.99,15.97,"Jon Stephens,Mike Hillyer",1
+26,Holy See (Vatican City State),Citt del Vaticano,2005-08-21,4,23.96,4.27,19.69,"Jon Stephens,Mike Hillyer",1
+468,India,Bijapur,2005-08-21,5,32.95,7.84,25.11,"Jon Stephens,Mike Hillyer",1
+192,India,Firozabad,2005-08-21,4,24.96,5.32,19.64,"Jon Stephens,Mike Hillyer",2
+529,India,Bhimavaram,2005-07-12,3,20.97,2.99,17.98,"Jon Stephens,Mike Hillyer",3
+412,India,Hoshiarpur,2005-07-29,3,18.97,0.99,17.98,"Jon Stephens,Mike Hillyer",4
+121,India,Etawah,2005-08-21,4,25.96,7.98,17.98,"Mike Hillyer,Jon Stephens",4
+259,India,Halisahar,2005-07-30,3,21.97,5.32,16.65,"Jon Stephens,Mike Hillyer",5
+297,India,Ahmadnagar,2005-06-18,3,16.97,2.99,13.98,"Mike Hillyer,Jon Stephens",6
+259,India,Halisahar,2005-06-16,3,18.97,5.32,13.65,"Mike Hillyer,Jon Stephens",7
+403,India,Valparai,2005-08-02,4,21.96,9.36,12.6,"Mike Hillyer,Jon Stephens",8
+78,India,Rae Bareli,2005-07-28,3,15.97,3.7,12.27,"Jon Stephens,Mike Hillyer",9
+492,India,Kanchrapara,2005-07-07,3,18.97,7.32,11.65,"Jon Stephens,Mike Hillyer",10
+170,India,Udaipur,2005-07-10,3,15.97,4.49,11.48,"Mike Hillyer,Jon Stephens",11
+370,India,Gulbarga,2005-07-27,3,15.97,4.49,11.48,"Mike Hillyer,Jon Stephens",12
+336,India,Rampur,2005-07-29,3,16.97,6.24,10.74,"Jon Stephens,Mike Hillyer",13
+68,India,Shivapuri,2005-07-31,3,16.97,6.73,10.24,"Mike Hillyer,Jon Stephens",14
+508,India,Vijayawada,2005-07-27,3,17.97,7.99,9.98,"Mike Hillyer,Jon Stephens",15
+367,India,Adoni,2005-08-18,3,14.97,4.99,9.98,"Mike Hillyer,Jon Stephens",15
+31,India,Kamarhati,2005-06-18,4,16.96,6.98,9.98,"Mike Hillyer,Jon Stephens",16
+170,India,Udaipur,2005-07-31,3,15.97,6.82,9.15,"Jon Stephens,Mike Hillyer",17
+78,India,Rae Bareli,2005-08-01,3,14.97,5.87,9.1,"Jon Stephens,Mike Hillyer",18
+316,India,Miraj,2005-07-27,4,15.96,6.99,8.97,"Jon Stephens,Mike Hillyer",19
+502,India,Siliguri (Shiliguri),2005-07-28,3,14.97,6.61,8.36,"Mike Hillyer,Jon Stephens",20
+297,India,Ahmadnagar,2005-07-11,3,14.97,7.15,7.82,"Jon Stephens,Mike Hillyer",21
+15,India,Bhopal,2005-08-20,3,14.97,7.21,7.76,"Jon Stephens,Mike Hillyer",22
+458,Indonesia,Tegal,2005-07-12,3,15.97,2.99,12.98,"Mike Hillyer,Jon Stephens",1
+473,Indonesia,Lhokseumawe,2005-08-02,5,19.95,7.23,12.72,"Mike Hillyer,Jon Stephens",2
+328,Indonesia,Ciparay,2005-08-20,3,14.97,4.82,10.15,"Mike Hillyer,Jon Stephens",3
+459,Iran,Qomsheh,2005-07-28,5,29.95,2.66,27.29,"Mike Hillyer,Jon Stephens",1
+279,Iran,Tabriz,2005-07-09,3,20.97,5.49,15.49,"Mike Hillyer,Jon Stephens",2
+449,Iran,Sirjan,2005-08-01,4,21.96,7.38,14.58,"Jon Stephens,Mike Hillyer",3
+459,Iran,Qomsheh,2005-08-01,4,22.96,8.98,13.98,"Mike Hillyer,Jon Stephens",4
+279,Iran,Tabriz,2005-08-19,4,18.96,5.16,13.81,"Jon Stephens,Mike Hillyer",5
+368,Iran,Najafabad,2005-08-19,4,17.96,4.61,13.35,"Mike Hillyer,Jon Stephens",6
+478,Israel,Ashqelon,2005-06-19,3,20.97,2.99,17.98,"Mike Hillyer,Jon Stephens",1
+161,Israel,Tel Aviv-Jaffa,2005-08-22,4,15.96,6.27,9.69,"Mike Hillyer,Jon Stephens",2
+541,Italy,Livorno,2005-08-22,5,18.95,5.74,13.21,"Jon Stephens,Mike Hillyer",1
+519,Japan,Isesaki,2005-07-31,5,23.95,4.65,19.3,"Jon Stephens,Mike Hillyer",1
+404,Japan,Omiya,2005-07-08,4,21.96,3.79,18.17,"Mike Hillyer,Jon Stephens",2
+531,Japan,Kuwana,2005-08-02,4,26.96,9.27,17.69,"Jon Stephens,Mike Hillyer",3
+29,Japan,Shimonoseki,2005-08-18,4,21.96,5.84,16.12,"Mike Hillyer,Jon Stephens",4
+240,Japan,Iwaki,2005-07-27,3,18.97,2.99,15.98,"Mike Hillyer,Jon Stephens",5
+1,Japan,Sasebo,2005-06-15,3,16.97,1.99,14.98,"Mike Hillyer,Jon Stephens",6
+147,Japan,Urawa,2005-08-23,3,20.97,6.87,14.1,"Jon Stephens,Mike Hillyer",7
+29,Japan,Shimonoseki,2005-06-19,5,15.95,1.99,13.96,"Mike Hillyer,Jon Stephens",8
+253,Japan,Miyakonojo,2005-08-21,3,17.97,6.23,11.74,"Jon Stephens,Mike Hillyer",9
+401,Japan,Koriyama,2005-07-29,3,14.97,3.99,10.98,"Mike Hillyer,Jon Stephens",10
+54,Japan,Iwakuni,2005-08-02,3,15.97,5.13,10.84,"Jon Stephens,Mike Hillyer",11
+547,Japan,Kanazawa,2005-08-02,4,14.96,5.99,8.97,"Mike Hillyer,Jon Stephens",12
+285,Japan,Otsu,2005-07-11,4,14.96,6.32,8.64,"Mike Hillyer,Jon Stephens",13
+193,Kenya,Kisumu,2005-08-22,3,16.97,4.61,12.36,"Mike Hillyer,Jon Stephens",1
+347,Latvia,Daugavpils,2005-07-28,4,15.96,4.16,11.81,"Mike Hillyer,Jon Stephens",1
+306,Malaysia,Sungai Petani,2005-08-20,4,16.96,6.44,10.52,"Mike Hillyer,Jon Stephens",1
+454,Mexico,Uruapan,2005-08-20,4,27.96,5.23,22.73,"Jon Stephens,Mike Hillyer",1
+425,Mexico,San Juan Bautista Tuxtepec,2005-07-08,4,27.96,6.99,20.97,"Jon Stephens,Mike Hillyer",2
+582,Mexico,Huejutla de Reyes,2005-07-27,4,20.96,3.49,17.47,"Jon Stephens,Mike Hillyer",3
+133,Mexico,Torren,2005-07-08,4,19.96,3.49,16.47,"Jon Stephens,Mike Hillyer",4
+575,Mexico,Cuernavaca,2005-08-18,3,22.97,6.65,16.32,"Mike Hillyer,Jon Stephens",5
+150,Mexico,Hidalgo,2005-08-19,5,21.95,5.65,16.3,"Mike Hillyer,Jon Stephens",6
+84,Mexico,Atlixco,2005-07-11,3,18.97,5.13,13.84,"Mike Hillyer,Jon Stephens",7
+273,Mexico,Salamanca,2005-07-12,4,19.96,6.24,13.72,"Mike Hillyer,Jon Stephens",8
+414,Mexico,Allende,2005-08-19,5,17.95,4.24,13.72,"Jon Stephens,Mike Hillyer",9
+465,Mexico,Zapopan,2005-08-17,3,16.97,3.32,13.65,"Mike Hillyer,Jon Stephens",10
+467,Mexico,Cuauhtmoc,2005-07-28,4,20.96,7.98,12.98,"Mike Hillyer,Jon Stephens",11
+84,Mexico,Atlixco,2005-08-02,4,19.96,7.32,12.64,"Mike Hillyer,Jon Stephens",12
+247,Mexico,Coacalco de Berriozbal,2005-08-18,3,17.97,5.49,12.49,"Jon Stephens,Mike Hillyer",13
+319,Mexico,San Felipe del Progreso,2005-08-17,5,16.95,4.49,12.47,"Mike Hillyer,Jon Stephens",14
+451,Mexico,El Fuerte,2005-07-08,3,16.97,4.65,12.32,"Mike Hillyer,Jon Stephens",15
+451,Mexico,El Fuerte,2005-08-02,4,19.96,7.82,12.14,"Mike Hillyer,Jon Stephens",16
+108,Mexico,Huixquilucan,2005-07-29,3,15.97,5.15,10.82,"Jon Stephens,Mike Hillyer",17
+38,Moldova,Chisinau,2005-07-27,4,17.96,6.58,11.38,"Mike Hillyer,Jon Stephens",1
+40,Morocco,Nador,2005-07-31,3,13.97,5.38,8.59,"Jon Stephens,Mike Hillyer",1
+257,Mozambique,Beira,2005-08-19,5,20.95,9.69,11.26,"Jon Stephens,Mike Hillyer",1
+257,Mozambique,Beira,2005-07-27,5,18.95,8.99,9.97,"Jon Stephens,Mike Hillyer",2
+256,Myanmar,Monywa,2005-08-23,3,15.97,6.41,9.56,"Jon Stephens,Mike Hillyer",1
+137,Netherlands,Apeldoorn,2005-07-30,4,20.96,8.7,12.26,"Jon Stephens,Mike Hillyer",1
+184,Netherlands,s-Hertogenbosch,2005-08-18,3,15.97,5.99,9.98,"Jon Stephens,Mike Hillyer",2
+103,Nigeria,Ilorin,2005-08-23,5,25.95,5.99,19.96,"Mike Hillyer,Jon Stephens",1
+280,Nigeria,Owo,2005-07-29,5,20.95,2.99,17.96,"Jon Stephens,Mike Hillyer",2
+198,Nigeria,Ikerre,2005-08-17,6,22.94,5.15,17.79,"Mike Hillyer,Jon Stephens",3
+280,Nigeria,Owo,2005-08-19,3,20.97,6.48,14.49,"Mike Hillyer,Jon Stephens",4
+198,Nigeria,Ikerre,2005-07-12,3,14.97,3.24,11.73,"Jon Stephens,Mike Hillyer",5
+284,Nigeria,Benin City,2005-07-27,3,14.97,6.59,8.38,"Jon Stephens,Mike Hillyer",6
+205,Paraguay,Ciudad del Este,2005-08-21,4,15.96,5.99,9.97,"Mike Hillyer,Jon Stephens",1
+226,Paraguay,Asuncin,2005-08-23,4,16.96,7.38,9.58,"Jon Stephens,Mike Hillyer",2
+597,Peru,Sullana,2005-08-02,4,16.96,3.99,12.97,"Jon Stephens,Mike Hillyer",1
+565,Peru,Hunuco,2005-08-02,3,14.97,5.1,9.87,"Jon Stephens,Mike Hillyer",2
+522,Philippines,Santa Rosa,2005-07-30,5,29.95,7.61,22.34,"Mike Hillyer,Jon Stephens",1
+461,Philippines,Gingoog,2005-08-22,5,22.95,4.21,18.74,"Mike Hillyer,Jon Stephens",2
+27,Philippines,Davao,2005-07-31,3,18.97,3.99,14.98,"Jon Stephens,Mike Hillyer",3
+261,Philippines,Tuguegarao,2005-06-17,3,18.97,3.99,14.98,"Mike Hillyer,Jon Stephens",4
+27,Philippines,Davao,2005-08-17,3,21.97,7.18,14.79,"Mike Hillyer,Jon Stephens",5
+71,Philippines,Baybay,2005-07-10,3,18.97,4.99,13.98,"Mike Hillyer,Jon Stephens",6
+349,Philippines,Imus,2005-08-02,3,18.97,5.1,13.87,"Mike Hillyer,Jon Stephens",7
+373,Philippines,Tanauan,2005-08-18,4,20.96,7.68,13.28,"Mike Hillyer,Jon Stephens",8
+388,Philippines,Cavite,2005-08-18,4,17.96,5.18,12.78,"Jon Stephens,Mike Hillyer",9
+188,Philippines,Bayugan,2005-08-01,4,16.96,4.56,12.4,"Jon Stephens,Mike Hillyer",10
+236,Philippines,Tanza,2005-08-21,3,17.97,8.65,9.32,"Jon Stephens,Mike Hillyer",11
+270,Poland,Kalisz,2005-08-01,3,18.97,6.19,12.78,"Mike Hillyer,Jon Stephens",1
+558,Poland,Wroclaw,2005-07-12,3,15.97,6.44,9.53,"Jon Stephens,Mike Hillyer",2
+128,Poland,Jastrzebie-Zdrj,2005-07-30,3,14.97,5.84,9.13,"Jon Stephens,Mike Hillyer",3
+563,Romania,Bucuresti,2005-07-08,7,29.93,2.99,26.94,"Mike Hillyer,Jon Stephens",1
+44,Russian Federation,Lipetsk,2005-07-10,4,24.96,4.49,20.47,"Mike Hillyer,Jon Stephens",1
+346,Russian Federation,Maikop,2005-07-29,4,22.96,6.85,16.11,"Jon Stephens,Mike Hillyer",2
+311,Russian Federation,Kursk,2005-07-31,3,20.97,4.99,15.98,"Mike Hillyer,Jon Stephens",3
+106,Russian Federation,Ivanovo,2005-08-01,3,20.97,5.99,14.98,"Jon Stephens,Mike Hillyer",4
+17,Russian Federation,Elista,2005-07-30,4,21.96,7.32,14.64,"Jon Stephens,Mike Hillyer",5
+462,Russian Federation,Usolje-Sibirskoje,2005-08-19,3,22.97,9.12,13.85,"Mike Hillyer,Jon Stephens",6
+447,Russian Federation,Nabereznyje Telny,2005-07-30,3,17.97,4.7,13.27,"Jon Stephens,Mike Hillyer",7
+376,Russian Federation,Kurgan,2005-07-12,3,18.97,5.82,13.15,"Mike Hillyer,Jon Stephens",8
+487,Russian Federation,Pjatigorsk,2005-08-01,3,16.97,5.21,11.76,"Jon Stephens,Mike Hillyer",9
+46,Russian Federation,Moscow,2005-08-01,3,15.97,5.49,10.48,"Jon Stephens,Mike Hillyer",10
+46,Russian Federation,Moscow,2005-08-18,4,15.96,6.98,8.98,"Jon Stephens,Mike Hillyer",11
+417,Saudi Arabia,al-Qatif,2005-08-21,3,14.97,5.98,8.99,"Jon Stephens,Mike Hillyer",1
+49,Saudi Arabia,Jedda,2005-08-21,3,15.97,7.15,8.82,"Jon Stephens,Mike Hillyer",2
+417,Saudi Arabia,al-Qatif,2005-08-02,3,15.97,7.38,8.59,"Mike Hillyer,Jon Stephens",3
+407,South Africa,Rustenburg,2005-07-28,4,22.96,4.59,18.37,"Jon Stephens,Mike Hillyer",1
+132,South Africa,Botshabelo,2005-08-01,4,22.96,5.61,17.35,"Jon Stephens,Mike Hillyer",2
+145,South Africa,Soshanguve,2005-07-07,3,20.97,3.99,16.98,"Jon Stephens,Mike Hillyer",3
+145,South Africa,Soshanguve,2005-08-19,4,15.96,4.24,11.72,"Jon Stephens,Mike Hillyer",4
+407,South Africa,Rustenburg,2005-08-02,3,17.97,6.86,11.11,"Mike Hillyer,Jon Stephens",5
+245,South Korea,Uijongbu,2005-07-27,5,17.95,3.99,13.96,"Jon Stephens,Mike Hillyer",1
+52,Spain,A Corua (La Corua),2005-08-22,3,15.97,4.79,11.18,"Jon Stephens,Mike Hillyer",1
+408,Sri Lanka,Jaffna,2005-08-20,3,14.97,5.21,9.76,"Mike Hillyer,Jon Stephens",1
+50,Sudan,Omdurman,2005-07-31,5,26.95,6.74,20.22,"Mike Hillyer,Jon Stephens",1
+66,Sweden,Malm,2005-07-11,3,18.97,7.48,11.49,"Mike Hillyer,Jon Stephens",1
+155,Switzerland,Bern,2005-07-11,3,15.97,4.99,10.98,"Mike Hillyer,Jon Stephens",1
+155,Switzerland,Bern,2005-08-21,3,14.97,6.59,8.38,"Mike Hillyer,Jon Stephens",2
+139,Taiwan,Touliu,2005-08-22,5,21.95,4.99,16.96,"Mike Hillyer,Jon Stephens",1
+348,Taiwan,Hsichuh,2005-07-08,4,20.96,4.59,16.37,"Jon Stephens,Mike Hillyer",2
+577,Taiwan,Tanshui,2005-07-28,3,21.97,5.98,15.99,"Jon Stephens,Mike Hillyer",3
+576,Taiwan,Fengshan,2005-07-31,5,21.95,8.38,13.57,"Jon Stephens,Mike Hillyer",4
+139,Taiwan,Touliu,2005-07-09,3,17.97,4.74,13.24,"Jon Stephens,Mike Hillyer",5
+517,Taiwan,Chungho,2005-07-07,4,17.96,5.74,12.22,"Jon Stephens,Mike Hillyer",6
+30,Taiwan,Lungtan,2005-07-28,4,19.96,8.58,11.38,"Jon Stephens,Mike Hillyer",7
+30,Taiwan,Lungtan,2005-07-09,3,16.97,5.98,10.99,"Jon Stephens,Mike Hillyer",8
+190,Tanzania,Tabora,2005-08-02,4,24.96,6.98,17.98,"Mike Hillyer,Jon Stephens",1
+390,Thailand,Nakhon Sawan,2005-08-20,6,27.94,7.15,20.79,"Mike Hillyer,Jon Stephens",1
+327,Turkey,Adana,2005-08-23,3,23.97,4.86,19.11,"Mike Hillyer,Jon Stephens",1
+172,Turkey,Batman,2005-07-08,3,17.97,1.32,16.65,"Mike Hillyer,Jon Stephens",2
+204,Turkey,Usak,2005-08-22,3,17.97,5.59,12.38,"Mike Hillyer,Jon Stephens",3
+187,Ukraine,Sumy,2005-08-18,3,26.97,6.74,20.23,"Jon Stephens,Mike Hillyer",1
+82,Ukraine,Simferopol,2005-07-30,3,19.97,6.42,13.55,"Jon Stephens,Mike Hillyer",2
+131,Ukraine,Mukateve,2005-08-19,4,18.96,5.54,13.42,"Jon Stephens,Mike Hillyer",3
+98,United Arab Emirates,al-Ayn,2005-07-29,3,16.97,5.24,11.73,"Mike Hillyer,Jon Stephens",1
+452,United Arab Emirates,Abu Dhabi,2005-07-06,3,13.97,5.73,8.24,"Jon Stephens,Mike Hillyer",2
+583,United Kingdom,Southampton,2005-07-06,3,17.97,5.99,11.98,"Mike Hillyer,Jon Stephens",1
+497,United Kingdom,York,2005-06-18,3,17.97,7.99,9.98,"Jon Stephens,Mike Hillyer",2
+477,United Kingdom,Stockport,2005-07-29,3,15.97,6.79,9.18,"Mike Hillyer,Jon Stephens",3
+181,United States,Memphis,2005-08-01,5,26.95,8.1,18.85,"Jon Stephens,Mike Hillyer",1
+2,United States,San Bernardino,2005-07-30,5,30.95,13.97,16.98,"Mike Hillyer,Jon Stephens",2
+420,United States,El Monte,2005-08-01,3,20.97,4.99,15.98,"Jon Stephens,Mike Hillyer",3
+294,United States,Dayton,2005-08-01,5,20.95,5.32,15.63,"Jon Stephens,Mike Hillyer",4
+146,United States,Sterling Heights,2005-07-11,3,19.97,4.74,15.23,"Mike Hillyer,Jon Stephens",5
+275,United States,Peoria,2005-08-21,4,19.96,5.21,14.75,"Mike Hillyer,Jon Stephens",6
+149,United States,Brockton,2005-06-18,3,18.97,4.49,14.48,"Jon Stephens,Mike Hillyer",7
+181,United States,Memphis,2005-07-30,3,19.97,6.85,13.12,"Jon Stephens,Mike Hillyer",8
+63,United States,Lincoln,2005-07-10,3,16.97,4.99,11.98,"Mike Hillyer,Jon Stephens",9
+51,United States,Fontana,2005-08-21,3,16.97,6.07,10.9,"Jon Stephens,Mike Hillyer",10
+158,United States,Greensboro,2005-08-02,4,15.96,5.1,10.86,"Jon Stephens,Mike Hillyer",11
+146,United States,Sterling Heights,2005-08-02,4,17.96,7.39,10.57,"Jon Stephens,Mike Hillyer",12
+51,United States,Fontana,2005-07-09,3,16.97,6.49,10.49,"Mike Hillyer,Jon Stephens",13
+112,United States,Lancaster,2005-07-31,4,17.96,8.23,9.73,"Jon Stephens,Mike Hillyer",14
+214,United States,Sunnyvale,2005-08-19,3,15.97,6.32,9.65,"Jon Stephens,Mike Hillyer",15
+276,United States,Warren,2005-08-18,3,15.97,6.84,9.13,"Jon Stephens,Mike Hillyer",16
+290,Venezuela,Valle de la Pascua,2005-06-15,3,20.97,2.99,17.98,"Mike Hillyer,Jon Stephens",1
+113,Venezuela,Cuman,2005-06-20,3,16.97,2.59,14.38,"Jon Stephens,Mike Hillyer",2
+453,Venezuela,Maracabo,2005-08-21,4,18.96,6.32,12.64,"Mike Hillyer,Jon Stephens",3
+174,Venezuela,Ocumare del Tuy,2005-08-01,3,16.97,5.49,11.48,"Mike Hillyer,Jon Stephens",4
+520,Vietnam,Nha Trang,2005-07-10,3,19.97,4.82,15.15,"Jon Stephens,Mike Hillyer",1
+472,Vietnam,Nam Dinh,2005-07-11,3,18.97,4.86,14.11,"Mike Hillyer,Jon Stephens",2
+532,Vietnam,Cam Ranh,2005-08-19,3,18.97,7.7,11.27,"Jon Stephens,Mike Hillyer",3
+199,Vietnam,Haiphong,2005-08-01,3,16.97,7.55,9.42,"Mike Hillyer,Jon Stephens",4
+470,Yemen,Hodeida,2005-08-18,3,23.97,7.98,15.99,"Jon Stephens,Mike Hillyer",1
+7,Yugoslavia,Kragujevac,2005-08-01,4,22.96,6.65,16.31,"Jon Stephens,Mike Hillyer",1
+553,Yugoslavia,Novi Sad,2005-07-06,5,22.95,6.74,16.21,"Jon Stephens,Mike Hillyer",2

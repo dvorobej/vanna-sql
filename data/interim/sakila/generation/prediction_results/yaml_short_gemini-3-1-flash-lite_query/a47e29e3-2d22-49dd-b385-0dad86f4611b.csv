@@ -1,0 +1,2 @@
+customer_id,first_name,last_name,store_id,payment_count,avg_payment,max_payment,share_of_large_payments_in_total_sum
+454,ALEX,GRESHAM,2,10,5.29,9.99,0.1888

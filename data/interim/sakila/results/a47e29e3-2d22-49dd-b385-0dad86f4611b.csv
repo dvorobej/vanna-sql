@@ -1,2 +1,2 @@
-avg_payment_amount,customer_id,first_name,large_payments_amount_share,last_name,max_payment_amount,payment_count,store_id,total_amount
-5.29,454,ALEX,0.1888,GRESHAM,9.99,10,2,52.9
+customer_id,first_name,last_name,store_id,payment_count,total_amount,avg_payment_amount,max_payment_amount,large_payments_amount_share
+454,ALEX,GRESHAM,2,10,52.9,5.29,9.99,0.1888

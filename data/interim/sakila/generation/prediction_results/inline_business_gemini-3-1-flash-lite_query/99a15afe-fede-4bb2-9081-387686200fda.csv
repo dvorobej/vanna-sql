@@ -1,0 +1,144 @@
+customer_id,country,city,store_id,month,total_amount,payment_count,staff_count,late_return_share,store_rank
+322,Argentina,Baha Blanca,1,2005-06,40.93,7,2,0.5714,1
+236,Philippines,Tanza,1,2005-06,37.92,8,2,1.0,2
+403,India,Valparai,1,2005-06,35.94,6,2,0.8333,3
+213,Yemen,Taizz,1,2005-06,35.91,9,2,0.3333,4
+338,South Africa,Paarl,1,2005-06,34.93,7,2,0.5714,5
+260,China,Datong,1,2005-06,34.92,8,2,0.75,6
+25,Pakistan,Shikarpur,1,2005-06,33.94,6,2,0.3333,7
+149,United States,Brockton,1,2005-06,32.93,7,2,0.5714,8
+295,Russian Federation,Kolpino,1,2005-06,32.91,9,2,0.7778,9
+1,Japan,Sasebo,1,2005-06,31.93,7,2,0.5714,10
+343,Mexico,Mexicali,1,2005-06,30.93,7,2,0.4286,11
+155,Switzerland,Bern,1,2005-06,27.95,5,2,0.6,12
+3,Greece,Athenai,1,2005-06,25.96,4,2,1.0,13
+309,Italy,Brescia,1,2005-06,25.96,4,2,0.75,13
+87,Colombia,Sincelejo,1,2005-06,25.95,5,2,0.2,15
+290,Venezuela,Valle de la Pascua,1,2005-06,25.95,5,2,0.6,16
+98,United Arab Emirates,al-Ayn,1,2005-06,25.94,6,2,0.5,17
+122,Peru,Lima,1,2005-06,25.93,7,2,0.8571,18
+144,Belarus,Molodetno,1,2005-06,22.94,6,2,0.5,19
+553,Yugoslavia,Novi Sad,1,2005-06,19.97,3,2,1.0,20
+52,Spain,A Corua (La Corua),1,2005-06,13.96,4,2,0.0,21
+402,France,Brest,1,2005-06,12.97,3,1,0.0,22
+454,Mexico,Uruapan,2,2005-06,52.9,10,2,0.5,1
+526,United States,Cape Coral,2,2005-06,41.91,9,2,0.6667,2
+550,China,Zhoushan,2,2005-06,39.94,6,2,0.6667,3
+193,Kenya,Kisumu,2,2005-06,35.94,6,2,0.5,4
+431,Bolivia,Sucre,2,2005-06,35.93,7,2,0.5714,5
+576,Taiwan,Fengshan,2,2005-06,33.93,7,2,0.5714,6
+491,Egypt,Mit Ghamr,2,2005-06,31.93,7,2,0.4286,7
+327,Turkey,Adana,2,2005-06,30.94,6,2,0.6667,8
+27,Philippines,Davao,2,2005-06,30.92,8,2,0.5,9
+120,Colombia,Dos Quebradas,2,2005-06,29.94,6,2,0.3333,10
+277,Nigeria,Ogbomosho,2,2005-06,28.93,7,2,0.5714,11
+287,India,Tambaram,2,2005-06,27.96,4,2,0.75,12
+113,Venezuela,Cuman,2,2005-06,27.94,6,2,0.5,13
+86,Thailand,Songkhla,2,2005-06,24.93,7,2,0.1429,14
+516,Cambodia,Battambang,2,2005-06,22.94,6,2,0.5,15
+262,Ecuador,Portoviejo,2,2005-06,20.96,4,2,0.75,16
+230,Romania,Botosani,2,2005-06,20.94,6,2,0.3333,17
+137,Netherlands,Apeldoorn,2,2005-06,19.96,4,2,0.75,18
+360,Puerto Rico,Arecibo,2,2005-06,18.96,4,1,0.75,19
+279,Iran,Tabriz,2,2005-06,16.95,5,1,0.0,20
+88,South Korea,Cheju,2,2005-06,13.97,3,1,0.3333,21
+470,Yemen,Hodeida,1,2005-07,96.83,17,2,0.5882,1
+144,Belarus,Molodetno,1,2005-07,93.82,18,2,0.7222,2
+459,Iran,Qomsheh,1,2005-07,89.82,18,2,0.5,3
+295,Russian Federation,Kolpino,1,2005-07,87.82,18,2,0.8889,4
+595,China,Jinzhou,1,2005-07,86.81,19,2,0.4737,5
+102,Israel,Ashdod,1,2005-07,84.79,21,2,0.8095,6
+366,Turkey,Balikesir,1,2005-07,82.81,19,2,0.8421,7
+225,India,Ambattur,1,2005-07,80.83,17,2,0.5882,8
+479,United States,Akron,1,2005-07,79.85,15,2,0.6,9
+332,Bangladesh,Dhaka,1,2005-07,78.83,17,2,0.6471,10
+484,China,Yinchuan,1,2005-07,77.85,15,2,0.8,11
+309,Italy,Brescia,1,2005-07,76.84,16,2,0.4375,12
+286,Nigeria,Effon-Alaiye,1,2005-07,76.83,17,2,0.8235,13
+2,United States,San Bernardino,1,2005-07,75.86,14,2,0.8571,14
+591,Brazil,Juiz de Fora,1,2005-07,75.85,15,2,0.7333,15
+502,India,Siliguri (Shiliguri),1,2005-07,73.85,15,2,0.6667,16
+30,Taiwan,Lungtan,1,2005-07,73.81,19,2,0.4737,17
+236,Philippines,Tanza,1,2005-07,73.8,20,2,0.5,18
+245,South Korea,Uijongbu,1,2005-07,72.84,16,2,0.6875,19
+585,Argentina,Quilmes,1,2005-07,70.87,13,2,0.5385,20
+482,Mexico,Coatzacoalcos,1,2005-07,69.88,12,2,0.5833,21
+3,Greece,Athenai,1,2005-07,68.87,13,2,0.6154,22
+285,Japan,Otsu,1,2005-07,68.87,13,2,0.6923,23
+553,Yugoslavia,Novi Sad,1,2005-07,68.84,16,2,0.375,24
+441,Algeria,Batna,1,2005-07,66.83,17,2,0.4118,25
+125,South Africa,Boksburg,1,2005-07,65.84,16,2,0.625,26
+82,Ukraine,Simferopol,1,2005-07,64.89,11,2,0.6364,27
+490,Colombia,Sogamoso,1,2005-07,64.86,14,2,0.5714,28
+598,Switzerland,Lausanne,1,2005-07,64.84,16,2,0.75,29
+122,Peru,Lima,1,2005-07,61.85,15,2,0.5333,30
+173,Austria,Graz,1,2005-07,57.86,14,2,0.5,31
+528,Angola,Benguela,1,2005-07,56.89,11,2,0.8182,32
+539,Venezuela,Valencia,1,2005-07,55.88,12,2,0.8333,33
+101,Saudi Arabia,Abha,1,2005-07,53.88,12,2,0.6667,34
+306,Malaysia,Sungai Petani,1,2005-07,53.86,14,2,0.5,35
+402,France,Brest,1,2005-07,52.88,12,2,0.75,36
+436,Canada,Vancouver,1,2005-07,52.88,12,2,0.6667,37
+524,Indonesia,Purwakarta,1,2005-07,48.92,8,2,0.625,38
+52,Spain,A Corua (La Corua),1,2005-07,48.88,12,2,0.9167,39
+415,Netherlands,Amersfoort,1,2005-07,40.89,11,2,0.6364,40
+45,Chile,Antofagasta,1,2005-07,37.91,9,2,0.7778,41
+522,Philippines,Santa Rosa,2,2005-07,96.82,18,2,0.7222,1
+137,Netherlands,Apeldoorn,2,2005-07,96.81,19,2,0.7895,2
+257,Mozambique,Beira,2,2005-07,88.82,18,2,0.6111,3
+526,United States,Cape Coral,2,2005-07,86.81,19,2,0.5789,4
+209,India,Bhilwara,2,2005-07,82.83,17,2,0.7059,5
+494,Ecuador,Robamba,2,2005-07,80.82,18,2,0.6111,6
+469,Spain,Ourense (Orense),2,2005-07,80.82,18,2,0.6667,7
+372,Indonesia,Probolinggo,2,2005-07,77.84,16,2,0.5625,8
+508,India,Vijayawada,2,2005-07,74.86,14,2,0.7143,9
+462,Russian Federation,Usolje-Sibirskoje,2,2005-07,74.84,16,2,0.625,10
+210,Yemen,Aden,2,2005-07,73.82,18,2,0.6667,11
+475,Ukraine,ostka,2,2005-07,71.85,15,2,0.6667,12
+348,Taiwan,Hsichuh,2,2005-07,70.84,16,2,0.5625,13
+49,Saudi Arabia,Jedda,2,2005-07,69.87,13,2,0.6154,14
+532,Vietnam,Cam Ranh,2,2005-07,69.86,14,2,0.7143,15
+363,Kenya,Nyeri,2,2005-07,69.85,15,2,0.6,16
+360,Puerto Rico,Arecibo,2,2005-07,69.83,17,2,0.5882,17
+35,France,Toulouse,2,2005-07,68.84,16,2,0.625,18
+497,United Kingdom,York,2,2005-07,67.86,14,2,0.5714,19
+273,Mexico,Salamanca,2,2005-07,67.85,15,2,0.6,20
+86,Thailand,Songkhla,2,2005-07,64.88,12,2,0.5833,21
+531,Japan,Kuwana,2,2005-07,64.86,14,2,0.5714,22
+219,Argentina,Vicente Lpez,2,2005-07,64.85,15,2,0.6,23
+13,Turkey,Osmaniye,2,2005-07,61.87,13,2,0.5385,24
+114,Germany,Duisburg,2,2005-07,61.85,15,2,0.2,25
+491,Egypt,Mit Ghamr,2,2005-07,60.89,11,2,0.6364,26
+563,Romania,Bucuresti,2,2005-07,60.84,16,2,0.5625,27
+220,Tanzania,Zanzibar,2,2005-07,59.88,12,2,0.5833,28
+64,China,Daxian,2,2005-07,59.81,19,2,0.6842,29
+409,Nigeria,Deba Habe,2,2005-07,58.85,15,2,0.5333,30
+424,China,Shanwei,2,2005-07,58.84,16,2,0.375,31
+99,South Korea,Kimchon,2,2005-07,56.85,15,2,0.4,32
+228,Cambodia,Phnom Penh,2,2005-07,54.85,15,2,0.4,33
+334,Azerbaijan,Sumqayit,2,2005-07,53.89,11,2,0.5455,34
+525,Italy,Udine,2,2005-07,49.89,11,2,0.7273,35
+205,Paraguay,Ciudad del Este,2,2005-07,45.92,8,2,0.75,36
+455,Bolivia,El Alto,2,2005-07,45.91,9,2,0.7778,37
+418,Dominican Republic,San Felipe de Puerto Plata,2,2005-07,45.9,10,2,0.6,38
+279,Iran,Tabriz,2,2005-07,42.91,9,2,0.5556,39
+20,Pakistan,Mardan,2,2005-07,42.9,10,2,0.7,40
+21,Bangladesh,Tangail,1,2005-08,79.83,17,2,0.6471,1
+15,India,Bhopal,1,2005-08,79.82,18,2,0.6111,2
+119,Egypt,Shubra al-Khayma,1,2005-08,77.82,18,2,0.5556,3
+45,Chile,Antofagasta,1,2005-08,68.88,12,2,0.6667,4
+445,Argentina,Escobar,1,2005-08,66.86,14,2,0.7143,5
+54,Japan,Iwakuni,1,2005-08,64.86,14,2,0.4286,6
+471,South Africa,Johannesburg,1,2005-08,55.88,12,2,0.5,7
+22,Morocco,Sal,1,2005-08,54.9,10,2,0.7,8
+460,Colombia,Florencia,1,2005-08,54.88,12,2,0.5833,9
+597,Peru,Sullana,1,2005-08,47.88,12,2,0.4167,10
+147,Japan,Urawa,2,2005-08,76.85,15,2,0.6,1
+569,China,Leshan,2,2005-08,75.82,18,2,0.5,2
+198,Nigeria,Ikerre,2,2005-08,70.84,16,2,0.5625,3
+150,Mexico,Hidalgo,2,2005-08,68.84,16,2,0.625,4
+565,Peru,Hunuco,2,2005-08,66.87,13,2,0.6923,5
+279,Iran,Tabriz,2,2005-08,66.86,14,2,0.5,6
+416,Pakistan,Dadu,2,2005-08,63.87,13,2,0.6923,7
+327,Turkey,Adana,2,2005-08,58.87,13,2,0.7692,8
+70,Saudi Arabia,al-Hawiya,2,2005-08,43.91,9,2,0.6667,9

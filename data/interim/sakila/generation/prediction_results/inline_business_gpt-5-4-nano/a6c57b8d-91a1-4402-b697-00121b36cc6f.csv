@@ -1,0 +1,60 @@
+country,city,customer_id,customer_name,activity_month,month_total_amount,payment_count,deviation_from_personal_avg,personal_avg_month_total_amount,country_month_amount_rank_desc,country_amount_percent_rank_like,top_staff_id,top_staff_first_name,top_staff_last_name,top_staff_month_total_amount
+Argentina,Baha Blanca,322,JASON MORRISSEY,2005-06,40.93,7,34.95,5.98,1,0.0833,1,Mike,Hillyer,20.96
+Argentina,Quilmes,585,PERRY SWAFFORD,2005-07,70.87,13,56.91,13.96,1,0.0769,2,Jon,Stephens,41.92
+Argentina,Escobar,445,MICHEAL FORMAN,2005-08,66.86,14,48.92,17.94,1,0.0769,1,Mike,Hillyer,46.92
+Brazil,Ibirit,310,DANIEL CABRAL,2005-06,27.94,6,26.95,0.99,2,0.0714,2,Jon,Stephens,18.96
+Brazil,Goinia,92,TINA SIMMONS,2005-07,78.85,15,65.88,12.98,2,0.0714,2,Jon,Stephens,45.93
+China,Zhoushan,550,GUY BROWNLEE,2005-06,39.94,6,31.95,7.99,1,0.0189,1,Mike,Hillyer,24.96
+China,Datong,260,CHRISTY VARGAS,2005-06,34.92,8,25.93,8.99,4,0.0755,1,Mike,Hillyer,24.95
+China,Jinzhou,595,TERRENCE GUNDERSON,2005-07,86.81,19,79.33,7.49,1,0.0189,1,Mike,Hillyer,58.88
+China,Yinchuan,484,ROBERTO VU,2005-07,77.85,15,62.89,14.97,2,0.0377,2,Jon,Stephens,56.9
+China,Jinchang,168,REGINA BERRY,2005-07,70.83,17,65.35,5.49,3,0.0566,2,Jon,Stephens,41.9
+China,Tiefa,302,MICHAEL SILVERMAN,2005-07,67.85,15,60.87,6.99,4,0.0755,1,Mike,Hillyer,34.94
+China,Leshan,569,DAVE GARDINER,2005-08,75.82,18,56.2,19.62,1,0.0189,1,Mike,Hillyer,40.92
+India,Valparai,403,MIKE WAY,2005-06,35.94,6,31.96,3.98,1,0.0169,1,Mike,Hillyer,19.97
+India,Tambaram,287,BECKY MILES,2005-06,27.96,4,20.99,6.97,4,0.0678,2,Jon,Stephens,19.97
+India,Bhilwara,209,TONYA CHAPMAN,2005-07,82.83,17,65.87,16.97,1,0.0167,2,Jon,Stephens,48.91
+India,Ambattur,225,ARLENE HARVEY,2005-07,80.83,17,72.35,8.49,2,0.0333,1,Mike,Hillyer,50.91
+India,Vijayawada,508,MILTON HOWLAND,2005-07,74.86,14,69.38,5.49,3,0.05,2,Jon,Stephens,60.89
+India,Siliguri (Shiliguri),502,BRETT CORNWELL,2005-07,73.85,15,64.89,8.97,4,0.0667,2,Jon,Stephens,41.91
+India,Uluberia,446,THEODORE CULP,2005-07,71.83,17,57.88,13.96,5,0.0833,2,Jon,Stephens,37.91
+India,Purnea (Purnia),426,BRADLEY MOTLEY,2005-07,65.89,11,55.42,10.47,6,0.1,1,Mike,Hillyer,41.93
+India,Bhopal,15,HELEN HARRIS,2005-08,79.82,18,54.38,25.44,1,0.0167,2,Jon,Stephens,45.9
+India,Etawah,121,JOSEPHINE GOMEZ,2005-08,67.86,14,53.9,13.96,6,0.1,2,Jon,Stephens,41.92
+Indonesia,Probolinggo,372,STEVE MACKENZIE,2005-07,77.84,16,68.87,8.98,1,0.0714,2,Jon,Stephens,40.94
+Japan,Sasebo,1,MARY SMITH,2005-06,31.93,7,27.95,3.98,1,0.0333,1,Mike,Hillyer,19.96
+Japan,Otsu,285,MIRIAM MCKINNEY,2005-07,68.87,13,50.9,17.97,1,0.0323,1,Mike,Hillyer,47.93
+Japan,Kuwana,531,JAMIE WAUGH,2005-07,64.86,14,59.38,5.49,2,0.0645,2,Jon,Stephens,41.9
+Japan,Akishima,574,JULIAN VEST,2005-07,64.85,15,56.38,8.47,3,0.0968,1,Mike,Hillyer,56.87
+Japan,Urawa,147,JOANNE ROBERTSON,2005-08,76.85,15,59.91,16.94,1,0.0323,2,Jon,Stephens,45.91
+Japan,Iwakuni,54,TERESA ROGERS,2005-08,64.86,14,43.58,21.28,3,0.0968,1,Mike,Hillyer,39.92
+Mexico,Uruapan,454,ALEX GRESHAM,2005-06,52.9,10,44.91,7.99,1,0.0333,2,Jon,Stephens,34.95
+Mexico,Monclova,570,IVAN CROMWELL,2005-06,32.93,7,24.94,7.99,2,0.0667,2,Jon,Stephens,27.94
+Mexico,Cuauhtmoc,467,ALVIN DELOACH,2005-06,30.96,4,25.97,4.99,3,0.1,1,Mike,Hillyer,15.98
+Mexico,Coatzacoalcos,482,MAURICE CRAWLEY,2005-07,69.88,12,61.41,8.48,1,0.0333,2,Jon,Stephens,45.92
+Mexico,Salamanca,273,PRISCILLA LOWE,2005-07,67.85,15,54.39,13.47,2,0.0667,1,Mike,Hillyer,41.92
+Mexico,San Juan Bautista Tuxtepec,425,FRANCIS SIKES,2005-07,67.83,17,61.34,6.49,3,0.1,1,Mike,Hillyer,39.9
+Mexico,Hidalgo,150,DANIELLE DANIELS,2005-08,68.84,16,56.54,12.3,1,0.0333,2,Jon,Stephens,52.89
+Nigeria,Ogbomosho,277,OLGA JIMENEZ,2005-06,28.93,7,21.94,6.99,1,0.0769,2,Jon,Stephens,16.96
+Nigeria,Effon-Alaiye,286,VELMA LUCAS,2005-07,76.83,17,66.35,10.49,1,0.0769,2,Jon,Stephens,42.92
+Nigeria,Ikerre,198,ELSIE KELLEY,2005-08,70.84,16,47.24,23.6,1,0.0769,1,Mike,Hillyer,51.89
+Philippines,Tanza,236,MARCIA DEAN,2005-06,37.92,8,28.95,8.97,1,0.05,2,Jon,Stephens,28.95
+Philippines,Davao,27,SHIRLEY ALLEN,2005-06,30.92,8,27.93,2.99,2,0.1,2,Jon,Stephens,18.95
+Philippines,Santa Rosa,522,ARNOLD HAVENS,2005-07,96.82,18,85.35,11.48,1,0.05,2,Jon,Stephens,63.89
+Philippines,Tanza,236,MARCIA DEAN,2005-07,73.8,20,50.36,23.45,2,0.1,2,Jon,Stephens,38.9
+Russian Federation,Moscow,46,CATHERINE CAMPBELL,2005-06,32.93,7,21.96,10.97,2,0.0714,2,Jon,Stephens,24.95
+Russian Federation,Kolpino,295,DAISY BATES,2005-07,87.82,18,69.37,18.45,1,0.0357,1,Mike,Hillyer,45.92
+Russian Federation,Maikop,346,ARTHUR SIMPKINS,2005-07,83.85,15,72.88,10.98,2,0.0714,2,Jon,Stephens,54.9
+Russian Federation,Ljubertsy,160,ERIN DUNN,2005-08,66.85,15,46.91,19.94,2,0.0714,1,Mike,Hillyer,38.92
+South Africa,Paarl,338,DENNIS GILMAN,2005-06,34.93,7,33.94,0.99,1,0.0909,1,Mike,Hillyer,24.95
+South Africa,Boksburg,125,ETHEL WEBB,2005-07,65.84,16,53.87,11.98,1,0.0909,1,Mike,Hillyer,41.91
+South Africa,Johannesburg,471,DEAN SAUER,2005-08,55.88,12,37.93,17.95,1,0.0909,1,Mike,Hillyer,34.93
+Taiwan,Fengshan,576,MORRIS MCCARTER,2005-06,33.93,7,29.95,3.98,1,0.1,2,Jon,Stephens,23.96
+Taiwan,Lungtan,30,MELISSA KING,2005-07,73.81,19,60.85,12.96,1,0.1,2,Jon,Stephens,39.9
+Turkey,Balikesir,366,BRANDON HUEY,2005-07,82.81,19,77.83,4.99,1,0.0667,2,Jon,Stephens,41.9
+United States,Cape Coral,526,KARL SEAL,2005-06,41.91,9,28.94,12.97,1,0.0278,2,Jon,Stephens,23.95
+United States,Garland,561,IAN STILL,2005-06,33.91,9,23.93,9.98,2,0.0556,1,Mike,Hillyer,22.94
+United States,Brockton,149,VALERIE BLACK,2005-06,32.93,7,27.94,4.99,3,0.0833,2,Jon,Stephens,22.96
+United States,Cape Coral,526,KARL SEAL,2005-07,86.81,19,59.37,27.44,1,0.0278,2,Jon,Stephens,47.89
+United States,Akron,479,ZACHARY HITE,2005-07,79.85,15,61.89,17.96,2,0.0556,2,Jon,Stephens,46.93
+United States,San Bernardino,2,PATRICIA JOHNSON,2005-07,75.86,14,71.87,3.99,3,0.0833,2,Jon,Stephens,48.92
