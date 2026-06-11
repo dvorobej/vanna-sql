@@ -1,4 +1,4 @@
-customer_id,first_name,last_name,country_name,city_name,suspicious_date,day_amount,payment_count,staff_count,avg_prev_30d_day_amount,suspicion_rank_by_exceedance
+customer_id,first_name,last_name,country_name,city_name,suspicious_date,day_amount,payment_count,distinct_staff_count,avg_daily_amount_prev_30d,suspicious_rank
 412,ALLEN,BUTTERFIELD,India,Hoshiarpur,2005-07-29,18.97,3,2,0.99,1
 480,COREY,HAUSER,Turkey,Gaziantep,2005-05-29,16.98,2,2,0.99,2
 172,BERNICE,WILLIS,Turkey,Batman,2005-07-08,17.97,3,2,1.32,3

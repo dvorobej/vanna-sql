@@ -8,7 +8,7 @@ SELECT
   CASE
     WHEN AVG(p.p05) > 5 THEN 'высокий'
     ELSE 'средний'
-  END AS risk_level
+  END AS risk_flag
 FROM cus AS c
 JOIN pay AS p
   ON p.p02 = c.h01

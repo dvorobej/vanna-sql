@@ -5,10 +5,7 @@ SELECT
   COUNT(p.p01) AS payment_count,
   ROUND(SUM(p.p05), 2) AS total_payment_amount,
   ROUND(AVG(p.p05), 2) AS avg_payment_amount,
-  ROUND(
-    SUM(CASE WHEN s.o07 <> c.h02 THEN p.p05 ELSE 0 END),
-    2
-  ) AS other_store_staff_payment_sum
+  ROUND(SUM(CASE WHEN s.o07 <> c.h02 THEN p.p05 ELSE 0 END), 2) AS other_store_staff_paid_amount
 FROM cus AS c
 JOIN pay AS p
   ON p.p02 = c.h01
@@ -21,4 +18,5 @@ GROUP BY
   c.h03,
   c.h04
 HAVING SUM(p.p05) > 50
-ORDER BY total_payment_amount DESC;
+ORDER BY
+  total_payment_amount DESC;

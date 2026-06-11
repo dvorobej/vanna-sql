@@ -1,76 +1,81 @@
-WITH monthly_customer_stats AS (
+WITH monthly_stats AS (
     SELECT
         p.p02 AS customer_id,
-        strftime('%Y-%m', p.p06) AS payment_month,
-        SUM(p.p05) AS monthly_amount,
-        COUNT(*) AS payment_count,
-        MAX(p.p05) AS max_payment,
-        SUM(CASE WHEN c.g02 IN ('Action', 'New') THEN p.p05 ELSE 0 END) AS action_new_amount
+        strftime('%Y-%m', p.p06) AS month,
+        SUM(p.p05) AS monthly_sum,
+        COUNT(*) AS monthly_count
     FROM pay AS p
-    LEFT JOIN ren AS r ON p.p04 = r.q01
-    LEFT JOIN inv AS i ON r.q03 = i.n01
-    LEFT JOIN flc AS fc ON i.n02 = fc.l01
-    LEFT JOIN cat AS c ON fc.l02 = c.g01
     GROUP BY p.p02, strftime('%Y-%m', p.p06)
 ),
 customer_history AS (
     SELECT
-        mcs.*,
-        AVG(mcs.monthly_amount) OVER (
-            PARTITION BY mcs.customer_id 
-            ORDER BY mcs.payment_month 
+        ms.*,
+        AVG(ms.monthly_sum) OVER (
+            PARTITION BY ms.customer_id
+            ORDER BY ms.month
             ROWS BETWEEN UNBOUNDED PRECEDING AND 1 PRECEDING
-        ) AS hist_avg_amount
-    FROM monthly_customer_stats AS mcs
+        ) AS hist_avg_sum
+    FROM monthly_stats AS ms
 ),
-country_median_counts AS (
+country_median_count AS (
     SELECT
-        cu.h01 AS customer_id,
-        co.c01 AS country_id,
-        co.c02 AS country_name,
-        ct.d02 AS city_name,
-        cu.h02 AS store_id,
-        (SELECT AVG(m.payment_count) FROM (
-            SELECT payment_count FROM monthly_customer_stats AS mcs2
-            JOIN cus AS cu2 ON mcs2.customer_id = cu2.h01
-            JOIN adr AS a2 ON cu2.h06 = a2.e01
-            JOIN cty AS ct2 ON a2.e05 = ct2.d01
-            WHERE ct2.d03 = co.c01
-            ORDER BY payment_count LIMIT 2 - (COUNT(*) % 2) OFFSET (COUNT(*) - 1) / 2
-        )) AS country_median_count
-    FROM cus AS cu
-    JOIN adr AS a ON cu.h06 = a.e01
-    JOIN cty AS ct ON a.e05 = ct.d01
-    JOIN cnt AS co ON ct.d03 = co.c01
+        c.c01 AS country_id,
+        ms.month,
+        (SELECT AVG(cnt) FROM (
+            SELECT COUNT(*) AS cnt FROM monthly_stats ms2
+            JOIN cus c2 ON ms2.customer_id = c2.h01
+            JOIN adr a2 ON c2.h06 = a2.e01
+            JOIN cty ct2 ON a2.e05 = ct2.d01
+            WHERE ct2.d03 = c.c01 AND ms2.month = ms.month
+            GROUP BY ms2.customer_id
+        )) AS median_count
+    FROM cnt c
+    JOIN cty ct ON c.c01 = ct.d03
+    JOIN adr a ON ct.d01 = a.e05
+    JOIN cus cu ON a.e01 = cu.h06
+    JOIN monthly_stats ms ON cu.h01 = ms.customer_id
+    GROUP BY c.c01, ms.month
 ),
-suspicious_clients AS (
+suspicious_cases AS (
     SELECT
         ch.*,
-        cmc.country_name,
-        cmc.city_name,
-        cmc.store_id,
-        cmc.country_median_count
-    FROM customer_history AS ch
-    JOIN country_median_counts AS cmc ON ch.customer_id = cmc.customer_id
-    WHERE ch.hist_avg_amount IS NOT NULL
-      AND ch.monthly_amount > 3 * ch.hist_avg_amount
-      AND ch.payment_count > cmc.country_median_count
+        cu.h02 AS store_id,
+        ct.d02 AS city_name,
+        cn.c02 AS country_name,
+        cn.c01 AS country_id
+    FROM customer_history ch
+    JOIN cus cu ON ch.customer_id = cu.h01
+    JOIN adr a ON cu.h06 = a.e01
+    JOIN cty ct ON a.e05 = ct.d01
+    JOIN cnt cn ON ct.d03 = cn.c01
+    JOIN country_median_count cmc ON cn.c01 = cmc.country_id AND ch.month = cmc.month
+    WHERE ch.hist_avg_sum > 0
+      AND ch.monthly_sum > 3 * ch.hist_avg_sum
+      AND ch.monthly_count > cmc.median_count
 ),
-ranked_suspicious AS (
+payment_details AS (
     SELECT
-        *,
-        RANK() OVER (PARTITION BY country_name ORDER BY monthly_amount DESC) AS country_rank
-    FROM suspicious_clients
+        sc.customer_id,
+        sc.month,
+        MAX(p.p05) AS max_payment,
+        SUM(CASE WHEN cat.g02 IN ('Action', 'New') THEN p.p05 ELSE 0 END) / SUM(p.p05) AS action_new_share
+    FROM suspicious_cases sc
+    JOIN pay p ON sc.customer_id = p.p02 AND strftime('%Y-%m', p.p06) = sc.month
+    LEFT JOIN ren r ON p.p04 = r.q01
+    LEFT JOIN inv i ON r.q03 = i.n01
+    LEFT JOIN flc fc ON i.n02 = fc.l01
+    LEFT JOIN cat ON fc.l02 = cat.g01
+    GROUP BY sc.customer_id, sc.month
 )
 SELECT
-    country_name,
-    city_name,
-    store_id,
-    payment_month,
-    payment_count,
-    ROUND(monthly_amount, 2) AS total_amount,
-    ROUND(max_payment, 2) AS max_payment,
-    ROUND(action_new_amount / NULLIF(monthly_amount, 0), 4) AS action_new_share,
-    country_rank
-FROM ranked_suspicious
-ORDER BY country_name, country_rank;
+    sc.country_name,
+    sc.city_name,
+    sc.store_id,
+    sc.monthly_count,
+    sc.monthly_sum,
+    pd.max_payment,
+    pd.action_new_share,
+    RANK() OVER (PARTITION BY sc.country_id ORDER BY sc.monthly_sum DESC) AS country_rank
+FROM suspicious_cases sc
+JOIN payment_details pd ON sc.customer_id = pd.customer_id AND sc.month = pd.month
+ORDER BY country_rank;

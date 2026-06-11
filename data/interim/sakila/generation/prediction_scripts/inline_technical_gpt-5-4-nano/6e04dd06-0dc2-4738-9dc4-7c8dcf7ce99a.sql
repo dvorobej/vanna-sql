@@ -1,148 +1,139 @@
-WITH monthly_customer AS (
-    SELECT
-        c.h01 AS customer_id,
-        c.h03 AS customer_first_name,
-        c.h04 AS customer_last_name,
-        cn.c01 AS country_id,
-        cn.c02 AS country_name,
-        date(p.p06, 'start of month') AS month_start,
-        SUM(p.p05) AS monthly_amount,
-        COUNT(p.p01) AS payment_count,
-        COUNT(DISTINCT p.p03) AS distinct_staff_count,
-        COUNT(DISTINCT c.h02) AS distinct_store_count
-    FROM pay AS p
-    JOIN cus AS c
-        ON c.h01 = p.p02
-    JOIN adr AS a
-        ON a.e01 = c.h06
-    JOIN cty AS ct
-        ON ct.d01 = a.e05
-    JOIN cnt AS cn
-        ON cn.c01 = ct.d03
-    GROUP BY
-        c.h01,
-        c.h03,
-        c.h04,
-        cn.c01,
-        cn.c02,
-        date(p.p06, 'start of month')
+WITH monthly_base AS (
+  SELECT
+    c.h01 AS customer_id,
+    c.h03 AS customer_first_name,
+    c.h04 AS customer_last_name,
+    co.c01 AS country_id,
+    co.c02 AS country_name,
+    date(p.p06, 'start of month') AS month_start,
+    SUM(p.p05) AS monthly_amount,
+    COUNT(p.p01) AS payment_count,
+    COUNT(DISTINCT p.p03) AS distinct_staff_count,
+    COUNT(DISTINCT c.h02) AS distinct_store_count
+  FROM pay AS p
+  JOIN cus AS c
+    ON c.h01 = p.p02
+  JOIN adr AS a
+    ON a.e01 = c.h06
+  JOIN cty AS ct
+    ON ct.d01 = a.e05
+  JOIN cnt AS co
+    ON co.c01 = ct.d03
+  GROUP BY
+    c.h01, c.h03, c.h04,
+    co.c01, co.c02,
+    date(p.p06, 'start of month')
 ),
 monthly_with_history AS (
-    SELECT
-        mc.*,
-        AVG(mc.monthly_amount) OVER (
-            PARTITION BY mc.customer_id
-            ORDER BY mc.month_start
-            ROWS BETWEEN 3 PRECEDING AND 1 PRECEDING
-        ) AS avg_prev_3_months
-    FROM monthly_customer AS mc
+  SELECT
+    mb.*,
+    AVG(monthly_amount) OVER (
+      PARTITION BY customer_id
+      ORDER BY month_start
+      ROWS BETWEEN 3 PRECEDING AND 1 PRECEDING
+    ) AS avg_prev_3_months,
+    LAG(monthly_amount, 1) OVER (PARTITION BY customer_id ORDER BY month_start) AS prev1_amount,
+    LAG(monthly_amount, 2) OVER (PARTITION BY customer_id ORDER BY month_start) AS prev2_amount,
+    LAG(monthly_amount, 3) OVER (PARTITION BY customer_id ORDER BY month_start) AS prev3_amount
+  FROM monthly_base AS mb
 ),
-country_month_stats AS (
-    SELECT
-        mwh.*,
-        PERCENT_RANK() OVER (
-            PARTITION BY mwh.country_id, mwh.month_start
-            ORDER BY mwh.monthly_amount
-        ) AS pr_country_month
-    FROM monthly_with_history AS mwh
+country_month_ranked AS (
+  SELECT
+    mwh.*,
+    ROW_NUMBER() OVER (
+      PARTITION BY country_id, month_start
+      ORDER BY monthly_amount DESC, customer_id
+    ) AS rn_desc,
+    COUNT(*) OVER (
+      PARTITION BY country_id, month_start
+    ) AS country_customers_cnt
+  FROM monthly_with_history AS mwh
 ),
-country_percentiles AS (
+country_month_percentiles AS (
+  -- 95-й процентиль и медиана (50-й) месячных сумм по стране/месяцу (линейная аппроксимация через соседние ранги)
+  SELECT
+    cmr.country_id,
+    cmr.month_start,
+
+    MAX(CASE WHEN cmr.rn_asc = CAST((0.50 * (cmr.country_customers_cnt + 1)) AS INTEGER)
+             THEN cmr.monthly_amount END) AS p50_lower,
+
+    MAX(CASE WHEN cmr.rn_asc = CAST((0.50 * (cmr.country_customers_cnt + 1)) AS INTEGER) + 1
+             THEN cmr.monthly_amount END) AS p50_upper,
+
+    MAX(CASE WHEN cmr.rn_asc = CAST((0.95 * (cmr.country_customers_cnt + 1)) AS INTEGER)
+             THEN cmr.monthly_amount END) AS p95_lower,
+
+    MAX(CASE WHEN cmr.rn_asc = CAST((0.95 * (cmr.country_customers_cnt + 1)) AS INTEGER) + 1
+             THEN cmr.monthly_amount END) AS p95_upper,
+
+    MAX(cmr.country_customers_cnt) AS country_customers_cnt_max
+  FROM (
     SELECT
-        country_id,
-        month_start,
-        COUNT(*) AS n,
-        (n - 1) * 0.95 AS pos95
-    FROM (
-        SELECT DISTINCT
-            country_id,
-            month_start
-        FROM country_month_stats
-    )
+      mcr.*,
+      ROW_NUMBER() OVER (
+        PARTITION BY country_id, month_start
+        ORDER BY monthly_amount ASC, customer_id
+      ) AS rn_asc
+    FROM country_month_ranked AS mcr
+  ) AS cmr
+  GROUP BY
+    cmr.country_id, cmr.month_start
 ),
-country_month_sorted AS (
-    SELECT
-        cms.*,
-        ROW_NUMBER() OVER (
-            PARTITION BY cms.country_id, cms.month_start
-            ORDER BY cms.monthly_amount
-        ) AS rn
-    FROM country_month_stats AS cms
-),
-country_month_p95 AS (
-    SELECT
-        cms.country_id,
-        cms.month_start,
-        MAX(CASE WHEN cms.rn = CAST(cp.pos95 AS INTEGER) + 1 THEN cms.monthly_amount END) AS amount_at_floor,
-        MAX(CASE WHEN cms.rn = CAST(cp.pos95 AS INTEGER) + 2 THEN cms.monthly_amount END) AS amount_at_ceil,
-        cp.pos95 - CAST(cp.pos95 AS INTEGER) AS frac
-    FROM country_month_sorted AS cms
-    JOIN (
-        SELECT
-            country_id,
-            month_start,
-            COUNT(*) AS n,
-            (COUNT(*) - 1) * 0.95 AS pos95
-        FROM monthly_customer
-        GROUP BY country_id, month_start
-    ) AS cp
-      ON cp.country_id = cms.country_id
-     AND cp.month_start = cms.month_start
-    GROUP BY
-        cms.country_id,
-        cms.month_start,
-        cp.pos95
-),
-country_month_median AS (
-    SELECT
-        cms.country_id,
-        cms.month_start,
-        AVG(cms.monthly_amount) AS median_amount
-    FROM (
-        SELECT
-            country_id,
-            month_start,
-            monthly_amount,
-            ROW_NUMBER() OVER (
-                PARTITION BY country_id, month_start
-                ORDER BY monthly_amount
-            ) AS rn,
-            COUNT(*) OVER (
-                PARTITION BY country_id, month_start
-            ) AS n
-        FROM monthly_customer
-    ) AS cms
-    WHERE cms.rn IN (
-        CAST((cms.n + 1) / 2 AS INTEGER),
-        CAST((cms.n + 2) / 2 AS INTEGER)
-    )
-    GROUP BY cms.country_id, cms.month_start
+final AS (
+  SELECT
+    cmr.customer_id,
+    cmr.customer_first_name,
+    cmr.customer_last_name,
+    cmr.country_id,
+    cmr.country_name,
+    cmr.month_start,
+    cmr.monthly_amount,
+    cmr.payment_count,
+    cmr.distinct_staff_count,
+    cmr.distinct_store_count,
+    cmr.avg_prev_3_months,
+
+    -- медиана
+    CASE
+      WHEN cpm.p50_lower IS NULL OR cpm.p50_upper IS NULL THEN NULL
+      ELSE (cpm.p50_lower + (cpm.p50_upper - cpm.p50_lower) * 0.5)
+    END AS median_country_monthly_amount,
+
+    -- 95-й процентиль
+    CASE
+      WHEN cpm.p95_lower IS NULL OR cpm.p95_upper IS NULL THEN NULL
+      ELSE (cpm.p95_lower + (cpm.p95_upper - cpm.p95_lower) * 0.5)
+    END AS p95_country_monthly_amount,
+
+    -- попадание в верхние 5%: rn_desc <= ceil(0.05 * n)
+    (cmr.rn_desc <= CAST(CEIL(0.05 * cmr.country_customers_cnt AS REAL)) AS INTEGER) AS in_top_5pct
+  FROM country_month_ranked AS cmr
+  JOIN country_month_percentiles AS cpm
+    ON cpm.country_id = cmr.country_id
+   AND cpm.month_start = cmr.month_start
 )
 SELECT
-    cms.customer_id,
-    cms.customer_first_name,
-    cms.customer_last_name,
-    cms.country_name,
-    cms.month_start AS month,
-    ROUND(cms.monthly_amount, 2) AS monthly_amount,
-    cms.payment_count,
-    cms.distinct_staff_count,
-    cms.distinct_store_count,
-    ROUND(cms.avg_prev_3_months, 2) AS avg_prev_3_months,
-    ROUND(cmm.median_amount, 2) AS country_median_monthly_amount,
-    ROUND(cp95.amount_at_floor + cp95.frac * (cp95.amount_at_ceil - cp95.amount_at_floor), 2) AS country_p95_monthly_amount
-FROM monthly_with_history AS cms
-JOIN country_month_median AS cmm
-    ON cmm.country_id = cms.country_id
-   AND cmm.month_start = cms.month_start
-JOIN country_month_p95 AS cp95
-    ON cp95.country_id = cms.country_id
-   AND cp95.month_start = cms.month_start
-WHERE cms.avg_prev_3_months IS NOT NULL
-  AND cms.monthly_amount >= 3.0 * cms.avg_prev_3_months
-  AND cms.monthly_amount >= 2.0 * cmm.median_amount
-  AND cms.monthly_amount >= (cp95.amount_at_floor + cp95.frac * (cp95.amount_at_ceil - cp95.amount_at_floor))
+  customer_id,
+  customer_first_name,
+  customer_last_name,
+  country_name,
+  month_start,
+  ROUND(monthly_amount, 2) AS monthly_amount,
+  payment_count,
+  distinct_staff_count,
+  distinct_store_count,
+  ROUND(avg_prev_3_months, 2) AS avg_prev_3_months,
+  ROUND(median_country_monthly_amount, 2) AS median_country_monthly_amount,
+  in_top_5pct
+FROM final
+WHERE avg_prev_3_months IS NOT NULL
+  AND monthly_amount >= 3.0 * avg_prev_3_months
+  AND median_country_monthly_amount IS NOT NULL
+  AND monthly_amount >= 2.0 * median_country_monthly_amount
+  AND in_top_5pct = 1
 ORDER BY
-    cms.country_name,
-    cms.month_start,
-    cms.monthly_amount DESC,
-    cms.customer_id;
+  country_name,
+  month_start,
+  monthly_amount DESC,
+  customer_id;

@@ -5,7 +5,7 @@ SELECT
   COUNT(p.p01) AS payment_count,
   SUM(p.p05) AS total_amount,
   AVG(p.p05) AS average_payment,
-  SUM(CASE WHEN s.o07 <> c.h02 THEN p.p05 ELSE 0 END) AS amount_other_store_staff
+  SUM(CASE WHEN s.o07 <> c.h02 THEN p.p05 ELSE 0 END) AS other_store_staff_amount
 FROM cus AS c
 JOIN pay AS p
   ON p.p02 = c.h01

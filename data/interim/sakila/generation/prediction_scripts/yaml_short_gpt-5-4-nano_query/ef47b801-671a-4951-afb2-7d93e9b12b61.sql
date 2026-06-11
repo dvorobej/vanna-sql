@@ -4,15 +4,15 @@ SELECT
   c.h04 AS last_name,
   c.h02 AS store_id,
   COUNT(p.p01) AS payment_count,
-  ROUND(AVG(p.p05), 2) AS avg_payment,
-  ROUND(MAX(p.p05), 2) AS max_payment,
+  ROUND(AVG(p.p05), 2) AS avg_payment_amount,
+  ROUND(MAX(p.p05), 2) AS max_payment_amount,
   CASE
     WHEN COUNT(p.p01) > 10 THEN 1
     ELSE 0
-  END AS additional_check_required
-FROM cus AS c
-JOIN pay AS p
-  ON p.p02 = c.h01
+  END AS needs_additional_check
+FROM pay AS p
+JOIN cus AS c
+  ON c.h01 = p.p02
 WHERE p.p06 >= '2005-07-01'
   AND p.p06 < '2005-08-01'
 GROUP BY
@@ -23,5 +23,4 @@ GROUP BY
 HAVING SUM(p.p05) > 50
 ORDER BY
   payment_count DESC,
-  max_payment DESC,
-  total_payment_amount DESC;
+  total_amount DESC;

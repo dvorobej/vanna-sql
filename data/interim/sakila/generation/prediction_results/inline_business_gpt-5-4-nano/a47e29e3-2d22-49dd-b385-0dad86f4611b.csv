@@ -1,0 +1,2 @@
+customer_id,customer_name,store_id,payment_count,total_amount,avg_check,max_check,share_large_amount_over_8
+454,ALEX GRESHAM,2,10,52.9,5.29,9.99,0.1888

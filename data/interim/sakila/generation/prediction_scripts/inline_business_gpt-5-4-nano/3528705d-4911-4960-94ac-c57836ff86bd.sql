@@ -1,13 +1,15 @@
 SELECT
   c.h01 AS customer_id,
-  c.h03 AS customer_first_name,
-  c.h04 AS customer_last_name,
+  c.h03 AS first_name,
+  c.h04 AS last_name,
+  COUNT(p.p01) AS payment_count,
+  ROUND(SUM(p.p05), 2) AS total_amount,
+  ROUND(AVG(p.p05), 2) AS average_amount,
   s.o01 AS staff_id,
   s.o02 AS staff_first_name,
   s.o03 AS staff_last_name,
-  COUNT(p.p01) AS payment_count,
-  ROUND(SUM(p.p05), 2) AS total_amount,
-  ROUND(AVG(p.p05), 2) AS average_payment_amount
+  COUNT(CASE WHEN p.p03 IS NOT NULL THEN p.p01 END) AS staff_payment_count,
+  ROUND(SUM(CASE WHEN p.p03 IS NOT NULL THEN p.p05 ELSE 0 END), 2) AS staff_total_amount
 FROM pay AS p
 JOIN cus AS c
   ON c.h01 = p.p02
@@ -25,6 +27,6 @@ GROUP BY
 HAVING SUM(p.p05) > 50.00
 ORDER BY
   total_amount DESC,
-  payment_count DESC,
+  staff_total_amount DESC,
   customer_id,
   staff_id;

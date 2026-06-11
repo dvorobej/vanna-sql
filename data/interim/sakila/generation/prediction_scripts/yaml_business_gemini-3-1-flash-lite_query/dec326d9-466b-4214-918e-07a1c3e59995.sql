@@ -6,68 +6,63 @@ WITH daily_payments AS (
         COUNT(*) AS daily_count,
         GROUP_CONCAT(DISTINCT p.p03) AS staff_ids,
         GROUP_CONCAT(DISTINCT st.o07) AS store_ids,
-        COUNT(DISTINCT r.q03) AS distinct_films_count
+        COUNT(DISTINCT r.q03) AS film_count
     FROM pay p
     JOIN stf st ON st.o01 = p.p03
     LEFT JOIN ren r ON r.q01 = p.p04
     GROUP BY p.p02, DATE(p.p06)
 ),
-rolling_stats AS (
+window_stats AS (
     SELECT
-        dp.*,
-        SUM(dp.daily_amount) OVER (
-            PARTITION BY dp.customer_id 
-            ORDER BY JULIANDAY(dp.payment_date) 
-            RANGE BETWEEN 6 PRECEDING AND CURRENT ROW
-        ) AS window_amount,
-        SUM(dp.daily_count) OVER (
-            PARTITION BY dp.customer_id 
-            ORDER BY JULIANDAY(dp.payment_date) 
-            RANGE BETWEEN 6 PRECEDING AND CURRENT ROW
-        ) AS window_count,
-        AVG(dp.daily_amount) OVER (
-            PARTITION BY dp.customer_id 
-            ORDER BY JULIANDAY(dp.payment_date) 
-            RANGE BETWEEN 36 PRECEDING AND 7 PRECEDING
-        ) AS hist_avg_amount,
-        COUNT(*) OVER (
-            PARTITION BY dp.customer_id 
-            ORDER BY JULIANDAY(dp.payment_date) 
-            RANGE BETWEEN 36 PRECEDING AND 7 PRECEDING
-        ) AS hist_days_count
-    FROM daily_payments dp
+        d1.customer_id,
+        d1.payment_date AS window_end,
+        SUM(d2.daily_amount) AS window_amount,
+        SUM(d2.daily_count) AS window_count,
+        GROUP_CONCAT(DISTINCT d2.staff_ids) AS staff_list,
+        GROUP_CONCAT(DISTINCT d2.store_ids) AS store_list,
+        SUM(d2.film_count) AS total_films
+    FROM daily_payments d1
+    JOIN daily_payments d2 ON d2.customer_id = d1.customer_id
+        AND d2.payment_date BETWEEN DATE(d1.payment_date, '-6 days') AND d1.payment_date
+    GROUP BY d1.customer_id, d1.payment_date
 ),
-suspicious_windows AS (
+history_stats AS (
     SELECT
-        rs.*,
+        d1.customer_id,
+        d1.payment_date AS window_end,
+        AVG(d2.daily_amount) AS hist_avg_amount,
+        COUNT(d2.payment_date) AS hist_days
+    FROM daily_payments d1
+    JOIN daily_payments d2 ON d2.customer_id = d1.customer_id
+        AND d2.payment_date BETWEEN DATE(d1.payment_date, '-30 days') AND DATE(d1.payment_date, '-1 day')
+    GROUP BY d1.customer_id, d1.payment_date
+    HAVING COUNT(d2.payment_date) >= 5
+),
+suspicious_cases AS (
+    SELECT
+        ws.*,
         c.h03 || ' ' || c.h04 AS customer_name,
         cnt.c02 AS country,
         cty.d02 AS city
-    FROM rolling_stats rs
-    JOIN cus c ON c.h01 = rs.customer_id
+    FROM window_stats ws
+    JOIN history_stats hs ON hs.customer_id = ws.customer_id AND hs.window_end = ws.window_end
+    JOIN cus c ON c.h01 = ws.customer_id
     JOIN adr a ON a.e01 = c.h06
     JOIN cty ON cty.d01 = a.e05
     JOIN cnt ON cnt.c01 = cty.d03
-    WHERE rs.hist_days_count >= 5
-      AND rs.window_amount >= 3.0 * COALESCE(rs.hist_avg_amount, 0)
-      AND rs.window_count >= 5
-),
-ranked_suspicious AS (
-    SELECT
-        *,
-        RANK() OVER (ORDER BY window_amount DESC) AS global_suspicious_rank
-    FROM suspicious_windows
+    WHERE ws.window_amount >= 3 * hs.hist_avg_amount
+      AND ws.window_count >= 5
 )
 SELECT
-    payment_date AS window_end_date,
     customer_name,
     country,
     city,
+    window_end,
     window_amount,
     window_count,
-    staff_ids,
-    store_ids,
-    distinct_films_count,
-    global_suspicious_rank
-FROM ranked_suspicious
-ORDER BY global_suspicious_rank;
+    staff_list,
+    store_list,
+    total_films,
+    RANK() OVER (ORDER BY window_amount DESC) AS global_suspicious_rank
+FROM suspicious_cases
+ORDER BY window_amount DESC;

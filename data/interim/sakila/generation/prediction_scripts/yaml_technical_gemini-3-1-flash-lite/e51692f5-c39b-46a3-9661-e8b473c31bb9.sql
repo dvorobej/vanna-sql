@@ -2,9 +2,9 @@ SELECT
   c.h03 AS first_name,
   c.h04 AS last_name,
   DATE(p.p06) AS payment_date,
-  COUNT(p.p01) AS daily_payment_count,
-  SUM(p.p05) AS daily_total_amount,
-  MAX(p.p05) AS max_payment_amount,
+  COUNT(p.p01) AS payment_count,
+  SUM(p.p05) AS total_amount,
+  MAX(p.p05) AS max_payment,
   CASE
     WHEN COUNT(p.p01) >= 3 OR SUM(p.p05) > 20 THEN 'подозрительная активность'
     ELSE 'норма'
@@ -22,6 +22,6 @@ GROUP BY
 HAVING COUNT(p.p01) >= 3
     OR SUM(p.p05) > 20
 ORDER BY
-  c.h04,
   c.h03,
+  c.h04,
   payment_date;

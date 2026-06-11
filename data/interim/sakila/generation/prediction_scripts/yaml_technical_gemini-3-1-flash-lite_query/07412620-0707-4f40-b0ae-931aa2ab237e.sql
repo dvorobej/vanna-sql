@@ -1,5 +1,4 @@
 SELECT
-  c.h01 AS customer_id,
   c.h03 AS first_name,
   c.h04 AS last_name,
   COUNT(p.p01) AS payment_count,
@@ -16,8 +15,9 @@ GROUP BY
   c.h01,
   c.h03,
   c.h04
-HAVING COUNT(p.p01) >= 5
-   AND (1.0 * SUM(CASE WHEN p.p05 > 8.00 THEN 1 ELSE 0 END) / COUNT(p.p01)) > 0.3
+HAVING
+  COUNT(p.p01) >= 5
+  AND (1.0 * SUM(CASE WHEN p.p05 > 8.00 THEN 1 ELSE 0 END) / COUNT(p.p01)) > 0.3
 ORDER BY
   total_amount DESC,
   payment_count DESC;

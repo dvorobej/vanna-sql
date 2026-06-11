@@ -6,7 +6,7 @@ SELECT
   SUM(p.p05) AS total_amount,
   AVG(p.p05) AS average_payment,
   CASE
-    WHEN SUM(p.p05) > 100 OR AVG(p.p05) > 10 THEN 'подозрительная активность'
+    WHEN SUM(p.p05) > 100 OR COUNT(p.p01) > 15 THEN 'подозрительная активность'
     ELSE 'норма'
   END AS activity_status
 FROM cus AS c

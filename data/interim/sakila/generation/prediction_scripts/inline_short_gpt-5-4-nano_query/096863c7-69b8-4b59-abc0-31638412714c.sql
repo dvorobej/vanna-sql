@@ -1,70 +1,57 @@
-SELECT AVG(dwgp.day_amount)
-      FROM daily_with_geo dwgp
-      WHERE dwgp.customer_id = dwg.customer_id
-        AND dwgp.payment_date >= date(dwg.payment_date, '-30 day')
-        AND dwgp.payment_date <  dwg.payment_date
-    ) AS personal_avg_prev30
-  FROM daily_with_geo dwg
+SELECT AVG(pdp2.day_sum)
+      FROM pay_daily_with_store_country AS pdp2
+      WHERE pdp2.customer_id = pd.customer_id
+        AND pdp2.payment_date >= DATE(pd.payment_date, '-30 day')
+        AND pdp2.payment_date <  pd.payment_date
+    ) AS personal_avg_prev_30d
+  FROM pay_daily_with_store_country AS pd
+  JOIN customer_geo AS cg ON cg.customer_id = pd.customer_id
 ),
-country_daily_avg_prev AS (
+country_daily_avg AS (
   SELECT
-    d1.country_id,
-    d1.payment_date,
-    AVG(d2.day_amount) AS country_avg_prev_days
-  FROM daily_with_personal_prev30 d1
-  JOIN daily_with_personal_prev30 d2
-    ON d2.country_id = d1.country_id
-   AND d2.payment_date >= date(d1.payment_date, '-30 day')
-   AND d2.payment_date <  d1.payment_date
-  GROUP BY
-    d1.country_id,
-    d1.payment_date
+    dwa.country_id,
+    dwa.payment_date,
+    AVG(dwa.day_sum) AS country_avg_day_sum
+  FROM daily_with_avgs AS dwa
+  GROUP BY dwa.country_id, dwa.payment_date
 ),
-daily_scored AS (
+ranked AS (
   SELECT
-    dwp.*,
-    cda.country_avg_prev_days,
-    (dwp.day_amount - dwp.personal_avg_prev30) AS deviation_personal,
-    (dwp.day_amount - cda.country_avg_prev_days) AS deviation_country
-  FROM daily_with_personal_prev30 dwp
-  JOIN country_daily_avg_prev cda
-    ON cda.country_id = dwp.country_id
-   AND cda.payment_date = dwp.payment_date
-),
-filtered AS (
-  SELECT
-    ds.*,
+    dwa.*,
+    cda.country_avg_day_sum,
+    (dwa.day_sum - dwa.personal_avg_prev_30d) AS deviation_personal_avg,
+    (dwa.day_sum - cda.country_avg_day_sum) AS deviation_country_avg,
     RANK() OVER (
-      PARTITION BY ds.country_id
-      ORDER BY ds.day_amount DESC
-    ) AS country_suspicious_rank
-  FROM daily_scored ds
-  WHERE ds.personal_avg_prev30 IS NOT NULL
-    AND ds.personal_avg_prev30 > 0
-    AND ds.day_amount > 3.0 * ds.personal_avg_prev30
-    AND ds.country_avg_prev_days IS NOT NULL
-    AND ds.country_avg_prev_days > 0
-    AND ds.day_amount > ds.country_avg_prev_days
-    AND (ds.staff_count >= 2 OR ds.store_count >= 2)
+      PARTITION BY dwa.country_id
+      ORDER BY dwa.day_sum DESC
+    ) AS suspicion_rank_in_country
+  FROM daily_with_avgs AS dwa
+  JOIN country_daily_avg AS cda
+    ON cda.country_id = dwa.country_id
+   AND cda.payment_date = dwa.payment_date
 )
 SELECT
   customer_id,
   first_name,
   last_name,
-  country,
+  country_name AS country,
   city,
   payment_date AS date,
-  ROUND(day_amount, 2) AS day_sum,
+  ROUND(day_sum, 2) AS day_sum,
   payment_count,
-  ROUND(deviation_personal, 2) AS deviation_from_personal_avg,
-  ROUND(deviation_country, 2) AS deviation_from_country_avg,
-  staff_count AS distinct_staff_count,
-  store_count AS distinct_store_count,
-  country_suspicious_rank AS country_rank_by_suspicious_sum
-FROM filtered
+  ROUND(deviation_personal_avg, 2) AS deviation_from_personal_avg,
+  ROUND(deviation_country_avg, 2) AS deviation_from_country_avg,
+  distinct_staff_count AS staff_count,
+  distinct_store_count AS store_count,
+  suspicion_rank_in_country
+FROM ranked
+WHERE personal_avg_prev_30d IS NOT NULL
+  AND personal_avg_prev_30d > 0
+  AND day_sum > 3.0 * personal_avg_prev_30d
+  AND day_sum > country_avg_day_sum
+  AND (distinct_staff_count >= 2 OR distinct_store_count >= 2)
 ORDER BY
   country,
-  country_suspicious_rank,
-  payment_date,
-  last_name,
-  first_name;
+  suspicion_rank_in_country,
+  day_sum DESC,
+  customer_id;

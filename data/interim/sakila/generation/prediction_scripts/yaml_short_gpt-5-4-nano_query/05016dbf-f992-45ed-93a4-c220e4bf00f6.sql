@@ -21,9 +21,8 @@ GROUP BY
   s.o01,
   s.o02,
   s.o03
-HAVING
-  COUNT(p.p01) >= 10
-  OR SUM(p.p05) > 100.00
+HAVING COUNT(p.p01) >= 10
+    OR SUM(p.p05) > 100.00
 ORDER BY
   total_amount DESC,
   payment_count DESC,

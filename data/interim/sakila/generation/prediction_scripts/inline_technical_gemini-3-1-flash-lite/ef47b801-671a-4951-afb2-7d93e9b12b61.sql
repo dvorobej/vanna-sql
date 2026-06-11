@@ -10,12 +10,12 @@ SELECT
   CASE
     WHEN COUNT(p.p01) > 10 THEN 1
     ELSE 0
-  END AS additional_check_signal
-FROM cus AS c
-JOIN pay AS p
+  END AS additional_check_flag
+FROM pay AS p
+JOIN cus AS c
   ON p.p02 = c.h01
 JOIN stf AS s
-  ON s.o01 = p.p03
+  ON p.p03 = s.o01
 WHERE p.p06 >= '2005-07-01'
   AND p.p06 < '2005-08-01'
 GROUP BY

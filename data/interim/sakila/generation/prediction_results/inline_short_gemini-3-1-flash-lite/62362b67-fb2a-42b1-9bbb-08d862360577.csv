@@ -1,4 +1,4 @@
-customer_name,country,city,payment_date,daily_sum,payment_count,staff_count,suspicion_rank
+customer_name,country,city,payment_date,daily_amount,payment_count,staff_count,suspicion_rank
 ALLEN BUTTERFIELD,India,Hoshiarpur,2005-07-29,18.97,3,2,1
 COREY HAUSER,Turkey,Gaziantep,2005-05-29,16.98,2,2,2
 BERNICE WILLIS,Turkey,Batman,2005-07-08,17.97,3,2,3

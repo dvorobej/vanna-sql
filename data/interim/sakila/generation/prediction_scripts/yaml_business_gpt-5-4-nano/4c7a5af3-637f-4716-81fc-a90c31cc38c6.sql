@@ -19,4 +19,4 @@ GROUP BY
   c.h03,
   c.h04
 HAVING COUNT(p.p01) >= 10
-ORDER BY total_amount DESC;
+ORDER BY total_amount DESC, payment_count DESC, customer_id;

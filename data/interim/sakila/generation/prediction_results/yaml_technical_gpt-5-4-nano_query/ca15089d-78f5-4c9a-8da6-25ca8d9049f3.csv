@@ -1,4 +1,4 @@
-month,customer_fio,country,city,payment_count,monthly_sum,max_payment,max_payment_share_in_month,staff_count,store_count,country_month_rank
+payment_month,customer_fio,country,city,payment_count,monthly_total_amount,max_payment,max_payment_share_in_month,distinct_staff_count,distinct_store_count,country_month_amount_rank
 2005-07,VERA MCCOY,Afghanistan,Kabul,8,37.92,8.99,0.2371,2,2,1
 2005-07,MARIO CHEATHAM,Algeria,Batna,17,66.83,10.99,0.1644,2,2,1
 2005-07,JUDY GRAY,Algeria,Bchar,11,47.89,8.99,0.1877,2,2,2
@@ -106,7 +106,7 @@ month,customer_fio,country,city,payment_count,monthly_sum,max_payment,max_paymen
 2005-07,HUGH WALDROP,China,Haining,9,48.91,8.99,0.1838,2,2,22
 2005-07,HAZEL WARREN,China,Hohhot,15,47.85,9.99,0.2088,2,2,23
 2005-07,RICKY SHELBY,China,Junan,10,43.9,8.99,0.2048,2,2,24
-2005-07,KELLY KNOTT,China,Sanya,10,39.9,9.99,0.2504,2,2,25
+2005-07,KELLY KNOTT,China,Sanya,11,43.89,9.99,0.2276,2,2,25
 2005-07,BOB PFEIFFER,China,Xintai,9,37.91,10.99,0.2899,2,2,26
 2005-07,PAMELA BAKER,China,Nanyang,6,36.94,9.99,0.2704,2,2,27
 2005-07,ROLAND SOUTH,China,Yingkou,9,31.91,7.99,0.2504,2,2,28
@@ -264,7 +264,7 @@ month,customer_fio,country,city,payment_count,monthly_sum,max_payment,max_paymen
 2005-07,KURT EMMONS,Japan,Kanazawa,10,41.9,4.99,0.1191,2,2,16
 2005-07,DEBBIE REYES,Japan,Fukuyama,11,41.89,7.99,0.1907,2,2,17
 2005-07,EARL SHANKS,Japan,Iwatsuki,12,39.88,6.99,0.1753,2,2,18
-2005-07,TONY CARRANZA,Japan,Koriyama,9,35.91,8.99,0.2503,2,2,19
+2005-07,TONY CARRANZA,Japan,Koriyama,10,36.9,8.99,0.2436,2,2,19
 2005-07,JOANNE ROBERTSON,Japan,Urawa,13,31.87,7.99,0.2507,2,2,20
 2005-08,JOANNE ROBERTSON,Japan,Urawa,15,76.85,8.99,0.117,2,2,1
 2005-08,TERESA ROGERS,Japan,Iwakuni,14,64.86,10.99,0.1694,2,2,2

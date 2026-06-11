@@ -7,11 +7,11 @@ SELECT
   s.o03 AS staff_last_name,
   COUNT(p.p01) AS payment_count,
   SUM(p.p05) AS total_amount,
-  AVG(p.p05) AS average_check,
+  AVG(p.p05) AS average_payment,
   CASE
-    WHEN SUM(p.p05) > 50 OR AVG(p.p05) > 8 THEN 1
-    ELSE 0
-  END AS high_attention_flag
+    WHEN SUM(p.p05) > 50 OR AVG(p.p05) > 8 THEN 'повышенное внимание'
+    ELSE 'обычный'
+  END AS attention_flag
 FROM cus AS c
 JOIN pay AS p
   ON p.p02 = c.h01

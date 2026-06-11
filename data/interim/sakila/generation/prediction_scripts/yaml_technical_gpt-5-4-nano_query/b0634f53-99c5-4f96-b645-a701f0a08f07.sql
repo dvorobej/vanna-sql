@@ -1,100 +1,126 @@
 WITH customer_geo AS (
     SELECT
         c.h01 AS customer_id,
-        co.c02 AS customer_country,
-        ci.d02 AS customer_city
+        cnt.c02 AS customer_country,
+        ct.d02 AS customer_city,
+        c.h02 AS customer_home_store_id
     FROM cus AS c
     JOIN adr AS a ON a.e01 = c.h06
-    JOIN cty AS ci ON ci.d01 = a.e05
-    JOIN cnt AS co ON co.c01 = ci.d03
+    JOIN cty AS ct ON ct.d01 = a.e05
+    JOIN cnt ON cnt.c01 = ct.d03
 ),
-payments_2005 AS (
+payment_days AS (
     SELECT
         p.p02 AS customer_id,
-        date(p.p06) AS payment_date,
-        p.p03 AS staff_id,
-        st.o07 AS staff_store_id,
-        CAST(p.p05 AS REAL) AS amount
+        date(p.p06) AS payment_day,
+        SUM(CAST(p.p05 AS REAL)) AS day_amount,
+        COUNT(*) AS payment_count
     FROM pay AS p
-    JOIN stf AS st ON st.o01 = p.p03
     WHERE p.p06 >= '2005-01-01'
       AND p.p06 <  '2006-01-01'
-),
-day_agg AS (
-    SELECT
-        p.customer_id,
-        p.payment_date,
-        cg.customer_country,
-        COUNT(*) AS day_payment_count,
-        SUM(p.amount) AS day_payment_amount,
-        COUNT(DISTINCT p.staff_id) AS staff_count,
-        COUNT(DISTINCT p.staff_store_id) AS store_count,
-        GROUP_CONCAT(DISTINCT cs2.c02) AS store_countries,
-        MAX(CASE WHEN cs2.c02 IS NOT NULL AND cs2.c02 <> cg.customer_country THEN 1 ELSE 0 END) AS has_foreign_store_payment
-    FROM payments_2005 AS p
-    JOIN customer_geo AS cg ON cg.customer_id = p.customer_id
-    JOIN sto AS s2 ON s2.j01 = p.staff_store_id
-    JOIN adr AS a2 ON a2.e01 = s2.j03
-    JOIN cty AS ci2 ON ci2.d01 = a2.e05
-    JOIN cnt AS cs2 ON cs2.c01 = ci2.d03
     GROUP BY
-        p.customer_id,
-        p.payment_date,
-        cg.customer_country
+        p.p02,
+        date(p.p06)
 ),
-day_with_hist AS (
+payment_staff_store AS (
     SELECT
-        d.*,
-        (
-            SELECT AVG(dh.day_payment_amount)
-            FROM day_agg AS dh
-            WHERE dh.customer_id = d.customer_id
-              AND dh.payment_date >= date(d.payment_date, '-30 days')
-              AND dh.payment_date <  d.payment_date
-        ) AS avg_prev_30d_amount
-    FROM day_agg AS d
+        p.p02 AS customer_id,
+        date(p.p06) AS payment_day,
+        COUNT(DISTINCT p.p03) AS distinct_staff_count,
+        COUNT(DISTINCT s.o07) AS distinct_store_count,
+        GROUP_CONCAT(DISTINCT str.c02) AS store_countries
+    FROM pay AS p
+    JOIN stf AS s ON s.o01 = p.p03
+    JOIN adr AS a ON a.e01 = s.o07
+    JOIN cty AS ct ON ct.d01 = a.e05
+    JOIN cnt AS str ON str.c01 = ct.d03
+    WHERE p.p06 >= '2005-01-01'
+      AND p.p06 <  '2006-01-01'
+    GROUP BY
+        p.p02,
+        date(p.p06)
 ),
-suspicious_days AS (
+payment_day_countries AS (
     SELECT
-        dwh.*,
-        (dwh.day_payment_amount / NULLIF(dwh.avg_prev_30d_amount, 0)) AS exceed_ratio
-    FROM day_with_hist AS dwh
-    WHERE dwh.avg_prev_30d_amount IS NOT NULL
-      AND dwh.avg_prev_30d_amount > 0
-      AND dwh.day_payment_count >= 3
-      AND dwh.day_payment_amount >= 2.0 * dwh.avg_prev_30d_amount
-      AND dwh.staff_count > 1
-      AND dwh.store_count > 1
-      AND dwh.has_foreign_store_payment = 1
+        p.p02 AS customer_id,
+        date(p.p06) AS payment_day,
+        MAX(CASE WHEN str.c02 <> cg.customer_country THEN 1 ELSE 0 END) AS has_foreign_store_country_payment
+    FROM pay AS p
+    JOIN cus AS c ON c.h01 = p.p02
+    JOIN adr AS ca ON ca.e01 = c.h06
+    JOIN cty AS ct ON ct.d01 = ca.e05
+    JOIN cnt AS cg_cnt ON cg_cnt.c01 = ct.d03
+    JOIN stf AS s ON s.o01 = p.p03
+    JOIN adr AS sa ON sa.e01 = s.o07
+    JOIN cty AS sct ON sct.d01 = sa.e05
+    JOIN cnt AS str ON str.c01 = sct.d03
+    JOIN customer_geo AS cg ON cg.customer_id = p.p02
+    WHERE p.p06 >= '2005-01-01'
+      AND p.p06 <  '2006-01-01'
+    GROUP BY
+        p.p02,
+        date(p.p06)
 ),
-ranked AS (
+scored AS (
     SELECT
-        sd.*,
-        RANK() OVER (
-            PARTITION BY sd.customer_country
-            ORDER BY sd.exceed_ratio DESC, sd.day_payment_amount DESC, sd.customer_id, sd.payment_date
-        ) AS suspicious_rank_within_country
-    FROM suspicious_days AS sd
+        pd.customer_id,
+        cg.customer_country,
+        cg.customer_city,
+        pd.payment_day,
+        pd.payment_count,
+        pd.day_amount,
+        ROUND((
+            SELECT AVG(CAST(p2.p05 AS REAL))
+            FROM pay AS p2
+            WHERE p2.p02 = pd.customer_id
+              AND p2.p06 >= datetime(pd.payment_day, '-30 days')
+              AND p2.p06 <  datetime(pd.payment_day, '-0 days')
+        ), 2) AS avg_daily_amount_prev_30d,
+        pss.distinct_staff_count,
+        pss.distinct_store_count,
+        pss.store_countries,
+        pdc.has_foreign_store_country_payment
+    FROM payment_days AS pd
+    JOIN customer_geo AS cg
+        ON cg.customer_id = pd.customer_id
+    LEFT JOIN payment_staff_store AS pss
+        ON pss.customer_id = pd.customer_id
+       AND pss.payment_day = pd.payment_day
+    LEFT JOIN payment_day_countries AS pdc
+        ON pdc.customer_id = pd.customer_id
+       AND pdc.payment_day = pd.payment_day
+    WHERE pd.payment_count >= 3
+      AND pdc.has_foreign_store_country_payment = 1
+      AND (
+        SELECT AVG(CAST(p2.p05 AS REAL))
+        FROM pay AS p2
+        WHERE p2.p02 = pd.customer_id
+          AND p2.p06 >= datetime(pd.payment_day, '-30 days')
+          AND p2.p06 <  datetime(pd.payment_day, '-0 days')
+      ) > 0
 )
 SELECT
-    r.customer_id,
-    cg.customer_country AS customer_country,
-    cg.customer_city AS customer_city,
-    r.payment_date AS suspicious_date,
-    r.day_payment_count AS payment_count,
-    ROUND(r.day_payment_amount, 2) AS day_payment_amount,
-    ROUND(r.avg_prev_30d_amount, 2) AS avg_daily_amount_prev_30d,
-    r.exceed_ratio AS exceed_ratio,
-    r.staff_count AS distinct_staff_count,
-    r.store_count AS distinct_store_count,
-    r.store_countries AS store_countries,
-    r.suspicious_rank_within_country AS suspicious_rank_in_customer_country
-FROM ranked AS r
-JOIN customer_geo AS cg
-  ON cg.customer_id = r.customer_id
+    s.customer_id,
+    s.customer_country,
+    s.customer_city,
+    s.payment_day,
+    s.payment_count,
+    ROUND(s.day_amount, 2) AS day_amount,
+    s.avg_daily_amount_prev_30d,
+    ROUND((s.day_amount / NULLIF(s.avg_daily_amount_prev_30d, 0)), 2) AS exceed_ratio,
+    s.distinct_staff_count,
+    s.distinct_store_count,
+    s.store_countries,
+    RANK() OVER (
+        PARTITION BY s.customer_country
+        ORDER BY (s.day_amount / NULLIF(s.avg_daily_amount_prev_30d, 0)) DESC,
+                 s.day_amount DESC,
+                 s.customer_id
+    ) AS risk_rank_within_country
+FROM scored AS s
+WHERE s.day_amount >= 2.0 * s.avg_daily_amount_prev_30d
 ORDER BY
-    r.customer_country,
-    r.suspicious_rank_in_customer_country,
-    r.day_payment_amount DESC,
-    r.customer_id,
-    r.payment_date;
+    s.customer_country,
+    risk_rank_within_country,
+    s.payment_day,
+    s.customer_id;

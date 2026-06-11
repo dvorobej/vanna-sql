@@ -14,11 +14,11 @@ history_stats AS (
     SELECT
         da.*,
         (
-            SELECT AVG(h.daily_amount)
-            FROM daily_activity AS h
-            WHERE h.customer_id = da.customer_id
-              AND h.payment_date >= DATE(da.payment_date, '-30 days')
-              AND h.payment_date < da.payment_date
+            SELECT AVG(prev.daily_amount)
+            FROM daily_activity AS prev
+            WHERE prev.customer_id = da.customer_id
+              AND prev.payment_date >= DATE(da.payment_date, '-30 days')
+              AND prev.payment_date < da.payment_date
         ) AS avg_prev_30d
     FROM daily_activity AS da
 ),
@@ -43,7 +43,7 @@ SELECT
     RANK() OVER (ORDER BY sd.excess_ratio DESC) AS suspicion_rank
 FROM suspicious_days AS sd
 JOIN cus AS c ON c.h01 = sd.customer_id
-JOIN adr ON adr.e01 = c.h06
-JOIN cty ON cty.d01 = adr.e05
+JOIN adr AS a ON a.e01 = c.h06
+JOIN cty ON cty.d01 = a.e05
 JOIN cnt ON cnt.c01 = cty.d03
 ORDER BY suspicion_rank;

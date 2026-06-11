@@ -15,4 +15,5 @@ GROUP BY
   c.h03,
   c.h04
 HAVING SUM(p.p05) > 100
-ORDER BY total_payment DESC;
+ORDER BY
+  SUM(p.p05) DESC;

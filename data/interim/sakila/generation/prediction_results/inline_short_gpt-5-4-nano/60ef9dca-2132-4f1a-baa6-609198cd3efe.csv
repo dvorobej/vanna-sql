@@ -1,0 +1,8 @@
+customer_id,store_id,city,country,month,month_sum,payment_count,deviation_from_avg,rank,last_staff_id
+470,1,Hodeida,Yemen,07,96.83,17,56.66,10,1
+295,1,Kolpino,Russian Federation,07,87.82,18,47.41,9,2
+346,1,Maikop,Russian Federation,07,83.85,15,44.93,13,1
+21,1,Tangail,Bangladesh,08,79.83,17,41.67,16,1
+119,1,Shubra al-Khayma,Egypt,08,77.82,18,39.41,14,2
+522,2,Santa Rosa,Philippines,07,96.82,18,54.9,7,2
+209,2,Bhilwara,India,07,82.83,17,42.41,9,1

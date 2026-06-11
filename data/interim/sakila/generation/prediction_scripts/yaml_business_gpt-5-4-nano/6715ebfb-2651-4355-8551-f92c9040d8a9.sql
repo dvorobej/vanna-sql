@@ -1,176 +1,135 @@
-WITH monthly_customer AS (
-  SELECT
-    c.h01 AS customer_id,
-    c.h03 AS first_name,
-    c.h04 AS last_name,
-    cn.c02 AS country_name,
-    ct.d02 AS city_name,
-    c.h02 AS home_store_id,
-    date(p.p06, 'start of month') AS month_start,
-    COUNT(p.p01) AS payment_count,
-    SUM(CAST(p.p05 AS REAL)) AS month_total_amount,
-    MAX(CAST(p.p05 AS REAL)) AS month_max_payment
-  FROM pay AS p
-  JOIN cus AS c
-    ON c.h01 = p.p02
-  JOIN adr AS a
-    ON a.e01 = c.h06
-  JOIN cty AS ct
-    ON ct.d01 = a.e05
-  JOIN cnt AS cn
-    ON cn.c01 = ct.d03
-  GROUP BY
-    c.h01, c.h03, c.h04,
-    cn.c02, ct.d02,
-    c.h02,
-    date(p.p06, 'start of month')
-),
-customer_history AS (
-  SELECT
-    mc.*,
-    AVG(mc.month_total_amount) OVER (
-      PARTITION BY mc.customer_id
-      ORDER BY mc.month_start
-      ROWS BETWEEN UNBOUNDED PRECEDING AND 1 PRECEDING
-    ) AS personal_avg_month_total_amount,
-    AVG(mc.payment_count) OVER (
-      PARTITION BY mc.customer_id
-      ORDER BY mc.month_start
-      ROWS BETWEEN UNBOUNDED PRECEDING AND 1 PRECEDING
-    ) AS personal_avg_month_payment_count
-  FROM monthly_customer AS mc
-),
-country_month_median AS (
-  SELECT
-    customer_id,
-    month_start,
-    country_name,
-    CASE
-      WHEN rn = 1 THEN monthly_amount_sorted_value
-    END AS dummy
-  FROM (
-    SELECT
-      customer_id,
-      month_start,
-      country_name,
-      monthly_amount,
-      ROW_NUMBER() OVER (
-        PARTITION BY country_name, month_start
-        ORDER BY monthly_amount
-      ) AS rn,
-      COUNT(*) OVER (
-        PARTITION BY country_name, month_start
-      ) AS cnt,
-      monthly_amount AS monthly_amount_sorted_value
-    FROM (
-      SELECT
-        mc.customer_id,
-        mc.month_start,
-        mc.country_name,
-        mc.month_total_amount AS monthly_amount
-      FROM monthly_customer AS mc
-    )
-  )
-  WHERE 1 = 1
-),
-country_month_medians AS (
-  SELECT
-    cm.country_name,
-    cm.month_start,
-    AVG(cm.month_total_amount) AS country_median_month_total_amount
-  FROM (
-    SELECT
-      country_name,
-      month_start,
-      month_total_amount,
-      ROW_NUMBER() OVER (
-        PARTITION BY country_name, month_start
-        ORDER BY month_total_amount
-      ) AS rn,
-      COUNT(*) OVER (
-        PARTITION BY country_name, month_start
-      ) AS cnt
-    FROM monthly_customer
-  ) cm
-  WHERE rn IN (
-    CAST((cnt + 1) / 2 AS INTEGER),
-    CAST((cnt + 2) / 2 AS INTEGER)
-  )
-  GROUP BY cm.country_name, cm.month_start
-),
-qualifying_months AS (
-  SELECT
-    ch.*,
-    cm.country_median_month_total_amount,
-    (ch.month_total_amount - ch.personal_avg_month_total_amount) AS deviation_from_personal_avg_amount,
-    RANK() OVER (
-      PARTITION BY ch.country_name, ch.month_start
-      ORDER BY ch.month_total_amount DESC
-    ) AS suspicious_country_rank,
-    COUNT(*) OVER (
-      PARTITION BY ch.country_name, ch.month_start
-    ) AS suspicious_country_count
-  FROM customer_history AS ch
-  JOIN country_month_medians AS cm
-    ON cm.country_name = ch.country_name
-   AND cm.month_start = ch.month_start
-  WHERE ch.personal_avg_month_total_amount IS NOT NULL
-    AND ch.personal_avg_month_payment_count IS NOT NULL
-    AND ch.month_total_amount > 3.0 * ch.personal_avg_month_total_amount
-    AND ch.payment_count > (
-      SELECT
-        AVG(m.payment_count)
-      FROM monthly_customer AS m
-      WHERE m.customer_id = ch.customer_id
-        AND m.month_start < ch.month_start
-    )
-),
-payment_category_shares AS (
+WITH monthly AS (
   SELECT
     p.p02 AS customer_id,
-    date(p.p06, 'start of month') AS month_start,
-    SUM(CASE WHEN ca.g02 = 'Action' THEN CAST(p.p05 AS REAL) ELSE 0 END) AS action_amount,
-    SUM(CASE WHEN ca.g02 = 'New' THEN CAST(p.p05 AS REAL) ELSE 0 END) AS new_amount,
-    SUM(CAST(p.p05 AS REAL)) AS total_amount
+    strftime('%Y-%m', p.p06) AS month_ym,
+    SUM(CAST(p.p05 AS REAL)) AS month_amount,
+    COUNT(*) AS payment_count
   FROM pay AS p
-  JOIN ren AS r
-    ON r.q01 = p.p04
-  JOIN inv AS i
-    ON i.n01 = r.q03
-  JOIN flc AS fc
-    ON fc.l01 = i.n02
-  JOIN cat AS ca
-    ON ca.g01 = fc.l02
   GROUP BY
     p.p02,
-    date(p.p06, 'start of month')
-)
-SELECT
-  qm.customer_id,
-  qm.first_name,
-  qm.last_name,
-  qm.country_name AS country,
-  qm.city_name AS city,
-  qm.home_store_id AS store_id,
-  qm.payment_count,
-  ROUND(qm.month_total_amount, 2) AS total_amount,
-  ROUND(qm.month_max_payment, 2) AS max_payment,
-  ROUND(
-    COALESCE(pcs.action_amount, 0) / NULLIF(pcs.total_amount, 0),
-    4
-  ) AS action_category_payment_share,
-  ROUND(
-    COALESCE(pcs.new_amount, 0) / NULLIF(pcs.total_amount, 0),
-    4
-  ) AS new_category_payment_share,
-  qm.suspicious_country_rank AS suspicious_country_rank,
-  qm.suspicious_country_count
-FROM qualifying_months AS qm
-LEFT JOIN payment_category_shares AS pcs
-  ON pcs.customer_id = qm.customer_id
- AND pcs.month_start = qm.month_start
-ORDER BY
-  qm.country_name,
-  qm.month_start,
-  qm.month_total_amount DESC,
-  qm.customer_id;
+    strftime('%Y-%m', p.p06)
+),
+personal_avg AS (
+  SELECT
+    customer_id,
+    AVG(month_amount) AS personal_avg_amount,
+    AVG(payment_count) AS personal_avg_payment_count
+  FROM monthly
+  GROUP BY customer_id
+),
+country_month_stats AS (
+  SELECT
+    c.h01 AS customer_id,
+    cnt.c01 AS country_id,
+    cnt.c02 AS country_name,
+    m.month_ym,
+    m.month_amount,
+    m.payment_count
+  FROM monthly AS m
+  JOIN cus AS c
+    ON c.h01 = m.customer_id
+  JOIN adr AS a
+    ON a.e01 = c.h06
+  JOIN cty AS ci
+    ON ci.d01 = a.e05
+  JOIN cnt
+    ON cnt.c01 = ci.d03
+),
+country_median_payment_count AS (
+  -- SQLite: approximate median using row number at 50% (works when "median" is interpreted as nearest-middle order statistic)
+  SELECT
+    cms.country_id,
+    cms.month_ym,
+    AVG(cms.payment_count) AS country_median_payment_count
+  FROM (
+    SELECT
+      country_id,
+      month_ym,
+      payment_count,
+      ROW_NUMBER() OVER (
+        PARTITION BY country_id, month_ym
+        ORDER BY payment_count
+      ) AS rn,
+      COUNT(*) OVER (
+        PARTITION BY country_id, month_ym
+      ) AS cnt_rows
+    FROM country_month_stats
+  ) AS cms
+  WHERE rn IN (
+    CAST((cnt_rows + 1) / 2 AS INTEGER),
+    CAST((cnt_rows + 2) / 2 AS INTEGER)
+  )
+  GROUP BY
+    country_id,
+    month_ym
+),
+candidate_months AS (
+  SELECT
+    cms.customer_id,
+    cms.country_id,
+    cms.country_name,
+    cms.month_ym,
+    cms.month_amount,
+    cms.payment_count,
+    pa.personal_avg_amount,
+    pa.personal_avg_payment_count,
+    cm.country_median_payment_count
+  FROM country_month_stats AS cms
+  JOIN personal_avg AS pa
+    ON pa.customer_id = cms.customer_id
+  JOIN country_median_payment_count AS cm
+    ON cm.country_id = cms.country_id
+   AND cm.month_ym = cms.month_ym
+  WHERE
+    pa.personal_avg_amount IS NOT NULL
+    AND pa.personal_avg_amount > 0
+    AND cms.month_amount > 1.5 * pa.personal_avg_amount
+    AND cms.payment_count > cm.country_median_payment_count
+),
+payment_breakdown AS (
+  SELECT
+    p.p02 AS customer_id,
+    strftime('%Y-%m', p.p06) AS month_ym,
+    COUNT(*) AS payment_count,
+    SUM(CAST(p.p05 AS REAL)) AS total_amount,
+    MAX(CAST(p.p05 AS REAL)) AS max_payment_amount,
+    SUM(
+      CASE
+        WHEN cat.g02 IN ('Action', 'New') THEN CAST(p.p05 AS REAL)
+        ELSE 0
+      END
+    ) AS action_new_amount,
+    SUM(CAST(p.p05 AS REAL)) AS all_amount
+  FROM pay AS p
+  LEFT JOIN ren AS r
+    ON r.q01 = p.p04
+  LEFT JOIN inv AS i
+    ON i.n01 = r.q03
+  LEFT JOIN flc AS fc
+    ON fc.l01 = i.n02
+  LEFT JOIN cat AS cat
+    ON cat.g01 = fc.l02
+  GROUP BY
+    p.p02,
+    strftime('%Y-%m', p.p06)
+),
+top_store_month AS (
+  SELECT
+    s.customer_id,
+    s.month_ym,
+    s.store_id
+  FROM (
+    SELECT
+      p.p02 AS customer_id,
+      strftime('%Y-%m', p.p06) AS month_ym,
+      cus.h02 AS store_id,
+      SUM(CAST(p.p05 AS REAL)) AS store_amount,
+      ROW_NUMBER() OVER (
+        PARTITION BY p.p02, strftime('%Y-%m', p.p06)
+        ORDER BY SUM(CAST(p.p05 AS REAL)) DESC
+      ) AS rn
+    FROM pay AS p
+    JOIN cus
+      ON cus.h01 = p.p02
+    WHERE
+      p.p06 >= '2005-07-01' -- no-op safeguard for query planning;

@@ -18,8 +18,9 @@ GROUP BY
   c.h01,
   c.h03,
   c.h04
+HAVING COUNT(p.p01) > 10
+    OR SUM(p.p05) > 80
 ORDER BY
-  suspicious_flag DESC,
   total_amount DESC,
   payment_count DESC,
   customer_id;

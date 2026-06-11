@@ -7,7 +7,7 @@ SELECT
   CASE
     WHEN SUM(p.p05) > 50 OR AVG(p.p05) > 8 THEN 1
     ELSE 0
-  END AS suspicious_flag
+  END AS suspicious_activity_flag
 FROM cus AS c
 JOIN pay AS p
   ON p.p02 = c.h01

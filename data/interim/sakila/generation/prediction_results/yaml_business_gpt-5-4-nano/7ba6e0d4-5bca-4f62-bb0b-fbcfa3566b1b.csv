@@ -1,4 +1,4 @@
-first_name,last_name,payment_count,total_amount,avg_payment_amount,risk_level
+first_name,last_name,payment_count,total_amount,avg_payment,risk_level
 ELEANOR,HUNT,22,100.77999999999997,4.580909090909089,средний
 GORDON,ALLARD,17,96.82999999999998,5.695882352941176,высокий
 ARNOLD,HAVENS,18,96.82,5.378888888888889,высокий

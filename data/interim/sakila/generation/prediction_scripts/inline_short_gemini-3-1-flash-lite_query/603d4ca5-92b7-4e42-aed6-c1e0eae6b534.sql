@@ -8,7 +8,7 @@ SELECT
   ROUND(AVG(CASE WHEN p.p05 > 5.00 THEN 1.0 ELSE 0.0 END), 4) AS share_payments_above_5
 FROM pay AS p
 JOIN cus AS c
-  ON p.p02 = c.h01
+  ON c.h01 = p.p02
 WHERE p.p06 >= '2005-06-01'
   AND p.p06 < '2005-07-01'
 GROUP BY

@@ -3,8 +3,8 @@ SELECT
   c.h03 AS first_name,
   c.h04 AS last_name,
   COUNT(p.p01) AS payment_count,
-  SUM(p.p05) AS total_amount,
-  AVG(p.p05) AS avg_payment_amount,
+  ROUND(SUM(p.p05), 2) AS total_amount,
+  ROUND(AVG(p.p05), 2) AS avg_payment_amount,
   MAX(p.p05) AS max_payment_amount
 FROM cus AS c
 JOIN pay AS p
@@ -17,5 +17,5 @@ GROUP BY
   c.h03,
   c.h04
 HAVING COUNT(p.p01) >= 5
-   OR SUM(p.p05) > 30
+    OR SUM(p.p05) > 30.00
 ORDER BY total_amount DESC, payment_count DESC, customer_id;

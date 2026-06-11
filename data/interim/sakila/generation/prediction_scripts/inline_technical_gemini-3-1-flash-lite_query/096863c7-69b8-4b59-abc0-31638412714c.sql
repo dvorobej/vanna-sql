@@ -1,8 +1,8 @@
-WITH daily_customer_activity AS (
+WITH daily_customer_stats AS (
     SELECT
         p.p02 AS customer_id,
-        DATE(p.p06) AS activity_date,
-        SUM(p.p05) AS daily_amount,
+        DATE(p.p06) AS pay_date,
+        SUM(p.p05) AS daily_sum,
         COUNT(*) AS payment_count,
         COUNT(DISTINCT p.p03) AS staff_count,
         COUNT(DISTINCT s.o07) AS store_count
@@ -10,66 +10,63 @@ WITH daily_customer_activity AS (
     JOIN stf AS s ON s.o01 = p.p03
     GROUP BY p.p02, DATE(p.p06)
 ),
-customer_stats AS (
+customer_history AS (
     SELECT
-        dca.*,
-        AVG(dca.daily_amount) OVER (
-            PARTITION BY dca.customer_id
-            ORDER BY dca.activity_date
-            ROWS BETWEEN 30 PRECEDING AND 1 PRECEDING
-        ) AS personal_avg_30d
-    FROM daily_customer_activity AS dca
+        dcs.*,
+        (
+            SELECT AVG(prev.daily_sum)
+            FROM daily_customer_stats AS prev
+            WHERE prev.customer_id = dcs.customer_id
+              AND prev.pay_date >= DATE(dcs.pay_date, '-30 days')
+              AND prev.pay_date < dcs.pay_date
+        ) AS avg_prev_30
+    FROM daily_customer_stats AS dcs
 ),
 country_daily_avg AS (
     SELECT
-        c.h01 AS customer_id,
-        cnt.c01 AS country_id,
+        c.c01 AS country_id,
+        dcs.pay_date,
+        AVG(dcs.daily_sum) AS country_avg_daily
+    FROM daily_customer_stats AS dcs
+    JOIN cus AS cu ON cu.h01 = dcs.customer_id
+    JOIN adr AS a ON a.e01 = cu.h06
+    JOIN cty AS ct ON ct.d01 = a.e05
+    JOIN cnt AS c ON c.c01 = ct.d03
+    GROUP BY c.c01, dcs.pay_date
+),
+suspicious_events AS (
+    SELECT
+        ch.*,
+        cu.h03 || ' ' || cu.h04 AS customer_name,
         cnt.c02 AS country_name,
-        cty.d02 AS city_name,
-        c.h03 || ' ' || c.h04 AS customer_name
-    FROM cus AS c
-    JOIN adr AS a ON a.e01 = c.h06
-    JOIN cty ON cty.d01 = a.e05
-    JOIN cnt ON cnt.c01 = cty.d03
-),
-country_avg_stats AS (
-    SELECT
-        cg.country_id,
-        dca.activity_date,
-        AVG(dca.daily_amount) AS country_avg_daily_amount
-    FROM daily_customer_activity AS dca
-    JOIN country_daily_avg AS cg ON cg.customer_id = dca.customer_id
-    GROUP BY cg.country_id, dca.activity_date
-),
-suspicious_activity AS (
-    SELECT
-        cs.*,
-        cg.customer_name,
-        cg.country_name,
-        cg.city_name,
-        cas.country_avg_daily_amount
-    FROM customer_stats AS cs
-    JOIN country_daily_avg AS cg ON cg.customer_id = cs.customer_id
-    JOIN country_avg_stats AS cas ON cas.country_id = cg.country_id AND cas.activity_date = cs.activity_date
-    WHERE cs.personal_avg_30d IS NOT NULL
-      AND cs.daily_amount > (cs.personal_avg_30d * 3)
-      AND cs.daily_amount > cas.country_avg_daily_amount
-      AND (cs.staff_count > 1 OR cs.store_count > 1)
+        ct.d02 AS city_name,
+        cnt.c01 AS country_id,
+        cda.country_avg_daily
+    FROM customer_history AS ch
+    JOIN cus AS cu ON cu.h01 = ch.customer_id
+    JOIN adr AS a ON a.e01 = cu.h06
+    JOIN cty AS ct ON ct.d01 = a.e05
+    JOIN cnt AS cnt ON cnt.c01 = ct.d03
+    JOIN country_daily_avg AS cda ON cda.country_id = cnt.c01 AND cda.pay_date = ch.pay_date
+    WHERE ch.avg_prev_30 > 0
+      AND ch.daily_sum > 3 * ch.avg_prev_30
+      AND ch.daily_sum > cda.country_avg_daily
+      AND (ch.staff_count > 1 OR ch.store_count > 1)
 )
 SELECT
     customer_name,
     country_name,
     city_name,
-    activity_date,
-    daily_amount,
+    pay_date,
+    daily_sum,
     payment_count,
-    ROUND(daily_amount - personal_avg_30d, 2) AS deviation_from_personal_avg,
-    ROUND(daily_amount - country_avg_daily_amount, 2) AS deviation_from_country_avg,
+    ROUND(daily_sum - avg_prev_30, 2) AS deviation_from_personal_avg,
+    ROUND(daily_sum - country_avg_daily, 2) AS deviation_from_country_avg,
     staff_count,
     store_count,
     RANK() OVER (
-        PARTITION BY country_name
-        ORDER BY daily_amount DESC
-    ) AS country_suspicion_rank
-FROM suspicious_activity
-ORDER BY country_name, country_suspicion_rank;
+        PARTITION BY country_id
+        ORDER BY daily_sum DESC
+    ) AS country_rank
+FROM suspicious_events
+ORDER BY country_name, country_rank;

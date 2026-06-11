@@ -35,8 +35,10 @@ country_medians AS (
         month,
         AVG(monthly_sum) AS median_monthly_sum
     FROM (
-        SELECT *, ROW_NUMBER() OVER (PARTITION BY country_id, month ORDER BY monthly_sum) as rn,
-                  COUNT(*) OVER (PARTITION BY country_id, month) as cnt
+        SELECT 
+            country_id, month, monthly_sum,
+            ROW_NUMBER() OVER (PARTITION BY country_id, month ORDER BY monthly_sum) as rn,
+            COUNT(*) OVER (PARTITION BY country_id, month) as cnt
         FROM monthly_stats
     )
     WHERE rn IN (cnt/2, cnt/2 + 1)

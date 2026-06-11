@@ -7,8 +7,14 @@ SELECT
   s.o03 AS staff_last_name,
   COUNT(p.p01) AS payment_count,
   ROUND(SUM(p.p05), 2) AS total_amount,
-  ROUND(AVG(p.p05), 2) AS average_check,
-  ROUND(AVG(CASE WHEN p.p04 IS NOT NULL THEN 1.0 ELSE 0.0 END), 4) AS paid_rentals_share
+  ROUND(AVG(p.p05), 2) AS avg_check,
+  ROUND(
+    AVG(CASE
+          WHEN p.p03 = s.o01 THEN 1.0
+          ELSE 0.0
+        END),
+    4
+  ) AS staff_operations_share
 FROM cus AS c
 JOIN pay AS p
   ON p.p02 = c.h01

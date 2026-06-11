@@ -3,11 +3,11 @@ SELECT
   c.h04 AS last_name,
   COUNT(p.p01) AS payment_count,
   SUM(p.p05) AS total_amount,
-  AVG(p.p05) AS average_payment,
+  AVG(p.p05) AS average_payment_amount,
   CASE
     WHEN SUM(p.p05) > 100 THEN 'высокий'
     ELSE 'средний'
-  END AS risk_level
+  END AS risk_flag
 FROM cus AS c
 JOIN pay AS p
   ON p.p02 = c.h01

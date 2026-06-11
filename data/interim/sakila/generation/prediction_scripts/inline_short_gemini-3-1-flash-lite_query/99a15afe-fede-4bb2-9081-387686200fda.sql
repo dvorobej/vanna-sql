@@ -27,7 +27,7 @@ customer_stats AS (
             PARTITION BY mp.customer_id 
             ORDER BY mp.month_start 
             ROWS BETWEEN UNBOUNDED PRECEDING AND 1 PRECEDING
-        ) AS history_count
+        ) AS prev_months_count
     FROM monthly_payments mp
     JOIN cus c ON mp.customer_id = c.h01
     JOIN adr a ON c.h06 = a.e01
@@ -51,9 +51,8 @@ p95_thresholds AS (
         store_id,
         country,
         month_start,
-        MAX(total_amount) AS p95_val
+        MAX(CASE WHEN p_rank <= 0.95 THEN total_amount END) AS p95_amount
     FROM store_country_percentiles
-    WHERE p_rank <= 0.95
     GROUP BY store_id, country, month_start
 ),
 ranked_customers AS (
@@ -81,7 +80,7 @@ JOIN p95_thresholds p95
   ON rc.store_id = p95.store_id 
   AND rc.country = p95.country 
   AND rc.month_start = p95.month_start
-WHERE rc.history_count > 0
+WHERE rc.prev_months_count > 0
   AND rc.total_amount >= 3 * rc.prev_avg_amount
-  AND rc.total_amount > p95.p95_val
-ORDER BY rc.month_start, rc.store_id, rc.store_rank;
+  AND rc.total_amount > p95.p95_amount
+ORDER BY rc.month_start, rc.country, rc.store_id, rc.store_rank;

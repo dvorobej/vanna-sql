@@ -7,11 +7,14 @@ SELECT
 FROM pay AS p
 JOIN cus AS c
   ON c.h01 = p.p02
-WHERE c.h07 = 'Y'
-  AND p.p06 >= '2005-06-01'
-  AND p.p06 < '2005-07-01'
+WHERE p.p06 >= '2005-06-01'
+  AND p.p06 <= '2005-06-30'
+  AND c.h07 = 'Y'
 GROUP BY
   c.h01
 HAVING COUNT(p.p01) > 10
-   OR SUM(p.p05) > 50.00
-ORDER BY total_amount DESC, payment_count DESC, customer_id;
+    OR SUM(p.p05) > 50.00
+ORDER BY
+  total_amount DESC,
+  payment_count DESC,
+  customer_id;

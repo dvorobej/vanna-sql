@@ -1,9 +1,9 @@
-WITH daily_payments AS (
+WITH daily_stats AS (
     SELECT
         p.p02 AS customer_id,
         DATE(p.p06) AS payment_date,
-        SUM(p.p05) AS daily_amount,
         COUNT(*) AS daily_count,
+        SUM(p.p05) AS daily_amount,
         GROUP_CONCAT(DISTINCT p.p03) AS staff_ids,
         GROUP_CONCAT(DISTINCT st.o07) AS store_ids,
         COUNT(DISTINCT r.q03) AS distinct_films_count
@@ -14,15 +14,15 @@ WITH daily_payments AS (
 ),
 window_stats AS (
     SELECT
-        dp.customer_id,
-        dp.payment_date,
-        SUM(dp.daily_amount) OVER (PARTITION BY dp.customer_id ORDER BY JULIANDAY(dp.payment_date) RANGE BETWEEN 6 PRECEDING AND CURRENT ROW) AS window_amount,
-        SUM(dp.daily_count) OVER (PARTITION BY dp.customer_id ORDER BY JULIANDAY(dp.payment_date) RANGE BETWEEN 6 PRECEDING AND CURRENT ROW) AS window_count,
-        AVG(dp.daily_amount) OVER (PARTITION BY dp.customer_id ORDER BY JULIANDAY(dp.payment_date) RANGE BETWEEN 36 PRECEDING AND 7 PRECEDING) AS hist_avg_amount,
-        GROUP_CONCAT(dp.staff_ids) OVER (PARTITION BY dp.customer_id ORDER BY JULIANDAY(dp.payment_date) RANGE BETWEEN 6 PRECEDING AND CURRENT ROW) AS window_staffs,
-        GROUP_CONCAT(dp.store_ids) OVER (PARTITION BY dp.customer_id ORDER BY JULIANDAY(dp.payment_date) RANGE BETWEEN 6 PRECEDING AND CURRENT ROW) AS window_stores,
-        SUM(dp.distinct_films_count) OVER (PARTITION BY dp.customer_id ORDER BY JULIANDAY(dp.payment_date) RANGE BETWEEN 6 PRECEDING AND CURRENT ROW) AS window_films
-    FROM daily_payments dp
+        ds.customer_id,
+        ds.payment_date,
+        SUM(ds.daily_amount) OVER (PARTITION BY ds.customer_id ORDER BY JULIANDAY(ds.payment_date) RANGE BETWEEN 6 PRECEDING AND CURRENT ROW) AS window_amount,
+        SUM(ds.daily_count) OVER (PARTITION BY ds.customer_id ORDER BY JULIANDAY(ds.payment_date) RANGE BETWEEN 6 PRECEDING AND CURRENT ROW) AS window_count,
+        AVG(ds.daily_amount) OVER (PARTITION BY ds.customer_id ORDER BY JULIANDAY(ds.payment_date) RANGE BETWEEN 36 PRECEDING AND 7 PRECEDING) AS hist_avg_amount,
+        GROUP_CONCAT(ds.staff_ids) OVER (PARTITION BY ds.customer_id ORDER BY JULIANDAY(ds.payment_date) RANGE BETWEEN 6 PRECEDING AND CURRENT ROW) AS window_staffs,
+        GROUP_CONCAT(ds.store_ids) OVER (PARTITION BY ds.customer_id ORDER BY JULIANDAY(ds.payment_date) RANGE BETWEEN 6 PRECEDING AND CURRENT ROW) AS window_stores,
+        SUM(ds.distinct_films_count) OVER (PARTITION BY ds.customer_id ORDER BY JULIANDAY(ds.payment_date) RANGE BETWEEN 6 PRECEDING AND CURRENT ROW) AS window_films
+    FROM daily_stats ds
 ),
 suspicious_cases AS (
     SELECT
@@ -37,17 +37,24 @@ suspicious_cases AS (
     JOIN cnt ON cnt.c01 = cty.d03
     WHERE ws.window_amount >= 3 * ws.hist_avg_amount
       AND ws.window_count >= 5
+      AND ws.hist_avg_amount IS NOT NULL
+),
+ranked_suspicious AS (
+    SELECT
+        *,
+        RANK() OVER (ORDER BY window_amount DESC) AS global_risk_rank
+    FROM suspicious_cases
 )
 SELECT
     customer_name,
     country,
     city,
     payment_date,
-    window_amount,
+    ROUND(window_amount, 2) AS window_amount,
     window_count,
+    window_films,
     window_staffs,
     window_stores,
-    window_films,
-    RANK() OVER (ORDER BY window_amount DESC) AS global_suspicious_rank
-FROM suspicious_cases
-ORDER BY window_amount DESC;
+    global_risk_rank
+FROM ranked_suspicious
+ORDER BY global_risk_rank;

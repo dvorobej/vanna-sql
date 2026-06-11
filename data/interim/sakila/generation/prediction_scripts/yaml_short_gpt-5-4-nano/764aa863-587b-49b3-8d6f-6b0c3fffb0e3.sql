@@ -1,110 +1,127 @@
-WITH payment_enriched AS (
-  SELECT
-    p.p01 AS payment_id,
-    p.p02 AS customer_id,
-    p.p03 AS staff_id,
-    p.p04 AS rental_id,
-    CAST(p.p05 AS REAL) AS amount,
-    date(p.p06, 'start of month') AS month_start,
-    -- customer geo
-    cus.h02 AS customer_home_store_id,
-    cnt_c.c01 AS customer_country_id,
-    cnt_c.c02 AS customer_country_name,
-    cty_c.d02 AS customer_city_name,
-    -- film categories
-    fc.l02 AS film_category_id
-  FROM pay AS p
-  JOIN cus AS cus
-    ON cus.h01 = p.p02
-  JOIN ren AS r
-    ON r.q01 = p.p04
-  JOIN inv AS inv
-    ON inv.n01 = r.q03
-  JOIN flm AS f
-    ON f.i01 = inv.n02
-  JOIN flc AS fc
-    ON fc.l01 = f.i01
-  -- customer geo via address -> city -> country
-  JOIN adr AS adr_c
-    ON adr_c.e01 = cus.h06
-  JOIN cty AS cty_c
-    ON cty_c.d01 = adr_c.e05
-  JOIN cnt AS cnt_c
-    ON cnt_c.c01 = cty_c.d03
-  WHERE p.p06 IS NOT NULL
-),
-monthly_customer_base AS (
-  SELECT
-    customer_id,
-    month_start,
-    customer_country_id,
-    customer_country_name,
-    customer_city_name,
-    customer_home_store_id,
-    SUM(amount) AS month_total_amount,
-    COUNT(*) AS payment_count,
-    MAX(amount) AS max_payment,
-    COUNT(DISTINCT staff_id) AS distinct_staff_count,
-    -- payments outside registration store:
-    SUM(
-      CASE
-        WHEN (rental_store.inv_store_id IS NOT NULL AND rental_store.inv_store_id <> customer_home_store_id) THEN 1
-        ELSE 0
-      END
-    ) AS payments_outside_home_store_count,
-    COUNT(*) AS payments_total_for_share,
-    COUNT(DISTINCT film_category_id) AS distinct_film_category_count
-  FROM (
+WITH payment_base AS (
     SELECT
-      pe.*,
-      -- store id where rental inventory belongs
-      i.n03 AS inv_store_id
-    FROM payment_enriched pe
-    JOIN ren r2 ON r2.q01 = pe.rental_id
-    JOIN inv i ON i.n01 = r2.q03
-  ) AS rental_store
-  GROUP BY
-    customer_id,
-    month_start,
-    customer_country_id,
-    customer_country_name,
-    customer_city_name,
-    customer_home_store_id
+        p.p02 AS customer_id,
+        p.p06 AS payment_datetime,
+        date(p.p06, 'start of month') AS month_start,
+        CAST(p.p05 AS REAL) AS amount,
+        p.p01 AS payment_id,
+        p.p03 AS staff_id,
+        s.o07 AS staff_store_id,
+        cu.h06 AS customer_address_id,
+        i.n03 AS rental_store_id,
+        r.q01 AS rental_id,
+        f.i01 AS film_id
+    FROM pay AS p
+    JOIN cus AS cu
+        ON cu.h01 = p.p02
+    LEFT JOIN ren AS r
+        ON r.q01 = p.p04
+    LEFT JOIN inv AS i
+        ON i.n01 = r.q03
+    LEFT JOIN flm AS f
+        ON f.i01 = i.n02
+    LEFT JOIN stf AS s
+        ON s.o01 = p.p03
 ),
-monthly_customer_scored AS (
-  SELECT
-    mcb.*,
-    AVG(month_total_amount) OVER (
-      PARTITION BY customer_id
-      ORDER BY month_start
-      ROWS BETWEEN 3 PRECEDING AND 1 PRECEDING
-    ) AS avg_prev_3_months_amount
-  FROM monthly_customer_base AS mcb
+payment_enriched AS (
+    SELECT
+        pb.customer_id,
+        pb.month_start,
+        pb.amount,
+        pb.payment_id,
+        pb.staff_id,
+        pb.staff_store_id,
+        pb.film_id,
+
+        cust_city.d02 AS city_name,
+        cust_country.c02 AS country_name,
+        cust_country.c01 AS country_id,
+
+        CASE WHEN pb.staff_store_id <> cu_store.j01 THEN 1 ELSE 0 END AS is_off_home_store_payment
+    FROM payment_base AS pb
+    JOIN cus AS c
+        ON c.h01 = pb.customer_id
+    JOIN adr AS cust_addr
+        ON cust_addr.e01 = c.h06
+    JOIN cty AS cust_city
+        ON cust_city.d01 = cust_addr.e05
+    JOIN cnt AS cust_country
+        ON cust_country.c01 = cust_city.d03
+    JOIN sto AS cu_store
+        ON cu_store.j01 = c.h02
+),
+monthly_payments AS (
+    SELECT
+        pe.customer_id,
+        pe.country_id,
+        pe.country_name,
+        pe.city_name,
+        pe.month_start,
+
+        COUNT(*) AS payment_count,
+        SUM(pe.amount) AS month_amount,
+        MAX(pe.amount) AS max_payment,
+        COUNT(DISTINCT pe.staff_id) AS distinct_staff_count,
+        SUM(pe.is_off_home_store_payment) * 1.0 / COUNT(*) AS off_home_store_payment_share
+    FROM payment_enriched AS pe
+    GROUP BY
+        pe.customer_id,
+        pe.country_id,
+        pe.country_name,
+        pe.city_name,
+        pe.month_start
+),
+previous_avg AS (
+    SELECT
+        mp.*,
+        AVG(mp.month_amount) OVER (
+            PARTITION BY mp.customer_id
+            ORDER BY mp.month_start
+            ROWS BETWEEN 3 PRECEDING AND 1 PRECEDING
+        ) AS prev_3_month_avg_amount
+    FROM monthly_payments AS mp
+),
+monthly_categories AS (
+    SELECT
+        pb.customer_id,
+        date(pb.payment_datetime, 'start of month') AS month_start,
+        COUNT(DISTINCT fc.l02) AS distinct_category_count
+    FROM payment_base AS pb
+    LEFT JOIN flc AS fc
+        ON fc.l01 = pb.film_id
+    GROUP BY
+        pb.customer_id,
+        date(pb.payment_datetime, 'start of month')
+),
+qualified AS (
+    SELECT
+        pa.*,
+        mc.distinct_category_count
+    FROM previous_avg AS pa
+    JOIN monthly_categories AS mc
+        ON mc.customer_id = pa.customer_id
+       AND mc.month_start = pa.month_start
+    WHERE
+        pa.prev_3_month_avg_amount IS NOT NULL
+        AND pa.month_amount > 3.0 * pa.prev_3_month_avg_amount
+        AND pa.distinct_staff_count >= 2
+        AND mc.distinct_category_count >= 3
 )
 SELECT
-  month_start AS month,
-  customer_country_name AS country,
-  customer_city_name AS city,
-  ROUND(month_total_amount, 2) AS month_payment_sum,
-  payment_count,
-  ROUND(max_payment, 2) AS max_payment,
-  ROUND(
-    1.0 * payments_outside_home_store_count / NULLIF(payments_total_for_share, 0),
-    4
-  ) AS outside_home_store_payment_share,
-  RANK() OVER (
-    PARTITION BY customer_country_id, month_start
-    ORDER BY month_total_amount DESC
-  ) AS country_month_rank
-FROM monthly_customer_scored
-WHERE
-  avg_prev_3_months_amount IS NOT NULL
-  AND avg_prev_3_months_amount > 0
-  AND month_total_amount > avg_prev_3_months_amount * 3.0
-  AND distinct_staff_count >= 2
-  AND distinct_film_category_count >= 3
+    q.month_start AS month,
+    q.country_name AS country,
+    q.city_name AS city,
+    ROUND(q.month_amount, 2) AS month_payments_sum,
+    q.payment_count,
+    ROUND(q.max_payment, 2) AS max_payment,
+    ROUND(q.off_home_store_payment_share, 4) AS off_home_store_payment_share,
+    RANK() OVER (
+        PARTITION BY q.country_id, q.month_start
+        ORDER BY q.month_amount DESC
+    ) AS country_month_amount_rank
+FROM qualified AS q
 ORDER BY
-  country,
-  month,
-  month_payment_sum DESC,
-  customer_id;
+    q.country_name,
+    q.month_start,
+    country_month_amount_rank,
+    q.customer_id;

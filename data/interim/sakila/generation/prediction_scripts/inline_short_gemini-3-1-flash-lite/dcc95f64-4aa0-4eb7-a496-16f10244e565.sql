@@ -6,8 +6,8 @@ SELECT
   s.o02 AS staff_first_name,
   s.o03 AS staff_last_name,
   COUNT(p.p01) AS payment_count,
-  ROUND(SUM(p.p05), 2) AS total_amount,
-  ROUND(AVG(p.p05), 2) AS average_payment
+  SUM(p.p05) AS total_amount,
+  AVG(p.p05) AS average_payment
 FROM pay AS p
 JOIN cus AS c ON p.p02 = c.h01
 JOIN stf AS s ON p.p03 = s.o01
@@ -20,7 +20,4 @@ GROUP BY
   c.h04,
   s.o01,
   s.o02,
-  s.o03
-ORDER BY
-  total_amount DESC,
-  payment_count DESC;
+  s.o03;

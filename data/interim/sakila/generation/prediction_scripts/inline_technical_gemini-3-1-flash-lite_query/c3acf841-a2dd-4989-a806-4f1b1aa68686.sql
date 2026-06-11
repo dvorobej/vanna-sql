@@ -12,8 +12,8 @@ SELECT
     WHEN SUM(p.p05) > 30 THEN 1
     ELSE 0
   END AS high_attention_flag
-FROM pay AS p
-JOIN cus AS c
+FROM cus AS c
+JOIN pay AS p
   ON p.p02 = c.h01
 JOIN stf AS s
   ON p.p03 = s.o01

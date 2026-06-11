@@ -7,8 +7,8 @@ SELECT
   AVG(p.p05) AS avg_check,
   CASE
     WHEN SUM(p.p05) > 50 THEN 'высокий'
-    ELSE 'обычный'
-  END AS risk_level
+    ELSE 'средний'
+  END AS risk_flag
 FROM cus AS c
 JOIN pay AS p
   ON p.p02 = c.h01
@@ -20,4 +20,4 @@ GROUP BY
   c.h04
 HAVING COUNT(p.p01) > 10
    OR SUM(p.p05) > 50
-ORDER BY total_amount DESC, payment_count DESC, customer_id;
+ORDER BY total_amount DESC, payment_count DESC;

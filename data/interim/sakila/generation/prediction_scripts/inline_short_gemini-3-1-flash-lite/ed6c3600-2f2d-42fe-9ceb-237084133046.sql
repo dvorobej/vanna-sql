@@ -2,48 +2,53 @@ WITH daily_stats AS (
     SELECT
         p.p02 AS customer_id,
         date(p.p06) AS payment_date,
-        COUNT(p.p01) AS daily_count,
-        SUM(CAST(p.p05 AS REAL)) AS daily_sum,
+        COUNT(p.p01) AS daily_payment_count,
+        SUM(p.p05) AS daily_total_amount,
+        AVG(p.p05) AS daily_avg_amount,
         COUNT(DISTINCT p.p03) AS staff_count,
-        COUNT(DISTINCT s.o07) AS store_count
+        COUNT(DISTINCT r.q03) AS film_count
     FROM pay AS p
-    JOIN stf AS s ON s.o01 = p.p03
+    LEFT JOIN ren AS r ON p.p04 = r.q01
     GROUP BY p.p02, date(p.p06)
 ),
-customer_history AS (
+moving_stats AS (
     SELECT
-        ds.*,
-        AVG(ds.daily_sum) OVER (
-            PARTITION BY ds.customer_id 
-            ORDER BY ds.payment_date 
+        *,
+        AVG(daily_total_amount) OVER (
+            PARTITION BY customer_id 
+            ORDER BY payment_date 
             ROWS BETWEEN 30 PRECEDING AND 1 PRECEDING
-        ) AS avg_daily_sum_30d,
-        AVG(ds.daily_count) OVER (
-            PARTITION BY ds.customer_id 
-            ORDER BY ds.payment_date 
+        ) AS avg_30d_amount,
+        STDEV(daily_total_amount) OVER (
+            PARTITION BY customer_id 
+            ORDER BY payment_date 
             ROWS BETWEEN 30 PRECEDING AND 1 PRECEDING
-        ) AS avg_daily_count_30d
-    FROM daily_stats AS ds
+        ) AS stddev_30d_amount
+    FROM daily_stats
 ),
-suspicious_cases AS (
+anomaly_scoring AS (
     SELECT
-        ch.*,
-        (ch.daily_sum / NULLIF(ch.avg_daily_sum_30d, 0)) AS sum_spike_ratio,
-        (ch.daily_count / NULLIF(ch.avg_daily_count_30d, 0)) AS count_spike_ratio
-    FROM customer_history AS ch
-    WHERE ch.avg_daily_sum_30d IS NOT NULL
-      AND (ch.daily_sum > 3 * ch.avg_daily_sum_30d OR ch.daily_count > 3 * ch.avg_daily_count_30d)
-      AND (ch.staff_count > 1 OR ch.store_count > 1)
+        *,
+        (daily_total_amount - avg_30d_amount) / NULLIF(stddev_30d_amount, 0) AS z_score,
+        CASE 
+            WHEN daily_payment_count > 10 THEN 3
+            WHEN daily_total_amount > (avg_30d_amount * 3) THEN 2
+            WHEN staff_count > 3 THEN 1
+            ELSE 0
+        END AS risk_level
+    FROM moving_stats
+    WHERE avg_30d_amount IS NOT NULL
 )
 SELECT
     c.h03 || ' ' || c.h04 AS customer_name,
-    sc.payment_date,
-    sc.daily_sum,
-    sc.daily_count,
-    sc.staff_count,
-    sc.store_count,
-    ROUND(sc.sum_spike_ratio, 2) AS sum_spike_ratio,
-    RANK() OVER (ORDER BY sc.sum_spike_ratio DESC, sc.daily_sum DESC) AS risk_rank
-FROM suspicious_cases AS sc
-JOIN cus AS c ON c.h01 = sc.customer_id
-ORDER BY risk_rank ASC;
+    a.payment_date,
+    a.daily_payment_count,
+    ROUND(a.daily_total_amount, 2) AS daily_total_amount,
+    ROUND(a.avg_30d_amount, 2) AS avg_30d_amount,
+    ROUND(a.z_score, 2) AS z_score,
+    a.risk_level,
+    RANK() OVER (ORDER BY a.risk_level DESC, a.z_score DESC) AS suspicion_rank
+FROM anomaly_scoring AS a
+JOIN cus AS c ON a.customer_id = c.h01
+WHERE a.risk_level > 0 OR a.z_score > 3
+ORDER BY suspicion_rank ASC;

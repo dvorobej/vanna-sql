@@ -1,115 +1,60 @@
-WITH customer_months AS (
-  SELECT
-    c.h01 AS customer_id,
-    c.h02 AS customer_store_id,
-    ci.d02 AS city,
-    co.c02 AS country,
-    strftime('%Y-%m', p.p06) AS month_ym,
-    date(p.p06, 'start of month') AS month_start,
-    COUNT(*) AS payment_count,
-    SUM(p.p05) AS payment_sum
-  FROM cus AS c
-  JOIN adr AS a ON a.e01 = c.h06
-  JOIN cty AS ci ON ci.d01 = a.e05
-  JOIN cnt AS co ON co.c01 = ci.d03
-  JOIN pay AS p ON p.p02 = c.h01
-  WHERE p.p06 >= '2005-01-01'
-    AND p.p06 <  '2006-01-01'
-  GROUP BY
-    c.h01, c.h02, ci.d02, co.c02, strftime('%Y-%m', p.p06), date(p.p06, 'start of month')
+SELECT 12 AS expected_cnt
 ),
-with_rolling AS (
+filtered AS (
   SELECT
-    cm.*,
-    AVG(cm.payment_sum) OVER (
-      PARTITION BY cm.customer_id
-      ORDER BY cm.month_start
-      ROWS BETWEEN 2 PRECEDING AND 1 PRECEDING
-    ) AS prev2_months_avg_payment_sum
-  FROM customer_months AS cm
+    qcm.*
+  FROM qualified_customers qcm
+  JOIN expected_months em
+    ON qcm.suspicious_months_cnt = em.expected_cnt
 ),
-suspicious_months AS (
-  SELECT
-    wr.*,
-    (wr.payment_sum - wr.prev2_months_avg_payment_sum) AS deviation_from_avg
-  FROM with_rolling AS wr
-  WHERE wr.prev2_months_avg_payment_sum IS NOT NULL
-    AND wr.payment_count >= 3
-    AND wr.payment_sum >= 2.0 * wr.prev2_months_avg_payment_sum
-),
-store_month_totals AS (
-  SELECT
-    customer_store_id,
-    month_start,
-    PERCENT_RANK() OVER (
-      PARTITION BY customer_store_id, month_start
-      ORDER BY payment_sum
-    ) AS pr_by_store
-  FROM suspicious_months
-),
-suspicious_months_top10 AS (
-  SELECT
-    sm.*
-  FROM suspicious_months AS sm
-  JOIN store_month_totals AS t
-    ON t.customer_store_id = sm.customer_store_id
-   AND t.month_start = sm.month_start
-  WHERE t.pr_by_store >= 0.90
-),
-store_rank AS (
-  SELECT
-    smt.*,
-    RANK() OVER (
-      PARTITION BY smt.customer_store_id, smt.month_start
-      ORDER BY smt.payment_sum DESC
-    ) AS store_payment_rank
-  FROM suspicious_months_top10 AS smt
-),
-top_staff_per_client_month AS (
+top_staff_by_month AS (
   SELECT
     p.p02 AS customer_id,
     date(p.p06, 'start of month') AS month_start,
-    s.o01 AS staff_id,
-    SUM(p.p05) AS staff_payment_sum,
+    p.p03 AS staff_id,
+    SUM(CAST(p.p05 AS REAL)) AS staff_total_amount,
+    COUNT(*) AS staff_payment_count,
     ROW_NUMBER() OVER (
       PARTITION BY p.p02, date(p.p06, 'start of month')
-      ORDER BY SUM(p.p05) DESC, s.o01
+      ORDER BY SUM(CAST(p.p05 AS REAL)) DESC, p.p03
     ) AS rn
-  FROM pay AS p
-  JOIN stf AS s ON s.o01 = p.p03
+  FROM pay p
   WHERE p.p06 >= '2005-01-01'
     AND p.p06 <  '2006-01-01'
   GROUP BY
-    p.p02, date(p.p06, 'start of month'), s.o01
-),
-staff_top AS (
-  SELECT
-    t.customer_id,
-    t.month_start,
-    t.staff_id,
-    t.staff_payment_sum
-  FROM top_staff_per_client_month AS t
-  WHERE t.rn = 1
+    p.p02,
+    date(p.p06, 'start of month'),
+    p.p03
 )
 SELECT
-  sr.customer_store_id AS store_id,
-  sr.city,
-  sr.country,
-  sr.month_ym AS payment_month,
-  ROUND(sr.payment_sum, 2) AS suspicious_month_payment_sum,
-  sr.payment_count,
-  ROUND(sr.deviation_from_avg, 2) AS deviation_from_scrolling_avg,
-  sr.store_payment_rank,
-  st.staff_id AS top_staff_id,
-  s.o02 || ' ' || s.o03 AS top_staff_name
-FROM store_rank AS sr
-JOIN staff_top AS st
-  ON st.customer_id = sr.customer_id
- AND st.month_start = sr.month_start
-JOIN stf AS s
-  ON s.o01 = st.staff_id
+  tm.home_store_id AS store_id,
+  ch.city_name AS city,
+  ch.country_name AS country,
+  strftime('%Y-%m', tm.month_start) AS month,
+  ROUND(tm.month_total_amount, 2) AS month_payment_sum,
+  tm.payment_count,
+  ROUND(tm.deviation_from_rolling_avg, 2) AS deviation_from_rolling_avg,
+  RANK() OVER (
+    PARTITION BY tm.home_store_id, tm.month_start
+    ORDER BY tm.month_total_amount DESC
+  ) AS store_month_rank,
+  st.o02 AS staff_first_name,
+  st.o03 AS staff_last_name,
+  ts.staff_id AS top_staff_id,
+  ROUND(ts.staff_total_amount, 2) AS top_staff_total_amount
+FROM top10_store_months tm
+JOIN filtered f
+  ON f.customer_id = tm.customer_id
+ AND f.home_store_id = tm.home_store_id
+JOIN customer_home ch
+  ON ch.customer_id = tm.customer_id
+LEFT JOIN top_staff_by_month ts
+  ON ts.customer_id = tm.customer_id
+ AND ts.month_start = tm.month_start
+ AND ts.rn = 1
+LEFT JOIN stf st
+  ON st.o01 = ts.staff_id
 ORDER BY
-  sr.customer_store_id,
-  sr.month_start,
-  sr.store_payment_rank,
-  sr.customer_id;
+  tm.home_store_id,
+  tm.month_start,
+  tm.customer_id;

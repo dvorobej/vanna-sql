@@ -1,4 +1,4 @@
-customer_id,country,city,payment_date,payment_count,total_amount,avg_prev_30_day_amount,exceed_ratio,day_suspicious_rank_within_customer
+customer_id,country_name,city_name,suspicious_date,payment_count,total_amount,avg_daily_prev_30_days_amount,exceed_ratio,day_rank_for_customer
 1,Japan,Sasebo,2005-06-15,3,16.97,1.99,8.5276,1
 5,Taiwan,Nantou,2005-07-09,3,12.97,3.99,3.2506,1
 7,Yugoslavia,Kragujevac,2005-08-01,4,22.96,6.65,3.4503,1

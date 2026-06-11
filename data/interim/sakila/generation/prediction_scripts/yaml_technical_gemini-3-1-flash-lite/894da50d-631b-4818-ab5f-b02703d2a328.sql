@@ -44,22 +44,20 @@ category_spending AS (
 ),
 top_categories AS (
     SELECT
-        cs.customer_id,
-        cs.payment_month,
-        GROUP_CONCAT(cs.category_name, ', ') AS categories
-    FROM category_spending cs
-    JOIN (
-        SELECT customer_id, payment_month, MAX(cat_amount) as max_cat
+        customer_id,
+        payment_month,
+        GROUP_CONCAT(category_name, ', ') AS categories
+    FROM (
+        SELECT customer_id, payment_month, category_name,
+               RANK() OVER (PARTITION BY customer_id, payment_month ORDER BY cat_amount DESC) as rnk
         FROM category_spending
-        GROUP BY customer_id, payment_month
-    ) top ON cs.customer_id = top.customer_id 
-         AND cs.payment_month = top.payment_month 
-         AND cs.cat_amount = top.max_cat
-    GROUP BY cs.customer_id, cs.payment_month
+    ) WHERE rnk <= 3
+    GROUP BY customer_id, payment_month
 )
 SELECT
     fm.payment_month,
     fm.customer_id,
+    c.h03 || ' ' || c.h04 AS customer_name,
     fm.monthly_amount,
     fm.payment_count,
     fm.off_store_share,
@@ -67,12 +65,17 @@ SELECT
     RANK() OVER (PARTITION BY fm.customer_id ORDER BY fm.monthly_amount DESC) AS month_rank,
     tc.categories
 FROM filtered_months fm
-JOIN top_categories tc ON fm.customer_id = tc.customer_id AND fm.payment_month = tc.payment_month
 JOIN cus c ON fm.customer_id = c.h01
-JOIN adr a ON c.h06 = a.e01
-JOIN cty ci ON a.e05 = ci.d01
-JOIN inv i ON 1=1 -- Logic for cross-store check
-JOIN sto st ON i.n03 = st.j01
-JOIN adr sa ON st.j03 = sa.e01
-WHERE ci.d03 <> sa.e05 -- City/Country mismatch check
+JOIN top_categories tc ON fm.customer_id = tc.customer_id AND fm.payment_month = tc.payment_month
+WHERE EXISTS (
+    SELECT 1 FROM pay p
+    JOIN ren r ON p.p04 = r.q01
+    JOIN inv i ON r.q03 = i.n01
+    JOIN sto st ON i.n03 = st.j01
+    JOIN adr a_sto ON st.j03 = a_sto.e01
+    JOIN adr a_cus ON c.h06 = a_cus.e01
+    WHERE p.p02 = fm.customer_id 
+      AND strftime('%Y-%m', p.p06) = fm.payment_month
+      AND a_sto.e05 <> a_cus.e05
+)
 ORDER BY fm.payment_month, fm.monthly_amount DESC;

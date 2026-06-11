@@ -11,7 +11,7 @@ SELECT
   END AS risk_flag
 FROM cus AS c
 JOIN pay AS p
-  ON p.p02 = c.h01
+  ON c.h01 = p.p02
 JOIN stf AS s
   ON p.p03 = s.o01
 WHERE c.h07 IN ('1', 'Y')

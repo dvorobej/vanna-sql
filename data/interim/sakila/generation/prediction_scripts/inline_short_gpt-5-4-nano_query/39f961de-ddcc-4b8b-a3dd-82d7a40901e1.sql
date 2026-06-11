@@ -1,83 +1,101 @@
-SELECT AVG(dp2.day_sum)
-      FROM daily_pay dp2
-      WHERE dp2.customer_id = dp.customer_id
-        AND dp2.payment_date >= date(dp.payment_date, '-30 days')
-        AND dp2.payment_date < dp.payment_date
-    ) AS avg_prev_30_day_sum
-  FROM daily_pay dp
-),
-daily_suspicious AS (
+WITH customer_geo AS (
   SELECT
-    dwp.*,
-    (dwp.day_sum / dwp.avg_prev_30_day_sum) AS ratio_vs_prev
-  FROM daily_with_prev dwp
-  WHERE dwp.avg_prev_30_day_sum IS NOT NULL
-    AND dwp.avg_prev_30_day_sum > 0
-    AND dwp.day_sum >= 3.0 * dwp.avg_prev_30_day_sum
-    AND dwp.payment_count >= 3
-    AND (dwp.staff_count >= 2 OR dwp.store_count >= 2)
+    c.h01 AS customer_id,
+    c.h03 AS first_name,
+    c.h04 AS last_name,
+    c.h06 AS address_id,
+    ci.d02 AS city,
+    cnt.c02 AS country
+  FROM cus c
+  JOIN adr a ON a.e01 = c.h06
+  JOIN cty ci ON ci.d01 = a.e05
+  JOIN cnt cnt ON cnt.c01 = ci.d03
 ),
-daily_r_share AS (
+inv_rent AS (
+  SELECT
+    r.q01 AS rent_id,
+    i.n02 AS film_id,
+    i.n01 AS inventory_id
+  FROM ren r
+  JOIN inv i ON i.n01 = r.q03
+),
+daily_payments AS (
   SELECT
     p.p02 AS customer_id,
     date(p.p06) AS payment_date,
-    SUM(
+    COUNT(*) AS payment_count,
+    SUM(CAST(p.p05 AS REAL)) AS day_sum,
+    MAX(CAST(p.p05 AS REAL)) AS max_payment,
+    COUNT(DISTINCT p.p03) AS distinct_staff_count,
+    COUNT(DISTINCT (
       CASE
-        WHEN ca.i11 IN ('R', 'NC-17') THEN CAST(p.p05 AS REAL)
-        ELSE 0.0
+        WHEN s.o07 IS NOT NULL THEN s.o07
+        ELSE NULL
       END
-    ) AS r_nc17_sum,
-    SUM(CAST(p.p05 AS REAL)) AS day_sum_total
+    )) AS staff_store_count,
+    SUM(CASE
+          WHEN ca.i11 IN ('R','NC-17') THEN 1
+          ELSE 0
+        END) * 1.0 / COUNT(*) AS r_nc17_rental_share_by_count
   FROM pay p
-  JOIN ren r ON r.q01 = p.p04
-  JOIN inv i ON i.n01 = r.q03
-  JOIN flm ca ON ca.i01 = i.n02
-  GROUP BY
-    p.p02,
-    date(p.p06)
+  JOIN stf s ON s.o01 = p.p03
+  JOIN customer_geo cg ON cg.customer_id = p.p02
+  LEFT JOIN ren r ON r.q01 = p.p04
+  LEFT JOIN inv i ON i.n01 = r.q03
+  LEFT JOIN flm ca ON ca.i01 = i.n02
+  GROUP BY p.p02, date(p.p06)
 ),
-ranked_country_day AS (
+calendar_with_prev AS (
   SELECT
-    ds.*,
-    ROW_NUMBER() OVER (
-      PARTITION BY cg.country, ds.payment_date
-      ORDER BY ds.day_sum DESC, ds.customer_id
-    ) AS day_rank_in_country,
-    drr.r_nc17_sum,
-    drr.day_sum_total
-  FROM daily_suspicious ds
-  JOIN customer_geo cg ON cg.customer_id = ds.customer_id
-  JOIN daily_r_share drr
-    ON drr.customer_id = ds.customer_id
-   AND drr.payment_date = ds.payment_date
+    dp.*,
+    (
+      SELECT AVG(CAST(prev.day_sum AS REAL))
+      FROM daily_payments prev
+      WHERE prev.customer_id = dp.customer_id
+        AND prev.payment_date >= date(dp.payment_date, '-30 days')
+        AND prev.payment_date < dp.payment_date
+    ) AS avg_prev_30d
+  FROM daily_payments dp
+),
+suspicious_days AS (
+  SELECT
+    cw.*,
+    (cw.day_sum - cw.avg_prev_30d) AS deviation_from_avg,
+    CASE
+      WHEN cw.avg_prev_30d > 0 THEN cw.day_sum / cw.avg_prev_30d
+      ELSE NULL
+    END AS ratio_to_avg
+  FROM calendar_with_prev cw
+  WHERE cw.avg_prev_30d IS NOT NULL
+    AND cw.avg_prev_30d > 0
+    AND cw.day_sum >= 3 * cw.avg_prev_30d
+    AND cw.payment_count >= 3
+    AND (cw.distinct_staff_count >= 2 OR cw.staff_store_count >= 2)
+),
+ranked AS (
+  SELECT
+    sd.*,
+    DENSE_RANK() OVER (
+      PARTITION BY cg.country
+      ORDER BY sd.day_sum DESC
+    ) AS day_rank_in_country
+  FROM suspicious_days sd
+  JOIN customer_geo cg ON cg.customer_id = sd.customer_id
 )
 SELECT
-  cg.customer_id,
-  cg.first_name,
-  cg.last_name,
+  sd.customer_id,
   cg.city,
   cg.country,
-  ds.payment_date,
-  ds.payment_count,
-  ROUND(ds.day_sum, 2) AS day_sum,
-  ROUND(ds.max_payment, 2) AS max_payment,
-  ROUND(
-    CASE
-      WHEN ds.day_sum > 0 THEN (dr.r_nc17_sum * 1.0 / ds.day_sum_total)
-      ELSE 0.0
-    END,
-    4
-  ) AS r_nc17_rental_share,
-  dr.day_rank_in_country AS country_day_rank
-FROM ranked_country_day dr
-JOIN customer_geo cg
-  ON cg.customer_id = dr.customer_id
-JOIN daily_with_prev ds
-  ON ds.customer_id = dr.customer_id
- AND ds.payment_date = dr.payment_date
+  sd.payment_date,
+  sd.payment_count,
+  ROUND(sd.day_sum, 2) AS day_sum,
+  ROUND(sd.max_payment, 2) AS max_payment,
+  ROUND(sd.r_nc17_rental_share_by_count, 4) AS r_nc17_rental_share,
+  r.day_rank_in_country
+FROM ranked sd
+JOIN customer_geo cg ON cg.customer_id = sd.customer_id
 ORDER BY
   cg.country,
-  country_day_rank,
-  ds.payment_date,
-  cg.last_name,
-  cg.first_name;
+  r.day_rank_in_country,
+  sd.payment_date,
+  sd.customer_id;

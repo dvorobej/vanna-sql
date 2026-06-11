@@ -1,4 +1,4 @@
-customer_id,first_name,last_name,store_id,payment_count,total_amount,avg_payment,max_payment,frequency_flag
+customer_id,first_name,last_name,store_id,payment_count,total_amount,avg_payment,max_payment,frequency_label
 148,ELEANOR,HUNT,1,22,100.77999999999997,4.580909090909089,10.99,High Frequency
 470,GORDON,ALLARD,1,17,96.82999999999998,5.695882352941176,10.99,High Frequency
 522,ARNOLD,HAVENS,2,18,96.82,5.378888888888889,9.99,High Frequency

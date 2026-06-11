@@ -1,225 +1,148 @@
-WITH pay_enriched AS (
-  SELECT
-    p.p01 AS payment_id,
-    p.p02 AS customer_id,
-    p.p03 AS staff_id,
-    p.p04 AS rental_id,
-    p.p05 AS payment_amount,
-    p.p06 AS payment_ts,
-    DATE(p.p06) AS payment_date,
-    c.h07 AS customer_active,
-    cnt.c02 AS country_name,
-    ct.d02 AS city_name,
-    s.o07 AS staff_store_id
-  FROM pay AS p
-  JOIN cus AS c
-    ON c.h01 = p.p02
-  JOIN adr AS a
-    ON a.e01 = c.h06
-  JOIN cty AS ct
-    ON ct.d01 = a.e05
-  JOIN cnt AS cnt
-    ON cnt.c01 = ct.d03
-  JOIN stf AS s
-    ON s.o01 = p.p03
+WITH
+payments_enriched AS (
+    SELECT
+        p.p01 AS payment_id,
+        p.p02 AS customer_id,
+        p.p03 AS staff_id,
+        p.p04 AS rental_id,
+        CAST(p.p05 AS REAL) AS payment_amount,
+        p.p06 AS payment_ts,
+        date(p.p06) AS payment_day,
+        c.h02 AS home_store_id,
+        cnt.c02 AS country_name,
+        ctg.d02 AS city_name
+    FROM pay AS p
+    JOIN cus AS c
+        ON c.h01 = p.p02
+    JOIN adr AS a
+        ON a.e01 = c.h06
+    JOIN cty AS ctg
+        ON ctg.d01 = a.e05
+    JOIN cnt AS cnt
+        ON cnt.c01 = ctg.d03
 ),
-joined_films AS (
-  SELECT
-    pe.*,
-    ca.g02 AS category_name,
-    f.i02 AS film_title
-  FROM pay_enriched AS pe
-  LEFT JOIN ren AS r
-    ON r.q01 = pe.rental_id
-  LEFT JOIN inv AS inv
-    ON inv.n01 = r.q03
-  LEFT JOIN flm AS f
-    ON f.i01 = inv.n02
-  LEFT JOIN flc AS fc
-    ON fc.l01 = f.i01
-  LEFT JOIN cat AS ca
-    ON ca.g01 = fc.l02
+win AS (
+    SELECT
+        pe.*,
+        SUM(pe2.payment_amount) AS window_sum_7d,
+        COUNT(pe2.payment_id) AS window_payment_count_7d
+    FROM payments_enriched pe
+    JOIN payments_enriched pe2
+        ON pe2.customer_id = pe.customer_id
+       AND pe2.payment_ts > pe.payment_ts
+       AND pe2.payment_ts <= datetime(pe.payment_ts, '+7 days')
+    GROUP BY
+        pe.payment_id
 ),
-window_base AS (
-  SELECT
-    jf.*,
-    SUM(jf.payment_amount) OVER (
-      PARTITION BY jf.customer_id
-      ORDER BY jf.payment_ts
-      RANGE BETWEEN 6.0 PRECEDING AND CURRENT ROW
-    ) AS win_sum_7d,
-    COUNT(*) OVER (
-      PARTITION BY jf.customer_id
-      ORDER BY jf.payment_ts
-      RANGE BETWEEN 6.0 PRECEDING AND CURRENT ROW
-    ) AS win_cnt_7d,
-    AVG(jf_win_hist.avg_sum_hist) OVER (PARTITION BY jf.customer_id) AS dummy
-  FROM joined_films AS jf
-  LEFT JOIN (
-    SELECT 1
-  ) AS jf_win_hist
-  ON 1 = 1
+hist AS (
+    SELECT
+        pe.payment_id,
+        AVG(h.payment_amount) AS hist_avg_amount_per_payment,
+        AVG(h.payment_count) AS hist_avg_payments_per_day,
+        AVG(h.hist_sum) AS hist_avg_sum_per_day,
+        AVG(h.hist_cnt) AS hist_avg_cnt_per_day
+    FROM payments_enriched pe
+    LEFT JOIN (
+        SELECT
+            p3.p01 AS payment_id,
+            p3.p02 AS customer_id,
+            date(p3.p06) AS day,
+            SUM(CAST(p3.p05 AS REAL)) AS hist_sum,
+            COUNT(p3.p01) AS hist_cnt,
+            COUNT(p3.p01) AS payment_count,
+            CAST(p3.p05 AS REAL) AS payment_amount
+        FROM pay p3
+        GROUP BY
+            p3.p01,
+            p3.p02,
+            date(p3.p06)
+    ) h
+        ON h.customer_id = pe.customer_id
+       AND date(h.day) >= date(pe.payment_day, '-30 days')
+       AND date(h.day) < pe.payment_day
+    GROUP BY
+        pe.payment_id
 ),
-with_history AS (
-  SELECT
-    wb.*,
-    /* Историческое среднее и СКО за предыдущие 30 дней (до текущего платежа) */
-    (SELECT AVG(jh.payment_amount) * (SELECT COUNT(*) FROM pay_enriched jh2
-      WHERE jh2.customer_id = wb.customer_id
-        AND jh2.payment_ts >= datetime(wb.payment_ts, '-30 days')
-        AND jh2.payment_ts < wb.payment_ts
-    ) ) AS dummy2
-  FROM window_base wb
+window_agg AS (
+    SELECT
+        pe.payment_id,
+        pe.customer_id,
+        pe.country_name,
+        pe.city_name,
+        pe.home_store_id,
+        pe.payment_ts,
+        pe.payment_day,
+        w.window_sum_7d,
+        w.window_payment_count_7d
+    FROM payments_enriched pe
+    JOIN win w
+        ON w.payment_id = pe.payment_id
 ),
-suspicious AS (
-  SELECT
-    wb.payment_id,
-    wb.customer_id,
-    wb.customer_active,
-    wb.payment_date,
-    wb.payment_ts,
-    wb.win_sum_7d,
-    wb.win_cnt_7d
-  FROM window_base wb
+window_breakdown AS (
+    SELECT
+        wa.payment_id,
+        COUNT(DISTINCT wa.staff_id) AS distinct_staff_count_in_7d,
+        COUNT(DISTINCT wa2.home_store_id) AS distinct_stores_count_in_7d,
+        COUNT(DISTINCT fc.l02) AS distinct_movie_categories_count_in_7d,
+        COUNT(DISTINCT i.n01) AS distinct_rented_films_count_in_7d,
+        MAX(CASE WHEN s.o07 <> wa.home_store_id THEN 1 ELSE 0 END) AS has_off_home_staff
+    FROM window_agg wa
+    JOIN payments_enriched wa2
+        ON wa2.customer_id = wa.customer_id
+       AND wa2.payment_ts > wa.payment_ts
+       AND wa2.payment_ts <= datetime(wa.payment_ts, '+7 days')
+    JOIN stf s
+        ON s.o01 = wa2.staff_id
+    LEFT JOIN ren r
+        ON r.q01 = wa2.rental_id
+    LEFT JOIN inv i
+        ON i.n01 = r.q03
+    LEFT JOIN flc fc
+        ON fc.l01 = i.n02
+    GROUP BY
+        wa.payment_id
+),
+risk_rank AS (
+    SELECT
+        wa.payment_id,
+        wa.customer_id,
+        wa.window_sum_7d,
+        RANK() OVER (ORDER BY wa.window_sum_7d DESC) AS suspicious_customer_rank_by_sum
+    FROM window_agg wa
 )
 SELECT
-  wb.customer_id,
-  c.h03 AS customer_first_name,
-  c.h04 AS customer_last_name,
-  wb.payment_date AS window_end_date,
-  wb.win_cnt_7d AS payment_count_7d,
-  ROUND(wb.win_sum_7d, 2) AS rolling_sum_7d,
-
-  /* Историческое среднее суммы за 7 дней: берём среднюю сумму rolling_sum_7d по предыдущим 30 дням */
-  ROUND((
-    SELECT AVG(w2.win_sum_7d)
-    FROM (
-      SELECT
-        p2.p01 AS payment_id2,
-        p2.p02 AS customer_id2,
-        p2.p06 AS payment_ts2,
-        SUM(p2.p05) OVER (
-          PARTITION BY p2.p02
-          ORDER BY p2.p06
-          RANGE BETWEEN 6.0 PRECEDING AND CURRENT ROW
-        ) AS win_sum_7d
-      FROM pay_enriched p2
-      WHERE p2.customer_active = 'Y'
-    ) w2
-    WHERE w2.customer_id2 = wb.customer_id
-      AND w2.payment_ts2 >= datetime(wb.payment_ts, '-30 days')
-      AND w2.payment_ts2 < wb.payment_ts
-  ), 2) AS avg_sum_prev_30d_for_7d_window,
-
-  wb.win_sum_7d / NULLIF((
-    SELECT AVG(w2.win_sum_7d)
-    FROM (
-      SELECT
-        p2.p01 AS payment_id2,
-        p2.p02 AS customer_id2,
-        p2.p06 AS payment_ts2,
-        SUM(p2.p05) OVER (
-          PARTITION BY p2.p02
-          ORDER BY p2.p06
-          RANGE BETWEEN 6.0 PRECEDING AND CURRENT ROW
-        ) AS win_sum_7d
-      FROM pay_enriched p2
-      WHERE p2.customer_active = 'Y'
-    ) w2
-    WHERE w2.customer_id2 = wb.customer_id
-      AND w2.payment_ts2 >= datetime(wb.payment_ts, '-30 days')
-      AND w2.payment_ts2 < wb.payment_ts
-  ), 0) AS ratio_vs_hist_avg,
-
-  cnt.country_name,
-  ct.city_name,
-
-  /* Сотрудники и магазины */
-  (SELECT GROUP_CONCAT(DISTINCT CAST(j.s.o01 AS TEXT))
-   FROM pay_enriched j
-   JOIN stf s ON s.o01 = j.staff_id
-   WHERE j.customer_id = wb.customer_id
-     AND j.payment_ts >= datetime(wb.payment_ts, '-6 days')
-     AND j.payment_ts <= wb.payment_ts
-  ) AS staff_ids_in_window,
-  (SELECT GROUP_CONCAT(DISTINCT CAST(j.staff_store_id AS TEXT))
-   FROM pay_enriched j
-   WHERE j.customer_id = wb.customer_id
-     AND j.payment_ts >= datetime(wb.payment_ts, '-6 days')
-     AND j.payment_ts <= wb.payment_ts
-  ) AS store_ids_in_window,
-
-  /* Количество разных арендованных фильмов в окне */
-  (SELECT COUNT(DISTINCT i.n02)
-   FROM pay_enriched j
-   JOIN ren r ON r.q01 = j.rental_id
-   JOIN inv i ON i.n01 = r.q03
-   WHERE j.customer_id = wb.customer_id
-     AND j.payment_ts >= datetime(wb.payment_ts, '-6 days')
-     AND j.payment_ts <= wb.payment_ts
-  ) AS distinct_rented_films_in_window,
-
-  /* Ранг клиента по сумме подозрительных платежей (за это окно) среди всех клиентов */
-  (
-    SELECT RANK()
-    FROM (
-      SELECT
-        p3.p02 AS customer_id3,
-        SUM(p3.p05) AS sum_7d
-      FROM pay p3
-      WHERE p3.p06 >= datetime(wb.payment_ts, '-6 days')
-        AND p3.p06 <= wb.payment_ts
-      GROUP BY p3.p02
-    ) rnk
-    WHERE rnk.customer_id3 = wb.customer_id
-  ) AS suspicious_customer_rank
-FROM (
-  SELECT
-    p.p01,
-    p.p02 AS customer_id,
-    p.p06 AS payment_ts,
-    DATE(p.p06) AS payment_date,
-    SUM(p.p05) OVER (
-      PARTITION BY p.p02
-      ORDER BY p.p06
-      RANGE BETWEEN 6.0 PRECEDING AND CURRENT ROW
-    ) AS win_sum_7d,
-    COUNT(*) OVER (
-      PARTITION BY p.p02
-      ORDER BY p.p06
-      RANGE BETWEEN 6.0 PRECEDING AND CURRENT ROW
-    ) AS win_cnt_7d
-  FROM pay p
-  JOIN cus c ON c.h01 = p.p02
-  WHERE c.h07 = 'Y'
-) wb
-JOIN cus c ON c.h01 = wb.customer_id
-JOIN adr a ON a.e01 = c.h06
-JOIN cty ct ON ct.d01 = a.e05
-JOIN cnt ON cnt.c01 = ct.d03
+    wa.customer_id,
+    c.h03 AS customer_first_name,
+    c.h04 AS customer_last_name,
+    wa.country_name AS country,
+    wa.city_name AS city,
+    wa.payment_day AS window_start_day,
+    ROUND(wa.window_sum_7d, 2) AS window_sum_7d,
+    wa.window_payment_count_7d AS window_payment_count_7d,
+    rb.distinct_staff_count_in_7d AS distinct_staff_count_in_window,
+    rb.distinct_stores_count_in_7d AS distinct_stores_count_in_window,
+    rb.distinct_movie_categories_count_in_7d AS distinct_movie_categories_count_in_window,
+    rb.has_off_home_staff AS has_off_home_staff_in_window,
+    rr.suspicious_customer_rank_by_sum AS suspicious_customer_rank
+FROM window_agg wa
+JOIN cus c
+    ON c.h01 = wa.customer_id
+LEFT JOIN window_breakdown rb
+    ON rb.payment_id = wa.payment_id
+JOIN risk_rank rr
+    ON rr.payment_id = wa.payment_id
 WHERE
-  wb.win_cnt_7d >= 5
-  AND wb.win_sum_7d / NULLIF((
-    SELECT AVG(w2.win_sum_7d)
-    FROM (
-      SELECT
-        p2.p01 AS payment_id2,
-        p2.p02 AS customer_id2,
-        p2.p06 AS payment_ts2,
-        SUM(p2.p05) OVER (
-          PARTITION BY p2.p02
-          ORDER BY p2.p06
-          RANGE BETWEEN 6.0 PRECEDING AND CURRENT ROW
-        ) AS win_sum_7d
-      FROM pay p2
-      JOIN cus c2 ON c2.h01 = p2.p02
-      WHERE c2.h07 = 'Y'
-    ) w2
-    WHERE w2.customer_id2 = wb.customer_id
-      AND w2.payment_ts2 >= datetime(wb.payment_ts, '-30 days')
-      AND w2.payment_ts2 < wb.payment_ts
-  ), 0) >= 3
+    wa.window_payment_count_7d >= 5
+    AND wa.window_sum_7d >= (
+        3 * (
+            SELECT
+                AVG(CAST(p4.p05 AS REAL)) * 5
+            FROM pay p4
+            WHERE p4.p02 = wa.customer_id
+              AND date(p4.p06) >= date(wa.payment_day, '-30 days')
+              AND date(p4.p06) < wa.payment_day
+        )
+    )
 ORDER BY
-  wb.payment_date,
-  wb.win_sum_7d DESC,
-  wb.customer_id;
+    wa.window_sum_7d DESC,
+    wa.customer_id;

@@ -1,14 +1,15 @@
 SELECT
   c.h01 AS customer_id,
-  c.h03 AS first_name,
-  c.h04 AS last_name,
+  c.h03 AS customer_first_name,
+  c.h04 AS customer_last_name,
+  c.h02 AS customer_store_id,
   COUNT(p.p01) AS payment_count,
   ROUND(SUM(p.p05), 2) AS total_amount,
-  ROUND(AVG(p.p05), 2) AS average_payment,
+  ROUND(AVG(p.p05), 2) AS average_payment_amount,
   ROUND(
     1.0 * SUM(CASE WHEN s.o07 <> c.h02 THEN 1 ELSE 0 END) / COUNT(p.p01),
     4
-  ) AS share_payments_by_other_store_staff
+  ) AS other_store_staff_payment_share
 FROM cus AS c
 JOIN pay AS p
   ON p.p02 = c.h01

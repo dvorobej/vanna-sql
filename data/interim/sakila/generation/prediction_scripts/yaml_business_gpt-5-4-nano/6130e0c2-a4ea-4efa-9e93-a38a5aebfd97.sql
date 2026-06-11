@@ -9,10 +9,9 @@ SELECT
 FROM cus AS c
 JOIN pay AS p
   ON p.p02 = c.h01
-WHERE
-  p.p06 >= '2005-06-01'
+WHERE c.h07 IN ('1', 'Y')
+  AND p.p06 >= '2005-06-01'
   AND p.p06 < '2005-07-01'
-  AND c.h07 IN ('1', 'Y')
 GROUP BY
   c.h01,
   c.h03,
@@ -23,4 +22,5 @@ HAVING
 ORDER BY
   total_amount DESC,
   payment_count DESC,
-  c.h01;
+  c.h04,
+  c.h03;

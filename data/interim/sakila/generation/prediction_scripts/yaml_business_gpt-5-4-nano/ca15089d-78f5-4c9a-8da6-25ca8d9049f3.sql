@@ -1,84 +1,89 @@
-WITH payment_enriched AS (
-    SELECT
-        p.p01 AS payment_id,
-        p.p02 AS customer_id,
-        DATE(p.p06, 'start of month') AS month_start,
-        CAST(p.p05 AS REAL) AS amount,
-        p.p03 AS staff_id,
-        s.o07 AS staff_store_id,
-        ci.d02 AS customer_city,
-        cnt.c02 AS customer_country,
-        CASE WHEN p.p04 IS NULL THEN 0 ELSE 1 END AS has_rental
-    FROM pay p
-    JOIN cus c ON c.h01 = p.p02
-    JOIN adr a ON a.e01 = c.h06
-    JOIN cty ci ON ci.d01 = a.e05
-    JOIN cnt ON cnt.c01 = ci.d03
-    JOIN stf s ON s.o01 = p.p03
-),
-monthly_customer AS (
-    SELECT
-        customer_id,
-        customer_country,
-        customer_city,
-        month_start,
-        COUNT(*) AS payment_count,
-        SUM(amount) AS month_total_amount,
-        MAX(amount) AS max_payment_amount,
-        SUM(amount) AS month_sum_for_share_base,
-        COUNT(DISTINCT staff_id) AS distinct_staff_count,
-        COUNT(DISTINCT staff_store_id) AS distinct_store_count
-    FROM payment_enriched
-    GROUP BY
-        customer_id,
-        customer_country,
-        customer_city,
-        month_start
-),
-monthly_with_baseline AS (
-    SELECT
-        mc.*,
-        AVG(month_total_amount) OVER (
-            PARTITION BY customer_id
-            ORDER BY month_start
-            ROWS BETWEEN 3 PRECEDING AND 1 PRECEDING
-        ) AS prev_avg_month_total_amount
-    FROM monthly_customer mc
-),
-suspicious_months AS (
-    SELECT
-        mwb.*,
-        (mwb.max_payment_amount / NULLIF(mwb.month_total_amount, 0)) AS max_payment_share,
-        RANK() OVER (
-            PARTITION BY customer_country, month_start
-            ORDER BY mwb.month_total_amount DESC
-        ) AS customer_month_rank_in_country
-    FROM monthly_with_baseline mwb
-    WHERE mwb.prev_avg_month_total_amount IS NOT NULL
-      AND mwb.prev_avg_month_total_amount > 0
-      AND mwb.month_total_amount >= 3.0 * mwb.prev_avg_month_total_amount
-      AND mwb.payment_count >= 3
-      AND mwb.distinct_staff_count >= 2
-      AND mwb.distinct_store_count >= 2
-)
-SELECT
+WITH customer_base AS (
+  SELECT
+    c.h01 AS customer_id,
     c.h03 AS first_name,
     c.h04 AS last_name,
-    sm.customer_country AS country,
-    sm.customer_city AS city,
-    sm.month_start AS month_start_date,
-    sm.payment_count,
-    ROUND(sm.month_total_amount, 2) AS month_total_amount,
-    ROUND(sm.max_payment_amount, 2) AS max_payment_amount,
-    ROUND(sm.max_payment_share, 4) AS max_payment_share_in_month,
-    sm.distinct_staff_count AS distinct_staff_count,
-    sm.distinct_store_count AS distinct_store_count,
-    sm.customer_month_rank_in_country AS customer_month_rank_in_country
-FROM suspicious_months sm
-JOIN cus c ON c.h01 = sm.customer_id
+    cnt.c02 AS country,
+    ci.d02 AS city,
+    c.h07 AS active_flag
+  FROM cus AS c
+  JOIN adr AS a ON a.e01 = c.h06
+  JOIN cty AS ci ON ci.d01 = a.e05
+  JOIN cnt AS cnt ON cnt.c01 = ci.d03
+),
+payment_base AS (
+  SELECT
+    p.p01 AS payment_id,
+    p.p02 AS customer_id,
+    DATE(p.p06, 'start of month') AS month_start,
+    CAST(p.p05 AS REAL) AS amount,
+    DATE(p.p06) AS payment_day,
+    p.p03 AS staff_id,
+    s.o07 AS store_id
+  FROM pay AS p
+  JOIN stf AS s ON s.o01 = p.p03
+),
+monthly_customer AS (
+  SELECT
+    pb.customer_id,
+    pb.month_start,
+    COUNT(pb.payment_id) AS payment_count,
+    SUM(pb.amount) AS total_amount,
+    MAX(pb.amount) AS max_payment,
+    SUM(pb.amount) AS month_sum_check,
+    COUNT(DISTINCT pb.staff_id) AS distinct_staff_count,
+    COUNT(DISTINCT pb.store_id) AS distinct_store_count,
+    COUNT(DISTINCT pb.payment_day) AS distinct_payment_days
+  FROM payment_base AS pb
+  GROUP BY
+    pb.customer_id,
+    pb.month_start
+),
+monthly_with_history AS (
+  SELECT
+    mc.*,
+    AVG(mc.total_amount) OVER (
+      PARTITION BY mc.customer_id
+      ORDER BY mc.month_start
+      ROWS BETWEEN 3 PRECEDING AND 1 PRECEDING
+    ) AS prev_months_avg_amount
+  FROM monthly_customer AS mc
+),
+suspicious_months AS (
+  SELECT
+    mwh.*
+  FROM monthly_with_history AS mwh
+  WHERE mwh.prev_months_avg_amount IS NOT NULL
+    AND mwh.prev_months_avg_amount > 0
+    AND mwh.total_amount >= 3.0 * mwh.prev_months_avg_amount
+    AND mwh.payment_count >= 3
+    AND (
+      mwh.distinct_staff_count >= 2
+      OR mwh.distinct_store_count >= 2
+    )
+)
+SELECT
+  sm.month_start AS payment_month,
+  cb.first_name,
+  cb.last_name,
+  cb.country,
+  cb.city,
+  sm.payment_count,
+  ROUND(sm.total_amount, 2) AS total_amount,
+  ROUND(sm.max_payment, 2) AS max_payment,
+  ROUND(sm.max_payment / NULLIF(sm.total_amount, 0), 4) AS max_payment_share,
+  sm.distinct_staff_count,
+  sm.distinct_store_count,
+  RANK() OVER (
+    PARTITION BY cb.country, sm.month_start
+    ORDER BY sm.total_amount DESC
+  ) AS country_month_customer_rank
+FROM suspicious_months AS sm
+JOIN customer_base AS cb
+  ON cb.customer_id = sm.customer_id
+WHERE cb.active_flag IN ('1', 'Y')
 ORDER BY
-    sm.customer_country,
-    sm.month_start,
-    sm.customer_month_rank_in_country,
-    c.h04,
-    c.h03;
+  sm.month_start,
+  cb.country,
+  country_month_customer_rank,
+  sm.total_amount DESC;

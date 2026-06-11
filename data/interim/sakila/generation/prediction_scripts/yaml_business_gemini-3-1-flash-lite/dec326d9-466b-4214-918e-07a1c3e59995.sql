@@ -4,9 +4,9 @@ WITH daily_activity AS (
         DATE(p.p06) AS activity_date,
         SUM(p.p05) AS daily_amount,
         COUNT(*) AS daily_count,
-        COUNT(DISTINCT p.p03) AS daily_staff_count,
-        COUNT(DISTINCT st.o07) AS daily_store_count,
-        COUNT(DISTINCT r.q03) AS daily_films_count
+        COUNT(DISTINCT p.p03) AS staff_count,
+        COUNT(DISTINCT st.o07) AS store_count,
+        COUNT(DISTINCT r.q03) AS inventory_count
     FROM pay p
     JOIN stf st ON st.o01 = p.p03
     JOIN ren r ON r.q01 = p.p04
@@ -14,43 +14,53 @@ WITH daily_activity AS (
 ),
 window_activity AS (
     SELECT
-        da.customer_id,
-        da.activity_date AS window_end,
-        SUM(da.daily_amount) OVER (PARTITION BY da.customer_id ORDER BY JULIANDAY(da.activity_date) RANGE BETWEEN 6 PRECEDING AND CURRENT ROW) AS window_amount,
-        SUM(da.daily_count) OVER (PARTITION BY da.customer_id ORDER BY JULIANDAY(da.activity_date) RANGE BETWEEN 6 PRECEDING AND CURRENT ROW) AS window_count,
-        SUM(da.daily_films_count) OVER (PARTITION BY da.customer_id ORDER BY JULIANDAY(da.activity_date) RANGE BETWEEN 6 PRECEDING AND CURRENT ROW) AS window_films_count,
-        (SELECT AVG(sub.daily_amount) FROM daily_activity sub WHERE sub.customer_id = da.customer_id AND sub.activity_date >= DATE(da.activity_date, '-30 days') AND sub.activity_date < da.activity_date) AS hist_avg_amount
-    FROM daily_activity da
+        d1.customer_id,
+        d1.activity_date AS window_end_date,
+        SUM(d2.daily_amount) AS window_amount,
+        SUM(d2.daily_count) AS window_count,
+        MAX(d2.staff_count) AS max_staff_in_window,
+        MAX(d2.store_count) AS max_store_in_window,
+        SUM(d2.inventory_count) AS total_inventory_in_window,
+        (SELECT AVG(d3.daily_amount) 
+         FROM daily_activity d3 
+         WHERE d3.customer_id = d1.customer_id 
+           AND d3.activity_date >= DATE(d1.activity_date, '-30 days') 
+           AND d3.activity_date < d1.activity_date) AS hist_avg_daily_amount
+    FROM daily_activity d1
+    JOIN daily_activity d2 ON d2.customer_id = d1.customer_id
+      AND d2.activity_date BETWEEN DATE(d1.activity_date, '-6 days') AND d1.activity_date
+    GROUP BY d1.customer_id, d1.activity_date
 ),
 suspicious_windows AS (
     SELECT
         wa.*,
         c.h03 || ' ' || c.h04 AS customer_name,
-        cnt.c02 AS country,
-        cty.d02 AS city
+        ct.d02 AS city,
+        cn.c02 AS country
     FROM window_activity wa
     JOIN cus c ON c.h01 = wa.customer_id
     JOIN adr a ON a.e01 = c.h06
-    JOIN cty cty ON cty.d01 = a.e05
-    JOIN cnt cnt ON cnt.c01 = cty.d03
-    WHERE wa.window_amount >= 3 * COALESCE(wa.hist_avg_amount, 0)
+    JOIN cty ct ON ct.d01 = a.e05
+    JOIN cnt cn ON cn.c01 = ct.d03
+    WHERE wa.window_amount >= 3 * COALESCE(wa.hist_avg_daily_amount * 7, 0)
       AND wa.window_count >= 5
-      AND wa.hist_avg_amount > 0
 ),
 ranked_suspicious AS (
     SELECT
         *,
-        RANK() OVER (ORDER BY window_amount DESC) AS global_rank
+        RANK() OVER (ORDER BY window_amount DESC) AS global_suspicious_rank
     FROM suspicious_windows
 )
 SELECT
     customer_name,
     country,
     city,
-    window_end,
+    window_end_date,
     window_amount,
     window_count,
-    window_films_count,
-    global_rank
+    max_staff_in_window,
+    max_store_in_window,
+    total_inventory_in_window,
+    global_suspicious_rank
 FROM ranked_suspicious
-ORDER BY global_rank;
+ORDER BY global_suspicious_rank;

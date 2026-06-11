@@ -3,7 +3,7 @@ SELECT
   c.h04 AS last_name,
   COUNT(p.p01) AS payment_count,
   SUM(p.p05) AS total_amount,
-  AVG(p.p05) AS average_receipt,
+  AVG(p.p05) AS average_payment,
   CASE
     WHEN COUNT(p.p01) > 10 OR SUM(p.p05) > 80 THEN 1
     ELSE 0
@@ -18,5 +18,5 @@ GROUP BY
   c.h03,
   c.h04
 HAVING COUNT(p.p01) > 10
-   OR SUM(p.p05) > 80
+    OR SUM(p.p05) > 80
 ORDER BY total_amount DESC;

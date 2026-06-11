@@ -1,81 +1,146 @@
-SELECT country_id FROM customer_geo WHERE customer_id = mcwp.customer_id LIMIT 1)
-    ) AS country_decile_placeholder
-  FROM monthly_customer_with_personal AS mcwp
-),
-ranked AS (
+WITH payments_2005 AS (
   SELECT
-    mcwp.customer_id,
-    cg.country,
-    cg.city,
-    mcwp.month_start,
-    mcwp.payment_count,
-    mcwp.month_sum,
-    mcwp.personal_avg_month_sum,
-    (mcwp.month_sum - mcwp.personal_avg_month_sum) AS deviation_from_personal_avg,
-    RANK() OVER (
-      PARTITION BY cg.country, mcwp.month_start
-      ORDER BY mcwp.month_sum DESC
-    ) AS country_month_rank,
-    COUNT(*) OVER (
-      PARTITION BY cg.country, mcwp.month_start
-    ) AS country_month_customer_count
-  FROM monthly_customer_with_personal AS mcwp
-  JOIN customer_geo AS cg
-    ON cg.customer_id = mcwp.customer_id
+    p.p01 AS payment_id,
+    p.p02 AS customer_id,
+    p.p03 AS staff_id,
+    p.p05 AS payment_amount,
+    p.p06 AS payment_ts,
+    date(p.p06, 'start of month') AS month_start
+  FROM pay AS p
+  WHERE p.p06 >= '2005-01-01'
+    AND p.p06 < '2006-01-01'
 ),
-top_10pct AS (
-  SELECT
-    r.*,
-    CAST(r.country_month_customer_count * 0.10 AS INTEGER) AS top10_floor_cnt
-  FROM ranked AS r
-),
-last_top_staff AS (
+customer_monthly AS (
   SELECT
     p.customer_id,
-    date(p.payment_dt, 'start of month') AS month_start,
+    p.month_start,
+    COUNT(*) AS payment_count,
+    SUM(p.payment_amount) AS monthly_amount
+  FROM payments_2005 AS p
+  GROUP BY p.customer_id, p.month_start
+),
+customer_monthly_with_prev AS (
+  SELECT
+    cm.*,
+    AVG(cm.monthly_amount) OVER (
+      PARTITION BY cm.customer_id
+    ) AS avg_monthly_amount_2005
+  FROM customer_monthly AS cm
+),
+country_month_rank AS (
+  SELECT
+    cmw.*,
+    RANK() OVER (
+      PARTITION BY cmw.month_start, cmw.customer_id
+      ORDER BY cmw.monthly_amount
+    ) AS dummy_rank
+  FROM customer_monthly_with_prev AS cmw
+),
+country_months AS (
+  SELECT
+    cmw.*,
+    PERCENT_RANK() OVER (
+      PARTITION BY cmw.month_start, 
+                   (SELECT c.h02 FROM cus c WHERE c.h01 = cmw.customer_id)
+      ORDER BY cmw.monthly_amount
+    ) AS country_month_percent_rank
+  FROM customer_monthly_with_prev AS cmw
+  -- заменим на корректный join к стране ниже
+),
+country_monthly_ranked AS (
+  SELECT
+    cmw.customer_id,
+    cmw.month_start,
+    cmw.payment_count,
+    cmw.monthly_amount,
+    cmw.avg_monthly_amount_2005,
+    PERCENT_RANK() OVER (
+      PARTITION BY c.country_id, cmw.month_start
+      ORDER BY cmw.monthly_amount
+    ) AS country_month_percent_rank
+  FROM customer_monthly_with_prev AS cmw
+  JOIN (
+    SELECT
+      cus.h01 AS customer_id,
+      cnt.c01 AS country_id
+    FROM cus
+    JOIN adr ON adr.e01 = cus.h06
+    JOIN cty ON cty.d01 = adr.e05
+    JOIN cnt ON cnt.c01 = cty.d03
+  ) AS c
+    ON c.customer_id = cmw.customer_id
+),
+suspicious_months AS (
+  SELECT
+    cmr.*
+  FROM country_monthly_ranked AS cmr
+  WHERE cmr.avg_monthly_amount_2005 IS NOT NULL
+    AND cmr.avg_monthly_amount_2005 > 0
+    AND cmr.monthly_amount > 2.0 * cmr.avg_monthly_amount_2005
+    AND cmr.country_month_percent_rank >= 0.90
+),
+top_staff_in_month AS (
+  SELECT
+    p.customer_id,
+    date(p.payment_ts, 'start of month') AS month_start,
     p.staff_id,
-    SUM(p.amount) AS staff_month_sum,
+    SUM(p.payment_amount) AS staff_month_amount,
     ROW_NUMBER() OVER (
-      PARTITION BY p.customer_id, date(p.payment_dt, 'start of month')
-      ORDER BY SUM(p.amount) DESC, p.staff_id
+      PARTITION BY p.customer_id, date(p.payment_ts, 'start of month')
+      ORDER BY SUM(p.payment_amount) DESC, p.staff_id
     ) AS rn
   FROM payments_2005 AS p
   GROUP BY
     p.customer_id,
-    date(p.payment_dt, 'start of month'),
+    date(p.payment_ts, 'start of month'),
     p.staff_id
 )
 SELECT
-  t.customer_id,
-  t.country,
-  t.city,
-  strftime('%Y-%m', t.month_start) AS payment_month,
-  ROUND(t.month_sum, 2) AS month_sum,
-  t.payment_count,
-  ROUND(t.deviation_from_personal_avg, 2) AS deviation_from_personal_avg,
-  t.country_month_rank AS country_month_customer_rank,
-  s.o01 AS top_staff_id,
-  s.o02 AS top_staff_first_name,
-  s.o03 AS top_staff_last_name,
-  ROUND(lt.staff_month_sum, 2) AS top_staff_month_sum
-FROM top_10pct AS t
-JOIN last_top_staff AS lt
-  ON lt.customer_id = t.customer_id
- AND lt.month_start = t.month_start
- AND lt.rn = 1
-JOIN stf AS s
-  ON s.o01 = lt.staff_id
-WHERE
-  t.personal_avg_month_sum IS NOT NULL
-  AND t.personal_avg_month_sum > 0
-  AND t.month_sum > 2.0 * t.personal_avg_month_sum
-  AND t.country_month_rank <=
-      CASE
-        WHEN t.top10_floor_cnt < 1 THEN 1
-        ELSE t.top10_floor_cnt
-      END
+  sm.customer_id,
+  co.c02 AS country,
+  ct.d02 AS city,
+  strftime('%Y-%m', sm.month_start) AS month,
+  ROUND(sm.monthly_amount, 2) AS monthly_amount,
+  sm.payment_count,
+  ROUND(sm.monthly_amount - sm.avg_monthly_amount_2005, 2) AS deviation_from_personal_avg,
+  RANK() OVER (
+    PARTITION BY ctry.country_id, sm.month_start
+    ORDER BY sm.monthly_amount DESC
+  ) AS country_customer_rank,
+  stf.o01 AS top_staff_id,
+  stf.o02 || ' ' || stf.o03 AS top_staff_name
+FROM suspicious_months AS sm
+JOIN cus AS cusx
+  ON cusx.h01 = sm.customer_id
+JOIN adr AS a
+  ON a.e01 = cusx.h06
+JOIN cty AS ct
+  ON ct.d01 = a.e05
+JOIN cnt AS co
+  ON co.c01 = ct.d03
+LEFT JOIN (
+  SELECT
+    customers.customer_id,
+    customers.country_id
+  FROM (
+    SELECT
+      cus.h01 AS customer_id,
+      cnt.c01 AS country_id
+    FROM cus
+    JOIN adr ON adr.e01 = cus.h06
+    JOIN cty ON cty.d01 = adr.e05
+    JOIN cnt ON cnt.c01 = cty.d03
+  ) AS customers
+) AS ctry
+  ON ctry.customer_id = sm.customer_id
+LEFT JOIN top_staff_in_month AS tsim
+  ON tsim.customer_id = sm.customer_id
+ AND tsim.month_start = sm.month_start
+ AND tsim.rn = 1
+LEFT JOIN stf
+  ON stf.o01 = tsim.staff_id
 ORDER BY
-  t.country,
-  t.month_start,
-  t.month_sum DESC,
-  t.customer_id;
+  sm.month_start,
+  co.c02,
+  country_customer_rank,
+  sm.customer_id;

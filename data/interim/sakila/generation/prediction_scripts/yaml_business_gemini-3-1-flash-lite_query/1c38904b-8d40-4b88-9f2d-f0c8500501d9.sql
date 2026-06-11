@@ -3,12 +3,9 @@ SELECT
   c.h03 AS first_name,
   c.h04 AS last_name,
   COUNT(p.p01) AS payment_count,
-  ROUND(SUM(p.p05), 2) AS total_amount,
-  ROUND(AVG(p.p05), 2) AS average_payment,
-  ROUND(
-    SUM(CASE WHEN s.o07 <> c.h02 THEN 1 ELSE 0 END) * 1.0 / COUNT(p.p01),
-    4
-  ) AS other_store_staff_share
+  SUM(p.p05) AS total_amount,
+  AVG(p.p05) AS average_payment,
+  CAST(SUM(CASE WHEN s.o07 <> c.h02 THEN 1 ELSE 0 END) AS REAL) / COUNT(p.p01) AS other_store_staff_share
 FROM cus AS c
 JOIN pay AS p
   ON p.p02 = c.h01

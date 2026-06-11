@@ -5,7 +5,7 @@ SELECT
   SUM(p.p05) AS total_amount,
   AVG(p.p05) AS average_payment,
   CASE
-    WHEN AVG(p.p05) > 8.00 OR SUM(p.p05) > 100 THEN 1
+    WHEN SUM(p.p05) > 50 OR AVG(p.p05) > 8.00 THEN 1
     ELSE 0
   END AS risk_flag
 FROM cus AS c
@@ -17,4 +17,4 @@ GROUP BY
   c.h03,
   c.h04
 HAVING COUNT(p.p01) >= 5
-ORDER BY total_amount DESC, payment_count DESC, first_name, last_name;
+ORDER BY total_amount DESC, payment_count DESC;

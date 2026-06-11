@@ -4,16 +4,17 @@ WITH base AS (
     p.p02 AS customer_id,
     p.p03 AS staff_id,
     p.p04 AS rental_id,
-    p.p05 AS payment_amount,
-    DATE(p.p06) AS payment_date,
-    cus.h02 AS home_store_id,
-    co.c02 AS country_name,
-    ci.d02 AS city_name
+    CAST(p.p05 AS REAL) AS payment_amount,
+    p.p06 AS payment_ts,
+    date(p.p06) AS payment_day,
+    co.c02 AS country,
+    ci.d02 AS city,
+    c.h02 AS home_store_id
   FROM pay p
-  JOIN cus
-    ON cus.h01 = p.p02
+  JOIN cus c
+    ON c.h01 = p.p02
   JOIN adr a
-    ON a.e01 = cus.h06
+    ON a.e01 = c.h06
   JOIN cty ci
     ON ci.d01 = a.e05
   JOIN cnt co
@@ -22,104 +23,129 @@ WITH base AS (
 windowed AS (
   SELECT
     b.customer_id,
-    b.payment_date,
-    b.country_name,
-    b.city_name,
+    b.country,
+    b.city,
     b.home_store_id,
-    b.staff_id,
+    b.payment_day,
+    b.payment_ts,
     b.payment_amount,
 
-    -- rolling 7-day window (including current date)
-    (SELECT COALESCE(SUM(p2.p05), 0.0)
-     FROM pay p2
-     WHERE p2.p02 = b.customer_id
-       AND DATE(p2.p06) BETWEEN DATE(b.payment_date, '-6 days') AND b.payment_date
-    ) AS roll_sum_7d,
+    SUM(b.payment_amount) OVER (
+      PARTITION BY b.customer_id
+      ORDER BY b.payment_ts
+      RANGE BETWEEN 6.999999 DAY PRECEDING AND CURRENT ROW
+    ) AS win_sum_7d,
 
-    (SELECT COALESCE(COUNT(*), 0)
-     FROM pay p2
-     WHERE p2.p02 = b.customer_id
-       AND DATE(p2.p06) BETWEEN DATE(b.payment_date, '-6 days') AND b.payment_date
-    ) AS roll_cnt_7d,
+    COUNT(b.payment_id) OVER (
+      PARTITION BY b.customer_id
+      ORDER BY b.payment_ts
+      RANGE BETWEEN 6.999999 DAY PRECEDING AND CURRENT ROW
+    ) AS win_count_7d,
 
-    -- historical previous 30 days (excluding current 7-day window end date)
-    (SELECT AVG(p3.p05) * 7.0
-     FROM pay p3
-     WHERE p3.p02 = b.customer_id
-       AND DATE(p3.p06) BETWEEN DATE(b.payment_date, '-36 days') AND DATE(b.payment_date, '-7 days')
-    ) AS hist_avg_amount_per_txn_times_7,
+    /* previous 30 days (excluding current 7-day window end day) */
+    SUM(b.payment_amount) OVER (
+      PARTITION BY b.customer_id
+      ORDER BY b.payment_ts
+      RANGE BETWEEN 30.000001 DAY PRECEDING AND 7.000001 DAY PRECEDING
+    ) AS hist_sum_30d_excl_current_window,
 
-    (SELECT COALESCE(COUNT(*), 0)
-     FROM pay p3
-     WHERE p3.p02 = b.customer_id
-       AND DATE(p3.p06) BETWEEN DATE(b.payment_date, '-36 days') AND DATE(b.payment_date, '-7 days')
-    ) AS hist_txn_cnt_30d
+    COUNT(b.payment_id) OVER (
+      PARTITION BY b.customer_id
+      ORDER BY b.payment_ts
+      RANGE BETWEEN 30.000001 DAY PRECEDING AND 7.000001 DAY PRECEDING
+    ) AS hist_count_30d_excl_current_window
   FROM base b
 ),
-suspicious_windows AS (
-  SELECT *
-  FROM windowed
-  WHERE hist_txn_cnt_30d > 0
-    AND roll_cnt_7d >= 5
-    AND roll_sum_7d >= 3.0 * hist_avg_amount_per_txn_times_7
+suspicious_events AS (
+  SELECT DISTINCT
+    w.customer_id,
+    w.country,
+    w.city,
+    w.home_store_id,
+    w.payment_day,
+    w.payment_ts,
+    w.win_sum_7d,
+    w.win_count_7d,
+    (w.hist_sum_30d_excl_current_window * 1.0) / NULLIF(w.hist_count_30d_excl_current_window, 0) AS hist_avg_payment_amount_30d
+  FROM windowed w
+  WHERE w.win_count_7d >= 5
+    AND w.hist_count_30d_excl_current_window > 0
+    AND w.win_sum_7d >= 3.0 * ((w.hist_sum_30d_excl_current_window * 1.0) / w.hist_count_30d_excl_current_window) * w.win_count_7d
 ),
-window_details AS (
-  -- aggregate distinct staff/stores/films inside each suspicious 7-day window
+agg_suspicious AS (
   SELECT
-    sw.customer_id,
-    sw.payment_date,
-    sw.country_name,
-    sw.city_name,
-    sw.home_store_id,
-    sw.roll_sum_7d,
-    sw.roll_cnt_7d,
+    se.customer_id,
+    se.payment_day,
+    se.country,
+    se.city,
 
-    COUNT(DISTINCT p.p03) AS distinct_staff_count,
-    COUNT(DISTINCT cus2.h02) AS distinct_store_count,
+    COUNT(DISTINCT p.p03) AS staff_count_distinct,
+    COUNT(DISTINCT c.h02) AS store_count_distinct,
 
-    COUNT(DISTINCT i.n02) AS distinct_rented_film_count
-  FROM suspicious_windows sw
+    COUNT(DISTINCT fc.l01) AS distinct_rented_films_in_window,
+
+    /* rank customers by total suspicious-window sum */
+    SUM(se.win_sum_7d) OVER (
+      PARTITION BY se.customer_id
+    ) AS customer_suspicious_total_sum
+  FROM suspicious_events se
   JOIN pay p
-    ON p.p02 = sw.customer_id
-   AND DATE(p.p06) BETWEEN DATE(sw.payment_date, '-6 days') AND sw.payment_date
-  JOIN cus cus2
-    ON cus2.h01 = p.p02
-  JOIN ren r
+    ON p.p02 = se.customer_id
+   AND p.p06 >= datetime(se.payment_day || ' 00:00:00')
+   AND p.p06 <  datetime(date(se.payment_day, '+1 day'))
+  LEFT JOIN cus c
+    ON c.h01 = p.p02
+  LEFT JOIN ren r
     ON r.q01 = p.p04
-  JOIN inv i
+  LEFT JOIN inv i
     ON i.n01 = r.q03
+  LEFT JOIN flc fc
+    ON fc.l01 = i.n02
   GROUP BY
-    sw.customer_id,
-    sw.payment_date,
-    sw.country_name,
-    sw.city_name,
-    sw.home_store_id,
-    sw.roll_sum_7d,
-    sw.roll_cnt_7d
+    se.customer_id, se.payment_day, se.country, se.city
 ),
-ranked AS (
+final_events AS (
   SELECT
-    wd.*,
-    RANK() OVER (ORDER BY wd.roll_sum_7d DESC) AS suspicious_customer_rank
-  FROM window_details wd
+    se.customer_id,
+    (c.h03 || ' ' || c.h04) AS customer_name,
+    se.country,
+    se.city,
+    se.payment_day AS window_end_day,
+    se.win_count_7d AS payments_in_window,
+    ROUND(se.win_sum_7d, 2) AS payments_sum_in_window,
+
+    /* collect staff and stores through which payments passed */
+    GROUP_CONCAT(DISTINCT st.o02 || ' ' || st.o03) AS staff_names_in_window,
+    GROUP_CONCAT(DISTINCT c.h02) AS home_store_ids_in_window,
+
+    a.distinct_rented_films_in_window AS distinct_rented_films_in_window,
+    DENSE_RANK() OVER (
+      ORDER BY a.customer_suspicious_total_sum DESC
+    ) AS customer_risk_rank
+  FROM suspicious_events se
+  JOIN cus c
+    ON c.h01 = se.customer_id
+  JOIN pay p
+    ON p.p02 = se.customer_id
+   AND p.p06 >= datetime(se.payment_day || ' 00:00:00','-6 days')
+   AND p.p06 <= datetime(se.payment_day || ' 23:59:59')
+  LEFT JOIN stf st
+    ON st.o01 = p.p03
+  LEFT JOIN ren r
+    ON r.q01 = p.p04
+  LEFT JOIN inv i
+    ON i.n01 = r.q03
+  LEFT JOIN flc fc
+    ON fc.l01 = i.n02
+  LEFT JOIN agg_suspicious a
+    ON a.customer_id = se.customer_id
+   AND a.payment_day = se.payment_day
+  GROUP BY
+    se.customer_id, customer_name, se.country, se.city, se.payment_day, se.win_count_7d, se.win_sum_7d, a.distinct_rented_films_in_window, a.customer_suspicious_total_sum
 )
 SELECT
-  ranked.customer_id,
-  c.h03 AS customer_first_name,
-  c.h04 AS customer_last_name,
-  ranked.country_name,
-  ranked.city_name,
-  ranked.payment_date AS window_end_date,
-  ranked.roll_cnt_7d AS window_payment_count_7d,
-  ROUND(ranked.roll_sum_7d, 2) AS window_payment_sum_7d,
-  ranked.distinct_staff_count,
-  ranked.distinct_store_count,
-  ranked.distinct_rented_film_count,
-  ranked.suspicious_customer_rank
-FROM ranked
-JOIN cus c
-  ON c.h01 = ranked.customer_id
+  *
+FROM final_events
 ORDER BY
-  ranked.suspicious_customer_rank,
-  ranked.window_end_date,
-  ranked.window_payment_sum_7d DESC;
+  customer_risk_rank,
+  payments_sum_in_window DESC;

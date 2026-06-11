@@ -8,9 +8,9 @@ SELECT
   SUM(CASE WHEN s.o07 <> c.h02 THEN p.p05 ELSE 0 END) AS other_store_staff_amount
 FROM cus AS c
 JOIN pay AS p
-  ON p.p02 = c.h01
+  ON c.h01 = p.p02
 JOIN stf AS s
-  ON s.o01 = p.p03
+  ON p.p03 = s.o01
 WHERE p.p06 >= '2005-07-01'
   AND p.p06 < '2005-08-01'
 GROUP BY

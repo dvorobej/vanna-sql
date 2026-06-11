@@ -1,9 +1,9 @@
-WITH daily_payments AS (
+WITH daily_stats AS (
     SELECT
         p.p02 AS customer_id,
         DATE(p.p06) AS payment_date,
-        SUM(p.p05) AS day_amount,
         COUNT(*) AS payment_count,
+        SUM(p.p05) AS day_amount,
         COUNT(DISTINCT p.p03) AS staff_count,
         COUNT(DISTINCT s.o07) AS store_count,
         MIN(p.p06) AS first_payment_time,
@@ -13,47 +13,51 @@ WITH daily_payments AS (
     JOIN stf AS s ON s.o01 = p.p03
     GROUP BY p.p02, DATE(p.p06)
 ),
-customer_stats AS (
+customer_history AS (
     SELECT
-        dp.*,
+        ds.*,
         (
             SELECT SUM(prev.day_amount) / 30.0
-            FROM daily_payments AS prev
-            WHERE prev.customer_id = dp.customer_id
-              AND prev.payment_date >= DATE(dp.payment_date, '-30 day')
-              AND prev.payment_date < dp.payment_date
-        ) AS avg_30d_amount,
-        c.h03 || ' ' || c.h04 AS customer_name,
-        cnt.c01 AS country_id,
-        cnt.c02 AS country_name,
-        cty.d02 AS city_name
-    FROM daily_payments AS dp
-    JOIN cus AS c ON c.h01 = dp.customer_id
-    JOIN adr AS a ON a.e01 = c.h06
-    JOIN cty AS cty ON cty.d01 = a.e05
-    JOIN cnt AS cnt ON cnt.c01 = cty.d03
-    WHERE dp.payment_count >= 3 AND dp.staff_count >= 2
+            FROM daily_stats AS prev
+            WHERE prev.customer_id = ds.customer_id
+              AND prev.payment_date >= DATE(ds.payment_date, '-30 day')
+              AND prev.payment_date < ds.payment_date
+        ) AS avg_daily_30d
+    FROM daily_stats AS ds
+    WHERE ds.payment_count >= 3
+      AND ds.staff_count >= 2
 ),
 country_percentiles AS (
     SELECT
-        country_id,
-        MAX(day_amount) AS p95_threshold
-    FROM (
-        SELECT country_id, day_amount,
-               PERCENT_RANK() OVER (PARTITION BY country_id ORDER BY day_amount) as pr
-        FROM customer_stats
-    )
-    WHERE pr <= 0.95
-    GROUP BY country_id
+        c.c01 AS country_id,
+        (
+            SELECT val FROM (
+                SELECT day_amount AS val, PERCENT_RANK() OVER (ORDER BY day_amount) AS pr
+                FROM daily_stats AS ds2
+                JOIN cus AS c2 ON c2.h01 = ds2.customer_id
+                JOIN adr AS a2 ON a2.e01 = c2.h06
+                JOIN cty AS ct2 ON ct2.d01 = a2.e05
+                WHERE ct2.d03 = c.c01
+            ) WHERE pr >= 0.95 LIMIT 1
+        ) AS p95_amount
+    FROM cnt AS c
 ),
 suspicious_cases AS (
     SELECT
-        cs.*,
-        (cs.day_amount - cs.avg_30d_amount) AS deviation
-    FROM customer_stats AS cs
-    JOIN country_percentiles AS cp ON cs.country_id = cp.country_id
-    WHERE cs.day_amount > cs.avg_30d_amount * 2
-      AND cs.day_amount > cp.p95_threshold
+        ch.*,
+        c.h03 || ' ' || c.h04 AS customer_name,
+        ct.d02 AS city_name,
+        cn.c02 AS country_name,
+        cn.c01 AS country_id,
+        (ch.day_amount / NULLIF(ch.avg_daily_30d, 0)) AS deviation_ratio
+    FROM customer_history AS ch
+    JOIN cus AS c ON c.h01 = ch.customer_id
+    JOIN adr AS a ON a.e01 = c.h06
+    JOIN cty AS ct ON ct.d01 = a.e05
+    JOIN cnt AS cn ON cn.c01 = ct.d03
+    JOIN country_percentiles AS cp ON cp.country_id = cn.c01
+    WHERE ch.day_amount > ch.avg_daily_30d * 2
+      AND ch.day_amount > cp.p95_amount
 )
 SELECT
     customer_name,
@@ -67,6 +71,6 @@ SELECT
     first_payment_time,
     last_payment_time,
     ROUND(max_payment, 2) AS max_payment,
-    RANK() OVER (PARTITION BY country_id ORDER BY deviation DESC) AS suspicion_rank
+    RANK() OVER (PARTITION BY country_id ORDER BY deviation_ratio DESC) AS suspicion_rank_in_country
 FROM suspicious_cases
-ORDER BY country_name, suspicion_rank;
+ORDER BY country_name, suspicion_rank_in_country;

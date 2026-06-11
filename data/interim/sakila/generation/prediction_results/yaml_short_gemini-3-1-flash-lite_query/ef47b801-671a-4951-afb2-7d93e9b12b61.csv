@@ -1,4 +1,4 @@
-customer_id,first_name,last_name,store_id,payment_count,total_amount,avg_payment,max_payment,check_status
+customer_id,first_name,last_name,store_id,payment_count,total_amount,average_payment,max_payment,monitoring_status
 148,ELEANOR,HUNT,1,22,100.78,4.58,10.99,требует дополнительной проверки
 470,GORDON,ALLARD,1,17,96.83,5.7,10.99,требует дополнительной проверки
 522,ARNOLD,HAVENS,2,18,96.82,5.38,9.99,требует дополнительной проверки

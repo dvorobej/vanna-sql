@@ -1,120 +1,165 @@
-WITH monthly AS (
-  SELECT
-    c.h01 AS customer_id,
-    c.h02 AS store_id,
-    c.h03 AS first_name,
-    c.h04 AS last_name,
-    cn.c01 AS country_id,
-    cn.c02 AS country_name,
-    ct.d02 AS city_name,
-    date(p.p06, 'start of month') AS month_start,
-    SUM(p.p05) AS monthly_amount,
-    COUNT(*) AS payment_count,
-    COUNT(DISTINCT p.p03) AS distinct_staff_count,
-    COUNT(DISTINCT c.h02) AS distinct_customer_stores_count,
-    COUNT(DISTINCT s.j01) AS distinct_customer_employee_stores_count
-  FROM pay p
-  JOIN cus c
-    ON c.h01 = p.p02
-  JOIN sto s
-    ON s.j01 = c.h02
-  JOIN adr a
-    ON a.e01 = c.h06
-  JOIN cty ct
-    ON ct.d01 = a.e05
-  JOIN cnt cn
-    ON cn.c01 = ct.d03
-  WHERE p.p06 IS NOT NULL
-  GROUP BY
-    c.h01,
-    c.h02,
-    c.h03,
-    c.h04,
-    cn.c01,
-    cn.c02,
-    ct.d02,
-    date(p.p06, 'start of month')
+WITH base AS (
+    SELECT
+        c.h01 AS customer_id,
+        c.h03 AS customer_first_name,
+        c.h04 AS customer_last_name,
+        s.o01 AS staff_id,
+        s.o07 AS staff_store_id,
+        c.h02 AS store_id,
+        cn.c01 AS country_id,
+        cn.c02 AS country_name,
+        date(p.p06, 'start of month') AS month_start,
+        p.p05 AS payment_amount
+    FROM pay AS p
+    JOIN cus AS c
+        ON c.h01 = p.p02
+    JOIN stf AS s
+        ON s.o01 = p.p03
+    JOIN adr AS a
+        ON a.e01 = c.h06
+    JOIN cty AS ct
+        ON ct.d01 = a.e05
+    JOIN cnt AS cn
+        ON cn.c01 = ct.d03
+    WHERE p.p06 IS NOT NULL
 ),
-with_prev AS (
-  SELECT
-    m.*,
-    AVG(monthly_amount) OVER (
-      PARTITION BY customer_id
-      ORDER BY month_start
-      ROWS BETWEEN 3 PRECEDING AND 1 PRECEDING
-    ) AS avg_prev_3_months,
-    AVG(monthly_amount) OVER (
-      PARTITION BY customer_id
-      ORDER BY month_start
-      ROWS BETWEEN 3 PRECEDING AND 1 PRECEDING
-    ) AS avg_prev_3_months_for_check
-  FROM monthly m
+monthly AS (
+    SELECT
+        b.customer_id,
+        b.customer_first_name,
+        b.customer_last_name,
+        b.country_id,
+        b.country_name,
+        b.month_start,
+        SUM(b.payment_amount) AS monthly_amount,
+        COUNT(*) AS payment_count,
+        COUNT(DISTINCT b.staff_id) AS distinct_staff_count,
+        COUNT(DISTINCT b.store_id) AS distinct_customer_store_count,
+        COUNT(DISTINCT b.staff_store_id) AS distinct_staff_store_count
+    FROM base AS b
+    GROUP BY
+        b.customer_id,
+        b.customer_first_name,
+        b.customer_last_name,
+        b.country_id,
+        b.country_name,
+        b.month_start
 ),
-country_month_ordered AS (
-  SELECT
-    wp.*,
-    ROW_NUMBER() OVER (
-      PARTITION BY country_id, month_start
-      ORDER BY monthly_amount
-    ) AS rn_asc,
-    COUNT(*) OVER (
-      PARTITION BY country_id, month_start
-    ) AS cnt_in_country
-  FROM with_prev wp
+with_prev_avg3 AS (
+    SELECT
+        m.*,
+        AVG(monthly_amount) OVER (
+            PARTITION BY customer_id
+            ORDER BY month_start
+            ROWS BETWEEN 3 PRECEDING AND 1 PRECEDING
+        ) AS avg_prev_3_months
+    FROM monthly AS m
 ),
-country_month_pcts AS (
-  SELECT
-    country_id,
-    month_start,
-    AVG(CASE
-      WHEN rn_asc IN (CAST((cnt_in_country + 1) / 2.0 AS INT), CAST((cnt_in_country + 2) / 2.0 AS INT))
-      THEN monthly_amount END) AS median_monthly_amount,
-    MAX(CASE
-      WHEN rn_asc = CAST(0.95 * (cnt_in_country + 1) AS INT)
-      THEN monthly_amount
-    END) AS p95_monthly_amount
-  FROM country_month_ordered
-  GROUP BY
-    country_id,
-    month_start
+country_month_ranked AS (
+    SELECT
+        m.*,
+        COUNT(*) OVER (
+            PARTITION BY country_id, month_start
+        ) AS country_cnt,
+        ROW_NUMBER() OVER (
+            PARTITION BY country_id, month_start
+            ORDER BY monthly_amount
+        ) AS rn_asc
+    FROM monthly AS m
+),
+country_median AS (
+    SELECT
+        country_id,
+        month_start,
+        AVG(monthly_amount) AS country_median_amount
+    FROM country_month_ranked
+    WHERE rn_asc IN (
+        CAST((country_cnt + 1) / 2 AS INTEGER),
+        CAST((country_cnt + 2) / 2 AS INTEGER)
+    )
+    GROUP BY
+        country_id,
+        month_start
+),
+country_p95 AS (
+    SELECT
+        country_id,
+        month_start,
+        MAX(CASE WHEN rn_asc = CAST((country_cnt * 0.95) AS INTEGER) THEN monthly_amount END) AS p95_low,
+        MAX(CASE WHEN rn_asc = CAST((country_cnt * 0.95) + 1 AS INTEGER) THEN monthly_amount END) AS p95_high,
+        MAX(CAST((country_cnt * 0.95) AS INTEGER)) AS p95_pos_base,
+        MAX(country_cnt) AS country_cnt_max
+    FROM country_month_ranked
+    GROUP BY country_id, month_start
+),
+country_p95_final AS (
+    SELECT
+        r.country_id,
+        r.month_start,
+        CASE
+            WHEN p95_low IS NULL THEN p95_high
+            WHEN p95_high IS NULL THEN p95_low
+            ELSE p95_low
+        END AS country_p95_amount
+    FROM country_p95 AS p95
+    JOIN (
+        SELECT DISTINCT country_id, month_start
+        FROM monthly
+    ) AS r
+      ON r.country_id = p95.country_id
+     AND r.month_start = p95.month_start
+),
+filtered AS (
+    SELECT
+        w.customer_id,
+        w.customer_first_name,
+        w.customer_last_name,
+        w.country_id,
+        w.country_name,
+        w.month_start,
+        w.monthly_amount,
+        w.payment_count,
+        w.distinct_staff_count,
+        w.distinct_customer_store_count,
+        w.distinct_staff_store_count,
+        w.avg_prev_3_months,
+        cm.country_median_amount,
+        p95.country_p95_amount,
+        RANK() OVER (
+            PARTITION BY w.country_id, w.month_start
+            ORDER BY w.monthly_amount DESC
+        ) AS customer_rank_in_country
+    FROM with_prev_avg3 AS w
+    JOIN country_median AS cm
+      ON cm.country_id = w.country_id
+     AND cm.month_start = w.month_start
+    JOIN country_p95_final AS p95
+      ON p95.country_id = w.country_id
+     AND p95.month_start = w.month_start
 )
 SELECT
-  wp.customer_id AS h01,
-  wp.first_name AS h03,
-  wp.last_name AS h04,
-  wp.country_name AS cty_country_name,
-  wp.city_name AS city,
-  wp.month_start AS month,
-  ROUND(wp.monthly_amount, 2) AS month_amount,
-  wp.payment_count,
-  wp.distinct_staff_count,
-  wp.distinct_customer_stores_count AS distinct_h02_count,
-  wp.distinct_customer_employee_stores_count AS distinct_j01_count,
-  ROUND(wp.avg_prev_3_months, 2) AS avg_prev_3_months,
-  ROUND(cmp.median_monthly_amount, 2) AS country_median_month_amount,
-  ROUND(cmp.p95_monthly_amount, 2) AS country_p95_month_amount,
-  RANK() OVER (
-    PARTITION BY wp.country_id, wp.month_start
-    ORDER BY wp.monthly_amount DESC
-  ) AS country_month_volume_rank
-FROM with_prev wp
-JOIN country_month_pcts cmp
-  ON cmp.country_id = wp.country_id
- AND cmp.month_start = wp.month_start
-WHERE wp.avg_prev_3_months_for_check IS NOT NULL
-  AND wp.monthly_amount >= 3.0 * wp.avg_prev_3_months_for_check
-  AND wp.monthly_amount >= 2.0 * cmp.median_monthly_amount
-  AND RANK() OVER (
-        PARTITION BY wp.country_id, wp.month_start
-        ORDER BY wp.monthly_amount DESC
-      ) <= CAST(0.05 * (
-        SELECT COUNT(*)
-        FROM monthly m2
-        WHERE m2.country_id = wp.country_id
-          AND m2.month_start = wp.month_start
-      ) AS INT) + 1
+    f.customer_id,
+    f.customer_first_name,
+    f.customer_last_name,
+    f.country_name AS country,
+    strftime('%Y-%m', f.month_start) AS month,
+    ROUND(f.monthly_amount, 2) AS monthly_amount,
+    f.payment_count,
+    f.distinct_staff_count,
+    f.distinct_customer_store_count AS distinct_h02_store_count,
+    f.distinct_staff_store_count AS distinct_stf_store_count,
+    ROUND(f.avg_prev_3_months, 2) AS avg_prev_3_months,
+    ROUND(f.monthly_amount - f.avg_prev_3_months, 2) AS deviation_from_avg_prev_3,
+    ROUND(f.country_median_amount, 2) AS country_median_amount,
+    ROUND(f.country_p95_amount, 2) AS country_p95_amount,
+    f.customer_rank_in_country
+FROM filtered AS f
+WHERE f.avg_prev_3_months IS NOT NULL
+  AND f.monthly_amount >= 3.0 * f.avg_prev_3_months
+  AND f.monthly_amount >= 2.0 * f.country_median_amount
+  AND f.customer_rank_in_country <= 5
 ORDER BY
-  wp.country_name,
-  wp.month_start,
-  country_month_volume_rank,
-  wp.customer_id;
+    f.country_name,
+    f.month_start,
+    f.customer_rank_in_country,
+    f.customer_id;

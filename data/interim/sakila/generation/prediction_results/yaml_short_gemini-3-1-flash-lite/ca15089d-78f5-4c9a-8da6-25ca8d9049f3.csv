@@ -1,4 +1,4 @@
-month,full_name,country,city,payment_count,monthly_sum,max_payment,max_payment_share,staff_count,store_count,country_rank
+payment_month,full_name,country,city,payment_count,monthly_amount,max_payment,max_payment_share,staff_count,store_count,country_rank
 2005-06,JASON MORRISSEY,Argentina,Baha Blanca,7,40.93,8.99,0.2196,2,2,1
 2005-06,JULIA FLORES,Argentina,La Plata,5,30.95,8.99,0.2905,2,2,2
 2005-06,LEONARD SCHOFIELD,Argentina,Tandil,6,26.94,5.99,0.2223,2,2,3

@@ -26,7 +26,7 @@ history_stats AS (
 suspicious_clients AS (
     SELECT
         hs.*,
-        c.h03 || ' ' || c.h04 AS customer_name,
+        c.h03 || ' ' || c.h04 AS full_name,
         cnt.c02 AS country,
         cty.d02 AS city,
         cnt.c01 AS country_id
@@ -42,7 +42,7 @@ suspicious_clients AS (
 )
 SELECT
     payment_month,
-    customer_name,
+    full_name,
     country,
     city,
     payment_count,

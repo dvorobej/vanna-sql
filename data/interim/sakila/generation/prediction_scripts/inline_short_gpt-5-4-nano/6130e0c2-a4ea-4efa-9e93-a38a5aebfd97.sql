@@ -16,4 +16,5 @@ GROUP BY
   c.h04
 HAVING COUNT(p.p01) >= 5
    AND SUM(p.p05) > 30
-ORDER BY total_amount DESC;
+ORDER BY
+  total_amount DESC;

@@ -19,4 +19,7 @@ WHERE c.h07 IN ('1', 'Y')
 GROUP BY
   c.h01,
   c.h03,
-  c.h04;
+  c.h04
+ORDER BY
+  total_amount DESC,
+  payment_count DESC;

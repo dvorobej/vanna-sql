@@ -21,16 +21,16 @@ store_rankings AS (
         ms.*,
         c.h02 AS store_id,
         c.h03 || ' ' || c.h04 AS customer_name,
+        co.c02 AS country,
         ct.d02 AS city,
-        cn.c02 AS country,
         cya.yearly_avg_monthly_sum,
-        PERCENT_RANK() OVER (PARTITION BY c.h02, ms.payment_month ORDER BY ms.monthly_sum DESC) AS store_percent_rank,
+        PERCENT_RANK() OVER (PARTITION BY c.h02, ms.payment_month ORDER BY ms.monthly_sum DESC) AS store_percentile,
         RANK() OVER (PARTITION BY c.h02, ms.payment_month ORDER BY ms.monthly_sum DESC) AS store_rank
     FROM monthly_stats AS ms
     JOIN cus AS c ON c.h01 = ms.customer_id
     JOIN adr AS a ON a.e01 = c.h06
     JOIN cty AS ct ON ct.d01 = a.e05
-    JOIN cnt AS cn ON cn.c01 = ct.d03
+    JOIN cnt AS co ON co.c01 = ct.d03
     JOIN customer_yearly_avg AS cya ON cya.customer_id = ms.customer_id
 ),
 last_staff AS (
@@ -39,11 +39,12 @@ last_staff AS (
         strftime('%Y-%m', p.p06) AS payment_month,
         p.p03 AS staff_id
     FROM pay AS p
-    JOIN (SELECT p02, strftime('%Y-%m', p06) AS m, MAX(p06) AS max_date FROM pay GROUP BY 1, 2) AS sub
-      ON p.p02 = sub.p02 AND strftime('%Y-%m', p.p06) = sub.m AND p.p06 = sub.max_date
+    JOIN (
+        SELECT p02, strftime('%Y-%m', p06) AS m, MAX(p06) AS max_date
+        FROM pay GROUP BY p02, strftime('%Y-%m', p06)
+    ) AS latest ON latest.p02 = p.p02 AND latest.m = strftime('%Y-%m', p.p06) AND p.p06 = latest.max_date
 )
 SELECT
-    sr.customer_id,
     sr.customer_name,
     sr.store_id,
     sr.city,
@@ -56,6 +57,8 @@ SELECT
     ls.staff_id AS last_staff_id
 FROM store_rankings AS sr
 JOIN last_staff AS ls ON ls.customer_id = sr.customer_id AND ls.payment_month = sr.payment_month
-WHERE sr.monthly_sum > 2 * sr.yearly_avg_monthly_sum
-  AND sr.store_percent_rank <= 0.05
-ORDER BY sr.payment_month, sr.store_id, sr.store_rank;
+WHERE sr.monthly_sum > (2 * sr.yearly_avg_monthly_sum)
+  AND sr.store_percentile <= 0.05
+GROUP BY sr.customer_id
+HAVING COUNT(sr.payment_month) = 12
+ORDER BY sr.payment_month, sr.store_rank;

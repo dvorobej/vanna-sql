@@ -4,10 +4,10 @@ SELECT
   COUNT(p.p01) AS payment_count,
   SUM(p.p05) AS total_amount,
   AVG(p.p05) AS average_payment,
-  SUM(CASE WHEN p.p05 > 5 THEN 1 ELSE 0 END) AS suspicious_operations_count
+  SUM(CASE WHEN p.p05 > 5.00 THEN 1 ELSE 0 END) AS suspicious_activity_count
 FROM cus AS c
 JOIN pay AS p
-  ON c.h01 = p.p02
+  ON p.p02 = c.h01
 WHERE p.p06 >= '2005-06-01'
   AND p.p06 < '2005-07-01'
 GROUP BY
@@ -15,7 +15,7 @@ GROUP BY
   c.h03,
   c.h04
 HAVING COUNT(p.p01) >= 5
-   AND SUM(p.p05) > 30
+  AND SUM(p.p05) > 30
 ORDER BY
   total_amount DESC,
   payment_count DESC;

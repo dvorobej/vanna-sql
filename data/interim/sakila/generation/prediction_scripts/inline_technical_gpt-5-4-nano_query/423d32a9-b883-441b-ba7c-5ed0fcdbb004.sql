@@ -1,103 +1,91 @@
-WITH customer_geo AS (
-  SELECT
-    c.h01 AS customer_id,
-    c.h03 AS customer_first_name,
-    c.h04 AS customer_last_name,
-    cnt.c02 AS country_name,
-    ci.d02 AS city_name
-  FROM cus AS c
-  JOIN adr AS a ON a.e01 = c.h06
-  JOIN cty AS ci ON ci.d01 = a.e05
-  JOIN cnt ON cnt.c01 = ci.d03
-),
-monthly_customer AS (
+WITH monthly_pay AS (
   SELECT
     p.p02 AS customer_id,
     date(p.p06, 'start of month') AS month_start,
-    SUM(p.p05) AS month_payment_sum,
     COUNT(*) AS payment_count,
+    SUM(p.p05) AS payment_amount_sum,
     COUNT(DISTINCT p.p03) AS distinct_staff_count,
-    COUNT(DISTINCT s.o07) AS distinct_store_count
-  FROM pay AS p
-  JOIN stf AS s ON s.o01 = p.p03
+    COUNT(DISTINCT COALESCE(r.q03, -1)) AS distinct_inventory_count
+  FROM pay p
+  JOIN ren r
+    ON r.q01 = p.p04
+  WHERE p.p06 >= '2005-01-01'
+    AND p.p06 <  '2006-01-01'
   GROUP BY
     p.p02,
     date(p.p06, 'start of month')
 ),
-monthly_customer_geo AS (
+monthly_with_prev AS (
   SELECT
-    mc.customer_id,
-    cg.customer_first_name,
-    cg.customer_last_name,
-    cg.country_name,
-    cg.city_name,
-    mc.month_start,
-    mc.month_payment_sum,
-    mc.payment_count,
-    mc.distinct_staff_count,
-    mc.distinct_store_count
-  FROM monthly_customer AS mc
-  JOIN customer_geo AS cg ON cg.customer_id = mc.customer_id
-),
-with_prev_avg AS (
-  SELECT
-    mcg.*,
-    AVG(mcg.month_payment_sum) OVER (
-      PARTITION BY mcg.customer_id
-      ORDER BY mcg.month_start
+    mp.*,
+    AVG(mp.payment_amount_sum) OVER (
+      PARTITION BY mp.customer_id
+      ORDER BY mp.month_start
       ROWS BETWEEN UNBOUNDED PRECEDING AND 1 PRECEDING
-    ) AS prev_avg_month_payment_sum
-  FROM monthly_customer_geo AS mcg
+    ) AS personal_avg_prev_amount
+  FROM monthly_pay mp
 ),
-candidate_months AS (
+monthly_flags AS (
   SELECT
-    w.*,
-    (w.month_payment_sum - w.prev_avg_month_payment_sum) AS deviation_from_prev_avg
-  FROM with_prev_avg AS w
-  WHERE w.prev_avg_month_payment_sum IS NOT NULL
-    AND w.payment_count >= 5
-    AND w.month_payment_sum >= 2.0 * w.prev_avg_month_payment_sum
-    AND (w.distinct_staff_count >= 2 OR w.distinct_store_count >= 2)
+    mwp.*,
+    CASE
+      WHEN mwp.personal_avg_prev_amount IS NOT NULL
+       AND mwp.payment_amount_sum >= 2.0 * mwp.personal_avg_prev_amount
+      THEN 1 ELSE 0
+    END AS is_above_2x_prev_avg,
+    CASE
+      WHEN mwp.distinct_staff_count >= 2
+        OR mwp.distinct_inventory_count >= 2
+      THEN 1 ELSE 0
+    END AS has_staff_or_store_variation
+  FROM monthly_with_prev mwp
 ),
-qualified_customers AS (
+satisfied_customers AS (
   SELECT
-    customer_id
-  FROM candidate_months
-  WHERE strftime('%Y', month_start) = '2005'
+    customer_id,
+    COUNT(*) AS months_in_2005,
+    SUM(is_above_2x_prev_avg) AS months_meeting_rule
+  FROM monthly_flags
+  WHERE payment_count >= 5
+    AND has_staff_or_store_variation = 1
   GROUP BY customer_id
-  HAVING COUNT(*) = 11
-),
-final_months AS (
-  SELECT
-    cm.customer_id,
-    cm.customer_first_name,
-    cm.customer_last_name,
-    cm.country_name,
-    cm.city_name,
-    cm.month_start,
-    cm.month_payment_sum,
-    cm.payment_count,
-    ROUND(cm.deviation_from_prev_avg, 2) AS deviation_from_prev_avg,
-    RANK() OVER (
-      PARTITION BY cm.country_name, cm.month_start
-      ORDER BY cm.deviation_from_prev_avg DESC
-    ) AS country_deviation_rank
-  FROM candidate_months AS cm
-  JOIN qualified_customers AS qc ON qc.customer_id = cm.customer_id
-  WHERE strftime('%Y', cm.month_start) = '2005'
 )
 SELECT
-  strftime('%Y-%m', month_start) AS month,
-  customer_id,
-  customer_first_name AS first_name,
-  customer_last_name AS last_name,
-  country_name AS country,
-  city_name AS city,
-  ROUND(month_payment_sum, 2) AS month_payment_sum,
-  payment_count,
-  deviation_from_prev_avg,
-  country_deviation_rank
-FROM final_months
+  mf.month_start,
+  mf.customer_id,
+  c.h03 AS customer_first_name,
+  c.h04 AS customer_last_name,
+  cn.c02 AS country_name,
+  ct.d02 AS city_name,
+  ROUND(mf.payment_amount_sum, 2) AS month_payment_sum,
+  mf.payment_count,
+  ROUND(mf.payment_amount_sum - mf.personal_avg_prev_amount, 2) AS deviation_from_prev_avg,
+  RANK() OVER (
+    PARTITION BY c.h01, mf.month_start
+    ORDER BY (mf.payment_amount_sum - mf.personal_avg_prev_amount) DESC
+  ) AS customer_deviation_rank_in_country
+FROM monthly_flags mf
+JOIN cus c
+  ON c.h01 = mf.customer_id
+JOIN adr a
+  ON a.e01 = c.h06
+JOIN cty ct
+  ON ct.d01 = a.e05
+JOIN cnt cn
+  ON cn.c01 = ct.d03
+JOIN satisfied_customers sc
+  ON sc.customer_id = mf.customer_id
+WHERE mf.payment_count >= 5
+  AND mf.has_staff_or_store_variation = 1
+  AND mf.personal_avg_prev_amount IS NOT NULL
+  AND mf.is_above_2x_prev_avg = 1
+  AND mf.customer_id IN (
+    SELECT customer_id
+    FROM satisfied_customers
+    WHERE months_meeting_rule = months_in_2005 - 1
+  )
 ORDER BY
-  customer_id,
-  month;
+  mf.month_start,
+  cn.c02,
+  customer_deviation_rank_in_country,
+  mf.customer_id;

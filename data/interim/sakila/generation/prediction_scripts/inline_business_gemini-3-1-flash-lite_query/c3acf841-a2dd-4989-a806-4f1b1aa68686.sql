@@ -29,5 +29,4 @@ GROUP BY
 HAVING COUNT(p.p01) >= 5
 ORDER BY
   total_amount DESC,
-  payment_count DESC,
-  customer_id;
+  payment_count DESC;

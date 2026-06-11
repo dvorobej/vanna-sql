@@ -1,192 +1,149 @@
-WITH payment_enriched AS (
+WITH payment_details AS (
     SELECT
         p.p01 AS payment_id,
         p.p02 AS customer_id,
         p.p03 AS staff_id,
-        s.o02 || ' ' || s.o03 AS staff_name,
-        s.o07 AS store_id,
-        DATE(p.p06) AS payment_date,
+        p.p04 AS rental_id,
         CAST(p.p05 AS REAL) AS amount,
-        c.h03 || ' ' || c.h04 AS customer_name,
-        ci.d02 AS city_name,
-        co.c02 AS country_name
+        date(p.p06) AS payment_date,
+        date(p.p06) AS day_key,
+        stf.o02 AS staff_first_name,
+        stf.o03 AS staff_last_name,
+        stf.o07 AS store_id
     FROM pay AS p
-    JOIN cus AS c
-        ON c.h01 = p.p02
+    JOIN stf AS stf
+        ON stf.o01 = p.p03
+),
+customer_geo AS (
+    SELECT
+        c.h01 AS customer_id,
+        c.h03 || ' ' || c.h04 AS customer_name,
+        cnt.c02 AS country_name,
+        cty.d02 AS city_name
+    FROM cus AS c
     JOIN adr AS a
         ON a.e01 = c.h06
-    JOIN cty AS ci
-        ON ci.d01 = a.e05
-    JOIN cnt AS co
-        ON co.c01 = ci.d03
-    JOIN stf AS s
-        ON s.o01 = p.p03
+    JOIN cty
+        ON cty.d01 = a.e05
+    JOIN cnt
+        ON cnt.c01 = cty.d03
 ),
-daily_agg AS (
+daily_rollup AS (
     SELECT
-        customer_id,
-        customer_name,
-        city_name,
-        country_name,
-        payment_date,
-        COUNT(*) AS payment_count,
-        SUM(amount) AS day_sum,
-        COUNT(DISTINCT staff_id) AS staff_count,
-        COUNT(DISTINCT store_id) AS store_count,
-        MIN(payment_id) AS first_payment_id,
-        MAX(payment_id) AS last_payment_id,
-        MIN(amount) AS min_payment_amount,
-        MAX(amount) AS max_payment,
-        MIN(payment_date || ' ' || first_time_dummy) AS first_op_dummy
-    FROM payment_enriched
+        pd.customer_id,
+        cg.customer_name,
+        cg.country_name,
+        cg.city_name,
+        pd.day_key AS payment_date,
+        COUNT(pd.payment_id) AS payment_count,
+        SUM(pd.amount) AS day_amount,
+        COUNT(DISTINCT pd.staff_id) AS staff_count,
+        COUNT(DISTINCT pd.store_id) AS store_count,
+        MAX(pd.amount) AS max_payment,
+        MIN(pd.payment_id) AS min_payment_id,
+        MAX(pd.payment_id) AS max_payment_id
+    FROM payment_details AS pd
+    JOIN customer_geo AS cg
+        ON cg.customer_id = pd.customer_id
     GROUP BY
-        customer_id, customer_name, city_name, country_name, payment_date
+        pd.customer_id,
+        cg.customer_name,
+        cg.country_name,
+        cg.city_name,
+        pd.day_key
 ),
-daily_agg2 AS (
+staff_store_lists AS (
     SELECT
-        d.*,
-        (SELECT MIN(pe.payment_id) FROM payment_enriched pe WHERE pe.customer_id = d.customer_id AND pe.payment_date = d.payment_date) AS first_payment_id2,
-        (SELECT MAX(pe.payment_id) FROM payment_enriched pe WHERE pe.customer_id = d.customer_id AND pe.payment_date = d.payment_date) AS last_payment_id2,
-        (SELECT MIN(pe.payment_id) FROM payment_enriched pe WHERE pe.customer_id = d.customer_id AND pe.payment_date = d.payment_date) AS first_payment_id3
-    FROM daily_agg d
+        pd.customer_id,
+        pd.day_key AS payment_date,
+        group_concat(DISTINCT (pd.staff_first_name || ' ' || pd.staff_last_name)) AS staff_list,
+        group_concat(DISTINCT pd.store_id) AS store_list
+    FROM payment_details AS pd
+    GROUP BY
+        pd.customer_id,
+        pd.day_key
 ),
-history_stats AS (
+daily_with_baselines AS (
     SELECT
-        pe.customer_id,
-        pe.customer_name,
-        pe.city_name,
-        pe.country_name,
-        AVG(day_sum) AS customer_avg_day_amount,
+        dr.*,
         (
-          SELECT day_sum
-          FROM (
-            SELECT
-              d2.day_sum,
-              ROW_NUMBER() OVER (
-                PARTITION BY d2.customer_id
-                ORDER BY d2.day_sum
-              ) AS rn,
-              COUNT(*) OVER (PARTITION BY d2.customer_id) AS cnt
-            FROM (
-              SELECT
-                customer_id,
-                payment_date,
-                SUM(amount) AS day_sum
-              FROM payment_enriched
-              GROUP BY customer_id, payment_date
-            ) d2
-          ) t
-          WHERE rn = CAST((0.95 * cnt) AS INT)
-        ) AS customer_p95_day_amount
-    FROM (
-      SELECT
-        customer_id,
-        customer_name,
-        city_name,
-        country_name,
-        payment_date,
-        SUM(amount) AS day_sum
-      FROM payment_enriched
-      GROUP BY customer_id, customer_name, city_name, country_name, payment_date
-    ) pe
-    GROUP BY pe.customer_id, pe.customer_name, pe.city_name, pe.country_name
+            SELECT AVG(dr_prev.day_amount)
+            FROM daily_rollup AS dr_prev
+            WHERE dr_prev.customer_id = dr.customer_id
+              AND dr_prev.payment_date >= date(dr.payment_date, '-30 day')
+              AND dr_prev.payment_date < dr.payment_date
+        ) AS customer_avg_prev_30d
+    FROM daily_rollup AS dr
+),
+country_daily_ranked AS (
+    SELECT
+        dr.country_name,
+        dr.payment_date,
+        dr.day_amount,
+        ROW_NUMBER() OVER (
+            PARTITION BY dr.country_name
+            ORDER BY dr.day_amount
+        ) AS rn,
+        COUNT(*) OVER (PARTITION BY dr.country_name) AS cnt_days
+    FROM daily_with_baselines AS dr
 ),
 country_p95 AS (
     SELECT
         country_name,
-        MIN(day_sum) AS country_p95_day_amount
+        MIN(day_amount) AS p95_day_amount
     FROM (
         SELECT
             country_name,
-            day_sum,
-            ROW_NUMBER() OVER (PARTITION BY country_name ORDER BY day_sum) AS rn,
-            COUNT(*) OVER (PARTITION BY country_name) AS cnt
-        FROM (
-            SELECT
-                payment_enriched.country_name,
-                payment_enriched.payment_date,
-                SUM(payment_enriched.amount) AS day_sum
-            FROM payment_enriched
-            GROUP BY payment_enriched.country_name, payment_enriched.payment_date
-        ) dd
-    ) r
-    WHERE rn >= CAST(0.95 * cnt AS INT)
+            day_amount,
+            rn,
+            cnt_days
+        FROM country_daily_ranked
+        WHERE rn >= ((95 * cnt_days + 99) / 100)
+    ) AS x
     GROUP BY country_name
 ),
-daily_scored AS (
+final_scored AS (
     SELECT
-        da.customer_id,
-        da.customer_name,
-        da.city_name,
-        da.country_name,
-        da.payment_date,
-        da.payment_count,
-        da.day_sum,
-        da.staff_count,
-        da.store_count,
-        da.max_payment,
-        (da.day_sum - hs.customer_avg_day_amount) AS deviation_from_customer_avg,
-        hs.customer_avg_day_amount,
-        hs.customer_p95_day_amount,
-        cp.country_p95_day_amount,
-        RANK() OVER (
-            PARTITION BY da.country_name
-            ORDER BY da.day_sum DESC
-        ) AS suspicion_rank
-    FROM (
-        SELECT
-            customer_id,
-            customer_name,
-            city_name,
-            country_name,
-            payment_date,
-            COUNT(*) AS payment_count,
-            SUM(amount) AS day_sum,
-            COUNT(DISTINCT staff_id) AS staff_count,
-            COUNT(DISTINCT store_id) AS store_count,
-            MAX(amount) AS max_payment
-        FROM payment_enriched
-        GROUP BY customer_id, customer_name, city_name, country_name, payment_date
-    ) da
-    JOIN history_stats hs
-        ON hs.customer_id = da.customer_id
-       AND hs.country_name = da.country_name
-    JOIN country_p95 cp
-        ON cp.country_name = da.country_name
-    WHERE da.payment_count >= 3
-      AND da.staff_count >= 2
-      AND da.store_count >= 1
-      AND da.day_sum > hs.customer_avg_day_amount
-      AND da.day_sum > cp.country_p95_day_amount
-),
-ops_times AS (
-    SELECT
-        customer_id,
-        payment_date,
-        MIN(p06) AS first_op_time,
-        MAX(p06) AS last_op_time
-    FROM pay AS p
-    GROUP BY customer_id, DATE(p.p06)
+        dwr.*,
+        c95.p95_day_amount,
+        (dwr.day_amount / NULLIF(dwr.customer_avg_prev_30d, 0)) AS ratio_vs_customer_avg,
+        (dwr.day_amount / NULLIF(c95.p95_day_amount, 0)) AS ratio_vs_country_p95
+    FROM daily_with_baselines AS dwr
+    JOIN country_p95 AS c95
+        ON c95.country_name = dwr.country_name
 )
 SELECT
-    ds.customer_name,
-    ds.city_name,
-    ds.country_name,
-    ds.payment_date,
-    ROUND(ds.day_sum, 2) AS day_sum,
-    ds.payment_count,
-    ds.staff_count,
-    ds.store_count,
-    ot.first_op_time AS first_operation_time,
-    ot.last_op_time AS last_operation_time,
-    ROUND(ds.max_payment, 2) AS max_payment,
-    ds.suspicion_rank AS suspicion_rank_in_country
-FROM daily_scored ds
-JOIN ops_times ot
-  ON ot.customer_id = ds.customer_id
- AND ot.payment_date = ds.payment_date
+    fs.customer_name,
+    fs.city_name,
+    fs.country_name,
+    fs.payment_date AS suspicious_date,
+    ROUND(fs.day_amount, 2) AS day_amount,
+    fs.payment_count,
+    ssl.staff_list,
+    fs.staff_count,
+    ssl.store_list,
+    fs.store_count,
+    (SELECT MIN(p2.p06) FROM pay AS p2 WHERE p2.p02 = fs.customer_id) AS first_operation_time,
+    (SELECT MAX(p2.p06) FROM pay AS p2 WHERE p2.p02 = fs.customer_id) AS last_operation_time,
+    ROUND(fs.max_payment, 2) AS max_payment,
+    RANK() OVER (
+        PARTITION BY fs.country_name
+        ORDER BY (fs.day_amount - fs.p95_day_amount) DESC,
+                 fs.day_amount DESC
+    ) AS suspicion_rank
+FROM final_scored AS fs
+JOIN staff_store_lists AS ssl
+    ON ssl.customer_id = fs.customer_id
+   AND ssl.payment_date = fs.payment_date
+WHERE fs.payment_count >= 3
+  AND fs.staff_count >= 2
+  AND fs.store_count >= 1
+  AND fs.customer_avg_prev_30d IS NOT NULL
+  AND fs.customer_avg_prev_30d > 0
+  AND fs.day_amount > fs.customer_avg_prev_30d
+  AND fs.day_amount > fs.p95_day_amount
 ORDER BY
-    ds.country_name,
-    ds.suspicion_rank,
-    ds.day_sum DESC,
-    ds.payment_date;
+    fs.country_name,
+    suspicion_rank,
+    fs.day_amount DESC,
+    fs.customer_name;

@@ -19,7 +19,7 @@ monthly_with_history AS (
             PARTITION BY mp.customer_id
             ORDER BY mp.payment_month
             ROWS BETWEEN UNBOUNDED PRECEDING AND 1 PRECEDING
-        ) AS avg_prev_months
+        ) AS avg_prev_months_amount
     FROM monthly_payments AS mp
 ),
 suspicious_months AS (
@@ -35,7 +35,8 @@ suspicious_months AS (
     JOIN adr AS a ON a.e01 = c.h06
     JOIN cty ON cty.d01 = a.e05
     JOIN cnt ON cnt.c01 = cty.d03
-    WHERE mwh.total_amount >= 3 * mwh.avg_prev_months
+    WHERE mwh.avg_prev_months_amount IS NOT NULL
+      AND mwh.total_amount >= 3 * mwh.avg_prev_months_amount
       AND mwh.payment_count >= 3
       AND mwh.distinct_days >= 3
       AND (mwh.staff_count > 1 OR mwh.store_count > 1)

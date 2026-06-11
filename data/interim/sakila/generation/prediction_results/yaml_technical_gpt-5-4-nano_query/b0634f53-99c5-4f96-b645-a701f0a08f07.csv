@@ -1,0 +1,878 @@
+customer_id,customer_country,customer_city,payment_day,payment_count,day_amount,avg_daily_amount_prev_30d,exceed_ratio,distinct_staff_count,distinct_store_count,store_countries,risk_rank_within_country
+441,Algeria,Batna,2005-07-29,5,18.95,3.55,5.34,2,2,"Australia,Canada",1
+441,Algeria,Batna,2005-07-31,3,15.97,3.63,4.4,1,1,Australia,2
+441,Algeria,Batna,2005-08-20,3,12.97,4.08,3.18,2,2,"Australia,Canada",3
+176,Algeria,Skikda,2005-06-18,4,16.96,5.37,3.16,2,2,"Canada,Australia",4
+69,Algeria,Bchar,2005-08-17,3,9.97,3.49,2.86,1,1,Canada,5
+176,Algeria,Skikda,2005-07-27,4,13.96,5.19,2.69,2,2,"Canada,Australia",6
+320,American Samoa,Tafuna,2005-07-29,3,10.97,3.99,2.75,2,2,"Australia,Canada",1
+383,Angola,Namibe,2005-08-02,3,6.97,3.19,2.18,2,2,"Canada,Australia",1
+331,Argentina,Santa F,2005-07-06,3,18.97,4.32,4.39,2,2,"Canada,Australia",1
+243,Argentina,San Miguel de Tucumn,2005-07-31,3,13.97,3.19,4.38,1,1,Australia,2
+322,Argentina,Baha Blanca,2005-07-30,3,14.97,3.43,4.36,1,1,Canada,3
+560,Argentina,Avellaneda,2005-08-01,3,17.97,4.28,4.2,2,2,"Australia,Canada",4
+331,Argentina,Santa F,2005-07-07,3,21.97,5.32,4.13,2,2,"Canada,Australia",5
+445,Argentina,Escobar,2005-08-22,3,15.97,4.32,3.7,1,1,Canada,6
+530,Argentina,Ezeiza,2005-07-27,3,10.97,2.99,3.67,2,2,"Canada,Australia",7
+530,Argentina,Ezeiza,2005-08-18,3,12.97,3.55,3.65,1,1,Canada,8
+560,Argentina,Avellaneda,2005-07-07,3,13.97,3.99,3.5,2,2,"Canada,Australia",9
+89,Argentina,La Plata,2005-07-28,4,15.96,4.99,3.2,2,2,"Australia,Canada",10
+219,Argentina,Vicente Lpez,2005-07-09,3,10.97,3.49,3.14,1,1,Australia,11
+219,Argentina,Vicente Lpez,2005-07-29,3,12.97,4.26,3.04,2,2,"Canada,Australia",12
+243,Argentina,San Miguel de Tucumn,2005-08-21,4,9.96,3.49,2.85,2,2,"Canada,Australia",13
+89,Argentina,La Plata,2005-07-09,3,13.97,5.74,2.43,2,2,"Australia,Canada",14
+24,Argentina,Crdoba,2005-08-19,3,7.97,3.32,2.4,2,2,"Canada,Australia",15
+585,Argentina,Quilmes,2005-07-27,3,12.97,5.82,2.23,2,2,"Canada,Australia",16
+322,Argentina,Baha Blanca,2005-07-12,3,9.97,4.72,2.11,2,2,"Canada,Australia",17
+89,Argentina,La Plata,2005-07-31,3,8.97,4.28,2.1,1,1,Australia,18
+41,Armenia,Yerevan,2005-07-28,4,17.96,4.7,3.82,2,2,"Australia,Canada",1
+41,Armenia,Yerevan,2005-07-27,3,11.97,5.24,2.28,2,2,"Canada,Australia",2
+173,Austria,Graz,2005-07-29,3,16.97,3.66,4.64,1,1,Australia,1
+266,Austria,Salzburg,2005-08-18,4,17.96,4.12,4.36,2,2,"Canada,Australia",2
+266,Austria,Salzburg,2005-08-20,3,17.97,4.24,4.24,1,1,Canada,3
+266,Austria,Salzburg,2005-08-02,3,16.97,4.32,3.93,2,2,"Australia,Canada",4
+173,Austria,Graz,2005-08-23,3,12.97,4.54,2.86,2,2,"Australia,Canada",5
+173,Austria,Graz,2005-07-10,3,9.97,3.77,2.64,2,2,"Canada,Australia",6
+333,Azerbaijan,Baku,2005-07-27,3,8.97,2.79,3.22,1,1,Australia,1
+333,Azerbaijan,Baku,2005-08-20,3,13.97,4.66,3.0,2,2,"Canada,Australia",2
+334,Azerbaijan,Sumqayit,2005-08-01,3,11.97,4.9,2.44,1,1,Canada,3
+334,Azerbaijan,Sumqayit,2005-08-23,3,9.97,4.45,2.24,2,2,"Australia,Canada",4
+590,Bahrain,al-Manama,2005-07-08,3,12.97,6.19,2.1,2,2,"Australia,Canada",1
+21,Bangladesh,Tangail,2005-08-20,4,32.96,3.49,9.44,2,2,"Canada,Australia",1
+332,Bangladesh,Dhaka,2005-07-27,4,24.96,3.42,7.3,1,1,Australia,2
+21,Bangladesh,Tangail,2005-06-18,3,15.97,2.99,5.34,2,2,"Australia,Canada",3
+21,Bangladesh,Tangail,2005-08-19,3,12.97,3.3,3.93,2,2,"Canada,Australia",4
+329,Bangladesh,Jamalpur,2005-08-22,3,12.97,4.52,2.87,2,2,"Canada,Australia",5
+329,Bangladesh,Jamalpur,2005-06-17,3,7.97,2.99,2.67,2,2,"Canada,Australia",6
+332,Bangladesh,Dhaka,2005-08-22,3,9.97,4.62,2.16,2,2,"Australia,Canada",7
+527,Belarus,Mogiljov,2005-07-11,3,11.97,1.66,7.21,2,2,"Australia,Canada",1
+144,Belarus,Molodetno,2005-07-09,3,17.97,4.24,4.24,1,1,Australia,2
+144,Belarus,Molodetno,2005-08-17,3,15.97,4.12,3.88,2,2,"Canada,Australia",3
+144,Belarus,Molodetno,2005-07-30,4,17.96,5.76,3.12,2,2,"Canada,Australia",4
+144,Belarus,Molodetno,2005-08-02,3,14.97,5.04,2.97,2,2,"Canada,Australia",5
+144,Belarus,Molodetno,2005-08-01,3,11.97,5.21,2.3,1,1,Canada,6
+126,Brazil,Po,2005-07-06,3,18.97,2.99,6.34,2,2,"Australia,Canada",1
+254,Brazil,Poos de Caldas,2005-07-10,4,19.96,3.21,6.22,2,2,"Canada,Australia",2
+362,Brazil,Belm,2005-08-21,4,25.96,4.28,6.07,2,2,"Australia,Canada",3
+354,Brazil,Santo Andr,2005-07-29,3,18.97,3.2,5.93,2,2,"Australia,Canada",4
+183,Brazil,Luzinia,2005-07-31,3,13.97,2.62,5.33,2,2,"Australia,Canada",5
+374,Brazil,Vitria de Santo Anto,2005-08-22,4,20.96,4.09,5.12,2,2,"Australia,Canada",6
+39,Brazil,Vila Velha,2005-07-08,3,23.97,4.7,5.1,1,1,Australia,7
+591,Brazil,Juiz de Fora,2005-08-18,4,21.96,4.35,5.05,2,2,"Australia,Canada",8
+342,Brazil,Boa Vista,2005-07-12,3,19.97,4.19,4.77,2,2,"Australia,Canada",9
+206,Brazil,Blumenau,2005-08-19,3,18.97,4.12,4.6,2,2,"Canada,Australia",10
+374,Brazil,Vitria de Santo Anto,2005-07-10,3,13.97,3.16,4.42,2,2,"Canada,Australia",11
+544,Brazil,So Bernardo do Campo,2005-08-21,3,18.97,4.42,4.29,2,2,"Australia,Canada",12
+551,Brazil,Alvorada,2005-08-22,3,14.97,3.49,4.29,2,2,"Canada,Australia",13
+39,Brazil,Vila Velha,2005-08-01,4,20.96,4.92,4.26,2,2,"Canada,Australia",14
+92,Brazil,Goinia,2005-07-10,4,23.96,5.7,4.2,2,2,"Australia,Canada",15
+314,Brazil,Sorocaba,2005-07-28,3,11.97,2.99,4.0,2,2,"Australia,Canada",16
+178,Brazil,Santa Brbara dOeste,2005-08-17,3,17.97,4.49,4.0,1,1,Australia,17
+254,Brazil,Poos de Caldas,2005-08-19,4,13.96,3.54,3.94,2,2,"Canada,Australia",18
+342,Brazil,Boa Vista,2005-08-20,3,12.97,3.43,3.78,2,2,"Australia,Canada",19
+342,Brazil,Boa Vista,2005-08-21,3,12.97,3.57,3.63,1,1,Australia,20
+178,Brazil,Santa Brbara dOeste,2005-07-09,3,18.97,5.32,3.57,1,1,Canada,21
+314,Brazil,Sorocaba,2005-08-21,3,14.97,4.2,3.56,2,2,"Australia,Canada",22
+178,Brazil,Santa Brbara dOeste,2005-08-21,3,15.97,4.58,3.49,2,2,"Canada,Australia",23
+39,Brazil,Vila Velha,2005-07-29,4,19.96,5.85,3.41,2,2,"Australia,Canada",24
+74,Brazil,Rio Claro,2005-07-10,3,10.97,3.39,3.24,2,2,"Canada,Australia",25
+427,Brazil,Guaruj,2005-08-01,3,15.97,4.99,3.2,2,2,"Canada,Australia",26
+591,Brazil,Juiz de Fora,2005-07-27,4,20.96,6.59,3.18,2,2,"Canada,Australia",27
+178,Brazil,Santa Brbara dOeste,2005-07-29,3,14.97,4.72,3.17,2,2,"Canada,Australia",28
+254,Brazil,Poos de Caldas,2005-07-09,3,9.97,3.16,3.16,2,2,"Australia,Canada",29
+342,Brazil,Boa Vista,2005-07-31,4,12.96,4.12,3.15,2,2,"Canada,Australia",30
+77,Brazil,Araatuba,2005-08-02,4,7.96,2.62,3.04,2,2,"Canada,Australia",31
+47,Brazil,Juazeiro do Norte,2005-07-11,3,14.97,4.99,3.0,2,2,"Australia,Canada",32
+206,Brazil,Blumenau,2005-07-06,3,11.97,3.99,3.0,2,2,"Canada,Australia",33
+178,Brazil,Santa Brbara dOeste,2005-07-12,3,15.97,5.35,2.99,2,2,"Canada,Australia",34
+591,Brazil,Juiz de Fora,2005-08-19,3,12.97,4.66,2.78,2,2,"Canada,Australia",35
+126,Brazil,Po,2005-08-19,3,11.97,4.49,2.67,1,1,Australia,36
+362,Brazil,Belm,2005-07-29,4,11.96,4.49,2.66,2,2,"Australia,Canada",37
+551,Brazil,Alvorada,2005-08-21,3,8.97,3.66,2.45,2,2,"Canada,Australia",38
+74,Brazil,Rio Claro,2005-08-20,3,8.97,3.99,2.25,2,2,"Australia,Canada",39
+443,Brazil,So Leopoldo,2005-07-31,3,12.97,5.99,2.17,2,2,"Australia,Canada",40
+229,Brazil,Anpolis,2005-08-19,3,8.97,4.16,2.16,2,2,"Canada,Australia",41
+39,Brazil,Vila Velha,2005-07-31,3,10.97,5.24,2.09,2,2,"Canada,Australia",42
+91,Brunei,Bandar Seri Begawan,2005-07-07,3,12.97,2.79,4.65,2,2,"Australia,Canada",1
+91,Brunei,Bandar Seri Begawan,2005-08-19,3,10.97,2.55,4.3,2,2,"Canada,Australia",2
+91,Brunei,Bandar Seri Begawan,2005-08-22,3,9.97,2.68,3.72,2,2,"Australia,Canada",3
+91,Brunei,Bandar Seri Begawan,2005-07-30,3,8.97,3.06,2.93,1,1,Australia,4
+540,Bulgaria,Ruse,2005-08-02,4,24.96,4.43,5.63,2,2,"Canada,Australia",1
+215,Bulgaria,Stara Zagora,2005-08-23,4,9.96,2.59,3.85,2,2,"Canada,Australia",2
+540,Bulgaria,Ruse,2005-07-11,3,13.97,4.13,3.38,2,2,"Canada,Australia",3
+228,Cambodia,Phnom Penh,2005-07-06,4,17.96,3.49,5.15,2,2,"Australia,Canada",1
+516,Cambodia,Battambang,2005-07-29,3,13.97,5.59,2.5,1,1,Australia,2
+352,Cameroon,Bamenda,2005-06-16,3,14.97,1.99,7.52,1,1,Canada,1
+361,Cameroon,Yaound,2005-08-02,4,15.96,2.81,5.68,2,2,"Australia,Canada",2
+352,Cameroon,Bamenda,2005-07-27,4,22.96,5.49,4.18,2,2,"Canada,Australia",3
+352,Cameroon,Bamenda,2005-08-17,3,13.97,4.7,2.97,2,2,"Canada,Australia",4
+361,Cameroon,Yaound,2005-07-12,3,7.97,2.82,2.83,2,2,"Australia,Canada",5
+410,Canada,Richmond Hill,2005-07-09,4,17.96,3.12,5.76,2,2,"Canada,Australia",1
+410,Canada,Richmond Hill,2005-07-27,3,15.97,3.87,4.13,2,2,"Australia,Canada",2
+410,Canada,Richmond Hill,2005-08-20,3,14.97,5.14,2.91,2,2,"Canada,Australia",3
+410,Canada,Richmond Hill,2005-08-21,3,13.97,5.12,2.73,2,2,"Canada,Australia",4
+436,Canada,Vancouver,2005-08-17,3,13.97,5.37,2.6,2,2,"Canada,Australia",5
+436,Canada,Vancouver,2005-08-20,4,13.96,5.52,2.53,2,2,"Canada,Australia",6
+535,Chad,NDjamna,2005-07-08,3,16.97,4.99,3.4,2,2,"Canada,Australia",1
+535,Chad,NDjamna,2005-08-18,5,11.95,5.12,2.33,2,2,"Australia,Canada",2
+45,Chile,Antofagasta,2005-08-02,5,27.95,4.09,6.83,2,2,"Australia,Canada",1
+515,Chile,Coquimbo,2005-08-17,3,15.97,3.79,4.21,2,2,"Australia,Canada",2
+129,China,Liaocheng,2005-07-31,4,26.96,2.63,10.25,2,2,"Australia,Canada",1
+129,China,Liaocheng,2005-06-19,3,9.97,0.99,10.07,2,2,"Canada,Australia",2
+546,China,Sanya,2005-07-12,3,19.97,2.62,7.62,2,2,"Australia,Canada",3
+424,China,Shanwei,2005-07-31,3,20.97,2.91,7.21,2,2,"Canada,Australia",4
+538,China,Baicheng,2005-07-31,3,18.97,2.99,6.34,2,2,"Canada,Australia",5
+241,China,Xiangfan,2005-07-11,3,14.97,2.44,6.14,2,2,"Canada,Australia",6
+424,China,Shanwei,2005-07-30,4,14.96,2.55,5.87,2,2,"Canada,Australia",7
+260,China,Datong,2005-08-21,3,17.97,3.12,5.76,2,2,"Australia,Canada",8
+64,China,Daxian,2005-07-08,3,13.97,2.49,5.61,2,2,"Canada,Australia",9
+384,China,Huaian,2005-06-20,3,18.97,3.49,5.44,2,2,"Australia,Canada",10
+93,China,Zalantun,2005-08-20,4,19.96,3.74,5.34,2,2,"Canada,Australia",11
+302,China,Tiefa,2005-07-30,3,19.97,3.81,5.24,2,2,"Canada,Australia",12
+485,China,Shaoguan,2005-07-30,4,17.96,3.49,5.15,2,2,"Australia,Canada",13
+283,China,Korla,2005-07-06,4,17.96,3.59,5.0,2,2,"Canada,Australia",14
+533,China,Binzhou,2005-08-17,3,19.97,4.09,4.88,2,2,"Australia,Canada",15
+64,China,Daxian,2005-07-31,3,13.97,2.87,4.87,1,1,Canada,16
+129,China,Liaocheng,2005-08-20,4,21.96,4.53,4.85,2,2,"Australia,Canada",17
+138,China,Hohhot,2005-08-01,3,14.97,3.19,4.69,2,2,"Australia,Canada",18
+138,China,Hohhot,2005-07-28,3,11.97,2.56,4.68,2,2,"Canada,Australia",19
+267,China,Lengshuijiang,2005-06-19,4,22.96,4.99,4.6,2,2,"Australia,Canada",20
+241,China,Xiangfan,2005-07-09,3,8.97,1.99,4.51,2,2,"Australia,Canada",21
+595,China,Jinzhou,2005-07-31,3,18.97,4.24,4.47,2,2,"Australia,Canada",22
+197,China,Changzhou,2005-08-02,4,17.96,4.07,4.41,1,1,Canada,23
+267,China,Lengshuijiang,2005-07-30,3,15.97,3.66,4.36,2,2,"Australia,Canada",24
+154,China,Yuncheng,2005-07-27,3,14.97,3.49,4.29,2,2,"Australia,Canada",25
+569,China,Leshan,2005-08-02,4,14.96,3.49,4.29,2,2,"Australia,Canada",26
+90,China,Meixian,2005-08-01,3,17.97,4.32,4.16,2,2,"Australia,Canada",27
+151,China,Laiwu,2005-07-31,3,10.97,2.7,4.06,1,1,Canada,28
+550,China,Zhoushan,2005-08-21,3,16.97,4.19,4.05,2,2,"Australia,Canada",29
+599,China,Tieli,2005-08-23,3,14.97,3.7,4.05,1,1,Australia,30
+129,China,Liaocheng,2005-08-01,5,14.95,3.72,4.02,2,2,"Australia,Canada",31
+138,China,Hohhot,2005-07-31,3,11.97,2.99,4.0,1,1,Canada,32
+384,China,Huaian,2005-08-22,3,11.97,2.99,4.0,2,2,"Canada,Australia",33
+90,China,Meixian,2005-07-27,3,13.97,3.49,4.0,2,2,"Australia,Canada",34
+151,China,Laiwu,2005-08-22,3,13.97,3.54,3.95,2,2,"Canada,Australia",35
+594,China,Jining,2005-07-31,3,16.97,4.44,3.82,2,2,"Canada,Australia",36
+242,China,Qinhuangdao,2005-06-15,3,14.97,3.99,3.75,2,2,"Australia,Canada",37
+466,China,Dongying,2005-08-20,3,13.97,3.74,3.74,1,1,Canada,38
+242,China,Qinhuangdao,2005-08-01,3,15.97,4.32,3.7,1,1,Australia,39
+302,China,Tiefa,2005-08-23,4,16.96,4.62,3.67,2,2,"Australia,Canada",40
+550,China,Zhoushan,2005-08-17,3,12.97,3.59,3.61,2,2,"Canada,Australia",41
+588,China,Weifang,2005-07-29,4,13.96,3.87,3.61,2,2,"Canada,Australia",42
+550,China,Zhoushan,2005-08-23,3,15.97,4.43,3.6,2,2,"Australia,Canada",43
+538,China,Baicheng,2005-07-09,3,16.97,4.79,3.54,2,2,"Australia,Canada",44
+168,China,Jinchang,2005-08-17,3,13.97,3.99,3.5,1,1,Canada,45
+514,China,Zaoyang,2005-08-18,4,13.96,3.99,3.5,2,2,"Canada,Australia",46
+154,China,Yuncheng,2005-08-22,3,15.97,4.57,3.49,2,2,"Australia,Canada",47
+422,China,Laohekou,2005-08-22,4,14.96,4.41,3.39,2,2,"Canada,Australia",48
+533,China,Binzhou,2005-07-12,3,13.97,4.12,3.39,1,1,Australia,49
+260,China,Datong,2005-08-20,4,10.96,3.26,3.36,2,2,"Canada,Australia",50
+485,China,Shaoguan,2005-07-09,3,10.97,3.28,3.34,1,1,Canada,51
+138,China,Hohhot,2005-08-21,3,11.97,3.58,3.34,2,2,"Canada,Australia",52
+484,China,Yinchuan,2005-07-10,3,14.97,4.49,3.33,2,2,"Australia,Canada",53
+521,China,Yingkou,2005-08-17,3,11.97,3.74,3.2,2,2,"Australia,Canada",54
+384,China,Huaian,2005-07-10,3,12.97,4.1,3.16,2,2,"Canada,Australia",55
+339,China,Xinxiang,2005-08-17,3,12.97,4.13,3.14,2,2,"Canada,Australia",56
+168,China,Jinchang,2005-07-30,3,11.97,3.91,3.06,2,2,"Australia,Canada",57
+495,China,Baiyin,2005-07-29,3,13.97,4.59,3.04,1,1,Canada,58
+595,China,Jinzhou,2005-07-27,4,14.96,5.12,2.92,2,2,"Canada,Australia",59
+211,China,Fuyu,2005-08-18,3,11.97,4.1,2.92,1,1,Australia,60
+546,China,Sanya,2005-08-22,3,11.97,4.1,2.92,1,1,Canada,61
+197,China,Changzhou,2005-08-01,4,12.96,4.49,2.89,2,2,"Australia,Canada",62
+302,China,Tiefa,2005-07-29,3,10.97,3.87,2.83,2,2,"Canada,Australia",63
+37,China,Nanyang,2005-08-20,4,14.96,5.28,2.83,2,2,"Australia,Canada",64
+272,China,Yantai,2005-08-17,3,16.97,5.99,2.83,2,2,"Australia,Canada",65
+521,China,Yingkou,2005-08-21,3,10.97,3.88,2.83,2,2,"Canada,Australia",66
+211,China,Fuyu,2005-08-22,3,10.97,3.92,2.8,2,2,"Australia,Canada",67
+552,China,Haining,2005-08-02,3,14.97,5.43,2.76,2,2,"Canada,Australia",68
+389,China,Emeishan,2005-08-21,3,13.97,5.08,2.75,2,2,"Australia,Canada",69
+168,China,Jinchang,2005-07-29,3,10.97,3.99,2.75,2,2,"Australia,Canada",70
+588,China,Weifang,2005-08-22,3,9.97,3.68,2.71,1,1,Canada,71
+442,China,Tongliao,2005-08-19,3,9.97,3.69,2.7,2,2,"Canada,Australia",72
+442,China,Tongliao,2005-07-07,3,11.97,4.49,2.67,2,2,"Canada,Australia",73
+197,China,Changzhou,2005-06-15,3,6.97,2.62,2.66,2,2,"Australia,Canada",74
+211,China,Fuyu,2005-07-10,3,14.97,5.7,2.63,2,2,"Canada,Australia",75
+260,China,Datong,2005-06-17,3,16.97,6.49,2.61,2,2,"Australia,Canada",76
+496,China,Rizhao,2005-07-07,3,8.97,3.49,2.57,1,1,Canada,77
+595,China,Jinzhou,2005-07-30,4,11.96,4.66,2.57,2,2,"Canada,Australia",78
+302,China,Tiefa,2005-07-10,4,9.96,3.99,2.5,1,1,Australia,79
+129,China,Liaocheng,2005-07-09,3,6.97,2.82,2.47,2,2,"Canada,Australia",80
+569,China,Leshan,2005-05-28,3,11.97,4.99,2.4,1,1,Canada,81
+564,China,Xintai,2005-08-01,3,9.97,4.21,2.37,2,2,"Australia,Canada",82
+389,China,Emeishan,2005-08-02,3,10.97,4.66,2.35,2,2,"Canada,Australia",83
+64,China,Daxian,2005-07-09,3,7.97,3.42,2.33,2,2,"Canada,Australia",84
+197,China,Changzhou,2005-08-22,3,8.97,3.87,2.32,2,2,"Australia,Canada",85
+594,China,Jining,2005-07-29,3,10.97,4.74,2.31,2,2,"Canada,Australia",86
+569,China,Leshan,2005-07-30,3,9.97,4.32,2.31,2,2,"Canada,Australia",87
+424,China,Shanwei,2005-07-08,3,7.97,3.49,2.28,1,1,Australia,88
+569,China,Leshan,2005-08-18,3,7.97,3.49,2.28,2,2,"Canada,Australia",89
+151,China,Laiwu,2005-07-12,3,5.97,2.82,2.12,1,1,Australia,90
+599,China,Tieli,2005-08-21,3,8.97,4.24,2.12,1,1,Canada,91
+129,China,Liaocheng,2005-07-06,3,6.97,3.32,2.1,2,2,"Canada,Australia",92
+64,China,Daxian,2005-07-27,3,5.97,2.91,2.05,2,2,"Australia,Canada",93
+595,China,Jinzhou,2005-08-23,3,6.97,3.43,2.03,1,1,Australia,94
+120,Colombia,Dos Quebradas,2005-08-21,3,19.97,3.91,5.11,2,2,"Canada,Australia",1
+235,Colombia,Buenaventura,2005-07-06,3,14.97,2.99,5.01,2,2,"Australia,Canada",2
+490,Colombia,Sogamoso,2005-07-12,3,16.97,4.43,3.83,2,2,"Canada,Australia",3
+87,Colombia,Sincelejo,2005-08-18,3,15.97,4.99,3.2,1,1,Canada,4
+235,Colombia,Buenaventura,2005-07-31,3,11.97,4.24,2.82,2,2,"Australia,Canada",5
+460,Colombia,Florencia,2005-08-19,3,13.97,5.12,2.73,2,2,"Canada,Australia",6
+87,Colombia,Sincelejo,2005-08-20,3,12.97,5.07,2.56,2,2,"Canada,Australia",7
+87,Colombia,Sincelejo,2005-07-30,3,12.97,5.49,2.36,2,2,"Australia,Canada",8
+120,Colombia,Dos Quebradas,2005-07-07,3,10.97,4.99,2.2,2,2,"Canada,Australia",9
+375,"Congo, The Democratic Republic of the",Mwene-Ditu,2005-08-02,3,18.97,3.55,5.34,2,2,"Canada,Australia",1
+387,"Congo, The Democratic Republic of the",Lubumbashi,2005-08-19,3,15.97,2.99,5.34,2,2,"Canada,Australia",2
+265,Czech Republic,Olomouc,2005-08-21,3,18.97,3.81,4.98,2,2,"Australia,Canada",1
+265,Czech Republic,Olomouc,2005-07-29,3,9.97,4.82,2.07,2,2,"Canada,Australia",2
+418,Dominican Republic,San Felipe de Puerto Plata,2005-07-08,3,11.97,2.49,4.81,2,2,"Australia,Canada",1
+258,Dominican Republic,Santiago de los Caballeros,2005-08-01,5,20.95,4.49,4.67,2,2,"Australia,Canada",2
+258,Dominican Republic,Santiago de los Caballeros,2005-08-20,3,14.97,4.39,3.41,2,2,"Canada,Australia",3
+437,Dominican Republic,La Romana,2005-08-20,3,12.97,4.56,2.84,2,2,"Australia,Canada",4
+418,Dominican Republic,San Felipe de Puerto Plata,2005-08-02,4,11.96,4.41,2.71,2,2,"Australia,Canada",5
+418,Dominican Republic,San Felipe de Puerto Plata,2005-08-17,3,8.97,4.26,2.11,1,1,Canada,6
+262,Ecuador,Portoviejo,2005-07-12,4,26.96,3.32,8.12,2,2,"Australia,Canada",1
+494,Ecuador,Robamba,2005-08-22,4,26.96,4.4,6.13,2,2,"Canada,Australia",2
+494,Ecuador,Robamba,2005-07-31,3,18.97,4.12,4.6,2,2,"Australia,Canada",3
+262,Ecuador,Portoviejo,2005-08-23,4,14.96,4.29,3.49,2,2,"Canada,Australia",4
+494,Ecuador,Robamba,2005-07-30,3,12.97,4.07,3.19,2,2,"Australia,Canada",5
+423,Egypt,Sawhaj,2005-07-27,5,24.95,1.74,14.34,2,2,"Canada,Australia",1
+134,Egypt,Qalyub,2005-08-02,4,20.96,3.16,6.63,2,2,"Canada,Australia",2
+559,Egypt,Bilbays,2005-08-19,3,13.97,2.89,4.83,2,2,"Canada,Australia",3
+119,Egypt,Shubra al-Khayma,2005-08-22,3,15.97,4.16,3.84,2,2,"Canada,Australia",4
+233,Egypt,Idfu,2005-06-18,3,10.97,2.99,3.67,2,2,"Australia,Canada",5
+119,Egypt,Shubra al-Khayma,2005-08-21,4,14.96,4.28,3.5,1,1,Australia,6
+119,Egypt,Shubra al-Khayma,2005-08-01,3,11.97,4.49,2.67,2,2,"Canada,Australia",7
+392,Ethiopia,Addis Abeba,2005-08-21,3,12.97,4.14,3.13,2,2,"Canada,Australia",1
+317,Faroe Islands,Trshavn,2005-08-22,3,12.97,4.19,3.1,1,1,Canada,1
+104,France,Toulon,2005-07-08,3,15.97,3.49,4.58,2,2,"Australia,Canada",1
+402,France,Brest,2005-07-06,3,16.97,4.32,3.93,1,1,Australia,2
+162,France,Le Mans,2005-07-31,3,14.97,4.49,3.33,2,2,"Canada,Australia",3
+104,France,Toulon,2005-08-19,4,11.96,3.66,3.27,1,1,Canada,4
+65,French Guiana,Cayenne,2005-08-02,3,19.97,4.21,4.74,2,2,"Australia,Canada",1
+584,Gambia,Banjul,2005-08-18,3,17.97,4.16,4.32,1,1,Australia,1
+584,Gambia,Banjul,2005-08-21,3,16.97,4.43,3.83,1,1,Australia,2
+584,Gambia,Banjul,2005-08-02,3,10.97,3.74,2.93,2,2,"Canada,Australia",3
+201,Germany,Witten,2005-08-20,3,16.97,2.74,6.19,1,1,Australia,1
+196,Germany,Mannheim,2005-07-31,3,22.97,3.72,6.17,2,2,"Canada,Australia",2
+251,Germany,Halle/Saale,2005-05-31,3,11.97,2.66,4.5,2,2,"Australia,Canada",3
+196,Germany,Mannheim,2005-07-09,3,13.97,3.88,3.6,1,1,Australia,4
+251,Germany,Halle/Saale,2005-08-19,3,12.97,3.88,3.34,2,2,"Australia,Canada",5
+114,Germany,Duisburg,2005-07-27,3,8.97,3.24,2.77,1,1,Australia,6
+3,Greece,Athenai,2005-07-28,4,24.96,6.74,3.7,2,2,"Australia,Canada",1
+596,Greece,Patras,2005-07-11,3,8.97,2.66,3.37,1,1,Canada,2
+596,Greece,Patras,2005-08-01,3,8.97,3.66,2.45,2,2,"Australia,Canada",3
+207,Greenland,Nuuk,2005-08-20,4,25.96,4.54,5.72,1,1,Australia,1
+207,Greenland,Nuuk,2005-08-02,3,9.97,3.75,2.66,2,2,"Canada,Australia",2
+26,Holy See (Vatican City State),Citt del Vaticano,2005-08-21,4,23.96,3.32,7.22,2,2,"Australia,Canada",1
+26,Holy See (Vatican City State),Citt del Vaticano,2005-07-07,5,20.95,5.99,3.5,2,2,"Canada,Australia",2
+26,Holy See (Vatican City State),Citt del Vaticano,2005-08-02,3,7.97,3.63,2.2,2,2,"Canada,Australia",3
+289,Hong Kong,Kowloon and New Kowloon,2005-08-19,4,17.96,4.12,4.36,1,1,Australia,1
+289,Hong Kong,Kowloon and New Kowloon,2005-08-18,3,10.97,4.39,2.5,2,2,"Canada,Australia",2
+289,Hong Kong,Kowloon and New Kowloon,2005-07-27,3,10.97,4.49,2.44,2,2,"Canada,Australia",3
+592,Hungary,Szkesfehrvr,2005-07-07,3,12.97,5.7,2.28,1,1,Canada,1
+592,Hungary,Szkesfehrvr,2005-07-27,3,9.97,4.56,2.19,2,2,"Australia,Canada",2
+412,India,Hoshiarpur,2005-07-29,3,18.97,0.99,19.16,2,2,"Australia,Canada",1
+529,India,Bhimavaram,2005-07-12,3,20.97,2.24,9.36,2,2,"Australia,Canada",2
+468,India,Bijapur,2005-08-21,5,32.95,4.99,6.6,2,2,"Australia,Canada",3
+121,India,Etawah,2005-08-21,4,25.96,3.99,6.51,2,2,"Canada,Australia",4
+529,India,Bhimavaram,2005-07-07,3,7.97,1.32,6.04,1,1,Australia,5
+12,India,Yamuna Nagar,2005-07-30,3,11.97,1.99,6.02,1,1,Australia,6
+509,India,Chapra,2005-07-28,3,21.97,3.79,5.8,1,1,Canada,7
+297,India,Ahmadnagar,2005-06-18,3,16.97,2.99,5.68,2,2,"Canada,Australia",8
+78,India,Rae Bareli,2005-07-28,3,15.97,2.88,5.55,2,2,"Australia,Canada",9
+238,India,Shimoga,2005-07-29,3,16.97,3.24,5.24,1,1,Canada,10
+192,India,Firozabad,2005-08-21,4,24.96,4.79,5.21,2,2,"Australia,Canada",11
+31,India,Kamarhati,2005-06-18,4,16.96,3.49,4.86,2,2,"Canada,Australia",12
+259,India,Halisahar,2005-07-30,3,21.97,4.56,4.82,2,2,"Australia,Canada",13
+117,India,Gandhinagar,2005-08-18,4,17.96,3.74,4.8,1,1,Canada,14
+446,India,Uluberia,2005-07-29,4,17.96,3.89,4.62,2,2,"Australia,Canada",15
+419,India,Katihar,2005-08-02,4,13.96,3.06,4.56,2,2,"Australia,Canada",16
+28,India,Munger (Monghyr),2005-07-31,4,15.96,3.59,4.45,1,1,Australia,17
+68,India,Shivapuri,2005-07-31,3,16.97,3.85,4.41,2,2,"Canada,Australia",18
+403,India,Valparai,2005-08-02,4,21.96,4.99,4.4,2,2,"Canada,Australia",19
+224,India,Jodhpur,2005-08-21,3,12.97,2.99,4.34,1,1,Australia,20
+274,India,Karnal,2005-08-20,3,17.97,4.3,4.18,1,1,Canada,21
+300,India,Parbhani,2005-07-28,3,18.97,4.56,4.16,1,1,Canada,22
+170,India,Udaipur,2005-07-10,3,15.97,3.85,4.15,2,2,"Canada,Australia",23
+336,India,Rampur,2005-07-29,3,16.97,4.16,4.08,2,2,"Australia,Canada",24
+175,India,Allappuzha (Alleppey),2005-07-29,4,16.96,4.16,4.08,1,1,Canada,25
+78,India,Rae Bareli,2005-08-01,3,14.97,3.78,3.96,2,2,"Australia,Canada",26
+135,India,Pune,2005-07-27,3,13.97,3.66,3.82,2,2,"Australia,Canada",27
+534,India,Amroha,2005-08-01,3,13.97,3.7,3.78,2,2,"Australia,Canada",28
+274,India,Karnal,2005-07-29,3,14.97,3.99,3.75,1,1,Australia,29
+367,India,Adoni,2005-08-18,3,14.97,3.99,3.75,2,2,"Canada,Australia",30
+446,India,Uluberia,2005-07-12,4,13.96,3.77,3.7,2,2,"Australia,Canada",31
+297,India,Ahmadnagar,2005-08-17,3,8.97,2.43,3.69,2,2,"Australia,Canada",32
+446,India,Uluberia,2005-07-30,3,14.97,4.06,3.69,2,2,"Australia,Canada",33
+356,India,Satna,2005-08-19,4,14.96,4.07,3.68,2,2,"Australia,Canada",34
+259,India,Halisahar,2005-08-23,4,18.96,5.27,3.6,2,2,"Canada,Australia",35
+259,India,Halisahar,2005-06-16,3,18.97,5.32,3.57,2,2,"Canada,Australia",36
+209,India,Bhilwara,2005-07-27,3,15.97,4.49,3.56,1,1,Canada,37
+370,India,Gulbarga,2005-07-27,3,15.97,4.49,3.56,2,2,"Canada,Australia",38
+170,India,Udaipur,2005-07-31,3,15.97,4.55,3.51,2,2,"Australia,Canada",39
+15,India,Bhopal,2005-08-20,3,14.97,4.32,3.47,2,2,"Australia,Canada",40
+492,India,Kanchrapara,2005-07-07,3,18.97,5.49,3.46,2,2,"Australia,Canada",41
+259,India,Halisahar,2005-08-20,3,17.97,5.3,3.39,2,2,"Canada,Australia",42
+356,India,Satna,2005-08-23,3,13.97,4.16,3.36,2,2,"Canada,Australia",43
+202,India,Bhusawal,2005-07-30,3,12.97,3.88,3.34,1,1,Australia,44
+268,India,Palghat (Palakkad),2005-07-10,3,12.97,4.08,3.18,1,1,Australia,45
+297,India,Ahmadnagar,2005-07-11,3,14.97,4.77,3.14,2,2,"Australia,Canada",46
+186,India,Haldia,2005-08-20,3,11.97,3.82,3.13,2,2,"Australia,Canada",47
+231,India,Uttarpara-Kotrung,2005-08-18,3,13.97,4.49,3.11,2,2,"Canada,Australia",48
+446,India,Uluberia,2005-07-27,3,11.97,3.85,3.11,2,2,"Canada,Australia",49
+209,India,Bhilwara,2005-08-01,3,14.97,4.87,3.07,2,2,"Australia,Canada",50
+316,India,Miraj,2005-07-27,4,15.96,5.24,3.05,2,2,"Australia,Canada",51
+225,India,Ambattur,2005-08-02,4,13.96,4.66,3.0,1,1,Australia,52
+167,India,Chandrapur,2005-08-23,3,10.97,3.72,2.95,1,1,Australia,53
+167,India,Chandrapur,2005-07-29,4,9.96,3.39,2.94,2,2,"Australia,Canada",54
+356,India,Satna,2005-08-17,3,11.97,4.09,2.93,2,2,"Canada,Australia",55
+296,India,Patiala,2005-08-20,4,12.96,4.49,2.89,2,2,"Australia,Canada",56
+529,India,Bhimavaram,2005-07-30,3,11.97,4.19,2.86,2,2,"Canada,Australia",57
+502,India,Siliguri (Shiliguri),2005-07-28,3,14.97,5.29,2.83,2,2,"Canada,Australia",58
+508,India,Vijayawada,2005-07-27,3,17.97,6.39,2.81,2,2,"Canada,Australia",59
+554,India,Rajkot,2005-08-17,4,20.96,7.49,2.8,2,2,"Australia,Canada",60
+167,India,Chandrapur,2005-07-09,4,11.96,4.39,2.72,2,2,"Australia,Canada",61
+186,India,Haldia,2005-07-30,3,9.97,3.74,2.67,1,1,Australia,62
+15,India,Bhopal,2005-08-02,4,11.96,4.55,2.63,2,2,"Canada,Australia",63
+502,India,Siliguri (Shiliguri),2005-08-02,5,12.95,4.93,2.63,2,2,"Canada,Australia",64
+367,India,Adoni,2005-07-10,3,12.97,4.99,2.6,1,1,Australia,65
+60,India,Jaipur,2005-08-23,3,9.97,3.91,2.55,1,1,Canada,66
+95,India,Pathankot,2005-07-31,3,12.97,5.16,2.51,1,1,Canada,67
+403,India,Valparai,2005-08-01,3,12.97,5.16,2.51,2,2,"Canada,Australia",68
+152,India,Nagaon,2005-08-19,3,11.97,4.79,2.5,2,2,"Canada,Australia",69
+224,India,Jodhpur,2005-07-29,3,8.97,3.59,2.5,2,2,"Australia,Canada",70
+259,India,Halisahar,2005-08-19,3,12.97,5.59,2.32,2,2,"Canada,Australia",71
+32,India,Jhansi,2005-08-20,3,11.97,5.32,2.25,1,1,Canada,72
+186,India,Haldia,2005-08-22,3,8.97,3.99,2.25,1,1,Australia,73
+403,India,Valparai,2005-07-11,3,12.97,5.77,2.25,2,2,"Canada,Australia",74
+225,India,Ambattur,2005-07-31,3,10.97,4.99,2.2,2,2,"Canada,Australia",75
+15,India,Bhopal,2005-08-18,3,8.97,4.09,2.19,2,2,"Australia,Canada",76
+123,India,Varanasi (Benares),2005-07-28,4,12.96,5.99,2.16,2,2,"Canada,Australia",77
+123,India,Varanasi (Benares),2005-08-23,3,9.97,4.61,2.16,2,2,"Australia,Canada",78
+508,India,Vijayawada,2005-07-31,3,11.97,5.72,2.09,2,2,"Australia,Canada",79
+508,India,Vijayawada,2005-07-28,3,12.97,6.24,2.08,1,1,Australia,80
+202,India,Bhusawal,2005-07-29,3,8.97,4.32,2.08,1,1,Canada,81
+238,India,Shimoga,2005-08-17,3,11.97,5.85,2.05,2,2,"Australia,Canada",82
+458,Indonesia,Tegal,2005-07-12,3,15.97,2.99,5.34,2,2,"Canada,Australia",1
+473,Indonesia,Lhokseumawe,2005-08-02,5,19.95,4.45,4.48,2,2,"Canada,Australia",2
+506,Indonesia,Pontianak,2005-07-08,3,23.97,5.59,4.29,1,1,Australia,3
+450,Indonesia,Surakarta,2005-08-20,3,10.97,2.56,4.29,2,2,"Australia,Canada",4
+328,Indonesia,Ciparay,2005-08-20,3,14.97,3.62,4.14,2,2,"Canada,Australia",5
+450,Indonesia,Surakarta,2005-08-22,3,10.97,3.08,3.56,2,2,"Australia,Canada",6
+239,Indonesia,Ciomas,2005-07-27,3,12.97,3.66,3.54,2,2,"Australia,Canada",7
+372,Indonesia,Probolinggo,2005-07-28,3,15.97,5.24,3.05,2,2,"Australia,Canada",8
+372,Indonesia,Probolinggo,2005-07-09,3,10.97,3.99,2.75,1,1,Canada,9
+473,Indonesia,Lhokseumawe,2005-08-21,4,11.96,4.45,2.69,1,1,Australia,10
+372,Indonesia,Probolinggo,2005-07-29,4,13.96,5.26,2.65,2,2,"Canada,Australia",11
+459,Iran,Qomsheh,2005-07-28,5,29.95,2.66,11.26,2,2,"Canada,Australia",1
+279,Iran,Tabriz,2005-07-09,3,20.97,3.66,5.73,2,2,"Canada,Australia",2
+449,Iran,Sirjan,2005-08-01,4,21.96,4.62,4.75,2,2,"Australia,Canada",3
+459,Iran,Qomsheh,2005-08-01,4,22.96,4.99,4.6,2,2,"Canada,Australia",4
+368,Iran,Najafabad,2005-08-19,4,17.96,4.1,4.38,2,2,"Canada,Australia",5
+279,Iran,Tabriz,2005-08-19,4,18.96,4.42,4.29,2,2,"Australia,Canada",6
+10,Iran,Esfahan,2005-07-28,3,14.97,3.7,4.05,2,2,"Canada,Australia",7
+10,Iran,Esfahan,2005-07-09,3,11.97,3.37,3.55,2,2,"Canada,Australia",8
+449,Iran,Sirjan,2005-07-28,3,13.97,4.24,3.29,1,1,Australia,9
+368,Iran,Najafabad,2005-06-19,3,14.97,4.82,3.11,1,1,Canada,10
+279,Iran,Tabriz,2005-06-21,3,8.97,2.99,3.0,1,1,Canada,11
+459,Iran,Qomsheh,2005-06-17,3,8.97,2.99,3.0,1,1,Australia,12
+36,Iran,Arak,2005-07-28,3,8.97,3.32,2.7,2,2,"Canada,Australia",13
+36,Iran,Arak,2005-08-20,3,9.97,3.7,2.69,2,2,"Australia,Canada",14
+459,Iran,Qomsheh,2005-07-31,3,12.97,5.12,2.53,2,2,"Australia,Canada",15
+459,Iran,Qomsheh,2005-06-20,3,6.97,2.99,2.33,2,2,"Canada,Australia",16
+579,Iraq,Mosul,2005-07-31,3,13.97,4.72,2.96,1,1,Australia,1
+579,Iraq,Mosul,2005-07-30,3,11.97,4.99,2.4,2,2,"Canada,Australia",2
+478,Israel,Ashqelon,2005-06-19,3,20.97,2.99,7.01,2,2,"Canada,Australia",1
+161,Israel,Tel Aviv-Jaffa,2005-08-22,4,15.96,3.66,4.36,2,2,"Canada,Australia",2
+102,Israel,Ashdod,2005-07-09,3,17.97,4.56,3.94,1,1,Canada,3
+161,Israel,Tel Aviv-Jaffa,2005-05-28,3,9.97,3.49,2.86,2,2,"Canada,Australia",4
+478,Israel,Ashqelon,2005-07-31,3,10.97,4.49,2.44,2,2,"Canada,Australia",5
+161,Israel,Tel Aviv-Jaffa,2005-08-01,3,9.97,4.19,2.38,1,1,Canada,6
+309,Italy,Brescia,2005-06-19,3,20.97,4.32,4.85,1,1,Australia,1
+499,Italy,Brindisi,2005-08-17,3,14.97,3.43,4.36,2,2,"Australia,Canada",2
+541,Italy,Livorno,2005-08-22,5,18.95,4.59,4.13,2,2,"Australia,Canada",3
+221,Italy,Syrakusa,2005-08-21,3,14.97,3.91,3.83,2,2,"Australia,Canada",4
+499,Italy,Brindisi,2005-08-18,3,13.97,3.82,3.66,1,1,Canada,5
+499,Italy,Brindisi,2005-07-28,4,13.96,4.16,3.36,2,2,"Canada,Australia",6
+33,Italy,Alessandria,2005-07-30,3,11.97,3.59,3.33,2,2,"Canada,Australia",7
+221,Italy,Syrakusa,2005-08-17,3,12.97,4.28,3.03,2,2,"Australia,Canada",8
+33,Italy,Alessandria,2005-08-20,3,11.97,4.7,2.55,1,1,Canada,9
+499,Italy,Brindisi,2005-07-09,3,9.97,3.99,2.5,2,2,"Canada,Australia",10
+221,Italy,Syrakusa,2005-07-27,3,12.97,5.79,2.24,2,2,"Canada,Australia",11
+439,Italy,Bergamo,2005-07-29,3,8.97,4.13,2.17,2,2,"Canada,Australia",12
+1,Japan,Sasebo,2005-06-15,3,16.97,1.99,8.53,2,2,"Canada,Australia",1
+574,Japan,Akishima,2005-06-16,3,7.97,0.99,8.05,2,2,"Canada,Australia",2
+29,Japan,Shimonoseki,2005-06-19,5,15.95,1.99,8.02,2,2,"Canada,Australia",3
+519,Japan,Isesaki,2005-07-31,5,23.95,3.49,6.86,2,2,"Australia,Canada",4
+240,Japan,Iwaki,2005-07-27,3,18.97,2.99,6.34,2,2,"Canada,Australia",5
+531,Japan,Kuwana,2005-08-02,4,26.96,4.63,5.82,2,2,"Australia,Canada",6
+404,Japan,Omiya,2005-08-22,5,27.95,4.82,5.8,1,1,Australia,7
+404,Japan,Omiya,2005-07-08,4,21.96,3.79,5.79,2,2,"Canada,Australia",8
+147,Japan,Urawa,2005-08-23,3,20.97,3.87,5.42,2,2,"Australia,Canada",9
+29,Japan,Shimonoseki,2005-08-18,4,21.96,4.09,5.37,2,2,"Canada,Australia",10
+401,Japan,Koriyama,2005-07-29,3,14.97,3.19,4.69,2,2,"Canada,Australia",11
+253,Japan,Miyakonojo,2005-08-21,3,17.97,3.84,4.68,2,2,"Australia,Canada",12
+54,Japan,Iwakuni,2005-08-02,3,15.97,3.99,4.0,2,2,"Australia,Canada",13
+1,Japan,Sasebo,2005-08-22,3,10.97,2.79,3.93,2,2,"Canada,Australia",14
+503,Japan,Ueda,2005-08-23,4,12.96,3.32,3.9,1,1,Canada,15
+396,Japan,Iwatsuki,2005-08-21,3,13.97,3.68,3.8,2,2,"Canada,Australia",16
+547,Japan,Kanazawa,2005-08-02,4,14.96,4.19,3.57,2,2,"Canada,Australia",17
+503,Japan,Ueda,2005-08-22,4,11.96,3.44,3.48,2,2,"Canada,Australia",18
+147,Japan,Urawa,2005-08-22,3,12.97,3.76,3.45,2,2,"Australia,Canada",19
+147,Japan,Urawa,2005-08-20,3,13.97,4.12,3.39,1,1,Australia,20
+264,Japan,Higashiosaka,2005-07-11,3,12.97,3.85,3.37,2,2,"Canada,Australia",21
+299,Japan,Hiroshima,2005-08-17,3,13.97,4.16,3.36,1,1,Canada,22
+194,Japan,Hino,2005-06-18,3,14.97,4.66,3.21,1,1,Canada,23
+574,Japan,Akishima,2005-07-09,3,12.97,4.1,3.16,2,2,"Australia,Canada",24
+264,Japan,Higashiosaka,2005-07-31,3,12.97,4.32,3.0,2,2,"Australia,Canada",25
+141,Japan,Fukuyama,2005-08-17,3,12.97,4.44,2.92,2,2,"Canada,Australia",26
+141,Japan,Fukuyama,2005-08-01,3,10.97,3.81,2.88,1,1,Canada,27
+489,Japan,Okayama,2005-08-21,3,15.97,5.62,2.84,1,1,Australia,28
+531,Japan,Kuwana,2005-07-27,3,12.97,4.66,2.78,2,2,"Australia,Canada",29
+29,Japan,Shimonoseki,2005-07-27,3,11.97,4.39,2.73,2,2,"Australia,Canada",30
+531,Japan,Kuwana,2005-07-10,3,11.97,4.49,2.67,2,2,"Canada,Australia",31
+285,Japan,Otsu,2005-08-01,3,13.97,5.3,2.64,2,2,"Canada,Australia",32
+53,Japan,Nagareyama,2005-08-21,3,11.97,4.59,2.61,2,2,"Australia,Canada",33
+391,Japan,Izumisano,2005-07-30,3,8.97,3.62,2.48,2,2,"Canada,Australia",34
+385,Japan,Tama,2005-08-01,3,9.97,4.08,2.44,1,1,Canada,35
+34,Japan,Kurashiki,2005-08-18,3,6.97,2.88,2.42,2,2,"Australia,Canada",36
+285,Japan,Otsu,2005-07-11,4,14.96,6.32,2.37,2,2,"Canada,Australia",37
+396,Japan,Iwatsuki,2005-06-15,3,13.97,5.99,2.33,1,1,Australia,38
+79,Japan,Kamakura,2005-07-31,3,9.97,4.39,2.27,2,2,"Canada,Australia",39
+391,Japan,Izumisano,2005-08-17,3,7.97,3.62,2.2,1,1,Canada,40
+1,Japan,Sasebo,2005-07-28,4,11.96,5.49,2.18,2,2,"Canada,Australia",41
+429,Japan,Tsuyama,2005-07-28,3,12.97,6.39,2.03,1,1,Australia,42
+76,Kazakstan,Pavlodar,2005-07-29,3,13.97,2.32,6.02,1,1,Australia,1
+573,Kazakstan,Zhezqazghan,2005-07-31,4,24.96,4.17,5.99,1,1,Australia,2
+573,Kazakstan,Zhezqazghan,2005-08-17,3,9.97,4.37,2.28,2,2,"Australia,Canada",3
+193,Kenya,Kisumu,2005-08-22,3,16.97,3.35,5.07,2,2,"Canada,Australia",1
+363,Kenya,Nyeri,2005-08-22,3,15.97,5.22,3.06,2,2,"Canada,Australia",2
+363,Kenya,Nyeri,2005-07-29,3,11.97,4.39,2.73,1,1,Australia,3
+363,Kenya,Nyeri,2005-07-12,3,12.97,4.77,2.72,1,1,Australia,4
+234,Kuwait,Jalib al-Shuyukh,2005-08-02,4,17.96,4.59,3.91,2,2,"Australia,Canada",1
+234,Kuwait,Jalib al-Shuyukh,2005-08-19,3,13.97,4.1,3.41,2,2,"Australia,Canada",2
+347,Latvia,Daugavpils,2005-07-28,4,15.96,3.56,4.48,2,2,"Canada,Australia",1
+347,Latvia,Daugavpils,2005-07-31,3,11.97,3.85,3.11,1,1,Canada,2
+23,Latvia,Liepaja,2005-08-19,3,14.97,4.99,3.0,1,1,Australia,3
+57,Liechtenstein,Vaduz,2005-07-12,3,11.97,3.99,3.0,2,2,"Australia,Canada",1
+57,Liechtenstein,Vaduz,2005-07-31,3,8.97,3.41,2.63,2,2,"Canada,Australia",2
+557,Lithuania,Vilnius,2005-07-30,4,12.96,2.32,5.59,2,2,"Canada,Australia",1
+557,Lithuania,Vilnius,2005-07-12,4,10.96,2.99,3.67,2,2,"Canada,Australia",2
+81,Madagascar,Mahajanga,2005-08-21,3,16.97,3.99,4.25,2,2,"Canada,Australia",1
+81,Madagascar,Mahajanga,2005-08-23,4,14.96,4.63,3.23,2,2,"Canada,Australia",2
+306,Malaysia,Sungai Petani,2005-08-20,4,16.96,4.17,4.07,2,2,"Canada,Australia",1
+171,Malaysia,Ipoh,2005-08-19,4,14.96,4.99,3.0,2,2,"Canada,Australia",2
+306,Malaysia,Sungai Petani,2005-08-02,3,11.97,4.06,2.95,2,2,"Australia,Canada",3
+58,Malaysia,Kuching,2005-07-31,3,10.97,4.66,2.35,2,2,"Australia,Canada",4
+454,Mexico,Uruapan,2005-08-20,4,27.96,2.99,9.35,2,2,"Australia,Canada",1
+414,Mexico,Allende,2005-08-19,5,17.95,2.82,6.37,2,2,"Australia,Canada",2
+582,Mexico,Huejutla de Reyes,2005-07-27,4,20.96,3.49,6.01,2,2,"Australia,Canada",3
+575,Mexico,Cuernavaca,2005-08-18,3,22.97,3.99,5.76,2,2,"Canada,Australia",4
+133,Mexico,Torren,2005-07-08,4,19.96,3.49,5.72,2,2,"Australia,Canada",5
+319,Mexico,San Felipe del Progreso,2005-08-17,5,16.95,2.99,5.67,2,2,"Canada,Australia",6
+425,Mexico,San Juan Bautista Tuxtepec,2005-07-08,4,27.96,5.24,5.34,2,2,"Australia,Canada",7
+84,Mexico,Atlixco,2005-07-11,3,18.97,3.59,5.28,2,2,"Canada,Australia",8
+150,Mexico,Hidalgo,2005-08-19,5,21.95,4.24,5.18,2,2,"Canada,Australia",9
+465,Mexico,Zapopan,2005-08-17,3,16.97,3.32,5.11,2,2,"Canada,Australia",10
+247,Mexico,Coacalco de Berriozbal,2005-08-18,3,17.97,3.66,4.91,2,2,"Australia,Canada",11
+451,Mexico,El Fuerte,2005-07-08,3,16.97,3.49,4.86,2,2,"Canada,Australia",12
+581,Mexico,Jos Azueta,2005-07-08,4,17.96,3.82,4.7,2,2,"Australia,Canada",13
+108,Mexico,Huixquilucan,2005-07-29,3,15.97,3.43,4.66,2,2,"Australia,Canada",14
+467,Mexico,Cuauhtmoc,2005-07-28,4,20.96,4.56,4.6,2,2,"Canada,Australia",15
+273,Mexico,Salamanca,2005-08-01,3,19.97,4.52,4.42,1,1,Canada,16
+587,Mexico,Celaya,2005-07-31,3,17.97,4.42,4.07,1,1,Australia,17
+570,Mexico,Monclova,2005-07-30,3,11.97,2.99,4.0,2,2,"Canada,Australia",18
+273,Mexico,Salamanca,2005-07-12,4,19.96,4.99,4.0,2,2,"Canada,Australia",19
+84,Mexico,Atlixco,2005-08-02,4,19.96,5.07,3.94,2,2,"Canada,Australia",20
+581,Mexico,Jos Azueta,2005-08-20,3,12.97,3.66,3.54,1,1,Australia,21
+582,Mexico,Huejutla de Reyes,2005-07-29,3,15.97,4.66,3.43,2,2,"Australia,Canada",22
+451,Mexico,El Fuerte,2005-08-02,4,19.96,5.87,3.4,2,2,"Canada,Australia",23
+150,Mexico,Hidalgo,2005-08-21,4,14.96,4.42,3.38,2,2,"Australia,Canada",24
+467,Mexico,Cuauhtmoc,2005-08-18,3,15.97,4.81,3.32,1,1,Canada,25
+581,Mexico,Jos Azueta,2005-07-10,3,12.97,4.09,3.17,2,2,"Canada,Australia",26
+319,Mexico,San Felipe del Progreso,2005-07-11,3,12.97,4.17,3.11,2,2,"Australia,Canada",27
+150,Mexico,Hidalgo,2005-08-18,3,12.97,4.19,3.1,1,1,Australia,28
+177,Mexico,Matamoros,2005-06-16,3,8.97,2.99,3.0,2,2,"Canada,Australia",29
+486,Mexico,Acua,2005-07-07,3,12.97,4.39,2.95,2,2,"Australia,Canada",30
+323,Mexico,Cuautla,2005-07-28,3,12.97,4.42,2.93,2,2,"Australia,Canada",31
+454,Mexico,Uruapan,2005-08-22,4,12.96,4.44,2.92,2,2,"Canada,Australia",32
+414,Mexico,Allende,2005-07-31,3,11.97,4.13,2.9,2,2,"Canada,Australia",33
+482,Mexico,Coatzacoalcos,2005-08-23,3,12.97,4.66,2.78,2,2,"Canada,Australia",34
+570,Mexico,Monclova,2005-07-31,3,8.97,3.26,2.75,2,2,"Canada,Australia",35
+581,Mexico,Jos Azueta,2005-07-07,3,10.97,3.99,2.75,2,2,"Australia,Canada",36
+177,Mexico,Matamoros,2005-08-01,3,8.97,3.28,2.73,2,2,"Australia,Canada",37
+482,Mexico,Coatzacoalcos,2005-08-22,3,12.97,4.77,2.72,2,2,"Australia,Canada",38
+488,Mexico,La Paz,2005-08-22,3,9.97,3.74,2.67,2,2,"Australia,Canada",39
+115,Mexico,Nezahualcyotl,2005-07-11,3,6.97,2.85,2.45,2,2,"Canada,Australia",40
+581,Mexico,Jos Azueta,2005-06-17,3,11.97,4.99,2.4,2,2,"Australia,Canada",41
+273,Mexico,Salamanca,2005-07-30,3,11.97,5.09,2.35,2,2,"Canada,Australia",42
+288,Mexico,Valle de Santiago,2005-08-19,3,6.97,3.28,2.13,2,2,"Canada,Australia",43
+369,Mexico,Jurez,2005-08-01,3,7.97,3.82,2.09,2,2,"Canada,Australia",44
+38,Moldova,Chisinau,2005-07-27,4,17.96,4.12,4.36,2,2,"Canada,Australia",1
+38,Moldova,Chisinau,2005-07-07,3,12.97,3.19,4.07,2,2,"Canada,Australia",2
+40,Morocco,Nador,2005-07-31,3,13.97,3.37,4.15,2,2,"Australia,Canada",1
+22,Morocco,Sal,2005-08-23,3,16.97,5.17,3.28,1,1,Canada,2
+40,Morocco,Nador,2005-08-19,3,10.97,4.26,2.58,2,2,"Australia,Canada",3
+257,Mozambique,Beira,2005-08-19,5,20.95,4.24,4.94,2,2,"Australia,Canada",1
+257,Mozambique,Beira,2005-07-27,5,18.95,5.99,3.16,2,2,"Australia,Canada",2
+97,Mozambique,Tete,2005-07-06,3,8.97,2.99,3.0,2,2,"Canada,Australia",3
+257,Mozambique,Beira,2005-07-29,3,12.97,4.91,2.64,2,2,"Australia,Canada",4
+433,Mozambique,Naala-Porto,2005-07-12,3,11.97,5.19,2.31,1,1,Canada,5
+256,Myanmar,Monywa,2005-08-23,3,15.97,4.08,3.91,2,2,"Australia,Canada",1
+256,Myanmar,Monywa,2005-08-20,4,13.96,4.79,2.91,2,2,"Australia,Canada",2
+513,Nauru,Yangor,2005-07-29,4,25.96,3.99,6.51,2,2,"Australia,Canada",1
+513,Nauru,Yangor,2005-08-22,4,24.96,4.55,5.49,2,2,"Australia,Canada",2
+513,Nauru,Yangor,2005-07-07,3,12.97,3.49,3.72,1,1,Australia,3
+513,Nauru,Yangor,2005-08-02,3,9.97,4.68,2.13,2,2,"Australia,Canada",4
+321,Nepal,Birgunj,2005-08-17,3,17.97,3.99,4.5,2,2,"Canada,Australia",1
+474,Netherlands,Emmen,2005-08-18,4,13.96,3.16,4.42,2,2,"Canada,Australia",1
+137,Netherlands,Apeldoorn,2005-07-30,4,20.96,5.07,4.13,2,2,"Australia,Canada",2
+137,Netherlands,Apeldoorn,2005-07-06,3,17.97,4.99,3.6,1,1,Australia,3
+184,Netherlands,s-Hertogenbosch,2005-08-18,3,15.97,4.49,3.56,2,2,"Australia,Canada",4
+137,Netherlands,Apeldoorn,2005-08-23,3,17.97,5.09,3.53,2,2,"Australia,Canada",5
+137,Netherlands,Apeldoorn,2005-07-31,3,14.97,5.12,2.92,1,1,Canada,6
+184,Netherlands,s-Hertogenbosch,2005-08-19,3,11.97,4.85,2.47,1,1,Canada,7
+474,Netherlands,Emmen,2005-07-08,5,12.95,5.99,2.16,2,2,"Canada,Australia",8
+198,Nigeria,Ikerre,2005-08-17,6,22.94,3.09,7.42,2,2,"Canada,Australia",1
+280,Nigeria,Owo,2005-07-29,5,20.95,2.99,7.01,2,2,"Australia,Canada",2
+103,Nigeria,Ilorin,2005-08-23,5,25.95,4.35,5.97,2,2,"Canada,Australia",3
+198,Nigeria,Ikerre,2005-07-12,3,14.97,2.59,5.78,2,2,"Australia,Canada",4
+280,Nigeria,Owo,2005-08-19,3,20.97,3.99,5.26,2,2,"Canada,Australia",5
+156,Nigeria,Ondo,2005-08-22,4,14.96,3.89,3.85,2,2,"Canada,Australia",6
+232,Nigeria,Zaria,2005-07-30,3,14.97,3.99,3.75,1,1,Australia,7
+103,Nigeria,Ilorin,2005-07-07,3,11.97,3.32,3.61,2,2,"Australia,Canada",8
+232,Nigeria,Zaria,2005-07-29,3,12.97,3.85,3.37,2,2,"Canada,Australia",9
+80,Nigeria,Ife,2005-08-01,3,16.97,5.16,3.29,1,1,Canada,10
+277,Nigeria,Ogbomosho,2005-06-21,3,13.97,4.39,3.18,2,2,"Canada,Australia",11
+284,Nigeria,Benin City,2005-07-27,3,14.97,5.49,2.73,2,2,"Australia,Canada",12
+198,Nigeria,Ikerre,2005-07-27,3,9.97,3.85,2.59,1,1,Canada,13
+232,Nigeria,Zaria,2005-07-28,4,11.96,4.99,2.4,2,2,"Australia,Canada",14
+156,Nigeria,Ondo,2005-07-10,3,8.97,3.99,2.25,2,2,"Australia,Canada",15
+157,North Korea,Pyongyang,2005-07-29,5,12.95,3.21,4.03,2,2,"Australia,Canada",1
+157,North Korea,Pyongyang,2005-07-27,3,10.97,3.39,3.24,2,2,"Canada,Australia",2
+157,North Korea,Pyongyang,2005-08-19,3,10.97,3.75,2.93,1,1,Canada,3
+498,Oman,Salala,2005-07-27,3,16.97,2.62,6.48,1,1,Canada,1
+9,Oman,Masqat,2005-08-18,3,10.97,3.13,3.5,2,2,"Canada,Australia",2
+25,Pakistan,Shikarpur,2005-07-30,3,12.97,2.99,4.34,2,2,"Australia,Canada",1
+416,Pakistan,Dadu,2005-08-01,3,13.97,3.69,3.79,1,1,Canada,2
+416,Pakistan,Dadu,2005-07-29,3,11.97,3.66,3.27,1,1,Australia,3
+20,Pakistan,Mardan,2005-08-19,3,12.97,3.99,3.25,2,2,"Australia,Canada",4
+20,Pakistan,Mardan,2005-08-22,3,9.97,3.99,2.5,2,2,"Australia,Canada",5
+226,Paraguay,Asuncin,2005-08-23,4,16.96,3.69,4.6,2,2,"Australia,Canada",1
+226,Paraguay,Asuncin,2005-08-21,4,13.96,3.59,3.89,2,2,"Canada,Australia",2
+345,Paraguay,San Lorenzo,2005-07-07,3,10.97,2.99,3.67,2,2,"Australia,Canada",3
+205,Paraguay,Ciudad del Este,2005-08-21,4,15.96,4.79,3.33,2,2,"Canada,Australia",4
+597,Peru,Sullana,2005-08-02,4,16.96,3.49,4.86,2,2,"Australia,Canada",1
+565,Peru,Hunuco,2005-08-02,3,14.97,3.82,3.92,2,2,"Australia,Canada",2
+122,Peru,Lima,2005-06-18,3,9.97,3.74,2.67,2,2,"Australia,Canada",3
+597,Peru,Sullana,2005-08-19,3,10.97,4.39,2.5,2,2,"Canada,Australia",4
+122,Peru,Lima,2005-07-28,3,8.97,4.19,2.14,2,2,"Australia,Canada",5
+565,Peru,Hunuco,2005-08-19,3,10.97,5.35,2.05,2,2,"Australia,Canada",6
+461,Philippines,Gingoog,2005-08-22,5,22.95,2.7,8.5,2,2,"Canada,Australia",1
+388,Philippines,Cavite,2005-08-18,4,17.96,2.59,6.93,2,2,"Australia,Canada",2
+27,Philippines,Davao,2005-07-31,3,18.97,3.1,6.12,2,2,"Australia,Canada",3
+522,Philippines,Santa Rosa,2005-07-30,5,29.95,5.07,5.91,2,2,"Canada,Australia",4
+349,Philippines,Imus,2005-08-02,3,18.97,3.82,4.97,2,2,"Canada,Australia",5
+27,Philippines,Davao,2005-08-17,3,21.97,4.49,4.89,2,2,"Canada,Australia",6
+261,Philippines,Tuguegarao,2005-06-17,3,18.97,3.99,4.75,2,2,"Canada,Australia",7
+71,Philippines,Baybay,2005-07-10,3,18.97,4.16,4.56,2,2,"Canada,Australia",8
+244,Philippines,Lapu-Lapu,2005-07-31,3,15.97,3.54,4.51,2,2,"Canada,Australia",9
+71,Philippines,Baybay,2005-07-29,5,18.95,4.24,4.47,1,1,Canada,10
+373,Philippines,Tanauan,2005-08-18,4,20.96,4.8,4.37,2,2,"Canada,Australia",11
+261,Philippines,Tuguegarao,2005-07-31,3,14.97,3.49,4.29,2,2,"Australia,Canada",12
+188,Philippines,Bayugan,2005-08-01,4,16.96,3.99,4.25,2,2,"Australia,Canada",13
+236,Philippines,Tanza,2005-07-28,3,13.97,3.3,4.23,2,2,"Canada,Australia",14
+373,Philippines,Tanauan,2005-07-30,3,14.97,3.81,3.93,2,2,"Australia,Canada",15
+236,Philippines,Tanza,2005-08-21,3,17.97,4.58,3.92,2,2,"Australia,Canada",16
+434,Philippines,Ozamis,2005-06-18,3,15.97,4.32,3.7,2,2,"Australia,Canada",17
+72,Philippines,Taguig,2005-07-09,3,10.97,2.99,3.67,2,2,"Australia,Canada",18
+522,Philippines,Santa Rosa,2005-08-01,4,18.96,5.38,3.52,2,2,"Australia,Canada",19
+236,Philippines,Tanza,2005-07-27,3,10.97,3.19,3.44,1,1,Australia,20
+244,Philippines,Lapu-Lapu,2005-08-02,3,13.97,4.12,3.39,2,2,"Australia,Canada",21
+580,Philippines,Iligan,2005-07-30,3,10.97,3.29,3.33,1,1,Canada,22
+261,Philippines,Tuguegarao,2005-08-20,3,13.97,4.24,3.29,2,2,"Australia,Canada",23
+236,Philippines,Tanza,2005-08-19,3,13.97,4.56,3.06,1,1,Canada,24
+72,Philippines,Taguig,2005-08-17,4,13.96,4.7,2.97,2,2,"Canada,Australia",25
+522,Philippines,Santa Rosa,2005-06-20,3,12.97,4.99,2.6,2,2,"Australia,Canada",26
+522,Philippines,Santa Rosa,2005-07-10,3,12.97,4.99,2.6,1,1,Australia,26
+461,Philippines,Gingoog,2005-07-28,3,4.97,2.19,2.27,1,1,Australia,28
+94,Philippines,Bislig,2005-08-22,3,7.97,3.59,2.22,2,2,"Australia,Canada",29
+236,Philippines,Tanza,2005-07-11,3,8.97,4.06,2.21,2,2,"Australia,Canada",30
+244,Philippines,Lapu-Lapu,2005-07-10,3,9.97,4.66,2.14,2,2,"Australia,Canada",31
+380,Poland,Tychy,2005-07-27,4,15.96,3.39,4.71,1,1,Australia,1
+270,Poland,Kalisz,2005-08-01,3,18.97,4.42,4.29,2,2,"Canada,Australia",2
+128,Poland,Jastrzebie-Zdrj,2005-07-30,3,14.97,4.09,3.66,2,2,"Australia,Canada",3
+572,Poland,Czestochowa,2005-08-02,4,13.96,4.32,3.23,2,2,"Canada,Australia",4
+558,Poland,Wroclaw,2005-07-12,3,15.97,5.45,2.93,2,2,"Australia,Canada",5
+128,Poland,Jastrzebie-Zdrj,2005-08-19,4,10.96,3.89,2.82,1,1,Australia,6
+380,Poland,Tychy,2005-06-17,3,10.97,3.99,2.75,1,1,Canada,7
+558,Poland,Wroclaw,2005-07-06,3,14.97,5.59,2.68,1,1,Canada,8
+380,Poland,Tychy,2005-08-22,3,10.97,4.24,2.59,2,2,"Canada,Australia",9
+128,Poland,Jastrzebie-Zdrj,2005-07-31,3,9.97,4.3,2.32,2,2,"Australia,Canada",10
+380,Poland,Tychy,2005-08-23,3,8.97,4.15,2.16,2,2,"Australia,Canada",11
+360,Puerto Rico,Arecibo,2005-08-19,3,12.97,4.52,2.87,2,2,"Australia,Canada",1
+360,Puerto Rico,Arecibo,2005-07-28,3,11.97,4.66,2.57,2,2,"Canada,Australia",2
+563,Romania,Bucuresti,2005-07-08,7,29.93,2.24,13.36,2,2,"Canada,Australia",1
+563,Romania,Bucuresti,2005-07-29,4,22.96,3.16,7.27,2,2,"Canada,Australia",2
+230,Romania,Botosani,2005-07-31,3,17.97,3.41,5.27,2,2,"Australia,Canada",3
+230,Romania,Botosani,2005-07-09,3,8.97,3.24,2.77,2,2,"Canada,Australia",4
+230,Romania,Botosani,2005-08-17,3,10.97,4.59,2.39,2,2,"Canada,Australia",5
+563,Romania,Bucuresti,2005-08-23,3,9.97,4.26,2.34,2,2,"Australia,Canada",6
+148,Runion,Saint-Denis,2005-08-22,4,22.96,4.71,4.87,1,1,Australia,1
+148,Runion,Saint-Denis,2005-07-28,4,20.96,4.43,4.73,2,2,"Canada,Australia",2
+148,Runion,Saint-Denis,2005-07-29,4,18.96,4.68,4.05,2,2,"Australia,Canada",3
+148,Runion,Saint-Denis,2005-08-21,4,15.96,4.85,3.29,2,2,"Canada,Australia",4
+148,Runion,Saint-Denis,2005-06-19,3,13.97,4.66,3.0,1,1,Australia,5
+148,Runion,Saint-Denis,2005-07-31,3,11.97,4.67,2.56,2,2,"Canada,Australia",6
+100,Russian Federation,Jelets,2005-06-15,3,11.97,0.99,12.09,2,2,"Australia,Canada",1
+376,Russian Federation,Kurgan,2005-07-07,3,13.97,1.66,8.42,2,2,"Canada,Australia",2
+393,Russian Federation,Korolev,2005-07-08,3,22.97,3.82,6.01,1,1,Australia,3
+44,Russian Federation,Lipetsk,2005-07-10,4,24.96,4.49,5.56,2,2,"Canada,Australia",4
+462,Russian Federation,Usolje-Sibirskoje,2005-08-19,3,22.97,4.26,5.39,2,2,"Canada,Australia",5
+487,Russian Federation,Pjatigorsk,2005-08-01,3,16.97,3.35,5.07,2,2,"Australia,Canada",6
+350,Russian Federation,Teboksary,2005-08-17,3,14.97,2.99,5.01,2,2,"Australia,Canada",7
+106,Russian Federation,Ivanovo,2005-08-01,3,20.97,4.19,5.0,2,2,"Australia,Canada",8
+17,Russian Federation,Elista,2005-07-30,4,21.96,4.39,5.0,2,2,"Australia,Canada",9
+376,Russian Federation,Kurgan,2005-07-12,3,18.97,3.88,4.89,2,2,"Canada,Australia",10
+487,Russian Federation,Pjatigorsk,2005-07-30,3,14.97,3.09,4.84,2,2,"Canada,Australia",11
+160,Russian Federation,Ljubertsy,2005-08-02,3,13.97,2.99,4.67,1,1,Australia,12
+447,Russian Federation,Nabereznyje Telny,2005-07-30,3,17.97,4.12,4.36,2,2,"Australia,Canada",13
+397,Russian Federation,Atinsk,2005-08-18,6,14.94,3.43,4.36,2,2,"Australia,Canada",14
+311,Russian Federation,Kursk,2005-07-31,3,20.97,4.99,4.2,2,2,"Canada,Australia",15
+295,Russian Federation,Kolpino,2005-07-31,3,18.97,4.59,4.13,1,1,Australia,16
+346,Russian Federation,Maikop,2005-08-23,5,19.95,4.86,4.1,2,2,"Australia,Canada",17
+179,Russian Federation,Kirovo-Tepetsk,2005-08-20,3,16.97,4.3,3.95,1,1,Australia,18
+46,Russian Federation,Moscow,2005-08-01,3,15.97,4.12,3.88,2,2,"Australia,Canada",19
+346,Russian Federation,Maikop,2005-07-29,4,22.96,5.99,3.83,2,2,"Australia,Canada",20
+46,Russian Federation,Moscow,2005-08-18,4,15.96,4.19,3.81,2,2,"Australia,Canada",21
+462,Russian Federation,Usolje-Sibirskoje,2005-07-12,4,20.96,5.99,3.5,1,1,Canada,22
+462,Russian Federation,Usolje-Sibirskoje,2005-07-28,4,19.96,5.74,3.48,2,2,"Canada,Australia",23
+430,Russian Federation,Dzerzinsk,2005-08-20,3,9.97,2.99,3.33,2,2,"Australia,Canada",24
+487,Russian Federation,Pjatigorsk,2005-07-29,3,9.97,2.99,3.33,2,2,"Australia,Canada",25
+100,Russian Federation,Jelets,2005-07-09,3,18.97,5.74,3.3,1,1,Australia,26
+295,Russian Federation,Kolpino,2005-07-11,3,11.97,3.74,3.2,2,2,"Australia,Canada",27
+55,Russian Federation,Balaiha,2005-08-19,3,13.97,4.42,3.16,2,2,"Canada,Australia",28
+222,Russian Federation,Jaroslavl,2005-07-29,3,13.97,4.42,3.16,2,2,"Canada,Australia",29
+160,Russian Federation,Ljubertsy,2005-08-23,3,11.97,3.99,3.0,2,2,"Australia,Canada",30
+295,Russian Federation,Kolpino,2005-08-21,3,14.97,5.06,2.96,1,1,Canada,31
+55,Russian Federation,Balaiha,2005-06-20,3,12.97,4.39,2.95,1,1,Canada,32
+295,Russian Federation,Kolpino,2005-07-09,3,10.97,3.76,2.92,2,2,"Canada,Australia",33
+447,Russian Federation,Nabereznyje Telny,2005-08-02,3,12.97,4.49,2.89,2,2,"Australia,Canada",34
+191,Russian Federation,Novoterkassk,2005-07-27,3,13.97,4.99,2.8,1,1,Canada,35
+351,Russian Federation,Zeleznogorsk,2005-07-08,3,8.97,3.24,2.77,2,2,"Canada,Australia",36
+301,Russian Federation,Kaliningrad,2005-07-10,3,10.97,4.16,2.64,1,1,Australia,37
+351,Russian Federation,Zeleznogorsk,2005-08-23,3,10.97,4.37,2.51,2,2,"Canada,Australia",38
+106,Russian Federation,Ivanovo,2005-07-27,3,9.97,3.99,2.5,2,2,"Australia,Canada",39
+346,Russian Federation,Maikop,2005-08-02,3,12.97,5.27,2.46,2,2,"Australia,Canada",40
+46,Russian Federation,Moscow,2005-08-23,3,9.97,4.21,2.37,1,1,Canada,41
+510,Russian Federation,Kamyin,2005-06-19,3,10.97,4.66,2.35,2,2,"Canada,Australia",42
+346,Russian Federation,Maikop,2005-07-31,3,12.97,5.91,2.19,2,2,"Australia,Canada",43
+397,Russian Federation,Atinsk,2005-08-01,3,7.97,3.91,2.04,2,2,"Canada,Australia",44
+326,Saint Vincent and the Grenadines,Kingstown,2005-08-02,4,13.96,3.68,3.79,1,1,Australia,1
+326,Saint Vincent and the Grenadines,Kingstown,2005-07-29,3,13.97,4.32,3.23,2,2,"Canada,Australia",2
+417,Saudi Arabia,al-Qatif,2005-08-21,3,14.97,3.59,4.17,2,2,"Australia,Canada",1
+417,Saudi Arabia,al-Qatif,2005-08-02,3,15.97,4.62,3.46,2,2,"Canada,Australia",2
+49,Saudi Arabia,Jedda,2005-08-21,3,15.97,4.77,3.35,2,2,"Australia,Canada",3
+357,Slovakia,Bratislava,2005-07-11,3,16.97,3.28,5.17,2,2,"Canada,Australia",1
+357,Slovakia,Bratislava,2005-08-01,4,13.96,3.57,3.91,2,2,"Australia,Canada",2
+132,South Africa,Botshabelo,2005-08-01,4,22.96,3.2,7.18,2,2,"Australia,Canada",1
+109,South Africa,Klerksdorp,2005-05-31,3,15.97,2.99,5.34,1,1,Canada,2
+145,South Africa,Soshanguve,2005-07-07,3,20.97,3.99,5.26,2,2,"Australia,Canada",3
+407,South Africa,Rustenburg,2005-07-28,4,22.96,4.59,5.0,2,2,"Australia,Canada",4
+145,South Africa,Soshanguve,2005-08-19,4,15.96,3.39,4.71,2,2,"Australia,Canada",5
+125,South Africa,Boksburg,2005-08-17,4,15.96,3.99,4.0,1,1,Canada,6
+407,South Africa,Rustenburg,2005-08-02,3,17.97,4.57,3.93,2,2,"Canada,Australia",7
+132,South Africa,Botshabelo,2005-07-08,3,11.97,3.21,3.73,2,2,"Canada,Australia",8
+471,South Africa,Johannesburg,2005-08-21,3,13.97,3.89,3.59,2,2,"Canada,Australia",9
+125,South Africa,Boksburg,2005-07-29,3,10.97,3.87,2.83,2,2,"Australia,Canada",10
+132,South Africa,Botshabelo,2005-07-10,3,8.97,3.37,2.66,2,2,"Australia,Canada",11
+432,South Africa,Newcastle,2005-07-28,3,12.97,5.13,2.53,1,1,Australia,12
+555,South Africa,Chatsworth,2005-08-17,3,12.97,5.13,2.53,2,2,"Canada,Australia",13
+125,South Africa,Boksburg,2005-07-31,3,8.97,4.37,2.05,2,2,"Australia,Canada",14
+237,South Korea,Naju,2005-08-20,3,20.97,4.64,4.52,1,1,Australia,1
+245,South Korea,Uijongbu,2005-07-27,5,17.95,3.99,4.5,2,2,"Australia,Canada",2
+237,South Korea,Naju,2005-07-28,3,16.97,4.24,4.0,2,2,"Canada,Australia",3
+536,South Korea,Tonghae,2005-08-17,3,16.97,5.37,3.16,2,2,"Canada,Australia",4
+88,South Korea,Cheju,2005-07-06,4,13.96,4.66,3.0,2,2,"Australia,Canada",5
+237,South Korea,Naju,2005-07-29,3,13.97,4.85,2.88,2,2,"Australia,Canada",6
+237,South Korea,Naju,2005-07-31,4,10.96,4.9,2.24,2,2,"Canada,Australia",7
+52,Spain,A Corua (La Corua),2005-08-22,3,15.97,3.42,4.67,2,2,"Australia,Canada",1
+469,Spain,Ourense (Orense),2005-08-23,3,17.97,4.29,4.19,1,1,Canada,2
+469,Spain,Ourense (Orense),2005-08-01,4,15.96,4.49,3.55,1,1,Canada,3
+408,Sri Lanka,Jaffna,2005-08-20,3,14.97,3.91,3.83,2,2,"Canada,Australia",1
+408,Sri Lanka,Jaffna,2005-08-23,3,11.97,4.18,2.86,2,2,"Canada,Australia",2
+50,Sudan,Omdurman,2005-07-10,3,21.97,3.32,6.62,2,2,"Australia,Canada",1
+50,Sudan,Omdurman,2005-07-31,5,26.95,4.49,6.0,2,2,"Canada,Australia",2
+395,Sudan,al-Qadarif,2005-08-23,3,8.97,3.79,2.37,1,1,Canada,3
+66,Sweden,Malm,2005-07-11,3,18.97,4.28,4.43,2,2,"Canada,Australia",1
+66,Sweden,Malm,2005-08-21,4,13.96,3.29,4.24,2,2,"Australia,Canada",2
+66,Sweden,Malm,2005-07-07,3,14.97,4.21,3.56,2,2,"Australia,Canada",3
+598,Switzerland,Lausanne,2005-07-06,3,12.97,2.99,4.34,2,2,"Canada,Australia",1
+598,Switzerland,Lausanne,2005-07-12,4,14.96,4.49,3.33,2,2,"Canada,Australia",2
+155,Switzerland,Bern,2005-07-11,3,15.97,4.99,3.2,2,2,"Canada,Australia",3
+155,Switzerland,Bern,2005-08-21,3,14.97,4.7,3.19,2,2,"Canada,Australia",4
+577,Taiwan,Tanshui,2005-07-28,3,21.97,3.42,6.42,2,2,"Australia,Canada",1
+75,Taiwan,Changhwa,2005-07-30,3,15.97,2.8,5.7,1,1,Australia,2
+139,Taiwan,Touliu,2005-07-09,3,17.97,3.16,5.69,2,2,"Australia,Canada",3
+576,Taiwan,Fengshan,2005-07-31,5,21.95,4.19,5.24,2,2,"Australia,Canada",4
+139,Taiwan,Touliu,2005-08-22,5,21.95,4.37,5.02,2,2,"Canada,Australia",5
+30,Taiwan,Lungtan,2005-07-09,3,16.97,3.42,4.96,2,2,"Australia,Canada",6
+30,Taiwan,Lungtan,2005-07-28,4,19.96,4.29,4.65,2,2,"Australia,Canada",7
+348,Taiwan,Hsichuh,2005-07-08,4,20.96,4.59,4.57,2,2,"Australia,Canada",8
+517,Taiwan,Chungho,2005-07-07,4,17.96,4.59,3.91,2,2,"Australia,Canada",9
+75,Taiwan,Changhwa,2005-08-18,5,14.95,4.39,3.41,2,2,"Australia,Canada",10
+348,Taiwan,Hsichuh,2005-08-19,3,13.97,4.24,3.29,1,1,Australia,11
+5,Taiwan,Nantou,2005-07-09,3,12.97,3.99,3.25,2,2,"Canada,Australia",12
+348,Taiwan,Hsichuh,2005-08-02,3,13.97,4.34,3.22,2,2,"Australia,Canada",13
+348,Taiwan,Hsichuh,2005-08-20,4,12.96,4.32,3.0,2,2,"Australia,Canada",14
+30,Taiwan,Lungtan,2005-07-11,3,11.97,4.09,2.93,2,2,"Australia,Canada",15
+348,Taiwan,Hsichuh,2005-07-29,3,12.97,4.57,2.84,2,2,"Canada,Australia",16
+577,Taiwan,Tanshui,2005-08-23,3,10.97,4.59,2.39,1,1,Australia,17
+73,Taiwan,Chiayi,2005-08-02,3,10.97,4.72,2.32,2,2,"Canada,Australia",18
+577,Taiwan,Tanshui,2005-08-01,3,10.97,4.81,2.28,2,2,"Australia,Canada",19
+576,Taiwan,Fengshan,2005-07-06,3,10.97,4.85,2.26,2,2,"Canada,Australia",20
+75,Taiwan,Changhwa,2005-07-28,3,5.97,2.66,2.24,2,2,"Canada,Australia",21
+190,Tanzania,Tabora,2005-08-02,4,24.96,3.99,6.26,2,2,"Canada,Australia",1
+481,Tanzania,Mwanza,2005-07-08,4,16.96,2.99,5.67,1,1,Canada,2
+220,Tanzania,Zanzibar,2005-07-10,3,6.97,1.99,3.5,1,1,Australia,3
+190,Tanzania,Tabora,2005-07-27,3,13.97,4.32,3.23,2,2,"Canada,Australia",4
+220,Tanzania,Zanzibar,2005-08-19,3,10.97,5.22,2.1,2,2,"Canada,Australia",5
+190,Tanzania,Tabora,2005-08-21,3,8.97,4.3,2.09,1,1,Australia,6
+481,Tanzania,Mwanza,2005-08-20,3,9.97,4.82,2.07,2,2,"Australia,Canada",7
+390,Thailand,Nakhon Sawan,2005-08-20,6,27.94,4.29,6.51,2,2,"Canada,Australia",1
+390,Thailand,Nakhon Sawan,2005-08-22,3,18.97,4.43,4.28,1,1,Australia,2
+86,Thailand,Songkhla,2005-08-01,3,20.97,5.41,3.88,1,1,Australia,3
+42,Thailand,Pak Kret,2005-07-28,3,10.97,3.62,3.03,1,1,Canada,4
+42,Thailand,Pak Kret,2005-07-29,3,10.97,3.63,3.02,2,2,"Canada,Australia",5
+390,Thailand,Nakhon Sawan,2005-07-07,3,11.97,4.82,2.48,2,2,"Canada,Australia",6
+335,Tunisia,Sousse,2005-07-07,4,17.96,2.99,6.01,2,2,"Australia,Canada",1
+335,Tunisia,Sousse,2005-07-30,3,11.97,3.66,3.27,2,2,"Canada,Australia",2
+124,Turkey,Ktahya,2005-05-31,3,14.97,0.99,15.12,1,1,Australia,1
+172,Turkey,Batman,2005-07-08,3,17.97,1.32,13.61,2,2,"Canada,Australia",2
+327,Turkey,Adana,2005-08-23,3,23.97,3.24,7.4,2,2,"Canada,Australia",3
+566,Turkey,Tokat,2005-07-29,5,17.95,4.1,4.38,2,2,"Canada,Australia",4
+204,Turkey,Usak,2005-08-22,3,17.97,4.3,4.18,2,2,"Canada,Australia",5
+327,Turkey,Adana,2005-08-22,3,11.97,2.99,4.0,2,2,"Canada,Australia",6
+366,Turkey,Balikesir,2005-08-21,4,15.96,3.99,4.0,1,1,Canada,7
+366,Turkey,Balikesir,2005-07-12,3,13.97,3.66,3.82,2,2,"Australia,Canada",8
+366,Turkey,Balikesir,2005-07-27,4,14.96,4.39,3.41,2,2,"Australia,Canada",9
+480,Turkey,Gaziantep,2005-08-19,3,15.97,4.87,3.28,1,1,Australia,10
+518,Turkey,Sivas,2005-07-28,3,13.97,4.32,3.23,2,2,"Canada,Australia",11
+172,Turkey,Batman,2005-07-30,3,15.97,4.99,3.2,2,2,"Australia,Canada",12
+518,Turkey,Sivas,2005-07-27,4,14.96,4.79,3.12,2,2,"Canada,Australia",13
+172,Turkey,Batman,2005-07-27,4,16.96,5.49,3.09,2,2,"Canada,Australia",14
+566,Turkey,Tokat,2005-07-28,4,13.96,4.59,3.04,2,2,"Canada,Australia",15
+13,Turkey,Osmaniye,2005-07-31,3,13.97,4.79,2.92,1,1,Canada,16
+13,Turkey,Osmaniye,2005-08-19,3,13.97,4.99,2.8,1,1,Australia,17
+204,Turkey,Usak,2005-07-12,3,10.97,4.16,2.64,2,2,"Australia,Canada",18
+172,Turkey,Batman,2005-08-19,3,11.97,4.91,2.44,2,2,"Australia,Canada",19
+278,Turkey,Inegl,2005-08-01,3,9.97,4.21,2.37,2,2,"Canada,Australia",20
+566,Turkey,Tokat,2005-07-06,3,9.97,4.24,2.35,2,2,"Australia,Canada",21
+172,Turkey,Batman,2005-08-23,3,10.97,4.77,2.3,2,2,"Australia,Canada",22
+200,Turkmenistan,Ashgabat,2005-08-23,3,17.97,5.69,3.16,2,2,"Australia,Canada",1
+200,Turkmenistan,Ashgabat,2005-07-11,3,8.97,4.43,2.02,2,2,"Canada,Australia",2
+105,Tuvalu,Funafuti,2005-07-30,4,22.96,4.32,5.31,1,1,Australia,1
+105,Tuvalu,Funafuti,2005-08-23,3,12.97,4.17,3.11,1,1,Australia,2
+187,Ukraine,Sumy,2005-08-18,3,26.97,5.39,5.0,2,2,"Australia,Canada",1
+131,Ukraine,Mukateve,2005-08-19,4,18.96,3.84,4.94,2,2,"Australia,Canada",2
+386,Ukraine,Kamjanets-Podilskyi,2005-08-20,3,13.97,3.79,3.69,2,2,"Canada,Australia",3
+386,Ukraine,Kamjanets-Podilskyi,2005-07-11,4,14.96,4.1,3.65,2,2,"Canada,Australia",4
+82,Ukraine,Simferopol,2005-07-30,3,19.97,5.62,3.55,2,2,"Australia,Canada",5
+475,Ukraine,ostka,2005-07-28,3,15.97,4.74,3.37,2,2,"Canada,Australia",6
+131,Ukraine,Mukateve,2005-08-18,3,11.97,3.79,3.16,2,2,"Canada,Australia",7
+386,Ukraine,Kamjanets-Podilskyi,2005-08-01,3,11.97,4.22,2.84,2,2,"Canada,Australia",8
+475,Ukraine,ostka,2005-07-09,4,14.96,5.99,2.5,2,2,"Australia,Canada",9
+452,United Arab Emirates,Abu Dhabi,2005-07-06,3,13.97,3.28,4.26,2,2,"Australia,Canada",1
+98,United Arab Emirates,al-Ayn,2005-07-29,3,16.97,4.19,4.05,2,2,"Canada,Australia",2
+292,United Arab Emirates,Sharja,2005-07-27,3,11.97,4.7,2.55,2,2,"Australia,Canada",3
+452,United Arab Emirates,Abu Dhabi,2005-07-07,3,8.97,3.69,2.43,2,2,"Canada,Australia",4
+142,United Kingdom,Dundee,2005-07-30,3,16.97,3.56,4.77,1,1,Canada,1
+252,United Kingdom,London,2005-07-27,3,6.97,1.49,4.68,2,2,"Canada,Australia",2
+583,United Kingdom,Southampton,2005-07-06,3,17.97,4.99,3.6,2,2,"Canada,Australia",3
+512,United Kingdom,London,2005-08-22,4,13.96,4.82,2.9,2,2,"Canada,Australia",4
+477,United Kingdom,Stockport,2005-07-29,3,15.97,5.66,2.82,2,2,"Canada,Australia",5
+583,United Kingdom,Southampton,2005-08-01,3,12.97,5.74,2.26,1,1,Australia,6
+497,United Kingdom,York,2005-06-18,3,17.97,7.99,2.25,2,2,"Australia,Canada",7
+382,United States,Manchester,2005-07-30,3,21.97,2.82,7.79,1,1,Canada,1
+275,United States,Peoria,2005-08-21,4,19.96,3.35,5.96,2,2,"Canada,Australia",2
+2,United States,San Bernardino,2005-07-30,5,30.95,5.24,5.91,2,2,"Canada,Australia",3
+212,United States,Bellevue,2005-07-08,3,21.97,3.74,5.87,1,1,Australia,4
+420,United States,El Monte,2005-08-01,3,20.97,3.63,5.78,2,2,"Australia,Canada",5
+182,United States,Compton,2005-07-28,3,14.97,2.77,5.4,1,1,Australia,6
+158,United States,Greensboro,2005-08-23,3,14.97,2.93,5.11,1,1,Canada,7
+51,United States,Fontana,2005-08-21,3,16.97,3.52,4.82,2,2,"Australia,Canada",8
+146,United States,Sterling Heights,2005-07-11,3,19.97,4.21,4.74,2,2,"Canada,Australia",9
+146,United States,Sterling Heights,2005-08-17,3,17.97,3.82,4.7,1,1,Canada,10
+14,United States,Citrus Heights,2005-07-09,3,13.97,2.99,4.67,2,2,"Canada,Australia",11
+158,United States,Greensboro,2005-08-02,4,15.96,3.53,4.52,2,2,"Australia,Canada",12
+181,United States,Memphis,2005-08-01,5,26.95,6.07,4.44,2,2,"Australia,Canada",13
+276,United States,Warren,2005-07-30,4,16.96,3.82,4.44,1,1,Canada,14
+294,United States,Dayton,2005-08-01,5,20.95,4.79,4.37,2,2,"Australia,Canada",15
+149,United States,Brockton,2005-06-18,3,18.97,4.49,4.22,2,2,"Australia,Canada",16
+276,United States,Warren,2005-08-18,3,15.97,3.99,4.0,2,2,"Australia,Canada",17
+51,United States,Fontana,2005-07-09,3,16.97,4.32,3.93,2,2,"Canada,Australia",18
+112,United States,Lancaster,2005-07-31,4,17.96,4.7,3.82,2,2,"Australia,Canada",19
+593,United States,Garden Grove,2005-08-01,3,13.97,3.74,3.74,2,2,"Canada,Australia",20
+382,United States,Manchester,2005-06-18,4,10.96,2.99,3.67,1,1,Canada,21
+526,United States,Cape Coral,2005-07-27,4,16.96,4.66,3.64,1,1,Australia,22
+212,United States,Bellevue,2005-08-18,3,12.97,3.59,3.61,2,2,"Canada,Australia",23
+112,United States,Lancaster,2005-08-20,3,17.97,5.07,3.54,1,1,Australia,24
+112,United States,Lancaster,2005-08-17,3,16.97,4.89,3.47,2,2,"Canada,Australia",25
+146,United States,Sterling Heights,2005-08-02,4,17.96,5.28,3.4,2,2,"Australia,Canada",26
+2,United States,San Bernardino,2005-07-27,3,16.97,4.99,3.4,2,2,"Australia,Canada",27
+63,United States,Lincoln,2005-07-10,3,16.97,4.99,3.4,2,2,"Canada,Australia",28
+214,United States,Sunnyvale,2005-08-19,3,15.97,4.74,3.37,2,2,"Australia,Canada",29
+181,United States,Memphis,2005-07-30,3,19.97,5.99,3.33,2,2,"Australia,Canada",30
+526,United States,Cape Coral,2005-06-17,4,14.96,4.49,3.33,2,2,"Australia,Canada",31
+2,United States,San Bernardino,2005-08-02,4,16.96,5.12,3.31,2,2,"Canada,Australia",32
+63,United States,Lincoln,2005-08-22,3,12.97,3.92,3.31,1,1,Canada,33
+6,United States,Laredo,2005-08-17,3,8.97,2.82,3.18,1,1,Canada,34
+305,United States,Arlington,2005-08-02,3,13.97,4.54,3.08,2,2,"Australia,Canada",35
+181,United States,Memphis,2005-08-19,4,15.96,5.55,2.88,1,1,Australia,36
+276,United States,Warren,2005-08-23,3,11.97,4.3,2.78,2,2,"Australia,Canada",37
+2,United States,San Bernardino,2005-07-29,3,14.97,5.39,2.78,2,2,"Australia,Canada",38
+96,United States,Augusta-Richmond County,2005-07-10,3,8.97,3.29,2.73,1,1,Canada,39
+561,United States,Garland,2005-08-02,3,10.97,4.12,2.66,2,2,"Canada,Australia",40
+269,United States,Salinas,2005-07-12,3,13.97,5.32,2.63,2,2,"Canada,Australia",41
+112,United States,Lancaster,2005-08-23,3,12.97,4.99,2.6,1,1,Canada,42
+330,United States,Aurora,2005-07-06,3,10.97,4.39,2.5,1,1,Australia,43
+63,United States,Lincoln,2005-07-31,5,13.95,5.66,2.46,2,2,"Canada,Australia",44
+504,United States,Joliet,2005-08-19,3,8.97,3.69,2.43,2,2,"Canada,Australia",45
+214,United States,Sunnyvale,2005-05-31,3,6.97,2.99,2.33,2,2,"Canada,Australia",46
+479,United States,Akron,2005-06-17,4,13.96,5.99,2.33,2,2,"Canada,Australia",47
+158,United States,Greensboro,2005-08-20,3,6.97,3.06,2.28,2,2,"Australia,Canada",48
+457,United States,Rockford,2005-06-19,3,9.97,4.59,2.17,1,1,Canada,49
+181,United States,Memphis,2005-08-18,3,11.97,5.86,2.04,1,1,Canada,50
+290,Venezuela,Valle de la Pascua,2005-06-15,3,20.97,2.99,7.01,2,2,"Canada,Australia",1
+113,Venezuela,Cuman,2005-06-20,3,16.97,2.59,6.55,2,2,"Australia,Canada",2
+453,Venezuela,Maracabo,2005-08-21,4,18.96,4.74,4.0,2,2,"Canada,Australia",3
+111,Venezuela,Caracas,2005-08-02,3,12.97,3.49,3.72,2,2,"Canada,Australia",4
+174,Venezuela,Ocumare del Tuy,2005-08-01,3,16.97,4.7,3.61,2,2,"Canada,Australia",5
+539,Venezuela,Valencia,2005-06-15,3,9.97,2.99,3.33,2,2,"Australia,Canada",6
+520,Vietnam,Nha Trang,2005-08-18,3,16.97,3.1,5.47,1,1,Canada,1
+340,Vietnam,Hanoi,2005-07-29,4,15.96,2.99,5.34,2,2,"Australia,Canada",2
+340,Vietnam,Hanoi,2005-08-01,4,16.96,3.43,4.94,2,2,"Canada,Australia",3
+340,Vietnam,Hanoi,2005-08-22,3,15.97,3.46,4.62,2,2,"Canada,Australia",4
+472,Vietnam,Nam Dinh,2005-07-11,3,18.97,4.32,4.39,2,2,"Canada,Australia",5
+520,Vietnam,Nha Trang,2005-07-10,3,19.97,4.82,4.14,2,2,"Australia,Canada",6
+532,Vietnam,Cam Ranh,2005-08-19,3,18.97,4.9,3.87,2,2,"Australia,Canada",7
+199,Vietnam,Haiphong,2005-08-01,3,16.97,4.41,3.85,2,2,"Canada,Australia",8
+532,Vietnam,Cam Ranh,2005-07-09,3,15.97,4.24,3.77,2,2,"Australia,Canada",9
+520,Vietnam,Nha Trang,2005-08-23,3,11.97,3.55,3.37,2,2,"Canada,Australia",10
+199,Vietnam,Haiphong,2005-07-31,3,12.97,4.43,2.93,2,2,"Canada,Australia",11
+532,Vietnam,Cam Ranh,2005-08-02,3,13.97,5.18,2.7,2,2,"Canada,Australia",12
+472,Vietnam,Nam Dinh,2005-08-21,3,14.97,5.99,2.5,2,2,"Canada,Australia",13
+340,Vietnam,Hanoi,2005-08-19,3,7.97,3.74,2.13,2,2,"Australia,Canada",14
+406,"Virgin Islands, U.S.",Charlotte Amalie,2005-07-27,4,23.96,2.99,8.01,2,2,"Australia,Canada",1
+406,"Virgin Islands, U.S.",Charlotte Amalie,2005-08-21,3,12.97,4.18,3.1,1,1,Australia,2
+406,"Virgin Islands, U.S.",Charlotte Amalie,2005-07-30,5,11.95,3.99,2.99,2,2,"Canada,Australia",3
+210,Yemen,Aden,2005-07-08,3,17.97,3.37,5.33,1,1,Canada,1
+470,Yemen,Hodeida,2005-08-18,3,23.97,4.91,4.88,2,2,"Australia,Canada",2
+470,Yemen,Hodeida,2005-07-06,3,15.97,3.32,4.81,1,1,Canada,3
+210,Yemen,Aden,2005-07-07,4,12.96,3.49,3.71,2,2,"Australia,Canada",4
+213,Yemen,Taizz,2005-07-30,3,14.97,4.1,3.65,2,2,"Australia,Canada",5
+210,Yemen,Aden,2005-07-29,3,13.97,3.99,3.5,1,1,Australia,6
+210,Yemen,Aden,2005-08-19,3,12.97,4.99,2.6,2,2,"Canada,Australia",7
+7,Yugoslavia,Kragujevac,2005-08-01,4,22.96,5.44,4.22,2,2,"Australia,Canada",1
+553,Yugoslavia,Novi Sad,2005-07-06,5,22.95,6.74,3.41,2,2,"Australia,Canada",2
+438,Zambia,Kitwe,2005-07-27,3,11.97,4.37,2.74,2,2,"Australia,Canada",1

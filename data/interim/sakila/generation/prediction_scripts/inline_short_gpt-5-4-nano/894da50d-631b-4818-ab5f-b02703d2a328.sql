@@ -1,173 +1,154 @@
-WITH monthly_pay AS (
+WITH RECURSIVE
+months(month_start) AS (
+  SELECT date('2000-01-01', 'start of month')
+),
+payment_by_day AS (
   SELECT
+    p.p01 AS payment_id,
     p.p02 AS customer_id,
     p.p03 AS staff_id,
-    st.o07 AS staff_store_id,
+    p.p05 AS amount,
     date(p.p06, 'start of month') AS month_start,
-    SUM(p.p05) AS month_amount,
-    COUNT(*) AS payment_count,
-    MAX(p.p05) AS max_payment,
-    COUNT(DISTINCT CASE WHEN st.o07 <> c.h02 THEN st.o07 END) AS other_store_cnt
-  FROM pay AS p
-  JOIN cus AS c
-    ON c.h01 = p.p02
-  JOIN stf AS st
-    ON st.o01 = p.p03
-  WHERE p.p04 IS NOT NULL
-  GROUP BY
-    p.p02,
-    p.p03,
-    st.o07,
-    date(p.p06, 'start of month')
+    p.p06 AS payment_datetime
+  FROM pay p
+),
+payment_with_geo AS (
+  SELECT
+    pbd.customer_id,
+    pbd.month_start,
+    pbd.amount,
+    pbd.staff_id,
+    pbd.payment_id,
+    c.h06 AS customer_addr_id,
+    cust_cnt.c01 AS customer_store_id_from_citycode,
+    cust_country.c02 AS customer_country,
+    cust_city.d02 AS customer_city,
+    s.o07 AS staff_store_id,
+    staff_country.c02 AS staff_country,
+    staff_city.d02 AS staff_city,
+    pbd.payment_datetime,
+    CASE
+      WHEN staff_city.d01 IS NOT NULL THEN 1
+      ELSE 0
+    END AS has_staff_city
+  FROM payment_by_day pbd
+  JOIN cus c
+    ON c.h01 = pbd.customer_id
+  JOIN adr cust_adr
+    ON cust_adr.e01 = c.h06
+  JOIN cty cust_city
+    ON cust_city.d01 = cust_adr.e05
+  JOIN cnt cust_country
+    ON cust_country.c01 = cust_city.d03
+  JOIN stf s
+    ON s.o01 = pbd.staff_id
+  JOIN adr staff_adr
+    ON staff_adr.e01 = s.o04
+  JOIN cty staff_city
+    ON staff_city.d01 = staff_adr.e05
+  JOIN cnt staff_country
+    ON staff_country.c01 = staff_city.d03
 ),
 monthly_customer AS (
   SELECT
-    mp.customer_id,
-    mp.month_start,
-    SUM(mp.month_amount) AS month_amount,
-    SUM(mp.payment_count) AS payment_count,
-    MAX(mp.max_payment) AS max_payment,
-    SUM(CASE WHEN mp.staff_store_id <> (SELECT h02 FROM cus WHERE h01 = mp.customer_id) THEN mp.payment_count ELSE 0 END) AS other_store_payment_count
-  FROM monthly_pay AS mp
+    pwg.customer_id,
+    pwg.month_start,
+    SUM(pwg.amount) AS month_amount,
+    COUNT(*) AS payment_count,
+    MAX(pwg.amount) AS max_payment,
+    COUNT(DISTINCT pwg.staff_id) AS distinct_staff_count,
+    COUNT(DISTINCT pwg.staff_store_id) AS distinct_staff_store_count,
+    SUM(
+      CASE
+        WHEN pwg.staff_city <> pwg.customer_city
+          OR pwg.staff_country <> pwg.customer_country
+        THEN 1 ELSE 0
+      END
+    ) * 1.0 / COUNT(*) AS foreign_store_share
+  FROM payment_with_geo pwg
   GROUP BY
-    mp.customer_id,
-    mp.month_start
+    pwg.customer_id,
+    pwg.month_start
 ),
-monthly_with_avg AS (
+monthly_with_history AS (
   SELECT
     mc.*,
     AVG(mc.month_amount) OVER (
       PARTITION BY mc.customer_id
       ORDER BY mc.month_start
       ROWS BETWEEN UNBOUNDED PRECEDING AND 1 PRECEDING
-    ) AS prev_months_avg_amount
-  FROM monthly_customer AS mc
+    ) AS avg_prev_month_amount
+  FROM monthly_customer mc
 ),
-month_qualified AS (
+qualifying_months AS (
   SELECT
-    mwa.*
-  FROM monthly_with_avg AS mwa
-  WHERE mwa.prev_months_avg_amount IS NOT NULL
-    AND mwa.month_amount > 3.0 * mwa.prev_months_avg_amount
-    AND mwa.payment_count >= 5
+    mwh.*
+  FROM monthly_with_history mwh
+  WHERE mwh.avg_prev_month_amount IS NOT NULL
+    AND mwh.payment_count >= 5
+    AND mwh.foreign_store_share > 0
+    AND mwh.month_amount > 3.0 * mwh.avg_prev_month_amount
+    AND mwh.distinct_staff_store_count >= 2
 ),
-month_ranked AS (
+payment_month_films AS (
+  SELECT DISTINCT
+    p.p02 AS customer_id,
+    date(p.p06, 'start of month') AS month_start,
+    cat.g02 AS category_name
+  FROM pay p
+  JOIN ren r
+    ON r.q01 = p.p04
+  JOIN inv i
+    ON i.n01 = r.q03
+  JOIN flc fc
+    ON fc.l01 = i.n02
+  JOIN cat
+    ON cat.g01 = fc.l02
+),
+category_list AS (
   SELECT
-    mq.*,
-    RANK() OVER (
-      PARTITION BY mq.month_start
-      ORDER BY mq.month_amount DESC
-    ) AS month_rank
-  FROM month_qualified AS mq
+    pmf.customer_id,
+    pmf.month_start,
+    GROUP_CONCAT(DISTINCT pmf.category_name, ', ') AS film_categories
+  FROM payment_month_films pmf
+  GROUP BY
+    pmf.customer_id,
+    pmf.month_start
 ),
 customer_geo AS (
   SELECT
     c.h01 AS customer_id,
-    c.h02 AS customer_store_id,
-    cty_c.d02 AS customer_city,
-    cnt_c.c02 AS customer_country
-  FROM cus AS c
-  JOIN adr AS a_c
-    ON a_c.e01 = c.h06
-  JOIN cty AS cty_c
-    ON cty_c.d01 = a_c.e05
-  JOIN cnt AS cnt_c
-    ON cnt_c.c01 = cty_c.d03
-),
-monthly_store_geo AS (
-  SELECT
-    p.p02 AS customer_id,
-    date(p.p06, 'start of month') AS month_start,
-    SUM(p.p05) AS month_amount_from_staff_store,
-    COUNT(*) AS payment_count_from_staff_store,
-    st.o07 AS staff_store_id
-  FROM pay AS p
-  JOIN stf AS st
-    ON st.o01 = p.p03
-  WHERE p.p04 IS NOT NULL
-  GROUP BY
-    p.p02,
-    date(p.p06, 'start of month'),
-    st.o07
-),
-foreign_store_share AS (
-  SELECT
-    msg.customer_id,
-    msg.month_start,
-    SUM(
-      CASE
-        WHEN sg.staff_city <> cg.customer_city OR sg.staff_country <> cg.customer_country
-          THEN msg.payment_count_from_staff_store
-        ELSE 0
-      END
-    ) AS foreign_payment_count,
-    SUM(msg.payment_count_from_staff_store) AS total_payment_count
-  FROM monthly_store_geo AS msg
-  JOIN customer_geo AS cg
-    ON cg.customer_id = msg.customer_id
-  JOIN sto AS sg_sto
-    ON sg_sto.j01 = msg.staff_store_id
-  JOIN adr AS sg_a
-    ON sg_a.e01 = sg_sto.j02
-  JOIN cty AS sg_city
-    ON sg_city.d01 = sg_a.e05
-  JOIN cnt AS sg_country
-    ON sg_country.c01 = sg_city.d03
-  JOIN (
-    SELECT
-      cty.d01,
-      cty.d02 AS staff_city,
-      cnt.c02 AS staff_country
-    FROM cty
-    JOIN cnt ON cnt.c01 = cty.d03
-  ) AS sg
-    ON sg.d01 = sg_city.d01
-  GROUP BY
-    msg.customer_id,
-    msg.month_start
-),
-month_categories AS (
-  SELECT
-    c.h01 AS customer_id,
-    date(p.p06, 'start of month') AS month_start,
-    group_concat(DISTINCT cat.g02, ', ') AS categories
-  FROM pay AS p
-  JOIN cus AS c
-    ON c.h01 = p.p02
-  JOIN ren AS r
-    ON r.q01 = p.p04
-  JOIN inv AS i
-    ON i.n01 = r.q03
-  JOIN flc AS l
-    ON l.l01 = i.n02
-  JOIN cat
-    ON cat.g01 = l.l02
-  WHERE p.p04 IS NOT NULL
-  GROUP BY
-    c.h01,
-    date(p.p06, 'start of month')
+    ct.d02 AS customer_city,
+    cnt.c02 AS customer_country
+  FROM cus c
+  JOIN adr a
+    ON a.e01 = c.h06
+  JOIN cty ct
+    ON ct.d01 = a.e05
+  JOIN cnt
+    ON cnt.c01 = ct.d03
 )
 SELECT
-  mrq.customer_id,
-  cg.customer_country,
-  cg.customer_city,
-  strftime('%Y-%m', mrq.month_start) AS month,
-  ROUND(mrq.month_amount, 2) AS month_amount,
-  mrq.payment_count,
-  ROUND(1.0 * fss.foreign_payment_count / NULLIF(fss.total_payment_count, 0), 4) AS foreign_store_share,
-  ROUND(mrq.max_payment, 2) AS max_payment,
-  mrq.month_rank,
-  mc.categories AS film_categories
-FROM month_ranked AS mrq
-JOIN customer_geo AS cg
-  ON cg.customer_id = mrq.customer_id
-JOIN foreign_store_share AS fss
-  ON fss.customer_id = mrq.customer_id
- AND fss.month_start = mrq.month_start
-LEFT JOIN month_categories AS mc
-  ON mc.customer_id = mrq.customer_id
- AND mc.month_start = mrq.month_start
+  cm.customer_id,
+  cg.customer_country AS customer_country,
+  cg.customer_city AS customer_city,
+  strftime('%Y-%m', cm.month_start) AS month,
+  ROUND(cm.month_amount, 2) AS month_amount,
+  cm.payment_count,
+  ROUND(cm.foreign_store_share, 4) AS foreign_store_share,
+  ROUND(cm.max_payment, 2) AS max_payment,
+  RANK() OVER (
+    PARTITION BY cm.month_start
+    ORDER BY cm.month_amount DESC
+  ) AS month_rank,
+  cl.film_categories AS film_categories
+FROM qualifying_months cm
+JOIN customer_geo cg
+  ON cg.customer_id = cm.customer_id
+LEFT JOIN category_list cl
+  ON cl.customer_id = cm.customer_id
+ AND cl.month_start = cm.month_start
 ORDER BY
-  mrq.month_start,
-  mrq.month_rank,
-  mrq.customer_id;
+  cm.month_start,
+  cm.month_amount DESC,
+  cm.customer_id;

@@ -1,13 +1,11 @@
 SELECT
   c.h01 AS customer_id,
-  c.h03 AS first_name,
-  c.h04 AS last_name,
+  c.h03 || ' ' || c.h04 AS customer_name,
   s.o01 AS staff_id,
-  s.o02 AS staff_first_name,
-  s.o03 AS staff_last_name,
+  s.o02 || ' ' || s.o03 AS staff_name,
   COUNT(p.p01) AS payment_count,
   SUM(p.p05) AS total_amount,
-  AVG(p.p05) AS avg_payment,
+  AVG(p.p05) AS avg_check,
   CAST(COUNT(p.p01) AS REAL) / SUM(COUNT(p.p01)) OVER (PARTITION BY c.h01) AS staff_share_of_customer_payments
 FROM pay AS p
 JOIN cus AS c

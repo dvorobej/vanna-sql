@@ -1,64 +1,59 @@
-WITH monthly_customer_stats AS (
+WITH monthly_customer_data AS (
     SELECT
         p.p02 AS customer_id,
-        date(p.p06, 'start of month') AS month_start,
+        strftime('%Y-%m', p.p06) AS payment_month,
         SUM(p.p05) AS total_amount,
         COUNT(*) AS payment_count,
         MAX(p.p05) AS max_payment,
         COUNT(DISTINCT p.p03) AS staff_count,
         COUNT(DISTINCT fc.l02) AS category_count,
-        SUM(CASE WHEN i.n03 <> c.h02 THEN 1 ELSE 0 END) AS foreign_store_payment_count
+        SUM(CASE WHEN i.n03 <> c.h02 THEN 1 ELSE 0 END) AS foreign_store_payment_count,
+        COUNT(*) AS total_payment_count
     FROM pay AS p
     JOIN cus AS c ON c.h01 = p.p02
     JOIN ren AS r ON r.q01 = p.p04
     JOIN inv AS i ON i.n01 = r.q03
     JOIN flc AS fc ON fc.l01 = i.n02
-    GROUP BY p.p02, date(p.p06, 'start of month')
+    GROUP BY p.p02, strftime('%Y-%m', p.p06)
 ),
-rolling_stats AS (
+monthly_with_avg AS (
     SELECT
-        *,
-        AVG(total_amount) OVER (
-            PARTITION BY customer_id
-            ORDER BY month_start
+        mcd.*,
+        AVG(mcd.total_amount) OVER (
+            PARTITION BY mcd.customer_id
+            ORDER BY mcd.payment_month
             ROWS BETWEEN 3 PRECEDING AND 1 PRECEDING
-        ) AS prev_3_month_avg,
-        COUNT(*) OVER (
-            PARTITION BY customer_id
-            ORDER BY month_start
-            ROWS BETWEEN 3 PRECEDING AND 1 PRECEDING
-        ) AS prev_months_count
-    FROM monthly_customer_stats
+        ) AS prev_3_month_avg
+    FROM monthly_customer_data AS mcd
 ),
 ranked_customers AS (
     SELECT
-        rs.*,
+        mwa.*,
         c.h03 || ' ' || c.h04 AS customer_name,
         cnt.c02 AS country,
         cty.d02 AS city,
-        cnt.c01 AS country_id,
         RANK() OVER (
-            PARTITION BY cnt.c01, rs.month_start
-            ORDER BY rs.total_amount DESC
+            PARTITION BY cnt.c01, mwa.payment_month
+            ORDER BY mwa.total_amount DESC
         ) AS country_rank
-    FROM rolling_stats AS rs
-    JOIN cus AS c ON c.h01 = rs.customer_id
+    FROM monthly_with_avg AS mwa
+    JOIN cus AS c ON c.h01 = mwa.customer_id
     JOIN adr AS a ON a.e01 = c.h06
-    JOIN cty AS cty ON cty.d01 = a.e05
-    JOIN cnt AS cnt ON cnt.c01 = cty.d03
-    WHERE rs.prev_months_count = 3
-      AND rs.total_amount > 3 * rs.prev_3_month_avg
-      AND rs.staff_count >= 2
-      AND rs.category_count >= 3
+    JOIN cty ON cty.d01 = a.e05
+    JOIN cnt ON cnt.c01 = cty.d03
+    WHERE mwa.prev_3_month_avg IS NOT NULL
+      AND mwa.total_amount > 3 * mwa.prev_3_month_avg
+      AND mwa.staff_count >= 2
+      AND mwa.category_count >= 3
 )
 SELECT
-    strftime('%Y-%m', month_start) AS month,
+    payment_month,
     country,
     city,
     ROUND(total_amount, 2) AS total_amount,
     payment_count,
     ROUND(max_payment, 2) AS max_payment,
-    ROUND(CAST(foreign_store_payment_count AS REAL) / payment_count, 4) AS foreign_store_share,
+    ROUND(CAST(foreign_store_payment_count AS REAL) / total_payment_count, 4) AS foreign_store_share,
     country_rank
 FROM ranked_customers
-ORDER BY month, country, country_rank;
+ORDER BY payment_month, country, country_rank;

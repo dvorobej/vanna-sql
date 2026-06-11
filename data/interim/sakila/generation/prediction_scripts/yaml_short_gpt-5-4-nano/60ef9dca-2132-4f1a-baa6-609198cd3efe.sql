@@ -1,25 +1,22 @@
 WITH monthly AS (
   SELECT
-    c.h01 AS customer_id,
+    p.p02 AS customer_id,
     c.h02 AS store_id,
-    s.j01 AS store_store_id,
-    ct.d02 AS city,
-    cn.c02 AS country,
-    strftime('%Y-%m', p.p06) AS month,
+    strftime('%Y-%m', p.p06) AS month_key,
+    strftime('%Y-%m', p.p06) || '-01' AS month_start,
     COUNT(p.p01) AS payment_count,
     SUM(p.p05) AS month_amount
   FROM pay p
-  JOIN cus c ON c.h01 = p.p02
-  JOIN sto s ON s.j01 = c.h02
-  JOIN adr a_store ON a_store.e01 = s.j03
-  JOIN cty ct ON ct.d01 = a_store.e05
-  JOIN cnt cn ON cn.c01 = ct.d03
+  JOIN cus c
+    ON c.h01 = p.p02
   WHERE p.p06 >= '2005-01-01'
     AND p.p06 < '2006-01-01'
   GROUP BY
-    c.h01, c.h02, ct.d02, cn.c02, strftime('%Y-%m', p.p06)
+    p.p02,
+    c.h02,
+    strftime('%Y-%m', p.p06)
 ),
-year_avg AS (
+cust_avg AS (
   SELECT
     customer_id,
     store_id,
@@ -27,44 +24,78 @@ year_avg AS (
   FROM monthly
   GROUP BY customer_id, store_id
 ),
-monthly_rank AS (
+monthly_scored AS (
   SELECT
     m.*,
-    ya.avg_month_amount,
-    (m.month_amount - ya.avg_month_amount) / NULLIF(ya.avg_month_amount, 0) AS deviation_ratio,
-    RANK() OVER (
-      PARTITION BY m.store_id, m.month
-      ORDER BY m.month_amount DESC
-    ) AS store_month_rank,
-    COUNT(*) OVER (
-      PARTITION BY m.store_id, m.month
-    ) AS store_month_customer_cnt
+    a.avg_month_amount,
+    (m.month_amount - a.avg_month_amount) AS diff_from_avg,
+    (m.month_amount / NULLIF(a.avg_month_amount, 0)) AS ratio_to_avg
   FROM monthly m
-  JOIN year_avg ya
-    ON ya.customer_id = m.customer_id
-   AND ya.store_id = m.store_id
+  JOIN cust_avg a
+    ON a.customer_id = m.customer_id
+   AND a.store_id = m.store_id
+),
+store_top_pct AS (
+  SELECT
+    ms.*,
+    PERCENT_RANK() OVER (
+      PARTITION BY ms.store_id
+      ORDER BY ms.month_amount DESC
+    ) AS pr_store_month
+  FROM monthly_scored ms
+),
+last_staff AS (
+  SELECT
+    p.p02 AS customer_id,
+    c.h02 AS store_id,
+    p.p03 AS last_staff_id
+  FROM pay p
+  JOIN cus c
+    ON c.h01 = p.p02
+  WHERE p.p06 >= '2005-01-01'
+    AND p.p06 < '2006-01-01'
+  QUALIFY ROW_NUMBER() OVER (
+    PARTITION BY p.p02, c.h02
+    ORDER BY p.p06 DESC, p.p01 DESC
+  ) = 1
+),
+geo AS (
+  SELECT
+    c.h01 AS customer_id,
+    c.h02 AS store_id,
+    cn.c02 AS country,
+    ct.d02 AS city
+  FROM cus c
+  JOIN adr a
+    ON a.e01 = c.h06
+  JOIN cty ct
+    ON ct.d01 = a.e05
+  JOIN cnt cn
+    ON cn.c01 = ct.d03
 )
 SELECT
-  c.h01 AS customer_id,
+  ss.customer_id,
   c.h03 AS first_name,
   c.h04 AS last_name,
-  mr.store_id AS store_id,
-  mr.city,
-  mr.country,
-  mr.month,
-  ROUND(mr.month_amount, 2) AS month_amount,
-  mr.payment_count,
-  ROUND(mr.deviation_ratio * 100.0, 2) AS deviation_percent,
-  mr.store_month_rank AS rank_in_store_month,
-  MAX(p.p03) FILTER (WHERE p.p06 < (mr.month || '-01') || ' 23:59:59') AS last_staff_id
-FROM monthly_rank mr
-JOIN cus c ON c.h01 = mr.customer_id
-JOIN pay p ON p.p02 = c.h01
-WHERE mr.avg_month_amount IS NOT NULL
-  AND mr.month_amount > 2.0 * mr.avg_month_amount
-  AND mr.store_month_rank <= CEIL(0.05 * mr.store_month_customer_cnt)
-GROUP BY
-  c.h01, c.h03, c.h04,
-  mr.store_id, mr.city, mr.country, mr.month,
-  mr.month_amount, mr.payment_count, mr.deviation_ratio, mr.store_month_rank
-ORDER BY mr.store_id, mr.month, mr.month_amount DESC;
+  ss.store_id,
+  g.city,
+  g.country,
+  strftime('%m', ss.month_start) AS month,
+  ROUND(ss.month_amount, 2) AS month_sum,
+  ss.payment_count,
+  ROUND(ss.diff_from_avg, 2) AS deviation_from_avg,
+  ss.pr_store_month,
+  ls.last_staff_id
+FROM store_top_pct ss
+JOIN cus c
+  ON c.h01 = ss.customer_id
+ AND c.h02 = ss.store_id
+JOIN geo g
+  ON g.customer_id = ss.customer_id
+ AND g.store_id = ss.store_id
+LEFT JOIN last_staff ls
+  ON ls.customer_id = ss.customer_id
+ AND ls.store_id = ss.store_id
+WHERE ss.ratio_to_avg > 2
+  AND ss.pr_store_month <= 0.05
+ORDER BY ss.store_id, ss.month_start, ss.month_amount DESC, ss.customer_id;

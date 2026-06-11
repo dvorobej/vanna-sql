@@ -14,4 +14,6 @@ GROUP BY
   c.h01,
   c.h03,
   c.h04
-HAVING SUM(p.p05) > 100;
+HAVING SUM(p.p05) > 100
+ORDER BY
+  SUM(p.p05) DESC;

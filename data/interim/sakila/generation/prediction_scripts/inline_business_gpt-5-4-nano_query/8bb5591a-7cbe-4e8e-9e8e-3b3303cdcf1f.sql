@@ -4,14 +4,14 @@ SELECT
   c.h04 AS last_name,
   COUNT(p.p01) AS payment_count,
   SUM(p.p05) AS total_amount,
-  AVG(p.p05) AS avg_check,
+  AVG(p.p05) AS average_check,
   CASE
     WHEN SUM(p.p05) > 50 THEN 'высокий'
-    ELSE 'обычный'
+    ELSE 'низкий'
   END AS risk_level
-FROM cus AS c
-JOIN pay AS p
-  ON p.p02 = c.h01
+FROM pay AS p
+JOIN cus AS c
+  ON c.h01 = p.p02
 WHERE p.p06 >= '2005-07-01'
   AND p.p06 < '2005-08-01'
 GROUP BY
@@ -19,5 +19,5 @@ GROUP BY
   c.h03,
   c.h04
 HAVING COUNT(p.p01) > 10
-   OR SUM(p.p05) > 50
+    OR SUM(p.p05) > 50
 ORDER BY total_amount DESC, payment_count DESC, customer_id;

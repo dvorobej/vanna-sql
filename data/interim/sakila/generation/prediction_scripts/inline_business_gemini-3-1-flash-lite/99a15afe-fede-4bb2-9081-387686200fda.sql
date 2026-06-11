@@ -5,19 +5,19 @@ WITH monthly_customer_stats AS (
         SUM(p.p05) AS total_amount,
         COUNT(*) AS payment_count,
         COUNT(DISTINCT p.p03) AS staff_count,
-        SUM(CASE WHEN r.q05 > date(r.q02, '+' || f.i07 || ' days') THEN 1.0 ELSE 0.0 END) / COUNT(*) AS late_return_share
+        SUM(CASE WHEN r.q05 > date(r.q02, '+' || f.i07 || ' days') THEN 1 ELSE 0 END) * 1.0 / COUNT(*) AS late_return_share
     FROM pay p
-    JOIN ren r ON r.q01 = p.p04
-    JOIN inv i ON i.n01 = r.q03
-    JOIN flm f ON f.i01 = i.n02
+    JOIN ren r ON p.p04 = r.q01
+    JOIN inv i ON r.q03 = i.n01
+    JOIN flm f ON i.n02 = f.i01
     GROUP BY p.p02, strftime('%Y-%m', p.p06)
 ),
 customer_history AS (
     SELECT
         mcs.*,
-        AVG(mcs.total_amount) OVER (
-            PARTITION BY mcs.customer_id
-            ORDER BY mcs.payment_month
+        AVG(total_amount) OVER (
+            PARTITION BY customer_id 
+            ORDER BY payment_month 
             ROWS BETWEEN UNBOUNDED PRECEDING AND 1 PRECEDING
         ) AS prev_avg_amount
     FROM monthly_customer_stats mcs
@@ -27,48 +27,40 @@ store_country_stats AS (
         mcs.payment_month,
         c.h02 AS store_id,
         cnt.c01 AS country_id,
-        mcs.total_amount
+        PERCENTILE_CONT(0.95) WITHIN GROUP (ORDER BY mcs.total_amount) OVER (PARTITION BY mcs.payment_month, c.h02, cnt.c01) AS p95_amount
     FROM monthly_customer_stats mcs
-    JOIN cus c ON c.h01 = mcs.customer_id
-    JOIN adr a ON a.e01 = c.h06
-    JOIN cty ci ON ci.d01 = a.e05
-    JOIN cnt cnt ON cnt.c01 = ci.d03
+    JOIN cus c ON mcs.customer_id = c.h01
+    JOIN adr a ON c.h06 = a.e01
+    JOIN cty ci ON a.e05 = ci.d01
+    JOIN cnt ON ci.d03 = cnt.c01
 ),
-percentiles AS (
+suspicious_episodes AS (
     SELECT
-        payment_month,
-        store_id,
-        country_id,
-        -- SQLite approximation for 95th percentile
-        MAX(total_amount) FILTER (WHERE rn <= total_count * 0.95) AS p95_amount
-    FROM (
-        SELECT *,
-               ROW_NUMBER() OVER (PARTITION BY payment_month, store_id, country_id ORDER BY total_amount) as rn,
-               COUNT(*) OVER (PARTITION BY payment_month, store_id, country_id) as total_count
-        FROM store_country_stats
-    )
-    GROUP BY payment_month, store_id, country_id
+        ch.*,
+        c.h02 AS store_id,
+        cnt.c02 AS country,
+        a.e04 AS city,
+        RANK() OVER (PARTITION BY c.h02, ch.payment_month ORDER BY ch.total_amount DESC) AS store_rank
+    FROM customer_history ch
+    JOIN cus c ON ch.customer_id = c.h01
+    JOIN adr a ON c.h06 = a.e01
+    JOIN cty ci ON a.e05 = ci.d01
+    JOIN cnt ON ci.d03 = cnt.c01
+    JOIN store_country_stats scs ON ch.payment_month = scs.payment_month AND c.h02 = scs.store_id AND cnt.c01 = scs.country_id
+    WHERE ch.prev_avg_amount IS NOT NULL
+      AND ch.total_amount >= 3 * ch.prev_avg_amount
+      AND ch.total_amount > scs.p95_amount
 )
 SELECT
-    ch.payment_month,
-    ch.customer_id,
-    c.h03 || ' ' || c.h04 AS customer_name,
-    a.e02 AS address,
-    ci.d02 AS city,
-    cnt.c02 AS country,
-    c.h02 AS store_id,
-    ch.total_amount,
-    ch.payment_count,
-    ch.staff_count,
-    ROUND(ch.late_return_share, 4) AS late_return_share,
-    RANK() OVER (PARTITION BY ch.payment_month, c.h02 ORDER BY ch.total_amount DESC) AS store_rank
-FROM customer_history ch
-JOIN cus c ON c.h01 = ch.customer_id
-JOIN adr a ON a.e01 = c.h06
-JOIN cty ci ON ci.d01 = a.e05
-JOIN cnt cnt ON cnt.c01 = ci.d03
-JOIN percentiles p ON p.payment_month = ch.payment_month AND p.store_id = c.h02 AND p.country_id = cnt.c01
-WHERE ch.prev_avg_amount IS NOT NULL
-  AND ch.total_amount >= 3 * ch.prev_avg_amount
-  AND ch.total_amount > p.p95_amount
-ORDER BY ch.payment_month, ch.total_amount DESC;
+    se.customer_id,
+    se.payment_month,
+    se.country,
+    se.city,
+    se.store_id,
+    ROUND(se.total_amount, 2) AS total_amount,
+    se.payment_count,
+    se.staff_count,
+    ROUND(se.late_return_share, 4) AS late_return_share,
+    se.store_rank
+FROM suspicious_episodes se
+ORDER BY se.payment_month, se.store_id, se.store_rank;

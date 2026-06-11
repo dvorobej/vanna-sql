@@ -4,16 +4,17 @@ SELECT
   c.h04 AS last_name,
   COUNT(p.p01) AS payment_count,
   SUM(p.p05) AS total_amount,
-  AVG(p.p05) AS avg_payment_amount,
-  SUM(CASE WHEN p.p05 > 8.00 THEN 1 ELSE 0 END) AS large_payment_count
+  AVG(p.p05) AS average_payment_amount,
+  SUM(CASE WHEN p.p05 > 8.00 THEN 1 ELSE 0 END) AS payments_over_8
 FROM pay AS p
 JOIN cus AS c
-  ON p.p02 = c.h01
+  ON c.h01 = p.p02
+JOIN ren AS r
+  ON r.q01 = p.p04
 WHERE
-  p.p04 IS NOT NULL
+  c.h07 IN ('1', 'Y')
   AND p.p06 >= '2005-07-01'
   AND p.p06 < '2005-08-01'
-  AND c.h07 = '1'
 GROUP BY
   c.h01,
   c.h03,

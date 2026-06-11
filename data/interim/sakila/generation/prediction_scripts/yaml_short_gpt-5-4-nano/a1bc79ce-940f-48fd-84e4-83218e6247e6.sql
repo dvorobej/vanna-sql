@@ -10,21 +10,21 @@ SELECT
   AVG(p.p05) AS average_payment,
   MAX(p.p05) AS max_payment,
   CASE
-    WHEN MAX(p.p05) > 8.00 OR AVG(p.p05) > 7.00 THEN 1
+    WHEN SUM(p.p05) > 100 OR AVG(p.p05) > 8.00 THEN 1
     ELSE 0
-  END AS increased_risk_flag
-FROM pay AS p
-JOIN cus AS c
-  ON c.h01 = p.p02
+  END AS high_risk_flag
+FROM cus AS c
+JOIN pay AS p
+  ON p.p02 = c.h01
 JOIN stf AS s
   ON s.o01 = p.p03
 WHERE p.p06 >= '2005-07-01'
   AND p.p06 < '2005-08-01'
 GROUP BY
-  c.h01, c.h03, c.h04,
-  s.o01, s.o02, s.o03
-ORDER BY
-  total_amount DESC,
-  payment_count DESC,
-  customer_id,
-  staff_id;
+  c.h01,
+  c.h03,
+  c.h04,
+  s.o01,
+  s.o02,
+  s.o03
+ORDER BY total_amount DESC, payment_count DESC;

@@ -1,4 +1,4 @@
-customer_id,staff_id,payment_count,total_amount,average_payment,high_attention_flag
+customer_id,staff_id,payment_count,total_amount,average_payment,attention_flag
 470,1,13,70.87,5.451538461538462,1
 144,2,12,68.88000000000001,5.740000000000001,1
 494,2,13,64.87000000000002,4.990000000000001,1

@@ -1,4 +1,4 @@
-customer_name,country,city,payment_date,payment_count,day_amount,max_payment,share_r_nc17,country_day_rank
+customer_name,country,city,activity_date,payment_count,daily_amount,max_payment,share_r_nc17,country_rank
 VERA MCCOY,Afghanistan,Kabul,2005-07-27,2,13.98,8.99,0.5,1
 MARIO CHEATHAM,Algeria,Batna,2005-07-29,5,18.95,4.99,0.2,1
 BOBBY BOUDREAU,Anguilla,South Hill,2005-06-18,2,7.98,4.99,0.5,1
@@ -19,13 +19,11 @@ CORY MEEHAN,Belarus,Mogiljov,2005-07-11,3,11.97,4.99,0.3333,1
 CODY NOLEN,Brazil,So Bernardo do Campo,2005-06-15,2,12.98,10.99,0.0,1
 JANE BENNETT,Brazil,Araatuba,2005-06-18,2,12.98,8.99,1.0,1
 ELLEN SIMPSON,Brazil,Po,2005-07-06,3,18.97,7.99,0.6667,1
-TERRI VASQUEZ,Brazil,Blumenau,2005-07-06,3,11.97,5.99,0.0,2
 TINA SIMMONS,Brazil,Goinia,2005-07-10,4,23.96,7.99,0.25,1
 MAXINE SILVA,Brazil,Poos de Caldas,2005-07-10,4,19.96,7.99,0.25,2
 JEREMY HURTADO,Brazil,Vitria de Santo Anto,2005-07-10,3,13.97,6.99,0.3333,3
 DENISE KELLY,Brazil,Rio Claro,2005-07-10,3,10.97,4.99,0.3333,4
 NATALIE MEYER,Brazil,Aparecida de Goinia,2005-07-11,2,14.98,7.99,0.5,1
-FRANCES PARKER,Brazil,Juazeiro do Norte,2005-07-11,3,14.97,9.99,0.6667,2
 HAROLD MARTINO,Brazil,Boa Vista,2005-07-12,3,19.97,8.99,0.3333,1
 JUSTIN NGO,Brazil,Santo Andr,2005-07-29,3,18.97,8.99,0.3333,1
 IDA ANDREWS,Brazil,Luzinia,2005-07-31,3,13.97,5.99,0.0,1
@@ -175,7 +173,6 @@ RYAN SALISBURY,Latvia,Daugavpils,2005-07-28,4,15.96,4.99,0.5,1
 ANDREA HENDERSON,Madagascar,Mahajanga,2005-08-21,3,16.97,7.99,0.6667,1
 JEAN BELL,Malaysia,Kuching,2005-07-27,2,14.98,9.99,0.5,1
 DOUGLAS GRAF,Mexico,Mexicali,2005-06-16,2,11.98,6.99,0.5,1
-SAMANTHA DUNCAN,Mexico,Matamoros,2005-06-16,3,8.97,4.99,0.3333,2
 FRANCIS SIKES,Mexico,San Juan Bautista Tuxtepec,2005-07-08,4,27.96,8.99,0.0,1
 PAULINE HENRY,Mexico,Torren,2005-07-08,4,19.96,6.99,0.5,2
 JIM REA,Mexico,El Fuerte,2005-07-08,3,16.97,8.99,0.6667,3
@@ -194,7 +191,6 @@ DANIELLE DANIELS,Mexico,Hidalgo,2005-08-19,5,21.95,8.99,0.4,1
 VINCENT RALSTON,Mexico,Allende,2005-08-19,5,17.95,7.99,0.4,2
 ALEX GRESHAM,Mexico,Uruapan,2005-08-20,4,27.96,8.99,0.25,1
 MARTHA GONZALEZ,Moldova,Chisinau,2005-07-07,3,12.97,5.99,0.3333,1
-ANNIE RUSSELL,Mozambique,Tete,2005-07-06,3,8.97,4.99,0.3333,1
 MABEL HOLLAND,Myanmar,Monywa,2005-06-18,2,11.98,6.99,0.0,1
 DUANE TUBBS,Nauru,Yangor,2005-07-29,4,25.96,9.99,0.75,1
 KEVIN SCHULER,Nepal,Birgunj,2005-07-06,2,10.98,5.99,0.0,1
@@ -329,7 +325,6 @@ CINDY FISHER,Venezuela,Cuman,2005-06-20,3,16.97,8.99,0.6667,1
 CARMEN OWENS,Venezuela,Caracas,2005-07-06,2,13.98,9.99,0.5,1
 YVONNE WATKINS,Venezuela,Ocumare del Tuy,2005-07-29,2,12.98,7.99,0.5,1
 YVONNE WATKINS,Venezuela,Ocumare del Tuy,2005-08-01,3,16.97,8.99,0.6667,1
-CALVIN MARTEL,Venezuela,Maracabo,2005-08-21,4,18.96,5.99,0.25,1
 BETH FRANKLIN,Vietnam,Haiphong,2005-07-08,2,11.98,8.99,0.5,1
 NEIL RENNER,Vietnam,Cam Ranh,2005-07-09,3,15.97,7.99,0.6667,1
 MITCHELL WESTMORELAND,Vietnam,Nha Trang,2005-07-10,3,19.97,10.99,0.3333,1

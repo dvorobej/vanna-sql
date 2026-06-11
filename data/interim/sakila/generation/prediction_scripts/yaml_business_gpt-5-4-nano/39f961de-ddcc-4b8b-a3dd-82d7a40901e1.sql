@@ -1,108 +1,99 @@
 WITH payment_base AS (
-  SELECT
-    p.p01 AS payment_id,
-    p.p02 AS customer_id,
-    date(p.p06) AS payment_date,
-    CAST(p.p05 AS REAL) AS payment_amount,
-    p.p03 AS staff_id,
-    s.o07 AS store_id,
-    c.h03 AS customer_first_name,
-    c.h04 AS customer_last_name,
-    a.e05 AS city_id,
-    a.e05 AS customer_city_id,
-    ci.d03 AS country_id,
-    ci.d02 AS customer_country,
-    CASE
-      WHEN EXISTS (
-        SELECT 1
-        FROM ren r
-        JOIN inv i ON i.n01 = r.q03
-        JOIN flc fc ON fc.l01 = i.n02
-        JOIN flm m ON m.i01 = i.n02
-        WHERE r.q01 = p.p04
-          AND (m.i11 IN ('R','NC-17'))
-      )
-      THEN 1
-      ELSE 0
-    END AS is_r_or_nc17
-  FROM pay p
-  JOIN cus c
-    ON c.h01 = p.p02
-  JOIN stf s
-    ON s.o01 = p.p03
-  JOIN adr a
-    ON a.e01 = c.h06
-  JOIN cty ci
-    ON ci.d01 = a.e05
-  WHERE p.p06 IS NOT NULL
+    SELECT
+        p.p01 AS payment_id,
+        p.p02 AS customer_id,
+        date(p.p06) AS payment_date,
+        CAST(p.p05 AS REAL) AS payment_amount,
+        p.p03 AS staff_id,
+        st.o07 AS staff_store_id,
+        c.h06 AS customer_address_id,
+        cust_addr.e01 AS customer_address_pk,
+        ci.d02 AS customer_city,
+        co.c02 AS customer_country,
+        r.q01 AS rental_id,
+        inv.n02 AS film_id,
+        f.i11 AS film_rating
+    FROM pay AS p
+    JOIN cus AS c
+        ON c.h01 = p.p02
+    JOIN adr AS cust_addr
+        ON cust_addr.e01 = c.h06
+    JOIN cty AS ci
+        ON ci.d01 = cust_addr.e05
+    JOIN cnt AS co
+        ON co.c01 = ci.d03
+    JOIN stf AS st
+        ON st.o01 = p.p03
+    LEFT JOIN ren AS r
+        ON r.q01 = p.p04
+    LEFT JOIN inv
+        ON inv.n01 = r.q03
+    LEFT JOIN flm AS f
+        ON f.i01 = inv.n02
+    WHERE p.p05 IS NOT NULL
 ),
-daily_customer AS (
-  SELECT
-    customer_id,
-    customer_first_name,
-    customer_last_name,
-    customer_country,
-    customer_city_id,
-    payment_date,
-    COUNT(payment_id) AS payment_count,
-    SUM(payment_amount) AS daily_total_amount,
-    MAX(payment_amount) AS max_payment_amount,
-    COUNT(DISTINCT staff_id) AS staff_count,
-    COUNT(DISTINCT store_id) AS store_count,
-    SUM(is_r_or_nc17) AS r_or_nc17_payment_count,
-    SUM(CASE WHEN is_r_or_nc17 = 1 THEN payment_amount ELSE 0 END) AS r_or_nc17_amount
-  FROM payment_base
-  GROUP BY
-    customer_id,
-    customer_first_name,
-    customer_last_name,
-    customer_country,
-    customer_city_id,
-    payment_date
+daily_summaries AS (
+    SELECT
+        customer_id,
+        payment_date,
+        MAX(customer_city) AS customer_city,
+        MAX(customer_country) AS customer_country,
+        COUNT(*) AS payment_count,
+        SUM(payment_amount) AS daily_total_amount,
+        MAX(payment_amount) AS max_single_payment,
+        COUNT(DISTINCT staff_id) AS staff_count,
+        COUNT(DISTINCT staff_store_id) AS store_count,
+        SUM(CASE WHEN film_rating IN ('R', 'NC-17') THEN payment_amount ELSE 0 END) AS r_or_nc17_amount
+    FROM payment_base
+    GROUP BY
+        customer_id,
+        payment_date
 ),
-daily_scored AS (
-  SELECT
-    dc.*,
-    (
-      SELECT AVG(d2.daily_total_amount)
-      FROM daily_customer d2
-      WHERE d2.customer_id = dc.customer_id
-        AND d2.payment_date >= date(dc.payment_date, '-30 days')
-        AND d2.payment_date < dc.payment_date
-    ) AS avg_prev_30d_amount
-  FROM daily_customer dc
+with_history AS (
+    SELECT
+        ds.*,
+        (
+            SELECT AVG(ds2.daily_total_amount)
+            FROM daily_summaries AS ds2
+            WHERE ds2.customer_id = ds.customer_id
+              AND ds2.payment_date >= date(ds.payment_date, '-30 days')
+              AND ds2.payment_date < ds.payment_date
+        ) AS avg_prev_30_days_amount
+    FROM daily_summaries AS ds
 ),
 suspicious_days AS (
-  SELECT
-    ds.*,
-    (ds.daily_total_amount - ds.avg_prev_30d_amount) AS excess_amount
-  FROM daily_scored ds
-  WHERE ds.avg_prev_30d_amount IS NOT NULL
-    AND ds.avg_prev_30d_amount > 0
-    AND ds.daily_total_amount >= 2.0 * ds.avg_prev_30d_amount
-    AND (ds.staff_count >= 2 OR ds.store_count >= 2)
+    SELECT
+        wh.*,
+        CASE
+            WHEN wh.daily_total_amount > 0 THEN 1.0 * wh.r_or_nc17_amount / wh.daily_total_amount
+            ELSE 0
+        END AS r_or_nc17_share
+    FROM with_history AS wh
+    WHERE wh.avg_prev_30_days_amount IS NOT NULL
+      AND wh.avg_prev_30_days_amount > 0
+      AND wh.daily_total_amount >= 2.0 * wh.avg_prev_30_days_amount
+      AND (wh.staff_count > 1 OR wh.store_count > 1)
 )
 SELECT
-  sd.customer_id,
-  sd.customer_first_name,
-  sd.customer_last_name,
-  sd.customer_country,
-  sd.customer_city_id AS city_id,
-  sd.payment_date,
-  sd.payment_count,
-  ROUND(sd.daily_total_amount, 2) AS daily_total_amount,
-  ROUND(sd.max_payment_amount, 2) AS max_payment_amount,
-  ROUND(
-    1.0 * sd.r_or_nc17_amount / NULLIF(sd.daily_total_amount, 0),
-    4
-  ) AS r_nc17_payment_amount_share,
-  RANK() OVER (
-    PARTITION BY sd.customer_country
-    ORDER BY sd.daily_total_amount DESC
-  ) AS country_day_rank
-FROM suspicious_days sd
+    c.h03 AS customer_first_name,
+    c.h04 AS customer_last_name,
+    sd.customer_address_id AS customer_address_id,
+    sd.customer_city,
+    sd.customer_country,
+    sd.payment_date,
+    sd.payment_count,
+    ROUND(sd.daily_total_amount, 2) AS daily_total_amount,
+    ROUND(sd.max_single_payment, 2) AS max_single_payment,
+    ROUND(sd.r_or_nc17_share, 4) AS r_or_nc17_share,
+    RANK() OVER (
+        PARTITION BY sd.customer_country
+        ORDER BY sd.daily_total_amount DESC
+    ) AS suspicion_rank_within_country
+FROM suspicious_days AS sd
+JOIN cus AS c
+    ON c.h01 = sd.customer_id
 ORDER BY
-  sd.customer_country,
-  country_day_rank,
-  sd.customer_id,
-  sd.payment_date;
+    sd.customer_country,
+    suspicion_rank_within_country,
+    sd.customer_id,
+    sd.payment_date;

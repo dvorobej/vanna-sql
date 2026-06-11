@@ -3,14 +3,14 @@ SELECT
   c.h03 || ' ' || c.h04 AS customer_name,
   COUNT(p.p01) AS payment_count,
   SUM(p.p05) AS total_payment_amount,
-  AVG(p.p05) AS average_payment,
-  SUM(CASE WHEN p.p05 > 8.00 THEN 1 ELSE 0 END) AS large_payments_count
+  AVG(p.p05) AS avg_payment_amount,
+  SUM(CASE WHEN p.p05 > 8.00 THEN 1 ELSE 0 END) AS large_payments_over_8
 FROM cus AS c
 JOIN pay AS p
   ON p.p02 = c.h01
 JOIN ren AS r
   ON r.q01 = p.p04
-WHERE c.h07 IN ('1', 'Y')
+WHERE c.h07 IN ('1','Y')
   AND p.p06 >= '2005-07-01'
   AND p.p06 < '2005-08-01'
 GROUP BY
@@ -22,5 +22,5 @@ HAVING
   OR SUM(CASE WHEN p.p05 > 8.00 THEN 1 ELSE 0 END) >= 3
 ORDER BY
   total_payment_amount DESC,
-  large_payments_count DESC,
+  large_payments_over_8 DESC,
   customer_id;

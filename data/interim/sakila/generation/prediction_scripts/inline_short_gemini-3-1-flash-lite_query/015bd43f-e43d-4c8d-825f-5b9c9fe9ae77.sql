@@ -17,5 +17,4 @@ GROUP BY
   c.h01,
   c.h03,
   c.h04
-HAVING COUNT(p.p01) >= 5
-ORDER BY total_amount DESC;
+HAVING COUNT(p.p01) >= 5;

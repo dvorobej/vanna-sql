@@ -27,13 +27,13 @@ ranked_monthly AS (
         PERCENT_RANK() OVER (
             PARTITION BY c.h02, ms.payment_month 
             ORDER BY ms.total_amount DESC
-        ) AS store_rank_pct
+        ) AS store_rank_percentile
     FROM monthly_stats AS ms
     JOIN cus AS c ON ms.customer_id = c.h01
+    JOIN customer_yearly_avg AS cya ON ms.customer_id = cya.customer_id
     JOIN adr AS a ON c.h06 = a.e01
     JOIN cty AS ct ON a.e05 = ct.d01
     JOIN cnt AS cn ON ct.d03 = cn.c01
-    JOIN customer_yearly_avg AS cya ON ms.customer_id = cya.customer_id
 )
 SELECT
     customer_name,
@@ -44,9 +44,9 @@ SELECT
     total_amount,
     payment_count,
     ROUND(total_amount - avg_monthly_amount, 2) AS deviation_from_avg,
-    ROUND(store_rank_pct, 4) AS rank_percentile,
+    ROUND(store_rank_percentile, 4) AS rank_percentile,
     last_staff_id
 FROM ranked_monthly
 WHERE total_amount > (avg_monthly_amount * 2)
-  AND store_rank_pct <= 0.05
+  AND store_rank_percentile <= 0.05
 ORDER BY payment_month, store_id, total_amount DESC;

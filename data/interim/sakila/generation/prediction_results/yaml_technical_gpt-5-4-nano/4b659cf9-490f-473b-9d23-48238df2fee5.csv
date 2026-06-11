@@ -1,2 +1,2 @@
-first_name,last_name,customer_id,total_amount,payment_count,avg_payment,max_payment,share_payments_gt_8
-ELEANOR,HUNT,148,100.77999999999997,22,4.580909090909089,10.99,0.13636363636363635
+first_name,last_name,payment_count,total_amount,average_payment,max_payment_amount,share_payments_over_8
+ELEANOR,HUNT,22,100.77999999999997,4.580909090909089,10.99,0.13636363636363635

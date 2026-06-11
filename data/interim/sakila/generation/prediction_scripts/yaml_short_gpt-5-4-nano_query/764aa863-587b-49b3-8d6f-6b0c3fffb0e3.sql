@@ -1,16 +1,19 @@
-WITH payment_month_base AS (
+WITH payment_base AS (
   SELECT
+    p.p01 AS payment_id,
     p.p02 AS customer_id,
-    strftime('%Y-%m', p.p06) AS payment_month,
-    date(p.p06) AS payment_day,
-    p.p05 AS payment_amount,
     p.p03 AS staff_id,
-    c.h02 AS home_store_id,
-    c.h03 || ' ' || c.h04 AS customer_name,
-    ct.c01 AS country_id,
-    ct.c02 AS country_name,
+    p.p04 AS rental_id,
+    p.p05 AS payment_amount,
+    p.p06 AS payment_date,
+    date(p.p06, 'start of month') AS month_start,
+    date(p.p06) AS payment_day,
+    c.h02 AS customer_store_id,
+    cnt.c01 AS country_id,
+    cnt.c02 AS country_name,
     cty.d02 AS city_name,
-    COALESCE(inv.n03, s.o07) AS payment_store_id
+    i.n03 AS film_store_id,
+    CASE WHEN stf.o07 IS NOT NULL THEN 1 ELSE 1 END AS dummy
   FROM pay AS p
   JOIN cus AS c
     ON c.h01 = p.p02
@@ -18,104 +21,99 @@ WITH payment_month_base AS (
     ON a.e01 = c.h06
   JOIN cty AS cty
     ON cty.d01 = a.e05
-  JOIN cnt AS ct
-    ON ct.c01 = cty.d03
+  JOIN cnt AS cnt
+    ON cnt.c01 = cty.d03
+  JOIN stf AS stf
+    ON stf.o01 = p.p03
   LEFT JOIN ren AS r
     ON r.q01 = p.p04
   LEFT JOIN inv AS i
     ON i.n01 = r.q03
-  LEFT JOIN sto AS s
-    ON s.j01 = i.n03
-  LEFT JOIN inv AS inv
-    ON inv.n01 = r.q03
 ),
-month_customer AS (
+film_category_payments AS (
   SELECT
-    customer_id,
-    payment_month,
-    country_name,
-    city_name,
-    SUM(payment_amount) AS month_total_amount,
-    COUNT(*) AS payment_count,
-    MAX(payment_amount) AS max_payment_amount,
-    COUNT(DISTINCT staff_id) AS distinct_staff_count,
-    SUM(CASE WHEN payment_store_id <> home_store_id THEN 1 ELSE 0 END) AS non_home_store_payment_count,
-    CAST(SUM(CASE WHEN payment_store_id <> home_store_id THEN 1 ELSE 0 END) AS REAL)
-      / NULLIF(COUNT(*), 0) AS non_home_store_payment_share
-  FROM payment_month_base
-  GROUP BY
-    customer_id,
-    payment_month,
-    country_name,
-    city_name
-),
-month_with_prev_avg AS (
-  SELECT
-    mc.*,
-    AVG(mc.month_total_amount) OVER (
-      PARTITION BY mc.customer_id
-      ORDER BY mc.payment_month
-      ROWS BETWEEN 3 PRECEDING AND 1 PRECEDING
-    ) AS prev_3_months_avg_amount
-  FROM month_customer AS mc
-),
-month_with_prev_avg_qual AS (
-  SELECT *
-  FROM month_with_prev_avg
-  WHERE prev_3_months_avg_amount IS NOT NULL
-    AND prev_3_months_avg_amount > 0
-    AND month_total_amount > 3.0 * prev_3_months_avg_amount
-    AND distinct_staff_count >= 2
-),
-month_category_counts AS (
-  SELECT
-    p.p02 AS customer_id,
-    strftime('%Y-%m', p.p06) AS payment_month,
-    COUNT(DISTINCT fc.l02) AS distinct_categories_count
-  FROM pay AS p
+    pb.payment_id,
+    fc.l02 AS category_id
+  FROM payment_base AS pb
   JOIN ren AS r
-    ON r.q01 = p.p04
-  JOIN inv AS i
-    ON i.n01 = r.q03
+    ON r.q01 = pb.rental_id
+  JOIN inv AS inv
+    ON inv.n01 = r.q03
   JOIN flc AS fc
-    ON fc.l01 = i.n02
-  WHERE p.p04 IS NOT NULL
+    ON fc.l01 = inv.n01
+),
+monthly_customer_metrics AS (
+  SELECT
+    pb.customer_id,
+    pb.country_id,
+    pb.country_name,
+    pb.city_name,
+    pb.month_start,
+    SUM(pb.payment_amount) AS month_total_amount,
+    COUNT(*) AS payment_count,
+    MAX(pb.payment_amount) AS max_payment_amount,
+    COUNT(DISTINCT pb.staff_id) AS distinct_staff_count,
+    COUNT(DISTINCT pb.film_store_id) AS distinct_payment_stores_count,
+    SUM(CASE WHEN pb.film_store_id IS NULL THEN 0
+             WHEN pb.film_store_id <> pb.customer_store_id THEN 1
+             ELSE 0
+        END) AS off_registration_store_payment_count,
+    1.0 * SUM(CASE WHEN pb.film_store_id IS NULL THEN 0
+                    WHEN pb.film_store_id <> pb.customer_store_id THEN 1
+                    ELSE 0
+               END) / COUNT(*) AS off_registration_store_payment_share
+  FROM payment_base AS pb
   GROUP BY
-    p.p02,
-    strftime('%Y-%m', p.p06)
+    pb.customer_id,
+    pb.country_id,
+    pb.country_name,
+    pb.city_name,
+    pb.month_start
 ),
-qualified AS (
+monthly_with_prev3 AS (
   SELECT
-    m.*,
-    mcat.distinct_categories_count
-  FROM month_with_prev_avg_qual AS m
-  JOIN month_category_counts AS mcat
-    ON mcat.customer_id = m.customer_id
-   AND mcat.payment_month = m.payment_month
-  WHERE mcat.distinct_categories_count >= 3
+    mcm.*,
+    AVG(mcm.month_total_amount) OVER (
+      PARTITION BY mcm.customer_id
+      ORDER BY mcm.month_start
+      ROWS BETWEEN 3 PRECEDING AND 1 PRECEDING
+    ) AS prev3_month_avg_amount
+  FROM monthly_customer_metrics AS mcm
 ),
-ranked AS (
+eligible_customers_month AS (
   SELECT
-    q.*,
-    RANK() OVER (
-      PARTITION BY q.country_name, q.payment_month
-      ORDER BY q.month_total_amount DESC
-    ) AS country_month_amount_rank
-  FROM qualified AS q
+    mwp.*,
+    (
+      SELECT COUNT(DISTINCT fcp2.category_id)
+      FROM film_category_payments AS fcp2
+      JOIN pay AS p2
+        ON p2.p01 = fcp2.payment_id
+      WHERE p2.p02 = mwp.customer_id
+        AND date(p2.p06, 'start of month') = mwp.month_start
+    ) AS distinct_categories_count
+  FROM monthly_with_prev3 AS mwp
 )
 SELECT
-  payment_month AS month,
-  country_name AS country,
-  city_name AS city,
-  customer_id,
-  ROUND(month_total_amount, 2) AS payment_sum,
-  payment_count AS payment_count,
-  ROUND(max_payment_amount, 2) AS max_payment,
-  ROUND(non_home_store_payment_share, 4) AS non_home_store_payment_share,
-  country_month_amount_rank
-FROM ranked
+  e.customer_id,
+  e.country_name AS country,
+  e.city_name AS city,
+  strftime('%Y-%m', e.month_start) AS month,
+  ROUND(e.month_total_amount, 2) AS payments_sum,
+  e.payment_count,
+  ROUND(e.max_payment_amount, 2) AS max_single_payment,
+  ROUND(e.off_registration_store_payment_share, 4) AS off_registration_store_payment_share,
+  RANK() OVER (
+    PARTITION BY e.country_id, e.month_start
+    ORDER BY e.month_total_amount DESC
+  ) AS country_month_rank
+FROM eligible_customers_month AS e
+WHERE e.prev3_month_avg_amount IS NOT NULL
+  AND e.prev3_month_avg_amount > 0
+  AND e.month_total_amount > 3.0 * e.prev3_month_avg_amount
+  AND e.distinct_staff_count >= 2
+  AND e.distinct_categories_count >= 3
 ORDER BY
-  month,
-  country,
-  country_month_amount_rank,
-  customer_id;
+  e.month_start,
+  e.country_name,
+  country_month_rank,
+  e.customer_id;

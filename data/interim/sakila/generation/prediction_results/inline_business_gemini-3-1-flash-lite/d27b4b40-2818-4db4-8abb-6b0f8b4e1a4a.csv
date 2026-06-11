@@ -1,4 +1,4 @@
-customer_name,country,city,payment_date,payment_count,daily_sum,avg_prev_30d,excess_ratio,customer_day_rank
+customer_name,country,city,payment_date,payment_count,total_day_amount,avg_prev_30d,excess_ratio,day_rank_for_customer
 MICHELLE CLARK,Bangladesh,Tangail,2005-08-20,4,32.96,5.58,5.9,1
 TIM CARY,India,Bijapur,2005-08-21,5,32.95,7.84,4.2,1
 TOMMY COLLAZO,Iran,Qomsheh,2005-07-28,5,29.95,2.66,11.27,1

@@ -1,314 +1,314 @@
-country,city,store_id,payment_count,total_suspicious_payments_amount,max_single_payment,action_new_rentals_share,suspicious_customer_rank_in_country
-Algeria,Batna,1,17,66.83,10.99,0.2239,1
-Angola,Benguela,1,11,56.89,9.99,0.2457,1
-Argentina,Quilmes,1,13,70.87,9.99,0.0986,1
-Argentina,La Plata,1,17,68.83,8.99,0.0725,2
-Argentina,Escobar,1,14,66.86,9.99,0.0,3
-Argentina,Vicente Lpez,2,15,64.85,7.99,0.0461,4
-Argentina,Merlo,1,14,61.86,7.99,0.0,5
-Argentina,Avellaneda,1,14,59.86,9.99,0.3167,6
-Argentina,San Miguel de Tucumn,1,13,45.87,5.99,0.0216,7
-Argentina,Baha Blanca,1,7,40.93,8.99,0.0,8
-Argentina,La Plata,1,5,30.95,8.99,0.5486,9
-Argentina,Tandil,1,6,26.94,5.99,0.0,10
-Austria,Salzburg,2,17,71.83,8.99,0.1529,1
-Austria,Graz,1,14,57.86,8.99,0.2242,2
-Azerbaijan,Baku,2,13,51.87,10.99,0.0191,1
-Bangladesh,Tangail,1,17,79.83,9.99,0.0248,1
-Bangladesh,Dhaka,1,17,78.83,8.99,0.1773,2
-Belarus,Molodetno,1,18,93.82,9.99,0.2875,1
-Belarus,Molodetno,1,6,22.94,5.99,0.2175,2
-Bolivia,El Alto,2,9,45.91,8.99,0.2392,1
-Bolivia,Sucre,2,7,35.93,8.99,0.3334,2
-Brazil,Goinia,2,15,78.85,8.99,0.19,1
-Brazil,Juiz de Fora,1,15,75.85,11.99,0.1581,2
-Brazil,Sorocaba,1,18,67.82,6.99,0.1911,3
-Brazil,Santo Andr,2,19,67.81,8.99,0.0736,4
-Brazil,Angra dos Reis,2,13,62.87,10.99,0.1268,5
-Brazil,Belm,1,15,61.85,8.99,0.0807,6
-Brazil,Blumenau,1,13,60.87,6.99,0.2131,7
-Brazil,Poos de Caldas,2,13,55.87,7.99,0.0714,8
-Brazil,Anpolis,1,13,49.87,7.99,0.2398,9
-Brazil,Po,1,13,48.87,7.99,0.2445,10
-Brazil,Boa Vista,1,12,45.88,8.99,0.0,11
-Brazil,Luzinia,2,11,34.89,5.99,0.0,12
-Brazil,Ibirit,2,6,27.94,6.99,0.0,13
-Brazil,guas Lindas de Gois,1,6,21.94,6.99,0.0,14
-Brazil,Aparecida de Goinia,1,5,15.95,6.99,0.0621,15
-Cambodia,Phnom Penh,2,15,54.85,8.99,0.0726,1
-Cambodia,Battambang,2,6,22.94,10.99,0.0867,2
-Cameroon,Bamenda,1,5,20.95,4.99,0.0,1
-Canada,Vancouver,1,12,52.88,9.99,0.0565,1
-Chile,Antofagasta,1,9,37.91,9.99,0.0789,1
-China,Jinzhou,1,19,86.81,10.99,0.1841,1
-China,Yinchuan,1,15,77.85,9.99,0.141,2
-China,Leshan,2,18,75.82,9.99,0.2634,3
-China,Jinchang,1,17,70.83,6.99,0.169,4
-China,Tiefa,1,15,67.85,8.99,0.2943,5
-China,Shaoguan,1,18,63.82,6.99,0.0625,6
-China,Fuyu,1,16,62.84,8.99,0.0794,7
-China,Tongliao,1,16,60.84,5.99,0.1967,8
-China,Daxian,2,19,59.81,6.99,0.1,9
-China,Binzhou,1,13,58.87,9.99,0.1697,10
-China,Shanwei,2,16,58.84,8.99,0.2204,11
-China,Laohekou,1,13,56.87,9.99,0.0,12
-China,Yuncheng,2,14,55.86,7.99,0.0535,13
-China,Xiangfan,2,15,53.85,6.99,0.2037,14
-China,Xinxiang,2,13,52.87,7.99,0.0755,15
-China,Weifang,1,14,52.86,5.99,0.0753,16
-China,Meixian,2,12,51.88,9.99,0.0769,17
-China,Baicheng,2,14,51.86,8.99,0.2887,18
-China,Yuzhou,2,12,50.88,7.99,0.0981,19
-China,Hami,2,12,49.88,7.99,0.0599,20
-China,Zalantun,1,12,48.88,8.99,0.1019,21
-China,Hohhot,1,15,47.85,9.99,0.0416,22
-China,Zhoushan,2,6,39.94,10.99,0.2501,23
-China,Datong,1,8,34.92,10.99,0.1426,24
-China,Dongying,1,5,28.95,8.99,0.0,25
-China,Xinxiang,2,5,25.95,6.99,0.1538,26
-China,Weifang,1,5,24.95,7.99,0.3996,27
-Colombia,Sogamoso,1,14,64.86,8.99,0.1386,1
-Colombia,Buenaventura,1,15,62.85,6.99,0.1905,2
-Colombia,Florencia,1,12,54.88,10.99,0.0,3
-Colombia,Dos Quebradas,2,6,29.94,9.99,0.3337,4
-Colombia,Sincelejo,1,5,25.95,9.99,0.1152,5
-Ecuador,Robamba,2,18,80.82,8.99,0.074,1
-Egypt,Shubra al-Khayma,1,18,77.82,6.99,0.2436,1
-Egypt,Idfu,2,13,55.87,8.99,0.0535,2
-Egypt,Bilbays,2,12,41.88,7.99,0.2619,3
-Egypt,Mit Ghamr,2,7,31.93,4.99,0.0936,4
-France,Toulouse,2,16,68.84,6.99,0.2318,1
-France,Brest,1,12,52.88,7.99,0.1696,2
-French Polynesia,Faaa,2,12,47.88,4.99,0.2709,1
-Germany,Duisburg,2,15,61.85,10.99,0.339,1
-Germany,Saarbrcken,1,12,44.88,7.99,0.1112,2
-Germany,Erlangen,1,5,24.95,7.99,0.3202,3
-Greece,Athenai,1,13,68.87,10.99,0.3769,1
-Greece,Athenai,1,4,25.96,8.99,0.0,2
-India,Bhilwara,2,17,82.83,8.99,0.1084,1
-India,Ambattur,1,17,80.83,7.99,0.037,2
-India,Bhopal,1,18,79.82,8.99,0.0124,3
-India,Vijayawada,2,14,74.86,9.99,0.2399,4
-India,Siliguri (Shiliguri),1,15,73.85,8.99,0.1487,5
-India,Uluberia,2,17,71.83,9.99,0.0276,6
-India,Etawah,1,14,67.86,9.99,0.0881,7
-India,Valparai,1,12,61.88,7.99,0.0,8
-India,Parbhani,1,14,59.86,10.99,0.3002,9
-India,Jhansi,1,15,58.85,9.99,0.0,10
-India,Pudukkottai,1,12,57.88,8.99,0.0,11
-India,Pune,2,14,57.86,7.99,0.0171,12
-India,Udaipur,1,12,56.88,9.99,0.1405,13
-India,Rajkot,1,12,56.88,9.99,0.0,13
-India,Haldia,2,14,55.86,8.99,0.1072,14
-India,Patiala,2,12,54.88,7.99,0.1274,15
-India,Bhimavaram,2,13,53.87,7.99,0.1853,16
-India,Bhusawal,2,13,52.87,8.99,0.0,17
-India,Munger (Monghyr),1,14,51.86,9.99,0.1539,18
-India,Satna,2,13,50.87,6.99,0.1374,19
-India,Ahmadnagar,1,13,48.87,8.99,0.0405,20
-India,Chandrapur,2,15,48.85,4.99,0.0405,21
-India,Dhule (Dhulia),1,12,47.88,9.99,0.0,22
-India,Balurghat,1,13,46.87,6.99,0.2981,23
-India,Katihar,1,13,39.87,5.99,0.0248,24
-India,Valparai,1,6,35.94,8.99,0.0,25
-India,Tambaram,2,4,27.96,9.99,0.1069,26
-India,Haldia,2,6,25.94,4.99,0.0,27
-India,Ahmadnagar,1,5,23.95,8.99,0.0,28
-India,Kanchrapara,2,4,21.96,9.99,0.0,29
-India,Rajkot,1,4,21.96,6.99,0.5455,29
-India,Uluberia,2,6,20.94,6.99,0.3338,30
-India,Purnea (Purnia),1,5,19.95,7.99,0.1499,31
-India,Ranchi,2,6,18.94,5.99,0.0,32
-India,Varanasi (Benares),2,5,14.95,4.99,0.3338,33
-Indonesia,Probolinggo,2,16,77.84,8.99,0.218,1
-Indonesia,Lhokseumawe,2,13,57.87,8.99,0.0688,2
-Indonesia,Cianjur,1,12,32.88,5.99,0.0909,3
-Indonesia,Surakarta,1,7,22.93,4.99,0.0,4
-Indonesia,Ciparay,2,5,21.95,6.99,0.1362,5
-Indonesia,Pemalang,1,6,20.94,4.99,0.0,6
-Iran,Qomsheh,1,18,89.82,10.99,0.0888,1
-Iran,Tabriz,2,14,66.86,7.99,0.1792,2
-Iran,Shahr-e Kord,1,12,50.88,9.99,0.0,3
-Iran,Arak,2,11,48.89,9.99,0.0202,4
-Iran,Arak,2,13,40.87,6.99,0.0484,5
-Iran,Qomsheh,1,7,25.93,9.99,0.0382,6
-Israel,Ashdod,1,21,84.79,6.99,0.1648,1
-Israel,Tel Aviv-Jaffa,1,10,41.9,6.99,0.0714,2
-Italy,Brescia,1,16,76.84,8.99,0.1817,1
-Italy,Brindisi,2,13,61.87,8.99,0.3711,2
-Italy,Syrakusa,1,5,23.95,10.99,0.1248,3
-Japan,Urawa,2,15,76.85,8.99,0.3247,1
-Japan,Otsu,1,13,68.87,9.99,0.0144,2
-Japan,Iwakuni,1,14,64.86,10.99,0.0769,3
-Japan,Kuwana,2,14,64.86,6.99,0.0769,3
-Japan,Akishima,2,15,64.85,7.99,0.1693,4
-Japan,Onomichi,1,12,62.88,8.99,0.1269,5
-Japan,Omiya,2,14,59.86,8.99,0.1834,6
-Japan,Kamakura,1,13,53.87,9.99,0.241,7
-Japan,Iwaki,1,12,51.88,8.99,0.5773,8
-Japan,Higashiosaka,1,12,51.88,8.99,0.0,9
-Japan,Isesaki,2,13,51.87,7.99,0.3075,10
-Japan,Iwatsuki,1,12,39.88,6.99,0.1753,11
-Japan,Sasebo,1,7,31.93,9.99,0.0,12
-Japan,Urawa,2,13,31.87,7.99,0.1876,13
-Japan,Shimonoseki,2,7,21.93,7.99,0.1815,14
-Japan,Akishima,2,5,15.95,6.99,0.0,15
-Kazakstan,Zhezqazghan,1,15,70.85,10.99,0.0845,1
-Kazakstan,Pavlodar,2,6,12.94,6.99,0.0765,2
-Kenya,Nyeri,2,15,69.85,8.99,0.1857,1
-Kenya,Kisumu,2,6,35.94,8.99,0.0,2
-Malaysia,Sungai Petani,1,14,53.86,6.99,0.2224,1
-Malaysia,Ipoh,2,7,32.93,6.99,0.0,2
-Mexico,Coatzacoalcos,1,12,69.88,8.99,0.2287,1
-Mexico,Hidalgo,2,16,68.84,9.99,0.1302,2
-Mexico,Salamanca,2,15,67.85,8.99,0.2352,3
-Mexico,San Juan Bautista Tuxtepec,2,17,67.83,8.99,0.2649,4
-Mexico,Cuauhtmoc,2,13,66.87,8.99,0.0148,5
-Mexico,Atlixco,2,12,64.88,9.99,0.0,6
-Mexico,Acua,1,12,58.88,8.99,0.0508,7
-Mexico,Cuautla,2,15,58.85,7.99,0.3052,8
-Mexico,Jos Azueta,1,14,57.86,8.99,0.0171,9
-Mexico,Uruapan,2,10,52.9,9.99,0.151,10
-Mexico,Huixquilucan,1,13,51.87,6.99,0.1537,11
-Mexico,Nezahualcyotl,1,15,50.85,6.99,0.0,12
-Mexico,Torren,1,13,47.87,6.99,0.2085,13
-Mexico,Jurez,2,12,45.88,7.99,0.0216,14
-Mexico,Monclova,2,7,32.93,6.99,0.1515,15
-Mexico,Cuauhtmoc,2,4,30.96,9.99,0.0,16
-Mexico,Mexicali,1,7,30.93,8.99,0.0,17
-Mexico,Huixquilucan,1,5,24.95,8.99,0.0,18
-Mexico,El Fuerte,1,7,22.93,6.99,0.6097,19
-Mexico,Salamanca,2,5,21.95,6.99,0.0,20
-Mexico,Guadalajara,1,5,19.95,4.99,0.0,21
-Mexico,Zapopan,1,4,17.96,8.99,0.0551,22
-Morocco,Nador,2,11,40.89,8.99,0.2199,1
-Mozambique,Beira,2,18,88.82,6.99,0.1124,1
-Netherlands,Apeldoorn,2,19,96.81,8.99,0.0411,1
-Netherlands,Amersfoort,1,11,40.89,8.99,0.2927,2
-Netherlands,Apeldoorn,2,4,19.96,6.99,0.0,3
-Nigeria,Effon-Alaiye,1,17,76.83,9.99,0.078,1
-Nigeria,Ikerre,2,16,70.84,6.99,0.0704,2
-Nigeria,Owo,2,12,68.88,9.99,0.2899,3
-Nigeria,Ilorin,1,15,68.85,6.99,0.0289,4
-Nigeria,Deba Habe,2,15,58.85,7.99,0.0168,5
-Nigeria,Zaria,2,14,57.86,10.99,0.1725,6
-Nigeria,Ikerre,2,15,52.85,5.99,0.0944,7
-Nigeria,Ogbomosho,2,7,28.93,5.99,0.0,8
-Pakistan,Dadu,2,13,63.87,8.99,0.1094,1
-Pakistan,Shikarpur,1,6,33.94,8.99,0.147,2
-Paraguay,San Lorenzo,1,10,49.9,8.99,0.0,1
-Peru,Hunuco,2,13,66.87,10.99,0.0,1
-Peru,Lima,1,15,61.85,7.99,0.1292,2
-Peru,Sullana,1,12,47.88,6.99,0.0,3
-Peru,Lima,1,7,25.93,7.99,0.0,4
-Philippines,Santa Rosa,2,18,96.82,9.99,0.1237,1
-Philippines,Tanza,1,20,73.8,5.99,0.1893,2
-Philippines,Baybay,1,18,70.82,8.99,0.2679,3
-Philippines,Tanauan,1,16,68.84,8.99,0.2175,4
-Philippines,Mandaluyong,1,11,60.89,9.99,0.0,5
-Philippines,Lapu-Lapu,2,14,54.86,5.99,0.1819,6
-Philippines,Gingoog,1,14,52.86,7.99,0.2454,7
-Philippines,Iligan,1,15,49.85,6.99,0.1801,8
-Philippines,Imus,2,12,45.88,5.99,0.0,9
-Philippines,Mandaluyong,1,13,43.87,4.99,0.1363,10
-Philippines,Tanza,1,8,37.92,8.99,0.1316,11
-Philippines,Davao,2,8,30.92,4.99,0.0,12
-Philippines,Ozamis,1,7,28.93,7.99,0.0,13
-Poland,Jastrzebie-Zdrj,1,16,65.84,6.99,0.2122,1
-Poland,Tychy,1,14,58.86,10.99,0.1527,2
-Poland,Czestochowa,1,11,46.89,6.99,0.0,3
-Poland,Tychy,1,8,27.92,4.99,0.25,4
-Puerto Rico,Arecibo,2,17,69.83,9.99,0.2571,1
-Romania,Bucuresti,2,16,60.84,7.99,0.0819,1
-Romania,Botosani,2,6,20.94,8.99,0.0473,2
-Russian Federation,Kolpino,1,18,87.82,9.99,0.0568,1
-Russian Federation,Maikop,1,15,83.85,8.99,0.2262,2
-Russian Federation,Usolje-Sibirskoje,2,16,74.84,8.99,0.0533,3
-Russian Federation,Jelets,1,13,69.87,8.99,0.1,4
-Russian Federation,Kurgan,1,15,69.85,8.99,0.4001,5
-Russian Federation,Kirovo-Tepetsk,1,14,68.86,8.99,0.1306,6
-Russian Federation,Ljubertsy,2,15,66.85,7.99,0.1046,7
-Russian Federation,Korolev,1,13,60.87,8.99,0.377,8
-Russian Federation,Smolensk,2,12,56.88,10.99,0.0174,9
-Russian Federation,Nabereznyje Telny,1,11,50.89,8.99,0.3922,10
-Russian Federation,Atinsk,1,13,50.87,6.99,0.1176,11
-Russian Federation,Zeleznogorsk,1,13,50.87,7.99,0.1571,12
-Russian Federation,Syktyvkar,2,11,49.89,6.99,0.16,13
-Russian Federation,Pjatigorsk,2,14,46.86,7.99,0.2128,14
-Russian Federation,Serpuhov,2,11,40.89,7.99,0.0484,15
-Russian Federation,Moscow,2,7,32.93,8.99,0.1515,16
-Russian Federation,Kolpino,1,9,32.91,8.99,0.0605,17
-Russian Federation,Korolev,1,5,19.95,6.99,0.0997,18
-Russian Federation,Jelets,1,4,18.96,6.99,0.2104,19
-Russian Federation,Nabereznyje Telny,1,4,13.96,4.99,0.3574,20
-Saudi Arabia,Jedda,2,13,69.87,10.99,0.1856,1
-Saudi Arabia,Abha,1,12,53.88,8.99,0.0369,2
-South Africa,Boksburg,1,16,65.84,9.99,0.1817,1
-South Africa,Newcastle,1,12,56.88,6.99,0.0526,2
-South Africa,Johannesburg,1,12,55.88,7.99,0.0893,3
-South Africa,Soshanguve,1,15,55.85,8.99,0.1785,4
-South Africa,Rustenburg,1,11,49.89,9.99,0.28,5
-South Africa,Paarl,1,7,34.93,6.99,0.1429,6
-South Africa,Johannesburg,1,5,20.95,4.99,0.0,7
-South Korea,Uijongbu,1,16,72.84,10.99,0.1094,1
-Spain,Ourense (Orense),2,18,80.82,10.99,0.136,1
-Spain,A Corua (La Corua),1,12,48.88,7.99,0.0407,2
-Spain,A Corua (La Corua),1,4,13.96,4.99,0.0709,3
-Sudan,Omdurman,1,17,80.83,10.99,0.037,1
-Switzerland,Lausanne,1,16,64.84,6.99,0.0,1
-Switzerland,Bern,1,5,27.95,7.99,0.0,2
-Taiwan,Lungtan,1,19,73.81,9.99,0.0676,1
-Taiwan,Hsichuh,2,16,70.84,9.99,0.1266,2
-Taiwan,Changhwa,2,20,70.8,9.99,0.1549,3
-Taiwan,Fengshan,2,15,63.85,8.99,0.3593,4
-Taiwan,Nantou,1,16,59.84,8.99,0.2667,5
-Taiwan,Fengshan,2,7,33.93,8.99,0.0,6
-Taiwan,Changhwa,2,5,29.95,7.99,0.1666,7
-Taiwan,Chungho,2,5,22.95,8.99,0.0,8
-Tanzania,Mwanza,1,13,57.87,10.99,0.0517,1
-Thailand,Pak Kret,2,16,61.84,6.99,0.1452,1
-Thailand,Songkhla,2,7,24.93,4.99,0.0,2
-Turkey,Balikesir,1,19,82.81,6.99,0.2291,1
-Turkey,Tokat,1,18,71.82,9.99,0.236,2
-Turkey,Batman,1,14,70.86,7.99,0.1267,3
-Turkey,Osmaniye,2,13,61.87,11.99,0.0967,4
-Turkey,Adana,2,13,58.87,9.99,0.2373,5
-Turkey,Sivas,1,13,55.87,7.99,0.0893,6
-Turkey,Eskisehir,2,15,49.85,6.99,0.1601,7
-Turkey,Adana,2,6,30.94,6.99,0.0,8
-Ukraine,ostka,2,15,71.85,9.99,0.2223,1
-Ukraine,Kamjanets-Podilskyi,1,13,54.87,8.99,0.4,2
-Ukraine,Mukateve,2,12,49.88,8.99,0.16,3
-United Arab Emirates,Sharja,2,16,74.84,8.99,0.2936,1
-United Kingdom,York,2,14,67.86,9.99,0.1176,1
-United States,Cape Coral,2,19,86.81,7.99,0.046,1
-United States,Akron,1,15,79.85,8.99,0.0,2
-United States,San Bernardino,1,14,75.86,10.99,0.1972,3
-United States,Memphis,2,12,72.88,9.99,0.0,4
-United States,Lincoln,1,14,64.86,8.99,0.1691,5
-United States,Peoria,2,16,59.84,6.99,0.0665,6
-United States,Fontana,1,12,58.88,9.99,0.2035,7
-United States,Dayton,2,13,57.87,7.99,0.0517,8
-United States,Kansas City,1,13,53.87,6.99,0.0555,9
-United States,Roanoke,1,12,52.88,7.99,0.0,10
-United States,Citrus Heights,2,12,50.88,7.99,0.1374,11
-United States,Laredo,2,12,48.88,7.99,0.0203,12
-United States,Cape Coral,2,9,41.91,7.99,0.0,13
-United States,Compton,1,12,39.88,8.99,0.2753,14
-United States,Garland,2,9,33.91,5.99,0.2058,15
-United States,Brockton,1,7,32.93,7.99,0.0908,16
-United States,Rockford,2,9,30.91,7.99,0.1288,17
-United States,Saint Louis,1,7,24.93,6.99,0.4003,18
-United States,Kansas City,1,5,19.95,7.99,0.0,19
-Venezuela,Valencia,1,12,55.88,7.99,0.0,1
-Venezuela,Valle de la Pascua,1,14,51.86,7.99,0.2308,2
-Venezuela,Cuman,2,6,27.94,8.99,0.2502,3
-Venezuela,Caracas,1,6,22.94,6.99,0.1303,4
-Vietnam,Cam Ranh,2,14,69.86,8.99,0.0,1
-Vietnam,Nha Trang,2,14,60.86,10.99,0.0656,2
-Vietnam,Haiphong,2,12,52.88,8.99,0.2075,3
-Vietnam,Vinh,1,4,24.96,8.99,0.0,4
-Yemen,Hodeida,1,17,96.83,10.99,0.0619,1
-Yemen,Aden,2,18,73.82,8.99,0.4325,2
-Yemen,Taizz,1,9,35.91,6.99,0.0,3
-Yugoslavia,Novi Sad,1,16,68.84,6.99,0.2031,1
+country_name,city_name,store_id,payment_month,payment_count,total_suspicious_amount,max_single_payment,action_new_payment_share_percent,country_month_amount_rank
+Algeria,Batna,1,2005-07-01,17,66.83,10.99,22.39,1
+Angola,Benguela,1,2005-07-01,11,56.89,9.99,24.57,1
+Argentina,Baha Blanca,1,2005-06-01,7,40.93,8.99,0.0,1
+Argentina,La Plata,1,2005-06-01,5,30.95,8.99,54.86,2
+Argentina,Tandil,1,2005-06-01,6,26.94,5.99,0.0,3
+Argentina,Quilmes,1,2005-07-01,13,70.87,9.99,9.86,1
+Argentina,La Plata,1,2005-07-01,17,68.83,8.99,7.25,2
+Argentina,Vicente Lpez,2,2005-07-01,15,64.85,7.99,4.61,3
+Argentina,Merlo,1,2005-07-01,14,61.86,7.99,0.0,4
+Argentina,Avellaneda,1,2005-07-01,14,59.86,9.99,31.67,5
+Argentina,San Miguel de Tucumn,1,2005-07-01,13,45.87,5.99,2.16,6
+Argentina,Escobar,1,2005-08-01,14,66.86,9.99,0.0,1
+Austria,Graz,1,2005-07-01,14,57.86,8.99,22.42,1
+Austria,Salzburg,2,2005-08-01,17,71.83,8.99,15.29,1
+Azerbaijan,Baku,2,2005-07-01,13,51.87,10.99,1.91,1
+Bangladesh,Dhaka,1,2005-07-01,17,78.83,8.99,17.73,1
+Bangladesh,Tangail,1,2005-08-01,17,79.83,9.99,2.48,1
+Belarus,Molodetno,1,2005-06-01,6,22.94,5.99,21.75,1
+Belarus,Molodetno,1,2005-07-01,18,93.82,9.99,28.75,1
+Bolivia,Sucre,2,2005-06-01,7,35.93,8.99,33.34,1
+Bolivia,El Alto,2,2005-07-01,9,45.91,8.99,23.92,1
+Brazil,Ibirit,2,2005-06-01,6,27.94,6.99,0.0,1
+Brazil,guas Lindas de Gois,1,2005-06-01,6,21.94,6.99,0.0,2
+Brazil,Aparecida de Goinia,1,2005-06-01,5,15.95,6.99,6.21,3
+Brazil,Goinia,2,2005-07-01,15,78.85,8.99,19.0,1
+Brazil,Juiz de Fora,1,2005-07-01,15,75.85,11.99,15.81,2
+Brazil,Sorocaba,1,2005-07-01,18,67.82,6.99,19.11,3
+Brazil,Santo Andr,2,2005-07-01,19,67.81,8.99,7.36,4
+Brazil,Angra dos Reis,2,2005-07-01,13,62.87,10.99,12.68,5
+Brazil,Belm,1,2005-07-01,15,61.85,8.99,8.07,6
+Brazil,Blumenau,1,2005-07-01,13,60.87,6.99,21.31,7
+Brazil,Poos de Caldas,2,2005-07-01,13,55.87,7.99,7.14,8
+Brazil,Anpolis,1,2005-07-01,13,49.87,7.99,23.98,9
+Brazil,Po,1,2005-07-01,13,48.87,7.99,24.45,10
+Brazil,Boa Vista,1,2005-07-01,12,45.88,8.99,0.0,11
+Brazil,Luzinia,2,2005-07-01,11,34.89,5.99,0.0,12
+Cambodia,Battambang,2,2005-06-01,6,22.94,10.99,8.67,1
+Cambodia,Phnom Penh,2,2005-07-01,15,54.85,8.99,7.26,1
+Cameroon,Bamenda,1,2005-06-01,5,20.95,4.99,0.0,1
+Canada,Vancouver,1,2005-07-01,12,52.88,9.99,5.65,1
+Chile,Antofagasta,1,2005-07-01,9,37.91,9.99,7.89,1
+China,Zhoushan,2,2005-06-01,6,39.94,10.99,25.01,1
+China,Datong,1,2005-06-01,8,34.92,10.99,14.26,2
+China,Dongying,1,2005-06-01,5,28.95,8.99,0.0,3
+China,Xinxiang,2,2005-06-01,5,25.95,6.99,15.38,4
+China,Weifang,1,2005-06-01,5,24.95,7.99,39.96,5
+China,Jinzhou,1,2005-07-01,19,86.81,10.99,18.41,1
+China,Yinchuan,1,2005-07-01,15,77.85,9.99,14.1,2
+China,Jinchang,1,2005-07-01,17,70.83,6.99,16.9,3
+China,Tiefa,1,2005-07-01,15,67.85,8.99,29.43,4
+China,Shaoguan,1,2005-07-01,18,63.82,6.99,6.25,5
+China,Fuyu,1,2005-07-01,16,62.84,8.99,7.94,6
+China,Tongliao,1,2005-07-01,16,60.84,5.99,19.67,7
+China,Daxian,2,2005-07-01,19,59.81,6.99,10.0,8
+China,Binzhou,1,2005-07-01,13,58.87,9.99,16.97,9
+China,Shanwei,2,2005-07-01,16,58.84,8.99,22.04,10
+China,Yuncheng,2,2005-07-01,14,55.86,7.99,5.35,11
+China,Xiangfan,2,2005-07-01,15,53.85,6.99,20.37,12
+China,Xinxiang,2,2005-07-01,13,52.87,7.99,7.55,13
+China,Weifang,1,2005-07-01,14,52.86,5.99,7.53,14
+China,Meixian,2,2005-07-01,12,51.88,9.99,7.69,15
+China,Baicheng,2,2005-07-01,14,51.86,8.99,28.87,16
+China,Yuzhou,2,2005-07-01,12,50.88,7.99,9.81,17
+China,Hami,2,2005-07-01,12,49.88,7.99,5.99,18
+China,Hohhot,1,2005-07-01,15,47.85,9.99,4.16,19
+China,Leshan,2,2005-08-01,18,75.82,9.99,26.34,1
+China,Laohekou,1,2005-08-01,13,56.87,9.99,0.0,2
+China,Zalantun,1,2005-08-01,12,48.88,8.99,10.19,3
+Colombia,Dos Quebradas,2,2005-06-01,6,29.94,9.99,33.37,1
+Colombia,Sincelejo,1,2005-06-01,5,25.95,9.99,11.52,2
+Colombia,Sogamoso,1,2005-07-01,14,64.86,8.99,13.86,1
+Colombia,Buenaventura,1,2005-07-01,15,62.85,6.99,19.05,2
+Colombia,Florencia,1,2005-08-01,12,54.88,10.99,0.0,1
+Ecuador,Robamba,2,2005-07-01,18,80.82,8.99,7.4,1
+Egypt,Mit Ghamr,2,2005-06-01,7,31.93,4.99,9.36,1
+Egypt,Idfu,2,2005-07-01,13,55.87,8.99,5.35,1
+Egypt,Bilbays,2,2005-07-01,12,41.88,7.99,26.19,2
+Egypt,Shubra al-Khayma,1,2005-08-01,18,77.82,6.99,24.36,1
+France,Toulouse,2,2005-07-01,16,68.84,6.99,23.18,1
+France,Brest,1,2005-07-01,12,52.88,7.99,16.96,2
+French Polynesia,Faaa,2,2005-07-01,12,47.88,4.99,27.09,1
+Germany,Erlangen,1,2005-06-01,5,24.95,7.99,32.02,1
+Germany,Duisburg,2,2005-07-01,15,61.85,10.99,33.9,1
+Germany,Saarbrcken,1,2005-07-01,12,44.88,7.99,11.12,2
+Greece,Athenai,1,2005-06-01,4,25.96,8.99,0.0,1
+Greece,Athenai,1,2005-07-01,13,68.87,10.99,37.69,1
+India,Valparai,1,2005-06-01,6,35.94,8.99,0.0,1
+India,Tambaram,2,2005-06-01,4,27.96,9.99,10.69,2
+India,Haldia,2,2005-06-01,6,25.94,4.99,0.0,3
+India,Ahmadnagar,1,2005-06-01,5,23.95,8.99,0.0,4
+India,Kanchrapara,2,2005-06-01,4,21.96,9.99,0.0,5
+India,Rajkot,1,2005-06-01,4,21.96,6.99,54.55,5
+India,Uluberia,2,2005-06-01,6,20.94,6.99,33.38,7
+India,Purnea (Purnia),1,2005-06-01,5,19.95,7.99,14.99,8
+India,Ranchi,2,2005-06-01,6,18.94,5.99,0.0,9
+India,Varanasi (Benares),2,2005-06-01,5,14.95,4.99,33.38,10
+India,Bhilwara,2,2005-07-01,17,82.83,8.99,10.84,1
+India,Ambattur,1,2005-07-01,17,80.83,7.99,3.7,2
+India,Vijayawada,2,2005-07-01,14,74.86,9.99,23.99,3
+India,Siliguri (Shiliguri),1,2005-07-01,15,73.85,8.99,14.87,4
+India,Uluberia,2,2005-07-01,17,71.83,9.99,2.76,5
+India,Valparai,1,2005-07-01,12,61.88,7.99,0.0,6
+India,Parbhani,1,2005-07-01,14,59.86,10.99,30.02,7
+India,Jhansi,1,2005-07-01,15,58.85,9.99,0.0,8
+India,Pudukkottai,1,2005-07-01,12,57.88,8.99,0.0,9
+India,Pune,2,2005-07-01,14,57.86,7.99,1.71,10
+India,Udaipur,1,2005-07-01,12,56.88,9.99,14.05,11
+India,Patiala,2,2005-07-01,12,54.88,7.99,12.74,12
+India,Bhimavaram,2,2005-07-01,13,53.87,7.99,18.53,13
+India,Bhusawal,2,2005-07-01,13,52.87,8.99,0.0,14
+India,Munger (Monghyr),1,2005-07-01,14,51.86,9.99,15.39,15
+India,Satna,2,2005-07-01,13,50.87,6.99,13.74,16
+India,Ahmadnagar,1,2005-07-01,13,48.87,8.99,4.05,17
+India,Chandrapur,2,2005-07-01,15,48.85,4.99,4.05,18
+India,Dhule (Dhulia),1,2005-07-01,12,47.88,9.99,0.0,19
+India,Balurghat,1,2005-07-01,13,46.87,6.99,29.81,20
+India,Katihar,1,2005-07-01,13,39.87,5.99,2.48,21
+India,Bhopal,1,2005-08-01,18,79.82,8.99,1.24,1
+India,Etawah,1,2005-08-01,14,67.86,9.99,8.81,2
+India,Rajkot,1,2005-08-01,12,56.88,9.99,0.0,3
+India,Haldia,2,2005-08-01,14,55.86,8.99,10.72,4
+Indonesia,Surakarta,1,2005-06-01,7,22.93,4.99,0.0,1
+Indonesia,Ciparay,2,2005-06-01,5,21.95,6.99,13.62,2
+Indonesia,Pemalang,1,2005-06-01,6,20.94,4.99,0.0,3
+Indonesia,Probolinggo,2,2005-07-01,16,77.84,8.99,21.8,1
+Indonesia,Lhokseumawe,2,2005-07-01,13,57.87,8.99,6.88,2
+Indonesia,Cianjur,1,2005-07-01,12,32.88,5.99,9.09,3
+Iran,Qomsheh,1,2005-06-01,7,25.93,9.99,3.82,1
+Iran,Qomsheh,1,2005-07-01,18,89.82,10.99,8.88,1
+Iran,Shahr-e Kord,1,2005-07-01,12,50.88,9.99,0.0,2
+Iran,Arak,2,2005-07-01,13,40.87,6.99,4.84,3
+Iran,Tabriz,2,2005-08-01,14,66.86,7.99,17.92,1
+Iran,Arak,2,2005-08-01,11,48.89,9.99,2.02,2
+Israel,Ashdod,1,2005-07-01,21,84.79,6.99,16.48,1
+Israel,Tel Aviv-Jaffa,1,2005-07-01,10,41.9,6.99,7.14,2
+Italy,Syrakusa,1,2005-06-01,5,23.95,10.99,12.48,1
+Italy,Brescia,1,2005-07-01,16,76.84,8.99,18.17,1
+Italy,Brindisi,2,2005-08-01,13,61.87,8.99,37.11,1
+Japan,Sasebo,1,2005-06-01,7,31.93,9.99,0.0,1
+Japan,Shimonoseki,2,2005-06-01,7,21.93,7.99,18.15,2
+Japan,Akishima,2,2005-06-01,5,15.95,6.99,0.0,3
+Japan,Otsu,1,2005-07-01,13,68.87,9.99,1.44,1
+Japan,Kuwana,2,2005-07-01,14,64.86,6.99,7.69,2
+Japan,Akishima,2,2005-07-01,15,64.85,7.99,16.93,3
+Japan,Onomichi,1,2005-07-01,12,62.88,8.99,12.69,4
+Japan,Omiya,2,2005-07-01,14,59.86,8.99,18.34,5
+Japan,Kamakura,1,2005-07-01,13,53.87,9.99,24.1,6
+Japan,Iwaki,1,2005-07-01,12,51.88,8.99,57.73,7
+Japan,Higashiosaka,1,2005-07-01,12,51.88,8.99,0.0,8
+Japan,Isesaki,2,2005-07-01,13,51.87,7.99,30.75,9
+Japan,Iwatsuki,1,2005-07-01,12,39.88,6.99,17.53,10
+Japan,Urawa,2,2005-07-01,13,31.87,7.99,18.76,11
+Japan,Urawa,2,2005-08-01,15,76.85,8.99,32.47,1
+Japan,Iwakuni,1,2005-08-01,14,64.86,10.99,7.69,2
+Kazakstan,Pavlodar,2,2005-06-01,6,12.94,6.99,7.65,1
+Kazakstan,Zhezqazghan,1,2005-07-01,15,70.85,10.99,8.45,1
+Kenya,Kisumu,2,2005-06-01,6,35.94,8.99,0.0,1
+Kenya,Nyeri,2,2005-07-01,15,69.85,8.99,18.57,1
+Malaysia,Ipoh,2,2005-06-01,7,32.93,6.99,0.0,1
+Malaysia,Sungai Petani,1,2005-07-01,14,53.86,6.99,22.24,1
+Mexico,Uruapan,2,2005-06-01,10,52.9,9.99,15.1,1
+Mexico,Monclova,2,2005-06-01,7,32.93,6.99,15.15,2
+Mexico,Cuauhtmoc,2,2005-06-01,4,30.96,9.99,0.0,3
+Mexico,Mexicali,1,2005-06-01,7,30.93,8.99,0.0,4
+Mexico,Huixquilucan,1,2005-06-01,5,24.95,8.99,0.0,5
+Mexico,El Fuerte,1,2005-06-01,7,22.93,6.99,60.97,6
+Mexico,Salamanca,2,2005-06-01,5,21.95,6.99,0.0,7
+Mexico,Guadalajara,1,2005-06-01,5,19.95,4.99,0.0,8
+Mexico,Zapopan,1,2005-06-01,4,17.96,8.99,5.51,9
+Mexico,Coatzacoalcos,1,2005-07-01,12,69.88,8.99,22.87,1
+Mexico,Salamanca,2,2005-07-01,15,67.85,8.99,23.52,2
+Mexico,San Juan Bautista Tuxtepec,2,2005-07-01,17,67.83,8.99,26.49,3
+Mexico,Cuauhtmoc,2,2005-07-01,13,66.87,8.99,1.48,4
+Mexico,Atlixco,2,2005-07-01,12,64.88,9.99,0.0,5
+Mexico,Acua,1,2005-07-01,12,58.88,8.99,5.08,6
+Mexico,Cuautla,2,2005-07-01,15,58.85,7.99,30.52,7
+Mexico,Jos Azueta,1,2005-07-01,14,57.86,8.99,1.71,8
+Mexico,Huixquilucan,1,2005-07-01,13,51.87,6.99,15.37,9
+Mexico,Nezahualcyotl,1,2005-07-01,15,50.85,6.99,0.0,10
+Mexico,Torren,1,2005-07-01,13,47.87,6.99,20.85,11
+Mexico,Jurez,2,2005-07-01,12,45.88,7.99,2.16,12
+Mexico,Hidalgo,2,2005-08-01,16,68.84,9.99,13.02,1
+Morocco,Nador,2,2005-07-01,11,40.89,8.99,21.99,1
+Mozambique,Beira,2,2005-07-01,18,88.82,6.99,11.24,1
+Netherlands,Apeldoorn,2,2005-06-01,4,19.96,6.99,0.0,1
+Netherlands,Apeldoorn,2,2005-07-01,19,96.81,8.99,4.11,1
+Netherlands,Amersfoort,1,2005-07-01,11,40.89,8.99,29.27,2
+Nigeria,Ogbomosho,2,2005-06-01,7,28.93,5.99,0.0,1
+Nigeria,Effon-Alaiye,1,2005-07-01,17,76.83,9.99,7.8,1
+Nigeria,Ilorin,1,2005-07-01,15,68.85,6.99,2.89,2
+Nigeria,Deba Habe,2,2005-07-01,15,58.85,7.99,1.68,3
+Nigeria,Zaria,2,2005-07-01,14,57.86,10.99,17.25,4
+Nigeria,Ikerre,2,2005-07-01,15,52.85,5.99,9.44,5
+Nigeria,Ikerre,2,2005-08-01,16,70.84,6.99,7.04,1
+Nigeria,Owo,2,2005-08-01,12,68.88,9.99,28.99,2
+Pakistan,Shikarpur,1,2005-06-01,6,33.94,8.99,14.7,1
+Pakistan,Dadu,2,2005-08-01,13,63.87,8.99,10.94,1
+Paraguay,San Lorenzo,1,2005-07-01,10,49.9,8.99,0.0,1
+Peru,Lima,1,2005-06-01,7,25.93,7.99,0.0,1
+Peru,Lima,1,2005-07-01,15,61.85,7.99,12.92,1
+Peru,Hunuco,2,2005-08-01,13,66.87,10.99,0.0,1
+Peru,Sullana,1,2005-08-01,12,47.88,6.99,0.0,2
+Philippines,Tanza,1,2005-06-01,8,37.92,8.99,13.16,1
+Philippines,Davao,2,2005-06-01,8,30.92,4.99,0.0,2
+Philippines,Ozamis,1,2005-06-01,7,28.93,7.99,0.0,3
+Philippines,Santa Rosa,2,2005-07-01,18,96.82,9.99,12.37,1
+Philippines,Tanza,1,2005-07-01,20,73.8,5.99,18.93,2
+Philippines,Baybay,1,2005-07-01,18,70.82,8.99,26.79,3
+Philippines,Tanauan,1,2005-07-01,16,68.84,8.99,21.75,4
+Philippines,Lapu-Lapu,2,2005-07-01,14,54.86,5.99,18.19,5
+Philippines,Iligan,1,2005-07-01,15,49.85,6.99,18.01,6
+Philippines,Imus,2,2005-07-01,12,45.88,5.99,0.0,7
+Philippines,Mandaluyong,1,2005-07-01,13,43.87,4.99,13.63,8
+Philippines,Mandaluyong,1,2005-08-01,11,60.89,9.99,0.0,1
+Philippines,Gingoog,1,2005-08-01,14,52.86,7.99,24.54,2
+Poland,Tychy,1,2005-06-01,8,27.92,4.99,25.0,1
+Poland,Jastrzebie-Zdrj,1,2005-07-01,16,65.84,6.99,21.22,1
+Poland,Tychy,1,2005-07-01,14,58.86,10.99,15.27,2
+Poland,Czestochowa,1,2005-07-01,11,46.89,6.99,0.0,3
+Puerto Rico,Arecibo,2,2005-07-01,17,69.83,9.99,25.71,1
+Romania,Botosani,2,2005-06-01,6,20.94,8.99,4.73,1
+Romania,Bucuresti,2,2005-07-01,16,60.84,7.99,8.19,1
+Russian Federation,Moscow,2,2005-06-01,7,32.93,8.99,15.15,1
+Russian Federation,Kolpino,1,2005-06-01,9,32.91,8.99,6.05,2
+Russian Federation,Korolev,1,2005-06-01,5,19.95,6.99,9.97,3
+Russian Federation,Jelets,1,2005-06-01,4,18.96,6.99,21.04,4
+Russian Federation,Nabereznyje Telny,1,2005-06-01,4,13.96,4.99,35.74,5
+Russian Federation,Kolpino,1,2005-07-01,18,87.82,9.99,5.68,1
+Russian Federation,Maikop,1,2005-07-01,15,83.85,8.99,22.62,2
+Russian Federation,Usolje-Sibirskoje,2,2005-07-01,16,74.84,8.99,5.33,3
+Russian Federation,Jelets,1,2005-07-01,13,69.87,8.99,10.0,4
+Russian Federation,Kurgan,1,2005-07-01,15,69.85,8.99,40.01,5
+Russian Federation,Kirovo-Tepetsk,1,2005-07-01,14,68.86,8.99,13.06,6
+Russian Federation,Korolev,1,2005-07-01,13,60.87,8.99,37.7,7
+Russian Federation,Nabereznyje Telny,1,2005-07-01,11,50.89,8.99,39.22,8
+Russian Federation,Atinsk,1,2005-07-01,13,50.87,6.99,11.76,9
+Russian Federation,Zeleznogorsk,1,2005-07-01,13,50.87,7.99,15.71,10
+Russian Federation,Syktyvkar,2,2005-07-01,11,49.89,6.99,16.0,11
+Russian Federation,Pjatigorsk,2,2005-07-01,14,46.86,7.99,21.28,12
+Russian Federation,Serpuhov,2,2005-07-01,11,40.89,7.99,4.84,13
+Russian Federation,Ljubertsy,2,2005-08-01,15,66.85,7.99,10.46,1
+Russian Federation,Smolensk,2,2005-08-01,12,56.88,10.99,1.74,2
+Saudi Arabia,Jedda,2,2005-07-01,13,69.87,10.99,18.56,1
+Saudi Arabia,Abha,1,2005-07-01,12,53.88,8.99,3.69,2
+South Africa,Paarl,1,2005-06-01,7,34.93,6.99,14.29,1
+South Africa,Johannesburg,1,2005-06-01,5,20.95,4.99,0.0,2
+South Africa,Boksburg,1,2005-07-01,16,65.84,9.99,18.17,1
+South Africa,Newcastle,1,2005-07-01,12,56.88,6.99,5.26,2
+South Africa,Soshanguve,1,2005-07-01,15,55.85,8.99,17.85,3
+South Africa,Rustenburg,1,2005-07-01,11,49.89,9.99,28.0,4
+South Africa,Johannesburg,1,2005-08-01,12,55.88,7.99,8.93,1
+South Korea,Uijongbu,1,2005-07-01,16,72.84,10.99,10.94,1
+Spain,A Corua (La Corua),1,2005-06-01,4,13.96,4.99,7.09,1
+Spain,Ourense (Orense),2,2005-07-01,18,80.82,10.99,13.6,1
+Spain,A Corua (La Corua),1,2005-07-01,12,48.88,7.99,4.07,2
+Sudan,Omdurman,1,2005-07-01,17,80.83,10.99,3.7,1
+Switzerland,Bern,1,2005-06-01,5,27.95,7.99,0.0,1
+Switzerland,Lausanne,1,2005-07-01,16,64.84,6.99,0.0,1
+Taiwan,Fengshan,2,2005-06-01,7,33.93,8.99,0.0,1
+Taiwan,Changhwa,2,2005-06-01,5,29.95,7.99,16.66,2
+Taiwan,Chungho,2,2005-06-01,5,22.95,8.99,0.0,3
+Taiwan,Lungtan,1,2005-07-01,19,73.81,9.99,6.76,1
+Taiwan,Hsichuh,2,2005-07-01,16,70.84,9.99,12.66,2
+Taiwan,Changhwa,2,2005-07-01,20,70.8,9.99,15.49,3
+Taiwan,Fengshan,2,2005-07-01,15,63.85,8.99,35.93,4
+Taiwan,Nantou,1,2005-07-01,16,59.84,8.99,26.67,5
+Tanzania,Mwanza,1,2005-07-01,13,57.87,10.99,5.17,1
+Thailand,Songkhla,2,2005-06-01,7,24.93,4.99,0.0,1
+Thailand,Pak Kret,2,2005-07-01,16,61.84,6.99,14.52,1
+Turkey,Adana,2,2005-06-01,6,30.94,6.99,0.0,1
+Turkey,Balikesir,1,2005-07-01,19,82.81,6.99,22.91,1
+Turkey,Tokat,1,2005-07-01,18,71.82,9.99,23.6,2
+Turkey,Batman,1,2005-07-01,14,70.86,7.99,12.67,3
+Turkey,Osmaniye,2,2005-07-01,13,61.87,11.99,9.67,4
+Turkey,Sivas,1,2005-07-01,13,55.87,7.99,8.93,5
+Turkey,Eskisehir,2,2005-07-01,15,49.85,6.99,16.01,6
+Turkey,Adana,2,2005-08-01,13,58.87,9.99,23.73,1
+Ukraine,ostka,2,2005-07-01,15,71.85,9.99,22.23,1
+Ukraine,Kamjanets-Podilskyi,1,2005-07-01,13,54.87,8.99,40.0,2
+Ukraine,Mukateve,2,2005-07-01,12,49.88,8.99,16.0,3
+United Arab Emirates,Sharja,2,2005-07-01,16,74.84,8.99,29.36,1
+United Kingdom,York,2,2005-07-01,14,67.86,9.99,11.76,1
+United States,Cape Coral,2,2005-06-01,9,41.91,7.99,0.0,1
+United States,Garland,2,2005-06-01,9,33.91,5.99,20.58,2
+United States,Brockton,1,2005-06-01,7,32.93,7.99,9.08,3
+United States,Rockford,2,2005-06-01,9,30.91,7.99,12.88,4
+United States,Saint Louis,1,2005-06-01,7,24.93,6.99,40.03,5
+United States,Kansas City,1,2005-06-01,5,19.95,7.99,0.0,6
+United States,Cape Coral,2,2005-07-01,19,86.81,7.99,4.6,1
+United States,Akron,1,2005-07-01,15,79.85,8.99,0.0,2
+United States,San Bernardino,1,2005-07-01,14,75.86,10.99,19.72,3
+United States,Memphis,2,2005-07-01,12,72.88,9.99,0.0,4
+United States,Lincoln,1,2005-07-01,14,64.86,8.99,16.91,5
+United States,Fontana,1,2005-07-01,12,58.88,9.99,20.35,6
+United States,Roanoke,1,2005-07-01,12,52.88,7.99,0.0,7
+United States,Citrus Heights,2,2005-07-01,12,50.88,7.99,13.74,8
+United States,Compton,1,2005-07-01,12,39.88,8.99,27.53,9
+United States,Peoria,2,2005-08-01,16,59.84,6.99,6.65,1
+United States,Dayton,2,2005-08-01,13,57.87,7.99,5.17,2
+United States,Kansas City,1,2005-08-01,13,53.87,6.99,5.55,3
+United States,Laredo,2,2005-08-01,12,48.88,7.99,2.03,4
+Venezuela,Cuman,2,2005-06-01,6,27.94,8.99,25.02,1
+Venezuela,Caracas,1,2005-06-01,6,22.94,6.99,13.03,2
+Venezuela,Valencia,1,2005-07-01,12,55.88,7.99,0.0,1
+Venezuela,Valle de la Pascua,1,2005-07-01,14,51.86,7.99,23.08,2
+Vietnam,Vinh,1,2005-06-01,4,24.96,8.99,0.0,1
+Vietnam,Cam Ranh,2,2005-07-01,14,69.86,8.99,0.0,1
+Vietnam,Nha Trang,2,2005-07-01,14,60.86,10.99,6.56,2
+Vietnam,Haiphong,2,2005-07-01,12,52.88,8.99,20.75,3
+Yemen,Taizz,1,2005-06-01,9,35.91,6.99,0.0,1
+Yemen,Hodeida,1,2005-07-01,17,96.83,10.99,6.19,1
+Yemen,Aden,2,2005-07-01,18,73.82,8.99,43.25,2
+Yugoslavia,Novi Sad,1,2005-07-01,16,68.84,6.99,20.31,1

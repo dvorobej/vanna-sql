@@ -6,8 +6,8 @@ SELECT
   SUM(p.p05) AS total_amount,
   AVG(p.p05) AS average_payment,
   CASE
-    WHEN SUM(p.p05) > 100 OR AVG(p.p05) > 7.00 THEN 'risk'
-    ELSE 'ok'
+    WHEN SUM(p.p05) > 100 OR AVG(p.p05) > 7.00 THEN 1
+    ELSE 0
   END AS risk_flag
 FROM cus AS c
 JOIN pay AS p

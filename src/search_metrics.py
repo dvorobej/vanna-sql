@@ -21,8 +21,8 @@ RANKING_METRIC_NAMES = ("mrr", "map_at_k", "recall_at_k")
 DESCRIPTION_STYLE_ORDER = ("short", "business", "technical")
 
 
-def reciprocal_rank(relevant_id: str, predicted_ids: list[str]) -> float:
-    for rank, predicted_id in enumerate(predicted_ids, start=1):
+def reciprocal_rank(relevant_id: str, predicted_ids: list[str], k: int) -> float:
+    for rank, predicted_id in enumerate(predicted_ids[:k], start=1):
         if predicted_id == relevant_id:
             return 1.0 / rank
     return 0.0
@@ -255,6 +255,9 @@ def run_search_evaluation_pipeline(
             qdrant_id = client.add_question_sql(question=description, sql=sql)
             true_label_map[row_uuid] = qdrant_id
 
+        print("sql count: ", client._client.count(collection_name="sql"))
+        print("ddl count: ", client._client.count(collection_name="ddl"))
+
         output_rows: list[dict[str, str]] = []
         search_total = len(filtered_rows) * len(query_columns)
         with tqdm(total=search_total, desc=f"Searching ({style})") as progress:
@@ -307,7 +310,7 @@ def _metric_scores_for_column(
         predicted_ids = _parse_predicted_ids(row.get(predicted_column, ""))
         if not relevant_id:
             continue
-        mrr_scores.append(reciprocal_rank(relevant_id, predicted_ids))
+        mrr_scores.append(reciprocal_rank(relevant_id, predicted_ids, k))
         map_scores.append(average_precision_at_k(relevant_id, predicted_ids, k))
         recall_scores.append(recall_at_k(relevant_id, predicted_ids, k))
 

@@ -1,81 +1,95 @@
-WITH daily AS (
+WITH daily_base AS (
   SELECT
     p.p02 AS customer_id,
     date(p.p06) AS day_date,
     SUM(CAST(p.p05 AS REAL)) AS day_amount,
     COUNT(*) AS payment_count,
     COUNT(DISTINCT p.p03) AS staff_count,
-    COUNT(DISTINCT p.p04) AS rental_count
+    COUNT(DISTINCT r.q03) AS rented_films_count
   FROM pay AS p
+  LEFT JOIN ren AS r
+    ON r.q01 = p.p04
   GROUP BY
     p.p02,
     date(p.p06)
 ),
-with_history AS (
+daily_with_history AS (
   SELECT
-    d.*,
+    db.*,
     (
-      SELECT AVG(d2.day_amount)
-      FROM daily AS d2
-      WHERE d2.customer_id = d.customer_id
-        AND d2.day_date >= date(d.day_date, '-30 days')
-        AND d2.day_date <  d.day_date
+      SELECT AVG(db2.day_amount)
+      FROM daily_base AS db2
+      WHERE db2.customer_id = db.customer_id
+        AND db2.day_date >= date(db.day_date, '-30 days')
+        AND db2.day_date < db.day_date
     ) AS avg_prev_30d_amount,
     (
-      SELECT AVG(d2.payment_count * 1.0)
-      FROM daily AS d2
-      WHERE d2.customer_id = d.customer_id
-        AND d2.day_date >= date(d.day_date, '-30 days')
-        AND d2.day_date <  d.day_date
+      SELECT AVG(db2.payment_count * 1.0)
+      FROM daily_base AS db2
+      WHERE db2.customer_id = db.customer_id
+        AND db2.day_date >= date(db.day_date, '-30 days')
+        AND db2.day_date < db.day_date
     ) AS avg_prev_30d_payment_count
-  FROM daily AS d
+  FROM daily_base AS db
 ),
-suspicious AS (
+scored AS (
   SELECT
-    wh.*,
+    dwh.*,
     CASE
-      WHEN wh.avg_prev_30d_amount > 0
-      THEN wh.day_amount / wh.avg_prev_30d_amount
+      WHEN dwh.avg_prev_30d_amount > 0
+      THEN (dwh.day_amount / dwh.avg_prev_30d_amount)
+      ELSE NULL
     END AS amount_ratio,
     CASE
-      WHEN wh.avg_prev_30d_payment_count > 0
-      THEN wh.payment_count / wh.avg_prev_30d_payment_count
+      WHEN dwh.avg_prev_30d_payment_count > 0
+      THEN (dwh.payment_count * 1.0 / dwh.avg_prev_30d_payment_count)
+      ELSE NULL
     END AS count_ratio
-  FROM with_history AS wh
-  WHERE wh.avg_prev_30d_amount IS NOT NULL
-    AND wh.avg_prev_30d_amount > 0
-    AND wh.day_amount >= 3.0 * wh.avg_prev_30d_amount
-    AND wh.payment_count >= 3
+  FROM daily_with_history AS dwh
 ),
-ranked AS (
+suspicious AS (
   SELECT
     s.*,
     (
       COALESCE(s.amount_ratio, 0) * 0.6 +
-      COALESCE(s.count_ratio, 0) * 0.3 +
-      COALESCE(s.staff_count, 0) * 0.1
+      COALESCE(s.count_ratio, 0) * 0.4 +
+      COALESCE(s.staff_count, 0) * 0.05 +
+      COALESCE(s.rented_films_count, 0) * 0.05
     ) AS risk_score
+  FROM scored AS s
+  WHERE s.avg_prev_30d_amount IS NOT NULL
+    AND s.avg_prev_30d_amount > 0
+    AND s.avg_prev_30d_payment_count IS NOT NULL
+    AND s.avg_prev_30d_payment_count > 0
+    AND s.day_amount >= 2.0 * s.avg_prev_30d_amount
+    AND s.payment_count >= 3
+),
+ranked AS (
+  SELECT
+    s.*,
+    DENSE_RANK() OVER (
+      ORDER BY s.risk_score DESC, s.day_amount DESC, s.customer_id, s.day_date
+    ) AS risk_rank
   FROM suspicious AS s
 )
 SELECT
   r.customer_id,
   c.h03 AS first_name,
   c.h04 AS last_name,
-  r.day_date,
+  r.day_date AS suspicious_day,
   ROUND(r.day_amount, 2) AS day_amount,
   r.payment_count,
   r.staff_count,
-  r.rental_count,
+  r.rented_films_count,
   ROUND(r.avg_prev_30d_amount, 2) AS avg_prev_30d_amount,
   ROUND(r.amount_ratio, 2) AS amount_ratio,
-  ROUND(r.avg_prev_30d_payment_count, 2) AS avg_prev_30d_payment_count,
-  ROUND(r.count_ratio, 2) AS count_ratio,
   ROUND(r.risk_score, 4) AS risk_score,
-  RANK() OVER (ORDER BY r.risk_score DESC, r.day_amount DESC, r.customer_id) AS risk_rank
+  r.risk_rank
 FROM ranked AS r
 JOIN cus AS c
   ON c.h01 = r.customer_id
 ORDER BY
-  risk_rank,
+  r.risk_rank,
+  r.day_amount DESC,
   r.day_date DESC,
   r.customer_id;

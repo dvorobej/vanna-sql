@@ -39,8 +39,7 @@ country_p95 AS (
         SELECT country_id, daily_sum,
                PERCENT_RANK() OVER (PARTITION BY country_id ORDER BY daily_sum) as pr
         FROM country_stats
-    )
-    WHERE pr <= 0.95
+    ) WHERE pr <= 0.95
     GROUP BY country_id
 ),
 suspicious_cases AS (

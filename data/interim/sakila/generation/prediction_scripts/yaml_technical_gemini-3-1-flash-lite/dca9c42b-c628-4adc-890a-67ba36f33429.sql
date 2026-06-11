@@ -5,7 +5,7 @@ SELECT
   COUNT(p.p01) AS payment_count,
   SUM(p.p05) AS total_amount,
   AVG(p.p05) AS average_payment,
-  SUM(CASE WHEN p.p05 > 8 THEN 1 ELSE 0 END) AS large_payment_count
+  SUM(CASE WHEN p.p05 > 8.00 THEN 1 ELSE 0 END) AS large_payment_count
 FROM cus AS c
 JOIN pay AS p
   ON c.h01 = p.p02
@@ -18,6 +18,4 @@ GROUP BY
   c.h04
 HAVING COUNT(p.p01) > 10
     OR SUM(p.p05) > 50
-ORDER BY
-  total_amount DESC,
-  payment_count DESC;
+ORDER BY total_amount DESC, payment_count DESC;

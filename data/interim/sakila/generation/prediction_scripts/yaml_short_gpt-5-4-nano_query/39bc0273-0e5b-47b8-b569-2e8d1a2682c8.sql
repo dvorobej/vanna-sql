@@ -1,100 +1,112 @@
-WITH
-monthly_customer AS (
-    SELECT
-        p.p02 AS customer_id,
-        c.h03 AS first_name,
-        c.h04 AS last_name,
-        c.h02 AS home_store_id,
-        co.c01 AS country_id,
-        co.c02 AS country_name,
-        strftime('%Y-%m', p.p06) AS month_start,
-        COUNT(*) AS payment_count,
-        SUM(p.p05) AS monthly_sum,
-        AVG(p.p05) AS avg_check,
-        COUNT(DISTINCT date(p.p06)) AS active_days
-    FROM pay AS p
-    JOIN cus AS c
-        ON c.h01 = p.p02
-    JOIN adr AS a
-        ON a.e01 = c.h06
-    JOIN cty AS ci
-        ON ci.d01 = a.e05
-    JOIN cnt AS co
-        ON co.c01 = ci.d03
-    WHERE c.h07 = 'Y'
-    GROUP BY
-        p.p02, c.h03, c.h04, c.h02,
-        co.c01, co.c02, strftime('%Y-%m', p.p06)
+WITH month_payments AS (
+  SELECT
+    p.p02 AS customer_id,
+    c.h03 AS customer_first_name,
+    c.h04 AS customer_last_name,
+    c.h02 AS customer_store_id,
+    cn.c01 AS country_id,
+    cn.c02 AS country_name,
+    strftime('%Y-%m', p.p06) AS month_start,
+    COUNT(*) AS payment_count,
+    SUM(p.p05) AS monthly_amount,
+    AVG(p.p05) AS avg_check,
+    COUNT(DISTINCT DATE(p.p06)) AS distinct_payment_days,
+    SUM(p.p05) OVER (PARTITION BY p.p02, strftime('%Y-%m', p.p06)) AS monthly_amount_for_rank
+  FROM pay AS p
+  JOIN cus AS c
+    ON c.h01 = p.p02
+  JOIN adr AS a
+    ON a.e01 = c.h06
+  JOIN cty AS ct
+    ON ct.d01 = a.e05
+  JOIN cnt AS cn
+    ON cn.c01 = ct.d03
+  GROUP BY
+    p.p02,
+    c.h03,
+    c.h04,
+    c.h02,
+    cn.c01,
+    cn.c02,
+    strftime('%Y-%m', p.p06)
 ),
-monthly_with_prev AS (
-    SELECT
-        mc.*,
-        LAG(mc.monthly_sum) OVER (
-            PARTITION BY mc.customer_id
-            ORDER BY mc.month_start
-        ) AS prev_monthly_sum,
-        AVG(mc.monthly_sum) OVER (
-            PARTITION BY mc.country_id, mc.month_start
-        ) AS country_avg_monthly_sum
-    FROM monthly_customer AS mc
+with_comparisons AS (
+  SELECT
+    mp.*,
+    LAG(mp.monthly_amount) OVER (
+      PARTITION BY mp.customer_id
+      ORDER BY mp.month_start
+    ) AS prev_monthly_amount,
+    AVG(mp.monthly_amount) OVER (
+      PARTITION BY mp.country_id, mp.month_start
+    ) AS country_month_avg_monthly_amount
+  FROM month_payments AS mp
 ),
-top_staff_per_month AS (
-    SELECT
-        p.p02 AS customer_id,
-        strftime('%Y-%m', p.p06) AS month_start,
-        p.p03 AS staff_id,
-        SUM(p.p05) AS staff_month_sum,
-        ROW_NUMBER() OVER (
-            PARTITION BY p.p02, strftime('%Y-%m', p.p06)
-            ORDER BY SUM(p.p05) DESC, p.p03
-        ) AS rn
-    FROM pay AS p
-    GROUP BY p.p02, strftime('%Y-%m', p.p06), p.p03
+top_staff_month AS (
+  SELECT
+    p.p02 AS customer_id,
+    strftime('%Y-%m', p.p06) AS month_start,
+    p.p03 AS staff_id,
+    SUM(p.p05) AS staff_month_amount,
+    ROW_NUMBER() OVER (
+      PARTITION BY p.p02, strftime('%Y-%m', p.p06)
+      ORDER BY SUM(p.p05) DESC, p.p03
+    ) AS rn
+  FROM pay AS p
+  GROUP BY
+    p.p02,
+    strftime('%Y-%m', p.p06),
+    p.p03
 ),
-ranked AS (
-    SELECT
-        mwp.*,
-        RANK() OVER (
-            PARTITION BY mwp.country_id, mwp.month_start
-            ORDER BY mwp.monthly_sum DESC
-        ) AS customer_country_rank,
-        tsp.staff_id AS top_staff_id
-    FROM monthly_with_prev AS mwp
-    LEFT JOIN top_staff_per_month AS tsp
-        ON tsp.customer_id = mwp.customer_id
-       AND tsp.month_start = mwp.month_start
-       AND tsp.rn = 1
+staff_details AS (
+  SELECT
+    ts.customer_id,
+    ts.month_start,
+    ts.staff_id,
+    s.o02 || ' ' || s.o03 AS top_staff_name,
+    ts.staff_month_amount AS top_staff_month_amount
+  FROM top_staff_month AS ts
+  JOIN stf AS s
+    ON s.o01 = ts.staff_id
+  WHERE ts.rn = 1
 )
 SELECT
-    r.customer_id,
-    r.first_name,
-    r.last_name,
-    r.country_name AS country,
-    r.home_store_id AS store_id,
-    r.month_start AS month,
-    r.payment_count,
-    ROUND(r.monthly_sum, 2) AS monthly_sum,
-    ROUND(r.avg_check, 2) AS avg_check,
-    r.active_days,
-    r.prev_monthly_sum,
-    ROUND(r.country_avg_monthly_sum, 2) AS country_avg_monthly_sum,
-    r.customer_country_rank,
-    r.top_staff_id AS top_staff_id,
-    s.o02 || ' ' || s.o03 AS top_staff_name
-FROM ranked AS r
-LEFT JOIN stf AS s
-    ON s.o01 = r.top_staff_id
+  wc.customer_id,
+  wc.customer_first_name,
+  wc.customer_last_name,
+  wc.country_name AS country,
+  wc.customer_store_id AS store_id,
+  wc.month_start AS month,
+  wc.payment_count,
+  ROUND(wc.monthly_amount, 2) AS monthly_amount,
+  ROUND(wc.avg_check, 2) AS avg_check,
+  wc.distinct_payment_days,
+  ROUND(wc.prev_monthly_amount, 2) AS prev_monthly_amount,
+  ROUND(wc.country_month_avg_monthly_amount, 2) AS country_month_avg_monthly_amount,
+  RANK() OVER (
+    PARTITION BY wc.country_id, wc.month_start
+    ORDER BY wc.monthly_amount DESC
+  ) AS customer_country_month_rank,
+  sd.top_staff_id AS top_staff_id,
+  sd.top_staff_name AS top_staff_name,
+  ROUND(sd.top_staff_month_amount, 2) AS top_staff_month_amount
+FROM with_comparisons AS wc
+LEFT JOIN staff_details AS sd
+  ON sd.customer_id = wc.customer_id
+ AND sd.month_start = wc.month_start
 WHERE
-    (
-        r.prev_monthly_sum IS NOT NULL
-        AND r.monthly_sum >= 3.0 * r.prev_monthly_sum
-    )
-    OR (
-        r.country_avg_monthly_sum IS NOT NULL
-        AND r.monthly_sum > 2.0 * r.country_avg_monthly_sum
-    )
+  (
+    wc.prev_monthly_amount IS NOT NULL
+    AND wc.prev_monthly_amount > 0
+    AND wc.monthly_amount >= 3.0 * wc.prev_monthly_amount
+  )
+  OR (
+    wc.country_month_avg_monthly_amount IS NOT NULL
+    AND wc.country_month_avg_monthly_amount > 0
+    AND wc.monthly_amount >= 2.0 * wc.country_month_avg_monthly_amount
+  )
 ORDER BY
-    r.month_start,
-    r.country_name,
-    r.customer_country_rank,
-    r.monthly_sum DESC;
+  wc.month_start,
+  wc.country_name,
+  customer_country_month_rank,
+  wc.customer_id;

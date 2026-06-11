@@ -1,4 +1,4 @@
-customer_id,first_name,last_name,store_id,total_amount,payment_count,average_payment,max_payment,additional_check_signal
+customer_id,first_name,last_name,store_id,total_amount,payment_count,average_payment,max_payment,additional_check_flag
 148,ELEANOR,HUNT,1,100.77999999999997,22,4.580909090909089,10.99,1
 470,GORDON,ALLARD,1,96.82999999999998,17,5.695882352941176,10.99,1
 522,ARNOLD,HAVENS,2,96.82,18,5.378888888888889,9.99,1

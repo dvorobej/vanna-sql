@@ -1,4 +1,4 @@
-first_name,last_name,payment_date,daily_payment_count,daily_total_amount,max_daily_payment,activity_flag
+first_name,last_name,payment_date,daily_payment_count,daily_total_amount,max_daily_payment,risk_flag
 MAX,PITT,2005-07-06,5,22.950000000000003,4.99,подозрительная активность
 ELLEN,SIMPSON,2005-07-06,3,18.97,7.99,подозрительная активность
 ERIC,ROBERT,2005-07-06,3,18.97,8.99,подозрительная активность

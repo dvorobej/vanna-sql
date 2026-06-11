@@ -1,5 +1,5 @@
 customer_id,first_name,last_name,email,payment_count,total_amount,average_payment,risk_flag
-148,ELEANOR,HUNT,ELEANOR.HUNT@sakilacustomer.org,22,100.77999999999997,4.580909090909089,высокий
+148,ELEANOR,HUNT,ELEANOR.HUNT@sakilacustomer.org,22,100.77999999999997,4.580909090909089,повышенный риск
 470,GORDON,ALLARD,GORDON.ALLARD@sakilacustomer.org,17,96.82999999999998,5.695882352941176,обычный
 522,ARNOLD,HAVENS,ARNOLD.HAVENS@sakilacustomer.org,18,96.82,5.378888888888889,обычный
 137,RHONDA,KENNEDY,RHONDA.KENNEDY@sakilacustomer.org,19,96.80999999999999,5.0952631578947365,обычный

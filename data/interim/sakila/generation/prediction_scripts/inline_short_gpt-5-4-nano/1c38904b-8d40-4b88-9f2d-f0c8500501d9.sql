@@ -3,7 +3,7 @@ SELECT
   c.h03 AS first_name,
   c.h04 AS last_name,
   COUNT(p.p01) AS payment_count,
-  ROUND(SUM(p.p05), 2) AS total_amount,
+  SUM(p.p05) AS total_amount,
   ROUND(
     1.0 * SUM(CASE WHEN s.o07 <> c.h02 THEN 1 ELSE 0 END) / COUNT(p.p01),
     4

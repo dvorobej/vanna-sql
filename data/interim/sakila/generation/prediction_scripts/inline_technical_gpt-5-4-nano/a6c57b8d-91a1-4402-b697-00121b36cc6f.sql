@@ -1,164 +1,137 @@
-WITH months_2005 AS (
-  SELECT strftime('%Y-%m', p.p06) AS ym,
-         date(p.p06, 'start of month') AS month_start
-  FROM pay p
-  WHERE p.p06 >= '2005-01-01' AND p.p06 < '2006-01-01'
-  GROUP BY 1,2
-),
-pay_base AS (
+WITH monthly AS (
   SELECT
     p.p02 AS customer_id,
-    date(p.p06, 'start of month') AS month_start,
-    strftime('%Y-%m', p.p06) AS ym,
-    p.p05 AS payment_amount,
-    p.p03 AS staff_id,
-    c.h02 AS home_store_id,
-    a.e05 AS city_id,
-    ct.d03 AS country_id
+    cnt.c01 AS country_id,
+    cnt.c02 AS country_name,
+    cty.d02 AS city_name,
+    strftime('%Y-%m', p.p06) AS month_ym,
+    SUM(p.p05) AS month_amount,
+    COUNT(*) AS month_payments
   FROM pay p
+  JOIN ren r
+    ON r.q01 = p.p04
   JOIN cus c
     ON c.h01 = p.p02
   JOIN adr a
     ON a.e01 = c.h06
-  JOIN cty ct
-    ON ct.d01 = a.e05
+  JOIN cty
+    ON cty.d01 = a.e05
+  JOIN cnt
+    ON cnt.c01 = cty.d03
   WHERE p.p06 >= '2005-01-01'
     AND p.p06 < '2006-01-01'
-),
-monthly_customer AS (
-  SELECT
-    pb.customer_id,
-    pb.country_id,
-    pb.city_id,
-    pb.month_start,
-    pb.ym,
-    COUNT(*) AS payment_count,
-    SUM(pb.payment_amount) AS payment_sum
-  FROM pay_base pb
   GROUP BY
-    pb.customer_id,
-    pb.country_id,
-    pb.city_id,
-    pb.month_start,
-    pb.ym
+    p.p02,
+    cnt.c01,
+    cnt.c02,
+    cty.d02,
+    strftime('%Y-%m', p.p06)
 ),
-customer_avg AS (
+customer_baseline AS (
   SELECT
-    mc.*,
-    AVG(mc.payment_sum) OVER (
-      PARTITION BY mc.customer_id
-    ) AS personal_avg_monthly_payment_sum
-  FROM monthly_customer mc
+    m.*,
+    AVG(m.month_amount) OVER (
+      PARTITION BY m.customer_id
+    ) AS personal_avg_month_amount
+  FROM monthly m
 ),
-country_p90 AS (
+country_p10_threshold AS (
   SELECT
-    cc.country_id,
-    cc.month_start,
-    cc.ym,
-    cc.payment_sum,
-    DENSE_RANK() OVER (
-      PARTITION BY cc.country_id, cc.month_start
-      ORDER BY cc.payment_sum
-    ) AS dr_asc,
-    COUNT(*) OVER (
-      PARTITION BY cc.country_id, cc.month_start
-    ) AS cnt_in_month
-  FROM monthly_customer cc
+    m.country_id,
+    m.month_ym,
+    m.country_name,
+    m.city_name,
+    -- upper 10% threshold by "month_amount" within each country+month
+    (SELECT
+       x.month_amount
+     FROM (
+       SELECT
+         m2.month_amount,
+         NTILE(10) OVER (PARTITION BY m2.country_id, m2.month_ym ORDER BY m2.month_amount) AS dec
+       FROM monthly m2
+       WHERE m2.country_id = m.country_id
+         AND m2.month_ym = m.month_ym
+     ) x
+     WHERE x.dec = 10
+     LIMIT 1
+    ) AS country_top10_threshold
+  FROM monthly m
+  GROUP BY
+    m.country_id, m.month_ym, m.country_name, m.city_name
 ),
-country_p90_threshold AS (
+selected AS (
   SELECT
-    country_id,
-    month_start,
-    ym,
-    MAX(payment_sum) AS p90_payment_sum
-  FROM (
-    SELECT
-      c.country_id,
-      c.month_start,
-      c.ym,
-      c.payment_sum,
-      cnt_in_month,
-      dr_asc,
-      CASE
-        WHEN cnt_in_month <= 1 THEN 0
-        ELSE CAST(0.90 * (cnt_in_month - 1) AS INTEGER)
-      END AS cutoff_pos
-    FROM country_p90 c
-  ) t
-  WHERE dr_asc >= (
-    SELECT cutoff_pos + 1
-  )
-  GROUP BY country_id, month_start, ym
-),
-flagged AS (
-  SELECT
-    ca.customer_id AS h01,
-    ca.country_id,
-    ca.city_id,
-    ca.month_start,
-    ca.ym,
-    ca.payment_sum,
-    ca.payment_count,
-    (ca.payment_sum - ca.personal_avg_monthly_payment_sum) AS delta_from_personal_avg,
-    (1.0 * ca.payment_sum / NULLIF(ca.personal_avg_monthly_payment_sum, 0)) AS personal_vs_avg_ratio,
-    RANK() OVER (
-      PARTITION BY ca.country_id, ca.month_start
-      ORDER BY ca.payment_sum DESC
-    ) AS customer_rank_in_country,
-    ca.personal_avg_monthly_payment_sum
-  FROM customer_avg ca
-  JOIN country_p90_threshold th
-    ON th.country_id = ca.country_id
-   AND th.month_start = ca.month_start
-  WHERE ca.personal_avg_monthly_payment_sum IS NOT NULL
-    AND ca.personal_avg_monthly_payment_sum > 0
-    AND ca.payment_sum > 2.0 * ca.personal_avg_monthly_payment_sum
-    AND ca.payment_sum > th.p90_payment_sum
-),
-staff_top AS (
-  SELECT
-    pb.customer_id,
-    pb.country_id,
-    pb.city_id,
-    pb.month_start,
-    pb.ym,
-    pb.staff_id,
-    SUM(pb.payment_amount) AS staff_payment_sum,
+    cb.*,
+    (cb.month_amount / NULLIF(cb.personal_avg_month_amount, 0)) AS personal_multiplier,
     ROW_NUMBER() OVER (
-      PARTITION BY pb.customer_id, pb.month_start
-      ORDER BY SUM(pb.payment_amount) DESC
-    ) AS rn_staff
-  FROM pay_base pb
+      PARTITION BY cb.country_id, cb.month_ym
+      ORDER BY cb.month_amount DESC
+    ) AS customer_rank_in_country
+  FROM customer_baseline cb
+  JOIN country_p10_threshold t
+    ON t.country_id = cb.country_id
+   AND t.month_ym = cb.month_ym
+),
+top_employee AS (
+  SELECT
+    p.p02 AS customer_id,
+    cnt.c01 AS country_id,
+    strftime('%Y-%m', p.p06) AS month_ym,
+    stf.o01 AS staff_id,
+    SUM(p.p05) AS staff_month_amount,
+    ROW_NUMBER() OVER (
+      PARTITION BY p.p02, cnt.c01, strftime('%Y-%m', p.p06)
+      ORDER BY SUM(p.p05) DESC
+    ) AS rn
+  FROM pay p
+  JOIN ren r
+    ON r.q01 = p.p04
+  JOIN cus c
+    ON c.h01 = p.p02
+  JOIN adr a
+    ON a.e01 = c.h06
+  JOIN cty
+    ON cty.d01 = a.e05
+  JOIN cnt
+    ON cnt.c01 = cty.d03
+  JOIN stf
+    ON stf.o01 = p.p03
+  WHERE p.p06 >= '2005-01-01'
+    AND p.p06 < '2006-01-01'
   GROUP BY
-    pb.customer_id,
-    pb.country_id,
-    pb.city_id,
-    pb.month_start,
-    pb.ym,
-    pb.staff_id
+    p.p02,
+    cnt.c01,
+    strftime('%Y-%m', p.p06),
+    stf.o01
 )
 SELECT
-  f.h01,
-  co.c02 AS country_name,
-  ci.d02 AS city_name,
-  f.ym AS month,
-  ROUND(f.payment_sum, 2) AS payment_sum,
-  f.payment_count,
-  ROUND(f.delta_from_personal_avg, 2) AS deviation_from_personal_avg,
-  f.customer_rank_in_country AS rank_in_country,
-  st.staff_id AS top_staff_id,
-  st.staff_payment_sum AS top_staff_payment_sum
-FROM flagged f
-JOIN cnt co
-  ON co.c01 = f.country_id
-JOIN cty ci
-  ON ci.d01 = f.city_id
-JOIN staff_top st
-  ON st.customer_id = f.h01
- AND st.month_start = f.month_start
- AND st.rn_staff = 1
+  s.customer_id AS h01,
+  s.country_id,
+  s.country_name,
+  s.city_name,
+  s.month_ym AS month,
+  ROUND(s.month_amount, 2) AS month_amount,
+  s.month_payments AS month_payments,
+  ROUND(s.month_amount - s.personal_avg_month_amount, 2) AS deviation_from_personal_avg,
+  s.customer_rank_in_country AS customer_rank_in_country,
+  te.staff_id AS top_staff_id,
+  stf.f01 AS staff_first_name,
+  stf.f02 AS staff_last_name
+FROM selected s
+JOIN top_employee te
+  ON te.customer_id = s.customer_id
+ AND te.country_id = s.country_id
+ AND te.month_ym = s.month_ym
+ AND te.rn = 1
+LEFT JOIN stf
+  ON stf.o01 = te.staff_id
+WHERE s.personal_multiplier > 2
+  AND s.month_amount >= (SELECT t2.country_top10_threshold
+                          FROM country_p10_threshold t2
+                          WHERE t2.country_id = s.country_id
+                            AND t2.month_ym = s.month_ym
+                          LIMIT 1)
 ORDER BY
-  co.c02,
-  f.month,
-  f.payment_sum DESC,
-  f.h01;
+  s.country_id,
+  s.month_ym,
+  s.customer_rank_in_country;

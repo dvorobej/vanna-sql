@@ -1,119 +1,117 @@
-WITH payment_day_details AS (
+WITH daily_customer_payment AS (
   SELECT
-    c.h01 AS customer_id,
+    p.p02 AS customer_id,
     c.h03 AS first_name,
     c.h04 AS last_name,
-    co.c02 AS country_name,
-    ci.d02 AS city_name,
-    p.p06 AS payment_ts,
-    DATE(p.p06) AS payment_date,
+    cnt.c02 AS country_name,
+    ct.d02 AS city_name,
     p.p03 AS staff_id,
-    c.h02 AS home_store_id,
-    p.p01 AS payment_id,
-    CAST(p.p05 AS REAL) AS amount,
-    s.o07 AS store_id
+    COALESCE(st.o07, c.h02) AS store_id,
+    DATE(p.p06) AS day_date,
+    COUNT(*) AS payment_count,
+    SUM(p.p05) AS day_amount
   FROM pay AS p
   JOIN cus AS c
     ON c.h01 = p.p02
   JOIN adr AS a
     ON a.e01 = c.h06
-  JOIN cty AS ci
-    ON ci.d01 = a.e05
-  JOIN cnt AS co
-    ON co.c01 = ci.d03
-  JOIN stf AS s
-    ON s.o01 = p.p03
-),
-daily_customer_pay AS (
-  SELECT
-    customer_id,
-    first_name,
-    last_name,
-    country_name,
-    city_name,
-    payment_date,
-    COUNT(*) AS payment_count,
-    SUM(amount) AS day_total_amount,
-    COUNT(DISTINCT store_id) AS distinct_stores,
-    COUNT(DISTINCT staff_id) AS distinct_staff
-  FROM payment_day_details
+  JOIN cty AS ct
+    ON ct.d01 = a.e05
+  JOIN cnt AS cnt
+    ON cnt.c01 = ct.d03
+  LEFT JOIN stf AS st
+    ON st.o01 = p.p03
   GROUP BY
-    customer_id, first_name, last_name, country_name, city_name, payment_date
+    p.p02,
+    c.h03, c.h04,
+    cnt.c02,
+    ct.d02,
+    COALESCE(st.o07, c.h02),
+    p.p03,
+    DATE(p.p06)
 ),
-daily_customer_with_prev AS (
+daily_with_prev_avg AS (
   SELECT
     d.*,
     (
-      SELECT AVG(d2.day_total_amount)
-      FROM daily_customer_pay AS d2
-      WHERE d2.customer_id = d.customer_id
-        AND d2.payment_date >= DATE(d.payment_date, '-30 days')
-        AND d2.payment_date < d.payment_date
-    ) AS avg_daily_prev_30
-  FROM daily_customer_pay AS d
+      SELECT AVG(p30.day_amount)
+      FROM daily_customer_payment AS p30
+      WHERE p30.customer_id = d.customer_id
+        AND p30.day_date >= date(d.day_date, '-30 day')
+        AND p30.day_date < d.day_date
+    ) AS avg_prev_30d,
+    (
+      SELECT AVG(p30.day_amount)
+      FROM daily_customer_payment AS p30
+      WHERE p30.customer_id = d.customer_id
+        AND p30.day_date >= date(d.day_date, '-30 day')
+        AND p30.day_date < d.day_date
+    ) AS avg_prev_30d_again
+  FROM daily_customer_payment AS d
 ),
-country_day_quantiles AS (
+country_days_ranked AS (
   SELECT
-    country_name,
-    payment_date,
-    day_total_amount,
+    dc.country_name,
+    dc.day_amount,
+    dc.day_date,
+    dc.customer_id,
     ROW_NUMBER() OVER (
-      PARTITION BY country_name
-      ORDER BY day_total_amount
+      PARTITION BY dc.country_name
+      ORDER BY dc.day_amount
     ) AS rn,
-    COUNT(*) OVER (PARTITION BY country_name) AS cnt
-  FROM daily_customer_pay
+    COUNT(*) OVER (PARTITION BY dc.country_name) AS cnt_days
+  FROM daily_customer_payment AS dc
 ),
 country_p95 AS (
   SELECT
     country_name,
-    MAX(day_total_amount) AS p95_day_total_amount
-  FROM country_day_quantiles
-  WHERE rn >= ((95 * cnt + 99) / 100)
+    MAX(day_amount) AS p95_day_amount
+  FROM country_days_ranked
+  WHERE rn >= ((95 * cnt_days + 99) / 100)
   GROUP BY country_name
 ),
-spike_candidates AS (
+spikes AS (
   SELECT
-    d.*,
-    cp.p95_day_total_amount,
-    d.day_total_amount - d.avg_daily_prev_30 AS deviation_from_avg_prev_30,
-    d.day_total_amount / NULLIF(d.avg_daily_prev_30, 0) AS spike_ratio
-  FROM daily_customer_with_prev AS d
+    d.day_date AS spike_date,
+    d.first_name,
+    d.last_name,
+    d.country_name,
+    d.city_name,
+    d.store_id,
+    d.payment_count,
+    ROUND(d.day_amount, 2) AS day_amount,
+    ROUND(d.avg_prev_30d, 2) AS avg_prev_30d,
+    ROUND(d.day_amount - d.avg_prev_30d, 2) AS deviation_from_avg,
+    ROUND(d.day_amount / NULLIF(d.avg_prev_30d, 0), 2) AS spike_ratio_vs_avg,
+    cp.p95_day_amount,
+    RANK() OVER (
+      PARTITION BY d.country_name
+      ORDER BY d.day_amount DESC, d.customer_id
+    ) AS spike_rank_in_country
+  FROM daily_with_prev_avg AS d
   JOIN country_p95 AS cp
     ON cp.country_name = d.country_name
-  WHERE d.avg_daily_prev_30 IS NOT NULL
-    AND d.avg_daily_prev_30 > 0
-    AND d.payment_count >= 1
-    AND d.day_total_amount >= 3.0 * d.avg_daily_prev_30
-    AND d.day_total_amount >= cp.p95_day_total_amount
-),
-ranked_spikes AS (
-  SELECT
-    s.*,
-    RANK() OVER (
-      PARTITION BY s.country_name
-      ORDER BY s.day_total_amount DESC, s.payment_date DESC, s.customer_id
-    ) AS spike_rank_in_country
-  FROM spike_candidates AS s
+  WHERE d.avg_prev_30d IS NOT NULL
+    AND d.avg_prev_30d > 0
+    AND d.day_amount >= d.avg_prev_30d * 3
+    AND d.day_amount >= cp.p95_day_amount
 )
 SELECT
-  customer_id,
-  first_name,
-  last_name,
-  country_name,
-  city_name,
-  payment_date AS spike_date,
-  distinct_stores AS stores_count_on_spike_day,
-  payment_count,
-  ROUND(day_total_amount, 2) AS day_total_amount,
-  ROUND(avg_daily_prev_30, 2) AS avg_daily_prev_30,
-  ROUND(deviation_from_avg_prev_30, 2) AS deviation_from_avg_prev_30,
-  ROUND(p95_day_total_amount, 2) AS country_p95_daily_amount,
-  spike_rank_in_country
-FROM ranked_spikes
+  s.spike_date,
+  s.first_name,
+  s.last_name,
+  s.country_name,
+  s.city_name,
+  s.store_id,
+  s.payment_count,
+  s.day_amount,
+  s.avg_prev_30d,
+  s.deviation_from_avg,
+  s.spike_rank_in_country
+FROM spikes AS s
 ORDER BY
-  country_name,
-  spike_rank_in_country,
-  day_total_amount DESC,
-  payment_date DESC,
-  customer_id;
+  s.country_name,
+  s.spike_rank_in_country,
+  s.spike_date,
+  s.last_name,
+  s.first_name;

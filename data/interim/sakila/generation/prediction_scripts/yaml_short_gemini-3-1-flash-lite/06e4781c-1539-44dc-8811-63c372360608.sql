@@ -14,7 +14,4 @@ WHERE p.p06 >= '2005-07-01'
 GROUP BY
   c.h01,
   c.h03,
-  c.h04
-ORDER BY
-  total_amount DESC,
-  transaction_count DESC;
+  c.h04;

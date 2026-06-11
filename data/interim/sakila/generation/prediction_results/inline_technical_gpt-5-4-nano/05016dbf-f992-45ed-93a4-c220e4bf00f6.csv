@@ -1,4 +1,4 @@
-customer_id,customer_first_name,customer_last_name,staff_id,staff_first_name,staff_last_name,payment_count,total_payment_amount,average_payment_amount,payment_count_above_8
+customer_id,customer_first_name,customer_last_name,staff_id,staff_first_name,staff_last_name,payment_count,total_payment_amount,average_payment_amount,payments_above_8_count
 1,MARY,SMITH,1,Mike,Hillyer,15,60.85000000000002,4.056666666666668,0
 1,MARY,SMITH,2,Jon,Stephens,15,53.850000000000016,3.590000000000001,1
 2,PATRICIA,JOHNSON,1,Mike,Hillyer,14,55.860000000000014,3.990000000000001,0

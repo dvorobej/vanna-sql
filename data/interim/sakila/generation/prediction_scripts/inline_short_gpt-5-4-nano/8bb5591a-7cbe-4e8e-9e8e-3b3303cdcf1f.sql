@@ -3,11 +3,11 @@ SELECT
   c.h03 AS first_name,
   c.h04 AS last_name,
   COUNT(p.p01) AS payment_count,
-  SUM(p.p05) AS total_amount,
-  AVG(p.p05) AS average_check,
+  ROUND(SUM(p.p05), 2) AS total_amount,
+  ROUND(AVG(p.p05), 2) AS average_check,
   CASE
-    WHEN COUNT(p.p01) > 10 OR SUM(p.p05) > 50 THEN 'высокий риск'
-    ELSE 'обычный'
+    WHEN COUNT(p.p01) > 10 OR SUM(p.p05) > 50 THEN 1
+    ELSE 0
   END AS risk_flag
 FROM cus AS c
 JOIN pay AS p
@@ -20,7 +20,4 @@ GROUP BY
   c.h04
 HAVING COUNT(p.p01) > 10
     OR SUM(p.p05) > 50
-ORDER BY
-  total_amount DESC,
-  payment_count DESC,
-  customer_id;
+ORDER BY total_amount DESC, payment_count DESC, customer_id;

@@ -38,8 +38,8 @@ last_staff AS (
         strftime('%Y-%m', p.p06) AS payment_month,
         p.p03 AS staff_id
     FROM pay AS p
-    JOIN (SELECT p02, strftime('%Y-%m', p06) AS m, MAX(p06) AS max_date FROM pay GROUP BY 1, 2) AS last_p
-      ON p.p02 = last_p.p02 AND strftime('%Y-%m', p.p06) = last_p.m AND p.p06 = last_p.max_date
+    JOIN (SELECT p02, strftime('%Y-%m', p06) AS m, MAX(p06) AS max_date FROM pay GROUP BY 1, 2) AS latest
+      ON p.p02 = latest.p02 AND strftime('%Y-%m', p.p06) = latest.m AND p.p06 = latest.max_date
 )
 SELECT
     sr.customer_name,
@@ -49,7 +49,7 @@ SELECT
     sr.payment_month,
     sr.monthly_sum,
     sr.payment_count,
-    (sr.monthly_sum - cya.yearly_avg_monthly_sum) AS deviation,
+    ROUND(sr.monthly_sum - cya.yearly_avg_monthly_sum, 2) AS deviation_from_avg,
     sr.store_rank,
     ls.staff_id AS last_staff_id
 FROM store_rankings AS sr
@@ -57,9 +57,6 @@ JOIN customer_yearly_avg AS cya ON cya.customer_id = sr.customer_id
 JOIN last_staff AS ls ON ls.customer_id = sr.customer_id AND ls.payment_month = sr.payment_month
 WHERE sr.monthly_sum > (cya.yearly_avg_monthly_sum * 2)
   AND sr.store_percentile <= 0.05
-  AND NOT EXISTS (
-      SELECT 1 FROM monthly_stats AS ms2 
-      WHERE ms2.customer_id = sr.customer_id 
-      AND ms2.monthly_sum <= (cya.yearly_avg_monthly_sum * 2)
-  )
-ORDER BY sr.payment_month, sr.store_id, sr.store_rank;
+GROUP BY sr.customer_id
+HAVING COUNT(sr.payment_month) = 12
+ORDER BY sr.payment_month, sr.store_rank;

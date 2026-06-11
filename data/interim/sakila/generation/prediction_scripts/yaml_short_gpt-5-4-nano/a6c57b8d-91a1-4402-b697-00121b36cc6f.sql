@@ -1,124 +1,115 @@
-WITH monthly_customer AS (
+WITH monthly_payments AS (
   SELECT
     c.h01 AS customer_id,
     c.h03 AS first_name,
     c.h04 AS last_name,
-    cnt.c01 AS country_id,
-    cnt.c02 AS country_name,
-    city.d01 AS city_id,
-    city.d02 AS city_name,
+    cn.c01 AS country_id,
+    cn.c02 AS country_name,
+    ct.d02 AS city_name,
     date(p.p06, 'start of month') AS month_start,
     SUM(p.p05) AS month_amount,
-    COUNT(p.p01) AS month_payment_count
+    COUNT(p.p01) AS payment_count
   FROM pay AS p
   JOIN cus AS c
     ON c.h01 = p.p02
   JOIN adr AS a
     ON a.e01 = c.h06
-  JOIN cty AS city
-    ON city.d01 = a.e05
-  JOIN cnt AS cnt
-    ON cnt.c01 = city.d03
+  JOIN cty AS ct
+    ON ct.d01 = a.e05
+  JOIN cnt AS cn
+    ON cn.c01 = ct.d03
   WHERE p.p06 >= '2005-01-01'
     AND p.p06 < '2006-01-01'
-    AND p.p04 IS NOT NULL
   GROUP BY
-    c.h01, c.h03, c.h04,
-    cnt.c01, cnt.c02,
-    city.d01, city.d02,
+    c.h01,
+    c.h03,
+    c.h04,
+    cn.c01,
+    cn.c02,
+    ct.d02,
     date(p.p06, 'start of month')
 ),
-personal_avg AS (
+with_avgs AS (
   SELECT
-    customer_id,
-    AVG(month_amount) AS personal_avg_amount,
-    AVG(month_payment_count) AS personal_avg_payment_count
-  FROM monthly_customer
-  GROUP BY customer_id
+    mp.*,
+    AVG(mp.month_amount) OVER (
+      PARTITION BY mp.customer_id
+    ) AS customer_avg_month_amount,
+    AVG(mp.payment_count) OVER (
+      PARTITION BY mp.customer_id
+    ) AS customer_avg_month_payment_count,
+    AVG(mp.month_amount) OVER (
+      PARTITION BY mp.country_id
+    ) AS country_avg_month_amount,
+    AVG(mp.payment_count) OVER (
+      PARTITION BY mp.country_id
+    ) AS country_avg_month_payment_count
+  FROM monthly_payments AS mp
 ),
-country_avg AS (
+suspicious AS (
   SELECT
-    country_id,
-    AVG(month_amount) AS country_avg_amount,
-    AVG(month_payment_count) AS country_avg_payment_count
-  FROM monthly_customer
-  GROUP BY country_id
+    wa.*,
+    (wa.month_amount - wa.customer_avg_month_amount) AS deviation_from_customer_avg_amount,
+    (wa.payment_count - wa.customer_avg_month_payment_count) AS deviation_from_customer_avg_count
+  FROM with_avgs AS wa
+  WHERE
+    wa.month_amount >= 2.0 * wa.customer_avg_month_amount
+    OR wa.payment_count >= 2.0 * wa.customer_avg_month_payment_count
+    OR wa.month_amount >= 2.0 * wa.country_avg_month_amount
+    OR wa.payment_count >= 2.0 * wa.country_avg_month_payment_count
 ),
-monthly_enriched AS (
-  SELECT
-    mc.*,
-    pa.personal_avg_amount,
-    pa.personal_avg_payment_count,
-    ca.country_avg_amount,
-    ca.country_avg_payment_count,
-    (mc.month_amount - pa.personal_avg_amount) AS deviation_from_personal_amount,
-    (mc.month_payment_count - pa.personal_avg_payment_count) AS deviation_from_personal_count,
-    (mc.month_amount - ca.country_avg_amount) AS deviation_from_country_amount,
-    (mc.month_payment_count - ca.country_avg_payment_count) AS deviation_from_country_count
-  FROM monthly_customer AS mc
-  JOIN personal_avg AS pa
-    ON pa.customer_id = mc.customer_id
-  JOIN country_avg AS ca
-    ON ca.country_id = mc.country_id
-),
-top_staff_per_customer_month AS (
+top_staff_by_month AS (
   SELECT
     p.p02 AS customer_id,
-    date(p.p06, 'start of month') AS month_start,
-    p.p03 AS staff_id
-  FROM pay AS p
-  WHERE p.p04 IS NOT NULL
-    AND p.p06 >= '2005-01-01'
-    AND p.p06 < '2006-01-01'
-  QUALIFY 1=1
-),
-staff_ranked AS (
-  SELECT
-    p.p02 AS customer_id,
+    cn.c01 AS country_id,
     date(p.p06, 'start of month') AS month_start,
     p.p03 AS staff_id,
     SUM(p.p05) AS staff_month_amount,
     ROW_NUMBER() OVER (
-      PARTITION BY p.p02, date(p.p06, 'start of month')
-      ORDER BY SUM(p.p05) DESC, COUNT(*) DESC, p.p03
+      PARTITION BY p.p02, cn.c01, date(p.p06, 'start of month')
+      ORDER BY SUM(p.p05) DESC
     ) AS rn
   FROM pay AS p
-  WHERE p.p04 IS NOT NULL
-    AND p.p06 >= '2005-01-01'
+  JOIN cus AS c
+    ON c.h01 = p.p02
+  JOIN adr AS a
+    ON a.e01 = c.h06
+  JOIN cty AS ct
+    ON ct.d01 = a.e05
+  JOIN cnt AS cn
+    ON cn.c01 = ct.d03
+  WHERE p.p06 >= '2005-01-01'
     AND p.p06 < '2006-01-01'
+    AND p.p03 IS NOT NULL
   GROUP BY
     p.p02,
+    cn.c01,
     date(p.p06, 'start of month'),
     p.p03
 )
 SELECT
-  me.customer_id,
-  me.first_name,
-  me.last_name,
-  me.country_name AS country,
-  me.city_name AS city,
-  strftime('%Y-%m', me.month_start) AS month,
-  ROUND(me.month_amount, 2) AS month_amount,
-  me.month_payment_count,
-  ROUND(me.deviation_from_personal_amount, 2) AS deviation_from_personal_amount,
-  ROUND(me.deviation_from_personal_count, 2) AS deviation_from_personal_count,
-  ROUND(me.deviation_from_country_amount, 2) AS deviation_from_country_amount,
-  ROUND(me.deviation_from_country_count, 2) AS deviation_from_country_count,
+  s.customer_id,
+  s.first_name,
+  s.last_name,
+  s.country_name AS country,
+  s.city_name AS city,
+  strftime('%Y-%m', s.month_start) AS month,
+  ROUND(s.deviation_from_customer_avg_amount, 2) AS deviation_from_customer_avg_amount,
   RANK() OVER (
-    PARTITION BY me.country_id, me.month_start
-    ORDER BY me.month_amount DESC
-  ) AS amount_rank_in_country_month,
-  st.o01 AS staff_id,
-  st.o02 || ' ' || st.o03 AS staff_name
-FROM monthly_enriched AS me
-LEFT JOIN staff_ranked AS sr
-  ON sr.customer_id = me.customer_id
- AND sr.month_start = me.month_start
- AND sr.rn = 1
-LEFT JOIN stf AS st
-  ON st.o01 = sr.staff_id
+    PARTITION BY s.country_id, s.month_start
+    ORDER BY s.deviation_from_customer_avg_amount DESC
+  ) AS country_rank_by_deviation,
+  s.payment_count,
+  ROUND(s.month_amount, 2) AS month_payments_sum,
+  ts.staff_id AS top_staff_id
+FROM suspicious AS s
+LEFT JOIN top_staff_by_month AS ts
+  ON ts.customer_id = s.customer_id
+ AND ts.country_id = s.country_id
+ AND ts.month_start = s.month_start
+ AND ts.rn = 1
 ORDER BY
-  me.country_name,
-  me.month_start,
-  amount_rank_in_country_month,
-  me.customer_id;
+  s.country_name,
+  s.month_start,
+  country_rank_by_deviation,
+  s.customer_id;

@@ -3,8 +3,8 @@ SELECT
   c.h03 AS first_name,
   c.h04 AS last_name,
   COUNT(p.p01) AS payment_count,
-  SUM(p.p05) AS total_payment_amount,
-  AVG(p.p05) AS average_payment_amount,
+  SUM(p.p05) AS total_amount,
+  AVG(p.p05) AS average_payment,
   SUM(CASE WHEN p.p05 > 8.00 THEN 1 ELSE 0 END) AS large_payment_count
 FROM cus AS c
 JOIN pay AS p
@@ -19,4 +19,4 @@ GROUP BY
   c.h04
 HAVING SUM(p.p05) > 50.00
    OR SUM(CASE WHEN p.p05 > 8.00 THEN 1 ELSE 0 END) >= 3
-ORDER BY total_payment_amount DESC, large_payment_count DESC;
+ORDER BY total_amount DESC, customer_id;

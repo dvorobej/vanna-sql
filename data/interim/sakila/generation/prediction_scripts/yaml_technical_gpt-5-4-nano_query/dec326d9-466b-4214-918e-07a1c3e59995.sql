@@ -1,81 +1,153 @@
-SELECT l01, l02
-    FROM flc
-  ) fca
-    ON fca.l01 = flm.i01
-  WHERE pb.payment_date IN (SELECT payment_date FROM suspicious_windows)
-    AND pb.customer_id IN (SELECT customer_id FROM suspicious_windows)
-  GROUP BY pb.customer_id, pb.payment_date
-),
-window_films_count AS (
+WITH
+base AS (
   SELECT
-    pb.customer_id,
-    pw.payment_date,
-    COUNT(DISTINCT i.n02) AS distinct_films_in_window
-  FROM payments_base pb
-  JOIN suspicious_windows pw
-    ON pw.customer_id = pb.customer_id
-   AND pb.payment_date BETWEEN date(pw.payment_date, '-6 day') AND pw.payment_date
-  LEFT JOIN ren r ON r.q01 = pb.rental_id
-  LEFT JOIN inv i ON i.n01 = r.q03
-  GROUP BY pb.customer_id, pw.payment_date
+    p.p01 AS payment_id,
+    p.p02 AS customer_id,
+    p.p03 AS staff_id,
+    p.p05 AS payment_amount,
+    p.p06 AS payment_ts,
+    DATE(p.p06) AS payment_day,
+    ci.c02 AS country_name,
+    ct.d02 AS city_name,
+    a.h02 AS home_store_id
+  FROM pay p
+  JOIN cus c
+    ON c.h01 = p.p02
+  JOIN adr a1
+    ON a1.e01 = c.h06
+  JOIN cty ct
+    ON ct.d01 = a1.e05
+  JOIN cnt ci
+    ON ci.c01 = ct.d03
+  JOIN (
+    SELECT
+      c2.h01,
+      c2.h02
+    FROM cus c2
+  ) a
+    ON a.h01 = c.h01
 ),
-window_staff_list AS (
+daily_customer AS (
   SELECT
-    pb.customer_id,
-    pw.payment_date,
-    GROUP_CONCAT(DISTINCT s.o02 || ' ' || s.o03) AS staff_names
-  FROM payments_base pb
-  JOIN suspicious_windows pw
-    ON pw.customer_id = pb.customer_id
-   AND pb.payment_date BETWEEN date(pw.payment_date, '-6 day') AND pw.payment_date
-  JOIN stf s ON s.o01 = pb.staff_id
-  GROUP BY pb.customer_id, pw.payment_date
+    b.customer_id,
+    b.payment_day,
+    b.country_name,
+    b.city_name,
+    b.home_store_id,
+    COUNT(*) AS payment_count,
+    SUM(b.payment_amount) AS payment_sum
+  FROM base b
+  GROUP BY
+    b.customer_id,
+    b.payment_day,
+    b.country_name,
+    b.city_name,
+    b.home_store_id
 ),
-window_store_list AS (
+daily_with_rolling AS (
   SELECT
-    pb.customer_id,
-    pw.payment_date,
-    GROUP_CONCAT(DISTINCT st.j01 || ':' || st.j02) AS store_list
-  FROM payments_base pb
-  JOIN suspicious_windows pw
-    ON pw.customer_id = pb.customer_id
-   AND pb.payment_date BETWEEN date(pw.payment_date, '-6 day') AND pw.payment_date
-  LEFT JOIN ren r ON r.q01 = pb.rental_id
-  LEFT JOIN inv i ON i.n01 = r.q03
-  LEFT JOIN sto st ON st.j01 = i.n03
-  GROUP BY pb.customer_id, pw.payment_date
+    dc.*,
+    SUM(dc.payment_sum) OVER (
+      PARTITION BY dc.customer_id
+      ORDER BY dc.payment_day
+      ROWS BETWEEN 6 PRECEDING AND CURRENT ROW
+    ) AS roll_7d_payment_sum,
+    SUM(dc.payment_count) OVER (
+      PARTITION BY dc.customer_id
+      ORDER BY dc.payment_day
+      ROWS BETWEEN 6 PRECEDING AND CURRENT ROW
+    ) AS roll_7d_payment_count,
+    AVG(dc.payment_sum) OVER (
+      PARTITION BY dc.customer_id
+      ORDER BY dc.payment_day
+      ROWS BETWEEN 30 PRECEDING AND 7 PRECEDING
+    ) AS hist_avg_daily_payment_sum
+  FROM daily_customer dc
 ),
-suspicious_rank AS (
+suspect_days AS (
   SELECT
-    sw.*,
-    RANK() OVER (ORDER BY sw.win_sum_7d DESC) AS suspicious_client_amount_rank
-  FROM suspicious_windows sw
+    dwr.*,
+    RANK() OVER (
+      ORDER BY dwr.roll_7d_payment_sum DESC, dwr.customer_id
+    ) AS customer_risk_rank_global
+  FROM daily_with_rolling dwr
+  WHERE dwr.hist_avg_daily_payment_sum IS NOT NULL
+    AND dwr.hist_avg_daily_payment_sum > 0
+    AND dwr.roll_7d_payment_sum >= 3.0 * dwr.hist_avg_daily_payment_sum
+    AND dwr.roll_7d_payment_count >= 5
+),
+window_staff_stores AS (
+  SELECT
+    s.customer_id,
+    s.payment_day,
+    GROUP_CONCAT(DISTINCT st.o02 || ' ' || st.o03, ', ') AS staff_names,
+    GROUP_CONCAT(DISTINCT c2.h02, ', ') AS store_ids
+  FROM suspect_days s
+  JOIN pay p
+    ON p.p02 = s.customer_id
+   AND DATE(p.p06) BETWEEN DATE(s.payment_day, '-6 day') AND s.payment_day
+  JOIN stf st
+    ON st.o01 = p.p03
+  JOIN cus c2
+    ON c2.h01 = p.p02
+  GROUP BY s.customer_id, s.payment_day
+),
+window_film_count AS (
+  SELECT
+    s.customer_id,
+    s.payment_day,
+    COUNT(DISTINCT i.n02) AS distinct_inventory_count,
+    COUNT(DISTINCT fc.l02) AS distinct_category_count
+  FROM suspect_days s
+  LEFT JOIN pay p
+    ON p.p02 = s.customer_id
+   AND DATE(p.p06) BETWEEN DATE(s.payment_day, '-6 day') AND s.payment_day
+  LEFT JOIN ren r
+    ON r.q01 = p.p04
+  LEFT JOIN inv i
+    ON i.n01 = r.q03
+  LEFT JOIN flc fcl
+    ON fcl.l01 = i.n02
+  LEFT JOIN cat fc
+    ON fc.g01 = fcl.l02
+  GROUP BY s.customer_id, s.payment_day
 )
 SELECT
-  sr.customer_id,
-  pg.customer_name,
-  pg.country_name,
-  pg.city_name,
-  sr.payment_date AS window_end_date,
-  sr.win_cnt_7d AS payment_count_7d,
-  ROUND(sr.win_sum_7d, 2) AS payment_sum_7d,
-  ROUND(sr.win_sum_7d / NULLIF(sr.win_cnt_7d, 0), 4) AS avg_payment_amount_7d,
-  wsl.distinct_films_in_window AS distinct_films_in_window,
-  ws.staff_names AS staff_names_in_window,
-  wst.store_list AS stores_in_window,
-  sr.suspicious_client_amount_rank AS client_amount_rank
-FROM suspicious_rank sr
-JOIN payment_geo pg ON pg.customer_id = sr.customer_id
-LEFT JOIN window_films_count wsl
-  ON wsl.customer_id = sr.customer_id
- AND wsl.payment_date = sr.payment_date
-LEFT JOIN window_staff_list ws
-  ON ws.customer_id = sr.customer_id
- AND ws.payment_date = sr.payment_date
-LEFT JOIN window_store_list wst
-  ON wst.customer_id = sr.customer_id
- AND wst.payment_date = sr.payment_date
+  sd.customer_id,
+  sd.country_name,
+  sd.city_name,
+  sd.payment_day AS window_end_day,
+  ROUND(sd.roll_7d_payment_sum, 2) AS roll_7d_payment_sum,
+  sd.roll_7d_payment_count AS roll_7d_payment_count,
+  ROUND(sd.hist_avg_daily_payment_sum, 2) AS hist_avg_daily_payment_sum,
+  wss.staff_names,
+  wss.store_ids,
+  COUNT(DISTINCT p.p01) AS payment_count_confirmed,
+  COALESCE(wfc.distinct_inventory_count, 0) AS distinct_rented_films_inventory_count,
+  sd.customer_risk_rank_global AS customer_risk_rank
+FROM suspect_days sd
+LEFT JOIN window_staff_stores wss
+  ON wss.customer_id = sd.customer_id
+ AND wss.payment_day = sd.payment_day
+LEFT JOIN window_film_count wfc
+  ON wfc.customer_id = sd.customer_id
+ AND wfc.payment_day = sd.payment_day
+LEFT JOIN pay p
+  ON p.p02 = sd.customer_id
+ AND DATE(p.p06) BETWEEN DATE(sd.payment_day, '-6 day') AND sd.payment_day
+GROUP BY
+  sd.customer_id,
+  sd.country_name,
+  sd.city_name,
+  sd.payment_day,
+  sd.roll_7d_payment_sum,
+  sd.roll_7d_payment_count,
+  sd.hist_avg_daily_payment_sum,
+  wss.staff_names,
+  wss.store_ids,
+  wfc.distinct_inventory_count,
+  sd.customer_risk_rank_global
 ORDER BY
-  sr.win_sum_7d DESC,
-  sr.customer_id,
-  sr.payment_date;
+  sd.customer_risk_rank_global,
+  sd.roll_7d_payment_sum DESC,
+  sd.customer_id;

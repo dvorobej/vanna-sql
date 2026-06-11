@@ -18,4 +18,4 @@ GROUP BY
   c.h04
 HAVING SUM(p.p05) > 50.00
    OR SUM(CASE WHEN p.p05 > 8.00 THEN 1 ELSE 0 END) >= 3
-ORDER BY total_amount DESC, large_payment_count DESC, customer_id;
+ORDER BY total_amount DESC, customer_id;

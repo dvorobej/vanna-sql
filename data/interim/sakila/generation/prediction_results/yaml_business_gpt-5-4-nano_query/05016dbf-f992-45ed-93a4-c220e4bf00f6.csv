@@ -1,4 +1,4 @@
-customer_id,customer_name,staff_id,staff_name,payment_count,total_amount,average_payment_amount,payments_over_8
+customer_id,customer_name,staff_id,staff_name,payment_count,total_amount,average_payment_amount,payments_above_8
 137,RHONDA KENNEDY,1,Mike Hillyer,22,112.77999999999997,5.126363636363635,2
 176,JUNE CARROLL,1,Mike Hillyer,22,111.77999999999997,5.080909090909089,1
 187,BRITTANY RILEY,2,Jon Stephens,19,110.80999999999997,5.832105263157893,5

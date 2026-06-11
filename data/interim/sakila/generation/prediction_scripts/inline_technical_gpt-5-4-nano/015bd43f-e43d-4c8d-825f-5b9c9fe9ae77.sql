@@ -8,7 +8,7 @@ SELECT
   CASE
     WHEN SUM(p.p05) > 50 THEN 1
     ELSE 0
-  END AS increased_attention_flag
+  END AS attention_flag
 FROM cus AS c
 JOIN pay AS p
   ON p.p02 = c.h01

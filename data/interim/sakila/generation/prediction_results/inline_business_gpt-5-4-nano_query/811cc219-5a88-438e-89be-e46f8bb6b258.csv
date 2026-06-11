@@ -1,4 +1,4 @@
-customer_id,first_name,last_name,staff_id,staff_first_name,staff_last_name,payment_count,total_amount,avg_check,high_attention_flag
+customer_id,first_name,last_name,staff_id,staff_first_name,staff_last_name,payment_count,total_amount,average_check,increased_attention_flag
 470,GORDON,ALLARD,1,Mike,Hillyer,13,70.87,5.451538461538462,1
 144,CLARA,SHAW,2,Jon,Stephens,12,68.88000000000001,5.740000000000001,1
 494,RAMON,CHOATE,2,Jon,Stephens,13,64.87000000000002,4.990000000000001,1

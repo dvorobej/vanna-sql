@@ -10,7 +10,7 @@ FROM cus AS c
 JOIN pay AS p
   ON p.p02 = c.h01
 WHERE p.p04 IS NOT NULL
-  AND c.h07 = '1'
+  AND c.h07 IN ('1', 'Y')
   AND p.p06 >= '2005-07-01'
   AND p.p06 < '2005-08-01'
 GROUP BY

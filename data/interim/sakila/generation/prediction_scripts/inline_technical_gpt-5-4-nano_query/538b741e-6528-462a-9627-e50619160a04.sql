@@ -7,7 +7,7 @@ SELECT
   CASE
     WHEN SUM(p.p05) > 100 THEN 1
     ELSE 0
-  END AS high_risk
+  END AS risk_flag
 FROM cus AS c
 JOIN pay AS p
   ON p.p02 = c.h01

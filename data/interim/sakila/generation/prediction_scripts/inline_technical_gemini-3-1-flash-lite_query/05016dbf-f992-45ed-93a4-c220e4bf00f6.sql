@@ -13,12 +13,17 @@ JOIN cus AS c
 JOIN stf AS s
   ON p.p03 = s.o01
 WHERE p.p06 >= '2005-06-01'
-  AND p.p06 <= '2005-08-31 23:59:59'
+  AND p.p06 < '2005-09-01'
 GROUP BY
   c.h01,
-  s.o01
-HAVING COUNT(p.p01) >= 10
-   OR SUM(p.p05) > 100.00
+  c.h03,
+  c.h04,
+  s.o01,
+  s.o02,
+  s.o03
+HAVING
+  COUNT(p.p01) >= 10
+  OR SUM(p.p05) > 100.00
 ORDER BY
   total_amount DESC,
   payment_count DESC,

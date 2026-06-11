@@ -1,8 +1,9 @@
 SELECT
-  p02 AS customer_id,
-  p03 AS staff_id,
-  p05 AS amount,
-  p06 AS payment_date
+  p01,
+  p02,
+  p03,
+  p05,
+  p06
 FROM pay
 WHERE p05 > 9.00
 ORDER BY p06 DESC

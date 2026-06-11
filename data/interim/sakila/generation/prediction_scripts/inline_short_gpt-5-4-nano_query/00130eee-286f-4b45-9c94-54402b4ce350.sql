@@ -9,9 +9,9 @@ SELECT
 FROM cus AS c
 JOIN pay AS p
   ON p.p02 = c.h01
-WHERE p.p06 >= '2005-07-01'
+WHERE
+  p.p06 >= '2005-07-01'
   AND p.p06 < '2005-08-01'
-  AND c.h07 IN ('1', 'Y')
 GROUP BY
   c.h01,
   c.h03,

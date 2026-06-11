@@ -12,8 +12,8 @@ WITH monthly_stats AS (
     JOIN cus c ON p.p02 = c.h01
     JOIN stf s ON p.p03 = s.o01
     JOIN adr a ON c.h06 = a.e01
-    JOIN cty ct ON a.e05 = ct.d01
-    JOIN cnt ON ct.d03 = cnt.c01
+    JOIN cty ci ON a.e05 = ci.d01
+    JOIN cnt ON ci.d03 = cnt.c01
     GROUP BY 1, 2, 7, 8
 ),
 history_and_country AS (
@@ -27,15 +27,12 @@ history_and_country AS (
         PERCENT_RANK() OVER (
             PARTITION BY ms.country_id, ms.month 
             ORDER BY ms.monthly_sum DESC
-        ) AS country_percent_rank,
+        ) AS country_percentile,
         (SELECT AVG(val) FROM (
-            SELECT ms2.monthly_sum AS val
-            FROM monthly_stats ms2
-            WHERE ms2.country_id = ms.country_id AND ms2.month = ms.month
-            ORDER BY ms2.monthly_sum
-            LIMIT 2 - (SELECT COUNT(*) FROM monthly_stats ms3 WHERE ms3.country_id = ms.country_id AND ms3.month = ms.month) % 2
-            OFFSET (SELECT (COUNT(*) - 1) / 2 FROM monthly_stats ms4 WHERE ms4.country_id = ms.country_id AND ms4.month = ms.month)
-        )) AS country_median_sum
+            SELECT monthly_sum AS val, country_id, month 
+            FROM monthly_stats
+        ) AS sub WHERE sub.country_id = ms.country_id AND sub.month = ms.month
+        ) AS country_median_sum
     FROM monthly_stats ms
 )
 SELECT
@@ -44,9 +41,12 @@ SELECT
     monthly_sum,
     payment_count,
     staff_count,
-    store_count
+    store_count,
+    avg_prev_3_months,
+    country_median_sum
 FROM history_and_country
-WHERE monthly_sum >= 3 * COALESCE(avg_prev_3_months, 0)
+WHERE avg_prev_3_months > 0
+  AND monthly_sum >= 3 * avg_prev_3_months
   AND monthly_sum >= 2 * country_median_sum
-  AND country_percent_rank <= 0.05
+  AND country_percentile <= 0.05
 ORDER BY month DESC, monthly_sum DESC;

@@ -2,13 +2,13 @@ SELECT
   c.h01 AS customer_id,
   c.h03 AS first_name,
   c.h04 AS last_name,
-  COUNT(p.p01) AS operations_count,
+  COUNT(p.p01) AS payment_count,
   SUM(p.p05) AS total_amount,
-  AVG(p.p05) AS avg_payment_amount,
+  AVG(p.p05) AS average_payment_amount,
   CASE
-    WHEN AVG(p.p05) > 8.00 THEN 'высокий'
-    ELSE 'средний'
-  END AS risk_level
+    WHEN AVG(p.p05) > 8.00 THEN 'high'
+    ELSE 'low'
+  END AS risk_level_by_avg_payment
 FROM cus AS c
 JOIN pay AS p
   ON p.p02 = c.h01
@@ -19,4 +19,4 @@ GROUP BY
   c.h03,
   c.h04
 HAVING SUM(p.p05) > 50
-ORDER BY total_amount DESC, operations_count DESC, customer_id;
+ORDER BY total_amount DESC, payment_count DESC, customer_id;

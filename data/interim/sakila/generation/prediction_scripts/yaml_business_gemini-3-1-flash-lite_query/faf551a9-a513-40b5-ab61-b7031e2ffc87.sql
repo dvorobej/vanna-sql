@@ -14,17 +14,22 @@ customer_geo AS (
         c.h01 AS customer_id,
         c.h03 AS first_name,
         c.h04 AS last_name,
-        co.c02 AS country_name,
         co.c01 AS country_id,
+        co.c02 AS country_name,
         ci.d02 AS city_name
     FROM cus AS c
     JOIN adr AS a ON a.e01 = c.h06
     JOIN cty AS ci ON ci.d01 = a.e05
     JOIN cnt AS co ON co.c01 = ci.d03
 ),
-daily_with_baseline AS (
+daily_with_avg AS (
     SELECT
         dcp.*,
+        cg.first_name,
+        cg.last_name,
+        cg.country_id,
+        cg.country_name,
+        cg.city_name,
         (
             SELECT AVG(prev.day_amount)
             FROM daily_customer_payments AS prev
@@ -33,36 +38,33 @@ daily_with_baseline AS (
               AND prev.payment_date < dcp.payment_date
         ) AS avg_30d
     FROM daily_customer_payments AS dcp
+    JOIN customer_geo AS cg ON cg.customer_id = dcp.customer_id
 ),
-country_percentiles AS (
+country_p95 AS (
     SELECT
-        cg.country_id,
-        MAX(CASE WHEN rn <= 0.95 * total_count THEN day_amount END) AS p95_threshold
+        country_id,
+        MAX(day_amount) AS p95_threshold
     FROM (
         SELECT
-            cg.country_id,
-            dcp.day_amount,
-            ROW_NUMBER() OVER (PARTITION BY cg.country_id ORDER BY dcp.day_amount) AS rn,
-            COUNT(*) OVER (PARTITION BY cg.country_id) AS total_count
+            country_id,
+            day_amount,
+            PERCENT_RANK() OVER (PARTITION BY country_id ORDER BY day_amount) AS pr
         FROM daily_customer_payments AS dcp
         JOIN customer_geo AS cg ON cg.customer_id = dcp.customer_id
-    ) AS sub
+    )
+    WHERE pr <= 0.95
     GROUP BY country_id
 ),
 suspicious_events AS (
     SELECT
-        dwb.*,
-        cg.first_name,
-        cg.last_name,
-        cg.country_name,
-        cg.city_name,
-        cp.p95_threshold
-    FROM daily_with_baseline AS dwb
-    JOIN customer_geo AS cg ON cg.customer_id = dwb.customer_id
-    JOIN country_percentiles AS cp ON cp.country_id = cg.country_id
-    WHERE dwb.avg_30d > 0
-      AND dwb.day_amount >= 3 * dwb.avg_30d
-      AND dwb.day_amount > cp.p95_threshold
+        dwa.*,
+        cp.p95_threshold,
+        (dwa.day_amount - dwa.avg_30d) AS deviation
+    FROM daily_with_avg AS dwa
+    JOIN country_p95 AS cp ON cp.country_id = dwa.country_id
+    WHERE dwa.avg_30d > 0
+      AND dwa.day_amount >= 3 * dwa.avg_30d
+      AND dwa.day_amount > cp.p95_threshold
 )
 SELECT
     payment_date,
@@ -74,7 +76,7 @@ SELECT
     payment_count,
     ROUND(day_amount, 2) AS day_amount,
     ROUND(avg_30d, 2) AS avg_30d,
-    ROUND(day_amount - avg_30d, 2) AS deviation,
-    RANK() OVER (PARTITION BY country_name ORDER BY day_amount DESC) AS country_rank
+    ROUND(deviation, 2) AS deviation,
+    RANK() OVER (PARTITION BY country_id ORDER BY deviation DESC) AS country_rank
 FROM suspicious_events
 ORDER BY country_name, country_rank;

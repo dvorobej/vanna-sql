@@ -7,8 +7,8 @@ SELECT
   AVG(p.p05) AS avg_payment,
   MAX(p.p05) AS max_payment,
   CASE
-    WHEN SUM(p.p05) > 100 OR COUNT(p.p01) > 10 THEN 1
-    ELSE 0
+    WHEN SUM(p.p05) > 100 OR COUNT(p.p01) > 10 THEN 'высокий'
+    ELSE 'обычный'
   END AS risk_flag
 FROM pay AS p
 JOIN cus AS c
@@ -22,7 +22,4 @@ GROUP BY
   c.h01,
   c.h03,
   c.h04
-ORDER BY
-  total_amount DESC,
-  payment_count DESC,
-  customer_id;
+ORDER BY total_amount DESC, payment_count DESC, customer_id;

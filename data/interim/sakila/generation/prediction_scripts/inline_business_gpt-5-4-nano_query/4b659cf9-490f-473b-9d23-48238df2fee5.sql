@@ -4,7 +4,7 @@ SELECT
   COUNT(p.p01) AS payment_count,
   AVG(p.p05) AS average_payment,
   MAX(p.p05) AS max_payment,
-  SUM(CASE WHEN p.p05 > 8.00 THEN 1 ELSE 0 END) * 1.0 / COUNT(p.p01) AS share_payments_over_8
+  AVG(CASE WHEN p.p05 > 8.00 THEN 1.0 ELSE 0.0 END) AS share_payments_above_8
 FROM cus AS c
 JOIN pay AS p
   ON p.p02 = c.h01
@@ -15,6 +15,4 @@ GROUP BY
   c.h03,
   c.h04
 HAVING SUM(p.p05) > 100
-ORDER BY
-  SUM(p.p05) DESC,
-  payment_count DESC;
+ORDER BY SUM(p.p05) DESC, payment_count DESC;

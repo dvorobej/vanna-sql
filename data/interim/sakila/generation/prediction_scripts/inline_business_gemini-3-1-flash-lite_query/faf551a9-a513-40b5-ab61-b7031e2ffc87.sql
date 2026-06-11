@@ -1,4 +1,4 @@
-WITH daily_customer_payments AS (
+WITH daily_payments AS (
     SELECT
         p.p02 AS customer_id,
         DATE(p.p06) AS payment_date,
@@ -9,71 +9,71 @@ WITH daily_customer_payments AS (
     JOIN stf AS s ON s.o01 = p.p03
     GROUP BY p.p02, DATE(p.p06), s.o07
 ),
-daily_aggregated AS (
+customer_daily_summary AS (
     SELECT
         customer_id,
         payment_date,
         SUM(day_amount) AS total_day_amount,
         SUM(payment_count) AS total_payment_count,
-        MAX(store_id) AS store_id
-    FROM daily_customer_payments
+        GROUP_CONCAT(DISTINCT store_id) AS stores
+    FROM daily_payments
     GROUP BY customer_id, payment_date
 ),
-customer_stats AS (
+with_personal_avg AS (
     SELECT
-        da.*,
+        cds.*,
         (
             SELECT AVG(prev.total_day_amount)
-            FROM daily_aggregated AS prev
-            WHERE prev.customer_id = da.customer_id
-              AND prev.payment_date >= DATE(da.payment_date, '-30 days')
-              AND prev.payment_date < da.payment_date
+            FROM customer_daily_summary AS prev
+            WHERE prev.customer_id = cds.customer_id
+              AND prev.payment_date >= DATE(cds.payment_date, '-30 days')
+              AND prev.payment_date < cds.payment_date
         ) AS avg_30d
-    FROM daily_aggregated AS da
+    FROM customer_daily_summary AS cds
 ),
 country_percentiles AS (
     SELECT
         c.c01 AS country_id,
-        da.total_day_amount
-    FROM daily_aggregated AS da
-    JOIN cus AS cu ON cu.h01 = da.customer_id
-    JOIN adr AS a ON a.e01 = cu.h06
-    JOIN cty AS ci ON ci.d01 = a.e05
-    JOIN cnt AS c ON c.c01 = ci.d03
+        (SELECT val FROM (
+            SELECT total_day_amount AS val,
+                   PERCENT_RANK() OVER (ORDER BY total_day_amount) AS pr
+            FROM customer_daily_summary cds2
+            JOIN cus c2 ON c2.h01 = cds2.customer_id
+            JOIN adr a ON a.e01 = c2.h06
+            JOIN cty ct ON ct.d01 = a.e05
+            WHERE ct.d03 = c.c01
+        ) WHERE pr >= 0.95 LIMIT 1) AS p95_val
+    FROM cnt c
 ),
-p95_values AS (
+suspicious_days AS (
     SELECT
-        country_id,
-        MAX(total_day_amount) AS p95_val
-    FROM (
-        SELECT
-            country_id,
-            total_day_amount,
-            PERCENT_RANK() OVER (PARTITION BY country_id ORDER BY total_day_amount) as pr
-        FROM country_percentiles
-    )
-    WHERE pr <= 0.95
-    GROUP BY country_id
+        wpa.*,
+        c.h03 AS first_name,
+        c.h04 AS last_name,
+        cnt.c02 AS country_name,
+        cty.d02 AS city_name,
+        cnt.c01 AS country_id
+    FROM with_personal_avg AS wpa
+    JOIN cus AS c ON c.h01 = wpa.customer_id
+    JOIN adr AS a ON a.e01 = c.h06
+    JOIN cty AS cty ON cty.d01 = a.e05
+    JOIN cnt AS cnt ON cnt.c01 = cty.d03
+    JOIN country_percentiles AS cp ON cp.country_id = cnt.c01
+    WHERE wpa.avg_30d > 0
+      AND wpa.total_day_amount >= 3 * wpa.avg_30d
+      AND wpa.total_day_amount > cp.p95_val
 )
 SELECT
-    cs.payment_date,
-    cu.h03 AS first_name,
-    cu.h04 AS last_name,
-    cnt.c02 AS country,
-    cty.d02 AS city,
-    cs.store_id,
-    cs.total_payment_count,
-    ROUND(cs.total_day_amount, 2) AS total_day_amount,
-    ROUND(cs.avg_30d, 2) AS avg_30d,
-    ROUND(cs.total_day_amount - cs.avg_30d, 2) AS deviation,
-    RANK() OVER (PARTITION BY cnt.c01 ORDER BY cs.total_day_amount DESC) AS country_rank
-FROM customer_stats AS cs
-JOIN cus AS cu ON cu.h01 = cs.customer_id
-JOIN adr AS a ON a.e01 = cu.h06
-JOIN cty AS cty ON cty.d01 = a.e05
-JOIN cnt AS cnt ON cnt.c01 = cty.d03
-JOIN p95_values AS p95 ON p95.country_id = cnt.c01
-WHERE cs.avg_30d > 0
-  AND cs.total_day_amount >= 3 * cs.avg_30d
-  AND cs.total_day_amount > p95.p95_val
-ORDER BY cnt.c02, cs.total_day_amount DESC;
+    payment_date,
+    first_name,
+    last_name,
+    country_name,
+    city_name,
+    stores,
+    total_payment_count,
+    ROUND(total_day_amount, 2) AS day_amount,
+    ROUND(avg_30d, 2) AS avg_30d,
+    ROUND(total_day_amount - avg_30d, 2) AS deviation,
+    RANK() OVER (PARTITION BY country_id ORDER BY total_day_amount DESC) AS country_rank
+FROM suspicious_days
+ORDER BY country_name, country_rank;

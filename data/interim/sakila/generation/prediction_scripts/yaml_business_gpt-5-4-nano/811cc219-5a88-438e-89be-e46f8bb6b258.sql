@@ -9,14 +9,13 @@ SELECT
   CASE
     WHEN SUM(p.p05) > 50 OR AVG(p.p05) > 5 THEN 1
     ELSE 0
-  END AS attention_flag
+  END AS increased_attention
 FROM pay AS p
 JOIN cus AS c
   ON c.h01 = p.p02
 JOIN stf AS s
   ON s.o01 = p.p03
-WHERE
-  p.p06 >= '2005-07-01'
+WHERE p.p06 >= '2005-07-01'
   AND p.p06 < '2005-08-01'
 GROUP BY
   c.h01,
@@ -24,9 +23,4 @@ GROUP BY
   c.h04,
   s.o01
 HAVING COUNT(p.p01) >= 5
-ORDER BY
-  total_amount DESC,
-  payment_count DESC,
-  attention_flag DESC,
-  c.h04,
-  c.h03;
+ORDER BY total_amount DESC, payment_count DESC, customer_id, staff_id;

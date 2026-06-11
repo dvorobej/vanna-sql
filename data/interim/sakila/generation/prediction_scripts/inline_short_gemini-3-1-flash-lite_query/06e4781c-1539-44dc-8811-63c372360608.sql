@@ -17,5 +17,5 @@ GROUP BY
   c.h04
 HAVING COUNT(p.p01) >= 5
 ORDER BY
-  transaction_count DESC,
-  total_amount DESC;
+  total_amount DESC,
+  transaction_count DESC;

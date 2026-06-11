@@ -1,25 +1,31 @@
-SELECT AVG(mp2.month_payment_sum * 1.0)
-      FROM month_payments AS mp2
-      WHERE mp2.customer_id = mp.customer_id
-        AND mp2.payment_month >= strftime('%Y-%m', date(mp.payment_month || '-01', '-3 months'))
-        AND mp2.payment_month <  mp.payment_month
-    ) AS prev3_avg_month_sum,
-    (
-      SELECT AVG(mp2.month_payment_count * 1.0)
-      FROM month_payments AS mp2
-      WHERE mp2.customer_id = mp.customer_id
-        AND mp2.payment_month >= strftime('%Y-%m', date(mp.payment_month || '-01', '-3 months'))
-        AND mp2.payment_month <  mp.payment_month
-    ) AS prev3_avg_month_count
-  FROM month_payments AS mp
-),
-customer_month_context AS (
+WITH
+monthly_payments AS (
   SELECT
     p.p02 AS customer_id,
     strftime('%Y-%m', p.p06) AS payment_month,
-    GROUP_CONCAT(DISTINCT (s.o02 || ' ' || s.o03)) AS staff_list,
-    GROUP_CONCAT(DISTINCT CAST(st.j01 AS TEXT)) AS store_list,
-    COUNT(*) AS payment_rows_check
+    SUM(p.p05) AS month_payment_sum,
+    COUNT(p.p01) AS month_payment_count
+  FROM pay AS p
+  GROUP BY
+    p.p02,
+    strftime('%Y-%m', p.p06)
+),
+monthly_geo AS (
+  SELECT
+    c.h01 AS customer_id,
+    ct.c02 AS country_name
+  FROM cus AS c
+  JOIN adr AS a ON a.e01 = c.h06
+  JOIN cty AS ci ON ci.d01 = a.e05
+  JOIN cnt AS ct ON ct.c01 = ci.d03
+  WHERE c.h07 IN ('1', 'Y')
+),
+monthly_staff_store AS (
+  SELECT
+    p.p02 AS customer_id,
+    strftime('%Y-%m', p.p06) AS payment_month,
+    GROUP_CONCAT(DISTINCT (s.o02 || ' ' || s.o03) || ' (id=' || s.o01 || ')') AS staff_list,
+    GROUP_CONCAT(DISTINCT st.j01) AS store_list
   FROM pay AS p
   JOIN stf AS s ON s.o01 = p.p03
   JOIN sto AS st ON st.j01 = s.o07
@@ -27,103 +33,88 @@ customer_month_context AS (
     p.p02,
     strftime('%Y-%m', p.p06)
 ),
-customer_geo AS (
+prepared AS (
   SELECT
-    c.h01 AS customer_id,
-    cnt.c01 AS country_id
-  FROM cus AS c
-  JOIN adr AS a ON a.e01 = c.h06
-  JOIN cty AS city ON city.d01 = a.e05
-  JOIN cnt ON cnt.c01 = city.d03
-),
-country_medians AS (
-  SELECT
-    cg.country_id,
-    mp.payment_month,
-    AVG(x.month_payment_sum * 1.0) AS country_median_payment_sum
-  FROM customer_geo AS cg
-  JOIN month_payments AS mp
-    ON mp.customer_id = cg.customer_id
-  JOIN (
-    SELECT
-      cg2.country_id,
-      mp2.payment_month,
-      mp2.customer_id,
-      mp2.month_payment_sum,
-      ROW_NUMBER() OVER (
-        PARTITION BY cg2.country_id, mp2.payment_month
-        ORDER BY mp2.month_payment_sum
-      ) AS rn,
-      COUNT(*) OVER (
-        PARTITION BY cg2.country_id, mp2.payment_month
-      ) AS cnt
-    FROM customer_geo AS cg2
-    JOIN month_payments AS mp2
-      ON mp2.customer_id = cg2.customer_id
-  ) AS x
-    ON x.country_id = cg.country_id
-   AND x.payment_month = mp.payment_month
-   AND x.rn = CAST((x.cnt + 1) / 2 AS INTEGER)
-   OR x.rn = CAST((x.cnt + 2) / 2 AS INTEGER)
-  GROUP BY
-    cg.country_id,
-    mp.payment_month
-),
-country_ranking AS (
-  SELECT
-    cg.country_id,
-    mp.payment_month,
     mp.customer_id,
+    mp.payment_month,
     mp.month_payment_sum,
-    PERCENT_RANK() OVER (
-      PARTITION BY cg.country_id, mp.payment_month
-      ORDER BY mp.month_payment_sum
-    ) AS pr
-  FROM customer_geo AS cg
-  JOIN month_payments AS mp
-    ON mp.customer_id = cg.customer_id
+    mp.month_payment_count,
+    mg.country_name,
+    mss.staff_list,
+    mss.store_list,
+    LAG(mp.month_payment_sum, 1) OVER (PARTITION BY mp.customer_id ORDER BY mp.payment_month) AS prev1_sum,
+    LAG(mp.month_payment_sum, 2) OVER (PARTITION BY mp.customer_id ORDER BY mp.payment_month) AS prev2_sum,
+    LAG(mp.month_payment_sum, 3) OVER (PARTITION BY mp.customer_id ORDER BY mp.payment_month) AS prev3_sum
+  FROM monthly_payments AS mp
+  JOIN monthly_geo AS mg ON mg.customer_id = mp.customer_id
+  LEFT JOIN monthly_staff_store AS mss
+    ON mss.customer_id = mp.customer_id
+   AND mss.payment_month = mp.payment_month
+),
+country_month_stats AS (
+  SELECT
+    country_name,
+    payment_month,
+    month_payment_sum,
+    COUNT(*) OVER (PARTITION BY country_name, payment_month) AS cnt_in_group,
+    ROW_NUMBER() OVER (
+      PARTITION BY country_name, payment_month
+      ORDER BY month_payment_sum
+    ) AS rn_asc
+  FROM prepared
+),
+country_month_median AS (
+  SELECT
+    cms.country_name,
+    cms.payment_month,
+    AVG(cms.month_payment_sum * 1.0) AS country_median_payment_sum
+  FROM country_month_stats AS cms
+  WHERE cms.rn_asc IN (
+    CAST((cms.cnt_in_group + 1) / 2 AS INTEGER),
+    CAST((cms.cnt_in_group + 2) / 2 AS INTEGER)
+  )
+  GROUP BY
+    cms.country_name,
+    cms.payment_month
+),
+final_ranked AS (
+  SELECT
+    p.*,
+    cmm.country_median_payment_sum,
+    NTILE(20) OVER (
+      PARTITION BY p.country_name, p.payment_month
+      ORDER BY p.month_payment_sum DESC
+    ) AS tile20_desc
+  FROM prepared AS p
+  JOIN country_month_median AS cmm
+    ON cmm.country_name = p.country_name
+   AND cmm.payment_month = p.payment_month
 )
 SELECT
-  mp.customer_id,
-  c.h03 AS first_name,
-  c.h04 AS last_name,
-  cg.country_id,
-  cnt.c02 AS country_name,
-  mp.payment_month,
-  mp.month_payment_count,
-  ROUND(mp.month_payment_sum, 2) AS month_payment_sum,
-  ROUND(ch.prev3_avg_month_sum, 2) AS prev3_avg_month_sum,
-  ROUND(ch.prev3_avg_month_count, 2) AS prev3_avg_month_count,
-  cmc.staff_list,
-  cmc.store_list,
-  ROUND(cmed.country_median_payment_sum, 2) AS country_median_payment_sum,
-  ROUND(mp.month_payment_sum / NULLIF(cmed.country_median_payment_sum, 0), 2) AS vs_country_median_ratio,
-  ROUND(mp.month_payment_sum / NULLIF(ch.prev3_avg_month_sum, 0), 2) AS vs_prev3_avg_ratio
-FROM month_payments AS mp
-JOIN cus AS c ON c.h01 = mp.customer_id
-JOIN customer_geo AS cg ON cg.customer_id = mp.customer_id
-JOIN cnt ON cnt.c01 = cg.country_id
-JOIN customer_hist AS ch
-  ON ch.customer_id = mp.customer_id
- AND ch.payment_month = mp.payment_month
-JOIN customer_month_context AS cmc
-  ON cmc.customer_id = mp.customer_id
- AND cmc.payment_month = mp.payment_month
-JOIN country_medians AS cmed
-  ON cmed.country_id = cg.country_id
- AND cmed.payment_month = mp.payment_month
-JOIN country_ranking AS cr
-  ON cr.country_id = cg.country_id
- AND cr.payment_month = mp.payment_month
- AND cr.customer_id = mp.customer_id
+  fr.customer_id,
+  cus.h03 AS first_name,
+  cus.h04 AS last_name,
+  fr.country_name,
+  fr.payment_month,
+  fr.month_payment_count,
+  ROUND(fr.month_payment_sum, 2) AS month_payment_sum,
+  fr.staff_list,
+  fr.store_list,
+  ROUND(((fr.month_payment_sum * 1.0) / NULLIF(((fr.prev1_sum + fr.prev2_sum + fr.prev3_sum) / 3.0), 0)), 2) AS ratio_to_own_3mo_avg,
+  ROUND(fr.country_median_payment_sum, 2) AS country_median_payment_sum,
+  ROUND((fr.month_payment_sum * 1.0) / NULLIF(fr.country_median_payment_sum, 0), 2) AS ratio_to_country_median
+FROM final_ranked AS fr
+JOIN cus
+  ON cus.h01 = fr.customer_id
 WHERE
-  ch.prev3_avg_month_sum IS NOT NULL
-  AND ch.prev3_avg_month_sum > 0
-  AND mp.month_payment_sum >= 3.0 * ch.prev3_avg_month_sum
-  AND mp.month_payment_sum >= 2.0 * cmed.country_median_payment_sum
-  AND cr.pr >= 0.95
+  fr.prev1_sum IS NOT NULL
+  AND fr.prev2_sum IS NOT NULL
+  AND fr.prev3_sum IS NOT NULL
+  AND fr.month_payment_sum >= 3.0 * ((fr.prev1_sum + fr.prev2_sum + fr.prev3_sum) / 3.0)
+  AND fr.month_payment_sum >= 2.0 * fr.country_median_payment_sum
+  AND fr.tile20_desc = 1
 ORDER BY
-  mp.payment_month,
-  cg.country_id,
-  mp.month_payment_sum DESC,
-  mp.customer_id;
+  fr.country_name,
+  fr.payment_month,
+  fr.month_payment_sum DESC,
+  fr.customer_id;

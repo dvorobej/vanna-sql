@@ -1,4 +1,4 @@
-payment_month,customer_name,country,city,payment_count,monthly_sum,max_payment,max_payment_share,distinct_staff,distinct_stores,country_rank
+payment_month,full_name,country,city,payment_count,monthly_sum,max_payment,max_payment_share,distinct_staff,distinct_stores,country_rank
 2005-08,MICHEAL FORMAN,Argentina,Escobar,14,66.86,9.99,0.1494,2,2,1
 2005-08,NORA HERRERA,Austria,Salzburg,17,71.83,8.99,0.1252,2,2,1
 2005-08,MICHELLE CLARK,Bangladesh,Tangail,17,79.83,9.99,0.1251,2,2,1

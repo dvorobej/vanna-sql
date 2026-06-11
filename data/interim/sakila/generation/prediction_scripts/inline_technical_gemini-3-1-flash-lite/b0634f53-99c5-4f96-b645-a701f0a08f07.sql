@@ -20,11 +20,11 @@ customer_history AS (
     SELECT
         dp.*,
         (
-            SELECT SUM(prev.day_amount) / 30.0
-            FROM daily_payments AS prev
-            WHERE prev.customer_id = dp.customer_id
-              AND prev.payment_date >= DATE(dp.payment_date, '-30 days')
-              AND prev.payment_date < dp.payment_date
+            SELECT SUM(dp_prev.day_amount) / 30.0
+            FROM daily_payments AS dp_prev
+            WHERE dp_prev.customer_id = dp.customer_id
+              AND dp_prev.payment_date >= DATE(dp.payment_date, '-30 days')
+              AND dp_prev.payment_date < dp.payment_date
         ) AS avg_30d
     FROM daily_payments AS dp
 ),
@@ -42,10 +42,11 @@ suspicious_days AS (
     WHERE ch.payment_count >= 3
       AND ch.day_amount >= 2 * ch.avg_30d
       AND ch.store_count > 1
-      AND ch.store_countries LIKE '%' || cnt_cust.c02 || '%' -- Проверка на наличие страны магазина, отличной от страны клиента
+      AND ch.store_countries LIKE '%' || cnt_cust.c02 || '%' -- Simplified check for cross-border
 )
 SELECT
     customer_id,
+    customer_name,
     customer_country,
     payment_date,
     payment_count,

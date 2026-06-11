@@ -1,4 +1,4 @@
-customer_name,city,country,payment_date,payment_count,day_amount,max_payment,restricted_rating_share,country_day_rank
+customer_name,city,country,payment_date,payment_count,day_amount,max_payment,r_nc17_share,country_day_rank
 MARIO CHEATHAM,Batna,Algeria,2005-07-29,5,18.95,4.99,0.2,1
 JORDAN ARCHULETA,Avellaneda,Argentina,2005-07-07,3,13.97,9.99,0.0,1
 LYDIA BURKE,San Miguel de Tucumn,Argentina,2005-07-31,3,13.97,5.99,0.3333,1

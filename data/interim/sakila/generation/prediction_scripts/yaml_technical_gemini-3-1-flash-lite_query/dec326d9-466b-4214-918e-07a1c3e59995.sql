@@ -37,7 +37,7 @@ rolling_stats AS (
         ) AS window_films_count
     FROM daily_customer_stats dcs
 ),
-suspicious_cases AS (
+suspicious_events AS (
     SELECT
         rs.*,
         c.h03 || ' ' || c.h04 AS customer_name,
@@ -53,15 +53,15 @@ suspicious_cases AS (
       AND rs.hist_avg_amount IS NOT NULL
 )
 SELECT
-    sc.customer_name,
-    sc.country,
-    sc.city,
-    sc.payment_date,
-    sc.window_amount,
-    sc.window_count,
-    sc.window_films_count,
-    sc.staff_ids,
-    sc.store_ids,
-    RANK() OVER (ORDER BY sc.window_amount DESC) AS global_suspicious_rank
-FROM suspicious_cases sc
-ORDER BY sc.window_amount DESC;
+    se.customer_name,
+    se.country,
+    se.city,
+    se.payment_date,
+    se.window_amount,
+    se.window_count,
+    se.window_films_count,
+    se.staff_ids,
+    se.store_ids,
+    RANK() OVER (ORDER BY se.window_amount DESC) AS global_suspicious_rank
+FROM suspicious_events se
+ORDER BY global_suspicious_rank;

@@ -1,4 +1,4 @@
-customer_id,customer_first_name,customer_last_name,payment_count,total_amount,other_store_staff_payment_share
+customer_id,first_name,last_name,payment_count,total_amount,other_store_staff_payment_share
 148,ELEANOR,HUNT,22,100.78,0.3182
 470,GORDON,ALLARD,17,96.83,0.2353
 522,ARNOLD,HAVENS,18,96.82,0.3889

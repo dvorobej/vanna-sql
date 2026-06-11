@@ -11,7 +11,7 @@ SELECT
   END AS high_risk
 FROM pay AS p
 JOIN cus AS c
-  ON p.p02 = c.h01
+  ON c.h01 = p.p02
 WHERE p.p06 >= '2005-07-01'
   AND p.p06 < '2005-08-01'
 GROUP BY
@@ -20,4 +20,4 @@ GROUP BY
   c.h04
 HAVING COUNT(*) >= 5
    AND SUM(p.p05) > 30
-ORDER BY total_amount DESC, customer_id;
+ORDER BY total_amount DESC, c.h01;

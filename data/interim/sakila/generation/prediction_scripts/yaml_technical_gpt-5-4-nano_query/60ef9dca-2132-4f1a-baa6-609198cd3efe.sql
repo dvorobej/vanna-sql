@@ -1,150 +1,115 @@
-WITH payments_2005 AS (
+WITH monthly_customer AS (
   SELECT
     p.p02 AS customer_id,
-    p.p03 AS staff_id,
-    p.p04 AS rental_id,
-    p.p05 AS payment_amount,
+    strftime('%Y-%m', p.p06) AS payment_month,
     date(p.p06, 'start of month') AS month_start,
-    strftime('%Y-%m', p.p06) AS month_key
-  FROM pay AS p
-  WHERE p.p06 >= '2005-01-01'
-    AND p.p06 <  '2006-01-01'
-),
-customer_geo AS (
-  SELECT
-    c.h01 AS customer_id,
     c.h02 AS store_id,
+    c.h03 || ' ' || c.h04 AS customer_full_name,
     ct.d02 AS city_name,
-    co.c02 AS country_name
-  FROM cus AS c
+    co.c02 AS country_name,
+    COUNT(*) AS payment_count,
+    SUM(p.p05) AS month_total_amount
+  FROM pay AS p
+  JOIN cus AS c
+    ON c.h01 = p.p02
   JOIN adr AS a
     ON a.e01 = c.h06
   JOIN cty AS ct
     ON ct.d01 = a.e05
   JOIN cnt AS co
     ON co.c01 = ct.d03
-),
-customer_month AS (
-  SELECT
-    p.customer_id,
-    cg.store_id,
-    cg.city_name,
-    cg.country_name,
-    p.month_start,
-    p.month_key,
-    COUNT(*) AS payment_count,
-    SUM(p.payment_amount) AS month_sum
-  FROM payments_2005 AS p
-  JOIN customer_geo AS cg
-    ON cg.customer_id = p.customer_id
+  WHERE p.p06 >= '2005-01-01'
+    AND p.p06 <  '2006-01-01'
   GROUP BY
-    p.customer_id,
-    cg.store_id,
-    cg.city_name,
-    cg.country_name,
-    p.month_start,
-    p.month_key
+    p.p02,
+    strftime('%Y-%m', p.p06),
+    date(p.p06, 'start of month'),
+    c.h02,
+    c.h03, c.h04,
+    ct.d02,
+    co.c02
 ),
 customer_year_avg AS (
   SELECT
     customer_id,
-    store_id,
-    AVG(month_sum) AS personal_avg_month_sum
-  FROM customer_month
-  GROUP BY customer_id, store_id
+    AVG(month_total_amount) AS personal_avg_monthly_amount
+  FROM monthly_customer
+  GROUP BY customer_id
 ),
-store_month_ranked AS (
+ranked_in_store AS (
   SELECT
-    cm.*,
-    cya.personal_avg_month_sum,
+    mc.*,
+    cya.personal_avg_monthly_amount,
     RANK() OVER (
-      PARTITION BY cm.store_id, cm.month_start
-      ORDER BY cm.month_sum DESC
+      PARTITION BY mc.store_id, mc.month_start
+      ORDER BY mc.month_total_amount DESC
     ) AS store_month_rank,
     COUNT(*) OVER (
-      PARTITION BY cm.store_id, cm.month_start
+      PARTITION BY mc.store_id, mc.month_start
     ) AS store_month_customer_count
-  FROM customer_month AS cm
+  FROM monthly_customer AS mc
   JOIN customer_year_avg AS cya
-    ON cya.customer_id = cm.customer_id
-   AND cya.store_id = cm.store_id
+    ON cya.customer_id = mc.customer_id
 ),
-candidate_months AS (
+qualified_months AS (
   SELECT
-    smr.*
-  FROM store_month_ranked AS smr
+    *
+  FROM ranked_in_store
   WHERE
-    smr.month_sum > smr.personal_avg_month_sum * 2
-    AND smr.store_month_rank <= (
-      CAST( (smr.store_month_customer_count + 19) / 20 AS INT)
-    )
+    month_total_amount > personal_avg_monthly_amount * 2
+    AND store_month_rank <= (store_month_customer_count * 0.05)
 ),
-months_count AS (
-  SELECT
-    customer_id,
-    store_id,
-    COUNT(*) AS good_months_count
-  FROM candidate_months
-  GROUP BY customer_id, store_id
+months_2005_count AS (
+  SELECT COUNT(*) AS months_cnt
+  FROM monthly_customer
+  WHERE month_start >= '2005-01-01' AND month_start < '2006-01-01'
 ),
-all_months AS (
+customer_all_months AS (
   SELECT
-    COUNT(*) AS total_months
-  FROM (
-    SELECT DISTINCT month_start
-    FROM payments_2005
-  )
+    qm.customer_id
+  FROM qualified_months AS qm
+  CROSS JOIN months_2005_count AS mcnt
+  GROUP BY qm.customer_id
+  HAVING COUNT(DISTINCT qm.month_start) = mcnt.months_cnt
 ),
-top_staff_last AS (
+top_staff_per_month AS (
   SELECT
-    p.customer_id,
-    p.month_start,
-    p.staff_id,
+    p.p02 AS customer_id,
+    date(p.p06, 'start of month') AS month_start,
+    p.p03 AS staff_id,
     ROW_NUMBER() OVER (
-      PARTITION BY p.customer_id, p.month_start
-      ORDER BY p.payment_amount DESC, p.staff_id
-    ) AS rn_by_max_amount
-  FROM payments_2005 AS p
-),
-last_staff_by_date AS (
-  SELECT
-    p.customer_id,
-    p.month_start,
-    p.staff_id,
-    ROW_NUMBER() OVER (
-      PARTITION BY p.customer_id, p.month_start
-      ORDER BY p.month_start, p.staff_id, p.rental_id, p.payment_amount DESC
+      PARTITION BY p.p02, date(p.p06, 'start of month')
+      ORDER BY SUM(p.p05) DESC, COUNT(*) DESC, p.p03
     ) AS rn
-  FROM payments_2005 AS p
+  FROM pay AS p
+  WHERE p.p06 >= '2005-01-01'
+    AND p.p06 <  '2006-01-01'
+  GROUP BY
+    p.p02,
+    date(p.p06, 'start of month'),
+    p.p03
 )
 SELECT
-  cm.customer_id,
-  cm.store_id AS store_id,
-  cm.city_name,
-  cm.country_name,
-  cm.month_key AS month,
-  ROUND(cm.month_sum, 2) AS month_sum,
-  cm.payment_count,
-  ROUND(cm.month_sum - cm.personal_avg_month_sum, 2) AS deviation_from_personal_avg,
-  cm.store_month_rank AS store_month_rank,
-  (
-    SELECT p2.staff_id
-    FROM pay AS p2
-    WHERE p2.p02 = cm.customer_id
-      AND date(p2.p06, 'start of month') = cm.month_start
-    ORDER BY p2.p06 DESC
-    LIMIT 1
-  ) AS last_staff_id
-FROM store_month_ranked AS cm
-JOIN months_count AS mc
-  ON mc.customer_id = cm.customer_id
- AND mc.store_id = cm.store_id
-JOIN all_months AS am
-WHERE mc.good_months_count = am.total_months
-  AND cm.month_sum > cm.personal_avg_month_sum * 2
-  AND cm.store_month_rank <= (
-      CAST( (cm.store_month_customer_count + 19) / 20 AS INT)
-    )
+  qm.customer_id,
+  qm.store_id,
+  qm.city_name,
+  qm.country_name,
+  qm.payment_month,
+  ROUND(qm.month_total_amount, 2) AS month_total_amount,
+  qm.payment_count,
+  ROUND(qm.month_total_amount - qm.personal_avg_monthly_amount, 2) AS deviation_from_personal_avg,
+  qm.store_month_rank AS store_month_rank,
+  ts.staff_id AS last_staff_id,
+  st.o02 || ' ' || st.o03 AS last_staff_name
+FROM qualified_months AS qm
+JOIN customer_all_months AS cam
+  ON cam.customer_id = qm.customer_id
+JOIN top_staff_per_month AS ts
+  ON ts.customer_id = qm.customer_id
+ AND ts.month_start = qm.month_start
+ AND ts.rn = 1
+JOIN stf AS st
+  ON st.o01 = ts.staff_id
 ORDER BY
-  cm.customer_id,
-  cm.month_start;
+  qm.customer_id,
+  qm.month_start;

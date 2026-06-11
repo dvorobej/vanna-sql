@@ -1,65 +1,70 @@
 SELECT DISTINCT
-    wh.customer_id,
-    wh.payment_date,
-    wh.country_name,
-    wh.city_name,
-    wh.sum_last_7_days AS suspicious_window_sum,
-    wh.cnt_last_7_days AS suspicious_window_payment_count,
-    wh.avg_sum_prev_30d AS historical_avg_prev_30d_sum,
-    wh.ratio_to_hist_avg
-  FROM window_hits wh
-  WHERE wh.cnt_last_7_days >= 5
-    AND wh.avg_sum_prev_30d IS NOT NULL
-    AND wh.avg_sum_prev_30d > 0
-    AND wh.sum_last_7_days >= 3 * wh.avg_sum_prev_30d
+    h.customer_id,
+    h.customer_name,
+    h.country,
+    h.city,
+    h.payment_date,
+
+    h.win_sum_7d AS suspicious_window_sum,
+    h.win_cnt_7d AS suspicious_window_payments,
+
+    h.hist_avg_sum_prev_30d AS personal_hist_avg_sum_prev_30d
+  FROM hist h
+  WHERE h.hist_avg_sum_prev_30d IS NOT NULL
+    AND h.win_cnt_7d >= 5
+    AND h.win_sum_7d >= 3 * h.hist_avg_sum_prev_30d
 ),
-staff_shop_and_film_counts AS (
+window_details AS (
   SELECT
-    f.customer_id,
-    f.payment_date,
-    COUNT(DISTINCT pe.staff_id) AS distinct_staff_count,
-    COUNT(DISTINCT r.q06) AS distinct_rental_staff_count,
-    COUNT(DISTINCT i.n03) AS distinct_shop_count,
-    COUNT(DISTINCT fc.l02) AS distinct_rented_film_count
-  FROM filtered f
-  JOIN p_enriched pe
-    ON pe.customer_id = f.customer_id
-   AND pe.payment_date >= date(f.payment_date, '-6 days')
-   AND pe.payment_date <= f.payment_date
-  LEFT JOIN ren r
-    ON r.q01 = pe.rental_id
-  LEFT JOIN inv i
-    ON i.n01 = r.q03
-  LEFT JOIN flc fc
-    ON fc.l01 = i.n02
-  GROUP BY f.customer_id, f.payment_date
+    se.customer_id,
+    se.payment_date,
+
+    GROUP_CONCAT(DISTINCT bd.staff_id) AS staff_ids,
+    COUNT(DISTINCT bd.staff_id) AS distinct_staff_count,
+
+    GROUP_CONCAT(DISTINCT bd.customer_home_store_id) AS home_store_ids_in_payments,
+    COUNT(DISTINCT bd.customer_home_store_id) AS distinct_home_store_count,
+
+    GROUP_CONCAT(DISTINCT bd.rental_id) AS rental_ids,
+    COUNT(DISTINCT bd.rental_id) AS distinct_rental_count,
+
+    COUNT(DISTINCT fa.k01) AS distinct_actors_in_window
+  FROM suspicious_events se
+  JOIN base bd
+    ON bd.customer_id = se.customer_id
+   AND bd.payment_date BETWEEN date(se.payment_date, '-6 day') AND se.payment_date
+  JOIN ren r ON r.q01 = bd.rental_id
+  JOIN inv i ON i.n01 = r.q03
+  JOIN flc fc ON fc.l01 = i.n02
+  JOIN fla fa ON fa.k02 = flc.l01
+  GROUP BY se.customer_id, se.payment_date
 ),
-suspicious_rank AS (
+top_ranks AS (
   SELECT
-    f.*,
-    DENSE_RANK() OVER (
-      ORDER BY f.suspicious_window_sum DESC
-    ) AS client_suspicious_amount_rank
-  FROM filtered f
+    se.*,
+    RANK() OVER (
+      ORDER BY se.suspicious_window_sum DESC
+    ) AS suspicious_customer_rank_by_sum
+  FROM suspicious_events se
 )
 SELECT
-  sr.customer_id,
-  sr.payment_date,
-  sr.country_name,
-  sr.city_name,
-  sr.suspicious_window_payment_count AS window_payment_count,
-  ROUND(sr.suspicious_window_sum, 2) AS window_payment_sum,
-  ROUND(sr.historical_avg_prev_30d_sum, 2) AS historical_avg_prev_30d_sum,
-  sr.ratio_to_hist_avg AS sum_to_historical_ratio,
-  sfc.distinct_staff_count AS distinct_staff_count_in_window,
-  sfc.distinct_shop_count AS distinct_shop_count_in_window,
-  sfc.distinct_rented_film_count AS distinct_rented_film_count_in_window,
-  sr.client_suspicious_amount_rank
-FROM suspicious_rank sr
-LEFT JOIN staff_shop_and_film_counts sfc
-  ON sfc.customer_id = sr.customer_id
- AND sfc.payment_date = sr.payment_date
+  tr.customer_id,
+  tr.customer_name,
+  tr.country,
+  tr.city,
+  tr.payment_date AS window_end_date,
+  ROUND(tr.suspicious_window_sum, 2) AS window_sum_7d,
+  tr.suspicious_window_payments AS window_payment_count,
+  ROUND(tr.personal_hist_avg_sum_prev_30d, 2) AS personal_hist_avg_sum_prev_30d,
+  wd.distinct_staff_count AS distinct_staff_count,
+  wd.distinct_home_store_count AS distinct_store_count,
+  wd.distinct_actors_in_window AS distinct_rented_films_count,
+  tr.suspicious_customer_rank_by_sum
+FROM top_ranks tr
+LEFT JOIN window_details wd
+  ON wd.customer_id = tr.customer_id
+ AND wd.payment_date = tr.payment_date
 ORDER BY
-  sr.payment_date,
-  sr.client_suspicious_amount_rank,
-  sr.customer_id;
+  tr.suspicious_customer_rank_by_sum,
+  tr.suspicious_window_sum DESC,
+  tr.customer_id;

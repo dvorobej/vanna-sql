@@ -4,10 +4,10 @@ WITH monthly_stats AS (
         strftime('%Y-%m', p.p06) AS payment_month,
         SUM(p.p05) AS monthly_sum,
         COUNT(*) AS payment_count,
-        MAX(p.p05) AS max_payment,
         COUNT(DISTINCT DATE(p.p06)) AS distinct_days,
         COUNT(DISTINCT p.p03) AS distinct_staff,
-        COUNT(DISTINCT s.o07) AS distinct_stores
+        COUNT(DISTINCT s.o07) AS distinct_stores,
+        MAX(p.p05) AS max_payment
     FROM pay AS p
     JOIN stf AS s ON s.o01 = p.p03
     GROUP BY p.p02, strftime('%Y-%m', p.p06)
@@ -28,10 +28,7 @@ suspicious_clients AS (
         c.h03 || ' ' || c.h04 AS full_name,
         cnt.c02 AS country,
         cty.d02 AS city,
-        RANK() OVER (
-            PARTITION BY cnt.c01, hs.payment_month
-            ORDER BY hs.monthly_sum DESC
-        ) AS country_rank
+        cnt.c01 AS country_id
     FROM history_stats AS hs
     JOIN cus AS c ON c.h01 = hs.customer_id
     JOIN adr AS a ON a.e01 = c.h06
@@ -53,9 +50,12 @@ SELECT
     ROUND(max_payment / NULLIF(monthly_sum, 0), 4) AS max_payment_share,
     distinct_staff,
     distinct_stores,
-    country_rank
+    RANK() OVER (
+        PARTITION BY country_id, payment_month
+        ORDER BY monthly_sum DESC
+    ) AS country_rank
 FROM suspicious_clients
 ORDER BY
-    payment_month,
+    payment_month DESC,
     country,
     country_rank;

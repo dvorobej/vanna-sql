@@ -1,0 +1,66 @@
+customer_id,customer_first_name,customer_last_name,store_id,store_address_id,store_city,store_country,customer_address_line,customer_city,customer_country,payment_month,monthly_amount,payment_count,deviation_from_personal_avg,position_in_store_by_month,last_staff_id
+234,CLAUDIA,FULLER,1,1,Lethbridge,Canada,346 Skikda Parkway,Jalib al-Shuyukh,Kuwait,2005-06-01,36.92000000000001,8,14.572000000000006,1,2
+213,GINA,WILLIAMSON,1,1,Lethbridge,Canada,1001 Miyakonojo Lane,Taizz,Yemen,2005-06-01,35.91000000000001,9,13.56600000000001,2,2
+193,KATIE,ELLIOTT,2,2,Woodridge,Australia,447 Surakarta Loop,Kisumu,Kenya,2005-06-01,35.940000000000005,6,13.990000000000002,1,2
+431,JOEL,FRANCISCO,2,2,Woodridge,Australia,287 Cuautla Boulevard,Sucre,Bolivia,2005-06-01,35.93000000000001,7,16.776000000000003,2,2
+384,ERNEST,STEPP,2,2,Woodridge,Australia,500 Lincoln Parkway,Huaian,China,2005-06-01,34.93000000000001,7,12.492500000000007,3,2
+561,IAN,STILL,2,2,Woodridge,Australia,1894 Boa Vista Way,Garland,United States,2005-06-01,33.910000000000004,9,14.564000000000007,4,2
+148,ELEANOR,HUNT,1,1,Lethbridge,Canada,1952 Pune Lane,Saint-Denis,Runion,2005-07-01,100.77999999999997,22,46.64499999999998,1,2
+470,GORDON,ALLARD,1,1,Lethbridge,Canada,434 Ourense (Orense) Manor,Hodeida,Yemen,2005-07-01,96.82999999999998,17,56.65999999999998,2,2
+144,CLARA,SHAW,1,1,Lethbridge,Canada,1027 Songkhla Manor,Molodetno,Belarus,2005-07-01,93.81999999999998,18,44.92499999999998,3,2
+459,TOMMY,COLLAZO,1,1,Lethbridge,Canada,76 Kermanshah Manor,Qomsheh,Iran,2005-07-01,89.81999999999998,18,43.16499999999998,4,2
+295,DAISY,BATES,1,1,Lethbridge,Canada,661 Chisinau Lane,Kolpino,Russian Federation,2005-07-01,87.82000000000001,18,55.29600000000001,5,2
+595,TERRENCE,GUNDERSON,1,1,Lethbridge,Canada,844 Bucuresti Place,Jinzhou,China,2005-07-01,86.80999999999999,19,57.38499999999999,6,2
+102,CRYSTAL,FORD,1,1,Lethbridge,Canada,659 Vaduz Drive,Ashdod,Israel,2005-07-01,84.78999999999999,21,50.372499999999995,7,2
+346,ARTHUR,SIMPKINS,1,1,Lethbridge,Canada,1157 Nyeri Loop,Maikop,Russian Federation,2005-07-01,83.85,15,44.92999999999999,8,2
+366,BRANDON,HUEY,1,1,Lethbridge,Canada,1912 Emeishan Drive,Balikesir,Turkey,2005-07-01,82.80999999999999,19,52.28399999999999,9,2
+50,DIANE,COLLINS,1,1,Lethbridge,Canada,115 Hidalgo Parkway,Omdurman,Sudan,2005-07-01,80.83,17,38.41749999999999,10,2
+225,ARLENE,HARVEY,1,1,Lethbridge,Canada,1014 Loja Manor,Ambattur,India,2005-07-01,80.83,17,50.644999999999996,10,2
+479,ZACHARY,HITE,1,1,Lethbridge,Canada,98 Pyongyang Boulevard,Akron,United States,2005-07-01,79.85,15,50.51199999999999,12,2
+332,STEPHEN,QUALLS,1,1,Lethbridge,Canada,1838 Tabriz Lane,Dhaka,Bangladesh,2005-07-01,78.82999999999998,17,39.25666666666665,13,2
+484,ROBERTO,VU,1,1,Lethbridge,Canada,1297 Alvorada Parkway,Yinchuan,China,2005-07-01,77.85000000000001,15,42.92500000000001,14,2
+309,CHRISTOPHER,GRECO,1,1,Lethbridge,Canada,1224 Huejutla de Reyes Boulevard,Brescia,Italy,2005-07-01,76.83999999999999,16,39.91749999999999,15,2
+286,VELMA,LUCAS,1,1,Lethbridge,Canada,1155 Liaocheng Place,Effon-Alaiye,Nigeria,2005-07-01,76.83000000000001,17,47.39750000000001,16,2
+2,PATRICIA,JOHNSON,1,1,Lethbridge,Canada,1121 Loja Avenue,San Bernardino,United States,2005-07-01,75.86,14,43.677499999999995,17,2
+522,ARNOLD,HAVENS,2,2,Woodridge,Australia,1176 Southend-on-Sea Manor,Santa Rosa,Philippines,2005-07-01,96.82,18,54.90249999999999,1,2
+137,RHONDA,KENNEDY,2,2,Woodridge,Australia,1749 Daxian Place,Apeldoorn,Netherlands,2005-07-01,96.80999999999999,19,48.157499999999985,2,2
+257,MARSHA,DOUGLAS,2,2,Woodridge,Australia,771 Yaound Manor,Beira,Mozambique,2005-07-01,88.82,18,50.91249999999999,3,2
+526,KARL,SEAL,2,2,Woodridge,Australia,1427 Tabuk Place,Cape Coral,United States,2005-07-01,86.81,19,31.4225,4,2
+178,MARION,SNYDER,2,2,Woodridge,Australia,1891 Rizhao Boulevard,Santa Brbara dOeste,Brazil,2005-07-01,85.82,18,37.16749999999998,5,2
+209,TONYA,CHAPMAN,2,2,Woodridge,Australia,43 Dadu Avenue,Bhilwara,India,2005-07-01,82.83,17,42.41,6,2
+494,RAMON,CHOATE,2,2,Woodridge,Australia,1954 Kowloon and New Kowloon Way,Robamba,Ecuador,2005-07-01,80.82000000000001,18,45.6475,7,2
+469,WESLEY,BULL,2,2,Woodridge,Australia,1469 Plock Lane,Ourense (Orense),Spain,2005-07-01,80.82,18,36.41999999999999,8,2
+92,TINA,SIMMONS,2,2,Woodridge,Australia,984 Effon-Alaiye Avenue,Goinia,Brazil,2005-07-01,78.85000000000001,15,45.42000000000001,9,2
+372,STEVE,MACKENZIE,2,2,Woodridge,Australia,154 Oshawa Manor,Probolinggo,Indonesia,2005-07-01,77.84000000000002,16,38.17500000000001,10,2
+508,MILTON,HOWLAND,2,2,Woodridge,Australia,758 Korolev Parkway,Vijayawada,India,2005-07-01,74.86,14,49.31,11,2
+292,MISTY,LAMBERT,2,2,Woodridge,Australia,1192 Tongliao Street,Sharja,United Arab Emirates,2005-07-01,74.84,16,45.1575,12,2
+462,WARREN,SHERROD,2,2,Woodridge,Australia,1621 Tongliao Avenue,Usolje-Sibirskoje,Russian Federation,2005-07-01,74.83999999999999,16,34.922499999999985,13,2
+210,ELLA,OLIVER,2,2,Woodridge,Australia,751 Lima Loop,Aden,Yemen,2005-07-01,73.82000000000001,18,39.3975,14,2
+148,ELEANOR,HUNT,1,1,Lethbridge,Canada,1952 Pune Lane,Saint-Denis,Runion,2005-08-01,87.82,18,33.685,1,2
+21,MICHELLE,CLARK,1,1,Lethbridge,Canada,262 A Corua (La Corua) Parkway,Tangail,Bangladesh,2005-08-01,79.83,17,48.699999999999996,2,2
+15,HELEN,HARRIS,1,1,Lethbridge,Canada,419 Iligan Lane,Bhopal,India,2005-08-01,79.82000000000001,18,46.150000000000006,3,2
+119,SHERRY,MARSHALL,1,1,Lethbridge,Canada,1987 Coacalco de Berriozbal Loop,Shubra al-Khayma,Egypt,2005-08-01,77.82000000000001,18,39.405,4,2
+373,LOUIS,LEONE,1,1,Lethbridge,Canada,1191 Tandil Drive,Tanauan,Philippines,2005-08-01,76.85000000000001,15,44.52,5,2
+468,TIM,CARY,1,1,Lethbridge,Canada,1257 Guadalajara Street,Bijapur,India,2005-08-01,71.85999999999999,14,27.957499999999982,6,2
+78,LORI,WOOD,1,1,Lethbridge,Canada,936 Salzburg Lane,Rae Bareli,India,2005-08-01,70.86000000000001,14,23.630000000000017,7,2
+274,NAOMI,JENNINGS,1,1,Lethbridge,Canada,1884 Shikarpur Avenue,Karnal,India,2005-08-01,69.84,16,39.309999999999995,8,2
+342,HAROLD,MARTINO,1,1,Lethbridge,Canada,1293 Nam Dinh Way,Boa Vista,Brazil,2005-08-01,69.83000000000001,17,26.27000000000001,9,2
+45,JANET,PHILLIPS,1,1,Lethbridge,Canada,1718 Valencia Street,Antofagasta,Chile,2005-08-01,68.88000000000001,12,36.947500000000005,10,2
+121,JOSEPHINE,GOMEZ,1,1,Lethbridge,Canada,211 Chiayi Drive,Etawah,India,2005-08-01,67.86,14,40.425,11,2
+445,MICHEAL,FORMAN,1,1,Lethbridge,Canada,203 Tambaram Street,Escobar,Argentina,2005-08-01,66.86000000000001,14,32.613333333333344,12,2
+306,CHARLES,KOWALSKI,1,1,Lethbridge,Canada,715 So Bernardo do Campo Lane,Sungai Petani,Malaysia,2005-08-01,65.86,14,31.189999999999998,13,2
+54,TERESA,ROGERS,1,1,Lethbridge,Canada,1964 Allappuzha (Alleppey) Street,Iwakuni,Japan,2005-08-01,64.86000000000001,14,32.68250000000001,14,2
+403,MIKE,WAY,1,1,Lethbridge,Canada,990 Etawah Loop,Valparai,India,2005-08-01,64.85000000000002,15,23.187500000000014,15,2
+410,CURTIS,IRBY,2,2,Woodridge,Australia,432 Garden Grove Street,Richmond Hill,Canada,2005-08-01,86.82999999999998,17,44.92499999999998,1,2
+147,JOANNE,ROBERTSON,2,2,Woodridge,Australia,1337 Lincoln Parkway,Urawa,Japan,2005-08-01,76.85000000000001,15,44.935,2,2
+259,LENA,JENSEN,2,2,Woodridge,Australia,1027 Banjul Place,Halisahar,India,2005-08-01,75.84,16,33.1725,3,2
+569,DAVE,GARDINER,2,2,Woodridge,Australia,1052 Pathankot Avenue,Leshan,China,2005-08-01,75.82,18,42.14999999999999,4,2
+137,RHONDA,KENNEDY,2,2,Woodridge,Australia,1749 Daxian Place,Apeldoorn,Netherlands,2005-08-01,74.85000000000001,15,26.197500000000005,5,2
+181,ANA,BRADLEY,2,2,Woodridge,Australia,682 Garden Grove Place,Memphis,United States,2005-08-01,71.84000000000002,16,36.908000000000015,6,2
+266,NORA,HERRERA,2,2,Woodridge,Australia,1587 Loja Manor,Salzburg,Austria,2005-08-01,71.83,17,42.15,7,2
+198,ELSIE,KELLEY,2,2,Woodridge,Australia,955 Bamenda Way,Ikerre,Nigeria,2005-08-01,70.84,16,35.4325,8,2
+513,DUANE,TUBBS,2,2,Woodridge,Australia,962 Tama Loop,Yangor,Nauru,2005-08-01,69.86000000000001,14,32.68750000000001,9,2
+532,NEIL,RENNER,2,2,Woodridge,Australia,1817 Livorno Way,Cam Ranh,Vietnam,2005-08-01,69.86000000000001,14,39.324000000000005,9,2
+487,HECTOR,POINDEXTER,2,2,Woodridge,Australia,185 Mannheim Lane,Pjatigorsk,Russian Federation,2005-08-01,68.89,11,28.976666666666667,11,2
+280,TRACEY,BARRETT,2,2,Woodridge,Australia,1006 Santa Brbara dOeste Manor,Owo,Nigeria,2005-08-01,68.88000000000001,12,39.197500000000005,12,2
+29,ANGELA,HERNANDEZ,2,2,Woodridge,Australia,786 Aurora Avenue,Shimonoseki,Japan,2005-08-01,68.84000000000002,16,40.71200000000001,13,2

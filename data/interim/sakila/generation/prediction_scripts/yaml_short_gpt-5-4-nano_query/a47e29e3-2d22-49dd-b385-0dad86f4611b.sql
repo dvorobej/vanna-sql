@@ -7,16 +7,14 @@ SELECT
   ROUND(AVG(p.p05), 2) AS avg_payment_amount,
   ROUND(MAX(p.p05), 2) AS max_payment_amount,
   ROUND(
-    1.0 * SUM(CASE WHEN p.p05 > 8.00 THEN p.p05 ELSE 0 END) / NULLIF(SUM(p.p05), 0),
+    1.0 * SUM(CASE WHEN p.p05 > 8.00 THEN 1 ELSE 0 END) / COUNT(p.p01),
     4
-  ) AS large_amount_share_gt_8
+  ) AS large_payments_share
 FROM pay AS p
 JOIN cus AS c
   ON c.h01 = p.p02
-JOIN stf AS sf
-  ON sf.o01 = p.p03
 JOIN sto AS s
-  ON s.j01 = sf.o01
+  ON s.j01 = c.h02
 WHERE p.p06 >= '2005-06-01'
   AND p.p06 < '2005-07-01'
 GROUP BY
@@ -26,5 +24,5 @@ GROUP BY
   s.j01
 HAVING SUM(p.p05) > 50
 ORDER BY
-  SUM(p.p05) DESC,
-  payment_count DESC;
+  s.j01,
+  SUM(p.p05) DESC;

@@ -3,15 +3,15 @@ SELECT
   c.h03 AS first_name,
   c.h04 AS last_name,
   COUNT(p.p01) AS payment_count,
-  SUM(p.p05) AS total_amount,
-  AVG(p.p05) AS average_payment,
+  ROUND(SUM(p.p05), 2) AS total_amount,
+  ROUND(AVG(p.p05), 2) AS average_payment,
   CASE
-    WHEN AVG(p.p05) > 7.00 THEN 'повышенный риск'
-    ELSE 'нормальный'
-  END AS risk_flag
-FROM cus AS c
-JOIN pay AS p
-  ON p.p02 = c.h01
+    WHEN AVG(p.p05) > 7.00 THEN 1
+    ELSE 0
+  END AS increased_risk
+FROM pay AS p
+JOIN cus AS c
+  ON c.h01 = p.p02
 WHERE p.p06 >= '2005-07-01'
   AND p.p06 < '2005-08-01'
 GROUP BY
@@ -20,4 +20,4 @@ GROUP BY
   c.h04
 HAVING COUNT(p.p01) >= 5
    AND SUM(p.p05) > 30
-ORDER BY total_amount DESC, payment_count DESC, customer_id;
+ORDER BY total_amount DESC, payment_count DESC;

@@ -63,6 +63,74 @@ class QdrantVectorStore(Qdrant_VectorStore):
             for result in results
         ]
 
+    def extract_sql(self, llm_response: str) -> str:
+        """
+        Example:
+        ```python
+        vn.extract_sql("Here's the SQL query in a code block: ```sql\nSELECT * FROM customers\n```")
+        ```
+
+        Extracts the SQL query from the LLM response. This is useful in case the LLM response contains other information besides the SQL query.
+        Override this function if your LLM responses need custom extraction logic.
+
+        Args:
+            llm_response (str): The LLM response.
+
+        Returns:
+            str: The extracted SQL query.
+        """
+
+        import re
+
+        """
+        Extracts the SQL query from the LLM response, handling various formats including:
+        - WITH clause
+        - SELECT statement
+        - CREATE TABLE AS SELECT
+        - Markdown code blocks
+        """
+
+        # Match CREATE TABLE ... AS SELECT
+        sqls = re.findall(
+            r"\bCREATE\s+TABLE\b.*?\bAS\b.*?(?:;|$)", llm_response, re.DOTALL | re.IGNORECASE
+        )
+        if sqls:
+            sql = sqls[-1]
+            self.log(title="Extracted SQL", message=f"{sql}")
+            return sql
+
+        # Match WITH clause (CTEs)
+        sqls = re.findall(r"\bWITH\b .*?(?:;|$)", llm_response, re.DOTALL | re.IGNORECASE)
+        if sqls:
+            sql = sqls[-1]
+            self.log(title="Extracted SQL", message=f"{sql}")
+            return sql
+
+        # Match SELECT ... ;
+        sqls = re.findall(r"\bSELECT\b .*?(?:;|$)", llm_response, re.DOTALL | re.IGNORECASE)
+        if sqls:
+            sql = sqls[-1]
+            self.log(title="Extracted SQL", message=f"{sql}")
+            return sql
+
+        # Match ```sql ... ``` blocks
+        sqls = re.findall(
+            r"```sql\s*\n(.*?)```", llm_response, re.DOTALL | re.IGNORECASE
+        )
+        if sqls:
+            sql = sqls[-1].strip()
+            self.log(title="Extracted SQL", message=f"{sql}")
+            return sql
+
+        # Match any ``` ... ``` code blocks
+        sqls = re.findall(r"```(.*?)```", llm_response, re.DOTALL | re.IGNORECASE)
+        if sqls:
+            sql = sqls[-1].strip()
+            self.log(title="Extracted SQL", message=f"{sql}")
+            return sql
+
+        return llm_response
+
 
     def is_sql_read_only_code(self, sql: str) -> bool:
         """Return True only for read-only SELECT-style SQL accepted by Vanna."""

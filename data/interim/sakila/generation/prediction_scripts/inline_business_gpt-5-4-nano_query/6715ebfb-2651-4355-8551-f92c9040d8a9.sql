@@ -1,191 +1,141 @@
-WITH
-monthly_client AS (
+WITH monthly_customer AS (
   SELECT
     p.p02 AS customer_id,
     date(p.p06, 'start of month') AS month_start,
+    c.h02 AS store_id,
+    ct.c02 AS country_name,
+    ci.d02 AS city_name,
     COUNT(*) AS payment_count,
-    SUM(p.p05) AS month_total_amount,
-    MAX(p.p05) AS max_payment_amount
+    SUM(CAST(p.p05 AS REAL)) AS month_amount,
+    MAX(CAST(p.p05 AS REAL)) AS max_single_payment
   FROM pay AS p
+  JOIN cus AS c
+    ON c.h01 = p.p02
+  JOIN adr AS a
+    ON a.e01 = c.h06
+  JOIN cty AS ci
+    ON ci.d01 = a.e05
+  JOIN cnt AS ct
+    ON ct.c01 = ci.d03
   WHERE p.p04 IS NOT NULL
   GROUP BY
     p.p02,
-    date(p.p06, 'start of month')
+    date(p.p06, 'start of month'),
+    c.h02,
+    ct.c02,
+    ci.d02
 ),
-customer_history AS (
+monthly_with_history AS (
   SELECT
     mc.*,
-    AVG(mc.month_total_amount) OVER (
+    AVG(mc.month_amount) OVER (
       PARTITION BY mc.customer_id
       ORDER BY mc.month_start
       ROWS BETWEEN UNBOUNDED PRECEDING AND 1 PRECEDING
-    ) AS personal_hist_avg_amount,
-    COUNT(*) OVER (
+    ) AS personal_avg_month_amount,
+    AVG(mc.payment_count) OVER (
       PARTITION BY mc.customer_id
       ORDER BY mc.month_start
       ROWS BETWEEN UNBOUNDED PRECEDING AND 1 PRECEDING
-    ) AS personal_hist_months_count
-  FROM monthly_client AS mc
+    ) AS personal_avg_payment_count
+  FROM monthly_customer AS mc
 ),
-country_median_count AS (
+country_month_median_payments AS (
   SELECT
-    customer_id,
-    month_start,
-    payment_count,
-    country_id
+    mwh.country_name,
+    mwh.month_start,
+    AVG(mwh.payment_count) AS country_month_median_payment_count
   FROM (
     SELECT
-      cc.customer_id,
-      cc.month_start,
-      cc.payment_count,
-      cc.country_id,
-      PERCENT_RANK() OVER (
-        PARTITION BY cc.country_id, cc.month_start
-        ORDER BY cc.payment_count
-      ) AS pr
-    FROM (
-      SELECT
-        mc.customer_id,
-        mc.month_start,
-        mc.payment_count,
-        cnt.c01 AS country_id
-      FROM monthly_client AS mc
-      JOIN cus AS c
-        ON c.h01 = mc.customer_id
-      JOIN adr AS a
-        ON a.e01 = c.h06
-      JOIN cty AS city
-        ON city.d01 = a.e05
-      JOIN cnt
-        ON cnt.c01 = city.d03
-    ) AS cc
-  )
-),
-customer_monthly_with_geo AS (
-  SELECT
-    ch.customer_id,
-    ch.month_start,
-    ch.payment_count,
-    ch.month_total_amount,
-    ch.max_payment_amount,
-    c.h02 AS store_id,
-    cnt.c02 AS country_name,
-    city.d02 AS city_name,
-    cnt.c01 AS country_id
-  FROM customer_history AS ch
-  JOIN cus AS c
-    ON c.h01 = ch.customer_id
-  JOIN adr AS a
-    ON a.e01 = c.h06
-  JOIN cty AS city
-    ON city.d01 = a.e05
-  JOIN cnt
-    ON cnt.c01 = city.d03
-),
-country_monthly_stats AS (
-  SELECT
-    cmwg.country_id,
-    cmwg.month_start,
-    -- медианный уровень: берём верхнюю медиану/середину через 50-й перцентиль методом row_number
-    -- рассчитываем порог как payment_count значения с позициями ceil(n/2)
-    MAX(CASE WHEN rn = ((cnt_n + 1) / 2) THEN payment_count END) AS median_payment_count
-  FROM (
-    SELECT
-      cmwg.country_id,
-      cmwg.month_start,
-      cmwg.payment_count,
+      mw.country_name,
+      mw.month_start,
+      mw.payment_count,
       ROW_NUMBER() OVER (
-        PARTITION BY cmwg.country_id, cmwg.month_start
-        ORDER BY cmwg.payment_count
+        PARTITION BY mw.country_name, mw.month_start
+        ORDER BY mw.payment_count
       ) AS rn,
       COUNT(*) OVER (
-        PARTITION BY cmwg.country_id, cmwg.month_start
-      ) AS cnt_n
-    FROM customer_monthly_with_geo AS cmwg
-  ) AS x
+        PARTITION BY mw.country_name, mw.month_start
+      ) AS cnt
+    FROM monthly_with_history AS mw
+    WHERE mw.payment_count IS NOT NULL
+      AND mw.personal_avg_month_amount IS NOT NULL
+  ) AS mwh
+  WHERE rn IN (
+      CAST((cnt + 1) / 2 AS INTEGER),
+      CAST((cnt + 2) / 2 AS INTEGER)
+  )
   GROUP BY
-    country_id,
-    month_start
+    mwh.country_name,
+    mwh.month_start
 ),
-suspicious_months AS (
+action_new_amounts AS (
   SELECT
-    cmwg.*,
-    cms.median_payment_count,
-    cmwg.month_total_amount - cmwg.personal_hist_avg_amount AS deviation_from_personal_avg
-  FROM customer_monthly_with_geo AS cmwg
-  LEFT JOIN country_monthly_stats AS cms
-    ON cms.country_id = cmwg.country_id
-   AND cms.month_start = cmwg.month_start
-  JOIN customer_history AS ch
-    ON ch.customer_id = cmwg.customer_id
-   AND ch.month_start = cmwg.month_start
-  WHERE ch.personal_hist_months_count >= 1
-    AND ch.personal_hist_avg_amount > 0
-    AND cmwg.month_total_amount > ch.personal_hist_avg_amount * 3
-    AND cmwg.payment_count > cms.median_payment_count
-),
-top_suspicious_rank AS (
-  SELECT
-    sm.country_id,
-    sm.customer_id,
-    SUM(sm.month_total_amount) AS suspicious_total_amount,
-    RANK() OVER (
-      PARTITION BY sm.country_id
-      ORDER BY SUM(sm.month_total_amount) DESC
-    ) AS country_customer_suspicious_rank
-  FROM suspicious_months AS sm
-  GROUP BY
-    sm.country_id,
-    sm.customer_id
-),
-film_category_shares AS (
-  SELECT
-    sm.customer_id,
-    sm.month_start,
-    SUM(CASE WHEN cat.g02 = 'Action' THEN p.p05 ELSE 0 END) AS action_amount,
-    SUM(CASE WHEN cat.g02 = 'New' THEN p.p05 ELSE 0 END) AS new_amount,
-    SUM(p.p05) AS total_amount
-  FROM suspicious_months AS sm
-  JOIN pay AS p
-    ON p.p02 = sm.customer_id
-   AND date(p.p06, 'start of month') = sm.month_start
-   AND p.p04 IS NOT NULL
+    p.p02 AS customer_id,
+    date(p.p06, 'start of month') AS month_start,
+    SUM(CAST(p.p05 AS REAL)) AS action_new_amount
+  FROM pay AS p
   JOIN ren AS r
     ON r.q01 = p.p04
   JOIN inv AS i
     ON i.n01 = r.q03
   JOIN flc AS fc
     ON fc.l01 = i.n02
-  JOIN cat
-    ON cat.g01 = fc.l02
+  JOIN cat AS ca
+    ON ca.g01 = fc.l02
+  WHERE ca.g02 IN ('Action', 'New')
   GROUP BY
-    sm.customer_id,
-    sm.month_start
+    p.p02,
+    date(p.p06, 'start of month')
+),
+sus_candidates AS (
+  SELECT
+    mwh.customer_id,
+    mwh.month_start,
+    mwh.store_id,
+    mwh.country_name,
+    mwh.city_name,
+    mwh.payment_count,
+    mwh.month_amount,
+    mwh.max_single_payment,
+    mwh.personal_avg_month_amount,
+    cm.country_month_median_payment_count
+  FROM monthly_with_history AS mwh
+  JOIN country_month_median_payments AS cm
+    ON cm.country_name = mwh.country_name
+   AND cm.month_start = mwh.month_start
+  WHERE mwh.personal_avg_month_amount > 0
+    AND mwh.month_amount > 3.0 * mwh.personal_avg_month_amount
+    AND mwh.payment_count > cm.country_month_median_payment_count
+),
+ranked_country AS (
+  SELECT
+    sc.*,
+    RANK() OVER (
+      PARTITION BY sc.country_name, sc.month_start
+      ORDER BY sc.month_amount DESC
+    ) AS country_month_amount_rank
+  FROM sus_candidates AS sc
 )
 SELECT
-  sm.country_name AS country,
-  sm.city_name AS city,
-  sm.store_id AS store_id,
-  sm.payment_count,
-  ROUND(sm.month_total_amount, 2) AS month_total_amount,
-  ROUND(sm.max_payment_amount, 2) AS max_payment_amount,
+  rc.country_name AS country,
+  rc.city_name AS city,
+  rc.store_id AS store_id,
+  rc.month_start AS month,
+  rc.payment_count,
+  ROUND(rc.month_amount, 2) AS total_suspicious_amount,
+  ROUND(rc.max_single_payment, 2) AS max_single_payment,
   ROUND(
-    (
-      (COALESCE(fcs.action_amount, 0) + COALESCE(fcs.new_amount, 0)) / NULLIF(fcs.total_amount, 0)
-    ),
+    (CAST(COALESCE(ana.action_new_amount, 0.0) AS REAL) / NULLIF(rc.month_amount, 0.0)),
     4
-  ) AS share_action_plus_new,
-  tsr.country_customer_suspicious_rank
-FROM suspicious_months AS sm
-JOIN top_suspicious_rank AS tsr
-  ON tsr.country_id = sm.country_id
- AND tsr.customer_id = sm.customer_id
-LEFT JOIN film_category_shares AS fcs
-  ON fcs.customer_id = sm.customer_id
- AND fcs.month_start = sm.month_start
+  ) AS share_action_new_rental_amount,
+  rc.country_month_amount_rank AS country_amount_rank
+FROM ranked_country AS rc
+LEFT JOIN action_new_amounts AS ana
+  ON ana.customer_id = rc.customer_id
+ AND ana.month_start = rc.month_start
 ORDER BY
-  sm.country_id,
-  tsr.country_customer_suspicious_rank,
-  sm.month_start,
-  sm.month_total_amount DESC,
-  sm.customer_id;
+  rc.month_start,
+  rc.country_name,
+  rc.country_month_amount_rank,
+  rc.customer_id;

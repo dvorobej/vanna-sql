@@ -4,7 +4,7 @@ WITH monthly_customer_stats AS (
         strftime('%Y-%m', p.p06) AS payment_month,
         SUM(p.p05) AS monthly_amount,
         COUNT(*) AS payment_count
-    FROM pay AS p
+    FROM pay p
     WHERE p.p06 >= '2005-01-01' AND p.p06 < '2006-01-01'
     GROUP BY p.p02, strftime('%Y-%m', p.p06)
 ),
@@ -17,59 +17,51 @@ customer_yearly_avg AS (
 ),
 country_monthly_stats AS (
     SELECT
-        c.h01 AS customer_id,
-        co.c01 AS country_id,
-        co.c02 AS country_name,
-        ci.d02 AS city_name,
+        c.c01 AS country_id,
         mcs.payment_month,
-        mcs.monthly_amount,
-        mcs.payment_count,
-        cya.avg_monthly_amount,
-        PERCENT_RANK() OVER (
-            PARTITION BY co.c01, mcs.payment_month
-            ORDER BY mcs.monthly_amount DESC
-        ) AS country_percent_rank,
-        RANK() OVER (
-            PARTITION BY co.c01, mcs.payment_month
-            ORDER BY mcs.monthly_amount DESC
-        ) AS country_rank
-    FROM monthly_customer_stats AS mcs
-    JOIN cus AS c ON c.h01 = mcs.customer_id
-    JOIN adr AS a ON a.e01 = c.h06
-    JOIN cty AS ci ON ci.d01 = a.e05
-    JOIN cnt AS co ON co.c01 = ci.d03
-    JOIN customer_yearly_avg AS cya ON cya.customer_id = mcs.customer_id
+        PERCENTILE_CONT(0.9) WITHIN GROUP (ORDER BY mcs.monthly_amount) OVER (PARTITION BY c.c01, mcs.payment_month) AS p90_country_amount
+    FROM monthly_customer_stats mcs
+    JOIN cus cu ON mcs.customer_id = cu.h01
+    JOIN adr a ON cu.h06 = a.e01
+    JOIN cty ci ON a.e05 = ci.d01
+    JOIN cnt c ON ci.d03 = c.c01
 ),
-top_staff_per_month AS (
-    SELECT customer_id, payment_month, staff_id, monthly_staff_amount
+staff_monthly_max AS (
+    SELECT
+        customer_id,
+        payment_month,
+        staff_id,
+        monthly_staff_amount
     FROM (
         SELECT
             p.p02 AS customer_id,
             strftime('%Y-%m', p.p06) AS payment_month,
             p.p03 AS staff_id,
             SUM(p.p05) AS monthly_staff_amount,
-            ROW_NUMBER() OVER (
-                PARTITION BY p.p02, strftime('%Y-%m', p.p06)
-                ORDER BY SUM(p.p05) DESC
-            ) AS rn
-        FROM pay AS p
+            ROW_NUMBER() OVER (PARTITION BY p.p02, strftime('%Y-%m', p.p06) ORDER BY SUM(p.p05) DESC) AS rn
+        FROM pay p
         GROUP BY p.p02, strftime('%Y-%m', p.p06), p.p03
     ) WHERE rn = 1
 )
 SELECT
-    cms.customer_id,
-    cms.country_name,
-    cms.city_name,
-    cms.payment_month,
-    ROUND(cms.monthly_amount, 2) AS monthly_amount,
-    cms.payment_count,
-    ROUND(cms.monthly_amount - cms.avg_monthly_amount, 2) AS deviation_from_avg,
-    cms.country_rank,
-    stf.o02 AS staff_first_name,
-    stf.o03 AS staff_last_name
-FROM country_monthly_stats AS cms
-JOIN top_staff_per_month AS ts ON ts.customer_id = cms.customer_id AND ts.payment_month = cms.payment_month
-JOIN stf ON stf.o01 = ts.staff_id
-WHERE cms.monthly_amount > 2 * cms.avg_monthly_amount
-  AND cms.country_percent_rank <= 0.10
-ORDER BY cms.payment_month, cms.country_name, cms.country_rank;
+    mcs.customer_id,
+    co.c02 AS country,
+    ci.d02 AS city,
+    mcs.payment_month,
+    mcs.monthly_amount,
+    mcs.payment_count,
+    (mcs.monthly_amount - cya.avg_monthly_amount) AS deviation_from_avg,
+    RANK() OVER (PARTITION BY co.c01, mcs.payment_month ORDER BY mcs.monthly_amount DESC) AS country_rank,
+    st.o02 || ' ' || st.o03 AS top_staff_name
+FROM monthly_customer_stats mcs
+JOIN customer_yearly_avg cya ON mcs.customer_id = cya.customer_id
+JOIN cus cu ON mcs.customer_id = cu.h01
+JOIN adr a ON cu.h06 = a.e01
+JOIN cty ci ON a.e05 = ci.d01
+JOIN cnt co ON ci.d03 = co.c01
+JOIN country_monthly_stats cms ON co.c01 = cms.country_id AND mcs.payment_month = cms.payment_month
+JOIN staff_monthly_max smm ON mcs.customer_id = smm.customer_id AND mcs.payment_month = smm.payment_month
+JOIN stf st ON smm.staff_id = st.o01
+WHERE mcs.monthly_amount > (2 * cya.avg_monthly_amount)
+  AND mcs.monthly_amount >= cms.p90_country_amount
+GROUP BY mcs.customer_id, mcs.payment_month;

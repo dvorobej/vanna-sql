@@ -4,14 +4,13 @@ SELECT
   c.h04 AS last_name,
   COUNT(p.p01) AS payment_count,
   SUM(p.p05) AS total_amount,
-  AVG(p.p05) AS average_payment_amount,
-  MAX(p.p05) AS max_payment_amount,
+  AVG(p.p05) AS average_payment,
+  MAX(p.p05) AS max_payment,
   p.p03 AS staff_id
 FROM cus AS c
 JOIN pay AS p
   ON p.p02 = c.h01
-WHERE
-  c.h07 IN ('1', 'Y')
+WHERE c.h07 IN ('1', 'Y')
   AND p.p06 >= '2005-07-01'
   AND p.p06 < '2005-08-01'
 GROUP BY
@@ -25,4 +24,5 @@ HAVING
 ORDER BY
   total_amount DESC,
   payment_count DESC,
-  customer_id;
+  customer_id,
+  staff_id;

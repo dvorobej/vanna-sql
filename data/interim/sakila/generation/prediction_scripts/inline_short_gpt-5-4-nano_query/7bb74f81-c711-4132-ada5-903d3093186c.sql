@@ -1,10 +1,11 @@
 SELECT
   c.h01 AS customer_id,
-  c.h03 || ' ' || c.h04 AS customer_name,
+  c.h03 AS first_name,
+  c.h04 AS last_name,
   COUNT(p.p01) AS payment_count,
-  SUM(p.p05) AS total_payment_amount,
-  AVG(p.p05) AS average_payment_amount,
-  SUM(CASE WHEN p.p05 > 5.00 THEN 1 ELSE 0 END) AS suspicious_large_payments
+  ROUND(SUM(p.p05), 2) AS total_payment_amount,
+  ROUND(AVG(p.p05), 2) AS avg_payment_amount,
+  SUM(CASE WHEN p.p05 > 5.00 THEN 1 ELSE 0 END) AS suspicious_large_operations
 FROM pay AS p
 JOIN cus AS c
   ON c.h01 = p.p02
@@ -18,7 +19,4 @@ GROUP BY
 HAVING
   COUNT(p.p01) > 10
   OR SUM(p.p05) > 50.00
-ORDER BY
-  total_payment_amount DESC,
-  payment_count DESC,
-  customer_id;
+ORDER BY total_payment_amount DESC, payment_count DESC, customer_id;

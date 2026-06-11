@@ -2,7 +2,7 @@ SELECT
   c.h01 AS customer_id,
   c.h03 AS first_name,
   c.h04 AS last_name,
-  COUNT(p.p01) AS operation_count,
+  COUNT(p.p01) AS payment_count,
   SUM(p.p05) AS total_amount,
   AVG(p.p05) AS average_payment,
   SUM(CASE WHEN p.p05 > 8.00 THEN 1 ELSE 0 END) AS payments_above_8
@@ -18,4 +18,4 @@ GROUP BY
   c.h04
 HAVING COUNT(p.p01) > 10
    OR SUM(p.p05) > 50
-ORDER BY total_amount DESC, operation_count DESC;
+ORDER BY total_amount DESC, payment_count DESC, customer_id;

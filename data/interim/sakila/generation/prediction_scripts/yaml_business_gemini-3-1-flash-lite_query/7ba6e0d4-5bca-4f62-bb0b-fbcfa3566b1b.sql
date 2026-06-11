@@ -20,4 +20,4 @@ GROUP BY
   c.h04
 HAVING COUNT(p.p01) >= 10
    AND SUM(p.p05) > 50
-ORDER BY total_amount DESC;
+ORDER BY total_amount DESC, payment_count DESC;

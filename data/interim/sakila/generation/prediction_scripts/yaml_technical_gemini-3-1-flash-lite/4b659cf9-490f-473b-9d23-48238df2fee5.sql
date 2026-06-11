@@ -5,7 +5,7 @@ SELECT
   COUNT(p.p01) AS payment_count,
   AVG(p.p05) AS average_payment,
   MAX(p.p05) AS max_payment,
-  CAST(SUM(CASE WHEN p.p05 > 8.00 THEN 1 ELSE 0 END) AS REAL) / COUNT(p.p01) AS share_large_payments
+  CAST(SUM(CASE WHEN p.p05 > 8.00 THEN 1 ELSE 0 END) AS FLOAT) / COUNT(p.p01) AS share_large_payments
 FROM cus AS c
 JOIN pay AS p
   ON c.h01 = p.p02

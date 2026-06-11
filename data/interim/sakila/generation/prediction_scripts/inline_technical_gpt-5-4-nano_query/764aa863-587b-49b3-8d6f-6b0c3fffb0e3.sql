@@ -1,92 +1,126 @@
-WITH customer_geo AS (
-    SELECT
-        c.h01 AS customer_id,
-        c.h03 || ' ' || c.h04 AS customer_name,
-        c.h02 AS home_store_id,
-        ct.c01 AS country_id,
-        ct.c02 AS country_name,
-        cty.d02 AS city_name
-    FROM cus AS c
-    JOIN adr AS a ON a.e01 = c.h06
-    JOIN cty AS cty ON cty.d01 = a.e05
-    JOIN cnt AS ct ON ct.c01 = cty.d03
+WITH payment_base AS (
+  SELECT
+    p.p01 AS payment_id,
+    p.p02 AS customer_id,
+    c.h02 AS home_store_id,
+    cn.c01 AS country_id,
+    cn.c02 AS country_name,
+    ct.d01 AS city_id,
+    ct.d02 AS city_name,
+    date(p.p06, 'start of month') AS month_start,
+    p.p05 AS payment_amount,
+    p.p03 AS staff_id,
+    r.q01 AS rental_id,
+    i.n02 AS film_id
+  FROM pay AS p
+  JOIN cus AS c
+    ON c.h01 = p.p02
+  JOIN adr AS a
+    ON a.e01 = c.h06
+  JOIN cty AS ct
+    ON ct.d01 = a.e05
+  JOIN cnt AS cn
+    ON cn.c01 = ct.d03
+  LEFT JOIN ren AS r
+    ON r.q01 = p.p04
+  LEFT JOIN inv AS i
+    ON i.n01 = r.q03
 ),
-payments_by_month AS (
+monthly_customer AS (
+  SELECT
+    pb.customer_id,
+    pb.country_name,
+    pb.city_name,
+    pb.home_store_id,
+    pb.month_start,
+    COUNT(*) AS payment_count,
+    SUM(pb.payment_amount) AS month_amount,
+    MAX(pb.payment_amount) AS max_single_payment,
+    COUNT(DISTINCT pb.staff_id) AS distinct_staff_count,
+    SUM(CASE WHEN pb.home_store_id <> s.h07_store_id THEN 1 ELSE 0 END) AS non_home_store_payment_count
+  FROM payment_base AS pb
+  LEFT JOIN (
     SELECT
-        p.p02 AS customer_id,
-        date(p.p06, 'start of month') AS month_start,
-        COUNT(*) AS payment_count,
-        SUM(p.p05) AS month_amount,
-        MAX(p.p05) AS max_payment,
-        COUNT(DISTINCT p.p03) AS distinct_staff_count,
-        SUM(CASE WHEN inv.n03 <> (c.h02) THEN 1 ELSE 0 END) AS non_home_store_payment_count
-    FROM pay AS p
-    JOIN cus AS c ON c.h01 = p.p02
-    JOIN ren AS r ON r.q01 = p.p04
-    JOIN inv ON inv.n01 = r.q03
-    WHERE p.p04 IS NOT NULL
-    GROUP BY
-        p.p02,
-        date(p.p06, 'start of month')
+      stf.o01 AS staff_id,
+      stf.o07 AS h07_store_id
+    FROM stf
+  ) AS s
+    ON s.staff_id = pb.staff_id
+  GROUP BY
+    pb.customer_id,
+    pb.country_name,
+    pb.city_name,
+    pb.home_store_id,
+    pb.month_start
 ),
-staff_n_category_flags AS (
-    SELECT
-        pbm.*,
-        (
-            SELECT COUNT(DISTINCT cat.g01)
-            FROM pay AS p2
-            JOIN ren AS r2 ON r2.q01 = p2.p04
-            JOIN inv AS inv2 ON inv2.n01 = r2.q03
-            JOIN flc AS fc2 ON fc2.l01 = inv2.n02
-            JOIN cat AS cat ON cat.g01 = fc2.l02
-            WHERE p2.p02 = pbm.customer_id
-              AND date(p2.p06, 'start of month') = pbm.month_start
-        ) AS distinct_category_count
-    FROM payments_by_month AS pbm
+monthly_customer_with_prev AS (
+  SELECT
+    mc.*,
+    AVG(mc.month_amount) OVER (
+      PARTITION BY mc.customer_id
+      ORDER BY mc.month_start
+      ROWS BETWEEN 3 PRECEDING AND 1 PRECEDING
+    ) AS avg_prev_3_months_amount
+  FROM monthly_customer AS mc
 ),
-with_prev_avg3 AS (
-    SELECT
-        sncf.*,
-        AVG(sncf.month_amount) OVER (
-            PARTITION BY sncf.customer_id
-            ORDER BY sncf.month_start
-            ROWS BETWEEN 3 PRECEDING AND 1 PRECEDING
-        ) AS prev_3_months_avg_amount
-    FROM staff_n_category_flags AS sncf
+monthly_customer_categories AS (
+  SELECT
+    pb.customer_id,
+    pb.month_start,
+    COUNT(DISTINCT cat.g01) AS category_count
+  FROM payment_base AS pb
+  JOIN flc AS fc
+    ON fc.l01 = pb.film_id
+  JOIN cat
+    ON cat.g01 = fc.l02
+  GROUP BY
+    pb.customer_id,
+    pb.month_start
 ),
-country_month_rank AS (
-    SELECT
-        wpa3.*,
-        cg.country_id,
-        cg.city_name,
-        RANK() OVER (
-            PARTITION BY cg.country_id, wpa3.month_start
-            ORDER BY wpa3.month_amount DESC
-        ) AS customer_country_month_rank
-    FROM with_prev_avg3 AS wpa3
-    JOIN customer_geo AS cg ON cg.customer_id = wpa3.customer_id
+qualified AS (
+  SELECT
+    mcwp.customer_id,
+    mcwp.country_name,
+    mcwp.city_name,
+    mcwp.month_start,
+    mcwp.month_amount,
+    mcwp.payment_count,
+    mcwp.max_single_payment,
+    (1.0 * mcwp.non_home_store_payment_count) / NULLIF(mcwp.payment_count, 0) AS non_home_store_payment_share,
+    mcwp.distinct_staff_count,
+    mcc.category_count,
+    mcwp.avg_prev_3_months_amount
+  FROM monthly_customer_with_prev AS mcwp
+  JOIN monthly_customer_categories AS mcc
+    ON mcc.customer_id = mcwp.customer_id
+   AND mcc.month_start = mcwp.month_start
+  WHERE mcwp.avg_prev_3_months_amount IS NOT NULL
+    AND mcwp.month_amount > 3.0 * mcwp.avg_prev_3_months_amount
+    AND mcwp.distinct_staff_count >= 2
+    AND mcc.category_count >= 3
+),
+ranked AS (
+  SELECT
+    q.*,
+    RANK() OVER (
+      PARTITION BY q.country_name, q.month_start
+      ORDER BY q.month_amount DESC
+    ) AS country_month_amount_rank
+  FROM qualified AS q
 )
 SELECT
-    cmr.month_start AS month,
-    cmr.country_id AS country_id,
-    cg.country_name AS country_name,
-    cmr.city_name AS city,
-    ROUND(cmr.month_amount, 2) AS payment_sum,
-    cmr.payment_count AS payment_count,
-    ROUND(cmr.max_payment, 2) AS max_payment,
-    ROUND(1.0 * cmr.non_home_store_payment_count / NULLIF(cmr.payment_count, 0), 4) AS non_home_store_payment_share,
-    cmr.customer_country_month_rank AS country_month_amount_rank
-FROM country_month_rank AS cmr
-JOIN customer_geo AS cg
-    ON cg.customer_id = cmr.customer_id
-WHERE
-    cmr.prev_3_months_avg_amount IS NOT NULL
-    AND cmr.prev_3_months_avg_amount > 0
-    AND cmr.month_amount > 3.0 * cmr.prev_3_months_avg_amount
-    AND cmr.distinct_staff_count >= 2
-    AND cmr.distinct_category_count >= 3
+  customer_id,
+  month_start AS month,
+  country_name AS country,
+  city_name AS city,
+  ROUND(month_amount, 2) AS month_amount,
+  payment_count,
+  ROUND(max_single_payment, 2) AS max_single_payment,
+  ROUND(non_home_store_payment_share, 4) AS non_home_store_payment_share,
+  country_month_amount_rank
+FROM ranked
 ORDER BY
-    cmr.month_start,
-    cmr.country_id,
-    cmr.customer_country_month_rank,
-    cmr.customer_id;
+  month,
+  country,
+  country_month_amount_rank,
+  customer_id;

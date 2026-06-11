@@ -15,7 +15,7 @@ WITH daily_payments AS (
     LEFT JOIN flm AS f ON f.i01 = i.n02
     GROUP BY p.p02, date(p.p06)
 ),
-daily_with_history AS (
+daily_with_avg AS (
     SELECT
         dp.*,
         (
@@ -40,15 +40,15 @@ customer_geo AS (
 ),
 suspicious_days AS (
     SELECT
-        dwh.*,
+        dwa.*,
         cg.city,
         cg.country,
         cg.country_id
-    FROM daily_with_history AS dwh
-    JOIN customer_geo AS cg ON cg.customer_id = dwh.customer_id
-    WHERE dwh.avg_prev_30 > 0
-      AND dwh.daily_sum >= 3 * dwh.avg_prev_30
-      AND (dwh.staff_count >= 3 OR dwh.store_count >= 3)
+    FROM daily_with_avg AS dwa
+    JOIN customer_geo AS cg ON cg.customer_id = dwa.customer_id
+    WHERE dwa.avg_prev_30 > 0
+      AND dwa.daily_sum >= 3 * dwa.avg_prev_30
+      AND (dwa.staff_count >= 3 OR dwa.store_count >= 3)
 )
 SELECT
     city,

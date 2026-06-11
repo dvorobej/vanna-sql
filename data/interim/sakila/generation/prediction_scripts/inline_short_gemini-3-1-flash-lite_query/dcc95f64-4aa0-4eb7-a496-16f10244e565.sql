@@ -25,5 +25,4 @@ GROUP BY
   s.o03
 ORDER BY
   total_amount DESC,
-  payment_count DESC,
-  customer_id;
+  payment_count DESC;

@@ -7,7 +7,7 @@ SELECT
   ROUND(AVG(p.p05), 2) AS avg_payment,
   MAX(p.p05) AS max_payment,
   ROUND(
-    SUM(CASE WHEN p.p05 > 8.00 THEN p.p05 ELSE 0 END) / SUM(p.p05),
+    SUM(CASE WHEN p.p05 > 8.00 THEN p.p05 ELSE 0.0 END) / SUM(p.p05),
     4
   ) AS share_of_large_payments_in_total
 FROM cus AS c

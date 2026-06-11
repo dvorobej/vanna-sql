@@ -9,7 +9,7 @@ SELECT
   ROUND(
     1.0 * SUM(CASE WHEN p.p05 > 8.00 THEN 1 ELSE 0 END) / COUNT(p.p01),
     4
-  ) AS large_payments_share
+  ) AS share_payments_over_8
 FROM cus AS c
 JOIN pay AS p
   ON p.p02 = c.h01
@@ -29,4 +29,4 @@ HAVING
 ORDER BY
   total_amount DESC,
   payment_count DESC,
-  customer_id;
+  c.h01;

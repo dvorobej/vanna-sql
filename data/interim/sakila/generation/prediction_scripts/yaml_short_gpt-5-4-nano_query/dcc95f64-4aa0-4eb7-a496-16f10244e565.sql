@@ -5,9 +5,9 @@ SELECT
   p.p03 AS staff_id,
   s.o02 AS staff_first_name,
   s.o03 AS staff_last_name,
-  COUNT(p.p01) AS payment_count,
-  ROUND(SUM(p.p05), 2) AS total_amount,
-  ROUND(AVG(p.p05), 2) AS average_payment
+  COUNT(p.p01) AS payment_count_over_5,
+  ROUND(SUM(p.p05), 2) AS total_amount_over_5,
+  ROUND(AVG(p.p05), 2) AS average_payment_over_5
 FROM pay AS p
 JOIN cus AS c
   ON c.h01 = p.p02
@@ -24,7 +24,7 @@ GROUP BY
   s.o02,
   s.o03
 ORDER BY
-  total_amount DESC,
-  payment_count DESC,
+  total_amount_over_5 DESC,
+  payment_count_over_5 DESC,
   customer_id,
   staff_id;

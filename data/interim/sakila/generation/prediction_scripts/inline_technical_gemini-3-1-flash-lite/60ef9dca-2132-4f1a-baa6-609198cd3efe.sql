@@ -16,24 +16,24 @@ customer_yearly_avg AS (
     FROM monthly_customer_stats
     GROUP BY customer_id
 ),
-store_monthly_stats AS (
+store_monthly_percentiles AS (
     SELECT
         c.h02 AS store_id,
         mcs.payment_month,
         mcs.monthly_sum,
         PERCENT_RANK() OVER (
             PARTITION BY c.h02, mcs.payment_month
-            ORDER BY mcs.monthly_sum DESC
-        ) AS monthly_rank_pct
-    FROM monthly_customer_stats AS mcs
-    JOIN cus AS c ON c.h01 = mcs.customer_id
+            ORDER BY mcs.monthly_sum
+        ) AS monthly_percentile
+    FROM monthly_customer_stats mcs
+    JOIN cus c ON c.h01 = mcs.customer_id
 ),
 last_staff_per_month AS (
     SELECT
         p.p02 AS customer_id,
         strftime('%Y-%m', p.p06) AS payment_month,
         p.p03 AS last_staff_id
-    FROM pay AS p
+    FROM pay p
     WHERE (p.p02, p.p06) IN (
         SELECT p02, MAX(p06)
         FROM pay
@@ -45,29 +45,32 @@ monthly_analysis AS (
         mcs.*,
         c.h02 AS store_id,
         c.h03 || ' ' || c.h04 AS customer_name,
-        cn.c02 AS country,
-        ct.d02 AS city,
+        cty.d02 AS city_name,
+        cnt.c02 AS country_name,
         cya.yearly_avg_monthly_sum,
-        (mcs.monthly_sum - cya.yearly_avg_monthly_sum) AS deviation,
-        sms.monthly_rank_pct,
-        lsm.last_staff_id
-    FROM monthly_customer_stats AS mcs
-    JOIN cus AS c ON c.h01 = mcs.customer_id
-    JOIN adr AS a ON a.e01 = c.h06
-    JOIN cty AS ct ON ct.d01 = a.e05
-    JOIN cnt AS cn ON cn.c01 = ct.d03
-    JOIN customer_yearly_avg AS cya ON cya.customer_id = mcs.customer_id
-    JOIN store_monthly_stats AS sms ON sms.store_id = c.h02 AND sms.payment_month = mcs.payment_month AND sms.monthly_sum = mcs.monthly_sum
-    JOIN last_staff_per_month AS lsm ON lsm.customer_id = mcs.customer_id AND lsm.payment_month = mcs.payment_month
+        (mcs.monthly_sum - cya.yearly_avg_monthly_sum) AS deviation_from_avg,
+        RANK() OVER (
+            PARTITION BY c.h02, mcs.payment_month
+            ORDER BY mcs.monthly_sum DESC
+        ) AS store_rank,
+        ls.last_staff_id
+    FROM monthly_customer_stats mcs
+    JOIN cus c ON c.h01 = mcs.customer_id
+    JOIN adr ON adr.e01 = c.h06
+    JOIN cty ON cty.d01 = adr.e05
+    JOIN cnt ON cnt.c01 = cty.d03
+    JOIN customer_yearly_avg cya ON cya.customer_id = mcs.customer_id
+    JOIN last_staff_per_month ls ON ls.customer_id = mcs.customer_id AND ls.payment_month = mcs.payment_month
+    JOIN store_monthly_percentiles smp ON smp.store_id = c.h02 AND smp.payment_month = mcs.payment_month AND smp.monthly_sum = mcs.monthly_sum
+    WHERE mcs.monthly_sum > 2 * cya.yearly_avg_monthly_sum
+      AND smp.monthly_percentile >= 0.95
 )
 SELECT *
 FROM monthly_analysis
-WHERE monthly_sum > (yearly_avg_monthly_sum * 2)
-  AND monthly_rank_pct <= 0.05
-  AND customer_id IN (
-      SELECT customer_id
-      FROM monthly_analysis
-      GROUP BY customer_id
-      HAVING COUNT(payment_month) = 12
-  )
-ORDER BY payment_month, store_id, monthly_sum DESC;
+WHERE customer_id IN (
+    SELECT customer_id
+    FROM monthly_analysis
+    GROUP BY customer_id
+    HAVING COUNT(payment_month) = 12
+)
+ORDER BY payment_month, store_id, store_rank;

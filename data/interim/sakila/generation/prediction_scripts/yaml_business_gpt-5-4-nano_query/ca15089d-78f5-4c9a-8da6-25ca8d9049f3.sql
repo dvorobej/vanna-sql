@@ -1,83 +1,112 @@
-WITH monthly_customer_payments AS (
+WITH customer_geo AS (
     SELECT
         c.h01 AS customer_id,
-        c.h03 || ' ' || c.h04 AS customer_name,
-        co.c02 AS country,
-        ci.d02 AS city,
-        strftime('%Y-%m', p.p06) AS payment_month,
-        COUNT(*) AS payment_count,
-        SUM(p.p05) AS monthly_sum,
-        MAX(p.p05) AS max_payment,
-        COUNT(DISTINCT p.p03) AS distinct_staff_count,
-        COUNT(DISTINCT COALESCE(s.o07, -1)) AS distinct_store_count
-    FROM pay AS p
-    JOIN cus AS c ON c.h01 = p.p02
+        c.h03 AS first_name,
+        c.h04 AS last_name,
+        co.c02 AS country_name,
+        ci.d02 AS city_name
+    FROM cus AS c
     JOIN adr AS a ON a.e01 = c.h06
     JOIN cty AS ci ON ci.d01 = a.e05
     JOIN cnt AS co ON co.c01 = ci.d03
-    JOIN stf AS s ON s.o01 = p.p03
-    WHERE p.p04 IS NOT NULL
-    GROUP BY
-        c.h01, c.h03, c.h04, co.c02, ci.d02, strftime('%Y-%m', p.p06)
 ),
-month_history AS (
-    SELECT
-        mcp.*,
-        AVG(mcp.monthly_sum) OVER (
-            PARTITION BY mcp.customer_id
-            ORDER BY mcp.payment_month
-            ROWS BETWEEN UNBOUNDED PRECEDING AND 1 PRECEDING
-        ) AS prev_months_avg_monthly_sum
-    FROM monthly_customer_payments AS mcp
-),
-daily_different_checks AS (
+payments_base AS (
     SELECT
         p.p02 AS customer_id,
-        strftime('%Y-%m', p.p06) AS payment_month,
-        COUNT(*) AS payments_in_month,
-        COUNT(DISTINCT date(p.p06)) AS distinct_payment_days,
-        COUNT(DISTINCT p.p03) AS distinct_staff_count_in_month,
-        COUNT(DISTINCT COALESCE(s.o07, -1)) AS distinct_store_count_in_month
+        date(p.p06, 'start of month') AS month_start,
+        DATE(p.p06) AS payment_day,
+        p.p05 AS amount,
+        p.p03 AS staff_id,
+        s.o07 AS staff_store_id
     FROM pay AS p
     JOIN stf AS s ON s.o01 = p.p03
-    WHERE p.p04 IS NOT NULL
-    GROUP BY p.p02, strftime('%Y-%m', p.p06)
+),
+monthly AS (
+    SELECT
+        pb.customer_id,
+        pb.month_start,
+        COUNT(*) AS payment_count,
+        SUM(pb.amount) AS month_sum,
+        MAX(pb.amount) AS max_payment,
+        SUM(CASE WHEN pb.staff_store_id IS NOT NULL THEN 1 ELSE 0 END) AS staff_payments_count,
+        COUNT(DISTINCT pb.staff_id) AS staff_count,
+        COUNT(DISTINCT pb.staff_store_id) AS store_count
+    FROM payments_base AS pb
+    GROUP BY pb.customer_id, pb.month_start
+),
+monthly_prev_avg AS (
+    SELECT
+        m.*,
+        AVG(m.month_sum) OVER (
+            PARTITION BY m.customer_id
+            ORDER BY m.month_start
+            ROWS BETWEEN UNBOUNDED PRECEDING AND 1 PRECEDING
+        ) AS prev_avg_month_sum
+    FROM monthly AS m
+),
+monthly_days_staff_store AS (
+    SELECT
+        pb.customer_id,
+        pb.month_start,
+        COUNT(DISTINCT pb.payment_day) AS distinct_payment_days,
+        COUNT(DISTINCT pb.staff_id) AS distinct_staff_in_month,
+        COUNT(DISTINCT pb.staff_store_id) AS distinct_stores_in_month
+    FROM payments_base AS pb
+    GROUP BY pb.customer_id, pb.month_start
 ),
 qualified AS (
     SELECT
-        mh.*,
-        ddc.distinct_payment_days,
-        ddc.distinct_staff_count_in_month,
-        ddc.distinct_store_count_in_month
-    FROM month_history AS mh
-    JOIN daily_different_checks AS ddc
-      ON ddc.customer_id = mh.customer_id
-     AND ddc.payment_month = mh.payment_month
-    WHERE mh.prev_months_avg_monthly_sum IS NOT NULL
-      AND mh.monthly_sum >= 3 * mh.prev_months_avg_monthly_sum
-      AND ddc.payments_in_month >= 3
-      AND ddc.distinct_payment_days >= 3
-      AND (ddc.distinct_staff_count_in_month >= 2 OR ddc.distinct_store_count_in_month >= 2)
+        mp.customer_id,
+        mp.month_start,
+        mp.payment_count,
+        mp.month_sum,
+        mp.max_payment,
+        mp.staff_count AS staff_count_in_month,
+        mp.store_count AS store_count_in_month,
+        mp.prev_avg_month_sum,
+        mds.distinct_payment_days,
+        mds.distinct_staff_in_month,
+        mds.distinct_stores_in_month
+    FROM monthly_prev_avg AS mp
+    JOIN monthly_days_staff_store AS mds
+      ON mds.customer_id = mp.customer_id
+     AND mds.month_start = mp.month_start
+    WHERE mp.prev_avg_month_sum IS NOT NULL
+      AND mp.payment_count >= 3
+      AND mp.month_sum >= 3.0 * mp.prev_avg_month_sum
+      AND mds.distinct_payment_days >= 3
+      AND (mds.distinct_staff_in_month >= 2 OR mds.distinct_stores_in_month >= 2)
+),
+ranked AS (
+    SELECT
+        q.*,
+        cg.country_name,
+        cg.city_name,
+        cg.first_name,
+        cg.last_name,
+        RANK() OVER (
+            PARTITION BY cg.country_name, q.month_start
+            ORDER BY q.month_sum DESC
+        ) AS country_month_amount_rank
+    FROM qualified AS q
+    JOIN customer_geo AS cg ON cg.customer_id = q.customer_id
 )
 SELECT
-    q.payment_month AS month,
-    q.customer_id,
-    q.customer_name,
-    q.country,
-    q.city,
-    q.payment_count,
-    ROUND(q.monthly_sum, 2) AS monthly_sum,
-    ROUND(q.max_payment, 2) AS max_payment,
-    ROUND(CASE WHEN q.monthly_sum = 0 THEN 0 ELSE q.max_payment / q.monthly_sum END, 4) AS max_payment_share,
-    q.distinct_staff_count_in_month AS distinct_staff_count,
-    q.distinct_store_count_in_month AS distinct_store_count,
-    RANK() OVER (
-        PARTITION BY q.country, q.payment_month
-        ORDER BY q.monthly_sum DESC
-    ) AS country_month_rank
-FROM qualified AS q
+    month_start AS month,
+    last_name || ' ' || first_name AS fio,
+    country_name AS country,
+    city_name AS city,
+    payment_count,
+    ROUND(month_sum, 2) AS total_amount,
+    ROUND(max_payment, 2) AS max_payment,
+    ROUND(max_payment / NULLIF(month_sum, 0), 4) AS max_payment_share,
+    distinct_staff_in_month AS different_staff_count,
+    distinct_stores_in_month AS different_stores_count,
+    country_month_amount_rank AS country_month_rank
+FROM ranked
 ORDER BY
-    q.country,
-    q.payment_month,
-    country_month_rank,
-    q.customer_id;
+    country_name,
+    month_start,
+    country_month_amount_rank,
+    month_sum DESC,
+    fio;

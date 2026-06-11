@@ -4,9 +4,9 @@ SELECT
   c.h04 AS last_name,
   COUNT(p.p01) AS payment_count,
   SUM(p.p05) AS total_amount,
-  AVG(p.p05) AS average_payment,
+  AVG(p.p05) AS avg_payment_amount,
   CASE
-    WHEN SUM(p.p05) > 50 AND COUNT(p.p01) >= 10 THEN 1
+    WHEN SUM(p.p05) > 50 AND AVG(p.p05) > 7.00 THEN 1
     ELSE 0
   END AS risk_flag
 FROM cus AS c

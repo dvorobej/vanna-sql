@@ -5,39 +5,59 @@ WITH monthly_stats AS (
         SUM(p.p05) AS monthly_sum,
         COUNT(p.p01) AS monthly_count,
         GROUP_CONCAT(DISTINCT p.p03) AS staff_ids,
-        GROUP_CONCAT(DISTINCT s.o07) AS store_ids
+        GROUP_CONCAT(DISTINCT c.h02) AS store_ids
     FROM pay p
-    JOIN stf s ON p.p03 = s.o01
+    JOIN cus c ON p.p02 = c.h01
     GROUP BY 1, 2
 ),
-customer_geo AS (
-    SELECT c.h01 AS customer_id, cnt.c01 AS country_id
-    FROM cus c
-    JOIN adr a ON c.h06 = a.e01
-    JOIN cty ci ON a.e05 = ci.d01
-    JOIN cnt ON ci.d03 = cnt.c01
-),
-enriched_stats AS (
+history_stats AS (
     SELECT
         ms.*,
-        cg.country_id,
-        AVG(ms.monthly_sum) OVER (PARTITION BY ms.customer_id ORDER BY ms.payment_month ROWS BETWEEN 3 PRECEDING AND 1 PRECEDING) AS hist_avg_sum,
-        PERCENT_RANK() OVER (PARTITION BY ms.country_id, ms.payment_month ORDER BY ms.monthly_sum DESC) AS country_percentile,
-        (SELECT AVG(m2.monthly_sum) FROM monthly_stats m2 
-         JOIN customer_geo cg2 ON m2.customer_id = cg2.customer_id 
-         WHERE cg2.country_id = cg.country_id AND m2.payment_month = ms.payment_month) AS country_median_sum
+        c.h06 AS address_id,
+        cty.d03 AS country_id,
+        AVG(ms.monthly_sum) OVER (
+            PARTITION BY ms.customer_id 
+            ORDER BY ms.payment_month 
+            ROWS BETWEEN 3 PRECEDING AND 1 PRECEDING
+        ) AS avg_prev_3_months
     FROM monthly_stats ms
-    JOIN customer_geo cg ON ms.customer_id = cg.customer_id
+    JOIN cus c ON ms.customer_id = c.h01
+    JOIN adr a ON c.h06 = a.e01
+    JOIN cty ON a.e05 = cty.d01
+),
+country_stats AS (
+    SELECT
+        payment_month,
+        country_id,
+        monthly_sum,
+        PERCENT_RANK() OVER (PARTITION BY payment_month, country_id ORDER BY monthly_sum) AS p_rank,
+        AVG(monthly_sum) OVER (PARTITION BY payment_month, country_id) AS median_country_sum
+    FROM history_stats
+),
+top_clients AS (
+    SELECT payment_month, country_id, customer_id
+    FROM (
+        SELECT hs.payment_month, hs.customer_id, cty.d03 AS country_id,
+               PERCENT_RANK() OVER (PARTITION BY hs.payment_month, cty.d03 ORDER BY hs.monthly_sum) as p_rank
+        FROM history_stats hs
+        JOIN cus c ON hs.customer_id = c.h01
+        JOIN adr a ON c.h06 = a.e01
+        JOIN cty ON a.e05 = cty.d01
+    )
+    WHERE p_rank >= 0.95
 )
-SELECT 
-    customer_id, 
-    payment_month, 
-    monthly_sum, 
-    monthly_count, 
-    staff_ids, 
-    store_ids
-FROM enriched_stats
-WHERE monthly_sum >= 3 * COALESCE(hist_avg_sum, 0)
-  AND monthly_sum >= 2 * country_median_sum
-  AND country_percentile <= 0.05
-ORDER BY payment_month DESC, monthly_sum DESC;
+SELECT
+    hs.customer_id,
+    hs.payment_month,
+    hs.monthly_sum,
+    hs.monthly_count,
+    hs.staff_ids,
+    hs.store_ids,
+    hs.avg_prev_3_months,
+    cs.median_country_sum
+FROM history_stats hs
+JOIN country_stats cs ON hs.payment_month = cs.payment_month AND hs.country_id = cs.country_id AND hs.monthly_sum = cs.monthly_sum
+JOIN top_clients tc ON hs.customer_id = tc.customer_id AND hs.payment_month = tc.payment_month
+WHERE hs.monthly_sum >= 3 * COALESCE(hs.avg_prev_3_months, 0)
+  AND hs.monthly_sum >= 2 * cs.median_country_sum
+ORDER BY hs.monthly_sum DESC;

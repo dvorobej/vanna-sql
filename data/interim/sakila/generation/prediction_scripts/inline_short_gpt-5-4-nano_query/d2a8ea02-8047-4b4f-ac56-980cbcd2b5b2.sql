@@ -3,12 +3,12 @@ SELECT
   c.h03 AS first_name,
   c.h04 AS last_name,
   COUNT(p.p01) AS payment_count,
-  ROUND(SUM(p.p05), 2) AS total_amount,
-  ROUND(AVG(p.p05), 2) AS average_payment,
+  SUM(p.p05) AS total_amount,
+  AVG(p.p05) AS average_payment,
   CASE
-    WHEN AVG(p.p05) > 7.00 THEN 'повышенный риск'
-    ELSE 'без риска'
-  END AS risk_flag
+    WHEN AVG(p.p05) > 7.00 THEN 1
+    ELSE 0
+  END AS increased_risk
 FROM cus AS c
 JOIN pay AS p
   ON p.p02 = c.h01

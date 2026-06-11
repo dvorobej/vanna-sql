@@ -4,7 +4,7 @@ SELECT
   COUNT(p.p01) AS payment_count,
   SUM(p.p05) AS total_amount,
   AVG(p.p05) AS average_check,
-  SUM(CASE WHEN p.p05 > 5 THEN 1 ELSE 0 END) AS payments_above_5
+  SUM(CASE WHEN p.p05 > 5.00 THEN 1 ELSE 0 END) AS payments_above_5
 FROM cus AS c
 JOIN pay AS p
   ON p.p02 = c.h01
@@ -14,8 +14,9 @@ GROUP BY
   c.h01,
   c.h03,
   c.h04
-HAVING COUNT(p.p01) >= 5
-   AND SUM(p.p05) > 30
+HAVING
+  COUNT(p.p01) >= 5
+  AND SUM(p.p05) > 30
 ORDER BY
   total_amount DESC,
   payment_count DESC;

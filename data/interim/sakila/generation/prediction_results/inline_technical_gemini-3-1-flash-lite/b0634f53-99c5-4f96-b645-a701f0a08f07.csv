@@ -1,9 +1,9 @@
-customer_id,customer_country,payment_date,payment_count,day_amount,avg_30d,staff_count,store_count,store_countries,suspicion_rank
-410,Canada,2005-07-09,4,17.96,0.83,2,2,"Canada,Australia",1
-436,Canada,2005-07-08,3,8.97,0.5,2,2,"Australia,Canada",2
-410,Canada,2005-07-27,3,15.97,1.03,2,2,"Australia,Canada",3
-436,Canada,2005-08-17,3,13.97,1.43,2,2,"Canada,Australia",4
-410,Canada,2005-08-20,3,14.97,2.23,2,2,"Canada,Australia",5
-410,Canada,2005-08-21,3,13.97,2.73,2,2,"Canada,Australia",6
-436,Canada,2005-08-20,4,13.96,2.76,2,2,"Canada,Australia",7
-410,Canada,2005-08-22,3,9.97,3.19,2,2,"Australia,Canada",8
+customer_id,customer_name,customer_country,payment_date,payment_count,day_amount,avg_30d,staff_count,store_count,store_countries,suspicion_rank
+410,CURTIS IRBY,Canada,2005-07-09,4,17.96,0.83,2,2,"Canada,Australia",1
+436,TROY QUIGLEY,Canada,2005-07-08,3,8.97,0.5,2,2,"Australia,Canada",2
+410,CURTIS IRBY,Canada,2005-07-27,3,15.97,1.03,2,2,"Australia,Canada",3
+436,TROY QUIGLEY,Canada,2005-08-17,3,13.97,1.43,2,2,"Canada,Australia",4
+410,CURTIS IRBY,Canada,2005-08-20,3,14.97,2.23,2,2,"Canada,Australia",5
+410,CURTIS IRBY,Canada,2005-08-21,3,13.97,2.73,2,2,"Canada,Australia",6
+436,TROY QUIGLEY,Canada,2005-08-20,4,13.96,2.76,2,2,"Canada,Australia",7
+410,CURTIS IRBY,Canada,2005-08-22,3,9.97,3.19,2,2,"Australia,Canada",8

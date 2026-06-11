@@ -5,7 +5,7 @@ SELECT
   COUNT(p.p01) AS transaction_count,
   SUM(p.p05) AS total_amount,
   AVG(p.p05) AS average_payment,
-  CAST(SUM(CASE WHEN p.p05 > 5.00 THEN 1 ELSE 0 END) AS FLOAT) / COUNT(p.p01) AS share_of_large_payments
+  1.0 * SUM(CASE WHEN p.p05 > 5.00 THEN 1 ELSE 0 END) / COUNT(p.p01) AS share_above_5
 FROM cus AS c
 JOIN pay AS p
   ON p.p02 = c.h01

@@ -1,129 +1,166 @@
-WITH customer_geo AS (
-    SELECT
-        c.h01 AS customer_id,
-        c.h02 AS store_id,
-        c.h06 AS address_id,
-        ct.country_name,
-        ci.city_name
-    FROM cus AS c
-    JOIN adr AS a
-      ON a.e01 = c.h06
-    JOIN cty AS ci
-      ON ci.d01 = a.e05
-    JOIN cnt AS ct
-      ON ct.c01 = ci.d03
+WITH months(month_start) AS (
+  SELECT date('2005-01-01')
+  UNION ALL
+  SELECT date(month_start, '+1 month')
+  FROM months
+  WHERE month_start < date('2005-12-01')
 ),
-payments_2005 AS (
-    SELECT
-        p.p01 AS payment_id,
-        p.p02 AS customer_id,
-        p.p03 AS staff_id,
-        p.p05 AS payment_amount,
-        date(p.p06, 'start of month') AS month_start,
-        strftime('%Y-%m', p.p06) AS month_label
-    FROM pay AS p
-    WHERE p.p06 >= '2005-01-01'
-      AND p.p06 <  '2006-01-01'
+customer_store_geo AS (
+  SELECT
+    c.h01 AS customer_id,
+    c.h02 AS store_id,
+    c.h06 AS address_id,
+    ci.d02 AS city_name,
+    co.c02 AS country_name
+  FROM cus AS c
+  JOIN adr AS a
+    ON a.e01 = c.h06
+  JOIN cty AS ci
+    ON ci.d01 = a.e05
+  JOIN cnt AS co
+    ON co.c01 = ci.d03
 ),
-monthly_client AS (
-    SELECT
-        pw.customer_id,
-        pw.month_start,
-        COUNT(*) AS payment_count,
-        SUM(pw.payment_amount) AS month_amount
-    FROM payments_2005 AS pw
-    GROUP BY
-        pw.customer_id,
-        pw.month_start
+monthly_customer AS (
+  SELECT
+    cs.customer_id,
+    cs.store_id,
+    cs.city_name,
+    cs.country_name,
+    date(p.p06, 'start of month') AS month_start,
+    COUNT(p.p01) AS payment_count,
+    SUM(p.p05) AS month_sum
+  FROM months AS m
+  JOIN customer_store_geo AS cs
+  LEFT JOIN pay AS p
+    ON p.p02 = cs.customer_id
+   AND date(p.p06, 'start of month') = m.month_start
+  GROUP BY
+    cs.customer_id,
+    cs.store_id,
+    cs.city_name,
+    cs.country_name,
+    date(p.p06, 'start of month')
 ),
-client_year_avg AS (
-    SELECT
-        customer_id,
-        AVG(month_amount) AS personal_avg_month_amount
-    FROM monthly_client
-    GROUP BY customer_id
-),
-last_staff_per_month AS (
-    SELECT
-        p.p02 AS customer_id,
-        strftime('%Y-%m', p.p06) AS month_label,
-        p.p03 AS staff_id,
-        ROW_NUMBER() OVER (
-            PARTITION BY p.p02, strftime('%Y-%m', p.p06)
-            ORDER BY p.p06 DESC, p.p01 DESC
-        ) AS rn
-    FROM pay AS p
-    WHERE p.p06 >= '2005-01-01'
-      AND p.p06 <  '2006-01-01'
+customer_year_avg AS (
+  SELECT
+    customer_id,
+    store_id,
+    city_name,
+    country_name,
+    AVG(month_sum) AS personal_avg_month_sum
+  FROM monthly_customer
+  GROUP BY customer_id, store_id, city_name, country_name
 ),
 monthly_rank_in_store AS (
-    SELECT
-        mc.customer_id,
-        mc.month_start,
-        mc.payment_count,
-        mc.month_amount,
-        RANK() OVER (
-            PARTITION BY c.store_id, mc.month_start
-            ORDER BY mc.month_amount DESC
-        ) AS store_month_rank,
-        COUNT(*) OVER (
-            PARTITION BY c.store_id, mc.month_start
-        ) AS store_month_customers_count
-    FROM monthly_client AS mc
-    JOIN cus AS c
-      ON c.h01 = mc.customer_id
+  SELECT
+    mc.*,
+    cya.personal_avg_month_sum,
+    (mc.month_sum - cya.personal_avg_month_sum) AS deviation_from_personal_avg,
+    RANK() OVER (
+      PARTITION BY mc.store_id, mc.month_start
+      ORDER BY mc.month_sum DESC
+    ) AS store_month_rank
+  FROM monthly_customer AS mc
+  JOIN customer_year_avg AS cya
+    ON cya.customer_id = mc.customer_id
+   AND cya.store_id = mc.store_id
 ),
-joined AS (
-    SELECT
-        c.customer_id,
-        c.store_id,
-        c.city_name,
-        c.country_name,
-        mr.month_start,
-        mr.payment_count,
-        mr.month_amount,
-        cya.personal_avg_month_amount,
-        (mr.month_amount - cya.personal_avg_month_amount) AS deviation_from_personal_avg,
-        mr.store_month_rank,
-        mr.store_month_customers_count
-    FROM monthly_rank_in_store AS mr
-    JOIN customer_geo AS c
-      ON c.customer_id = mr.customer_id
-    JOIN client_year_avg AS cya
-      ON cya.customer_id = mr.customer_id
+store_month_stats AS (
+  SELECT
+    store_id,
+    month_start,
+    COUNT(*) AS store_customers_count
+  FROM monthly_rank_in_store
+  GROUP BY store_id, month_start
 ),
-qualifying_monthly AS (
-    SELECT *
-    FROM joined
-    WHERE personal_avg_month_amount > 0
-      AND month_amount > personal_avg_month_amount * 2
-      AND store_month_rank <= CAST(CEIL(store_month_customers_count * 0.05) AS INT)
+monthly_with_top5pct AS (
+  SELECT
+    mr.*,
+    SMS.store_customers_count,
+    CASE
+      WHEN SMS.store_customers_count IS NOT NULL AND SMS.store_customers_count > 0
+      THEN CAST(mr.store_month_rank AS REAL) / SMS.store_customers_count
+    END AS rank_fraction
+  FROM monthly_rank_in_store AS mr
+  JOIN store_month_stats AS SMS
+    ON SMS.store_id = mr.store_id
+   AND SMS.month_start = mr.month_start
 ),
-clients_all_12_months AS (
+last_staff_by_customer_month AS (
+  SELECT
+    p.p02 AS customer_id,
+    p.p06_month AS dummy,
+    p.p03 AS staff_id
+  FROM (
     SELECT
-        customer_id
-    FROM qualifying_monthly
-    GROUP BY customer_id
-    HAVING COUNT(*) = 12
+      pay.p02,
+      date(pay.p06, 'start of month') AS p06_month,
+      pay.p03,
+      ROW_NUMBER() OVER (
+        PARTITION BY pay.p02, date(pay.p06, 'start of month')
+        ORDER BY pay.p06 DESC, pay.p01 DESC
+      ) AS rn
+    FROM pay
+  ) AS p
+  WHERE p.rn = 1
+),
+last_staff AS (
+  SELECT
+    x.p02 AS customer_id,
+    x.p06_month AS month_start,
+    x.p03 AS staff_id
+  FROM (
+    SELECT
+      pay.p02,
+      date(pay.p06, 'start of month') AS p06_month,
+      pay.p03,
+      ROW_NUMBER() OVER (
+        PARTITION BY pay.p02, date(pay.p06, 'start of month')
+        ORDER BY pay.p06 DESC, pay.p01 DESC
+      ) AS rn
+    FROM pay
+  ) AS x
+  WHERE x.rn = 1
+),
+final_candidates AS (
+  SELECT
+    mwt.*,
+    COUNT(*) OVER (PARTITION BY mwt.customer_id) AS months_total_in_year,
+    SUM(CASE WHEN mwt.month_sum > mwt.personal_avg_month_sum * 2 THEN 1 ELSE 0 END)
+      OVER (PARTITION BY mwt.customer_id) AS months_meet_personal_rule,
+    SUM(CASE WHEN (mwt.rank_fraction IS NOT NULL AND mwt.rank_fraction <= 0.05) THEN 1 ELSE 0 END)
+      OVER (PARTITION BY mwt.customer_id) AS months_meet_top5_rule
+  FROM monthly_with_top5pct AS mwt
+),
+qualifying_customers AS (
+  SELECT DISTINCT customer_id
+  FROM final_candidates
+  WHERE months_meet_personal_rule = 12
+    AND months_meet_top5_rule = 12
 )
 SELECT
-    qm.customer_id,
-    qm.store_id,
-    qm.city_name,
-    qm.country_name,
-    strftime('%Y-%m', qm.month_start) AS month,
-    ROUND(qm.month_amount, 2) AS month_sum,
-    qm.payment_count,
-    ROUND(qm.deviation_from_personal_avg, 2) AS deviation_from_personal_avg,
-    qm.store_month_rank AS rank_within_store_for_month,
-    ls.staff_id AS last_staff_id
-FROM qualifying_monthly AS qm
-JOIN clients_all_12_months AS cal
-  ON cal.customer_id = qm.customer_id
-LEFT JOIN last_staff_per_month AS ls
-  ON ls.customer_id = qm.customer_id
- AND ls.month_label = strftime('%Y-%m', qm.month_start)
- AND ls.rn = 1
+  f.customer_id,
+  f.store_id AS registration_store_id,
+  f.city_name,
+  f.country_name,
+  strftime('%Y-%m', f.month_start) AS month,
+  ROUND(f.month_sum, 2) AS month_sum,
+  f.payment_count,
+  ROUND(f.deviation_from_personal_avg, 2) AS deviation_from_personal_avg,
+  f.store_month_rank AS store_month_rank,
+  ls.staff_id AS last_staff_id,
+  st.o02 || ' ' || st.o03 AS last_staff_name
+FROM final_candidates AS f
+JOIN qualifying_customers AS qc
+  ON qc.customer_id = f.customer_id
+LEFT JOIN last_staff AS ls
+  ON ls.customer_id = f.customer_id
+ AND ls.month_start = f.month_start
+LEFT JOIN stf AS st
+  ON st.o01 = ls.staff_id
+WHERE f.month_sum > f.personal_avg_month_sum * 2
+  AND f.rank_fraction IS NOT NULL
+  AND f.rank_fraction <= 0.05
 ORDER BY
-  qm.customer_id,
-  qm.month_start;
+  f.customer_id,
+  f.month_start;

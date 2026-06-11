@@ -1,107 +1,101 @@
 WITH
-customer_base AS (
+customer_geo AS (
   SELECT
     c.h01 AS customer_id,
-    c.h03 AS first_name,
-    c.h04 AS last_name,
-    c.h02 AS home_store_id,
+    c.h03 || ' ' || c.h04 AS customer_name,
     cnt.c01 AS country_id,
     cnt.c02 AS country_name,
-    cty.d02 AS city_name
+    city.d02 AS city_name
   FROM cus AS c
   JOIN adr AS a ON a.e01 = c.h06
-  JOIN cty AS cty ON cty.d01 = a.e05
-  JOIN cnt ON cnt.c01 = cty.d03
+  JOIN cty AS city ON city.d01 = a.e05
+  JOIN cnt ON cnt.c01 = city.d03
 ),
-monthly_payments AS (
+payments_2005 AS (
   SELECT
     p.p02 AS customer_id,
     date(p.p06, 'start of month') AS month_start,
-    SUM(p.p05) AS month_amount_sum,
-    COUNT(*) AS payment_count,
-    COUNT(DISTINCT p.p03) AS staff_count,
-    COUNT(DISTINCT s.o07) AS store_count
+    p.p05 AS amount,
+    p.p03 AS staff_id,
+    s.o07 AS staff_store_id
   FROM pay AS p
   JOIN stf AS s ON s.o01 = p.p03
   WHERE p.p06 >= '2005-01-01'
     AND p.p06 <  '2006-01-01'
-  GROUP BY
-    p.p02,
-    date(p.p06, 'start of month')
 ),
-monthly_with_avgs AS (
+monthly AS (
   SELECT
-    mp.*,
-    AVG(mp.month_amount_sum) OVER (
-      PARTITION BY mp.customer_id
-      ORDER BY mp.month_start
+    cg.customer_id,
+    cg.country_id,
+    cg.country_name,
+    cg.city_name,
+    p.month_start,
+    COUNT(*) AS payment_count,
+    SUM(p.amount) AS month_amount,
+    COUNT(DISTINCT p.staff_id) AS distinct_staff_count,
+    COUNT(DISTINCT p.staff_store_id) AS distinct_store_count
+  FROM customer_geo AS cg
+  JOIN payments_2005 AS p
+    ON p.customer_id = cg.customer_id
+  GROUP BY
+    cg.customer_id, cg.country_id, cg.country_name, cg.city_name, p.month_start
+),
+monthly_with_prev AS (
+  SELECT
+    m.*,
+    AVG(m.month_amount) OVER (
+      PARTITION BY m.customer_id
+      ORDER BY m.month_start
       ROWS BETWEEN UNBOUNDED PRECEDING AND 1 PRECEDING
-    ) AS prev_avg_month_amount
-  FROM monthly_payments AS mp
+    ) AS avg_prev_month_amount,
+    COUNT(*) OVER (
+      PARTITION BY m.customer_id
+      ORDER BY m.month_start
+      ROWS BETWEEN UNBOUNDED PRECEDING AND 1 PRECEDING
+    ) AS prev_months_count
+  FROM monthly AS m
 ),
 qualified_months AS (
   SELECT
-    mwa.*
-  FROM monthly_with_avgs AS mwa
-  WHERE
-    mwa.prev_avg_month_amount > 0
-    AND mwa.month_amount_sum >= 2.0 * mwa.prev_avg_month_amount
-    AND mwa.payment_count >= 5
-    AND (mwa.staff_count >= 2 OR mwa.store_count >= 2)
+    mwp.*
+  FROM monthly_with_prev AS mwp
+  WHERE mwp.prev_months_count > 0
+    AND mwp.payment_count >= 5
+    AND mwp.month_amount >= 2.0 * mwp.avg_prev_month_amount
+    AND (mwp.distinct_staff_count >= 2 OR mwp.distinct_store_count >= 2)
 ),
-months_2005_per_customer AS (
+customers_all_months AS (
+  -- клиент должен удовлетворять условиям в каждом месяце 2005 года
   SELECT
-    customer_id,
-    COUNT(DISTINCT month_start) AS months_2005_count
-  FROM monthly_payments
-  GROUP BY customer_id
+    qm.customer_id
+  FROM qualified_months AS qm
+  GROUP BY qm.customer_id
+  HAVING COUNT(DISTINCT qm.month_start) = 12
 ),
-qualified_months_per_customer AS (
+final_months AS (
   SELECT
-    customer_id,
-    COUNT(DISTINCT month_start) AS qualified_months_count
-  FROM qualified_months
-  GROUP BY customer_id
-),
-customers_all_months_ok AS (
-  SELECT
-    m.customer_id
-  FROM months_2005_per_customer AS m
-  JOIN qualified_months_per_customer AS q
-    ON q.customer_id = m.customer_id
-  WHERE m.months_2005_count = 12
-    AND q.qualified_months_count = 12
-),
-ranked AS (
-  SELECT
-    k.customer_id,
-    cb.country_id,
-    cb.country_name,
-    cb.city_name,
-    mwa.month_start,
-    mwa.month_amount_sum,
-    mwa.payment_count,
-    (mwa.month_amount_sum - mwa.prev_avg_month_amount) AS deviation_from_avg_amount,
+    qm.*,
     RANK() OVER (
-      PARTITION BY cb.country_id, mwa.month_start
-      ORDER BY mwa.month_amount_sum DESC
+      PARTITION BY qm.country_id, qm.month_start
+      ORDER BY qm.month_amount DESC
     ) AS country_month_rank
-  FROM customers_all_months_ok AS k
-  JOIN qualified_months AS mwa
-    ON mwa.customer_id = k.customer_id
-  JOIN customer_base AS cb
-    ON cb.customer_id = k.customer_id
+  FROM qualified_months AS qm
+  JOIN customers_all_months AS cam
+    ON cam.customer_id = qm.customer_id
 )
 SELECT
-  strftime('%Y-%m', r.month_start) AS payment_month,
-  r.country_name AS country,
-  r.city_name AS city,
-  ROUND(r.month_amount_sum, 2) AS month_amount_sum,
-  r.payment_count,
-  ROUND(r.deviation_from_avg_amount, 2) AS deviation_from_avg_amount,
-  r.country_month_rank
-FROM ranked AS r
+  strftime('%Y-%m', fm.month_start) AS payment_month,
+  fm.country_name,
+  fm.city_name,
+  fm.customer_id,
+  fm.avg_prev_month_amount,
+  ROUND(fm.month_amount, 2) AS month_amount,
+  fm.payment_count,
+  ROUND(fm.month_amount - fm.avg_prev_month_amount, 2) AS deviation_from_avg,
+  fm.country_month_rank
+FROM final_months AS fm
 ORDER BY
-  r.month_start,
-  r.country_name,
-  r.country_month_rank;
+  fm.month_start,
+  fm.country_name,
+  fm.country_month_rank,
+  fm.customer_id;

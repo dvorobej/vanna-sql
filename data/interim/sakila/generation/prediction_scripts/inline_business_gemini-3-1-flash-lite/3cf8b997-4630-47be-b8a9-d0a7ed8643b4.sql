@@ -4,52 +4,64 @@ WITH monthly_stats AS (
         strftime('%Y-%m', p.p06) AS month,
         SUM(p.p05) AS total_amount,
         COUNT(p.p01) AS payment_count,
-        MAX(p.p03) AS top_staff_id -- Упрощенно: берем ID сотрудника, принявшего последний платеж в месяце
+        c.h02 AS store_id,
+        ct.d02 AS city,
+        cn.c02 AS country
     FROM pay p
-    WHERE strftime('%Y', p.p06) = '2005'
+    JOIN cus c ON c.h01 = p.p02
+    JOIN adr a ON a.e01 = c.h06
+    JOIN cty ct ON ct.d01 = a.e05
+    JOIN cnt cn ON cn.c01 = ct.d03
+    WHERE p.p06 BETWEEN '2005-01-01' AND '2005-12-31'
     GROUP BY p.p02, strftime('%Y-%m', p.p06)
 ),
 history_stats AS (
     SELECT
-        ms.*,
-        AVG(ms.total_amount) OVER (
-            PARTITION BY ms.customer_id 
-            ORDER BY ms.month 
+        *,
+        AVG(total_amount) OVER (
+            PARTITION BY customer_id 
+            ORDER BY month 
             ROWS BETWEEN 2 PRECEDING AND 1 PRECEDING
-        ) AS prev_avg_amount
-    FROM monthly_stats ms
+        ) AS prev_avg_amount,
+        COUNT(total_amount) OVER (
+            PARTITION BY customer_id 
+            ORDER BY month 
+            ROWS BETWEEN 2 PRECEDING AND 1 PRECEDING
+        ) AS prev_months_count
+    FROM monthly_stats
 ),
 suspicious_months AS (
-    SELECT
-        hs.*,
-        c.h02 AS store_id,
-        ct.d02 AS city,
-        cn.c02 AS country,
-        RANK() OVER (PARTITION BY c.h02, hs.month ORDER BY hs.total_amount DESC) as rank_in_store,
-        COUNT(*) OVER (PARTITION BY c.h02, hs.month) as store_month_total_clients
-    FROM history_stats hs
-    JOIN cus c ON c.h01 = hs.customer_id
-    JOIN adr a ON a.e01 = c.h06
-    JOIN cty ct ON ct.d01 = a.e05
-    JOIN cnt cn ON cn.c01 = ct.d03
-    WHERE hs.prev_avg_amount IS NOT NULL
-      AND hs.total_amount >= 2 * hs.prev_avg_amount
-      AND hs.payment_count >= 3
+    SELECT *, (total_amount / NULLIF(prev_avg_amount, 0)) AS ratio
+    FROM history_stats
+    WHERE prev_months_count = 2
+      AND total_amount >= 2 * prev_avg_amount
+      AND payment_count >= 3
 ),
-filtered_suspicious AS (
-    SELECT *
+store_ranks AS (
+    SELECT *,
+        PERCENT_RANK() OVER (PARTITION BY store_id, month ORDER BY total_amount DESC) AS store_percentile
     FROM suspicious_months
-    WHERE rank_in_store <= (store_month_total_clients * 0.1)
+),
+top_staff AS (
+    SELECT customer_id, month, staff_id,
+        ROW_NUMBER() OVER (PARTITION BY customer_id, month ORDER BY staff_sum DESC) as rn
+    FROM (
+        SELECT p.p02 AS customer_id, strftime('%Y-%m', p.p06) AS month, p.p03 AS staff_id, SUM(p.p05) AS staff_sum
+        FROM pay p
+        GROUP BY p.p02, strftime('%Y-%m', p.p06), p.p03
+    )
 )
 SELECT
-    fs.store_id,
-    fs.country,
-    fs.city,
-    fs.month,
-    fs.total_amount,
-    fs.payment_count,
-    ROUND(fs.total_amount / NULLIF(fs.prev_avg_amount, 0), 2) AS deviation_ratio,
-    fs.rank_in_store,
-    fs.top_staff_id
-FROM filtered_suspicious fs
-ORDER BY fs.month, fs.store_id, fs.rank_in_store;
+    sm.month,
+    sm.customer_id,
+    sm.store_id,
+    sm.city,
+    sm.country,
+    sm.total_amount,
+    sm.payment_count,
+    ROUND(sm.ratio, 2) AS deviation_ratio,
+    ts.staff_id AS top_staff_id
+FROM store_ranks sm
+JOIN top_staff ts ON ts.customer_id = sm.customer_id AND ts.month = sm.month AND ts.rn = 1
+WHERE sm.store_percentile <= 0.1
+ORDER BY sm.month, sm.store_id, sm.total_amount DESC;

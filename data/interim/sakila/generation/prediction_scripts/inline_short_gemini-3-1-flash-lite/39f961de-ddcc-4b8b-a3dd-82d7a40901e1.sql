@@ -7,8 +7,8 @@ WITH daily_payments AS (
         MAX(CAST(p.p05 AS REAL)) AS max_payment,
         COUNT(DISTINCT p.p03) AS staff_count,
         COUNT(DISTINCT s.o07) AS store_count,
-        SUM(CASE WHEN f.i11 IN ('R', 'NC-17') THEN 1 ELSE 0 END) AS restricted_film_count,
-        COUNT(*) AS total_film_count
+        SUM(CASE WHEN f.i11 IN ('R', 'NC-17') THEN 1 ELSE 0 END) AS r_nc17_count,
+        COUNT(*) AS total_rentals
     FROM pay AS p
     JOIN stf AS s ON s.o01 = p.p03
     LEFT JOIN ren AS r ON r.q01 = p.p04
@@ -45,7 +45,7 @@ suspicious_days AS (
         cg.city,
         cg.country,
         cg.country_id,
-        (CAST(dwa.restricted_film_count AS REAL) / NULLIF(dwa.total_film_count, 0)) AS restricted_share
+        (CAST(dwa.r_nc17_count AS REAL) / NULLIF(dwa.total_rentals, 0)) AS r_nc17_share
     FROM daily_with_avg AS dwa
     JOIN customer_geo AS cg ON cg.customer_id = dwa.customer_id
     WHERE dwa.avg_prev_30 > 0
@@ -59,7 +59,7 @@ SELECT
     payment_count,
     ROUND(daily_sum, 2) AS daily_sum,
     ROUND(max_payment, 2) AS max_payment,
-    ROUND(restricted_share, 4) AS restricted_film_share,
+    ROUND(r_nc17_share, 4) AS r_nc17_share,
     RANK() OVER (
         PARTITION BY country_id, pay_date
         ORDER BY daily_sum DESC

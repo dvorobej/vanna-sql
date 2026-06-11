@@ -1,4 +1,4 @@
-customer_id,first_name,last_name,payment_date,payment_count,total_amount,max_payment,suspicious_activity_flag
+customer_id,first_name,last_name,payment_date,payment_count,total_amount,max_payment,suspicious_flag
 1,MARY,SMITH,2005-07-28,4,11.96,4.99,1
 2,PATRICIA,JOHNSON,2005-07-27,3,16.97,5.99,1
 2,PATRICIA,JOHNSON,2005-07-29,3,14.97,5.99,1

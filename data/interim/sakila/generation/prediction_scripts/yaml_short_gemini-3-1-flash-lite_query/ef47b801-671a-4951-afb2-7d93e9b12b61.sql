@@ -5,15 +5,15 @@ SELECT
   c.h02 AS store_id,
   COUNT(p.p01) AS payment_count,
   ROUND(SUM(p.p05), 2) AS total_amount,
-  ROUND(AVG(p.p05), 2) AS avg_payment,
+  ROUND(AVG(p.p05), 2) AS average_payment,
   MAX(p.p05) AS max_payment,
   CASE
     WHEN COUNT(p.p01) > 10 THEN 'требует дополнительной проверки'
     ELSE 'обычный'
-  END AS check_status
+  END AS monitoring_status
 FROM pay AS p
 JOIN cus AS c
-  ON p.p02 = c.h01
+  ON c.h01 = p.p02
 WHERE p.p06 >= '2005-07-01'
   AND p.p06 < '2005-08-01'
 GROUP BY

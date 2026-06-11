@@ -11,7 +11,7 @@ SELECT
   CASE
     WHEN SUM(p.p05) > 50 OR AVG(p.p05) > 8 THEN 1
     ELSE 0
-  END AS high_attention
+  END AS attention_flag
 FROM pay AS p
 JOIN cus AS c
   ON c.h01 = p.p02

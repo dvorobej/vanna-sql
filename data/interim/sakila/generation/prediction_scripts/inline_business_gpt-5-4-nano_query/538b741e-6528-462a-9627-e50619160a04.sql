@@ -1,5 +1,4 @@
 SELECT
-  c.h01 AS customer_id,
   c.h03 AS first_name,
   c.h04 AS last_name,
   COUNT(p.p01) AS payment_count,
@@ -20,4 +19,4 @@ GROUP BY
   c.h03,
   c.h04
 HAVING COUNT(p.p01) >= 10
-ORDER BY total_amount DESC, payment_count DESC;
+ORDER BY total_amount DESC, payment_count DESC, c.h01;

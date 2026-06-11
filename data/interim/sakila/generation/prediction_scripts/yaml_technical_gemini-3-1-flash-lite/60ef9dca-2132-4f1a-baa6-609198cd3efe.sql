@@ -28,54 +28,44 @@ store_monthly_percentiles AS (
     FROM monthly_customer_stats AS mcs
     JOIN cus AS c ON c.h01 = mcs.customer_id
 ),
-monthly_details AS (
+last_staff_per_month AS (
     SELECT
-        mcs.*,
-        c.h02 AS store_id,
-        c.h03 || ' ' || c.h04 AS customer_name,
-        cn.c02 AS country,
-        ct.d02 AS city,
-        cya.yearly_avg_monthly_sum,
-        (SELECT p2.p03 FROM pay p2 
-         WHERE p2.p02 = mcs.customer_id 
-           AND strftime('%Y-%m', p2.p06) = mcs.payment_month 
-         ORDER BY p2.p06 DESC LIMIT 1) AS last_staff_id,
-        RANK() OVER (
-            PARTITION BY c.h02, mcs.payment_month
-            ORDER BY mcs.monthly_sum DESC
-        ) AS store_rank
-    FROM monthly_customer_stats AS mcs
-    JOIN cus AS c ON c.h01 = mcs.customer_id
-    JOIN adr AS a ON a.e01 = c.h06
-    JOIN cty AS ct ON ct.d01 = a.e05
-    JOIN cnt AS cn ON cn.c01 = ct.d03
-    JOIN customer_yearly_avg AS cya ON cya.customer_id = mcs.customer_id
-    JOIN store_monthly_percentiles AS smp 
-      ON smp.store_id = c.h02 
-      AND smp.payment_month = mcs.payment_month 
-      AND smp.monthly_sum = mcs.monthly_sum
-    WHERE mcs.monthly_sum > (cya.yearly_avg_monthly_sum * 2)
-      AND smp.percentile_rank <= 0.05
-),
-customer_monthly_counts AS (
-    SELECT customer_id, COUNT(*) AS months_count
-    FROM monthly_details
-    GROUP BY customer_id
+        p.p02 AS customer_id,
+        strftime('%Y-%m', p.p06) AS payment_month,
+        p.p03 AS staff_id,
+        ROW_NUMBER() OVER (
+            PARTITION BY p.p02, strftime('%Y-%m', p.p06)
+            ORDER BY p.p06 DESC
+        ) AS rn
+    FROM pay AS p
 )
 SELECT
-    md.customer_id,
-    md.customer_name,
-    md.country,
-    md.city,
-    md.store_id,
-    md.payment_month,
-    ROUND(md.monthly_sum, 2) AS monthly_sum,
-    md.payment_count,
-    ROUND(md.yearly_avg_monthly_sum, 2) AS yearly_avg_monthly_sum,
-    ROUND(md.monthly_sum - md.yearly_avg_monthly_sum, 2) AS deviation,
-    md.store_rank,
-    md.last_staff_id
-FROM monthly_details AS md
-JOIN customer_monthly_counts AS cmc ON cmc.customer_id = md.customer_id
-WHERE cmc.months_count = 12
-ORDER BY md.customer_id, md.payment_month;
+    mcs.payment_month,
+    mcs.customer_id,
+    c.h03 || ' ' || c.h04 AS customer_name,
+    cnt.c02 AS country,
+    cty.d02 AS city,
+    c.h02 AS store_id,
+    ROUND(mcs.monthly_sum, 2) AS monthly_sum,
+    mcs.payment_count,
+    ROUND(mcs.monthly_sum - cya.yearly_avg_monthly_sum, 2) AS deviation_from_avg,
+    lsm.staff_id AS last_staff_id
+FROM monthly_customer_stats AS mcs
+JOIN cus AS c ON c.h01 = mcs.customer_id
+JOIN adr ON adr.e01 = c.h06
+JOIN cty ON cty.d01 = adr.e05
+JOIN cnt ON cnt.c01 = cty.d03
+JOIN customer_yearly_avg AS cya ON cya.customer_id = mcs.customer_id
+JOIN store_monthly_percentiles AS smp 
+    ON smp.store_id = c.h02 
+    AND smp.payment_month = mcs.payment_month 
+    AND smp.monthly_sum = mcs.monthly_sum
+JOIN last_staff_per_month AS lsm 
+    ON lsm.customer_id = mcs.customer_id 
+    AND lsm.payment_month = mcs.payment_month 
+    AND lsm.rn = 1
+WHERE mcs.monthly_sum > (cya.yearly_avg_monthly_sum * 2)
+  AND smp.percentile_rank <= 0.05
+GROUP BY mcs.customer_id
+HAVING COUNT(mcs.payment_month) = 12
+ORDER BY mcs.customer_id, mcs.payment_month;

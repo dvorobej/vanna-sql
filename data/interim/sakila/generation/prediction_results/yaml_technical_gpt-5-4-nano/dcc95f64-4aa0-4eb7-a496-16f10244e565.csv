@@ -1,4 +1,4 @@
-customer_id,first_name,last_name,staff_id,payment_count,total_amount,average_payment
+customer_id,customer_first_name,customer_last_name,staff_id,payment_count,total_amount,average_payment
 176,JUNE,CARROLL,1,4,29.96,7.49
 454,ALEX,GRESHAM,2,4,29.96,7.49
 236,MARCIA,DEAN,2,3,21.97,7.323333333333333

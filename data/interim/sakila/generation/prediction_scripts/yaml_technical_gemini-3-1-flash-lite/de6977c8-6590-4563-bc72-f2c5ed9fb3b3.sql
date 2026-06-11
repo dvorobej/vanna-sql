@@ -3,7 +3,7 @@ SELECT
   c.h03 AS first_name,
   c.h04 AS last_name,
   p.p03 AS staff_id,
-  COUNT(p.p01) AS payment_count,
+  COUNT(p.p01) AS transaction_count,
   ROUND(SUM(p.p05), 2) AS total_amount,
   ROUND(AVG(p.p05), 2) AS average_payment,
   ROUND(
@@ -22,5 +22,5 @@ GROUP BY
   p.p03
 HAVING COUNT(p.p01) >= 5
 ORDER BY
-  customer_id,
-  payment_count DESC;
+  c.h01,
+  p.p03;

@@ -1,201 +1,197 @@
-WITH payments_monthly AS (
+WITH monthly_customer_payment AS (
   SELECT
     p.p02 AS customer_id,
-    strftime('%Y-%m', p.p06) AS month,
     date(p.p06, 'start of month') AS month_start,
     COUNT(*) AS payment_count,
-    SUM(CAST(p.p05 AS REAL)) AS payment_sum,
-    MAX(CAST(p.p05 AS REAL)) AS max_payment,
-    SUM(
-      CASE
-        WHEN r.q01 IS NOT NULL
-         AND ( (c_store.h01 IS NOT NULL AND c_store.h01 <> s_store.h01) OR (c_addr_city.d02 <> s_addr_city.d02) OR (c_addr_country.d02 <> s_addr_country.d02) )
-        THEN 1
-        ELSE 0
-      END
-    ) AS foreign_store_payment_count,
-    SUM(
-      CASE
-        WHEN r.q01 IS NULL THEN 0
-        ELSE 1
-      END
-    ) AS paid_for_rent_payment_count
+    SUM(p.p05) AS month_payment_sum
   FROM pay AS p
-  JOIN cus AS c_pay ON c_pay.h01 = p.p02
-  LEFT JOIN ren AS r ON r.q01 = p.p04
-  LEFT JOIN inv AS i ON i.n01 = r.q03
-  LEFT JOIN sto AS s_store ON s_store.j01 = i.n03
-  LEFT JOIN adr AS s_addr ON s_addr.e01 = (SELECT o04 FROM stf WHERE o01 = r.q06)
-  LEFT JOIN adr AS c_addr ON c_addr.e01 = c_pay.h06
-  LEFT JOIN cty AS c_addr_city ON c_addr_city.d01 = c_addr.e05
-  LEFT JOIN cty AS c_addr_country ON c_addr_country.d01 = c_addr_city.d03
-  LEFT JOIN cty AS s_addr_city ON s_addr_city.d01 = s_addr.e05
-  LEFT JOIN cty AS s_addr_country ON s_addr_country.d01 = s_addr_city.d03
-  LEFT JOIN sto AS c_store ON c_store.j01 = c_pay.h02
   WHERE p.p04 IS NOT NULL
   GROUP BY
     p.p02,
-    strftime('%Y-%m', p.p06),
     date(p.p06, 'start of month')
 ),
-payments_rolling AS (
+customer_history AS (
   SELECT
-    pm.*,
-    AVG(pm.payment_sum) OVER (
-      PARTITION BY pm.customer_id
-      ORDER BY pm.month_start
+    mcp.*,
+    AVG(mcp.month_payment_sum) OVER (
+      PARTITION BY mcp.customer_id
+      ORDER BY mcp.month_start
       ROWS BETWEEN UNBOUNDED PRECEDING AND 1 PRECEDING
-    ) AS avg_prev_payment_sum
-  FROM payments_monthly AS pm
+    ) AS prev_months_avg_payment_sum,
+    COUNT(*) OVER (
+      PARTITION BY mcp.customer_id
+      ORDER BY mcp.month_start
+      ROWS BETWEEN UNBOUNDED PRECEDING AND 1 PRECEDING
+    ) AS prev_months_count
+  FROM monthly_customer_payment AS mcp
 ),
-qual_months AS (
+month_level AS (
   SELECT
-    pr.customer_id,
-    pr.month,
-    pr.month_start,
-    pr.payment_sum,
-    pr.payment_count,
-    pr.max_payment,
-    pr.foreign_store_payment_count,
-    pr.paid_for_rent_payment_count,
-    pr.avg_prev_payment_sum
-  FROM payments_rolling AS pr
-  WHERE pr.avg_prev_payment_sum IS NOT NULL
-    AND pr.payment_count >= 5
-    AND pr.payment_sum > 3.0 * pr.avg_prev_payment_sum
-    AND pr.foreign_store_payment_count * 1.0 / NULLIF(pr.payment_count, 0) > 0
+    ch.customer_id,
+    ch.month_start,
+    ch.month_payment_sum,
+    ch.payment_count,
+    ch.prev_months_avg_payment_sum
+  FROM customer_history AS ch
+  WHERE ch.prev_months_count >= 1
 ),
-rent_staff_store_by_payment AS (
+payment_flags AS (
   SELECT
-    p.p01 AS payment_id,
     p.p02 AS customer_id,
     date(p.p06, 'start of month') AS month_start,
-    c.h02 AS customer_home_store_id,
-    st_store.j01 AS staff_store_id,
-    city_name.d02 AS customer_city,
-    st_city_name.d02 AS staff_city,
-    ctry_name.c02 AS customer_country,
-    st_ctry_name.c02 AS staff_country
-  FROM pay p
-  JOIN cus c ON c.h01 = p.p02
-  JOIN ren r ON r.q01 = p.p04
-  JOIN stf sf ON sf.o01 = r.q06
-  JOIN sto st_store ON st_store.j01 = sf.o07
-  JOIN adr adrc ON adrc.e01 = c.h06
-  JOIN cty city_name ON city_name.d01 = adrc.e05
-  JOIN cnt ctry_name ON ctry_name.c01 = city_name.d03
-  JOIN adr adrs ON adrs.e01 = sf.o04
-  JOIN cty st_city_name ON st_city_name.d01 = adrs.e05
-  JOIN cnt st_ctry_name ON st_ctry_name.c01 = st_city_name.d03
-),
-payment_foreign_flag AS (
-  SELECT
-    rp.customer_id,
-    rp.month_start,
-    rp.payment_id,
+    p.p05 AS payment_amount,
+    p.p01 AS payment_id,
+    p.p04 AS rental_id,
+    s.o07 AS staff_store_id,
+    inv2.n03 AS film_store_id,
+    cust_store.j01 AS customer_store_id,
     CASE
-      WHEN (rp.customer_city <> rp.staff_city) OR (rp.customer_country <> rp.staff_country) OR (rp.customer_home_store_id <> rp.staff_store_id)
-      THEN 1 ELSE 0
+      WHEN cust_store.j01 IS NULL OR inv2.n03 IS NULL THEN 1
+      WHEN cust_store.j01 <> inv2.n03 THEN 1
+      ELSE 0
     END AS is_foreign_store
-  FROM rent_staff_store_by_payment rp
+  FROM pay AS p
+  JOIN ren AS r ON r.q01 = p.p04
+  JOIN stf AS s ON s.o01 = p.p03
+  JOIN inv AS inv2 ON inv2.n01 = r.q03
+  JOIN cus AS c ON c.h01 = p.p02
+  LEFT JOIN adr AS cust_adr ON cust_adr.e01 = c.h06
+  LEFT JOIN sto AS cust_store ON cust_store.j01 = c.h02
 ),
-foreign_share_by_month AS (
+month_foreign_share AS (
   SELECT
     pf.customer_id,
-    strftime('%Y-%m', pf.month_start) AS month,
     pf.month_start,
-    SUM(pf.is_foreign_store) AS foreign_store_payment_count
-  FROM (
-    SELECT
-      pfp.customer_id,
-      pfp.month_start,
-      p.p01 AS payment_id,
-      pfp.is_foreign_store
-    FROM payment_foreign_flag pfp
-    JOIN pay p ON p.p01 = pfp.payment_id
-  ) pf
+    SUM(CASE WHEN pf.is_foreign_store = 1 THEN 1 ELSE 0 END) AS foreign_payment_count,
+    COUNT(*) AS payment_count
+  FROM payment_flags AS pf
   GROUP BY
     pf.customer_id,
-    strftime('%Y-%m', pf.month_start),
     pf.month_start
 ),
-distinct_staff_foreign_by_month AS (
+month_top_staff_rank AS (
   SELECT
     p.p02 AS customer_id,
     date(p.p06, 'start of month') AS month_start,
-    COUNT(DISTINCT p.p03) AS distinct_staff_count,
-    COUNT(DISTINCT stf.o07) AS distinct_staff_store_count
-  FROM pay p
-  JOIN ren r ON r.q01 = p.p04
-  JOIN stf ON stf.o01 = p.p03
+    p.p03 AS staff_id,
+    SUM(p.p05) AS staff_payment_sum,
+    ROW_NUMBER() OVER (
+      PARTITION BY p.p02, date(p.p06, 'start of month')
+      ORDER BY SUM(p.p05) DESC, p.p03
+    ) AS rn
+  FROM pay AS p
   WHERE p.p04 IS NOT NULL
-  GROUP BY p.p02, date(p.p06, 'start of month')
+  GROUP BY
+    p.p02,
+    date(p.p06, 'start of month'),
+    p.p03
 ),
-category_weights AS (
+month_customer_top_staff AS (
+  SELECT
+    mts.customer_id,
+    mts.month_start,
+    mts.staff_id
+  FROM month_top_staff_rank AS mts
+  WHERE mts.rn = 1
+),
+month_client_rank AS (
+  SELECT
+    mcp.customer_id,
+    mcp.month_start,
+    RANK() OVER (
+      PARTITION BY mcp.month_start
+      ORDER BY mcp.month_payment_sum DESC
+    ) AS month_rank_within_client
+  FROM monthly_customer_payment AS mcp
+),
+month_categories_top AS (
   SELECT
     p.p02 AS customer_id,
     date(p.p06, 'start of month') AS month_start,
-    ca.g01 AS category_id,
-    SUM(CAST(p.p05 AS REAL)) AS category_spend
-  FROM pay p
+    fc.l02 AS category_id,
+    COUNT(*) AS category_payment_count,
+    SUM(p.p05) AS category_payment_sum
+  FROM pay AS p
   JOIN ren r ON r.q01 = p.p04
   JOIN inv i ON i.n01 = r.q03
   JOIN flc fc ON fc.l01 = i.n02
-  JOIN cat ca ON ca.g01 = fc.l02
   WHERE p.p04 IS NOT NULL
-  GROUP BY p.p02, date(p.p06, 'start of month'), ca.g01
+  GROUP BY
+    p.p02,
+    date(p.p06, 'start of month'),
+    fc.l02
 ),
-top_categories AS (
+categories_ranked AS (
   SELECT
-    cw.customer_id,
-    cw.month_start,
-    GROUP_CONCAT(cat.i02, ', ') AS top_categories
+    mct.customer_id,
+    mct.month_start,
+    mct.category_id,
+    mct.category_payment_sum,
+    mct.category_payment_count,
+    SUM(mct.category_payment_sum) OVER (
+      PARTITION BY mct.customer_id, mct.month_start
+    ) AS month_total_amount,
+    SUM(mct.category_payment_sum) OVER (
+      PARTITION BY mct.customer_id, mct.month_start
+      ORDER BY mct.category_payment_sum DESC, mct.category_id
+      ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW
+    ) AS running_amount
+  FROM month_categories_top AS mct
+),
+categories_main AS (
+  SELECT
+    cr.customer_id,
+    cr.month_start,
+    cr.category_id,
+    cr.category_payment_sum
+  FROM categories_ranked AS cr
+  WHERE cr.month_total_amount > 0
+    AND (cr.running_amount * 1.0 / cr.month_total_amount) <= 0.8
+),
+categories_list AS (
+  SELECT
+    cm.customer_id,
+    cm.month_start,
+    GROUP_CONCAT(cm.category_id, ', ') AS category_ids_main_part
   FROM (
-    SELECT
-      customer_id,
-      month_start,
-      category_id,
-      category_spend,
-      SUM(category_spend) OVER (PARTITION BY customer_id, month_start) AS total_spend,
-      category_spend * 1.0 / NULLIF(SUM(category_spend) OVER (PARTITION BY customer_id, month_start), 0) AS category_share,
-      ROW_NUMBER() OVER (PARTITION BY customer_id, month_start ORDER BY category_spend DESC) AS rn
-    FROM category_weights
-  ) cw
-  JOIN cat ON cat.g01 = cw.category_id
-  WHERE cw.rn <= 3
-  GROUP BY cw.customer_id, cw.month_start
-),
-monthly_rank_within_customer AS (
-  SELECT
-    q.customer_id,
-    q.month_start,
-    RANK() OVER (
-      PARTITION BY q.customer_id
-      ORDER BY q.payment_sum DESC
-    ) AS month_payment_rank_within_customer
-  FROM qual_months q
+    SELECT DISTINCT customer_id, month_start, category_id
+    FROM categories_main
+  ) AS cm
+  GROUP BY
+    cm.customer_id,
+    cm.month_start
 )
 SELECT
-  q.month,
-  q.customer_id,
-  c.h03 || ' ' || c.h04 AS customer_name,
-  q.payment_sum,
-  q.payment_count,
-  CAST(q.foreign_store_payment_count AS REAL) / NULLIF(q.payment_count, 0) AS foreign_store_payment_share,
-  q.max_payment,
-  mr.month_payment_rank_within_customer,
-  tc.top_categories AS top_categories_by_spend
-FROM qual_months q
-JOIN cus c ON c.h01 = q.customer_id
-JOIN distinct_staff_foreign_by_month ds
-  ON ds.customer_id = q.customer_id
- AND ds.month_start = q.month_start
-LEFT JOIN top_categories tc
-  ON tc.customer_id = q.customer_id
- AND tc.month_start = q.month_start
-JOIN monthly_rank_within_customer mr
-  ON mr.customer_id = q.customer_id
- AND mr.month_start = q.month_start
-WHERE ds.distinct_staff_count >= 2
-  AND ds.distinct_staff_store_count >= 2
-ORDER BY q.month_start, q.payment_sum DESC, q.customer_id;
+  ml.month_start AS month,
+  ml.customer_id,
+  cus.h03 || ' ' || cus.h04 AS customer_name,
+  ROUND(ml.month_payment_sum, 2) AS month_payment_sum,
+  ml.payment_count,
+  ROUND(1.0 * mfs.foreign_payment_count / NULLIF(mfs.payment_count, 0), 4) AS foreign_store_payment_share,
+  ROUND((
+    SELECT MAX(p2.p05)
+    FROM pay p2
+    WHERE p2.p02 = ml.customer_id
+      AND date(p2.p06, 'start of month') = ml.month_start
+      AND p2.p04 IS NOT NULL
+  ), 2) AS max_single_payment,
+  mcr.month_rank_within_client AS month_rank_within_client,
+  COALESCE(cl.category_ids_main_part, '') AS top_category_ids_main_part
+FROM month_level AS ml
+JOIN cus ON cus.h01 = ml.customer_id
+JOIN month_foreign_share AS mfs
+  ON mfs.customer_id = ml.customer_id
+ AND mfs.month_start = ml.month_start
+JOIN month_client_rank AS mcr
+  ON mcr.customer_id = ml.customer_id
+ AND mcr.month_start = ml.month_start
+LEFT JOIN categories_list AS cl
+  ON cl.customer_id = ml.customer_id
+ AND cl.month_start = ml.month_start
+WHERE
+  ml.payment_count >= 5
+  AND ml.prev_months_avg_payment_sum > 0
+  AND ml.month_payment_sum > 3.0 * ml.prev_months_avg_payment_sum
+ORDER BY
+  ml.month_start,
+  ml.customer_id;

@@ -6,8 +6,7 @@ WITH monthly_stats AS (
         ct.d02 AS city,
         strftime('%Y-%m', p.p06) AS payment_month,
         SUM(p.p05) AS monthly_amount,
-        COUNT(p.p01) AS payment_count,
-        cn.c01 AS country_id
+        COUNT(p.p01) AS payment_count
     FROM pay AS p
     JOIN cus AS c ON p.p02 = c.h01
     JOIN adr AS a ON c.h06 = a.e01
@@ -25,11 +24,11 @@ customer_avg AS (
 ),
 country_avg AS (
     SELECT
-        country_id,
+        country,
         payment_month,
-        AVG(monthly_amount) AS avg_country_monthly_amount
+        AVG(monthly_amount) AS avg_country_amount
     FROM monthly_stats
-    GROUP BY country_id, payment_month
+    GROUP BY country, payment_month
 ),
 staff_max_pay AS (
     SELECT
@@ -40,11 +39,13 @@ staff_max_pay AS (
     FROM pay AS p
     GROUP BY p.p02, strftime('%Y-%m', p.p06), p.p03
 ),
-top_staff AS (
-    SELECT * FROM (
-        SELECT *, ROW_NUMBER() OVER (PARTITION BY customer_id, payment_month ORDER BY staff_sum DESC) as rn
-        FROM staff_max_pay
-    ) WHERE rn = 1
+ranked_staff AS (
+    SELECT
+        customer_id,
+        payment_month,
+        staff_id,
+        ROW_NUMBER() OVER (PARTITION BY customer_id, payment_month ORDER BY staff_sum DESC) as rn
+    FROM staff_max_pay
 )
 SELECT
     ms.customer_name,
@@ -54,13 +55,13 @@ SELECT
     ROUND(ms.monthly_amount, 2) AS monthly_amount,
     ms.payment_count,
     ROUND(ms.monthly_amount - ca.avg_monthly_amount, 2) AS deviation_from_personal_avg,
-    RANK() OVER (PARTITION BY ms.country_id, ms.payment_month ORDER BY ms.monthly_amount DESC) AS country_rank,
+    RANK() OVER (PARTITION BY ms.country, ms.payment_month ORDER BY ms.monthly_amount DESC) AS country_rank,
     stf.o02 || ' ' || stf.o03 AS top_staff_name
 FROM monthly_stats AS ms
 JOIN customer_avg AS ca ON ms.customer_id = ca.customer_id
-JOIN country_avg AS cna ON ms.country_id = cna.country_id AND ms.payment_month = cna.payment_month
-JOIN top_staff AS ts ON ms.customer_id = ts.customer_id AND ms.payment_month = ts.payment_month
-JOIN stf ON ts.staff_id = stf.o01
+JOIN country_avg AS cna ON ms.country = cna.country AND ms.payment_month = cna.payment_month
+JOIN ranked_staff AS rs ON ms.customer_id = rs.customer_id AND ms.payment_month = rs.payment_month AND rs.rn = 1
+JOIN stf ON rs.staff_id = stf.o01
 WHERE ms.monthly_amount > (ca.avg_monthly_amount * 1.5)
-   OR ms.monthly_amount > (cna.avg_country_monthly_amount * 2)
+   OR ms.monthly_amount > (cna.avg_country_amount * 2)
 ORDER BY ms.payment_month, country_rank;

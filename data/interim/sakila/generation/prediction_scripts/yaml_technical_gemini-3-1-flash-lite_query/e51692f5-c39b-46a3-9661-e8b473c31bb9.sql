@@ -5,7 +5,10 @@ SELECT
   COUNT(p.p01) AS daily_payment_count,
   SUM(p.p05) AS daily_total_amount,
   MAX(p.p05) AS max_daily_payment,
-  'подозрительная активность' AS risk_flag
+  CASE
+    WHEN COUNT(p.p01) >= 3 OR SUM(p.p05) > 20 THEN 'подозрительная активность'
+    ELSE 'норма'
+  END AS risk_flag
 FROM cus AS c
 JOIN pay AS p
   ON p.p02 = c.h01

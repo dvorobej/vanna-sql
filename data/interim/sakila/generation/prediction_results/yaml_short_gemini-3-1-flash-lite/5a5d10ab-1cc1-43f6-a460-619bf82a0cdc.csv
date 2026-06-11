@@ -1,4 +1,4 @@
-customer_id,first_name,last_name,payment_count,total_amount,large_payment_count
+customer_id,first_name,last_name,transaction_count,total_amount,large_payments_count
 148,ELEANOR,HUNT,22,100.77999999999997,3
 470,GORDON,ALLARD,17,96.82999999999998,2
 522,ARNOLD,HAVENS,18,96.82,1

@@ -1,113 +1,120 @@
-WITH daily_payments AS (
+WITH payment_enriched AS (
     SELECT
-        p.p02 AS customer_id,
-        c.h06 AS customer_address_id,
-        c.h01 AS customer_key,
-        adr.dummy AS dummy_col,
-        p.p04 AS rental_id,
-        date(p.p06) AS payment_date,
-        COUNT(*) AS payment_count,
-        SUM(CAST(p.p05 AS REAL)) AS day_sum,
-        MAX(CAST(p.p05 AS REAL)) AS max_payment
+        c.h01 AS customer_id,
+        c.h03 AS first_name,
+        c.h04 AS last_name,
+        cnt.c02 AS country_name,
+        cty.d02 AS city_name,
+        date(p.p06) AS pay_date,
+        p.p01 AS payment_id,
+        CAST(p.p05 AS REAL) AS payment_amount,
+        p.p05 AS payment_amount_raw,
+        p.p03 AS staff_id,
+        inv.n02 AS film_id
     FROM pay AS p
     JOIN cus AS c
         ON c.h01 = p.p02
-    LEFT JOIN adr ON adr.e01 = c.h06
+    JOIN ren AS r
+        ON r.q01 = p.p04
+    JOIN inv
+        ON inv.n01 = r.q03
+    JOIN sto
+        ON sto.j01 = inv.n03
+    JOIN adr AS a
+        ON a.e01 = c.h06
+    JOIN cty
+        ON cty.d01 = a.e05
+    JOIN cnt
+        ON cnt.c01 = cty.d03
+    JOIN flm
+        ON flm.i01 = inv.n02
     WHERE p.p06 IS NOT NULL
-    GROUP BY
-        p.p02,
-        c.h06,
-        c.h01,
-        date(p.p06),
-        p.p04
 ),
-daily_payments_fixed AS (
+daily_agg AS (
     SELECT
-        p.p02 AS customer_id,
-        date(p.p06) AS payment_date,
+        customer_id,
+        first_name,
+        last_name,
+        country_name,
+        city_name,
+        pay_date,
         COUNT(*) AS payment_count,
-        SUM(CAST(p.p05 AS REAL)) AS day_sum,
-        MAX(CAST(p.p05 AS REAL)) AS max_payment
-    FROM pay AS p
+        SUM(payment_amount) AS day_sum,
+        MAX(payment_amount) AS max_payment,
+        COUNT(*) AS day_payment_rows,
+        COUNT(*) FILTER (WHERE p_not_used) AS dummy
+    FROM payment_enriched
     GROUP BY
-        p.p02,
-        date(p.p06)
+        customer_id,
+        first_name,
+        last_name,
+        country_name,
+        city_name,
+        pay_date
 ),
-daily_with_window AS (
+daily_with_avgs_and_counts AS (
     SELECT
-        dp.customer_id,
-        dp.payment_date,
-        dp.payment_count,
-        dp.day_sum,
-        dp.max_payment,
-        (
-            SELECT AVG(CAST(d2.day_sum AS REAL))
-            FROM daily_payments_fixed AS d2
-            WHERE d2.customer_id = dp.customer_id
-              AND d2.payment_date >= date(dp.payment_date, '-30 days')
-              AND d2.payment_date < dp.payment_date
-        ) AS avg_prev_30d
-    FROM daily_payments_fixed AS dp
-),
-daily_geo AS (
-    SELECT
-        c.h01 AS customer_id,
-        ci.d02 AS city,
-        co.c02 AS country,
-        co.c01 AS country_id
-    FROM cus AS c
-    JOIN adr AS a ON a.e01 = c.h06
-    JOIN cty AS ci ON ci.d01 = a.e05
-    JOIN cnt AS co ON co.c01 = ci.d03
-),
-day_flm_flags AS (
-    SELECT
-        date(p.p06) AS payment_date,
-        p.p02 AS customer_id,
-        SUM(
-            CASE
-                WHEN COALESCE(CAST(fm.rating AS TEXT), '') IN ('R', 'NC-17') THEN 1
-                ELSE 0
-            END
-        ) AS unrated_or_restricted_count,
-        COUNT(*) AS total_count
-    FROM pay AS p
-    JOIN ren AS r ON r.q01 = p.p04
-    JOIN inv AS i ON i.n01 = r.q03
-    JOIN flm AS fm ON fm.i01 = i.n02
-    WHERE p.p06 IS NOT NULL
+        pe.customer_id,
+        pe.first_name,
+        pe.last_name,
+        pe.country_name,
+        pe.city_name,
+        pe.pay_date,
+        COUNT(*) AS payment_count,
+        SUM(pe.payment_amount) AS day_sum,
+        MAX(pe.payment_amount) AS max_payment,
+        SUM(CASE WHEN flm.i11 IN ('R','NC-17') THEN 1 ELSE 0 END) * 1.0 / COUNT(*) AS r_nc17_payment_share,
+        AVG(d2.day_sum) OVER (
+            PARTITION BY pe.customer_id
+            ORDER BY pe.pay_date
+            ROWS BETWEEN 30 PRECEDING AND 1 PRECEDING
+        ) AS avg_prev_30d_day_sum,
+        COUNT(DISTINCT pe.staff_id) AS distinct_staff_count,
+        COUNT(DISTINCT sto.j01) AS distinct_store_count
+    FROM payment_enriched pe
+    JOIN ren r ON r.q01 = pe.pay_date -- dummy join for SQLite? placeholder
     GROUP BY
-        date(p.p06),
-        p.p02
+        pe.customer_id,
+        pe.first_name,
+        pe.last_name,
+        pe.country_name,
+        pe.city_name,
+        pe.pay_date
+),
+filtered AS (
+    SELECT
+        d.*,
+        d.day_sum / NULLIF(d.avg_prev_30d_day_sum, 0) AS ratio_to_avg
+    FROM daily_with_avgs_and_counts d
+    WHERE d.avg_prev_30d_day_sum IS NOT NULL
+      AND d.avg_prev_30d_day_sum > 0
+      AND d.payment_count >= 3
+      AND d.day_sum >= 3.0 * d.avg_prev_30d_day_sum
+      AND (d.distinct_staff_count >= 2 OR d.distinct_store_count >= 2)
+),
+ranked AS (
+    SELECT
+        f.*,
+        RANK() OVER (
+            PARTITION BY f.country_name, f.pay_date
+            ORDER BY f.day_sum DESC
+        ) AS day_rank_in_country
+    FROM filtered f
 )
 SELECT
-    dpw.customer_id,
-    dg.city AS d02,
-    dg.country AS c02,
-    dpw.payment_date,
-    dpw.payment_count,
-    ROUND(dpw.day_sum, 2) AS day_sum,
-    ROUND(dpw.max_payment, 2) AS max_payment,
-    ROUND(
-        1.0 * COALESCE(dff.unrated_or_restricted_count, 0) / NULLIF(dff.total_count, 0),
-        4
-    ) AS restricted_rating_payments_share,
-    RANK() OVER (
-        PARTITION BY dg.country_id, dpw.payment_date
-        ORDER BY dpw.day_sum DESC
-    ) AS day_rank_in_country
-FROM daily_with_window AS dpw
-JOIN daily_geo AS dg
-    ON dg.customer_id = dpw.customer_id
-JOIN day_flm_flags AS dff
-    ON dff.customer_id = dpw.customer_id
-   AND dff.payment_date = dpw.payment_date
-WHERE dpw.payment_count >= 3
-  AND dpw.avg_prev_30d IS NOT NULL
-  AND dpw.avg_prev_30d > 0
-  AND dpw.day_sum >= 3.0 * dpw.avg_prev_30d
+    customer_id,
+    first_name || ' ' || last_name AS customer_name,
+    city_name AS d02,
+    country_name AS c02,
+    pay_date AS calendar_date,
+    payment_count,
+    ROUND(day_sum, 2) AS day_sum,
+    ROUND(max_payment, 2) AS max_payment,
+    ROUND(r_nc17_payment_share, 4) AS r_nc17_payment_share,
+    day_rank_in_country
+FROM ranked
 ORDER BY
-    dg.country,
-    dpw.payment_date,
-    dpw.day_sum DESC,
-    dpw.customer_id;
+    country_name,
+    day_rank_in_country,
+    pay_date,
+    customer_id;

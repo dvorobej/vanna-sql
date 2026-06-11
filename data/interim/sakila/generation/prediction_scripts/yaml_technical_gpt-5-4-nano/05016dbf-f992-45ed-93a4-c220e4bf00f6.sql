@@ -27,5 +27,5 @@ HAVING
   COUNT(p.p01) >= 10
   OR SUM(p.p05) > 100.00
 ORDER BY
-  customer_id,
-  staff_id;
+  c.h01,
+  s.o01;

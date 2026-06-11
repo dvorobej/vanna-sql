@@ -7,18 +7,19 @@ SELECT
   CASE
     WHEN COUNT(p.p01) > 10 OR SUM(p.p05) > 80 THEN 1
     ELSE 0
-  END AS suspicious_activity_flag
-FROM pay AS p
-JOIN cus AS c
+  END AS suspicious_activity
+FROM cus AS c
+JOIN pay AS p
   ON p.p02 = c.h01
 WHERE p.p06 >= '2005-07-01'
   AND p.p06 < '2005-08-01'
 GROUP BY
+  c.h01,
   c.h03,
   c.h04
 ORDER BY
-  suspicious_activity_flag DESC,
+  suspicious_activity DESC,
   total_amount DESC,
-  average_payment DESC,
+  payment_count DESC,
   first_name,
   last_name;

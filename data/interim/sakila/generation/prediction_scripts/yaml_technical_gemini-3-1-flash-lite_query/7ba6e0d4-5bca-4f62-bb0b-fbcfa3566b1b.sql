@@ -11,7 +11,7 @@ SELECT
   END AS risk_level
 FROM cus AS c
 JOIN pay AS p
-  ON c.h01 = p.p02
+  ON p.p02 = c.h01
 WHERE p.p06 >= '2005-07-01'
   AND p.p06 < '2005-08-01'
 GROUP BY
@@ -20,4 +20,4 @@ GROUP BY
   c.h04
 HAVING COUNT(p.p01) >= 10
    AND SUM(p.p05) > 50
-ORDER BY total_amount DESC;
+ORDER BY total_amount DESC, payment_count DESC;

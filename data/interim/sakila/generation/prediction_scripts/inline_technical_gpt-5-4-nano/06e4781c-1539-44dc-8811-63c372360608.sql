@@ -5,7 +5,7 @@ SELECT
   COUNT(p.p01) AS payment_count,
   SUM(p.p05) AS total_amount,
   AVG(p.p05) AS avg_payment_amount,
-  CAST(SUM(CASE WHEN p.p05 > 5.00 THEN 1 ELSE 0 END) AS REAL) / COUNT(p.p01) AS share_payments_over_5
+  AVG(CASE WHEN p.p05 > 5.00 THEN 1.0 ELSE 0.0 END) AS share_payments_above_5
 FROM cus AS c
 JOIN pay AS p
   ON p.p02 = c.h01

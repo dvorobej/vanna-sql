@@ -1,6 +1,6 @@
 SELECT COUNT(p2.p01)
     FROM pay AS p2
-    WHERE p2.p02 = p.p02
+    WHERE p2.p02 = c.h01
       AND p2.p06 >= '2005-06-01'
       AND p2.p06 < '2005-07-01'
   ) AS staff_share_of_customer_payments
@@ -15,9 +15,6 @@ GROUP BY
   c.h01,
   c.h03,
   c.h04,
-  s.o01,
-  s.o02,
-  s.o03
-HAVING
-  SUM(p.p05) > 50
-ORDER BY total_amount DESC, payment_count DESC, customer_id, staff_id;
+  s.o01
+HAVING SUM(p.p05) > 50
+ORDER BY total_amount DESC, payment_count DESC;

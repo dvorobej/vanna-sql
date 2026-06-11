@@ -24,5 +24,5 @@ HAVING
   SUM(p.p05) > 50
 ORDER BY
   total_amount DESC,
-  max_single_payment DESC,
+  payment_count DESC,
   customer_id;

@@ -9,12 +9,12 @@ SELECT
   ROUND(SUM(p.p05), 2) AS total_amount,
   ROUND(AVG(p.p05), 2) AS average_check,
   ROUND(
-    1.0 * SUM(CASE WHEN p.p03 = s.o01 THEN 1 ELSE 0 END) / COUNT(p.p01),
+    1.0 * SUM(CASE WHEN s.o01 = p.p03 THEN 1 ELSE 0 END) / COUNT(p.p01),
     4
-  ) AS staff_share_operations
-FROM pay AS p
-JOIN cus AS c
-  ON c.h01 = p.p02
+  ) AS staff_operations_share
+FROM cus AS c
+JOIN pay AS p
+  ON p.p02 = c.h01
 JOIN stf AS s
   ON s.o01 = p.p03
 WHERE p.p06 >= '2005-06-01'
@@ -27,4 +27,6 @@ GROUP BY
   s.o02,
   s.o03
 HAVING SUM(p.p05) > 50
-ORDER BY total_amount DESC, payment_count DESC;
+ORDER BY
+  total_amount DESC,
+  payment_count DESC;

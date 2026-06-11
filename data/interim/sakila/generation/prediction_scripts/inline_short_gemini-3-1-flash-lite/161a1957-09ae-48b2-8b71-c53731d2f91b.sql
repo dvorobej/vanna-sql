@@ -14,11 +14,11 @@ customer_history AS (
     SELECT
         ds.*,
         (
-            SELECT AVG(prev.daily_amount)
-            FROM daily_stats AS prev
-            WHERE prev.customer_id = ds.customer_id
-              AND prev.payment_date >= date(ds.payment_date, '-30 days')
-              AND prev.payment_date < ds.payment_date
+            SELECT AVG(h.daily_amount)
+            FROM daily_stats AS h
+            WHERE h.customer_id = ds.customer_id
+              AND h.payment_date >= date(ds.payment_date, '-30 days')
+              AND h.payment_date < ds.payment_date
         ) AS avg_30d
     FROM daily_stats AS ds
     WHERE ds.payment_count >= 3
@@ -34,9 +34,9 @@ country_percentiles AS (
             JOIN adr a ON a.e01 = c2.h06
             JOIN cty ct ON ct.d01 = a.e05
             WHERE ct.d03 = c.c01
-            ORDER BY daily_amount
-            LIMIT 1 OFFSET (SELECT CAST(COUNT(*) * 0.95 AS INT) FROM daily_stats)
-        )) AS p95_amount
+            ORDER BY val
+            LIMIT 1 OFFSET (SELECT COUNT(*) * 0.95 FROM daily_stats)
+        )) AS p95_val
     FROM cnt c
 ),
 suspicious_data AS (
@@ -47,15 +47,15 @@ suspicious_data AS (
         cty.d02 AS city,
         cnt.c01 AS country_id,
         (ch.daily_amount - ch.avg_30d) AS deviation
-    FROM customer_history ch
-    JOIN cus c ON c.h01 = ch.customer_id
-    JOIN adr a ON a.e01 = c.h06
-    JOIN cty cty ON cty.d01 = a.e05
-    JOIN cnt cnt ON cnt.c01 = cty.d03
-    JOIN country_percentiles cp ON cp.country_id = cnt.c01
+    FROM customer_history AS ch
+    JOIN cus AS c ON c.h01 = ch.customer_id
+    JOIN adr AS a ON a.e01 = c.h06
+    JOIN cty AS cty ON cty.d01 = a.e05
+    JOIN cnt AS cnt ON cnt.c01 = cty.d03
+    JOIN country_percentiles AS cp ON cp.country_id = cnt.c01
     WHERE ch.avg_30d IS NOT NULL
       AND ch.daily_amount >= 2 * ch.avg_30d
-      AND ch.daily_amount > cp.p95_amount
+      AND ch.daily_amount > cp.p95_val
 )
 SELECT
     customer_name,

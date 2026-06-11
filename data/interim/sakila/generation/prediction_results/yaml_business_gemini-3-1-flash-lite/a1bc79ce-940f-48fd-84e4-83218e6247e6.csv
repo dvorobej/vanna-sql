@@ -1,4 +1,4 @@
-first_name,last_name,payment_count,total_amount,average_payment,max_payment,risk_flag
+first_name,last_name,payment_count,total_amount,average_payment,max_payment,risk_level
 MARY,SMITH,12,50.88000000000002,4.240000000000001,7.99,высокий
 PATRICIA,JOHNSON,14,75.86,5.418571428571428,10.99,высокий
 LINDA,WILLIAMS,13,68.87000000000002,5.2976923076923095,10.99,высокий

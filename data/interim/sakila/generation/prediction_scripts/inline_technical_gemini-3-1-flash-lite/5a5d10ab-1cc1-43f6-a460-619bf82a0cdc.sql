@@ -18,4 +18,5 @@ GROUP BY
 HAVING SUM(p.p05) > 30.00
 ORDER BY
   total_amount DESC,
-  payment_count DESC;
+  payment_count DESC,
+  customer_id;

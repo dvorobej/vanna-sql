@@ -1,4 +1,4 @@
-customer_id,first_name,last_name,payment_count,total_payment_amount,avg_payment_amount,other_store_staff_payment_sum
+customer_id,first_name,last_name,payment_count,total_payment_amount,avg_payment_amount,other_store_staff_paid_amount
 148,ELEANOR,HUNT,22,100.78,4.58,39.93
 470,GORDON,ALLARD,17,96.83,5.7,25.96
 522,ARNOLD,HAVENS,18,96.82,5.38,32.93

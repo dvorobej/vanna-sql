@@ -1,129 +1,193 @@
-WITH win7 AS (
+WITH win_base AS (
+  SELECT
+    c.h01 AS customer_id,
+    c.h03 AS first_name,
+    c.h04 AS last_name,
+    c.h06 AS customer_address_id,
+    date(p.p06) AS d,
+    SUM(CAST(p.p05 AS REAL)) AS win_amount_7d,
+    COUNT(p.p01) AS win_payment_count_7d
+  FROM pay p
+  JOIN cus c
+    ON c.h01 = p.p02
+  GROUP BY
+    c.h01, c.h03, c.h04, c.h06, date(p.p06)
+),
+windows AS (
+  SELECT
+    wb.customer_id,
+    wb.first_name,
+    wb.last_name,
+    wb.d AS window_start_date,
+    (
+      SELECT SUM(wb2.win_amount_7d)
+      FROM win_base wb2
+      WHERE wb2.customer_id = wb.customer_id
+        AND wb2.d >= date(wb.d)
+        AND wb2.d < date(wb.d, '+7 days')
+    ) AS win_amount_7d,
+    (
+      SELECT SUM(wb2.win_payment_count_7d)
+      FROM win_base wb2
+      WHERE wb2.customer_id = wb.customer_id
+        AND wb2.d >= date(wb.d)
+        AND wb2.d < date(wb.d, '+7 days')
+    ) AS win_payment_count_7d
+  FROM win_base wb
+),
+windows_scored AS (
+  SELECT
+    w.*,
+    (
+      SELECT AVG(wb_prev.win_amount_7d)
+      FROM win_base wb_prev
+      WHERE wb_prev.customer_id = w.customer_id
+        AND wb_prev.d >= date(w.window_start_date, '-30 days')
+        AND wb_prev.d < date(w.window_start_date)
+    ) AS avg_daily_amount_prev_30d,
+    (
+      SELECT AVG(wb_prev.win_payment_count_7d)
+      FROM win_base wb_prev
+      WHERE wb_prev.customer_id = w.customer_id
+        AND wb_prev.d >= date(w.window_start_date, '-30 days')
+        AND wb_prev.d < date(w.window_start_date)
+    ) AS avg_daily_payment_count_prev_30d
+  FROM windows w
+),
+qualifying_windows AS (
+  SELECT
+    ws.*,
+    (ws.win_amount_7d / NULLIF(ws.avg_daily_amount_prev_30d * 7.0, 0)) AS amount_multiplier
+  FROM windows_scored ws
+  WHERE ws.avg_daily_amount_prev_30d IS NOT NULL
+    AND ws.avg_daily_amount_prev_30d > 0
+    AND ws.win_amount_7d >= 3.0 * ws.avg_daily_amount_prev_30d * 7.0
+    AND ws.win_payment_count_7d >= 5
+),
+window_payments AS (
   SELECT
     p.p02 AS customer_id,
-    date(p.p06) AS win_end_date,
-    SUM(CAST(p.p05 AS REAL)) AS win_sum_7d,
-    COUNT(p.p01) AS win_pay_count_7d
-  FROM pay AS p
-  GROUP BY
-    p.p02,
-    date(p.p06)
-),
-win7_scored AS (
-  SELECT
-    w.customer_id,
-    w.win_end_date,
-    w.win_sum_7d,
-    w.win_pay_count_7d,
-    (
-      SELECT AVG(w2.win_sum_7d)
-      FROM win7 AS w2
-      WHERE w2.customer_id = w.customer_id
-        AND w2.win_end_date >= date(w.win_end_date, '-37 days')
-        AND w2.win_end_date < date(w.win_end_date, '-7 days')
-    ) AS hist_avg_win_sum_30d,
-    (
-      SELECT AVG(w2.win_pay_count_7d * 1.0)
-      FROM win7 AS w2
-      WHERE w2.customer_id = w.customer_id
-        AND w2.win_end_date >= date(w.win_end_date, '-37 days')
-        AND w2.win_end_date < date(w.win_end_date, '-7 days')
-    ) AS hist_avg_win_pay_count_30d
-  FROM win7 AS w
-),
-selected_windows AS (
-  SELECT
-    customer_id,
-    win_end_date AS suspicious_date,
-    date(win_end_date, '-6 days') AS win_start_date,
-    win_sum_7d AS suspicious_sum_7d,
-    win_pay_count_7d AS suspicious_pay_count_7d,
-    hist_avg_win_sum_30d
-  FROM win7_scored
-  WHERE hist_avg_win_sum_30d IS NOT NULL
-    AND hist_avg_win_sum_30d > 0
-    AND win_sum_7d >= 3.0 * hist_avg_win_sum_30d
-    AND win_pay_count_7d >= 5
-),
-window_films AS (
-  SELECT
-    sw.customer_id,
-    sw.suspicious_date,
-    COUNT(DISTINCT f.i01) AS distinct_films_count
-  FROM selected_windows AS sw
-  JOIN pay AS p
-    ON p.p02 = sw.customer_id
-   AND date(p.p06) BETWEEN sw.win_start_date AND sw.win_end_date
-  JOIN ren AS r
+    q.window_start_date,
+    p.p01 AS payment_id,
+    p.p05 AS payment_amount,
+    p.p06 AS payment_datetime,
+    p.p03 AS staff_id,
+    r.q01 AS rental_id,
+    r.q03 AS inventory_id,
+    s.o07 AS staff_store_id,
+    i.n01 AS inv_copy_id,
+    i.n02 AS film_id,
+    i.n03 AS inventory_store_id,
+    a.e01 AS address_id,
+    co.c01 AS country_id
+  FROM qualifying_windows q
+  JOIN pay p
+    ON p.p02 = q.customer_id
+   AND date(p.p06) >= q.window_start_date
+   AND date(p.p06) < date(q.window_start_date, '+7 days')
+  JOIN ren r
     ON r.q01 = p.p04
-  JOIN inv AS i
-    ON i.n01 = r.q03
-  JOIN flm AS f
-    ON f.i01 = i.n02
-  GROUP BY
-    sw.customer_id,
-    sw.suspicious_date
-),
-window_staff_stores AS (
-  SELECT
-    sw.customer_id,
-    sw.suspicious_date,
-    COUNT(DISTINCT p.p03) AS distinct_staff_count,
-    COUNT(DISTINCT s.o07) AS distinct_store_count
-  FROM selected_windows AS sw
-  JOIN pay AS p
-    ON p.p02 = sw.customer_id
-   AND date(p.p06) BETWEEN sw.win_start_date AND sw.win_end_date
-  JOIN stf AS s
+  JOIN stf s
     ON s.o01 = p.p03
-  GROUP BY
-    sw.customer_id,
-    sw.suspicious_date
+  JOIN inv i
+    ON i.n01 = r.q03
+  JOIN cus c
+    ON c.h01 = p.p02
+  JOIN adr a
+    ON a.e01 = c.h06
+  JOIN cty ct
+    ON ct.d01 = a.e05
+  JOIN cnt co
+    ON co.c01 = ct.d03
 ),
-window_details AS (
+window_film_counts AS (
   SELECT
-    sw.customer_id,
-    sw.suspicious_date,
-    sw.win_start_date,
-    sw.suspicious_sum_7d,
-    sw.suspicious_pay_count_7d,
-    ws.distinct_staff_count,
-    ws.distinct_store_count,
-    wf.distinct_films_count,
-    cnt.c02 AS country_name,
-    cty.d02 AS city_name,
-    adr.e01 AS address_id
-  FROM selected_windows AS sw
-  JOIN cus AS c
-    ON c.h01 = sw.customer_id
-  JOIN adr
-    ON adr.e01 = c.h06
-  JOIN cty
-    ON cty.d01 = adr.e05
+    wp.customer_id,
+    wp.window_start_date,
+    COUNT(DISTINCT f.film_id) AS distinct_film_id_count
+  FROM (
+    SELECT DISTINCT
+      wp2.customer_id,
+      wp2.window_start_date,
+      i.n02 AS film_id
+    FROM window_payments wp2
+    JOIN inv i
+      ON i.n01 = wp2.inventory_id
+    JOIN flm f
+      ON f.i01 = i.n02
+  ) f
+  JOIN window_payments wp
+    ON wp.customer_id = f.customer_id
+   AND wp.window_start_date = f.window_start_date
+  GROUP BY
+    wp.customer_id,
+    wp.window_start_date
+),
+window_people_places AS (
+  SELECT
+    wp.customer_id,
+    wp.window_start_date,
+    MAX(cat.cty.d02) AS city,
+    MAX(cnt.c02) AS country,
+    COUNT(DISTINCT wp.staff_id) AS distinct_staff_count,
+    COUNT(DISTINCT wp.staff_store_id) AS distinct_staff_store_count,
+    COUNT(DISTINCT wp.inventory_store_id) AS distinct_inventory_store_count,
+    COUNT(DISTINCT wp.film_id) AS distinct_film_attempt_count
+  FROM window_payments wp
+  JOIN cus c
+    ON c.h01 = wp.customer_id
+  JOIN adr a
+    ON a.e01 = c.h06
+  JOIN cty cat
+    ON cat.d01 = a.e05
   JOIN cnt
-    ON cnt.c01 = cty.d03
-  LEFT JOIN window_staff_stores AS ws
-    ON ws.customer_id = sw.customer_id
-   AND ws.suspicious_date = sw.suspicious_date
-  LEFT JOIN window_films AS wf
-    ON wf.customer_id = sw.customer_id
-   AND wf.suspicious_date = sw.suspicious_date
+    ON cnt.c01 = cat.d03
+  GROUP BY
+    wp.customer_id,
+    wp.window_start_date
+),
+window_risk_output AS (
+  SELECT
+    qw.customer_id,
+    qw.first_name,
+    qw.last_name,
+    qw.window_start_date,
+    qw.win_payment_count_7d AS payment_count_7d,
+    ROUND(qw.win_amount_7d, 2) AS suspicious_amount_7d,
+    ROUND(qw.avg_daily_amount_prev_30d * 7.0, 2) AS historical_avg_amount_7d,
+    ROUND(qw.win_amount_7d - qw.avg_daily_amount_prev_30d * 7.0, 2) AS excess_amount_7d,
+    wp.city,
+    wp.country,
+    wp.distinct_staff_count,
+    wp.distinct_staff_store_count,
+    wp.distinct_inventory_store_count,
+    COALESCE(wfc.distinct_film_id_count, 0) AS distinct_film_id_count,
+    RANK() OVER (
+      ORDER BY qw.win_amount_7d DESC
+    ) AS suspicious_rank_by_amount
+  FROM qualifying_windows qw
+  LEFT JOIN window_people_places wp
+    ON wp.customer_id = qw.customer_id
+   AND wp.window_start_date = qw.window_start_date
+  LEFT JOIN window_film_counts wfc
+    ON wfc.customer_id = qw.customer_id
+   AND wfc.window_start_date = qw.window_start_date
 )
 SELECT
   customer_id,
-  address_id,
-  country_name,
-  city_name,
-  win_start_date,
-  suspicious_date,
-  suspicious_pay_count_7d AS payment_count_7d,
-  ROUND(suspicious_sum_7d, 2) AS suspicious_sum_7d,
+  first_name,
+  last_name,
+  window_start_date,
+  payment_count_7d,
+  suspicious_amount_7d,
+  historical_avg_amount_7d,
+  excess_amount_7d,
+  city,
+  country,
   distinct_staff_count,
-  distinct_store_count,
-  distinct_films_count,
-  RANK() OVER (ORDER BY suspicious_sum_7d DESC, suspicious_pay_count_7d DESC, customer_id) AS suspicious_rank_overall
-FROM window_details
-ORDER BY
-  suspicious_sum_7d DESC,
-  suspicious_pay_count_7d DESC,
-  customer_id;
+  distinct_staff_store_count,
+  distinct_inventory_store_count,
+  distinct_film_id_count,
+  suspicious_rank_by_amount
+FROM window_risk_output
+ORDER BY suspicious_amount_7d DESC, customer_id, window_start_date;

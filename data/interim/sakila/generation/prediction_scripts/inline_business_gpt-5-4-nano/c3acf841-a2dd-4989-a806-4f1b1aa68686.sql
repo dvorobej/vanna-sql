@@ -7,11 +7,11 @@ SELECT
   s.o03 AS staff_last_name,
   COUNT(p.p01) AS payment_count,
   SUM(p.p05) AS total_amount,
-  AVG(p.p05) AS avg_check,
+  AVG(p.p05) AS average_check,
   CASE
     WHEN SUM(p.p05) > 30 THEN 1
     ELSE 0
-  END AS high_attention_flag
+  END AS increased_attention_flag
 FROM pay AS p
 JOIN cus AS c
   ON c.h01 = p.p02
@@ -26,5 +26,5 @@ HAVING COUNT(p.p01) >= 5
 ORDER BY
   total_amount DESC,
   payment_count DESC,
-  customer_id,
-  staff_id;
+  customer_last_name,
+  customer_first_name;

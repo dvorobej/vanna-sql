@@ -9,9 +9,9 @@ SELECT
     1.0 * SUM(CASE WHEN p.p05 > 5.00 THEN 1 ELSE 0 END) / COUNT(p.p01),
     4
   ) AS share_payments_above_5
-FROM cus AS c
-JOIN pay AS p
-  ON p.p02 = c.h01
+FROM pay AS p
+JOIN cus AS c
+  ON c.h01 = p.p02
 WHERE p.p06 >= '2005-06-01'
   AND p.p06 < '2005-07-01'
 GROUP BY
@@ -20,6 +20,6 @@ GROUP BY
   c.h04
 HAVING COUNT(p.p01) >= 5
 ORDER BY
-  payment_count DESC,
   total_amount DESC,
+  payment_count DESC,
   customer_id;

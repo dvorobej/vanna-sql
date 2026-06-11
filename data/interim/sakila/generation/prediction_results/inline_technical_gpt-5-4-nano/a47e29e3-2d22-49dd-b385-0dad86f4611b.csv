@@ -1,2 +1,2 @@
-customer_id,store_id,payment_count,avg_payment_amount,max_payment_amount,share_amount_payments_above_8
-454,2,10,5.290000000000001,9.99,0.18884688090737237
+customer_id,store_id,payment_count,avg_payment_amount,max_payment_amount,share_payments_above_8
+454,2,10,5.290000000000001,9.99,0.1

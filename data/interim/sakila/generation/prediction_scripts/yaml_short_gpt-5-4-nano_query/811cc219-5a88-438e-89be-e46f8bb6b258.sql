@@ -21,8 +21,4 @@ GROUP BY
   c.h04,
   p.p03
 HAVING COUNT(p.p01) >= 5
-ORDER BY
-  total_amount DESC,
-  payment_count DESC,
-  customer_id,
-  staff_id;
+ORDER BY total_amount DESC, payment_count DESC, customer_id, staff_id;

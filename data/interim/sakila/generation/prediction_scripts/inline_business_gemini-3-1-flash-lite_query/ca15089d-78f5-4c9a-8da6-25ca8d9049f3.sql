@@ -4,9 +4,9 @@ WITH monthly_stats AS (
         strftime('%Y-%m', p.p06) AS payment_month,
         SUM(p.p05) AS monthly_sum,
         COUNT(*) AS payment_count,
-        COUNT(DISTINCT DATE(p.p06)) AS distinct_days,
-        COUNT(DISTINCT p.p03) AS staff_count,
-        COUNT(DISTINCT s.o07) AS store_count,
+        COUNT(DISTINCT date(p.p06)) AS distinct_days,
+        COUNT(DISTINCT p.p03) AS distinct_staff,
+        COUNT(DISTINCT s.o07) AS distinct_stores,
         MAX(p.p05) AS max_payment
     FROM pay AS p
     JOIN stf AS s ON s.o01 = p.p03
@@ -25,8 +25,7 @@ history_stats AS (
 suspicious_clients AS (
     SELECT
         hs.*,
-        c.h03 AS first_name,
-        c.h04 AS last_name,
+        c.h03 || ' ' || c.h04 AS full_name,
         cnt.c02 AS country,
         cty.d02 AS city,
         cnt.c01 AS country_id
@@ -36,28 +35,28 @@ suspicious_clients AS (
     JOIN cty ON cty.d01 = a.e05
     JOIN cnt ON cnt.c01 = cty.d03
     WHERE hs.prev_avg_monthly_sum IS NOT NULL
-      AND hs.monthly_sum >= 3 * hs.prev_avg_monthly_sum
+      AND hs.monthly_sum > 3 * hs.prev_avg_monthly_sum
       AND hs.payment_count >= 3
       AND hs.distinct_days >= 3
-      AND (hs.staff_count > 1 OR hs.store_count > 1)
+      AND (hs.distinct_staff >= 2 OR hs.distinct_stores >= 2)
 )
 SELECT
-    sc.payment_month,
-    sc.first_name || ' ' || sc.last_name AS full_name,
-    sc.country,
-    sc.city,
-    sc.payment_count,
-    ROUND(sc.monthly_sum, 2) AS monthly_sum,
-    ROUND(sc.max_payment, 2) AS max_payment,
-    ROUND(sc.max_payment / NULLIF(sc.monthly_sum, 0), 4) AS max_payment_share,
-    sc.staff_count,
-    sc.store_count,
+    payment_month,
+    full_name,
+    country,
+    city,
+    payment_count,
+    ROUND(monthly_sum, 2) AS monthly_sum,
+    ROUND(max_payment, 2) AS max_payment,
+    ROUND(max_payment / NULLIF(monthly_sum, 0), 4) AS max_payment_share,
+    distinct_staff,
+    distinct_stores,
     RANK() OVER (
-        PARTITION BY sc.country_id, sc.payment_month
-        ORDER BY sc.monthly_sum DESC
+        PARTITION BY country_id, payment_month
+        ORDER BY monthly_sum DESC
     ) AS country_rank
-FROM suspicious_clients AS sc
+FROM suspicious_clients
 ORDER BY
-    sc.payment_month DESC,
-    sc.country,
+    payment_month,
+    country,
     country_rank;

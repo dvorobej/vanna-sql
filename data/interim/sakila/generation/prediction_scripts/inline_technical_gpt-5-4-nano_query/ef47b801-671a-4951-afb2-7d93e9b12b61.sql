@@ -4,12 +4,12 @@ SELECT
   c.h04 AS last_name,
   s.j01 AS store_id,
   COUNT(p.p01) AS payment_count,
-  ROUND(AVG(p.p05), 2) AS avg_payment_amount,
-  ROUND(MAX(p.p05), 2) AS max_payment_amount,
+  ROUND(AVG(p.p05), 2) AS avg_payment,
+  ROUND(MAX(p.p05), 2) AS max_payment,
   CASE
     WHEN COUNT(p.p01) > 10 THEN 1
     ELSE 0
-  END AS needs_additional_check
+  END AS extra_check_required
 FROM pay AS p
 JOIN cus AS c
   ON c.h01 = p.p02
@@ -24,7 +24,6 @@ GROUP BY
   s.j01
 HAVING SUM(p.p05) > 50
 ORDER BY
-  needs_additional_check DESC,
   SUM(p.p05) DESC,
   payment_count DESC,
   customer_id;

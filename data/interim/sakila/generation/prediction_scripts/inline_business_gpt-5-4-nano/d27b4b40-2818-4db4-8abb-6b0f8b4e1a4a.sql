@@ -1,48 +1,52 @@
-WITH customer_geo AS (
-    SELECT
-        c.h01 AS customer_id,
-        co.c02 AS country_name,
-        ct.d02 AS city_name
-    FROM cus AS c
-    JOIN adr AS a
-      ON a.e01 = c.h06
-    JOIN cty AS ct
-      ON ct.d01 = a.e05
-    JOIN cnt AS co
-      ON co.c01 = ct.d03
-),
-pay_base AS (
+WITH payment_enriched AS (
     SELECT
         p.p01 AS payment_id,
         p.p02 AS customer_id,
-        p.p03 AS staff_id,
-        s.o07 AS store_id,
-        p.p04 AS rental_id,
         date(p.p06) AS payment_date,
-        CAST(p.p05 AS REAL) AS amount
+        CAST(p.p05 AS REAL) AS payment_amount,
+        p.p03 AS staff_id,
+        s.o07 AS staff_store_id,
+        c.h06 AS customer_address_id,
+        cnt.c01 AS country_id,
+        cnt.c02 AS country_name,
+        cty.d02 AS city_name
     FROM pay AS p
+    JOIN cus AS c
+        ON c.h01 = p.p02
+    JOIN adr AS a
+        ON a.e01 = c.h06
+    JOIN cty
+        ON cty.d01 = a.e05
+    JOIN cnt
+        ON cnt.c01 = cty.d03
     JOIN stf AS s
-      ON s.o01 = p.p03
+        ON s.o01 = p.p03
+    WHERE p.p06 IS NOT NULL
 ),
 daily_customer AS (
     SELECT
-        pb.customer_id,
-        pb.payment_date,
+        customer_id,
+        country_id,
+        country_name,
+        city_name,
+        payment_date,
         COUNT(*) AS payment_count,
-        SUM(pb.amount) AS day_sum,
-        MAX(pb.amount) AS max_payment,
-        COUNT(DISTINCT pb.staff_id) AS staff_count,
-        COUNT(DISTINCT pb.store_id) AS store_count
-    FROM pay_base AS pb
+        SUM(payment_amount) AS day_total_amount,
+        COUNT(DISTINCT staff_id) AS distinct_staff_count,
+        COUNT(DISTINCT staff_store_id) AS distinct_store_count
+    FROM payment_enriched
     GROUP BY
-        pb.customer_id,
-        pb.payment_date
+        customer_id,
+        country_id,
+        country_name,
+        city_name,
+        payment_date
 ),
 daily_with_history AS (
     SELECT
         dc.*,
         (
-            SELECT AVG(dc_prev.day_sum)
+            SELECT AVG(dc_prev.day_total_amount)
             FROM daily_customer AS dc_prev
             WHERE dc_prev.customer_id = dc.customer_id
               AND dc_prev.payment_date >= date(dc.payment_date, '-30 days')
@@ -53,39 +57,35 @@ daily_with_history AS (
 suspicious_days AS (
     SELECT
         dwh.*,
-        (dwh.day_sum / NULLIF(dwh.avg_prev_30d, 0)) AS exceed_coeff
+        (dwh.day_total_amount / NULLIF(dwh.avg_prev_30d, 0.0)) AS exceed_multiplier
     FROM daily_with_history AS dwh
     WHERE dwh.avg_prev_30d IS NOT NULL
       AND dwh.avg_prev_30d > 0
       AND dwh.payment_count >= 3
-      AND (dwh.staff_count >= 2 OR dwh.store_count >= 2)
-      AND dwh.day_sum >= 3.0 * dwh.avg_prev_30d
+      AND dwh.day_total_amount >= 3.0 * dwh.avg_prev_30d
+      AND (dwh.distinct_staff_count >= 2 OR dwh.distinct_store_count >= 2)
 ),
 ranked_days AS (
     SELECT
         sd.*,
         RANK() OVER (
             PARTITION BY sd.customer_id
-            ORDER BY sd.day_sum DESC, sd.payment_date ASC
-        ) AS day_rank_by_sum
+            ORDER BY sd.day_total_amount DESC, sd.payment_date
+        ) AS day_rank_within_customer
     FROM suspicious_days AS sd
 )
 SELECT
-    rd.customer_id,
-    cg.country_name,
-    cg.city_name,
-    rd.payment_date,
-    rd.payment_count,
-    ROUND(rd.day_sum, 2) AS day_sum,
-    ROUND(rd.avg_prev_30d, 2) AS avg_prev_30d,
-    ROUND(rd.exceed_coeff, 4) AS exceed_coeff,
-    rd.staff_count,
-    rd.store_count,
-    rd.day_rank_by_sum
-FROM ranked_days AS rd
-JOIN customer_geo AS cg
-  ON cg.customer_id = rd.customer_id
+    customer_id,
+    country_name,
+    city_name,
+    payment_date,
+    payment_count,
+    ROUND(day_total_amount, 2) AS day_total_amount,
+    ROUND(avg_prev_30d, 2) AS avg_prev_30d,
+    ROUND(exceed_multiplier, 3) AS exceed_multiplier,
+    day_rank_within_customer
+FROM ranked_days
 ORDER BY
-    rd.customer_id,
-    rd.day_rank_by_sum,
-    rd.payment_date;
+    customer_id,
+    day_rank_within_customer,
+    payment_date;

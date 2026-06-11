@@ -1,131 +1,156 @@
 WITH pay_daily AS (
-  SELECT
-    p.p02 AS customer_id,
-    date(p.p06) AS day_date,
-    COUNT(p.p01) AS payment_count,
-    SUM(CAST(p.p05 AS REAL)) AS day_sum
-  FROM pay AS p
-  GROUP BY
-    p.p02,
-    date(p.p06)
+    SELECT
+        p.p02 AS customer_id,
+        date(p.p06) AS day_start,
+        SUM(CAST(p.p05 AS REAL)) AS day_amount,
+        COUNT(p.p01) AS day_payment_count
+    FROM pay AS p
+    GROUP BY
+        p.p02,
+        date(p.p06)
 ),
-windows AS (
-  SELECT
-    pd.customer_id,
-    pd.day_date AS window_end_date,
-    SUM(pd_prev.day_sum) AS window_sum_7d,
-    SUM(pd_prev.payment_count) AS window_payment_count_7d
-  FROM pay_daily AS pd
-  JOIN pay_daily AS pd_prev
-    ON pd_prev.customer_id = pd.customer_id
-   AND pd_prev.day_date > date(pd.day_date, '-7 days')
-   AND pd_prev.day_date <= pd.day_date
-  GROUP BY
-    pd.customer_id,
-    pd.day_date
+win_7d AS (
+    SELECT
+        customer_id,
+        day_start AS window_end_date,
+        SUM(day_amount) AS amount_7d,
+        SUM(day_payment_count) AS payment_count_7d
+    FROM pay_daily
+    GROUP BY customer_id, day_start
 ),
-windows_scored AS (
-  SELECT
-    w.*,
-    AVG(w2.window_sum_7d) AS hist_avg_window_sum_7d,
-    AVG(w2.window_payment_count_7d) AS hist_avg_window_payment_count_7d
-  FROM windows AS w
-  LEFT JOIN windows AS w2
-    ON w2.customer_id = w.customer_id
-   AND date(w2.window_end_date) < date(w.window_end_date, '-7 days')
-   AND date(w2.window_end_date) >= date(w.window_end_date, '-37 days')
-  GROUP BY
-    w.customer_id,
-    w.window_end_date,
-    w.window_sum_7d,
-    w.window_payment_count_7d
+win_7d_with_history AS (
+    SELECT
+        w.customer_id,
+        w.window_end_date,
+        w.amount_7d,
+        w.payment_count_7d,
+
+        (
+            SELECT AVG(w2.amount_7d)
+            FROM win_7d AS w2
+            WHERE w2.customer_id = w.customer_id
+              AND w2.window_end_date >= date(w.window_end_date, '-37 days')
+              AND w2.window_end_date <  date(w.window_end_date, '-7 days')
+        ) AS avg_amount_prev_30d,
+
+        (
+            SELECT AVG(w2.payment_count_7d)
+            FROM win_7d AS w2
+            WHERE w2.customer_id = w.customer_id
+              AND w2.window_end_date >= date(w.window_end_date, '-37 days')
+              AND w2.window_end_date <  date(w.window_end_date, '-7 days')
+        ) AS avg_payment_count_prev_30d
+    FROM win_7d AS w
 ),
-selected AS (
-  SELECT
-    ws.*,
-    (ws.window_sum_7d / NULLIF(ws.hist_avg_window_sum_7d, 0)) AS ratio_to_hist_avg
-  FROM windows_scored AS ws
-  WHERE ws.hist_avg_window_sum_7d IS NOT NULL
-    AND ws.hist_avg_window_sum_7d > 0
-    AND ws.window_sum_7d >= 3.0 * ws.hist_avg_window_sum_7d
-    AND ws.window_payment_count_7d >= 5
+qualifying_windows AS (
+    SELECT
+        customer_id,
+        window_end_date,
+        date(window_end_date, '-6 days') AS window_start_date,
+        amount_7d,
+        payment_count_7d,
+        avg_amount_prev_30d,
+        avg_payment_count_prev_30d,
+        amount_7d / NULLIF(avg_amount_prev_30d, 0) AS amount_multiplier
+    FROM win_7d_with_history
+    WHERE avg_amount_prev_30d IS NOT NULL
+      AND avg_amount_prev_30d > 0
+      AND amount_7d >= 3.0 * avg_amount_prev_30d
+      AND payment_count_7d >= 5
 ),
-window_payments AS (
-  SELECT
-    s.customer_id,
-    s.window_end_date,
-    date(p.p06) AS payment_day,
-    p.p01 AS payment_id,
-    p.p05 AS payment_amount,
-    p.p03 AS staff_id,
-    r.q01 AS rental_id,
-    r.q03 AS inventory_id,
-    inv.n03 AS store_id,
-    inv.n02 AS film_id
-  FROM selected AS s
-  JOIN pay AS p
-    ON p.p02 = s.customer_id
-   AND date(p.p06) > date(s.window_end_date, '-7 days')
-   AND date(p.p06) <= s.window_end_date
-  LEFT JOIN ren AS r
-    ON r.q01 = p.p04
-  LEFT JOIN inv AS inv
-    ON inv.n01 = r.q03
+window_i01_counts AS (
+    SELECT
+        qw.customer_id,
+        qw.window_end_date,
+        COUNT(DISTINCT i.n02) AS distinct_i01_count_in_window
+    FROM qualifying_windows AS qw
+    JOIN pay AS p
+        ON p.p02 = qw.customer_id
+       AND date(p.p06) >= qw.window_start_date
+       AND date(p.p06) <= qw.window_end_date
+    JOIN ren AS r
+        ON r.q01 = p.p04
+    JOIN inv AS i
+        ON i.n01 = r.q03
+    GROUP BY
+        qw.customer_id,
+        qw.window_end_date
 ),
-films_in_window AS (
-  SELECT
-    wp.customer_id,
-    wp.window_end_date,
-    COUNT(DISTINCT wp.film_id) AS distinct_films_i01
-  FROM window_payments wp
-  GROUP BY
-    wp.customer_id,
-    wp.window_end_date
+window_details AS (
+    SELECT
+        qw.customer_id,
+        qw.window_start_date,
+        qw.window_end_date,
+        qw.amount_7d AS suspicious_amount_7d,
+        qw.payment_count_7d AS suspicious_payment_count_7d,
+
+        adr.e01 AS customer_address_id,
+        cty.d01 AS customer_city_id,
+        cnt.c01 AS customer_country_id,
+        cty.d02 AS customer_city_name,
+        cnt.c02 AS customer_country_name,
+
+        COUNT(DISTINCT p.p03) AS distinct_staff_count,
+        COUNT(DISTINCT s.o07) AS distinct_store_count,
+        wi.distinct_i01_count_in_window
+    FROM qualifying_windows AS qw
+    JOIN pay AS p
+        ON p.p02 = qw.customer_id
+       AND date(p.p06) >= qw.window_start_date
+       AND date(p.p06) <= qw.window_end_date
+    JOIN cus AS c
+        ON c.h01 = p.p02
+    JOIN adr
+        ON adr.e01 = c.h06
+    JOIN cty
+        ON cty.d01 = adr.e05
+    JOIN cnt
+        ON cnt.c01 = cty.d03
+    JOIN stf AS s
+        ON s.o01 = p.p03
+    JOIN window_i01_counts AS wi
+        ON wi.customer_id = qw.customer_id
+       AND wi.window_end_date = qw.window_end_date
+    GROUP BY
+        qw.customer_id,
+        qw.window_start_date,
+        qw.window_end_date,
+        qw.amount_7d,
+        qw.payment_count_7d,
+        adr.e01,
+        cty.d01,
+        cnt.c01,
+        cty.d02,
+        cnt.c02,
+        wi.distinct_i01_count_in_window
 ),
-geo_info AS (
-  SELECT
-    c.h01 AS customer_id,
-    cnt.c02 AS country,
-    cty.d02 AS city
-  FROM cus c
-  JOIN adr a ON a.e01 = c.h06
-  JOIN cty ON cty.d01 = a.e05
-  JOIN cnt ON cnt.c01 = cty.d03
+ranked AS (
+    SELECT
+        wd.*,
+        DENSE_RANK() OVER (
+            ORDER BY wd.suspicious_amount_7d DESC
+        ) AS suspicious_rank_by_amount
+    FROM window_details wd
 )
 SELECT
-  s.customer_id,
-  gi.country,
-  gi.city,
-  s.window_end_date AS suspicious_window_end_date,
-  ROUND(s.window_sum_7d, 2) AS suspicious_window_sum_7d,
-  s.window_payment_count_7d AS suspicious_window_payment_count_7d,
-  COUNT(DISTINCT wp.staff_id) AS distinct_staff_count,
-  COUNT(DISTINCT wp.store_id) AS distinct_store_count,
-  MAX(wp.payment_day) AS last_payment_day_in_window,
-  MIN(wp.payment_day) AS first_payment_day_in_window,
-  MAX(wp.payment_amount) AS max_payment_amount_in_window,
-  fiw.distinct_films_i01 AS distinct_films_count_i01,
-  DENSE_RANK() OVER (
-    ORDER BY s.window_sum_7d DESC
-  ) AS suspicious_rank_over_all_customers
-FROM selected s
-JOIN window_payments wp
-  ON wp.customer_id = s.customer_id
- AND wp.window_end_date = s.window_end_date
-JOIN geo_info gi
-  ON gi.customer_id = s.customer_id
-LEFT JOIN films_in_window fiw
-  ON fiw.customer_id = s.customer_id
- AND fiw.window_end_date = s.window_end_date
-GROUP BY
-  s.customer_id,
-  gi.country,
-  gi.city,
-  s.window_end_date,
-  s.window_sum_7d,
-  s.window_payment_count_7d,
-  fiw.distinct_films_i01
+    r.suspicious_rank_by_amount,
+    c.h01 AS customer_id,
+    c.h03 AS customer_first_name,
+    c.h04 AS customer_last_name,
+    r.customer_country_name,
+    r.customer_city_name,
+    r.window_start_date,
+    r.window_end_date,
+    r.suspicious_payment_count_7d,
+    ROUND(r.suspicious_amount_7d, 2) AS suspicious_amount_7d,
+    r.distinct_staff_count,
+    r.distinct_store_count,
+    r.distinct_i01_count_in_window
+FROM ranked r
+JOIN cus c
+    ON c.h01 = r.customer_id
 ORDER BY
-  s.window_sum_7d DESC,
-  s.customer_id,
-  s.window_end_date;
+    r.suspicious_rank_by_amount,
+    r.suspicious_amount_7d DESC,
+    r.customer_id,
+    r.window_end_date;

@@ -19,4 +19,4 @@ HAVING COUNT(*) >= 5
 ORDER BY
   payment_count DESC,
   total_amount DESC,
-  c.h01;
+  customer_id;

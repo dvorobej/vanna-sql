@@ -1,14 +1,13 @@
 SELECT
   c.h01 AS customer_id,
-  c.h03 || ' ' || c.h04 AS full_name,
+  c.h03 || ' ' || c.h04 AS customer_full_name,
   COUNT(p.p01) AS payment_count,
   SUM(p.p05) AS total_amount,
-  SUM(CASE WHEN p.p05 > 8.00 THEN 1 ELSE 0 END) AS suspicious_large_payments
+  SUM(CASE WHEN p.p05 > 8.00 THEN 1 ELSE 0 END) AS suspicious_large_payment_count
 FROM cus AS c
 JOIN pay AS p
   ON p.p02 = c.h01
-WHERE
-  c.h07 IN ('1', 'Y')
+WHERE c.h07 IN ('1', 'Y')
   AND p.p06 >= '2005-07-01'
   AND p.p06 < '2005-08-01'
 GROUP BY

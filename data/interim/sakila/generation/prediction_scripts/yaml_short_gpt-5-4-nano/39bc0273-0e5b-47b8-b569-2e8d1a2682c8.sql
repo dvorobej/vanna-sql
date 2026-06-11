@@ -1,114 +1,116 @@
-WITH payments_2005 AS (
-  SELECT
-    p.p02 AS customer_id,
-    p.p03 AS staff_id,
-    p.p06,
-    date(p.p06, 'start of month') AS month_start,
-    CAST(p.p05 AS REAL) AS amount
-  FROM pay AS p
-),
-customer_geo AS (
-  SELECT
-    c.h01 AS customer_id,
-    c.h02 AS store_id,
-    co.c01 AS country_id
-  FROM cus AS c
-  JOIN adr AS a ON a.e01 = c.h06
-  JOIN cty AS ci ON ci.d01 = a.e05
-  JOIN cnt AS co ON co.c01 = ci.d03
-),
+WITH
 monthly_staff AS (
-  SELECT
-    cg.country_id,
-    cg.store_id,
-    p2005.customer_id,
-    p2005.staff_id,
-    p2005.month_start,
-    SUM(p2005.amount) AS monthly_amount,
-    COUNT(*) AS payment_count
-  FROM payments_2005 AS p2005
-  JOIN customer_geo AS cg
-    ON cg.customer_id = p2005.customer_id
-  WHERE p2005.p06 >= '2005-01-01'
-    AND p2005.p06 <  '2006-01-01'
-  GROUP BY
-    cg.country_id,
-    cg.store_id,
-    p2005.customer_id,
-    p2005.staff_id,
-    p2005.month_start
+    SELECT
+        p.p02 AS customer_id,
+        c.h02 AS store_id,
+        c.h01 AS customer_id_check,
+        p.p03 AS staff_id,
+        cn.c01 AS country_id,
+        cn.c02 AS country_name,
+        date(p.p06, 'start of month') AS month_start,
+        SUM(CAST(p.p05 AS REAL)) AS month_staff_amount,
+        COUNT(*) AS payment_count
+    FROM pay AS p
+    JOIN cus AS c
+        ON c.h01 = p.p02
+    JOIN adr AS a
+        ON a.e01 = c.h06
+    JOIN cty AS ct
+        ON ct.d01 = a.e05
+    JOIN cnt AS cn
+        ON cn.c01 = ct.d03
+    GROUP BY
+        p.p02,
+        c.h02,
+        p.p03,
+        cn.c01,
+        cn.c02,
+        date(p.p06, 'start of month')
 ),
-top_staff_per_month AS (
-  SELECT
-    ms.*,
-    DENSE_RANK() OVER (
-      PARTITION BY ms.country_id, ms.store_id, ms.customer_id, ms.month_start
-      ORDER BY ms.monthly_amount DESC
-    ) AS customer_staff_rank_in_month
-  FROM monthly_staff AS ms
+top_customer_month_staff AS (
+    SELECT
+        ms.*,
+        ROW_NUMBER() OVER (
+            PARTITION BY ms.country_id, ms.month_start, ms.customer_id, ms.store_id
+            ORDER BY ms.month_staff_amount DESC, ms.staff_id
+        ) AS rn_staff_within_customer_store_month
+    FROM monthly_staff AS ms
+),
+top_per_customer AS (
+    SELECT
+        *
+    FROM top_customer_month_staff
+    WHERE rn_staff_within_customer_store_month = 1
 ),
 country_month_avg AS (
-  SELECT
-    cg.country_id,
-    ms.month_start,
-    AVG(ms.monthly_amount) AS country_avg_monthly_amount
-  FROM monthly_staff AS ms
-  JOIN customer_geo AS cg
-    ON cg.customer_id = ms.customer_id
-  GROUP BY cg.country_id, ms.month_start
+    SELECT
+        country_id,
+        month_start,
+        AVG(month_staff_amount) AS country_avg_monthly_amount,
+        COUNT(*) AS country_month_customer_staff_count
+    FROM top_per_customer
+    GROUP BY country_id, month_start
 ),
-customer_month_country AS (
-  SELECT
-    ts.country_id,
-    ts.store_id,
-    ts.customer_id,
-    ts.staff_id,
-    ts.month_start,
-    ts.monthly_amount,
-    ts.payment_count,
-    LAG(ts.monthly_amount) OVER (
-      PARTITION BY ts.country_id, ts.store_id, ts.customer_id
-      ORDER BY ts.month_start
-    ) AS prev_month_amount,
-    cma.country_avg_monthly_amount
-  FROM top_staff_per_month AS ts
-  JOIN country_month_avg AS cma
-    ON cma.country_id = ts.country_id
-   AND cma.month_start = ts.month_start
-  WHERE ts.customer_staff_rank_in_month = 1
+ranked_country AS (
+    SELECT
+        t.*,
+        RANK() OVER (
+            PARTITION BY t.country_id, t.month_start
+            ORDER BY t.month_staff_amount DESC
+        ) AS customer_staff_rank_in_country
+    FROM top_per_customer AS t
 ),
-ranked_by_staff_in_country AS (
-  SELECT
-    cmc.*,
-    DENSE_RANK() OVER (
-      PARTITION BY cmc.country_id, cmc.month_start, cmc.store_id
-      ORDER BY cmc.monthly_amount DESC
-    ) AS staff_rank_in_country_month_store
-  FROM customer_month_country AS cmc
+final AS (
+    SELECT
+        rc.country_id,
+        rc.country_name,
+        rc.month_start,
+        rc.customer_id,
+        cu.h03 AS customer_first_name,
+        cu.h04 AS customer_last_name,
+        rc.store_id,
+        rc.staff_id,
+        st.o02 AS staff_first_name,
+        st.o03 AS staff_last_name,
+        rc.month_staff_amount,
+        rc.payment_count,
+        LAG(rc.month_staff_amount) OVER (
+            PARTITION BY rc.country_id, rc.customer_id, rc.store_id, rc.staff_id
+            ORDER BY rc.month_start
+        ) AS prev_month_amount,
+        cma.country_avg_monthly_amount
+    FROM ranked_country AS rc
+    JOIN cus AS cu
+        ON cu.h01 = rc.customer_id
+    LEFT JOIN stf AS st
+        ON st.o01 = rc.staff_id
+    JOIN country_month_avg AS cma
+        ON cma.country_id = rc.country_id
+       AND cma.month_start = rc.month_start
 )
 SELECT
-  r.country_id,
-  r.store_id,
-  r.customer_id,
-  r.staff_id,
-  r.month_start AS month,
-  ROUND(r.monthly_amount, 2) AS monthly_amount,
-  r.payment_count,
-  ROUND(r.prev_month_amount, 2) AS prev_month_amount,
-  ROUND(r.monthly_amount - r.prev_month_amount, 2) AS deviation_from_prev_month,
-  ROUND(r.country_avg_monthly_amount, 2) AS country_avg_monthly_amount,
-  ROUND(r.monthly_amount - r.country_avg_monthly_amount, 2) AS deviation_from_country_avg,
-  ROUND(
-    CASE WHEN r.country_avg_monthly_amount = 0 THEN NULL
-         ELSE (r.monthly_amount / r.country_avg_monthly_amount)
-    END,
-    4
-  ) AS ratio_to_country_avg,
-  r.staff_rank_in_country_month_store
-FROM ranked_by_staff_in_country AS r
+    country_id,
+    country_name,
+    month_start AS month,
+    customer_id,
+    customer_first_name,
+    customer_last_name,
+    store_id,
+    staff_id,
+    staff_first_name,
+    staff_last_name,
+    ROUND(month_staff_amount, 2) AS month_amount,
+    payment_count,
+    ROUND(prev_month_amount, 2) AS prev_month_amount,
+    ROUND(month_staff_amount - prev_month_amount, 2) AS deviation_from_prev_month,
+    ROUND(country_avg_monthly_amount, 2) AS country_avg_monthly_amount,
+    ROUND(month_staff_amount - country_avg_monthly_amount, 2) AS deviation_from_country_avg,
+    customer_staff_rank_in_country
+FROM final
 ORDER BY
-  r.country_id,
-  r.month_start,
-  r.store_id,
-  r.staff_rank_in_country_month_store,
-  r.customer_id;
+    country_name,
+    month_start,
+    customer_staff_rank_in_country,
+    customer_id,
+    store_id,
+    staff_id;

@@ -10,7 +10,7 @@ SELECT
   END AS high_risk_flag
 FROM cus AS c
 JOIN pay AS p
-  ON p.p02 = c.h01
+  ON c.h01 = p.p02
 WHERE c.h07 IN ('1', 'Y')
   AND p.p06 >= '2005-07-01'
   AND p.p06 < '2005-08-01'

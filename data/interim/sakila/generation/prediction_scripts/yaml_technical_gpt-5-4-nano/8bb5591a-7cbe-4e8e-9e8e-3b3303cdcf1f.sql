@@ -8,7 +8,7 @@ SELECT
   CASE
     WHEN SUM(p.p05) > 50 THEN 'высокий'
     ELSE 'обычный'
-  END AS risk_flag
+  END AS risk_level
 FROM cus AS c
 JOIN pay AS p
   ON p.p02 = c.h01
@@ -23,4 +23,4 @@ HAVING COUNT(p.p01) > 10
 ORDER BY
   total_amount DESC,
   payment_count DESC,
-  customer_id;
+  c.h01;

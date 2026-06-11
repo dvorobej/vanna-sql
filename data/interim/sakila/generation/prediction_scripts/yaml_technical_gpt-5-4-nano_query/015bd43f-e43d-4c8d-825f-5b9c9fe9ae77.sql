@@ -14,6 +14,7 @@ JOIN pay AS p
 WHERE p.p06 >= '2005-07-01'
   AND p.p06 < '2005-08-01'
 GROUP BY
+  c.h01,
   c.h03,
   c.h04
 HAVING COUNT(p.p01) >= 5

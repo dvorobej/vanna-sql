@@ -22,51 +22,54 @@ customer_stats AS (
         ) AS personal_avg_30d
     FROM daily_customer_activity AS dca
 ),
-country_stats AS (
+country_daily_avg AS (
     SELECT
-        c.c01 AS country_id,
+        c.h01 AS customer_id,
+        cnt.c01 AS country_id,
+        cnt.c02 AS country_name,
+        cty.d02 AS city_name
+    FROM cus AS c
+    JOIN adr AS a ON a.e01 = c.h06
+    JOIN cty ON cty.d01 = a.e05
+    JOIN cnt ON cnt.c01 = cty.d03
+),
+country_avg_stats AS (
+    SELECT
+        cg.country_id,
+        dca.payment_date,
         AVG(dca.daily_amount) AS country_avg_daily_amount
     FROM daily_customer_activity AS dca
-    JOIN cus AS cu ON cu.h01 = dca.customer_id
-    JOIN adr AS a ON a.e01 = cu.h06
-    JOIN cty AS ct ON ct.d01 = a.e05
-    JOIN cnt AS c ON c.c01 = ct.d03
-    GROUP BY c.c01
+    JOIN country_geo AS cg ON cg.customer_id = dca.customer_id
+    GROUP BY cg.country_id, dca.payment_date
 ),
-suspicious_days AS (
+suspicious_cases AS (
     SELECT
         cs.*,
-        cu.h03 || ' ' || cu.h04 AS customer_name,
-        ct.d02 AS city_name,
-        cn.c02 AS country_name,
-        cn.c01 AS country_id,
+        cg.country_name,
+        cg.city_name,
+        cas.country_avg_daily_amount,
         cs.daily_amount - cs.personal_avg_30d AS deviation_personal,
-        cs.daily_amount - cst.country_avg_daily_amount AS deviation_country
+        cs.daily_amount - cas.country_avg_daily_amount AS deviation_country
     FROM customer_stats AS cs
-    JOIN cus AS cu ON cu.h01 = cs.customer_id
-    JOIN adr AS a ON a.e01 = cu.h06
-    JOIN cty AS ct ON ct.d01 = a.e05
-    JOIN cnt AS cn ON cn.c01 = ct.d03
-    JOIN country_stats AS cst ON cst.country_id = cn.c01
+    JOIN country_geo AS cg ON cg.customer_id = cs.customer_id
+    JOIN country_avg_stats AS cas ON cas.country_id = cg.country_id AND cas.payment_date = cs.payment_date
     WHERE cs.personal_avg_30d > 0
       AND cs.daily_amount > 3 * cs.personal_avg_30d
-      AND cs.daily_amount > cst.country_avg_daily_amount
+      AND cs.daily_amount > cas.country_avg_daily_amount
       AND (cs.staff_count > 1 OR cs.store_count > 1)
 )
 SELECT
-    customer_name,
-    country_name,
-    city_name,
-    payment_date,
-    ROUND(daily_amount, 2) AS daily_amount,
-    payment_count,
-    ROUND(deviation_personal, 2) AS deviation_from_personal_avg,
-    ROUND(deviation_country, 2) AS deviation_from_country_avg,
-    staff_count,
-    store_count,
-    RANK() OVER (
-        PARTITION BY country_id
-        ORDER BY daily_amount DESC
-    ) AS country_suspicion_rank
-FROM suspicious_days
-ORDER BY country_name, country_suspicion_rank;
+    c.h03 || ' ' || c.h04 AS customer_name,
+    sc.country_name,
+    sc.city_name,
+    sc.payment_date,
+    sc.daily_amount,
+    sc.payment_count,
+    ROUND(sc.deviation_personal, 2) AS deviation_from_personal_avg,
+    ROUND(sc.deviation_country, 2) AS deviation_from_country_avg,
+    sc.staff_count,
+    sc.store_count,
+    RANK() OVER (PARTITION BY sc.country_id ORDER BY sc.daily_amount DESC) AS suspicion_rank_in_country
+FROM suspicious_cases AS sc
+JOIN cus AS c ON c.h01 = sc.customer_id
+ORDER BY sc.country_name, suspicion_rank_in_country;

@@ -19,6 +19,5 @@ GROUP BY
 HAVING COUNT(p.p01) >= 3
    OR SUM(p.p05) > 20
 ORDER BY
-  daily_total_amount DESC,
-  daily_payment_count DESC,
-  payment_date;
+  payment_date,
+  daily_total_amount DESC;

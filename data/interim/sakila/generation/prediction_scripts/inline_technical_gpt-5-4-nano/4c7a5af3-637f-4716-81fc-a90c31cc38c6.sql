@@ -11,7 +11,7 @@ SELECT
   END AS risk_flag
 FROM cus AS c
 JOIN pay AS p
-  ON c.h01 = p.p02
+  ON p.p02 = c.h01
 WHERE p.p06 >= '2005-06-01'
   AND p.p06 < '2005-09-01'
 GROUP BY

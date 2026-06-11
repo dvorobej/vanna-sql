@@ -26,21 +26,22 @@ historical_avg AS (
               AND da2.payment_date < da.payment_date
         ) AS avg_prev_30d
     FROM daily_activity AS da
-    WHERE da.staff_count > 1 OR da.store_count > 1
+    WHERE da.payment_count >= 1
 ),
 suspicious_days AS (
     SELECT
-        *,
-        (daily_amount / NULLIF(avg_prev_30d, 0)) AS excess_ratio
-    FROM historical_avg
-    WHERE avg_prev_30d > 0
-      AND daily_amount > (avg_prev_30d * 2)
+        ha.*,
+        (ha.daily_amount / NULLIF(ha.avg_prev_30d, 0)) AS excess_ratio
+    FROM historical_avg AS ha
+    WHERE ha.avg_prev_30d > 0
+      AND ha.daily_amount > (3 * ha.avg_prev_30d)
+      AND (ha.staff_count > 1 OR ha.store_count > 1)
 )
 SELECT
+    sd.payment_date,
     c.h03 || ' ' || c.h04 AS customer_name,
     cnt.c02 AS country,
     cty.d02 AS city,
-    sd.payment_date,
     sd.daily_amount,
     sd.payment_count,
     sd.staff_count,
@@ -48,7 +49,7 @@ SELECT
     RANK() OVER (ORDER BY sd.excess_ratio DESC) AS suspicion_rank
 FROM suspicious_days AS sd
 JOIN cus AS c ON c.h01 = sd.customer_id
-JOIN adr ON adr.e01 = c.h06
-JOIN cty ON cty.d01 = adr.e05
-JOIN cnt ON cnt.c01 = cty.d03
-ORDER BY suspicion_rank ASC;
+JOIN adr AS a ON a.e01 = c.h06
+JOIN cty AS cty ON cty.d01 = a.e05
+JOIN cnt AS cnt ON cnt.c01 = cty.d03
+ORDER BY suspicion_rank;

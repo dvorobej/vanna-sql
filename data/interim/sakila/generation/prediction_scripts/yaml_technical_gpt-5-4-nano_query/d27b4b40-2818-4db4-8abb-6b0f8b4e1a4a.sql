@@ -1,86 +1,68 @@
-WITH payment_enriched AS (
+WITH daily_by_customer AS (
     SELECT
-        p.p01 AS payment_id,
         p.p02 AS customer_id,
-        p.p03 AS staff_id,
-        p.p04 AS rental_id,
-        p.p05 AS payment_amount,
         date(p.p06) AS payment_date,
-        c.h03 || ' ' || c.h04 AS customer_name,
-        co.c02 AS country_name,
-        ci.d02 AS city_name
-    FROM pay AS p
-    JOIN cus AS c
-        ON c.h01 = p.p02
-    JOIN adr AS a
-        ON a.e01 = c.h06
-    JOIN cty AS ci
-        ON ci.d01 = a.e05
-    JOIN cnt AS co
-        ON co.c01 = ci.d03
-),
-daily_customer AS (
-    SELECT
-        pe.customer_id,
-        MAX(pe.customer_name) AS customer_name,
-        MAX(pe.country_name) AS country_name,
-        MAX(pe.city_name) AS city_name,
-        pe.payment_date,
         COUNT(*) AS payment_count,
-        COUNT(DISTINCT pe.staff_id) AS distinct_staff_count,
-        SUM(pe.payment_amount) AS day_total_amount
-    FROM payment_enriched AS pe
+        SUM(CAST(p.p05 AS REAL)) AS day_sum,
+        COUNT(DISTINCT p.p03) AS staff_count,
+        COUNT(DISTINCT COALESCE(sto.j01, p.p04)) AS store_count
+    FROM pay AS p
+    LEFT JOIN ren AS r ON r.q01 = p.p04
+    LEFT JOIN inv AS i ON i.n01 = r.q03
+    LEFT JOIN sto ON sto.j01 = i.n03
     GROUP BY
-        pe.customer_id,
-        pe.payment_date
+        p.p02,
+        date(p.p06)
 ),
-daily_with_avg AS (
+daily_with_prev_avg AS (
     SELECT
-        dc.*,
+        d.*,
         (
-            SELECT AVG(dc2.day_total_amount)
-            FROM daily_customer AS dc2
-            WHERE dc2.customer_id = dc.customer_id
-              AND dc2.payment_date >= date(dc.payment_date, '-30 day')
-              AND dc2.payment_date < dc.payment_date
-        ) AS avg_daily_amount_prev_30
-    FROM daily_customer AS dc
+            SELECT AVG(CAST(d2.day_sum AS REAL))
+            FROM daily_by_customer AS d2
+            WHERE d2.customer_id = d.customer_id
+              AND d2.payment_date >= date(d.payment_date, '-30 days')
+              AND d2.payment_date < d.payment_date
+        ) AS avg_prev_30d_day_sum
+    FROM daily_by_customer AS d
 ),
 suspicious_days AS (
     SELECT
         d.*,
-        (d.day_total_amount / NULLIF(d.avg_daily_amount_prev_30, 0)) AS exceed_coef
-    FROM daily_with_avg AS d
-    WHERE d.avg_daily_amount_prev_30 IS NOT NULL
-      AND d.avg_daily_amount_prev_30 > 0
-      AND d.day_total_amount >= 3 * d.avg_daily_amount_prev_30
+        (d.day_sum / NULLIF(d.avg_prev_30d_day_sum, 0)) AS exceed_ratio
+    FROM daily_with_prev_avg AS d
+    WHERE d.avg_prev_30d_day_sum IS NOT NULL
+      AND d.avg_prev_30d_day_sum > 0
+      AND d.day_sum >= 3.0 * d.avg_prev_30d_day_sum
       AND d.payment_count >= 3
-      AND (d.distinct_staff_count >= 2)
+      AND (d.staff_count >= 2 OR d.store_count >= 2)
 ),
-ranked AS (
+ranked_days AS (
     SELECT
         sd.*,
         RANK() OVER (
             PARTITION BY sd.customer_id
-            ORDER BY sd.day_total_amount DESC, sd.payment_date ASC
-        ) AS customer_day_rank
+            ORDER BY sd.day_sum DESC
+        ) AS day_amount_rank
     FROM suspicious_days AS sd
 )
 SELECT
-    customer_id,
-    customer_name,
-    country_name,
-    city_name,
-    payment_date AS suspicious_date,
-    payment_count,
-    ROUND(day_total_amount, 2) AS total_amount,
-    ROUND(avg_daily_amount_prev_30, 2) AS avg_daily_amount_prev_30,
-    ROUND(exceed_coef, 4) AS exceed_coef,
-    customer_day_rank
-FROM ranked
+    c.h01 AS customer_id,
+    c.h03 || ' ' || c.h04 AS customer_name,
+    cnt.c02 AS country,
+    ci.d02 AS city,
+    rd.payment_date,
+    rd.payment_count,
+    ROUND(rd.day_sum, 2) AS day_sum,
+    ROUND(rd.avg_prev_30d_day_sum, 2) AS avg_prev_30d_day_sum,
+    ROUND(rd.exceed_ratio, 4) AS exceed_ratio,
+    rd.day_amount_rank
+FROM ranked_days AS rd
+JOIN cus AS c ON c.h01 = rd.customer_id
+JOIN adr AS a ON a.e01 = c.h06
+JOIN cty AS ci ON ci.d01 = a.e05
+JOIN cnt AS cnt ON cnt.c01 = ci.d03
 ORDER BY
-    country_name,
-    city_name,
-    customer_id,
-    customer_day_rank,
-    suspicious_date;
+    rd.customer_id,
+    rd.day_amount_rank,
+    rd.payment_date;

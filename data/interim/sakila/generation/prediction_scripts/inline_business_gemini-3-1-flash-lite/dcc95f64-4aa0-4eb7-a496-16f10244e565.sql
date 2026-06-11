@@ -8,8 +8,8 @@ SELECT
   COUNT(p.p01) AS payment_count,
   SUM(p.p05) AS total_amount,
   AVG(p.p05) AS average_payment
-FROM pay AS p
-JOIN cus AS c
+FROM cus AS c
+JOIN pay AS p
   ON p.p02 = c.h01
 JOIN stf AS s
   ON p.p03 = s.o01

@@ -4,11 +4,11 @@ SELECT
   c.h04 AS last_name,
   COUNT(p.p01) AS payment_count,
   ROUND(SUM(p.p05), 2) AS total_amount,
-  ROUND(AVG(p.p05), 2) AS average_payment_amount,
+  ROUND(AVG(p.p05), 2) AS average_payment,
   ROUND(
     AVG(CASE WHEN s.o07 <> c.h02 THEN 1.0 ELSE 0.0 END),
     4
-  ) AS other_store_staff_payments_share
+  ) AS share_payments_other_store_staff
 FROM pay AS p
 JOIN cus AS c
   ON c.h01 = p.p02

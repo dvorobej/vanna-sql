@@ -4,11 +4,11 @@ SELECT
   c.h04 AS last_name,
   COUNT(p.p01) AS payment_count,
   SUM(p.p05) AS total_amount,
-  AVG(p.p05) AS average_payment,
+  AVG(p.p05) AS avg_payment_amount,
   SUM(CASE WHEN s.o07 <> c.h02 THEN p.p05 ELSE 0 END) AS other_store_staff_amount
-FROM pay AS p
-JOIN cus AS c
-  ON c.h01 = p.p02
+FROM cus AS c
+JOIN pay AS p
+  ON p.p02 = c.h01
 JOIN stf AS s
   ON s.o01 = p.p03
 WHERE p.p06 >= '2005-07-01'
@@ -18,5 +18,4 @@ GROUP BY
   c.h03,
   c.h04
 HAVING SUM(p.p05) > 50
-ORDER BY
-  total_amount DESC;
+ORDER BY total_amount DESC;

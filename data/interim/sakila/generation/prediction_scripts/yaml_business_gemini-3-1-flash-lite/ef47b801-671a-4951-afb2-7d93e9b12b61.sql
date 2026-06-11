@@ -4,7 +4,7 @@ SELECT
   c.h03 AS first_name,
   c.h04 AS last_name,
   COUNT(p.p01) AS payment_count,
-  ROUND(AVG(p.p05), 2) AS average_payment,
+  AVG(p.p05) AS average_payment,
   MAX(p.p05) AS max_payment,
   CASE
     WHEN COUNT(p.p01) > 10 THEN 'требует проверки'

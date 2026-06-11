@@ -6,12 +6,17 @@ SELECT
   s.o02 AS staff_first_name,
   s.o03 AS staff_last_name,
   COUNT(p.p01) AS payment_count,
-  ROUND(SUM(p.p05), 2) AS total_amount,
+  ROUND(SUM(p.p05), 2) AS total_payment_amount,
   ROUND(AVG(p.p05), 2) AS average_check,
   ROUND(
-    1.0 * SUM(CASE WHEN p.p05 > 0 THEN 1 ELSE 0 END) / COUNT(p.p01),
+    SUM(
+      CASE
+        WHEN p.p04 IS NOT NULL THEN 1
+        ELSE 0
+      END
+    ) * 1.0 / COUNT(p.p01),
     4
-  ) AS staff_share_of_operations
+  ) AS staff_completed_operations_share
 FROM pay AS p
 JOIN cus AS c
   ON c.h01 = p.p02
@@ -27,8 +32,4 @@ GROUP BY
   s.o02,
   s.o03
 HAVING SUM(p.p05) > 50
-ORDER BY
-  total_amount DESC,
-  payment_count DESC,
-  customer_id,
-  staff_id;
+ORDER BY total_payment_amount DESC, payment_count DESC;

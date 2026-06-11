@@ -5,7 +5,7 @@ SELECT
   SUM(p.p05) AS total_amount,
   AVG(p.p05) AS average_payment,
   CASE
-    WHEN COUNT(p.p01) > 10 OR SUM(p.p05) > 80 THEN 1
+    WHEN COUNT(p.p01) > 15 OR SUM(p.p05) > 120 THEN 1
     ELSE 0
   END AS suspicious_activity
 FROM cus AS c

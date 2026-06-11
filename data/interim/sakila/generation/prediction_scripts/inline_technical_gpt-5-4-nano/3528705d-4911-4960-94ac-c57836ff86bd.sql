@@ -15,12 +15,6 @@ GROUP BY
   c.h01,
   c.h03,
   c.h04,
-  s.o01,
-  s.o02,
-  s.o03
+  s.o01
 HAVING SUM(p.p05) > 50
-ORDER BY
-  total_amount DESC,
-  payment_count DESC,
-  customer_id,
-  staff_id;
+ORDER BY total_amount DESC, payment_count DESC;

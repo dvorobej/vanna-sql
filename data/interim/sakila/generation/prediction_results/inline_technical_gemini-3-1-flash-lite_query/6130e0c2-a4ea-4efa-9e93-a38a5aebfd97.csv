@@ -1,4 +1,4 @@
-first_name,last_name,payment_count,total_amount,average_payment,suspicious_activity_count
+first_name,last_name,payment_count,total_amount,average_payment,suspicious_large_payments_count
 ALEX,GRESHAM,10,52.90000000000001,5.290000000000001,4
 MARION,SNYDER,8,44.92,5.615,4
 JUNE,CARROLL,8,42.92000000000001,5.365000000000001,4

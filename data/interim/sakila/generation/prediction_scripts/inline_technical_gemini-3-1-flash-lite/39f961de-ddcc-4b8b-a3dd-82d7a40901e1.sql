@@ -5,8 +5,8 @@ WITH daily_payments AS (
         COUNT(*) AS payment_count,
         SUM(CAST(p.p05 AS REAL)) AS daily_sum,
         MAX(CAST(p.p05 AS REAL)) AS max_payment,
-        COUNT(DISTINCT p.p03) AS distinct_staff_count,
-        COUNT(DISTINCT i.n03) AS distinct_store_count,
+        COUNT(DISTINCT p.p03) AS staff_count,
+        COUNT(DISTINCT i.n03) AS store_count,
         SUM(CASE WHEN f.i11 IN ('R', 'NC-17') THEN 1.0 ELSE 0.0 END) / COUNT(*) AS restricted_rating_share
     FROM pay AS p
     JOIN ren AS r ON r.q01 = p.p04
@@ -47,10 +47,10 @@ suspicious_days AS (
         cg.country_id
     FROM daily_with_avg AS dwa
     JOIN customer_geo AS cg ON cg.customer_id = dwa.customer_id
-    WHERE dwa.avg_prev_30d > 0
+    WHERE dwa.payment_count >= 3
+      AND (dwa.staff_count > 1 OR dwa.store_count > 1)
+      AND dwa.avg_prev_30d > 0
       AND dwa.daily_sum >= 3 * dwa.avg_prev_30d
-      AND dwa.payment_count >= 3
-      AND (dwa.distinct_staff_count > 1 OR dwa.distinct_store_count > 1)
 )
 SELECT
     customer_name,

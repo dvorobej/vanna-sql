@@ -1,74 +1,128 @@
-customer_id,country_name,city_name,payment_month,monthly_amount,payment_count,deviation_from_avg,country_rank,staff_first_name,staff_last_name
-441,Algeria,Batna,2005-07,66.83,17,39.9,1,Jon,Stephens
-528,Angola,Benguela,2005-07,56.89,11,28.95,1,Jon,Stephens
-89,Argentina,La Plata,2005-07,68.83,17,35.16,2,Jon,Stephens
-590,Bahrain,al-Manama,2005-07,56.86,14,29.42,1,Mike,Hillyer
-455,Bolivia,El Alto,2005-07,45.91,9,23.97,1,Mike,Hillyer
-92,Brazil,Goinia,2005-07,78.85,15,45.42,2,Jon,Stephens
-91,Brunei,Bandar Seri Begawan,2005-07,59.81,19,32.65,1,Jon,Stephens
-228,Cambodia,Phnom Penh,2005-07,54.85,15,32.66,1,Mike,Hillyer
-595,China,Jinzhou,2005-07,86.81,19,57.39,1,Mike,Hillyer
-484,China,Yinchuan,2005-07,77.85,15,42.93,2,Jon,Stephens
-168,China,Jinchang,2005-07,70.83,17,37.16,3,Jon,Stephens
-302,China,Tiefa,2005-07,67.85,15,35.92,4,Mike,Hillyer
-594,China,Jining,2005-07,65.86,14,33.18,5,Mike,Hillyer
-485,China,Shaoguan,2005-07,63.82,18,34.89,6,Mike,Hillyer
-490,Colombia,Sogamoso,2005-07,64.86,14,35.42,1,Jon,Stephens
-265,Czech Republic,Olomouc,2005-07,70.84,16,37.41,1,Mike,Hillyer
-494,Ecuador,Robamba,2005-07,80.82,18,45.65,1,Jon,Stephens
-35,France,Toulouse,2005-07,68.84,16,36.42,1,Mike,Hillyer
-3,Greece,Athenai,2005-07,68.87,13,34.94,1,Jon,Stephens
-209,India,Bhilwara,2005-07,82.83,17,42.41,1,Jon,Stephens
-225,India,Ambattur,2005-07,80.83,17,50.65,2,Mike,Hillyer
-508,India,Vijayawada,2005-07,74.86,14,43.17,3,Jon,Stephens
-502,India,Siliguri (Shiliguri),2005-07,73.85,15,39.19,4,Jon,Stephens
-446,India,Uluberia,2005-07,71.83,17,42.66,5,Jon,Stephens
-426,India,Purnea (Purnia),2005-07,65.89,11,34.21,6,Mike,Hillyer
-102,Israel,Ashdod,2005-07,84.79,21,50.37,1,Mike,Hillyer
-309,Italy,Brescia,2005-07,76.84,16,39.92,1,Jon,Stephens
-531,Japan,Kuwana,2005-07,64.86,14,35.17,2,Jon,Stephens
-574,Japan,Akishima,2005-07,64.85,15,37.42,3,Mike,Hillyer
-573,Kazakstan,Zhezqazghan,2005-07,70.85,15,40.67,1,Jon,Stephens
-482,Mexico,Coatzacoalcos,2005-07,69.88,12,35.2,1,Jon,Stephens
-425,Mexico,San Juan Bautista Tuxtepec,2005-07,67.83,17,41.65,3,Mike,Hillyer
-257,Mozambique,Beira,2005-07,88.82,18,50.91,1,Jon,Stephens
-286,Nigeria,Effon-Alaiye,2005-07,76.83,17,47.4,1,Jon,Stephens
-498,Oman,Salala,2005-07,51.85,15,27.42,1,Mike,Hillyer
-522,Philippines,Santa Rosa,2005-07,96.82,18,54.9,1,Jon,Stephens
-563,Romania,Bucuresti,2005-07,60.84,16,33.16,1,Jon,Stephens
-295,Russian Federation,Kolpino,2005-07,87.82,18,47.41,1,Mike,Hillyer
-346,Russian Federation,Maikop,2005-07,83.85,15,44.93,2,Jon,Stephens
-49,Saudi Arabia,Jedda,2005-07,69.87,13,37.19,1,Jon,Stephens
-245,South Korea,Uijongbu,2005-07,72.84,16,40.42,1,Mike,Hillyer
-598,Switzerland,Lausanne,2005-07,64.84,16,36.91,1,Mike,Hillyer
-220,Tanzania,Zanzibar,2005-07,59.88,12,31.2,1,Jon,Stephens
-335,Tunisia,Sousse,2005-07,55.85,15,29.92,1,Mike,Hillyer
-366,Turkey,Balikesir,2005-07,82.81,19,45.9,1,Jon,Stephens
-566,Turkey,Tokat,2005-07,71.82,18,36.41,2,Mike,Hillyer
-475,Ukraine,ostka,2005-07,71.85,15,37.26,1,Mike,Hillyer
-292,United Arab Emirates,Sharja,2005-07,74.84,16,45.16,1,Mike,Hillyer
-479,United States,Akron,2005-07,79.85,15,43.43,2,Jon,Stephens
-2,United States,San Bernardino,2005-07,75.86,14,43.68,3,Jon,Stephens
-539,Venezuela,Valencia,2005-07,55.88,12,33.19,1,Jon,Stephens
-406,"Virgin Islands, U.S.",Charlotte Amalie,2005-07,68.82,18,38.15,1,Jon,Stephens
-470,Yemen,Hodeida,2005-07,96.83,17,56.66,1,Mike,Hillyer
-553,Yugoslavia,Novi Sad,2005-07,68.84,16,41.9,1,Jon,Stephens
-266,Austria,Salzburg,2005-08,71.83,17,42.15,1,Mike,Hillyer
-21,Bangladesh,Tangail,2005-08,79.83,17,41.67,1,Mike,Hillyer
-45,Chile,Antofagasta,2005-08,68.88,12,36.95,1,Mike,Hillyer
-569,China,Leshan,2005-08,75.82,18,42.15,1,Mike,Hillyer
-422,China,Laohekou,2005-08,56.87,13,33.18,6,Mike,Hillyer
-460,Colombia,Florencia,2005-08,54.88,12,27.44,1,Jon,Stephens
-119,Egypt,Shubra al-Khayma,2005-08,77.82,18,39.41,1,Jon,Stephens
-121,India,Etawah,2005-08,67.86,14,40.43,6,Jon,Stephens
-147,Japan,Urawa,2005-08,76.85,15,44.94,1,Jon,Stephens
-54,Japan,Iwakuni,2005-08,64.86,14,32.68,3,Mike,Hillyer
-81,Madagascar,Mahajanga,2005-08,55.88,12,32.44,1,Mike,Hillyer
-150,Mexico,Hidalgo,2005-08,68.84,16,42.4,1,Jon,Stephens
-22,Morocco,Sal,2005-08,54.9,10,27.7,1,Mike,Hillyer
-198,Nigeria,Ikerre,2005-08,70.84,16,35.43,1,Mike,Hillyer
-280,Nigeria,Owo,2005-08,68.88,12,39.2,2,Mike,Hillyer
-416,Pakistan,Dadu,2005-08,63.87,13,33.45,1,Mike,Hillyer
-565,Peru,Hunuco,2005-08,66.87,13,35.19,1,Jon,Stephens
-471,South Africa,Johannesburg,2005-08,55.88,12,28.45,1,Mike,Hillyer
-327,Turkey,Adana,2005-08,58.87,13,31.43,2,Mike,Hillyer
+customer_id,country_name,city_name,payment_month,monthly_amount,payment_count,deviation_from_avg,country_rank,top_staff_name
+441,Algeria,Batna,2005-07,66.83000000000001,17,39.89750000000001,1,Jon Stephens
+528,Angola,Benguela,2005-07,56.89000000000001,11,28.952500000000004,1,Jon Stephens
+528,Angola,Benguela,2005-07,56.89000000000001,11,28.952500000000004,1,Jon Stephens
+89,Argentina,La Plata,2005-07,68.83000000000003,17,35.16000000000002,1,Jon Stephens
+89,Argentina,La Plata,2005-07,68.83000000000003,17,35.16000000000002,1,Jon Stephens
+159,Austria,Linz,2005-07,38.9,10,21.702499999999997,1,Jon Stephens
+590,Bahrain,al-Manama,2005-07,56.86000000000002,14,29.420000000000016,1,Mike Hillyer
+590,Bahrain,al-Manama,2005-07,56.86000000000002,14,29.420000000000016,1,Mike Hillyer
+590,Bahrain,al-Manama,2005-07,56.86000000000002,14,29.420000000000016,1,Mike Hillyer
+590,Bahrain,al-Manama,2005-07,56.86000000000002,14,29.420000000000016,1,Mike Hillyer
+455,Bolivia,El Alto,2005-07,45.91000000000001,9,23.970000000000006,1,Mike Hillyer
+92,Brazil,Goinia,2005-07,78.85000000000001,15,45.42000000000001,1,Jon Stephens
+91,Brunei,Bandar Seri Begawan,2005-07,59.810000000000024,19,32.64500000000002,1,Jon Stephens
+91,Brunei,Bandar Seri Begawan,2005-07,59.810000000000024,19,32.64500000000002,1,Jon Stephens
+91,Brunei,Bandar Seri Begawan,2005-07,59.810000000000024,19,32.64500000000002,1,Jon Stephens
+91,Brunei,Bandar Seri Begawan,2005-07,59.810000000000024,19,32.64500000000002,1,Jon Stephens
+228,Cambodia,Phnom Penh,2005-07,54.85000000000001,15,32.66250000000001,1,Mike Hillyer
+228,Cambodia,Phnom Penh,2005-07,54.85000000000001,15,32.66250000000001,1,Mike Hillyer
+516,Cambodia,Battambang,2005-07,46.91000000000001,9,23.720000000000006,3,Jon Stephens
+516,Cambodia,Battambang,2005-07,46.91000000000001,9,23.720000000000006,3,Jon Stephens
+516,Cambodia,Battambang,2005-07,46.91000000000001,9,23.720000000000006,3,Jon Stephens
+595,China,Jinzhou,2005-07,86.80999999999999,19,57.38499999999999,1,Mike Hillyer
+484,China,Yinchuan,2005-07,77.85000000000001,15,42.92500000000001,2,Jon Stephens
+168,China,Jinchang,2005-07,70.83,17,37.162499999999994,3,Jon Stephens
+302,China,Tiefa,2005-07,67.85000000000001,15,35.9225,4,Mike Hillyer
+594,China,Jining,2005-07,65.86000000000001,14,33.17750000000001,5,Mike Hillyer
+594,China,Jining,2005-07,65.86000000000001,14,33.17750000000001,5,Mike Hillyer
+485,China,Shaoguan,2005-07,63.82000000000002,18,34.89250000000001,7,Mike Hillyer
+490,Colombia,Sogamoso,2005-07,64.86000000000001,14,35.42000000000001,1,Jon Stephens
+490,Colombia,Sogamoso,2005-07,64.86000000000001,14,35.42000000000001,1,Jon Stephens
+265,Czech Republic,Olomouc,2005-07,70.84,16,37.412499999999994,1,Mike Hillyer
+265,Czech Republic,Olomouc,2005-07,70.84,16,37.412499999999994,1,Mike Hillyer
+265,Czech Republic,Olomouc,2005-07,70.84,16,37.412499999999994,1,Mike Hillyer
+265,Czech Republic,Olomouc,2005-07,70.84,16,37.412499999999994,1,Mike Hillyer
+494,Ecuador,Robamba,2005-07,80.82000000000001,18,45.6475,1,Jon Stephens
+494,Ecuador,Robamba,2005-07,80.82000000000001,18,45.6475,1,Jon Stephens
+35,France,Toulouse,2005-07,68.84000000000002,16,36.420000000000016,1,Mike Hillyer
+35,France,Toulouse,2005-07,68.84000000000002,16,36.420000000000016,1,Mike Hillyer
+35,France,Toulouse,2005-07,68.84000000000002,16,36.420000000000016,1,Mike Hillyer
+3,Greece,Athenai,2005-07,68.87000000000002,13,34.93500000000002,1,Jon Stephens
+3,Greece,Athenai,2005-07,68.87000000000002,13,34.93500000000002,1,Jon Stephens
+209,India,Bhilwara,2005-07,82.83,17,42.41,1,Jon Stephens
+225,India,Ambattur,2005-07,80.83,17,50.644999999999996,2,Mike Hillyer
+508,India,Vijayawada,2005-07,74.86,14,43.17,3,Jon Stephens
+502,India,Siliguri (Shiliguri),2005-07,73.85000000000001,15,39.185,4,Jon Stephens
+446,India,Uluberia,2005-07,71.83,17,42.6575,5,Jon Stephens
+426,India,Purnea (Purnia),2005-07,65.89000000000001,11,34.20750000000001,6,Mike Hillyer
+102,Israel,Ashdod,2005-07,84.78999999999999,21,50.372499999999995,1,Mike Hillyer
+309,Italy,Brescia,2005-07,76.83999999999999,16,39.91749999999999,1,Jon Stephens
+309,Italy,Brescia,2005-07,76.83999999999999,16,39.91749999999999,1,Jon Stephens
+531,Japan,Kuwana,2005-07,64.86000000000001,14,35.17250000000001,1,Jon Stephens
+574,Japan,Akishima,2005-07,64.85000000000002,15,37.420000000000016,2,Mike Hillyer
+573,Kazakstan,Zhezqazghan,2005-07,70.85000000000001,15,40.67250000000001,1,Jon Stephens
+573,Kazakstan,Zhezqazghan,2005-07,70.85000000000001,15,40.67250000000001,1,Jon Stephens
+573,Kazakstan,Zhezqazghan,2005-07,70.85000000000001,15,40.67250000000001,1,Jon Stephens
+23,Latvia,Liepaja,2005-07,60.87000000000001,13,31.692500000000006,1,Jon Stephens
+482,Mexico,Coatzacoalcos,2005-07,69.88000000000001,12,35.2025,1,Jon Stephens
+425,Mexico,San Juan Bautista Tuxtepec,2005-07,67.83000000000001,17,41.64500000000001,2,Mike Hillyer
+369,Mexico,Jurez,2005-07,45.88000000000002,12,23.940000000000012,3,Jon Stephens
+257,Mozambique,Beira,2005-07,88.82,18,50.91249999999999,1,Jon Stephens
+97,Mozambique,Tete,2005-07,40.88000000000001,12,21.27333333333334,2,Jon Stephens
+286,Nigeria,Effon-Alaiye,2005-07,76.83000000000001,17,47.39750000000001,1,Jon Stephens
+498,Oman,Salala,2005-07,51.85000000000001,15,27.417500000000008,1,Mike Hillyer
+498,Oman,Salala,2005-07,51.85000000000001,15,27.417500000000008,1,Mike Hillyer
+498,Oman,Salala,2005-07,51.85000000000001,15,27.417500000000008,1,Mike Hillyer
+522,Philippines,Santa Rosa,2005-07,96.82,18,54.90249999999999,1,Jon Stephens
+282,Puerto Rico,Ponce,2005-07,64.85000000000001,15,39.165000000000006,1,Jon Stephens
+563,Romania,Bucuresti,2005-07,60.840000000000025,16,33.16250000000002,1,Jon Stephens
+563,Romania,Bucuresti,2005-07,60.840000000000025,16,33.16250000000002,1,Jon Stephens
+295,Russian Federation,Kolpino,2005-07,87.82000000000001,18,47.41250000000001,1,Mike Hillyer
+295,Russian Federation,Kolpino,2005-07,87.82000000000001,18,47.41250000000001,1,Mike Hillyer
+346,Russian Federation,Maikop,2005-07,83.85,15,44.92999999999999,3,Jon Stephens
+222,Russian Federation,Jaroslavl,2005-07,46.89000000000001,11,23.942500000000003,4,Jon Stephens
+49,Saudi Arabia,Jedda,2005-07,69.87,13,37.190000000000005,1,Jon Stephens
+49,Saudi Arabia,Jedda,2005-07,69.87,13,37.190000000000005,1,Jon Stephens
+245,South Korea,Uijongbu,2005-07,72.84,16,40.417500000000004,1,Mike Hillyer
+245,South Korea,Uijongbu,2005-07,72.84,16,40.417500000000004,1,Mike Hillyer
+88,South Korea,Cheju,2005-07,44.89000000000001,11,22.942500000000003,3,Mike Hillyer
+598,Switzerland,Lausanne,2005-07,64.84000000000002,16,36.91333333333334,1,Mike Hillyer
+220,Tanzania,Zanzibar,2005-07,59.88000000000001,12,31.197500000000005,1,Jon Stephens
+335,Tunisia,Sousse,2005-07,55.850000000000016,15,29.923333333333343,1,Mike Hillyer
+335,Tunisia,Sousse,2005-07,55.850000000000016,15,29.923333333333343,1,Mike Hillyer
+335,Tunisia,Sousse,2005-07,55.850000000000016,15,29.923333333333343,1,Mike Hillyer
+366,Turkey,Balikesir,2005-07,82.80999999999999,19,45.89999999999999,1,Jon Stephens
+566,Turkey,Tokat,2005-07,71.82000000000001,18,36.405,2,Mike Hillyer
+124,Turkey,Ktahya,2005-07,37.92000000000001,8,19.465000000000007,3,Mike Hillyer
+475,Ukraine,ostka,2005-07,71.85,15,37.26333333333333,1,Mike Hillyer
+292,United Arab Emirates,Sharja,2005-07,74.84,16,45.1575,1,Mike Hillyer
+479,United States,Akron,2005-07,79.85,15,43.425,1,Jon Stephens
+2,United States,San Bernardino,2005-07,75.86,14,43.677499999999995,2,Jon Stephens
+539,Venezuela,Valencia,2005-07,55.88000000000002,12,33.18500000000002,1,Jon Stephens
+406,"Virgin Islands, U.S.",Charlotte Amalie,2005-07,68.82000000000002,18,38.15000000000001,1,Jon Stephens
+406,"Virgin Islands, U.S.",Charlotte Amalie,2005-07,68.82000000000002,18,38.15000000000001,1,Jon Stephens
+406,"Virgin Islands, U.S.",Charlotte Amalie,2005-07,68.82000000000002,18,38.15000000000001,1,Jon Stephens
+406,"Virgin Islands, U.S.",Charlotte Amalie,2005-07,68.82000000000002,18,38.15000000000001,1,Jon Stephens
+470,Yemen,Hodeida,2005-07,96.82999999999998,17,56.65999999999998,1,Mike Hillyer
+210,Yemen,Aden,2005-07,73.82000000000001,18,39.3975,2,Jon Stephens
+553,Yugoslavia,Novi Sad,2005-07,68.84000000000002,16,41.90000000000001,1,Jon Stephens
+553,Yugoslavia,Novi Sad,2005-07,68.84000000000002,16,41.90000000000001,1,Jon Stephens
+266,Austria,Salzburg,2005-08,71.83,17,42.15,1,Mike Hillyer
+266,Austria,Salzburg,2005-08,71.83,17,42.15,1,Mike Hillyer
+21,Bangladesh,Tangail,2005-08,79.83,17,41.665,1,Mike Hillyer
+21,Bangladesh,Tangail,2005-08,79.83,17,41.665,1,Mike Hillyer
+45,Chile,Antofagasta,2005-08,68.88000000000001,12,36.947500000000005,1,Mike Hillyer
+45,Chile,Antofagasta,2005-08,68.88000000000001,12,36.947500000000005,1,Mike Hillyer
+569,China,Leshan,2005-08,75.82,18,42.14999999999999,1,Mike Hillyer
+569,China,Leshan,2005-08,75.82,18,42.14999999999999,1,Mike Hillyer
+422,China,Laohekou,2005-08,56.87000000000002,13,33.18250000000001,3,Mike Hillyer
+460,Colombia,Florencia,2005-08,54.88000000000001,12,27.442500000000003,1,Jon Stephens
+119,Egypt,Shubra al-Khayma,2005-08,77.82000000000001,18,39.405,1,Jon Stephens
+121,India,Etawah,2005-08,67.86,14,40.425,1,Jon Stephens
+147,Japan,Urawa,2005-08,76.85000000000001,15,44.935,1,Jon Stephens
+54,Japan,Iwakuni,2005-08,64.86000000000001,14,32.68250000000001,2,Mike Hillyer
+81,Madagascar,Mahajanga,2005-08,55.88000000000002,12,32.43500000000002,1,Mike Hillyer
+81,Madagascar,Mahajanga,2005-08,55.88000000000002,12,32.43500000000002,1,Mike Hillyer
+81,Madagascar,Mahajanga,2005-08,55.88000000000002,12,32.43500000000002,1,Mike Hillyer
+81,Madagascar,Mahajanga,2005-08,55.88000000000002,12,32.43500000000002,1,Mike Hillyer
+150,Mexico,Hidalgo,2005-08,68.84,16,42.4025,1,Jon Stephens
+22,Morocco,Sal,2005-08,54.90000000000001,10,27.702500000000008,1,Mike Hillyer
+22,Morocco,Sal,2005-08,54.90000000000001,10,27.702500000000008,1,Mike Hillyer
+198,Nigeria,Ikerre,2005-08,70.84,16,35.4325,1,Mike Hillyer
+280,Nigeria,Owo,2005-08,68.88000000000001,12,39.197500000000005,2,Mike Hillyer
+416,Pakistan,Dadu,2005-08,63.87000000000002,13,33.44750000000001,1,Mike Hillyer
+565,Peru,Hunuco,2005-08,66.87000000000002,13,35.19250000000001,1,Jon Stephens
+471,South Africa,Johannesburg,2005-08,55.88000000000002,12,28.447500000000012,1,Mike Hillyer
+327,Turkey,Adana,2005-08,58.87000000000001,13,31.432500000000005,1,Mike Hillyer
+327,Turkey,Adana,2005-08,58.87000000000001,13,31.432500000000005,1,Mike Hillyer

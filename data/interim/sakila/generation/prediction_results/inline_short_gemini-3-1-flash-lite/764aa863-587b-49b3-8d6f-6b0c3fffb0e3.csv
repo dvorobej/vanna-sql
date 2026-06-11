@@ -1,4 +1,4 @@
-month,country,city,total_amount,payment_count,max_payment,foreign_store_share,country_rank
+month,country_name,city_name,total_amount,payment_count,max_payment,foreign_store_share,country_rank
 2005-06,Argentina,Baha Blanca,40.93,7,8.99,0.4286,1
 2005-06,Argentina,La Plata,30.95,5,8.99,0.4,2
 2005-06,Argentina,Tandil,26.94,6,5.99,0.5,3

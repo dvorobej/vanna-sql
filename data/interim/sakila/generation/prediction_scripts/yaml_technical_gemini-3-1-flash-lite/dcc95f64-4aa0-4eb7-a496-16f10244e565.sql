@@ -14,6 +14,9 @@ WHERE p.p05 > 5.00
   AND p.p06 < '2005-07-01'
 GROUP BY
   p.p02,
+  p.p03,
   c.h03,
-  c.h04,
-  p.p03;
+  c.h04
+ORDER BY
+  total_amount DESC,
+  payment_count DESC;

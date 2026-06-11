@@ -7,7 +7,7 @@ WITH daily_payments AS (
         MAX(CAST(p.p05 AS REAL)) AS max_payment,
         COUNT(DISTINCT p.p03) AS staff_count,
         COUNT(DISTINCT COALESCE(i.n03, s.o07)) AS store_count,
-        SUM(CASE WHEN f.i11 IN ('R', 'NC-17') THEN 1.0 ELSE 0.0 END) / COUNT(*) AS restricted_rating_share
+        SUM(CASE WHEN f.i11 IN ('R', 'NC-17') THEN 1.0 ELSE 0.0 END) / COUNT(*) AS r_nc17_share
     FROM pay AS p
     JOIN stf AS s ON s.o01 = p.p03
     LEFT JOIN ren AS r ON r.q01 = p.p04
@@ -19,11 +19,11 @@ daily_with_history AS (
     SELECT
         dp.*,
         (
-            SELECT AVG(h.day_amount)
-            FROM daily_payments AS h
-            WHERE h.customer_id = dp.customer_id
-              AND h.payment_date >= date(dp.payment_date, '-30 days')
-              AND h.payment_date < dp.payment_date
+            SELECT AVG(prev.day_amount)
+            FROM daily_payments AS prev
+            WHERE prev.customer_id = dp.customer_id
+              AND prev.payment_date >= date(dp.payment_date, '-30 days')
+              AND prev.payment_date < dp.payment_date
         ) AS avg_prev_30d
     FROM daily_payments AS dp
 ),
@@ -36,13 +36,22 @@ suspicious_days AS (
         cnt.c01 AS country_id
     FROM daily_with_history AS dwh
     JOIN cus AS c ON c.h01 = dwh.customer_id
-    JOIN adr ON adr.e01 = c.h06
-    JOIN cty ON cty.d01 = adr.e05
+    JOIN adr AS a ON a.e01 = c.h06
+    JOIN cty ON cty.d01 = a.e05
     JOIN cnt ON cnt.c01 = cty.d03
     WHERE dwh.avg_prev_30d > 0
       AND dwh.day_amount >= 3 * dwh.avg_prev_30d
-      AND dwh.payment_count >= 3
       AND (dwh.staff_count > 1 OR dwh.store_count > 1)
+      AND dwh.payment_count >= 3
+),
+ranked_days AS (
+    SELECT
+        sd.*,
+        RANK() OVER (
+            PARTITION BY sd.country_id, sd.payment_date
+            ORDER BY sd.day_amount DESC
+        ) AS country_day_rank
+    FROM suspicious_days AS sd
 )
 SELECT
     customer_name,
@@ -52,12 +61,9 @@ SELECT
     payment_count,
     ROUND(day_amount, 2) AS day_amount,
     ROUND(max_payment, 2) AS max_payment,
-    ROUND(restricted_rating_share, 4) AS restricted_rating_share,
-    RANK() OVER (
-        PARTITION BY country_id, payment_date
-        ORDER BY day_amount DESC
-    ) AS country_day_rank
-FROM suspicious_days
+    ROUND(r_nc17_share, 4) AS r_nc17_share,
+    country_day_rank
+FROM ranked_days
 ORDER BY
     country,
     payment_date,

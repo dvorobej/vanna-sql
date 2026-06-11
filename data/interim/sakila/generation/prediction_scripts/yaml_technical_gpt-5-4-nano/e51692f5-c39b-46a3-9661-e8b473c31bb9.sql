@@ -1,8 +1,8 @@
 SELECT
-  c.h01 AS customer_id,
   c.h03 AS first_name,
   c.h04 AS last_name,
-  date(p.p06) AS payment_day,
+  p.p02 AS customer_id,
+  DATE(p.p06) AS payment_date,
   COUNT(p.p01) AS payment_count,
   SUM(p.p05) AS total_amount,
   MAX(p.p05) AS max_payment,
@@ -16,12 +16,12 @@ JOIN cus AS c
 WHERE p.p06 >= '2005-07-01'
   AND p.p06 < '2005-08-01'
 GROUP BY
-  c.h01,
+  p.p02,
+  DATE(p.p06),
   c.h03,
-  c.h04,
-  date(p.p06)
+  c.h04
 HAVING COUNT(p.p01) >= 3
     OR SUM(p.p05) > 20
 ORDER BY
-  c.h01,
-  payment_day;
+  p.p02,
+  DATE(p.p06);

@@ -37,10 +37,10 @@ suspicious_windows AS (
       AND rs.hist_avg_amount_30d IS NOT NULL
 )
 SELECT
-    sw.payment_date,
     sw.customer_name,
     sw.country,
     sw.city,
+    sw.payment_date AS window_end_date,
     sw.window_amount_7d,
     sw.window_count_7d,
     sw.staff_ids,

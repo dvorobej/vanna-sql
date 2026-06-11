@@ -1,7 +1,7 @@
 SELECT
   c.h01 AS customer_id,
-  c.h03 AS first_name,
-  c.h04 AS last_name,
+  c.h03 AS customer_first_name,
+  c.h04 AS customer_last_name,
   s.o01 AS staff_id,
   s.o02 AS staff_first_name,
   s.o03 AS staff_last_name,
@@ -17,7 +17,8 @@ JOIN pay AS p
   ON p.p02 = c.h01
 JOIN stf AS s
   ON s.o01 = p.p03
-WHERE p.p06 >= '2005-06-01'
+WHERE
+  p.p06 >= '2005-06-01'
   AND p.p06 < '2005-07-01'
 GROUP BY
   c.h01,
@@ -30,4 +31,5 @@ HAVING COUNT(p.p01) >= 5
 ORDER BY
   payment_count DESC,
   total_amount DESC,
-  customer_id;
+  customer_id,
+  staff_id;

@@ -9,9 +9,9 @@ SELECT
     WHEN COUNT(p.p01) > 10 OR SUM(p.p05) > 80 THEN 1
     ELSE 0
   END AS suspicious_flag
-FROM cus AS c
-JOIN pay AS p
-  ON p.p02 = c.h01
+FROM pay AS p
+JOIN cus AS c
+  ON c.h01 = p.p02
 WHERE p.p06 >= '2005-07-01'
   AND p.p06 < '2005-08-01'
 GROUP BY

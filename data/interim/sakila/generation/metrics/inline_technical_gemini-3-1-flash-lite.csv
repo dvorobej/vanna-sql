@@ -72,7 +72,7 @@ f63d90c6-31ae-4390-b1dc-3196556326b4,medium,Not matching values
 ccf5c8e3-4ef4-4ca0-9c42-68ef4ce80257,medium,Everything matches
 3528705d-4911-4960-94ac-c57836ff86bd,medium,Not generated
 cfe28b3e-71a6-4d99-88ff-02d604ae54f2,medium,Everything matches
-dcc95f64-4aa0-4eb7-a496-16f10244e565,medium,Not matching values
+dcc95f64-4aa0-4eb7-a496-16f10244e565,medium,Not matching number of columns
 015bd43f-e43d-4c8d-825f-5b9c9fe9ae77,medium,Not matching values
 06e4781c-1539-44dc-8811-63c372360608,medium,Not matching values
 ef913e98-7f33-4a1b-bb83-d018e9ad135e,medium,Not matching values
@@ -83,19 +83,19 @@ dec326d9-466b-4214-918e-07a1c3e59995,hard,Not matching number of rows and cols
 a6c57b8d-91a1-4402-b697-00121b36cc6f,hard,Not matching number of rows and cols
 d27b4b40-2818-4db4-8abb-6b0f8b4e1a4a,hard,Not matching number of rows and cols
 6e04dd06-0dc2-4738-9dc4-7c8dcf7ce99a,hard,Not generated
-b0634f53-99c5-4f96-b645-a701f0a08f07,hard,Not matching number of rows and cols
+b0634f53-99c5-4f96-b645-a701f0a08f07,hard,Not matching number of rows
 d42366d3-9fd5-4973-9987-8ce8d22404d2,hard,Not matching number of rows and cols
 764aa863-587b-49b3-8d6f-6b0c3fffb0e3,hard,Not matching number of rows and cols
 ed6c3600-2f2d-42fe-9ceb-237084133046,hard,Not matching number of rows and cols
 096863c7-69b8-4b59-abc0-31638412714c,hard,Not matching number of rows and cols
 ca15089d-78f5-4c9a-8da6-25ca8d9049f3,hard,Not generated
 6715ebfb-2651-4355-8551-f92c9040d8a9,hard,Not matching number of rows and cols
-60ef9dca-2132-4f1a-baa6-609198cd3efe,hard,Not matching number of rows and cols
+60ef9dca-2132-4f1a-baa6-609198cd3efe,hard,Not generated
 39f961de-ddcc-4b8b-a3dd-82d7a40901e1,hard,Not matching number of rows and cols
 161a1957-09ae-48b2-8b71-c53731d2f91b,hard,Not matching number of rows and cols
 62362b67-fb2a-42b1-9bbb-08d862360577,hard,Not matching number of rows and cols
 3cf8b997-4630-47be-b8a9-d0a7ed8643b4,hard,Not generated
-423d32a9-b883-441b-ba7c-5ed0fcdbb004,hard,Not matching number of rows and cols
+423d32a9-b883-441b-ba7c-5ed0fcdbb004,hard,Not matching number of rows
 4ee62825-4805-4e79-b6dd-aea6768949a2,hard,Not generated
 39bc0273-0e5b-47b8-b569-2e8d1a2682c8,hard,Not matching number of rows and cols
 faf551a9-a513-40b5-ab61-b7031e2ffc87,hard,Not matching number of rows

@@ -19,4 +19,7 @@ GROUP BY
   c.h01,
   c.h03,
   c.h04
-ORDER BY total_amount DESC, payment_count DESC, customer_id;
+ORDER BY
+  total_amount DESC,
+  payment_count DESC,
+  customer_id;

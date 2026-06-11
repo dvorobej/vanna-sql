@@ -3,8 +3,8 @@ SELECT
   c.h03 AS first_name,
   c.h04 AS last_name,
   COUNT(p.p01) AS payment_count,
-  SUM(p.p05) AS total_payment_amount,
-  AVG(p.p05) AS average_payment_amount,
+  SUM(p.p05) AS total_amount,
+  AVG(p.p05) AS average_payment,
   CASE
     WHEN AVG(p.p05) > 5 THEN 'высокий'
     ELSE 'обычный'
@@ -19,4 +19,4 @@ GROUP BY
   c.h03,
   c.h04
 HAVING SUM(p.p05) > 50
-ORDER BY total_payment_amount DESC, payment_count DESC, customer_id;
+ORDER BY total_amount DESC, payment_count DESC, customer_id;

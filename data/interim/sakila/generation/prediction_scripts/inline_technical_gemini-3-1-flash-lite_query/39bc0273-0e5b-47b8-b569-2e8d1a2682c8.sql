@@ -31,7 +31,7 @@ top_staff AS (
         strftime('%Y-%m', p.p06) AS payment_month,
         p.p03 AS staff_id,
         s.o02 || ' ' || s.o03 AS staff_name,
-        SUM(p.p05) AS staff_total,
+        SUM(p.p05) AS staff_sum,
         ROW_NUMBER() OVER (PARTITION BY p.p02, strftime('%Y-%m', p.p06) ORDER BY SUM(p.p05) DESC) AS rn
     FROM pay p
     JOIN stf s ON s.o01 = p.p03
@@ -51,8 +51,8 @@ SELECT
     ts.staff_name AS top_staff_name
 FROM prev_month_stats pms
 JOIN top_staff ts ON ts.customer_id = pms.customer_id 
-                  AND ts.payment_month = pms.payment_month 
-                  AND ts.rn = 1
+    AND ts.payment_month = pms.payment_month 
+    AND ts.rn = 1
 WHERE (pms.prev_month_amount IS NOT NULL AND pms.total_amount >= 3 * pms.prev_month_amount)
    OR (pms.total_amount > 2 * pms.country_avg_amount)
 ORDER BY pms.payment_month DESC, pms.total_amount DESC;

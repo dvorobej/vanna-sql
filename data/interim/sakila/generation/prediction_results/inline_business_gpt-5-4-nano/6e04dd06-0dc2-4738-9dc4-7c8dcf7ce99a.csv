@@ -1,0 +1,2 @@
+customer_id,first_name,last_name,country_name,payment_month,month_payment_count,month_payment_sum,staff_list,store_list,ratio_to_own_3mo_avg,country_median_payment_sum,ratio_to_country_median
+119,SHERRY,MARSHALL,Egypt,2005-08,18,77.82,"Mike Hillyer (id=1),Jon Stephens (id=2)","1,2",3.08,37.42,2.08

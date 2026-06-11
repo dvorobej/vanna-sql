@@ -10,18 +10,7 @@ WITH daily_customer_stats AS (
     JOIN stf AS s ON s.o01 = p.p03
     GROUP BY p.p02, DATE(p.p06)
 ),
-customer_geo AS (
-    SELECT
-        c.h01 AS customer_id,
-        c.h03 || ' ' || c.h04 AS customer_name,
-        cnt.c01 AS country_id,
-        cnt.c02 AS country_name
-    FROM cus AS c
-    JOIN adr AS a ON a.e01 = c.h06
-    JOIN cty AS cty ON cty.d01 = a.e05
-    JOIN cnt AS cnt ON cnt.c01 = cty.d03
-),
-daily_with_history AS (
+customer_history AS (
     SELECT
         dcs.*,
         (
@@ -30,44 +19,45 @@ daily_with_history AS (
             WHERE h.customer_id = dcs.customer_id
               AND h.payment_day >= DATE(dcs.payment_day, '-30 days')
               AND h.payment_day < dcs.payment_day
-        ) AS avg_30d_personal
+        ) AS avg_30d_amount
     FROM daily_customer_stats AS dcs
 ),
-country_daily_avg AS (
+country_stats AS (
     SELECT
-        cg.country_id,
-        AVG(dcs.daily_amount) AS avg_daily_country
+        c.c01 AS country_id,
+        AVG(dcs.daily_amount) AS avg_country_daily_amount
     FROM daily_customer_stats AS dcs
-    JOIN customer_geo AS cg ON cg.customer_id = dcs.customer_id
-    GROUP BY cg.country_id
+    JOIN cus ON cus.h01 = dcs.customer_id
+    JOIN adr ON adr.e01 = cus.h06
+    JOIN cty ON cty.d01 = adr.e05
+    JOIN cnt AS c ON c.c01 = cty.d03
+    GROUP BY c.c01
 ),
 suspicious_activity AS (
     SELECT
-        dwh.*,
-        cg.customer_name,
-        cg.country_name,
-        cda.avg_daily_country
-    FROM daily_with_history AS dwh
-    JOIN customer_geo AS cg ON cg.customer_id = dwh.customer_id
-    JOIN country_daily_avg AS cda ON cda.country_id = cg.country_id
-    WHERE dwh.avg_30d_personal > 0
-      AND dwh.daily_amount > (3 * dwh.avg_30d_personal)
-      AND dwh.daily_amount > cda.avg_daily_country
-      AND (dwh.staff_count > 1 OR dwh.store_count > 1)
+        ch.*,
+        cus.h03 || ' ' || cus.h04 AS customer_name,
+        cnt.c02 AS country_name,
+        cnt.c01 AS country_id,
+        cs.avg_country_daily_amount
+    FROM customer_history AS ch
+    JOIN cus ON cus.h01 = ch.customer_id
+    JOIN adr ON adr.e01 = cus.h06
+    JOIN cty ON cty.d01 = adr.e05
+    JOIN cnt ON cnt.c01 = cty.d03
+    JOIN country_stats AS cs ON cs.country_id = cnt.c01
+    WHERE ch.avg_30d_amount > 0
+      AND ch.daily_amount > (3 * ch.avg_30d_amount)
+      AND ch.daily_amount > cs.avg_country_daily_amount
+      AND (ch.staff_count > 1 OR ch.store_count > 1)
 )
 SELECT
     customer_name,
     country_name,
     payment_day,
     daily_amount,
-    ROUND(avg_30d_personal, 2) AS avg_30d_personal,
-    ROUND(avg_daily_country, 2) AS avg_daily_country,
-    payment_count,
-    staff_count,
-    store_count,
-    RANK() OVER (
-        PARTITION BY country_name
-        ORDER BY daily_amount DESC
-    ) AS country_rank
+    avg_30d_amount,
+    avg_country_daily_amount,
+    RANK() OVER (PARTITION BY country_id ORDER BY daily_amount DESC) AS country_rank
 FROM suspicious_activity
 ORDER BY country_name, country_rank;

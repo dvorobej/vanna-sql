@@ -55,28 +55,27 @@ category_spending AS (
 ),
 top_categories AS (
     SELECT
-        cs.customer_id,
-        cs.month_start,
-        GROUP_CONCAT(cs.category_name, ', ') AS top_cats
-    FROM category_spending cs
-    WHERE cs.cat_amount = (
-        SELECT MAX(cat_amount) 
-        FROM category_spending 
-        WHERE customer_id = cs.customer_id AND month_start = cs.month_start
-    )
-    GROUP BY cs.customer_id, cs.month_start
+        customer_id,
+        month_start,
+        GROUP_CONCAT(category_name, ', ') AS top_cats
+    FROM (
+        SELECT customer_id, month_start, category_name,
+               RANK() OVER (PARTITION BY customer_id, month_start ORDER BY cat_amount DESC) as rnk
+        FROM category_spending
+    ) WHERE rnk <= 2
+    GROUP BY customer_id, month_start
 )
 SELECT
-    strftime('%Y-%m', mwh.month_start) AS month,
+    mwh.month_start,
     mwh.monthly_amount,
     mwh.payment_count,
     ROUND(CAST(mwh.foreign_store_payment_count AS REAL) / mwh.total_payments_in_month, 4) AS foreign_store_share,
     mwh.max_payment,
     RANK() OVER (PARTITION BY mwh.customer_id ORDER BY mwh.monthly_amount DESC) AS customer_month_rank,
     tc.top_cats
-FROM monthly_with_history mwh
-JOIN geo_mismatch gm ON gm.customer_id = mwh.customer_id AND gm.month_start = mwh.month_start
-JOIN top_categories tc ON tc.customer_id = mwh.customer_id AND tc.month_start = mwh.month_start
+FROM monthly_with_history AS mwh
+JOIN geo_mismatch AS gm ON gm.customer_id = mwh.customer_id AND gm.month_start = mwh.month_start
+JOIN top_categories AS tc ON tc.customer_id = mwh.customer_id AND tc.month_start = mwh.month_start
 WHERE mwh.prev_avg_amount IS NOT NULL
   AND mwh.monthly_amount > 3 * mwh.prev_avg_amount
   AND mwh.payment_count >= 5

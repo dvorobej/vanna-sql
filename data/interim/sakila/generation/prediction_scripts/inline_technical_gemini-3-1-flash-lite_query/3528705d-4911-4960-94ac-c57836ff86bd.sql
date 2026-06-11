@@ -1,7 +1,7 @@
 SELECT
   c.h01 AS customer_id,
-  c.h03 AS customer_first_name,
-  c.h04 AS customer_last_name,
+  c.h03 AS first_name,
+  c.h04 AS last_name,
   s.o01 AS staff_id,
   s.o02 AS staff_first_name,
   s.o03 AS staff_last_name,
@@ -12,9 +12,9 @@ SELECT
     1.0 * COUNT(p.p01) / SUM(COUNT(p.p01)) OVER (PARTITION BY c.h01),
     4
   ) AS staff_operation_share
-FROM pay AS p
-JOIN cus AS c
-  ON c.h01 = p.p02
+FROM cus AS c
+JOIN pay AS p
+  ON p.p02 = c.h01
 JOIN stf AS s
   ON s.o01 = p.p03
 WHERE p.p06 >= '2005-06-01'

@@ -18,4 +18,5 @@ GROUP BY
   c.h01,
   c.h03,
   c.h04
-HAVING SUM(p.p05) > 50;
+HAVING SUM(p.p05) > 50
+ORDER BY total_amount DESC;

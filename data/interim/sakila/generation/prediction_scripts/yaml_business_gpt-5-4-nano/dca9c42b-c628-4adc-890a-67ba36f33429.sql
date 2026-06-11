@@ -4,7 +4,7 @@ SELECT
   c.h04 AS last_name,
   COUNT(p.p01) AS payment_count,
   SUM(p.p05) AS total_amount,
-  AVG(p.p05) AS average_payment_amount,
+  AVG(p.p05) AS average_payment,
   SUM(CASE WHEN p.p05 > 8 THEN 1 ELSE 0 END) AS payments_above_8
 FROM cus AS c
 JOIN pay AS p
@@ -15,10 +15,9 @@ GROUP BY
   c.h01,
   c.h03,
   c.h04
-HAVING
-  COUNT(p.p01) > 10
-  OR SUM(p.p05) > 50
+HAVING COUNT(p.p01) > 10
+    OR SUM(p.p05) > 50
 ORDER BY
-  total_amount DESC,
   payment_count DESC,
+  total_amount DESC,
   c.h01;

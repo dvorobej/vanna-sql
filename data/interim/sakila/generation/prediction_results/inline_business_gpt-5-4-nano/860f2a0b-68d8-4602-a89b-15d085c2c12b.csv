@@ -1,4 +1,4 @@
-payment_id,customer_id,amount,payment_date
+payment_id,customer_id,payment_amount,payment_date
 8272,305,11.99,2005-06-17 23:51:21.000
 551,21,10.99,2005-06-21 01:04:35.000
 908,33,10.99,2005-06-15 09:46:33.000

@@ -3,8 +3,8 @@ SELECT
   c.h03 AS first_name,
   c.h04 AS last_name,
   COUNT(p.p01) AS payment_count,
-  ROUND(SUM(p.p05), 2) AS total_amount,
-  ROUND(AVG(p.p05), 2) AS average_payment,
+  SUM(p.p05) AS total_amount,
+  AVG(p.p05) AS average_payment,
   CASE
     WHEN SUM(p.p05) > 100 OR AVG(p.p05) > 7.00 THEN 'высокий'
     ELSE 'обычный'

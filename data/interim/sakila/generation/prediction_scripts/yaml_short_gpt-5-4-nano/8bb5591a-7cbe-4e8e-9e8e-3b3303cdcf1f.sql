@@ -6,8 +6,8 @@ SELECT
   ROUND(SUM(p.p05), 2) AS total_amount,
   ROUND(AVG(p.p05), 2) AS average_check,
   CASE
-    WHEN COUNT(p.p01) > 10 OR SUM(p.p05) > 50 THEN 1
-    ELSE 0
+    WHEN COUNT(p.p01) > 10 OR SUM(p.p05) > 50 THEN 'подозрительная активность'
+    ELSE 'норма'
   END AS risk_flag
 FROM cus AS c
 JOIN pay AS p

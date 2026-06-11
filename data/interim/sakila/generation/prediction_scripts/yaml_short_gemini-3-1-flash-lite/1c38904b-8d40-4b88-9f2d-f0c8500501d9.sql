@@ -9,7 +9,7 @@ FROM cus AS c
 JOIN pay AS p
   ON p.p02 = c.h01
 JOIN stf AS s
-  ON p.p03 = s.o01
+  ON s.o01 = p.p03
 WHERE p.p06 >= '2005-06-01'
   AND p.p06 < '2005-07-01'
 GROUP BY

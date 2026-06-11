@@ -1,169 +1,144 @@
-WITH payment_monthly AS (
+WITH payments_2005 AS (
   SELECT
+    p.p01 AS payment_id,
     p.p02 AS customer_id,
-    strftime('%Y-%m', p.p06) AS month_start,
-    COUNT(*) AS payment_count,
-    SUM(p.p05) AS month_sum,
-    MAX(p.p05) AS max_payment
+    p.p03 AS staff_id,
+    p.p04 AS rental_id,
+    CAST(p.p05 AS REAL) AS payment_amount,
+    date(p.p06, 'start of month') AS month_start,
+    p.p06 AS payment_date
   FROM pay AS p
   WHERE p.p04 IS NOT NULL
-  GROUP BY
-    p.p02,
-    strftime('%Y-%m', p.p06)
 ),
-payment_with_prev AS (
+customer_profile AS (
   SELECT
-    pm.*,
-    AVG(pm.month_sum) OVER (
-      PARTITION BY pm.customer_id
-      ORDER BY pm.month_start
-      ROWS BETWEEN UNBOUNDED PRECEDING AND 1 PRECEDING
-    ) AS prev_avg_month_sum
-  FROM payment_monthly AS pm
+    c.h01 AS customer_id,
+    c.h02 AS home_store_id,
+    c.h03 AS first_name,
+    c.h04 AS last_name,
+    cn.c01 AS customer_country_id,
+    ct.d02 AS customer_city_name,
+    cn.c02 AS customer_country_name
+  FROM cus AS c
+  JOIN adr AS a ON a.e01 = c.h06
+  JOIN cty AS ct ON ct.d01 = a.e05
+  JOIN cnt AS cn ON cn.c01 = ct.d03
 ),
-candidate_months AS (
+payment_with_store_and_item AS (
   SELECT
-    pwp.customer_id,
-    pwp.month_start,
-    pwp.payment_count,
-    pwp.month_sum,
-    pwp.max_payment,
-    pwp.prev_avg_month_sum
-  FROM payment_with_prev AS pwp
-  WHERE pwp.prev_avg_month_sum IS NOT NULL
-    AND pwp.payment_count >= 5
-    AND pwp.month_sum > 3.0 * pwp.prev_avg_month_sum
-),
-payment_detailed AS (
-  SELECT
-    p.p02 AS customer_id,
-    strftime('%Y-%m', p.p06) AS month_start,
-    p.p05 AS payment_amount,
-    p.p03 AS staff_id,
-    st.o07 AS staff_store_id,
-    c.h06 AS customer_address_id,
-    -- География клиента
-    ct_c.d02 AS customer_city,
-    cn_c.c02 AS customer_country,
-    -- География магазина по сотруднику
-    ct_s.d02 AS staff_city,
-    cn_s.c02 AS staff_country,
-    r.q01 AS rental_id,
+    pr.customer_id,
+    pr.first_name,
+    pr.last_name,
+    pr.home_store_id,
+    pr.customer_country_id,
+    pr.customer_city_name,
+    pr.payment_id,
+    pr.month_start,
+    pr.payment_amount,
+    pr.payment_date,
+    s.o07 AS staff_store_id,
+    r.q01 AS rental_item_id,
     i.n01 AS inventory_id,
-    fc.l02 AS category_id
-  FROM pay AS p
-  JOIN candidate_months AS cm
-    ON cm.customer_id = p.p02
-   AND cm.month_start = strftime('%Y-%m', p.p06)
-  JOIN cus AS c
-    ON c.h01 = p.p02
-  JOIN adr AS adr_c
-    ON adr_c.e01 = c.h06
-  JOIN cty AS ct_c
-    ON ct_c.d01 = adr_c.e05
-  JOIN cnt AS cn_c
-    ON cn_c.c01 = ct_c.d03
-  LEFT JOIN stf AS st
-    ON st.o01 = p.p03
-  LEFT JOIN sto AS so_s
-    ON so_s.j01 = st.o07
-  LEFT JOIN adr AS adr_s
-    ON adr_s.e01 = so_s.j02
-  LEFT JOIN cty AS ct_s
-    ON ct_s.d01 = adr_s.e05
-  LEFT JOIN cnt AS cn_s
-    ON cn_s.c01 = ct_s.d03
-  LEFT JOIN ren AS r
-    ON r.q01 = p.p04
-  LEFT JOIN inv AS i
-    ON i.n01 = r.q03
-  LEFT JOIN flc AS fc
-    ON fc.l01 = i.n02
+    f.i01 AS film_id,
+    fc.l02 AS category_id,
+    ca.g02 AS category_name
+  FROM payments_2005 AS pr
+  JOIN stf AS s ON s.o01 = pr.staff_id
+  JOIN ren AS r ON r.q01 = pr.rental_id
+  JOIN inv AS i ON i.n01 = r.q03
+  JOIN flm AS f ON f.i01 = i.n02
+  JOIN flc AS fc ON fc.l01 = f.i01
+  JOIN cat AS ca ON ca.g01 = fc.l02
 ),
-summary_cross_store AS (
+monthly_customer AS (
   SELECT
-    pd.customer_id,
-    pd.month_start,
-    SUM(
-      CASE
-        WHEN pd.customer_city IS NOT NULL
-         AND pd.staff_city IS NOT NULL
-         AND (pd.customer_city <> pd.staff_city OR pd.customer_country <> pd.staff_country)
-        THEN 1
-        ELSE 0
-      END
-    ) * 1.0 / COUNT(*) AS off_store_ops_share,
-    COUNT(*) AS month_payment_count_check,
-    SUM(pd.payment_amount) AS month_sum_check
-  FROM payment_detailed AS pd
+    p.customer_id,
+    p.first_name,
+    p.last_name,
+    p.month_start,
+    p.home_store_id,
+    COUNT(DISTINCT p.payment_id) AS payment_count,
+    SUM(p.payment_amount) AS month_total_amount,
+    MAX(p.payment_amount) AS max_payment_amount,
+    SUM(CASE WHEN p.staff_store_id <> p.home_store_id THEN 1 ELSE 0 END) * 1.0
+      / NULLIF(COUNT(DISTINCT p.payment_id), 0) AS foreign_store_share
+  FROM payment_with_store_and_item AS p
   GROUP BY
-    pd.customer_id,
-    pd.month_start
+    p.customer_id, p.first_name, p.last_name, p.month_start, p.home_store_id
 ),
-category_top AS (
+monthly_history AS (
   SELECT
-    pd.customer_id,
-    pd.month_start,
-    pd.category_id,
-    SUM(pd.payment_amount) AS category_sum,
-    ROW_NUMBER() OVER (
-      PARTITION BY pd.customer_id, pd.month_start
-      ORDER BY SUM(pd.payment_amount) DESC
-    ) AS rn
-  FROM payment_detailed AS pd
-  GROUP BY
-    pd.customer_id,
-    pd.month_start,
-    pd.category_id
+    mc.*,
+    AVG(mc.month_total_amount) OVER (
+      PARTITION BY mc.customer_id
+      ORDER BY mc.month_start
+      ROWS BETWEEN UNBOUNDED PRECEDING AND 1 PRECEDING
+    ) AS prev_avg_amount
+  FROM monthly_customer AS mc
+),
+alerts AS (
+  SELECT
+    mh.*
+  FROM monthly_history AS mh
+  WHERE mh.prev_avg_amount IS NOT NULL
+    AND mh.prev_avg_amount > 0
+    AND mh.payment_count >= 5
+    AND mh.month_total_amount > 3.0 * mh.prev_avg_amount
+),
+category_agg AS (
+  SELECT
+    p.customer_id,
+    p.month_start,
+    p.category_name,
+    SUM(p.payment_amount) AS category_amount,
+    DENSE_RANK() OVER (
+      PARTITION BY p.customer_id, p.month_start
+      ORDER BY SUM(p.payment_amount) DESC
+    ) AS category_rank
+  FROM payment_with_store_and_item AS p
+  GROUP BY p.customer_id, p.month_start, p.category_name
+),
+top_categories AS (
+  SELECT
+    ca.customer_id,
+    ca.month_start,
+    GROUP_CONCAT(ca.category_name, ', ') AS top_categories
+  FROM category_agg AS ca
+  WHERE ca.category_rank <= 3
+  GROUP BY ca.customer_id, ca.month_start
+),
+month_rank_within_customer AS (
+  SELECT
+    a.customer_id,
+    a.month_start,
+    RANK() OVER (
+      PARTITION BY a.customer_id
+      ORDER BY a.month_total_amount DESC
+    ) AS month_spend_rank_within_customer
+  FROM alerts AS a
 )
 SELECT
-  cm.customer_id,
-  (cu.h03 || ' ' || cu.h04) AS customer_name,
-  cu_country.c02 AS customer_country,
-  cu_city.d02 AS customer_city,
-  cm.month_start AS month,
-  ROUND(cm.month_sum, 2) AS month_sum,
-  cm.payment_count,
-  ROUND(scs.off_store_ops_share, 4) AS off_store_ops_share,
-  ROUND(cm.max_payment, 2) AS max_payment,
-  RANK() OVER (
-    PARTITION BY cm.customer_id
-    ORDER BY cm.month_sum DESC
-  ) AS month_rank_within_customer,
-  GROUP_CONCAT(
-    DISTINCT
-      ca.category_id || ':' || ROUND(ca.category_sum, 2)
-  ) AS top_categories_by_spend
-FROM candidate_months AS cm
-JOIN cus AS cu
-  ON cu.h01 = cm.customer_id
-LEFT JOIN adr AS adr_cu
-  ON adr_cu.e01 = cu.h06
-LEFT JOIN cty AS cu_city
-  ON cu_city.d01 = adr_cu.e05
-LEFT JOIN cnt AS cu_country
-  ON cu_country.c01 = cu_city.d03
-JOIN summary_cross_store AS scs
-  ON scs.customer_id = cm.customer_id
- AND scs.month_start = cm.month_start
-LEFT JOIN (
-  SELECT customer_id, month_start, category_id, category_sum
-  FROM category_top
-  WHERE rn <= 5
-) AS ca
-  ON ca.customer_id = cm.customer_id
- AND ca.month_start = cm.month_start
-GROUP BY
-  cm.customer_id,
-  customer_name,
-  customer_country,
-  customer_city,
-  cm.month_start,
-  cm.month_sum,
-  cm.payment_count,
-  scs.off_store_ops_share,
-  cm.max_payment
+  a.customer_id,
+  a.first_name,
+  a.last_name,
+  cp.customer_country_name AS customer_country,
+  cp.customer_city_name AS customer_city,
+  a.month_start AS month,
+  ROUND(a.month_total_amount, 2) AS month_total_amount,
+  a.payment_count,
+  ROUND(a.max_payment_amount, 2) AS max_payment_amount,
+  ROUND(a.foreign_store_share, 4) AS foreign_store_payment_share,
+  mr.month_spend_rank_within_customer AS month_rank_within_customer,
+  tc.top_categories AS main_categories
+FROM alerts AS a
+JOIN customer_profile AS cp
+  ON cp.customer_id = a.customer_id
+JOIN month_rank_within_customer AS mr
+  ON mr.customer_id = a.customer_id
+ AND mr.month_start = a.month_start
+LEFT JOIN top_categories AS tc
+  ON tc.customer_id = a.customer_id
+ AND tc.month_start = a.month_start
 ORDER BY
-  cm.month_start,
-  cm.month_sum DESC,
-  cm.customer_id;
+  a.month_start,
+  a.customer_id;

@@ -2,6 +2,7 @@ SELECT
   p01,
   p02,
   p03,
+  p04,
   p05,
   p06
 FROM pay

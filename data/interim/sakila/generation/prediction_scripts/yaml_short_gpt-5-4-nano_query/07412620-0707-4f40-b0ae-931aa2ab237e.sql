@@ -5,11 +5,11 @@ SELECT
   COUNT(p.p01) AS payment_count,
   SUM(p.p05) AS total_amount,
   AVG(p.p05) AS avg_payment_amount,
-  SUM(CASE WHEN p.p05 > 8.00 THEN 1 ELSE 0 END) AS payments_above_8,
+  SUM(CASE WHEN p.p05 > 8.00 THEN 1 ELSE 0 END) AS payments_over_8,
   ROUND(
-    100.0 * SUM(CASE WHEN p.p05 > 8.00 THEN 1 ELSE 0 END) / COUNT(p.p01),
+    1.0 * SUM(CASE WHEN p.p05 > 8.00 THEN 1 ELSE 0 END) / COUNT(p.p01),
     4
-  ) AS large_payments_share_pct
+  ) AS share_payments_over_8
 FROM cus AS c
 JOIN pay AS p
   ON p.p02 = c.h01

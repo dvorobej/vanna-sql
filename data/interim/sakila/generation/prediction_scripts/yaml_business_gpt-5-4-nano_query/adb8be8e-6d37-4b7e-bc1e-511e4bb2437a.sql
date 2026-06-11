@@ -1,5 +1,5 @@
 SELECT
-  p01 AS payment_id,
+  p01,
   p02 AS customer_id,
   p03 AS staff_id,
   p05 AS amount,

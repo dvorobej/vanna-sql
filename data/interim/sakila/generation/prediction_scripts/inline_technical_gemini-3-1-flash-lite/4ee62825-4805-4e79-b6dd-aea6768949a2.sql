@@ -1,7 +1,7 @@
 WITH daily_stats AS (
     SELECT
         p.p02 AS customer_id,
-        DATE(p.p06) AS payment_day,
+        DATE(p.p06) AS payment_date,
         COUNT(*) AS payment_count,
         SUM(p.p05) AS total_amount,
         MAX(p.p05) AS max_payment,
@@ -20,28 +20,21 @@ customer_history AS (
             SELECT AVG(ds2.total_amount)
             FROM daily_stats AS ds2
             WHERE ds2.customer_id = ds.customer_id
-              AND ds2.payment_day >= DATE(ds.payment_day, '-30 days')
-              AND ds2.payment_day < ds.payment_day
+              AND ds2.payment_date >= DATE(ds.payment_date, '-30 days')
+              AND ds2.payment_date < ds.payment_date
         ) AS avg_prev_30d
     FROM daily_stats AS ds
 ),
 country_percentiles AS (
     SELECT
         cty.d03 AS country_id,
-        -- SQLite не имеет встроенной функции PERCENTILE, используем метод ранжирования
-        MAX(CASE WHEN rn <= total_count * 0.95 THEN total_amount END) AS p95_amount
-    FROM (
-        SELECT
-            cty.d03,
-            ds.total_amount,
-            ROW_NUMBER() OVER (PARTITION BY cty.d03 ORDER BY ds.total_amount) AS rn,
-            COUNT(*) OVER (PARTITION BY cty.d03) AS total_count
-        FROM daily_stats AS ds
-        JOIN cus ON cus.h01 = ds.customer_id
-        JOIN adr ON adr.e01 = cus.h06
-        JOIN cty ON cty.d01 = adr.e05
-    ) AS sub
-    GROUP BY d03
+        AVG(total_amount) AS p95_threshold
+    FROM daily_stats AS ds
+    JOIN cus ON cus.h01 = ds.customer_id
+    JOIN adr ON adr.e01 = cus.h06
+    JOIN cty ON cty.d01 = adr.e05
+    GROUP BY cty.d03
+    HAVING COUNT(*) >= 10
 ),
 suspicious_days AS (
     SELECT
@@ -60,13 +53,13 @@ suspicious_days AS (
       AND ch.payment_count >= 3
       AND ch.staff_count >= 2
       AND ch.total_amount > (ch.avg_prev_30d * 3)
-      AND ch.total_amount > cp.p95_amount
+      AND ch.total_amount > cp.p95_threshold
 )
 SELECT
     customer_name,
     city_name,
     country_name,
-    payment_day,
+    payment_date,
     payment_count,
     ROUND(total_amount, 2) AS total_amount,
     staff_count,

@@ -1,16 +1,13 @@
-SELECT
-  c.h01 AS customer_id,
-  c.h03 AS first_name,
-  c.h04 AS last_name,
-  COUNT(p.p01) AS payment_count,
-  SUM(p.p05) AS total_amount,
-  AVG(p.p05) AS average_payment,
-  SUM(CASE WHEN s.o07 <> c.h02 THEN p.p05 ELSE 0 END) AS amount_from_other_store_staff
+SELECT SUM(p2.p05)
+    FROM pay AS p2
+    JOIN stf AS s2 ON p2.p03 = s2.o01
+    WHERE p2.p02 = c.h01
+      AND p2.p06 >= '2005-07-01' AND p2.p06 < '2005-08-01'
+      AND s2.o07 <> c.h02
+  ) AS amount_from_other_store
 FROM cus AS c
 JOIN pay AS p
   ON p.p02 = c.h01
-JOIN stf AS s
-  ON p.p03 = s.o01
 WHERE p.p06 >= '2005-07-01'
   AND p.p06 < '2005-08-01'
 GROUP BY

@@ -9,8 +9,10 @@ SELECT
   ROUND(SUM(p.p05), 2) AS total_amount,
   ROUND(AVG(p.p05), 2) AS average_payment
 FROM pay AS p
-JOIN cus AS c ON p.p02 = c.h01
-JOIN stf AS s ON p.p03 = s.o01
+JOIN cus AS c
+  ON p.p02 = c.h01
+JOIN stf AS s
+  ON p.p03 = s.o01
 WHERE p.p06 >= '2005-06-01'
   AND p.p06 < '2005-07-01'
   AND p.p05 > 5.00

@@ -1,4 +1,4 @@
-customer_id,first_name,last_name,payment_count,total_amount,average_payment,suspicious_flag
+customer_id,first_name,last_name,payment_count,total_amount,avg_payment_amount,suspicious_flag
 454,ALEX,GRESHAM,10,52.90000000000001,5.290000000000001,1
 178,MARION,SNYDER,8,44.92,5.615,0
 176,JUNE,CARROLL,8,42.92000000000001,5.365000000000001,0

@@ -5,7 +5,7 @@ SELECT
   p.p03 AS staff_id,
   COUNT(p.p01) AS payment_count,
   SUM(p.p05) AS total_amount,
-  AVG(p.p05) AS avg_payment_amount,
+  AVG(p.p05) AS average_payment,
   CASE
     WHEN SUM(p.p05) > 30 THEN 1
     ELSE 0

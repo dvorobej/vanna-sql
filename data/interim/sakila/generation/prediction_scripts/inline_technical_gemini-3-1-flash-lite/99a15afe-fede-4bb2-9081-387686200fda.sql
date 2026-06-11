@@ -11,7 +11,7 @@ WITH monthly_stats AS (
     LEFT JOIN ren r ON p.p04 = r.q01
     GROUP BY p.p02, strftime('%Y-%m', p.p06)
 ),
-customer_history AS (
+history_stats AS (
     SELECT
         ms.*,
         AVG(ms.monthly_sum) OVER (
@@ -26,53 +26,38 @@ store_country_stats AS (
         ms.payment_month,
         c.h02 AS store_id,
         cnt.c01 AS country_id,
-        ms.monthly_sum
+        PERCENTILE_CONT(0.95) WITHIN GROUP (ORDER BY ms.monthly_sum) OVER (
+            PARTITION BY ms.payment_month, c.h02, cnt.c01
+        ) AS p95_sum
     FROM monthly_stats ms
     JOIN cus c ON ms.customer_id = c.h01
     JOIN adr a ON c.h06 = a.e01
     JOIN cty ct ON a.e05 = ct.d01
     JOIN cnt ON ct.d03 = cnt.c01
 ),
-percentiles AS (
+ranked_clients AS (
     SELECT
-        payment_month,
-        store_id,
-        country_id,
-        PERCENTILE_CONT(0.95) WITHIN GROUP (ORDER BY monthly_sum) OVER (PARTITION BY payment_month, store_id, country_id) AS p95_sum
-    FROM store_country_stats
-),
-ranked_data AS (
-    SELECT
-        ch.*,
-        c.h03,
-        c.h04,
-        c.h02 AS store_id,
-        cnt.c02 AS country_name,
-        ct.d02 AS city_name,
-        cnt.c01 AS country_id,
-        RANK() OVER (PARTITION BY c.h02, ch.payment_month ORDER BY ch.monthly_sum DESC) AS store_rank,
-        p.p95_sum
-    FROM customer_history ch
-    JOIN cus c ON ch.customer_id = c.h01
-    JOIN adr a ON c.h06 = a.e01
-    JOIN cty ct ON a.e05 = ct.d01
-    JOIN cnt ON ct.d03 = cnt.c01
-    JOIN percentiles p ON ch.payment_month = p.payment_month AND c.h02 = p.store_id AND cnt.c01 = p.country_id
+        hs.*,
+        RANK() OVER (
+            PARTITION BY c.h02, hs.payment_month 
+            ORDER BY hs.monthly_sum DESC
+        ) AS store_rank
+    FROM history_stats hs
+    JOIN cus c ON hs.customer_id = c.h01
 )
 SELECT
-    customer_id,
-    h03,
-    h04,
-    country_name,
-    city_name,
-    store_id,
-    payment_month,
-    monthly_sum,
-    payment_count,
-    staff_count,
-    CAST(late_returns AS REAL) / NULLIF(total_rentals, 0) AS late_return_share,
-    store_rank
-FROM ranked_data
-WHERE monthly_sum > 3 * prev_avg_sum
-  AND monthly_sum > p95_sum
-ORDER BY payment_month, store_id, store_rank;
+    c.h01, c.h03, c.h04, cnt.c02, ct.d02, c.h02 AS j01,
+    rc.payment_month, rc.monthly_sum, rc.payment_count, 
+    rc.staff_count,
+    (CAST(rc.late_returns AS REAL) / NULLIF(rc.total_rentals, 0)) AS late_return_share,
+    rc.store_rank
+FROM ranked_clients rc
+JOIN cus c ON rc.customer_id = c.h01
+JOIN adr a ON c.h06 = a.e01
+JOIN cty ct ON a.e05 = ct.d01
+JOIN cnt ON ct.d03 = cnt.c01
+JOIN store_country_stats scs ON rc.payment_month = scs.payment_month 
+    AND c.h02 = scs.store_id AND cnt.c01 = scs.country_id
+WHERE rc.prev_avg_sum IS NOT NULL
+  AND rc.monthly_sum >= 3 * rc.prev_avg_sum
+  AND rc.monthly_sum > scs.p95_sum;

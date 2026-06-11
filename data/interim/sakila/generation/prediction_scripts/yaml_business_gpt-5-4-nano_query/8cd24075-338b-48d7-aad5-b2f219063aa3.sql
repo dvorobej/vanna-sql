@@ -4,10 +4,10 @@ SELECT
   c.h04 AS last_name,
   COUNT(p.p01) AS payment_count,
   SUM(p.p05) AS total_amount,
-  AVG(p.p05) AS avg_payment,
+  AVG(p.p05) AS avg_payment_amount,
   CASE
-    WHEN SUM(p.p05) > 100 OR AVG(p.p05) > 8.00 THEN 'высокий'
-    ELSE 'обычный'
+    WHEN SUM(p.p05) > 100 OR AVG(p.p05) > 8.00 THEN 'повышенный риск'
+    ELSE 'норма'
   END AS risk_flag
 FROM cus AS c
 JOIN pay AS p
@@ -19,7 +19,4 @@ GROUP BY
   c.h03,
   c.h04
 HAVING COUNT(p.p01) >= 5
-ORDER BY
-  total_amount DESC,
-  payment_count DESC,
-  c.h01;
+ORDER BY total_amount DESC, payment_count DESC, c.h01;

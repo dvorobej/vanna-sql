@@ -1,10 +1,9 @@
 SELECT
   c.h01 AS customer_id,
-  c.h03 AS first_name,
-  c.h04 AS last_name,
+  c.h03 || ' ' || c.h04 AS customer_full_name,
   COUNT(p.p01) AS payment_count,
-  SUM(p.p05) AS total_amount,
-  MAX(p.p05) AS max_payment,
+  SUM(p.p05) AS total_payment_amount,
+  MAX(p.p05) AS max_single_payment,
   CASE
     WHEN MAX(p.p05) > 9.99 THEN 'высокий'
     ELSE 'обычный'
@@ -22,4 +21,7 @@ GROUP BY
   c.h04
 HAVING
   SUM(p.p05) > 50
-ORDER BY total_amount DESC, customer_id;
+ORDER BY
+  total_payment_amount DESC,
+  payment_count DESC,
+  customer_id;

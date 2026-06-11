@@ -1,7 +1,7 @@
 SELECT
   c.h01 AS customer_id,
-  c.h03 AS first_name,
-  c.h04 AS last_name,
+  c.h03 AS customer_first_name,
+  c.h04 AS customer_last_name,
   s.o01 AS staff_id,
   s.o02 AS staff_first_name,
   s.o03 AS staff_last_name,
@@ -26,5 +26,4 @@ GROUP BY
 ORDER BY
   total_amount DESC,
   payment_count DESC,
-  customer_id,
-  staff_id;
+  customer_id;

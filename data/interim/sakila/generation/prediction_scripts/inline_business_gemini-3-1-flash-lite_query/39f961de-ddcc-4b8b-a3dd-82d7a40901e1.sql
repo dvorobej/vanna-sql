@@ -29,23 +29,24 @@ daily_with_history AS (
 ),
 suspicious_days AS (
     SELECT
-        sd.*,
-        c.h03 || ' ' || c.h04 AS customer_name,
+        dwh.*,
+        c.h03 AS first_name,
+        c.h04 AS last_name,
         cty.d02 AS city,
         cnt.c02 AS country,
         cnt.c01 AS country_id
-    FROM daily_with_history AS sd
-    JOIN cus AS c ON c.h01 = sd.customer_id
+    FROM daily_with_history AS dwh
+    JOIN cus AS c ON c.h01 = dwh.customer_id
     JOIN adr AS a ON a.e01 = c.h06
     JOIN cty ON cty.d01 = a.e05
     JOIN cnt ON cnt.c01 = cty.d03
-    WHERE sd.avg_prev_30 > 0
-      AND sd.daily_sum >= 3 * sd.avg_prev_30
-      AND sd.payment_count >= 3
-      AND (sd.staff_count > 1 OR sd.store_count > 1)
+    WHERE dwh.avg_prev_30 > 0
+      AND dwh.daily_sum >= 3 * dwh.avg_prev_30
+      AND dwh.payment_count >= 3
+      AND (dwh.staff_count > 1 OR dwh.store_count > 1)
 )
 SELECT
-    customer_name,
+    first_name || ' ' || last_name AS customer_name,
     city,
     country,
     payment_date,
@@ -54,11 +55,11 @@ SELECT
     ROUND(max_payment, 2) AS max_payment,
     ROUND(r_nc17_share, 4) AS r_nc17_share,
     RANK() OVER (
-        PARTITION BY country_id
+        PARTITION BY country_id, payment_date
         ORDER BY daily_sum DESC
-    ) AS country_rank
+    ) AS country_day_rank
 FROM suspicious_days
 ORDER BY
     country,
-    country_rank,
-    payment_date;
+    payment_date,
+    country_day_rank;

@@ -5,12 +5,12 @@ SELECT
   c.h02 AS store_id,
   COUNT(p.p01) AS payment_count,
   SUM(p.p05) AS total_amount,
-  AVG(p.p05) AS average_payment,
+  AVG(p.p05) AS avg_payment,
   MAX(p.p05) AS max_payment,
   CASE
-    WHEN COUNT(p.p01) > 10 THEN 1
-    ELSE 0
-  END AS frequent_customer_flag
+    WHEN COUNT(p.p01) > 10 THEN 'High Frequency'
+    ELSE 'Standard'
+  END AS frequency_flag
 FROM cus AS c
 JOIN pay AS p
   ON p.p02 = c.h01

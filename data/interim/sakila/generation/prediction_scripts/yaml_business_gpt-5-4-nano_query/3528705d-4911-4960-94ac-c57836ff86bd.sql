@@ -7,11 +7,11 @@ SELECT
   s.o03 AS staff_last_name,
   COUNT(p.p01) AS payment_count,
   ROUND(SUM(p.p05), 2) AS total_amount,
-  ROUND(AVG(p.p05), 2) AS average_check,
+  ROUND(AVG(p.p05), 2) AS avg_check,
   ROUND(
-    1.0 * SUM(CASE WHEN s.o01 = p.p03 THEN 1 ELSE 0 END) / COUNT(p.p01),
+    1.0 * SUM(CASE WHEN p.p03 = s.o01 THEN 1 ELSE 0 END) / COUNT(p.p01),
     4
-  ) AS staff_operation_share
+  ) AS staff_share_of_operations
 FROM cus AS c
 JOIN pay AS p
   ON p.p02 = c.h01

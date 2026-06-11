@@ -29,49 +29,39 @@ monthly_with_history AS (
 ),
 country_stats AS (
     SELECT
-        c.h01 AS customer_id,
-        co.c01 AS country_id,
-        co.c02 AS country_name,
-        ci.d02 AS city_name
-    FROM cus c
-    JOIN adr a ON a.e01 = c.h06
-    JOIN cty ci ON ci.d01 = a.e05
-    JOIN cnt co ON co.c01 = ci.d03
-),
-country_percentiles AS (
-    SELECT
-        cs.country_id,
-        MAX(CASE WHEN rn <= (cnt * 0.95) THEN monthly_amount END) AS p95_monthly_amount
-    FROM (
-        SELECT 
-            cs.country_id, 
-            mws.monthly_amount,
-            ROW_NUMBER() OVER (PARTITION BY cs.country_id ORDER BY mws.monthly_amount) AS rn,
-            COUNT(*) OVER (PARTITION BY cs.country_id) AS cnt
-        FROM monthly_with_history mws
-        JOIN country_stats cs ON cs.customer_id = mws.customer_id
-    ) t
-    GROUP BY country_id
+        c.c01 AS country_id,
+        c.c02 AS country_name,
+        m.payment_month,
+        PERCENTILE_CONT(0.95) WITHIN GROUP (ORDER BY m.monthly_amount) OVER (PARTITION BY c.c01, m.payment_month) AS p95_amount
+    FROM monthly_customer_stats m
+    JOIN cus cu ON cu.h01 = m.customer_id
+    JOIN adr a ON a.e01 = cu.h06
+    JOIN cty ct ON ct.d01 = a.e05
+    JOIN cnt c ON c.c01 = ct.d03
 ),
 suspicious_activity AS (
     SELECT
-        mws.*,
-        cs.country_name,
-        cs.city_name,
-        cp.p95_monthly_amount,
-        RANK() OVER (PARTITION BY cs.country_id, mws.payment_month ORDER BY mws.monthly_amount DESC) AS country_rank
-    FROM monthly_with_history mws
-    JOIN country_stats cs ON cs.customer_id = mws.customer_id
-    JOIN country_percentiles cp ON cp.country_id = cs.country_id
-    WHERE mws.history_months_count = 2
-      AND mws.monthly_amount > (2.0 * mws.prev_2m_avg_amount)
-      AND mws.monthly_amount > cp.p95_monthly_amount
+        mwh.*,
+        cu.h03 || ' ' || cu.h04 AS customer_name,
+        ct.d02 AS city_name,
+        c.c02 AS country_name,
+        c.c01 AS country_id,
+        RANK() OVER (PARTITION BY c.c01, mwh.payment_month ORDER BY mwh.monthly_amount DESC) AS country_rank
+    FROM monthly_with_history mwh
+    JOIN cus cu ON cu.h01 = mwh.customer_id
+    JOIN adr a ON a.e01 = cu.h06
+    JOIN cty ct ON ct.d01 = a.e05
+    JOIN cnt c ON c.c01 = ct.d03
+    JOIN country_stats cs ON cs.country_id = c.c01 AND cs.payment_month = mwh.payment_month
+    WHERE mwh.history_months_count = 2
+      AND mwh.monthly_amount > (2.0 * mwh.prev_2m_avg_amount)
+      AND mwh.monthly_amount > cs.p95_amount
 )
 SELECT
-    customer_id,
+    payment_month,
+    customer_name,
     country_name,
     city_name,
-    payment_month,
     ROUND(monthly_amount, 2) AS monthly_amount,
     payment_count,
     ROUND(prev_2m_avg_amount, 2) AS prev_2m_avg_amount,

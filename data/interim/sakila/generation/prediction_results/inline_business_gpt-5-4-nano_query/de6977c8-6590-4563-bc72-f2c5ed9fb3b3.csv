@@ -1,4 +1,4 @@
-customer_id,first_name,last_name,staff_id,staff_first_name,staff_last_name,payment_count,total_amount,average_check,share_payments_above_5
+customer_id,customer_first_name,customer_last_name,staff_id,staff_first_name,staff_last_name,payment_count,total_amount,average_check,share_payments_above_5
 267,MARGIE,WADE,2,Jon,Stephens,7,29.93,4.28,0.1429
 510,BEN,EASTER,2,Jon,Stephens,7,24.93,3.56,0.4286
 295,DAISY,BATES,1,Mike,Hillyer,7,20.93,2.99,0.1429

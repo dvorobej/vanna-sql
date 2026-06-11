@@ -3,12 +3,12 @@ SELECT
   c.h03 AS first_name,
   c.h04 AS last_name,
   COUNT(p.p01) AS payment_count,
-  SUM(p.p05) AS total_amount,
-  AVG(p.p05) AS average_payment,
+  SUM(p.p05) AS total_payment_amount,
+  AVG(p.p05) AS average_payment_amount,
   CASE
     WHEN SUM(p.p05) > 100 OR AVG(p.p05) > 8.00 THEN 1
     ELSE 0
-  END AS high_risk
+  END AS increased_risk
 FROM cus AS c
 JOIN pay AS p
   ON p.p02 = c.h01
@@ -20,6 +20,6 @@ GROUP BY
   c.h04
 HAVING COUNT(p.p01) >= 5
 ORDER BY
-  high_risk DESC,
-  total_amount DESC,
-  payment_count DESC;
+  increased_risk DESC,
+  total_payment_amount DESC,
+  customer_id;

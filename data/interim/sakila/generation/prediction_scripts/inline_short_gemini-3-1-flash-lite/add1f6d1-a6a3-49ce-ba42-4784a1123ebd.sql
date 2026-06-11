@@ -1,9 +1,9 @@
 SELECT
-  p01 AS payment_id,
-  p02 AS customer_id,
-  p03 AS staff_id,
-  p05 AS amount,
-  p06 AS payment_date
+  p01,
+  p02,
+  p03,
+  p05,
+  p06
 FROM pay
 WHERE p06 >= '2005-06-01'
   AND p06 < '2005-07-01'

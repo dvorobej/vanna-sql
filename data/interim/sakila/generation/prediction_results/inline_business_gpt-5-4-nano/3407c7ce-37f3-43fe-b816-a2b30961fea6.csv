@@ -1,4 +1,4 @@
-customer_id,first_name,last_name,payment_count,total_amount,average_payment_amount,max_payment_amount,staff_id
+customer_id,first_name,last_name,payment_count,total_amount,average_payment,max_payment,staff_id
 470,GORDON,ALLARD,13,70.87,5.451538461538462,10.99,1
 144,CLARA,SHAW,12,68.88000000000001,5.740000000000001,9.99,2
 494,RAMON,CHOATE,13,64.87000000000002,4.990000000000001,8.99,2

@@ -8,7 +8,7 @@ SELECT
   CASE
     WHEN AVG(p.p05) > 7.00 THEN 1
     ELSE 0
-  END AS increased_risk_flag
+  END AS elevated_risk
 FROM cus AS c
 JOIN pay AS p
   ON p.p02 = c.h01

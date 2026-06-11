@@ -5,14 +5,14 @@ SELECT
   c.h02 AS store_id,
   COUNT(p.p01) AS payment_count,
   ROUND(AVG(p.p05), 2) AS avg_payment_amount,
-  ROUND(MAX(p.p05), 2) AS max_payment_amount,
+  MAX(p.p05) AS max_payment_amount,
   ROUND(
-    SUM(CASE WHEN p.p05 > 8.00 THEN p.p05 ELSE 0 END) * 1.0 / SUM(p.p05),
+    1.0 * SUM(CASE WHEN p.p05 > 8.00 THEN p.p05 ELSE 0 END) / NULLIF(SUM(p.p05), 0),
     4
-  ) AS share_large_ops_amount_gt_8
-FROM cus AS c
-JOIN pay AS p
-  ON p.p02 = c.h01
+  ) AS share_large_amount_over_8
+FROM pay AS p
+JOIN cus AS c
+  ON c.h01 = p.p02
 WHERE p.p06 >= '2005-06-01'
   AND p.p06 < '2005-07-01'
 GROUP BY

@@ -13,7 +13,7 @@ JOIN cus AS c
 JOIN stf AS s
   ON p.p03 = s.o01
 WHERE p.p06 >= '2005-06-01'
-  AND p.p06 <= '2005-08-31 23:59:59'
+  AND p.p06 < '2005-09-01'
 GROUP BY
   c.h01,
   c.h03,

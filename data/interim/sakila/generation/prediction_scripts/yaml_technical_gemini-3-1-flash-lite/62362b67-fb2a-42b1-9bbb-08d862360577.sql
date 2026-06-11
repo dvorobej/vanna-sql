@@ -33,7 +33,7 @@ suspicious_days AS (
       AND (dwh.staff_count > 1 OR dwh.store_count > 1)
 )
 SELECT
-    c.h01 AS customer_id,
+    sd.customer_id,
     cnt.c02 AS country,
     cty.d02 AS city,
     sd.activity_date,
@@ -43,8 +43,8 @@ SELECT
     ROUND(sd.avg_prev_30d, 2) AS avg_prev_30d,
     RANK() OVER (ORDER BY sd.exceed_ratio DESC) AS global_exceed_rank
 FROM suspicious_days AS sd
-JOIN cus AS c ON c.h01 = sd.customer_id
-JOIN adr ON adr.e01 = c.h06
+JOIN cus ON cus.h01 = sd.customer_id
+JOIN adr ON adr.e01 = cus.h06
 JOIN cty ON cty.d01 = adr.e05
 JOIN cnt ON cnt.c01 = cty.d03
 ORDER BY global_exceed_rank;

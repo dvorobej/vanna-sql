@@ -21,6 +21,4 @@ GROUP BY
   c.h04,
   c.h05
 HAVING COUNT(p.p01) >= 5
-ORDER BY
-  total_amount DESC,
-  payment_count DESC;
+ORDER BY total_amount DESC, payment_count DESC;

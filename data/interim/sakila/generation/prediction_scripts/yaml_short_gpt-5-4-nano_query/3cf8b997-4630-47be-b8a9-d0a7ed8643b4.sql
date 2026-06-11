@@ -1,164 +1,158 @@
-WITH
-customer_geo AS (
+WITH monthly_customer AS (
   SELECT
     c.h01 AS customer_id,
-    c.h02 AS store_id,
-    st.j01 AS store_pk,
-    co.c02 AS country,
-    ci.d02 AS city
-  FROM cus AS c
+    c.h02 AS customer_store_id,
+    st.j02 AS customer_store_name,
+    ct.d02 AS city,
+    cn.c02 AS country,
+    date(p.p06, 'start of month') AS month_start,
+    COUNT(*) AS payment_count,
+    SUM(p.p05) AS payment_sum,
+    MAX(p.p03) AS any_staff_id
+  FROM pay AS p
+  JOIN cus AS c
+    ON c.h01 = p.p02
   JOIN sto AS st
     ON st.j01 = c.h02
   JOIN adr AS a
     ON a.e01 = c.h06
-  JOIN cty AS ci
-    ON ci.d01 = a.e05
-  JOIN cnt AS co
-    ON co.c01 = ci.d03
-),
-monthly_customer_pay AS (
-  SELECT
-    p.p02 AS customer_id,
-    date(p.p06, 'start of month') AS month_start,
-    COUNT(p.p01) AS payment_count,
-    SUM(CAST(p.p05 AS REAL)) AS payment_sum
-  FROM pay AS p
+  JOIN cty AS ct
+    ON ct.d01 = a.e05
+  JOIN cnt AS cn
+    ON cn.c01 = ct.d03
   WHERE p.p06 >= '2005-01-01'
     AND p.p06 <  '2006-01-01'
   GROUP BY
-    p.p02,
+    c.h01, c.h02, st.j02, ct.d02, cn.c02,
     date(p.p06, 'start of month')
 ),
-monthly_with_history AS (
+monthly_with_prev AS (
   SELECT
-    mcp.*,
-    AVG(payment_sum) OVER (
-      PARTITION BY customer_id
-      ORDER BY month_start
+    mc.*,
+    AVG(mc.payment_sum) OVER (
+      PARTITION BY mc.customer_id
+      ORDER BY mc.month_start
       ROWS BETWEEN 2 PRECEDING AND 1 PRECEDING
-    ) AS prev_2_month_avg_sum
-  FROM monthly_customer_pay AS mcp
-),
-suspicious_months AS (
-  SELECT
-    mwh.customer_id,
-    mwh.month_start,
-    mwh.payment_count,
-    mwh.payment_sum,
-    mwh.prev_2_month_avg_sum
-  FROM monthly_with_history AS mwh
-  WHERE mwh.prev_2_month_avg_sum IS NOT NULL
-    AND mwh.payment_count >= 3
-    AND mwh.payment_sum >= 2.0 * mwh.prev_2_month_avg_sum
-),
-store_month_customer_sums AS (
-  SELECT
-    cg.store_id,
-    sm.month_start,
-    sm.customer_id,
-    SUM(sm.payment_sum) OVER (PARTITION BY cg.store_id, sm.month_start, sm.customer_id) AS suspicious_month_sum,
-    SUM(sm.payment_sum) OVER (PARTITION BY cg.store_id, sm.month_start) AS suspicious_store_month_total,
-    DENSE_RANK() OVER (
-      PARTITION BY cg.store_id, sm.month_start
-      ORDER BY sm.payment_sum DESC
-    ) AS store_month_customer_rank,
+    ) AS prev_2m_avg_payment_sum,
     COUNT(*) OVER (
-      PARTITION BY cg.store_id, sm.month_start
-    ) AS store_month_customer_count
-  FROM suspicious_months AS sm
-  JOIN customer_geo AS cg
-    ON cg.customer_id = sm.customer_id
+      PARTITION BY mc.customer_id
+      ORDER BY mc.month_start
+      ROWS BETWEEN 2 PRECEDING AND 1 PRECEDING
+    ) AS prev_2m_months_available
+  FROM monthly_customer AS mc
 ),
-qualified_suspicious_months AS (
+store_month_stats AS (
   SELECT
-    sm.*
-  FROM store_month_customer_sums AS sm
-  WHERE sm.store_month_customer_rank <= CAST(CEIL(0.10 * sm.store_month_customer_count) AS INTEGER)
+    customer_store_id,
+    month_start,
+    payment_sum,
+    payment_count,
+    prev_2m_avg_payment_sum,
+    prev_2m_months_available,
+    ntile10
+  FROM (
+    SELECT
+      mwp.*,
+      PERCENT_RANK() OVER (
+        PARTITION BY mwp.customer_store_id, mwp.month_start
+        ORDER BY mwp.payment_sum
+      ) AS pr,
+      ROW_NUMBER() OVER (
+        PARTITION BY mwp.customer_store_id, mwp.month_start
+        ORDER BY mwp.payment_sum DESC
+      ) AS rn_desc,
+      COUNT(*) OVER (
+        PARTITION BY mwp.customer_store_id, mwp.month_start
+      ) AS cnt_customers
+    FROM monthly_with_prev AS mwp
+  ) x
 ),
-qualified_monthly_rows AS (
+store_top10 AS (
   SELECT
-    qsm.customer_id,
-    qsm.month_start,
-    qsm.payment_count,
-    qsm.payment_sum
-  FROM qualified_suspicious_months AS qsm
-  JOIN suspicious_months AS sm
-    ON sm.customer_id = qsm.customer_id
-   AND sm.month_start = qsm.month_start
+    customer_store_id,
+    month_start,
+    customer_id,
+    customer_store_name,
+    city,
+    country,
+    payment_sum,
+    payment_count,
+    prev_2m_avg_payment_sum,
+    prev_2m_months_available,
+    rn_desc,
+    cnt_customers
+  FROM (
+    SELECT
+      mwp.*,
+      ROW_NUMBER() OVER (
+        PARTITION BY mwp.customer_store_id, mwp.month_start
+        ORDER BY mwp.payment_sum DESC
+      ) AS rn_desc,
+      COUNT(*) OVER (
+        PARTITION BY mwp.customer_store_id, mwp.month_start
+      ) AS cnt_customers
+    FROM monthly_with_prev AS mwp
+  ) y
+  WHERE prev_2m_months_available = 2
+    AND payment_count >= 3
+    AND payment_sum >= 2.0 * prev_2m_avg_payment_sum
+    AND rn_desc <= CAST(0.10 * cnt_customers + 0.999999 AS INT)
 ),
-qualified_customers AS (
+staff_top_by_customer_month AS (
   SELECT
-    qmr.customer_id,
-    MIN(cg.store_id) AS store_id,
-    MIN(cg.city) AS city,
-    MIN(cg.country) AS country,
-    COUNT(*) AS suspicious_months_count
-  FROM qualified_monthly_rows AS qmr
-  JOIN customer_geo AS cg
-    ON cg.customer_id = qmr.customer_id
-  GROUP BY qmr.customer_id
-),
-top_staff_for_month AS (
-  SELECT
-    p.p02 AS customer_id,
+    c.h01 AS customer_id,
     date(p.p06, 'start of month') AS month_start,
     p.p03 AS staff_id,
-    SUM(CAST(p.p05 AS REAL)) AS staff_payment_sum,
+    SUM(p.p05) AS staff_payment_sum,
+    COUNT(*) AS staff_payment_count,
     ROW_NUMBER() OVER (
-      PARTITION BY p.p02, date(p.p06, 'start of month')
-      ORDER BY SUM(CAST(p.p05 AS REAL)) DESC, p.p03
-    ) AS rn
+      PARTITION BY c.h01, date(p.p06, 'start of month')
+      ORDER BY SUM(p.p05) DESC, COUNT(*) DESC, p.p03
+    ) AS rn_staff
   FROM pay AS p
+  JOIN cus AS c
+    ON c.h01 = p.p02
   WHERE p.p06 >= '2005-01-01'
     AND p.p06 <  '2006-01-01'
   GROUP BY
-    p.p02,
+    c.h01,
     date(p.p06, 'start of month'),
     p.p03
 ),
-rank_in_store AS (
+suspect_customers_all_months AS (
   SELECT
-    qmr.customer_id,
-    qmr.month_start,
-    RANK() OVER (
-      PARTITION BY cg.store_id, qmr.month_start
-      ORDER BY qmr.payment_sum DESC
-    ) AS store_month_customer_rank
-  FROM qualified_monthly_rows AS qmr
-  JOIN customer_geo AS cg
-    ON cg.customer_id = qmr.customer_id
+    customer_id
+  FROM store_top10
+  GROUP BY customer_id
+  HAVING COUNT(*) = 12
 )
 SELECT
-  cg.store_id AS store,
-  cg.city,
-  cg.country,
-  strftime('%Y-%m', qmr.month_start) AS month,
-  ROUND(qmr.payment_sum, 2) AS payment_sum,
-  qmr.payment_count,
-  ROUND(qmr.payment_sum - qmh.prev_2_month_avg_sum, 2) AS deviation_from_rolling_avg,
-  ris.store_month_customer_rank AS store_month_rank,
-  ts.o02 AS staff_first_name,
-  ts.o03 AS staff_last_name,
-  ts.o01 AS staff_id,
-  ts.o06 AS staff_email
-FROM qualified_monthly_rows AS qmr
-JOIN customer_geo AS cg
-  ON cg.customer_id = qmr.customer_id
-JOIN monthly_with_history AS qmh
-  ON qmh.customer_id = qmr.customer_id
- AND qmh.month_start = qmr.month_start
-JOIN rank_in_store AS ris
-  ON ris.customer_id = qmr.customer_id
- AND ris.month_start = qmr.month_start
-JOIN top_staff_for_month AS tsm
-  ON tsm.customer_id = qmr.customer_id
- AND tsm.month_start = qmr.month_start
- AND tsm.rn = 1
-JOIN stf AS ts
-  ON ts.o01 = tsm.staff_id
+  st10.customer_store_name AS store_name,
+  st10.city,
+  st10.country,
+  strftime('%Y-%m', st10.month_start) AS payment_month,
+  ROUND(st10.payment_sum, 2) AS payment_sum,
+  st10.payment_count,
+  ROUND(st10.payment_sum - st10.prev_2m_avg_payment_sum, 2) AS deviation_from_prev_2m_avg,
+  RANK() OVER (
+    PARTITION BY st10.customer_store_id, st10.month_start
+    ORDER BY st10.payment_sum DESC
+  ) AS store_month_payment_rank,
+  s.o02 AS staff_first_name,
+  s.o03 AS staff_last_name,
+  s.o06 AS staff_email,
+  ROUND(stmb.staff_payment_sum, 2) AS top_staff_payment_sum
+FROM store_top10 AS st10
+JOIN suspect_customers_all_months AS sc
+  ON sc.customer_id = st10.customer_id
+JOIN staff_top_by_customer_month AS stmb
+  ON stmb.customer_id = st10.customer_id
+ AND stmb.month_start = st10.month_start
+ AND stmb.rn_staff = 1
+JOIN stf AS s
+  ON s.o01 = stmb.staff_id
 ORDER BY
-  cg.store_id,
-  cg.country,
-  cg.city,
-  qmr.month_start,
-  qmr.payment_sum DESC;
+  st10.customer_store_name,
+  st10.month_start,
+  store_month_payment_rank,
+  st10.customer_id;

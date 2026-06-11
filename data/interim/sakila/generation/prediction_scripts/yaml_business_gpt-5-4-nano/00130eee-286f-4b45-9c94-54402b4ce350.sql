@@ -18,5 +18,4 @@ GROUP BY
 ORDER BY
   total_amount DESC,
   payment_count DESC,
-  payments_over_5 DESC,
-  c.h01;
+  customer_id;

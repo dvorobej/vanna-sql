@@ -6,9 +6,9 @@ SELECT
   SUM(p.p05) AS total_amount,
   AVG(p.p05) AS average_payment,
   CASE
-    WHEN AVG(p.p05) > 7.00 THEN 'высокий'
+    WHEN AVG(p.p05) > 7.00 THEN 'повышенный'
     ELSE 'обычный'
-  END AS risk_level
+  END AS risk_flag
 FROM cus AS c
 JOIN pay AS p
   ON c.h01 = p.p02

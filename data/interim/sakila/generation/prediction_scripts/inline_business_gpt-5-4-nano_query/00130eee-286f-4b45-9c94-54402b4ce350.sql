@@ -9,8 +9,7 @@ SELECT
 FROM cus AS c
 JOIN pay AS p
   ON p.p02 = c.h01
-WHERE
-  p.p06 >= '2005-07-01'
+WHERE p.p06 >= '2005-07-01'
   AND p.p06 < '2005-08-01'
 GROUP BY
   c.h01,
@@ -20,4 +19,4 @@ HAVING COUNT(p.p01) >= 5
 ORDER BY
   payment_count DESC,
   total_amount DESC,
-  customer_id;
+  c.h01;

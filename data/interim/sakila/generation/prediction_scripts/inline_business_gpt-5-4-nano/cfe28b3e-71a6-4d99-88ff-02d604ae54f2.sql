@@ -7,16 +7,15 @@ SELECT
   CASE
     WHEN SUM(p.p05) > 50 OR AVG(p.p05) > 8 THEN 1
     ELSE 0
-  END AS potential_suspicious_flag
+  END AS potentially_suspicious_flag
 FROM cus AS c
 JOIN pay AS p
   ON p.p02 = c.h01
 WHERE p.p06 >= '2005-07-01'
   AND p.p06 < '2005-08-01'
-  AND c.h07 IN ('1', 'Y')
 GROUP BY
   c.h01,
   c.h03,
   c.h04
 HAVING COUNT(p.p01) >= 5
-ORDER BY total_amount DESC, payment_count DESC, c.h04, c.h03;
+ORDER BY total_amount DESC, payment_count DESC;

@@ -11,28 +11,27 @@ WITH daily_stats AS (
     LEFT JOIN inv AS i ON i.n01 = r.q03
     GROUP BY p.p02, date(p.p06)
 ),
-history_stats AS (
+daily_with_history AS (
     SELECT
         ds.*,
         (
-            SELECT AVG(prev.daily_sum)
-            FROM daily_stats AS prev
-            WHERE prev.customer_id = ds.customer_id
-              AND prev.payment_date >= date(ds.payment_date, '-30 days')
-              AND prev.payment_date < ds.payment_date
+            SELECT AVG(h.daily_sum)
+            FROM daily_stats AS h
+            WHERE h.customer_id = ds.customer_id
+              AND h.payment_date >= date(ds.payment_date, '-30 days')
+              AND h.payment_date < ds.payment_date
         ) AS avg_prev_30
     FROM daily_stats AS ds
-    WHERE ds.payment_count >= 3
-      AND (ds.staff_count > 1 OR ds.store_count > 1)
 ),
 suspicious_days AS (
     SELECT
-        hs.*,
-        (hs.daily_sum / hs.avg_prev_30) AS excess_ratio,
-        RANK() OVER (PARTITION BY hs.customer_id ORDER BY hs.daily_sum DESC) AS day_rank
-    FROM history_stats AS hs
-    WHERE hs.avg_prev_30 > 0
-      AND hs.daily_sum >= 3 * hs.avg_prev_30
+        dwh.*,
+        (dwh.daily_sum / NULLIF(dwh.avg_prev_30, 0)) AS ratio
+    FROM daily_with_history AS dwh
+    WHERE dwh.avg_prev_30 > 0
+      AND dwh.daily_sum >= 3 * dwh.avg_prev_30
+      AND dwh.payment_count >= 3
+      AND (dwh.staff_count > 1 OR dwh.store_count > 1)
 )
 SELECT
     c.h01 AS customer_id,
@@ -41,14 +40,14 @@ SELECT
     cnt.c02 AS country,
     cty.d02 AS city,
     sd.payment_date,
-    sd.payment_count,
     ROUND(sd.daily_sum, 2) AS daily_sum,
+    sd.payment_count,
     ROUND(sd.avg_prev_30, 2) AS avg_prev_30,
-    ROUND(sd.excess_ratio, 2) AS excess_ratio,
-    sd.day_rank
+    ROUND(sd.ratio, 2) AS excess_ratio,
+    RANK() OVER (PARTITION BY c.h01 ORDER BY sd.daily_sum DESC) AS customer_day_rank
 FROM suspicious_days AS sd
 JOIN cus AS c ON c.h01 = sd.customer_id
 JOIN adr ON adr.e01 = c.h06
 JOIN cty ON cty.d01 = adr.e05
 JOIN cnt ON cnt.c01 = cty.d03
-ORDER BY sd.daily_sum DESC, sd.customer_id, sd.payment_date;
+ORDER BY sd.daily_sum DESC, sd.payment_date;

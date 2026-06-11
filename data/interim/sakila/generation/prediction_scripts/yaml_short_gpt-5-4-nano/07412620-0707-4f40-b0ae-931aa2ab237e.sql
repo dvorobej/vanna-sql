@@ -5,11 +5,7 @@ SELECT
   COUNT(p.p01) AS payment_count,
   SUM(p.p05) AS total_amount,
   AVG(p.p05) AS average_payment,
-  SUM(CASE WHEN p.p05 > 8.00 THEN 1 ELSE 0 END) AS large_payments_count,
-  CASE
-    WHEN COUNT(p.p01) = 0 THEN 0
-    ELSE 1.0 * SUM(CASE WHEN p.p05 > 8.00 THEN 1 ELSE 0 END) / COUNT(p.p01)
-  END AS large_payments_ratio
+  SUM(CASE WHEN p.p05 > 8.00 THEN 1 ELSE 0 END) AS large_payments_count
 FROM cus AS c
 JOIN pay AS p
   ON p.p02 = c.h01
@@ -23,5 +19,5 @@ GROUP BY
   c.h04
 HAVING
   COUNT(p.p01) >= 5
-  AND (1.0 * SUM(CASE WHEN p.p05 > 8.00 THEN 1 ELSE 0 END) / COUNT(p.p01)) > 0.30
-ORDER BY total_amount DESC;
+  AND (SUM(CASE WHEN p.p05 > 8.00 THEN 1 ELSE 0 END) * 1.0 / COUNT(p.p01)) > 0.30
+ORDER BY total_amount DESC, payment_count DESC;

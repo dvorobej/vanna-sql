@@ -6,8 +6,8 @@ SELECT
   SUM(p.p05) AS total_amount,
   AVG(p.p05) AS average_payment,
   CASE
-    WHEN AVG(p.p05) > 8 THEN 'высокий'
-    ELSE 'средний'
+    WHEN AVG(p.p05) > 8 OR SUM(p.p05) > 100 THEN 1
+    ELSE 0
   END AS risk_flag
 FROM cus AS c
 JOIN pay AS p

@@ -1,60 +1,75 @@
-WITH daily_payments AS (
+WITH customer_geo AS (
   SELECT
     c.h01 AS customer_id,
-    date(p.p06) AS day_date,
+    c.h06 AS customer_address_id,
+    ct.d01 AS city_id,
+    ct.d02 AS city_name,
+    cty.c01 AS country_id,
+    cty.c02 AS country_name
+  FROM cus c
+  JOIN adr a ON a.e01 = c.h06
+  JOIN cty ct ON ct.d01 = a.e05
+  JOIN cnt cty ON cty.c01 = ct.d03
+),
+pay_daily AS (
+  SELECT
+    p.p02 AS customer_id,
+    date(p.p06) AS pay_date,
     COUNT(p.p01) AS payment_count,
-    SUM(CAST(p.p05 AS REAL)) AS day_sum,
-    COUNT(DISTINCT p.p03) AS distinct_staff_count,
-    COUNT(DISTINCT s.o07) AS distinct_store_count
-  FROM pay AS p
-  JOIN cus AS c
-    ON c.h01 = p.p02
-  JOIN adr AS a
-    ON a.e01 = c.h06
-  JOIN cty AS ci
-    ON ci.d01 = a.e05
-  JOIN cnt AS co
-    ON co.c01 = ci.d03
-  LEFT JOIN stf AS s
-    ON s.o01 = p.p03
+    SUM(CAST(p.p05 AS REAL)) AS daily_sum,
+    COUNT(DISTINCT p.p03) AS staff_count,
+    COUNT(DISTINCT s.o07) AS store_count
+  FROM pay p
+  LEFT JOIN stf s ON s.o01 = p.p03
+  JOIN customer_geo cg ON cg.customer_id = p.p02
   GROUP BY
-    c.h01,
+    p.p02,
     date(p.p06)
 ),
-daily_with_prev_avg AS (
+pay_daily_with_prev AS (
   SELECT
-    dp.*,
+    pd.*,
     (
-      SELECT AVG(CAST(d2.day_sum AS REAL))
-      FROM daily_payments AS d2
-      WHERE d2.customer_id = dp.customer_id
-        AND d2.day_date >= date(dp.day_date, '-30 days')
-        AND d2.day_date < dp.day_date
-    ) AS avg_prev_30_days
-  FROM daily_payments AS dp
+      SELECT AVG(pd2.daily_sum)
+      FROM pay_daily pd2
+      WHERE pd2.customer_id = pd.customer_id
+        AND pd2.pay_date >= date(pd.pay_date, '-30 days')
+        AND pd2.pay_date < pd.pay_date
+    ) AS avg_prev_30d
+  FROM pay_daily pd
 ),
-flagged_days AS (
+filtered AS (
   SELECT
-    dwp.*,
-    (dwp.day_sum / dwp.avg_prev_30_days) AS exceed_ratio,
-    ROW_NUMBER() OVER (
-      PARTITION BY dwp.customer_id
-      ORDER BY dwp.day_sum DESC, dwp.day_date DESC
-    ) AS day_rank
-  FROM daily_with_prev_avg AS dwp
-  WHERE dwp.payment_count >= 3
-    AND dwp.avg_prev_30_days IS NOT NULL
-    AND dwp.avg_prev_30_days > 0
-    AND dwp.day_sum >= 3 * dwp.avg_prev_30_days
-    AND (dwp.distinct_staff_count >= 2 OR dwp.distinct_store_count >= 2)
+    *,
+    CASE
+      WHEN avg_prev_30d IS NULL OR avg_prev_30d = 0 THEN NULL
+      ELSE daily_sum / avg_prev_30d
+    END AS exceed_ratio
+  FROM pay_daily_with_prev
+  WHERE avg_prev_30d IS NOT NULL
+    AND avg_prev_30d > 0
+    AND payment_count >= 3
+    AND daily_sum >= 3 * avg_prev_30d
+    AND (staff_count >= 2 OR store_count >= 2)
 )
 SELECT
-  customer_id AS h01,
-  day_date AS suspicious_date,
-  payment_count,
-  ROUND(day_sum, 2) AS day_sum,
-  ROUND(avg_prev_30_days, 2) AS avg_prev_30_days,
-  ROUND(day_sum / avg_prev_30_days, 4) AS exceed_ratio,
-  day_rank AS customer_day_rank
-FROM flagged_days
-ORDER BY customer_day_rank, h01, suspicious_date;
+  f.customer_id,
+  cg.country_id,
+  cg.country_name,
+  cg.city_name,
+  f.pay_date,
+  f.payment_count,
+  ROUND(f.daily_sum, 2) AS daily_sum,
+  ROUND(f.avg_prev_30d, 2) AS avg_prev_30d,
+  ROUND(f.daily_sum - f.avg_prev_30d, 2) AS deviation_from_avg_prev_30d,
+  ROUND(f.exceed_ratio, 3) AS exceed_ratio,
+  DENSE_RANK() OVER (
+    PARTITION BY f.customer_id
+    ORDER BY f.daily_sum DESC
+  ) AS customer_day_rank
+FROM filtered f
+JOIN customer_geo cg ON cg.customer_id = f.customer_id
+ORDER BY
+  f.customer_id,
+  customer_day_rank,
+  f.pay_date;

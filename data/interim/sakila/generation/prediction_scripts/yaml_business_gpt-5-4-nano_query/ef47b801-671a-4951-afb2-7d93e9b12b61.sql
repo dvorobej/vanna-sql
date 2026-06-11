@@ -9,12 +9,12 @@ SELECT
   CASE
     WHEN COUNT(p.p01) > 10 THEN 1
     ELSE 0
-  END AS requires_additional_check
-FROM cus AS c
+  END AS additional_check_flag
+FROM pay AS p
+JOIN cus AS c
+  ON c.h01 = p.p02
 JOIN sto AS s
   ON s.j01 = c.h02
-JOIN pay AS p
-  ON p.p02 = c.h01
 WHERE p.p06 >= '2005-07-01'
   AND p.p06 < '2005-08-01'
 GROUP BY
@@ -23,4 +23,7 @@ GROUP BY
   c.h04,
   s.j01
 HAVING SUM(p.p05) > 50
-ORDER BY total_payment_amount DESC, payment_count DESC, c.h01;
+ORDER BY
+  payment_count DESC,
+  total_amount DESC,
+  customer_id;

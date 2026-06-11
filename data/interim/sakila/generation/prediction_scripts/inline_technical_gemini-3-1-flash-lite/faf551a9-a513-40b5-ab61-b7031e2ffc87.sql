@@ -1,13 +1,23 @@
 WITH daily_customer_payments AS (
     SELECT
         p.p02 AS customer_id,
+        c.h03,
+        c.h04,
+        c.h02 AS store_id,
+        cnt.c01 AS country_id,
+        cnt.c02 AS country_name,
+        cty.d02 AS city_name,
         DATE(p.p06) AS payment_date,
         SUM(p.p05) AS day_amount,
         COUNT(p.p01) AS payment_count
     FROM pay AS p
+    JOIN cus AS c ON p.p02 = c.h01
+    JOIN adr AS a ON c.h06 = a.e01
+    JOIN cty ON a.e05 = cty.d01
+    JOIN cnt ON cty.d03 = cnt.c01
     GROUP BY p.p02, DATE(p.p06)
 ),
-customer_stats AS (
+daily_with_history AS (
     SELECT
         dcp.*,
         (
@@ -16,45 +26,42 @@ customer_stats AS (
             WHERE prev.customer_id = dcp.customer_id
               AND prev.payment_date >= DATE(dcp.payment_date, '-30 days')
               AND prev.payment_date < dcp.payment_date
-        ) AS avg_prev_30d
+        ) AS avg_30d
     FROM daily_customer_payments AS dcp
 ),
 country_percentiles AS (
     SELECT
-        c.c01 AS country_id,
-        dcp.payment_date,
-        -- Вычисление 95-го перцентиля через сортировку и фильтрацию
-        (SELECT val FROM (
-            SELECT day_amount AS val, PERCENT_RANK() OVER (ORDER BY day_amount) as pr
-            FROM daily_customer_payments AS dcp2
-            JOIN cus AS c2 ON c2.h01 = dcp2.customer_id
-            JOIN adr AS a2 ON a2.e01 = c2.h06
-            JOIN cty AS ci2 ON ci2.d01 = a2.e05
-            WHERE ci2.d03 = c.c01 AND dcp2.payment_date = dcp.payment_date
-        ) WHERE pr >= 0.95 LIMIT 1) AS p95_day_amount
-    FROM cnt AS c
-    JOIN daily_customer_payments AS dcp
-    GROUP BY c.c01, dcp.payment_date
+        country_id,
+        payment_date,
+        -- SQLite не имеет встроенной функции PERCENTILE, используем метод ранжирования
+        MAX(CASE WHEN rn >= (0.95 * total_count) THEN day_amount END) OVER (PARTITION BY country_id, payment_date) AS p95_day_amount
+    FROM (
+        SELECT
+            country_id,
+            payment_date,
+            day_amount,
+            ROW_NUMBER() OVER (PARTITION BY country_id, payment_date ORDER BY day_amount) AS rn,
+            COUNT(*) OVER (PARTITION BY country_id, payment_date) AS total_count
+        FROM daily_customer_payments
+    ) AS sub
 )
 SELECT
-    cs.payment_date,
-    c.h03 AS first_name,
-    c.h04 AS last_name,
-    cnt.c02 AS country_name,
-    cty.d02 AS city_name,
-    c.h02 AS store_id,
-    cs.payment_count,
-    ROUND(cs.day_amount, 2) AS day_amount,
-    ROUND(cs.avg_prev_30d, 2) AS avg_prev_30d,
-    ROUND(cs.day_amount - cs.avg_prev_30d, 2) AS deviation,
-    RANK() OVER (PARTITION BY cnt.c01 ORDER BY (cs.day_amount / NULLIF(cs.avg_prev_30d, 0)) DESC) AS country_rank
-FROM customer_stats AS cs
-JOIN cus AS c ON c.h01 = cs.customer_id
-JOIN adr AS a ON a.e01 = c.h06
-JOIN cty ON cty.d01 = a.e05
-JOIN cnt ON cnt.c01 = cty.d03
-JOIN country_percentiles AS cp ON cp.country_id = cnt.c01 AND cp.payment_date = cs.payment_date
-WHERE cs.avg_prev_30d > 0
-  AND cs.day_amount >= 3 * cs.avg_prev_30d
-  AND cs.day_amount > cp.p95_day_amount
-ORDER BY (cs.day_amount / NULLIF(cs.avg_prev_30d, 0)) DESC;
+    dwh.payment_date,
+    dwh.h03,
+    dwh.h04,
+    dwh.country_name,
+    dwh.city_name,
+    dwh.store_id,
+    dwh.payment_count,
+    ROUND(dwh.day_amount, 2) AS day_amount,
+    ROUND(dwh.avg_30d, 2) AS avg_30d,
+    ROUND(dwh.day_amount - dwh.avg_30d, 2) AS deviation,
+    RANK() OVER (PARTITION BY dwh.country_id ORDER BY dwh.day_amount DESC) AS country_rank
+FROM daily_with_history AS dwh
+JOIN country_percentiles AS cp 
+  ON dwh.country_id = cp.country_id 
+ AND dwh.payment_date = cp.payment_date
+WHERE dwh.avg_30d > 0
+  AND dwh.day_amount >= 3 * dwh.avg_30d
+  AND dwh.day_amount >= cp.p95_day_amount
+ORDER BY dwh.day_amount DESC;

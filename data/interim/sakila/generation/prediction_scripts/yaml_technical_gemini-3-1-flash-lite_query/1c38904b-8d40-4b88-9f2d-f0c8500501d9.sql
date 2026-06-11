@@ -9,9 +9,9 @@ SELECT
     SUM(CASE WHEN s.o07 <> c.h02 THEN 1 ELSE 0 END) * 1.0 / COUNT(p.p01),
     4
   ) AS other_store_staff_share
-FROM pay AS p
-JOIN cus AS c
-  ON p.p02 = c.h01
+FROM cus AS c
+JOIN pay AS p
+  ON c.h01 = p.p02
 JOIN stf AS s
   ON p.p03 = s.o01
 WHERE p.p06 >= '2005-06-01'

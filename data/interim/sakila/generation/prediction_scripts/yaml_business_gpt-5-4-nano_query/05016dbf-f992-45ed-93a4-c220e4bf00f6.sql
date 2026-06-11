@@ -6,7 +6,7 @@ SELECT
   COUNT(p.p01) AS payment_count,
   SUM(p.p05) AS total_amount,
   AVG(p.p05) AS average_payment_amount,
-  SUM(CASE WHEN p.p05 > 8.00 THEN 1 ELSE 0 END) AS payments_over_8
+  SUM(CASE WHEN p.p05 > 8.00 THEN 1 ELSE 0 END) AS payments_above_8
 FROM pay AS p
 JOIN cus AS c
   ON c.h01 = p.p02

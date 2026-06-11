@@ -7,12 +7,12 @@ SELECT
   SUM(p.p05) AS total_amount,
   AVG(p.p05) AS average_payment,
   CASE
-    WHEN SUM(p.p05) > 100 OR AVG(p.p05) > 8.00 THEN 'высокий'
+    WHEN SUM(p.p05) > 100 OR AVG(p.p05) > 8.00 THEN 'повышенный риск'
     ELSE 'обычный'
   END AS risk_flag
-FROM pay AS p
-JOIN cus AS c
-  ON c.h01 = p.p02
+FROM cus AS c
+JOIN pay AS p
+  ON p.p02 = c.h01
 WHERE p.p06 >= '2005-07-01'
   AND p.p06 < '2005-08-01'
 GROUP BY

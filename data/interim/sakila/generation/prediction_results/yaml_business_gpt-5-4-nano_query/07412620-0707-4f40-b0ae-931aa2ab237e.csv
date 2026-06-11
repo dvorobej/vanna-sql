@@ -1,4 +1,4 @@
-customer_id,first_name,last_name,payment_count,total_amount,average_payment,payments_over_8,large_payments_share
+customer_id,first_name,last_name,payment_count,total_amount,average_payment,payments_over_8,share_payments_over_8
 550,GUY,BROWNLEE,6,39.94,6.66,2,0.3333
 347,RYAN,SALISBURY,5,31.95,6.39,2,0.4
 589,TRACY,HERRMANN,5,30.95,6.19,2,0.4

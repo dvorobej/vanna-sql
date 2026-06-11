@@ -1,4 +1,4 @@
-first_name,last_name,payment_count,total_amount,avg_payment,high_attention_flag
+first_name,last_name,payment_count,total_amount,average_payment,high_attention_flag
 ELEANOR,HUNT,22,100.77999999999997,4.580909090909089,1
 GORDON,ALLARD,17,96.82999999999998,5.695882352941176,1
 ARNOLD,HAVENS,18,96.82,5.378888888888889,1

@@ -16,5 +16,4 @@ GROUP BY
   c.h03,
   c.h04
 ORDER BY
-  total_amount DESC,
-  transaction_count DESC;
+  total_amount DESC;

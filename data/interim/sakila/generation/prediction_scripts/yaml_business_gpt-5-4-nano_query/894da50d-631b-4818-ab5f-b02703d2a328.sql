@@ -1,154 +1,168 @@
-WITH payment_enriched AS (
+WITH
+-- платежи 2000..9999 не ограничиваем, считаем "в любом календарном месяце" на всей шкале данных
+payments_enriched AS (
   SELECT
     p.p01 AS payment_id,
     p.p02 AS customer_id,
     p.p03 AS staff_id,
     p.p04 AS rental_id,
-    p.p05 AS payment_amount,
     date(p.p06, 'start of month') AS month_start,
-    r.q01 AS rental_id_check,
-
-    /* customer geo */
-    cu.h06 AS customer_address_id,
-    adr_c.e05 AS customer_city_id,
-    cn_c.d02 AS customer_city,
-    cnt_c.c02 AS customer_country,
-
-    /* staff/store geo (сотрудник, принявший платеж) */
-    st.o07 AS staff_store_id,
-    stf_adr.e05 AS staff_city_id,
-    cnt_s.d02 AS staff_city,
-    cnt_s.c02 AS staff_country,
-
-    /* film categories for this payment via rental->inventory->film->film_category */
-    fc.l02 AS category_id
-  FROM pay p
-  JOIN cus cu ON cu.h01 = p.p02
-  LEFT JOIN adr adr_c ON adr_c.e01 = cu.h06
-  LEFT JOIN cty cn_c ON cn_c.d01 = adr_c.e05
-  LEFT JOIN cnt cnt_c ON cnt_c.c01 = cn_c.d03
-
-  JOIN stf st ON st.o01 = p.p03
-  LEFT JOIN adr stf_adr ON stf_adr.e01 = st.o04
-  LEFT JOIN cty cnt_s ON cnt_s.d01 = stf_adr.e05
-  LEFT JOIN cnt ON cnt.c01 = cnt_s.d03
-
-  LEFT JOIN ren r ON r.q01 = p.p04
-  LEFT JOIN inv i ON i.n01 = r.q03
-  LEFT JOIN flc fc ON fc.l01 = i.n02
-  WHERE p.p04 IS NOT NULL
+    CAST(p.p05 AS REAL) AS payment_amount
+  FROM pay AS p
 ),
-monthly_customer_store_mismatch AS (
+customer_month_pay AS (
   SELECT
-    customer_id,
-    month_start,
+    pe.customer_id,
+    pe.month_start,
     COUNT(*) AS payment_count,
-    SUM(payment_amount) AS month_total_amount,
-    MAX(payment_amount) AS max_payment,
-    SUM(
-      CASE
-        WHEN staff_city_id <> customer_city_id THEN 1
-        WHEN staff_country <> customer_country THEN 1
-        ELSE 0
-      END
-    ) * 1.0 / COUNT(*) AS foreign_shop_payment_share,
-    GROUP_CONCAT(DISTINCT category_id) AS category_ids_csv
-  FROM payment_enriched
-  GROUP BY customer_id, month_start
+    SUM(pe.payment_amount) AS month_total_amount,
+    MAX(pe.payment_amount) AS max_payment_amount
+  FROM payments_enriched AS pe
+  GROUP BY
+    pe.customer_id,
+    pe.month_start
 ),
-monthly_with_history AS (
+customer_month_history AS (
   SELECT
-    mc.*,
-    AVG(month_total_amount) OVER (
-      PARTITION BY customer_id
-      ORDER BY month_start
+    cmp.*,
+    AVG(cmp.month_total_amount) OVER (
+      PARTITION BY cmp.customer_id
+      ORDER BY cmp.month_start
       ROWS BETWEEN UNBOUNDED PRECEDING AND 1 PRECEDING
-    ) AS prev_avg_month_amount
-  FROM monthly_customer_store_mismatch mc
+    ) AS prev_months_avg_amount
+  FROM customer_month_pay AS cmp
 ),
-ranked_months_within_customer AS (
+-- для условий "платежи через разных магазинов" и "город/страна адреса != город/страна магазина-копии"
+payment_to_store_geo AS (
   SELECT
-    mwh.*,
+    pe.customer_id,
+    pe.month_start,
+    pe.payment_id,
+    pe.payment_amount,
+    s_store.j01 AS payment_store_id,
+    cs_city.d02 AS customer_city,
+    cs_ctry.c02 AS customer_country,
+    s_city.d02 AS store_city,
+    s_ctry.c02 AS store_country,
+    i.n02 AS film_id
+  FROM payments_enriched AS pe
+  JOIN ren AS r ON r.q01 = pe.rental_id
+  JOIN inv AS i ON i.n01 = r.q03
+  JOIN sto AS s_store ON s_store.j01 = i.n03
+  JOIN cus AS c ON c.h01 = pe.customer_id
+  JOIN adr AS ca ON ca.e01 = c.h06
+  JOIN cty AS cs_city ON cs_city.d01 = ca.e05
+  JOIN cnt AS cs_ctry ON cs_ctry.c01 = cs_city.d03
+  JOIN adr AS sa ON sa.e01 = s_store.j02
+  JOIN cty AS s_city ON s_city.d01 = sa.e05
+  JOIN cnt AS s_ctry ON s_ctry.c01 = s_city.d03
+),
+month_customer_geo_splits AS (
+  SELECT
+    pg.customer_id,
+    pg.month_start,
+    SUM(CASE WHEN pg.payment_store_id IS NOT NULL THEN 1 ELSE 0 END) AS total_payment_rows,
+    SUM(CASE
+          WHEN (pg.customer_city <> pg.store_city) OR (pg.customer_country <> pg.store_country)
+          THEN 1 ELSE 0
+        END) AS foreign_store_payment_rows,
+    SUM(pg.payment_amount) AS month_total_amount_check,
+    SUM(CASE
+          WHEN (pg.customer_city <> pg.store_city) OR (pg.customer_country <> pg.store_country)
+          THEN pg.payment_amount
+          ELSE 0
+        END) AS foreign_store_amount
+  FROM payment_to_store_geo AS pg
+  GROUP BY
+    pg.customer_id,
+    pg.month_start
+),
+foreign_store_stats AS (
+  SELECT
+    mgs.customer_id,
+    mgs.month_start,
+    (1.0 * mgs.foreign_store_payment_rows) / NULLIF(mgs.total_payment_rows, 0) AS foreign_store_payment_share,
+    mgs.foreign_store_amount,
+    mgs.month_total_amount_check
+  FROM month_customer_geo_splits AS mgs
+),
+distinct_payment_stores AS (
+  SELECT
+    pg.customer_id,
+    pg.month_start,
+    COUNT(DISTINCT pg.payment_store_id) AS distinct_payment_stores_count
+  FROM payment_to_store_geo AS pg
+  GROUP BY
+    pg.customer_id,
+    pg.month_start
+),
+-- список категорий фильмов по "основной части расходов": берём категории по доле суммы оплат за месяц/клиента,
+-- и оставляем топ-N категории (3) как "основную часть"
+month_customer_category_totals AS (
+  SELECT
+    pg.customer_id,
+    pg.month_start,
+    fc.l02 AS category_id,
+    SUM(pg.payment_amount) AS category_amount
+  FROM payment_to_store_geo AS pg
+  JOIN flc fc ON fc.l01 = pg.film_id
+  GROUP BY
+    pg.customer_id,
+    pg.month_start,
+    fc.l02
+),
+month_customer_category_ranked AS (
+  SELECT
+    mcct.*,
     RANK() OVER (
-      PARTITION BY customer_id
-      ORDER BY month_total_amount DESC
-    ) AS month_amount_rank_within_customer
-  FROM monthly_with_history mwh
+      PARTITION BY mcct.customer_id, mcct.month_start
+      ORDER BY mcct.category_amount DESC
+    ) AS category_rank,
+    SUM(mcct.category_amount) OVER (
+      PARTITION BY mcct.customer_id, mcct.month_start
+    ) AS month_total_amount_for_categories
+  FROM month_customer_category_totals AS mcct
 ),
-eligible_months AS (
+month_customer_category_top AS (
   SELECT
-    rmc.*
-  FROM ranked_months_within_customer rmc
-  WHERE prev_avg_month_amount IS NOT NULL
-    AND prev_avg_month_amount > 0
-    AND month_total_amount > 3.0 * prev_avg_month_amount
-    AND payment_count >= 5
-),
-eligible_customers AS (
-  /* ensure employees were from different stores AND mismatch condition exists in month rows */
-  SELECT
-    p.customer_id,
-    e.month_start,
-    COUNT(DISTINCT p.staff_store_id) AS distinct_staff_stores_in_month
-  FROM eligible_months e
-  JOIN payment_enriched p
-    ON p.customer_id = e.customer_id
-   AND p.month_start = e.month_start
-  GROUP BY p.customer_id, e.month_start
-  HAVING COUNT(DISTINCT p.staff_store_id) >= 2
-),
-main AS (
-  SELECT
-    e.customer_id,
-    e.month_start,
-    e.month_total_amount,
-    e.payment_count,
-    e.foreign_shop_payment_share,
-    e.max_payment,
-    e.month_amount_rank_within_customer,
-    e.category_ids_csv
-  FROM eligible_months e
-  JOIN eligible_customers ec
-    ON ec.customer_id = e.customer_id
-   AND ec.month_start = e.month_start
+    mccr.customer_id,
+    mccr.month_start,
+    GROUP_CONCAT(cat.g02, ', ') AS main_categories
+  FROM month_customer_category_ranked AS mccr
+  JOIN cat ON cat.g01 = mccr.category_id
+  WHERE mccr.category_rank <= 3
+  GROUP BY mccr.customer_id, mccr.month_start
 )
 SELECT
-  m.month_start AS month,
-  c.h01 AS customer_id,
+  ch.customer_id,
   c.h03 || ' ' || c.h04 AS customer_name,
-  cn.country_name AS customer_country,
-  cn.city_name AS customer_city,
-  m.month_total_amount AS total_payment_amount,
-  m.payment_count AS payment_count,
-  ROUND(m.foreign_shop_payment_share, 4) AS foreign_shop_payment_share,
-  m.max_payment AS max_payment,
-  m.month_amount_rank_within_customer AS month_rank_within_customer,
-  GROUP_CONCAT(DISTINCT cat.g02) AS top_categories
-FROM main m
-JOIN cus c ON c.h01 = m.customer_id
-LEFT JOIN adr a ON a.e01 = c.h06
-LEFT JOIN cty cn_city ON cn_city.d01 = a.e05
-LEFT JOIN cnt cn_cnt ON cn_cnt.c01 = cn_city.d03
-LEFT JOIN cnt cn ON cn.c01 = cn_cnt.c01
-
-/* map category ids to category names */
-LEFT JOIN payment_enriched pe
-  ON pe.customer_id = m.customer_id
- AND pe.month_start = m.month_start
-LEFT JOIN cat cat
-  ON cat.g01 = pe.category_id
-GROUP BY
-  m.month_start,
-  c.h01,
-  customer_name,
-  customer_country,
-  customer_city,
-  m.month_total_amount,
-  m.payment_count,
-  m.foreign_shop_payment_share,
-  m.max_payment,
-  m.month_amount_rank_within_customer
+  strftime('%Y-%m', ch.month_start) AS month,
+  ROUND(ch.month_total_amount, 2) AS total_payment_amount,
+  ch.payment_count,
+  ROUND(fss.foreign_store_payment_share, 4) AS foreign_store_payment_share,
+  ROUND(ch.max_payment_amount, 2) AS largest_payment_amount,
+  RANK() OVER (
+    PARTITION BY ch.customer_id
+    ORDER BY ch.month_total_amount DESC
+  ) AS month_rank_within_customer,
+  mct.main_categories AS main_categories
+FROM customer_month_history AS ch
+JOIN cus AS c ON c.h01 = ch.customer_id
+JOIN foreign_store_stats AS fss
+  ON fss.customer_id = ch.customer_id
+ AND fss.month_start = ch.month_start
+JOIN distinct_payment_stores AS dps
+  ON dps.customer_id = ch.customer_id
+ AND dps.month_start = ch.month_start
+LEFT JOIN month_customer_category_top AS mct
+  ON mct.customer_id = ch.customer_id
+ AND mct.month_start = ch.month_start
+WHERE
+  ch.prev_months_avg_amount IS NOT NULL
+  AND ch.payment_count >= 5
+  AND ch.month_total_amount > 3.0 * ch.prev_months_avg_amount
+  AND dps.distinct_payment_stores_count >= 2
+  AND fss.foreign_store_payment_share > 0
 ORDER BY
-  m.month_start,
-  m.month_total_amount DESC,
-  m.customer_id;
+  ch.customer_id,
+  ch.month_start;

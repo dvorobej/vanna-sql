@@ -1,161 +1,161 @@
-SELECT AVG(h.payment_sum_30d)
-      FROM (
-        SELECT
-          date(h.payment_day) AS h_day,
-          SUM(h.payment_amount) AS payment_sum_30d
-        FROM base_payments AS h
-        WHERE h.customer_id = e.customer_id
-          AND h.payment_day >= date(e.window_start_day, '-30 days')
-          AND h.payment_day < e.window_start_day
-        GROUP BY date(h.payment_day)
-      ) AS x
-    ) AS avg_daily_window_sum_30d
-  FROM events AS e
-),
-candidates AS (
+WITH
+params AS (
   SELECT
-    bp.customer_id,
-    bp.customer_name,
-    bp.country_name,
-    bp.city_name,
-    bp.window_start_day,
-    -- sums/counts for 7-day window starting at each date
-    (
-      SELECT SUM(bp7.payment_amount)
-      FROM base_payments AS bp7
-      WHERE bp7.customer_id = bp.customer_id
-        AND bp7.payment_day >= bp.window_start_day
-        AND bp7.payment_day <= date(bp.window_start_day, '+6 day')
-    ) AS window_payment_sum,
-    (
-      SELECT COUNT(*)
-      FROM base_payments AS bp7
-      WHERE bp7.customer_id = bp.customer_id
-        AND bp7.payment_day >= bp.window_start_day
-        AND bp7.payment_day <= date(bp.window_start_day, '+6 day')
-    ) AS window_payment_count,
-    (
-      SELECT AVG(hist.payment_amount_sum)
-      FROM (
-        SELECT
-          SUM(bp30.payment_amount) AS payment_amount_sum
-        FROM base_payments AS bp30
-        WHERE bp30.customer_id = bp.customer_id
-          AND bp30.payment_day >= date(bp.window_start_day, '-30 days')
-          AND bp30.payment_day < bp.window_start_day
-        GROUP BY bp30.payment_day
-      ) AS hist
-    ) AS avg_daily_payment_sum_prev_30d
-  FROM (
-    SELECT DISTINCT
-      customer_id,
-      customer_name,
-      country_name,
-      city_name,
-      payment_day AS window_start_day
-    FROM base_payments
-  ) AS bp
+    DATE('now') AS today
 ),
-filtered AS (
-  SELECT *
-  FROM candidates
-  WHERE avg_daily_payment_sum_prev_30d IS NOT NULL
-    AND window_payment_count >= 5
-    AND window_payment_sum >= avg_daily_payment_sum_prev_30d * 3 * 7
-),
-window_dim AS (
+payment_base AS (
   SELECT
-    f.customer_id,
-    f.customer_name,
-    f.country_name,
-    f.city_name,
-    f.window_start_day,
-    -- distinct staff in the window
-    COUNT(DISTINCT p7.staff_id) AS distinct_staff_count,
-    COUNT(DISTINCT p7.staff_store_id) AS distinct_store_count,
-    -- distinct films in the window
-    COUNT(DISTINCT i.n02) AS distinct_films_count,
-    -- top staff by amount in window
-    (
-      SELECT p_top.staff_id
-      FROM (
-        SELECT
-          p8.p03 AS staff_id,
-          SUM(p8.p05) AS staff_amount,
-          ROW_NUMBER() OVER (ORDER BY SUM(p8.p05) DESC, p8.p03) AS rn
-        FROM pay AS p8
-        WHERE p8.p02 = f.customer_id
-          AND DATE(p8.p06) >= f.window_start_day
-          AND DATE(p8.p06) <= date(f.window_start_day, '+6 day')
-        GROUP BY p8.p03
-      ) AS p_top
-      WHERE p_top.rn = 1
-    ) AS top_staff_id,
-    (
-      SELECT SUM(p8.p05)
-      FROM pay AS p8
-      WHERE p8.p02 = f.customer_id
-        AND p8.p03 IN (
-          SELECT p9.p03
-          FROM pay AS p9
-          WHERE p9.p02 = f.customer_id
-            AND DATE(p9.p06) >= f.window_start_day
-            AND DATE(p9.p06) <= date(f.window_start_day, '+6 day')
-          GROUP BY p9.p03
-          ORDER BY SUM(p9.p05) DESC
-          LIMIT 1
-        )
-    ) AS top_staff_amount
-  FROM filtered AS f
-  LEFT JOIN pay AS p7
-    ON p7.p02 = f.customer_id
-   AND DATE(p7.p06) >= f.window_start_day
-   AND DATE(p7.p06) <= date(f.window_start_day, '+6 day')
-  LEFT JOIN ren AS r7
-    ON r7.q01 = p7.p04
+    p.p01 AS payment_id,
+    p.p02 AS customer_id,
+    c.h03 || ' ' || c.h04 AS customer_name,
+    p.p06 AS payment_datetime,
+    DATE(p.p06) AS payment_day,
+    CAST(p.p05 AS REAL) AS payment_amount,
+    p.p03 AS staff_id,
+    sf.o02 || ' ' || sf.o03 AS staff_name,
+    sf.o07 AS staff_store_id,
+    co.c02 AS country_name,
+    ct.d02 AS city_name,
+    r.q01 AS rental_id,
+    i.n01 AS inventory_id,
+    fc.l02 AS film_category_id
+  FROM pay AS p
+  JOIN cus AS c
+    ON c.h01 = p.p02
+  JOIN stf AS sf
+    ON sf.o01 = p.p03
+  JOIN adr AS ca
+    ON ca.e01 = c.h06
+  JOIN cty AS ct
+    ON ct.d01 = ca.e05
+  JOIN cnt AS co
+    ON co.c01 = ct.d03
+  LEFT JOIN ren AS r
+    ON r.q01 = p.p04
   LEFT JOIN inv AS i
-    ON i.n01 = r7.q03
-  GROUP BY
-    f.customer_id,
-    f.customer_name,
-    f.country_name,
-    f.city_name,
-    f.window_start_day
+    ON i.n01 = r.q03
+  LEFT JOIN flc AS fc
+    ON fc.l01 = i.n02
 ),
-final_rank AS (
+daily_customer AS (
   SELECT
-    wd.*,
-    f.window_payment_sum,
-    f.window_payment_count,
-    RANK() OVER (
-      PARTITION BY wd.country_name, wd.window_start_day
-      ORDER BY f.window_payment_sum DESC
-    ) AS suspicious_customer_rank_in_country
-  FROM window_dim AS wd
-  JOIN filtered AS f
-    ON f.customer_id = wd.customer_id
-   AND f.window_start_day = wd.window_start_day
+    customer_id,
+    customer_name,
+    country_name,
+    city_name,
+    payment_day,
+    SUM(payment_amount) AS day_total_amount,
+    COUNT(*) AS day_payment_count,
+    COUNT(DISTINCT staff_id) AS day_distinct_staff_count,
+    COUNT(DISTINCT staff_store_id) AS day_distinct_store_count,
+    COUNT(DISTINCT inventory_id) AS day_distinct_films_count
+  FROM payment_base
+  GROUP BY
+    customer_id,
+    customer_name,
+    country_name,
+    city_name,
+    payment_day
+),
+windows AS (
+  SELECT
+    dc.customer_id,
+    dc.customer_name,
+    dc.country_name,
+    dc.city_name,
+    dc.payment_day AS window_start_day,
+    DATE(dc.payment_day, '+6 day') AS window_end_day,
+
+    SUM(d2.day_total_amount) AS window_total_amount,
+    SUM(d2.day_payment_count) AS window_payment_count,
+    SUM(d2.day_distinct_staff_count) AS window_distinct_staff_count_proxy,
+    MAX(d2.day_distinct_staff_count) AS window_max_daily_staff_count,
+
+    SUM(d2.day_distinct_store_count) AS window_distinct_store_count_proxy,
+    MAX(d2.day_distinct_store_count) AS window_max_daily_store_count,
+
+    SUM(d2.day_distinct_films_count) AS window_distinct_films_count_proxy
+  FROM daily_customer AS dc
+  JOIN daily_customer AS d2
+    ON d2.customer_id = dc.customer_id
+   AND d2.payment_day >= dc.payment_day
+   AND d2.payment_day <= DATE(dc.payment_day, '+6 day')
+  GROUP BY
+    dc.customer_id,
+    dc.customer_name,
+    dc.country_name,
+    dc.city_name,
+    dc.payment_day
+),
+history_30d AS (
+  SELECT
+    w.customer_id,
+    w.window_start_day,
+
+    AVG(h.day_total_amount) AS avg_daily_amount_prev_30d,
+    AVG(h.day_payment_count) AS avg_daily_payment_count_prev_30d,
+
+    SUM(h.day_total_amount) / 30.0 AS avg_window_amount_prev_30d,
+    SUM(h.day_payment_count) / 30.0 AS avg_window_payment_count_prev_30d,
+
+    COUNT(*) AS history_days_count
+  FROM windows AS w
+  JOIN daily_customer AS h
+    ON h.customer_id = w.customer_id
+   AND h.payment_day >= DATE(w.window_start_day, '-30 day')
+   AND h.payment_day < w.window_start_day
+  GROUP BY
+    w.customer_id,
+    w.window_start_day
+),
+scored AS (
+  SELECT
+    w.*,
+    h.avg_window_amount_prev_30d,
+    h.avg_window_payment_count_prev_30d,
+    h.history_days_count,
+
+    CASE
+      WHEN h.avg_window_amount_prev_30d > 0
+      THEN w.window_total_amount / h.avg_window_amount_prev_30d
+      ELSE NULL
+    END AS amount_ratio_vs_history_window
+  FROM windows AS w
+  JOIN history_30d AS h
+    ON h.customer_id = w.customer_id
+   AND h.window_start_day = w.window_start_day
+),
+qualifying AS (
+  SELECT
+    s.*,
+    DENSE_RANK() OVER (
+      ORDER BY s.window_total_amount DESC
+    ) AS suspicious_window_rank_by_amount
+  FROM scored AS s
+  WHERE s.history_days_count >= 1
+    AND s.window_payment_count >= 5
+    AND s.avg_window_amount_prev_30d IS NOT NULL
+    AND s.avg_window_amount_prev_30d > 0
+    AND s.window_total_amount >= 3.0 * s.avg_window_amount_prev_30d
 )
 SELECT
-  fr.window_start_day,
-  fr.customer_id,
-  fr.customer_name,
-  fr.country_name,
-  fr.city_name,
-  fr.window_payment_count AS window_payment_operations,
-  ROUND(fr.window_payment_sum, 2) AS window_payment_amount_sum,
-  fr.distinct_staff_count AS staff_count_in_window,
-  fr.distinct_store_count AS store_count_in_window,
-  fr.distinct_films_count AS rented_films_count_in_window,
-  fr.top_staff_id,
-  st.o02 || ' ' || st.o03 AS top_staff_name,
-  ROUND(fr.top_staff_amount, 2) AS top_staff_amount,
-  fr.suspicious_customer_rank_in_country AS suspicious_rank_in_country
-FROM final_rank AS fr
-LEFT JOIN stf AS st
-  ON st.o01 = fr.top_staff_id
+  q.customer_id,
+  q.customer_name,
+  q.country_name,
+  q.city_name,
+  q.window_start_day AS window_start_date,
+  q.window_end_day AS window_end_date,
+
+  q.window_payment_count AS window_payment_operations,
+  ROUND(q.window_total_amount, 2) AS window_total_amount,
+  ROUND(q.amount_ratio_vs_history_window, 2) AS amount_ratio_vs_prev_30d_avg_window,
+
+  -- Вспомогательные (оценочные) агрегаты
+  q.window_distinct_films_count_proxy AS distinct_films_in_window_proxy,
+
+  q.suspicious_window_rank_by_amount AS client_rank_among_all_by_suspicious_amount
+FROM qualifying AS q
 ORDER BY
-  fr.window_start_day,
-  fr.country_name,
-  fr.window_payment_amount_sum DESC,
-  fr.customer_id;
+  q.window_total_amount DESC,
+  q.customer_id,
+  q.window_start_day;

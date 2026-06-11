@@ -1,83 +1,82 @@
-WITH monthly_customer_stats AS (
+WITH monthly_stats AS (
     SELECT
         p.p02 AS customer_id,
-        date(p.p06, 'start of month') AS month_start,
+        strftime('%Y-%m', p.p06) AS month,
         SUM(p.p05) AS monthly_sum,
-        COUNT(p.p01) AS payment_count,
-        MAX(p.p03) AS top_staff_id -- Placeholder for logic below
+        COUNT(p.p01) AS payment_count
     FROM pay p
     JOIN ren r ON p.p04 = r.q01 AND p.p02 = r.q04
-    WHERE p.p06 >= '2005-01-01' AND p.p06 < '2006-01-01'
-    GROUP BY p.p02, date(p.p06, 'start of month')
+    WHERE p.p06 BETWEEN '2005-01-01' AND '2005-12-31 23:59:59'
+    GROUP BY p.p02, strftime('%Y-%m', p.p06)
 ),
-customer_history AS (
+rolling_avg AS (
     SELECT
-        *,
+        customer_id,
+        month,
+        monthly_sum,
+        payment_count,
         AVG(monthly_sum) OVER (
             PARTITION BY customer_id 
-            ORDER BY month_start 
+            ORDER BY month 
             ROWS BETWEEN 2 PRECEDING AND 1 PRECEDING
         ) AS prev_avg_sum,
-        COUNT(monthly_sum) OVER (
+        COUNT(*) OVER (
             PARTITION BY customer_id 
-            ORDER BY month_start 
+            ORDER BY month 
             ROWS BETWEEN 2 PRECEDING AND 1 PRECEDING
         ) AS prev_months_count
-    FROM monthly_customer_stats
+    FROM monthly_stats
 ),
 suspicious_months AS (
     SELECT *
-    FROM customer_history
+    FROM rolling_avg
     WHERE prev_months_count = 2
       AND monthly_sum >= 2 * prev_avg_sum
       AND payment_count >= 3
 ),
-staff_monthly_sums AS (
-    SELECT p.p02, date(p.p06, 'start of month') AS m_start, p.p03, SUM(p.p05) AS s
+staff_monthly AS (
+    SELECT
+        p.p02 AS customer_id,
+        strftime('%Y-%m', p.p06) AS month,
+        p.p03 AS staff_id,
+        SUM(p.p05) AS staff_sum
     FROM pay p
-    GROUP BY p.p02, date(p.p06, 'start of month'), p.p03
+    GROUP BY p.p02, strftime('%Y-%m', p.p06), p.p03
 ),
 top_staff AS (
-    SELECT m_start, p02, p03
+    SELECT customer_id, month, staff_id
     FROM (
-        SELECT *, ROW_NUMBER() OVER(PARTITION BY p02, m_start ORDER BY s DESC) as rn
-        FROM staff_monthly_sums
+        SELECT *, ROW_NUMBER() OVER (PARTITION BY customer_id, month ORDER BY staff_sum DESC) as rn
+        FROM staff_monthly
     ) WHERE rn = 1
 ),
-store_rankings AS (
+customer_rankings AS (
     SELECT
-        sm.customer_id,
-        sm.month_start,
-        sm.monthly_sum,
-        sm.payment_count,
-        (sm.monthly_sum - sm.prev_avg_sum) AS deviation,
+        sm.*,
         c.h02 AS store_id,
-        RANK() OVER (PARTITION BY c.h02, sm.month_start ORDER BY sm.monthly_sum DESC) AS store_rank,
-        SUM(sm.monthly_sum) OVER (PARTITION BY c.h02, sm.customer_id) AS total_suspicious_sum_per_store
+        RANK() OVER (PARTITION BY c.h02, sm.month ORDER BY sm.monthly_sum DESC) as store_rank,
+        SUM(sm.monthly_sum) OVER (PARTITION BY c.h02, sm.customer_id) as total_suspicious_sum
     FROM suspicious_months sm
     JOIN cus c ON sm.customer_id = c.h01
 ),
-store_top_10_percent AS (
-    SELECT *,
-           PERCENT_RANK() OVER (PARTITION BY store_id ORDER BY total_suspicious_sum_per_store DESC) as pr
-    FROM store_rankings
+top_10_percent AS (
+    SELECT store_id, customer_id,
+           PERCENT_RANK() OVER (PARTITION BY store_id ORDER BY total_suspicious_sum DESC) as p_rank
+    FROM (SELECT DISTINCT store_id, customer_id, total_suspicious_sum FROM customer_rankings)
 )
 SELECT
-    st.customer_id,
-    st.month_start,
-    st.monthly_sum,
-    st.payment_count,
-    st.deviation,
-    st.store_rank,
-    sto.j01, adr.e02, cty.d02, cnt.c02,
-    stf.o02 || ' ' || stf.o03 AS top_staff_name
-FROM store_top_10_percent st
-JOIN cus c ON st.customer_id = c.h01
-JOIN sto ON c.h02 = sto.j01
-JOIN adr ON sto.j03 = adr.e01
-JOIN cty ON adr.e05 = cty.d01
-JOIN cnt ON cty.d03 = cnt.c01
-JOIN top_staff ts ON st.customer_id = ts.p02 AND st.month_start = ts.m_start
-JOIN stf ON ts.p03 = stf.o01
-WHERE st.pr <= 0.1
-ORDER BY st.store_id, st.month_start, st.monthly_sum DESC;
+    cr.customer_id, cr.month, cr.monthly_sum, cr.payment_count,
+    (cr.monthly_sum - cr.prev_avg_sum) AS deviation,
+    cr.store_rank,
+    st.j01, a.e02, ct.d02, cn.c02,
+    s.o02 || ' ' || s.o03 AS top_staff_name
+FROM customer_rankings cr
+JOIN top_10_percent t10 ON cr.customer_id = t10.customer_id AND cr.store_id = t10.store_id
+JOIN top_staff ts ON cr.customer_id = ts.customer_id AND cr.month = ts.month
+JOIN stf s ON ts.staff_id = s.o01
+JOIN sto st ON cr.store_id = st.j01
+JOIN adr a ON st.j03 = a.e01
+JOIN cty ct ON a.e05 = ct.d01
+JOIN cnt cn ON ct.d03 = cn.c01
+WHERE t10.p_rank <= 0.1
+ORDER BY cr.store_id, cr.month, cr.monthly_sum DESC;

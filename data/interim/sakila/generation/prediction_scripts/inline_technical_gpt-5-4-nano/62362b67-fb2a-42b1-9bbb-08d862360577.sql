@@ -1,75 +1,84 @@
 WITH daily_by_customer AS (
     SELECT
         c.h01 AS customer_id,
-        date(p.p06) AS activity_date,
+        date(p.p06) AS payment_day,
+        SUM(p.p05) AS day_sum,
         COUNT(*) AS payment_count,
-        SUM(CAST(p.p05 AS REAL)) AS day_amount,
-        COUNT(DISTINCT p.p03) AS staff_count,
-        COUNT(DISTINCT s.j01) AS store_count
+        COUNT(DISTINCT p.p03) AS distinct_staff_count,
+        COUNT(DISTINCT s.j01) AS distinct_store_count
     FROM pay AS p
     JOIN cus AS c
         ON c.h01 = p.p02
-    JOIN ren AS r
+    LEFT JOIN ren AS r
         ON r.q01 = p.p04
-    JOIN inv AS i
+    LEFT JOIN inv AS i
         ON i.n01 = r.q03
-    JOIN sto AS s
+    LEFT JOIN sto AS s
         ON s.j01 = i.n03
+    WHERE p.p06 IS NOT NULL
     GROUP BY
         c.h01,
         date(p.p06)
 ),
-daily_with_history AS (
+with_history AS (
     SELECT
         d.customer_id,
-        d.activity_date,
+        d.payment_day,
+        d.day_sum,
         d.payment_count,
-        d.day_amount,
-        d.staff_count,
-        d.store_count,
+        d.distinct_staff_count,
+        d.distinct_store_count,
         (
-            SELECT AVG(CAST(x.day_amount AS REAL))
-            FROM daily_by_customer AS x
-            WHERE x.customer_id = d.customer_id
-              AND x.activity_date >= date(d.activity_date, '-30 day')
-              AND x.activity_date < d.activity_date
-        ) AS avg_prev_30d_amount
+            SELECT AVG(d2.day_sum)
+            FROM daily_by_customer AS d2
+            WHERE d2.customer_id = d.customer_id
+              AND d2.payment_day >= date(d.payment_day, '-30 days')
+              AND d2.payment_day < d.payment_day
+        ) AS avg_prev_30d
     FROM daily_by_customer AS d
 ),
-thresholded AS (
+flagged AS (
     SELECT
-        *
-    FROM daily_with_history
-    WHERE avg_prev_30d_amount IS NOT NULL
-      AND avg_prev_30d_amount > 0
-      AND day_amount >= 3 * avg_prev_30d_amount
-      AND (staff_count > 1 OR store_count > 1)
+        wh.*,
+        (wh.day_sum / NULLIF(wh.avg_prev_30d, 0)) AS exceed_ratio
+    FROM with_history AS wh
+    WHERE wh.avg_prev_30d IS NOT NULL
+      AND wh.avg_prev_30d > 0
+      AND wh.day_sum >= 3 * wh.avg_prev_30d
+      AND (wh.distinct_staff_count >= 2 OR wh.distinct_store_count >= 2)
+),
+customer_geo AS (
+    SELECT
+        c.h01 AS customer_id,
+        adr.e01 AS address_id,
+        cnt.c01 AS country_id,
+        cnt.c02 AS country,
+        cty.d02 AS city
+    FROM cus AS c
+    JOIN adr
+        ON adr.e01 = c.h06
+    JOIN cty
+        ON cty.d01 = adr.e05
+    JOIN cnt
+        ON cnt.c01 = cty.d03
 )
 SELECT
-    t.customer_id,
-    cus.h03 AS customer_first_name,
-    cus.h04 AS customer_last_name,
-    cnt.c02 AS country,
-    cty.d02 AS city,
-    t.activity_date,
-    t.day_amount,
-    t.payment_count,
-    t.staff_count,
-    ROUND(t.avg_prev_30d_amount, 2) AS avg_prev_30d_amount,
-    RANK() OVER (
-        ORDER BY (t.day_amount / t.avg_prev_30d_amount) DESC
-    ) AS suspicious_rank_overall
-FROM thresholded AS t
-JOIN cus
-    ON cus.h01 = t.customer_id
-JOIN adr
-    ON adr.e01 = cus.h06
-JOIN cty
-    ON cty.d01 = adr.e05
-JOIN cnt
-    ON cnt.c01 = cty.d03
+    f.customer_id,
+    cg.country,
+    cg.city,
+    f.payment_day AS suspicious_day,
+    f.day_sum,
+    f.payment_count,
+    f.distinct_staff_count AS staff_count,
+    ROUND(f.avg_prev_30d, 2) AS avg_prev_30d,
+    DENSE_RANK() OVER (
+        ORDER BY (f.day_sum / NULLIF(f.avg_prev_30d, 0)) DESC
+    ) AS suspicious_level_rank
+FROM flagged AS f
+JOIN customer_geo AS cg
+    ON cg.customer_id = f.customer_id
 ORDER BY
-    (t.day_amount / t.avg_prev_30d_amount) DESC,
-    t.day_amount DESC,
-    t.customer_id,
-    t.activity_date;
+    suspicious_level_rank,
+    f.day_sum DESC,
+    f.customer_id,
+    f.payment_day;

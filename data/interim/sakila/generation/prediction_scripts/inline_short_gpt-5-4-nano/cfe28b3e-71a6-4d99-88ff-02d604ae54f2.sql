@@ -6,9 +6,9 @@ SELECT
   SUM(p.p05) AS total_amount,
   AVG(p.p05) AS avg_payment_amount,
   CASE
-    WHEN AVG(p.p05) > 7.00 OR SUM(p.p05) > 50 THEN 1
+    WHEN AVG(p.p05) > 8.00 OR SUM(p.p05) > 50 THEN 1
     ELSE 0
-  END AS suspicious_activity
+  END AS suspicious_flag
 FROM cus AS c
 JOIN pay AS p
   ON p.p02 = c.h01

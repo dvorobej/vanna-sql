@@ -174,7 +174,7 @@ def run_generation_evaluation_pipeline(
             ):
                 query = test_row["query"]
                 row_uuid = test_row["uuid"]
-                sql = client.generate_sql(query).strip()
+                sql = client.generate_sql(query, allow_llm_to_see_data=True).strip()
                 (scripts_subdir / f"{row_uuid}.sql").write_text(sql, encoding="utf-8")
 
                 if not _is_read_only_sql(sql):

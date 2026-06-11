@@ -21,7 +21,7 @@ GROUP BY
   c.h03,
   c.h04,
   c.h02
-HAVING SUM(p.p05) > 50.00
+HAVING SUM(p.p05) > 50
 ORDER BY
   total_amount DESC,
   payment_count DESC;

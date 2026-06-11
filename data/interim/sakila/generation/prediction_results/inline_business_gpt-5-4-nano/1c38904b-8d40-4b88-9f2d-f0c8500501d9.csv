@@ -1,4 +1,4 @@
-customer_id,customer_first_name,customer_last_name,payment_count,total_amount,average_payment_amount,share_payments_from_other_store_staff
+customer_id,first_name,last_name,payment_count,total_amount,average_payment_amount,share_payments_by_other_store_staff
 454,ALEX,GRESHAM,10,52.9,5.29,0.5
 178,MARION,SNYDER,8,44.92,5.62,0.375
 176,JUNE,CARROLL,8,42.92,5.37,0.25

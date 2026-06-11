@@ -5,7 +5,7 @@ SELECT
   c.h02 AS store_id,
   COUNT(p.p01) AS payment_count,
   ROUND(SUM(p.p05), 2) AS total_amount,
-  ROUND(AVG(p.p05), 2) AS avg_payment,
+  ROUND(AVG(p.p05), 2) AS average_payment,
   MAX(p.p05) AS max_payment,
   CASE
     WHEN COUNT(p.p01) > 10 THEN 'требует дополнительной проверки'

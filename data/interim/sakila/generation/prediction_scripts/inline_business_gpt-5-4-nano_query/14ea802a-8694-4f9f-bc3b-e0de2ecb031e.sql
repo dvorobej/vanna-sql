@@ -5,9 +5,9 @@ SELECT
   SUM(p.p05) AS total_amount,
   AVG(p.p05) AS average_check,
   CASE
-    WHEN COUNT(p.p01) > 10 OR SUM(p.p05) > 80 THEN 1
-    ELSE 0
-  END AS suspicious_activity
+    WHEN COUNT(p.p01) > 10 OR SUM(p.p05) > 80 THEN 'подозрительная активность'
+    ELSE 'нормальная'
+  END AS risk_flag
 FROM cus AS c
 JOIN pay AS p
   ON p.p02 = c.h01
@@ -19,4 +19,4 @@ GROUP BY
   c.h04
 HAVING COUNT(p.p01) > 10
     OR SUM(p.p05) > 80
-ORDER BY total_amount DESC, transaction_count DESC;
+ORDER BY total_amount DESC, transaction_count DESC, c.h01;

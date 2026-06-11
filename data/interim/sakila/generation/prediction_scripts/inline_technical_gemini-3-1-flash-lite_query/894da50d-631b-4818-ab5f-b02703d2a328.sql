@@ -1,102 +1,60 @@
-WITH payment_details AS (
+WITH monthly_payments AS (
     SELECT
         p.p02 AS customer_id,
         date(p.p06, 'start of month') AS month_start,
-        p.p01 AS payment_id,
-        p.p05 AS amount,
-        p.p03 AS staff_id,
-        s.o07 AS staff_store_id,
-        c.h02 AS customer_store_id,
-        c.h06 AS customer_address_id,
-        i.n03 AS film_store_id,
-        fc.l02 AS category_id,
-        cat.g02 AS category_name
+        SUM(p.p05) AS monthly_amount,
+        COUNT(*) AS payment_count,
+        COUNT(DISTINCT i.n03) AS store_count,
+        MAX(p.p05) AS max_payment,
+        SUM(CASE WHEN c.h06 != a.e01 OR ct.d01 != cty.d01 THEN 1 ELSE 0 END) AS foreign_store_payments
     FROM pay p
-    JOIN cus c ON c.h01 = p.p02
-    JOIN stf s ON s.o01 = p.p03
-    JOIN ren r ON r.q01 = p.p04
-    JOIN inv i ON i.n01 = r.q03
-    JOIN flc fc ON fc.l01 = i.n02
-    JOIN cat ON cat.g01 = fc.l02
+    JOIN ren r ON p.p04 = r.q01
+    JOIN inv i ON r.q03 = i.n01
+    JOIN cus c ON p.p02 = c.h01
+    JOIN adr a ON c.h06 = a.e01
+    JOIN cty ct ON a.e05 = ct.d01
+    JOIN sto s ON i.n03 = s.j01
+    JOIN adr sa ON s.j03 = sa.e01
+    JOIN cty cty ON sa.e05 = cty.d01
+    GROUP BY p.p02, date(p.p06, 'start of month')
+    HAVING COUNT(DISTINCT i.n03) > 1
+       AND payment_count >= 5
 ),
-geo_mismatch AS (
+history AS (
     SELECT
-        pd.*,
-        a.e05 AS customer_city_id,
-        ct.d03 AS customer_country_id,
-        sto.j03 AS store_address_id,
-        sa.e05 AS store_city_id,
-        sct.d03 AS store_country_id
-    FROM payment_details pd
-    JOIN adr a ON a.e01 = pd.customer_address_id
-    JOIN cty ct ON ct.d01 = a.e05
-    JOIN sto ON sto.j01 = pd.film_store_id
-    JOIN adr sa ON sa.e01 = sto.j03
-    JOIN cty sct ON sct.d01 = sa.e05
-    WHERE pd.customer_city_id <> pd.store_city_id OR pd.customer_country_id <> pd.store_country_id
-),
-monthly_stats AS (
-    SELECT
-        customer_id,
-        month_start,
-        SUM(amount) AS total_amount,
-        COUNT(payment_id) AS payment_count,
-        MAX(amount) AS max_payment,
-        COUNT(DISTINCT staff_store_id) AS distinct_staff_stores,
-        SUM(CASE WHEN staff_store_id <> customer_store_id THEN 1 ELSE 0 END) * 1.0 / COUNT(payment_id) AS off_store_share
-    FROM payment_details
-    GROUP BY customer_id, month_start
-),
-history_avg AS (
-    SELECT
-        customer_id,
-        month_start,
-        total_amount,
-        payment_count,
-        max_payment,
-        off_store_share,
-        AVG(total_amount) OVER (
+        *,
+        AVG(monthly_amount) OVER (
             PARTITION BY customer_id
             ORDER BY month_start
             ROWS BETWEEN UNBOUNDED PRECEDING AND 1 PRECEDING
-        ) AS prev_avg_amount
-    FROM monthly_stats
-    WHERE payment_count >= 5
-      AND distinct_staff_stores > 1
-),
-category_spending AS (
-    SELECT
-        customer_id,
-        month_start,
-        category_name,
-        SUM(amount) AS cat_amount
-    FROM payment_details
-    GROUP BY customer_id, month_start, category_name
+        ) AS prev_avg
+    FROM monthly_payments
 ),
 top_categories AS (
     SELECT
-        customer_id,
-        month_start,
-        GROUP_CONCAT(category_name, ', ') AS main_categories
-    FROM (
-        SELECT customer_id, month_start, category_name,
-               RANK() OVER (PARTITION BY customer_id, month_start ORDER BY cat_amount DESC) as rnk
-        FROM category_spending
-    )
-    WHERE rnk <= 2
-    GROUP BY customer_id, month_start
+        p.p02 AS customer_id,
+        date(p.p06, 'start of month') AS month_start,
+        cat.g02 AS category_name,
+        SUM(p.p05) AS cat_sum,
+        RANK() OVER (PARTITION BY p.p02, date(p.p06, 'start of month') ORDER BY SUM(p.p05) DESC) as cat_rank
+    FROM pay p
+    JOIN ren r ON p.p04 = r.q01
+    JOIN inv i ON r.q03 = i.n01
+    JOIN flc f ON i.n02 = f.l01
+    JOIN cat ON f.l02 = cat.g01
+    GROUP BY p.p02, date(p.p06, 'start of month'), cat.g02
 )
 SELECT
-    strftime('%Y-%m', h.month_start) AS month,
-    h.total_amount,
+    h.month_start,
+    h.monthly_amount,
     h.payment_count,
-    ROUND(h.off_store_share, 4) AS off_store_share,
+    ROUND(CAST(h.foreign_store_payments AS REAL) / h.payment_count, 2) AS foreign_store_share,
     h.max_payment,
-    RANK() OVER (PARTITION BY h.customer_id ORDER BY h.total_amount DESC) AS month_rank,
-    tc.main_categories
-FROM history_avg h
-JOIN top_categories tc ON tc.customer_id = h.customer_id AND tc.month_start = h.month_start
-WHERE h.prev_avg_amount > 0
-  AND h.total_amount > 3 * h.prev_avg_amount
-  AND EXISTS (SELECT 1 FROM geo_mismatch gm WHERE gm.customer_id = h.customer_id AND gm.month_start = h.month_start)
-ORDER BY h.customer_id, h.month_start;
+    RANK() OVER (PARTITION BY h.customer_id ORDER BY h.monthly_amount DESC) AS month_rank,
+    GROUP_CONCAT(tc.category_name, ', ') AS top_categories
+FROM history h
+JOIN top_categories tc ON h.customer_id = tc.customer_id AND h.month_start = tc.month_start
+WHERE h.prev_avg > 0
+  AND h.monthly_amount > 3 * h.prev_avg
+  AND tc.cat_rank = 1
+GROUP BY h.customer_id, h.month_start;

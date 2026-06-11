@@ -18,7 +18,4 @@ GROUP BY
   c.h03,
   c.h04
 HAVING COUNT(p.p01) > 10
-    OR SUM(p.p05) > 50
-ORDER BY
-  total_amount DESC,
-  payment_count DESC;
+    OR SUM(p.p05) > 50;

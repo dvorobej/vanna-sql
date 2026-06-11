@@ -1,84 +1,81 @@
-WITH monthly_customer_stats AS (
+WITH monthly_stats AS (
     SELECT
         p.p02 AS customer_id,
-        strftime('%Y-%m', p.p06) AS payment_month,
-        SUM(p.p05) AS monthly_amount,
+        date(p.p06, 'start of month') AS month_start,
+        SUM(p.p05) AS total_amount,
         COUNT(*) AS payment_count,
         COUNT(DISTINCT p.p03) AS staff_count,
-        AVG(CASE WHEN r.q05 > date(r.q02, '+' || flm.i07 || ' days') THEN 1.0 ELSE 0.0 END) AS late_return_share
+        SUM(CASE WHEN r.q05 > date(r.q02, '+' || f.i07 || ' days') THEN 1.0 ELSE 0.0 END) / COUNT(*) AS late_return_share
     FROM pay p
     JOIN ren r ON p.p04 = r.q01
     JOIN inv i ON r.q03 = i.n01
-    JOIN flm ON i.n02 = flm.i01
-    GROUP BY p.p02, strftime('%Y-%m', p.p06)
+    JOIN flm f ON i.n02 = f.i01
+    GROUP BY p.p02, date(p.p06, 'start of month')
 ),
 customer_history AS (
     SELECT
-        mcs.*,
-        AVG(mcs.monthly_amount) OVER (
-            PARTITION BY mcs.customer_id 
-            ORDER BY mcs.payment_month 
+        ms.*,
+        AVG(ms.total_amount) OVER (
+            PARTITION BY ms.customer_id 
+            ORDER BY ms.month_start 
             ROWS BETWEEN UNBOUNDED PRECEDING AND 1 PRECEDING
-        ) AS prev_avg_amount
-    FROM monthly_customer_stats mcs
-),
-store_country_stats AS (
-    SELECT
-        mcs.payment_month,
+        ) AS prev_avg_amount,
         c.h02 AS store_id,
-        co.c01 AS country_id,
-        mcs.monthly_amount
-    FROM monthly_customer_stats mcs
-    JOIN cus c ON mcs.customer_id = c.h01
+        co.c02 AS country,
+        ci.d02 AS city
+    FROM monthly_stats ms
+    JOIN cus c ON ms.customer_id = c.h01
     JOIN adr a ON c.h06 = a.e01
     JOIN cty ci ON a.e05 = ci.d01
     JOIN cnt co ON ci.d03 = co.c01
 ),
-percentiles AS (
+store_country_percentiles AS (
     SELECT
-        payment_month,
         store_id,
-        country_id,
-        -- SQLite approximation for 95th percentile
-        MAX(monthly_amount) FILTER (WHERE rn <= total * 0.95) AS p95_amount
-    FROM (
-        SELECT *,
-               ROW_NUMBER() OVER (PARTITION BY payment_month, store_id, country_id ORDER BY monthly_amount) as rn,
-               COUNT(*) OVER (PARTITION BY payment_month, store_id, country_id) as total
-        FROM store_country_stats
-    )
-    GROUP BY payment_month, store_id, country_id
+        country,
+        month_start,
+        total_amount,
+        PERCENT_RANK() OVER (
+            PARTITION BY store_id, country, month_start 
+            ORDER BY total_amount
+        ) AS p_rank
+    FROM customer_history
 ),
-final_ranking AS (
+p95_thresholds AS (
+    SELECT store_id, country, month_start, MAX(total_amount) as p95_val
+    FROM store_country_percentiles
+    WHERE p_rank <= 0.95
+    GROUP BY store_id, country, month_start
+),
+ranked_customers AS (
     SELECT
         ch.*,
-        c.h03 || ' ' || c.h04 AS customer_name,
-        co.c02 AS country,
-        ci.d02 AS city,
-        c.h02 AS store_id,
-        RANK() OVER (PARTITION BY c.h02, ch.payment_month ORDER BY ch.monthly_amount DESC) AS store_rank
+        RANK() OVER (
+            PARTITION BY ch.store_id, ch.month_start 
+            ORDER BY ch.total_amount DESC
+        ) AS store_rank
     FROM customer_history ch
-    JOIN cus c ON ch.customer_id = c.h01
-    JOIN adr a ON c.h06 = a.e01
-    JOIN cty ci ON a.e05 = ci.d01
-    JOIN cnt co ON ci.d03 = co.c01
-    JOIN percentiles p ON ch.payment_month = p.payment_month 
-                       AND c.h02 = p.store_id 
-                       AND co.c01 = p.country_id
+    JOIN p95_thresholds p95 
+      ON ch.store_id = p95.store_id 
+      AND ch.country = p95.country 
+      AND ch.month_start = p95.month_start
     WHERE ch.prev_avg_amount IS NOT NULL
-      AND ch.monthly_amount >= 3 * ch.prev_avg_amount
-      AND ch.monthly_amount > p.p95_amount
+      AND ch.total_amount >= 3 * ch.prev_avg_amount
+      AND ch.total_amount > p95.p95_val
 )
 SELECT
-    customer_name,
-    country,
-    city,
-    store_id,
-    payment_month,
-    monthly_amount,
-    payment_count,
-    staff_count,
-    late_return_share,
-    store_rank
-FROM final_ranking
-ORDER BY payment_month, store_id, store_rank;
+    ch.customer_id,
+    ch.country,
+    ch.city,
+    ch.store_id,
+    strftime('%Y-%m', ch.month_start) AS month,
+    ROUND(ch.total_amount, 2) AS total_amount,
+    ch.payment_count,
+    ch.staff_count,
+    ROUND(ch.late_return_share, 4) AS late_return_share,
+    rc.store_rank
+FROM customer_history ch
+JOIN ranked_customers rc 
+  ON ch.customer_id = rc.customer_id 
+  AND ch.month_start = rc.month_start
+ORDER BY ch.month_start, ch.store_id, rc.store_rank;

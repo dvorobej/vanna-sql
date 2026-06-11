@@ -1,4 +1,4 @@
-customer_id,first_name,last_name,payment_count,total_amount,average_amount,payment_count_above_5
+customer_id,first_name,last_name,payment_count,total_amount,avg_amount,payments_over_5
 148,ELEANOR,HUNT,22,100.77999999999997,4.580909090909089,4
 102,CRYSTAL,FORD,21,84.78999999999999,4.037619047619048,7
 236,MARCIA,DEAN,20,73.8,3.69,2

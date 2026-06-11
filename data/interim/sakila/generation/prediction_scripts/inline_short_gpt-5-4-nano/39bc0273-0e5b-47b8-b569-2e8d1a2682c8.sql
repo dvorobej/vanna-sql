@@ -1,101 +1,101 @@
-WITH customer_geo AS (
-  SELECT
-    c.h01 AS customer_id,
-    c.h02 AS store_id,
-    cnt.c01 AS country_id,
-    cnt.c02 AS country,
-    c.h03 AS first_name,
-    c.h04 AS last_name,
-    adr.e01 AS address_id
-  FROM cus AS c
-  JOIN adr ON adr.e01 = c.h06
-  JOIN cty ci ON ci.d01 = adr.e05
-  JOIN cnt ON cnt.c01 = ci.d03
-),
-monthly_customer_staff AS (
+WITH monthly_customer_store_staff AS (
   SELECT
     p.p02 AS customer_id,
-    cg.country_id,
-    cg.country,
-    cg.store_id,
+    c.h03 AS first_name,
+    c.h04 AS last_name,
     p.p03 AS staff_id,
+    s.o02 AS staff_first_name,
+    s.o03 AS staff_last_name,
+    c.h02 AS store_id,
+    cn.c01 AS country_id,
+    cn.c02 AS country_name,
     date(p.p06, 'start of month') AS month_start,
     SUM(CAST(p.p05 AS REAL)) AS month_amount,
     COUNT(*) AS payment_count
-  FROM pay p
-  JOIN customer_geo cg
-    ON cg.customer_id = p.p02
+  FROM pay AS p
+  JOIN cus AS c
+    ON c.h01 = p.p02
+  JOIN stf AS s
+    ON s.o01 = p.p03
+  JOIN adr AS a
+    ON a.e01 = c.h06
+  JOIN cty AS ci
+    ON ci.d01 = a.e05
+  JOIN cnt AS cn
+    ON cn.c01 = ci.d03
   GROUP BY
     p.p02,
-    cg.country_id,
-    cg.country,
-    cg.store_id,
+    c.h03,
+    c.h04,
     p.p03,
+    s.o02,
+    s.o03,
+    c.h02,
+    cn.c01,
+    cn.c02,
     date(p.p06, 'start of month')
 ),
-monthly_customer_staff_ranked AS (
+month_country_avg AS (
   SELECT
-    m.*,
-    RANK() OVER (
-      PARTITION BY m.country_id, m.month_start
-      ORDER BY m.month_amount DESC
-    ) AS country_month_amount_rank,
-    AVG(m.month_amount) OVER (
-      PARTITION BY m.country_id, m.month_start
-    ) AS country_month_avg_amount,
-    LAG(m.month_amount) OVER (
-      PARTITION BY m.country_id, m.customer_id, m.store_id, m.staff_id
-      ORDER BY m.month_start
-    ) AS prev_month_amount
-  FROM monthly_customer_staff m
+    country_id,
+    month_start,
+    AVG(month_amount) AS country_avg_month_amount
+  FROM monthly_customer_store_staff
+  GROUP BY country_id, month_start
 ),
-best_customer_per_staff_month AS (
+ranked_by_country AS (
   SELECT
-    *,
-    ROW_NUMBER() OVER (
-      PARTITION BY country_id, month_start, store_id, staff_id
-      ORDER BY month_amount DESC
-    ) AS rn_staff_best
-  FROM monthly_customer_staff_ranked
+    mc.*,
+    RANK() OVER (
+      PARTITION BY mc.country_id
+      ORDER BY mc.month_amount DESC
+    ) AS rank_in_country,
+    LAG(mc.month_amount) OVER (
+      PARTITION BY mc.customer_id, mc.country_id, mc.store_id, mc.staff_id
+      ORDER BY mc.month_start
+    ) AS prev_month_amount_same_entity,
+    mca.country_avg_month_amount
+  FROM monthly_customer_store_staff AS mc
+  JOIN month_country_avg AS mca
+    ON mca.country_id = mc.country_id
+   AND mca.month_start = mc.month_start
+),
+top_per_month_customer_store_staff AS (
+  SELECT
+    *
+  FROM ranked_by_country
+  WHERE (month_start, country_id, store_id, staff_id) IN (
+    SELECT
+      month_start,
+      country_id,
+      store_id,
+      staff_id
+    FROM ranked_by_country
+    GROUP BY month_start, country_id, store_id, staff_id
+  )
 )
 SELECT
-  bc.customer_id,
-  bc.first_name,
-  bc.last_name,
-  bc.country,
-  bc.store_id,
-  bc.staff_id,
-  bc.month_start AS month,
-  ROUND(bc.month_amount, 2) AS month_amount,
-  bc.payment_count,
-  bc.country_month_amount_rank,
-  ROUND(bc.prev_month_amount, 2) AS prev_month_amount,
-  ROUND(bc.month_amount - bc.prev_month_amount, 2) AS deviation_from_prev_month,
-  ROUND(bc.country_month_avg_amount, 2) AS country_month_avg_amount,
-  ROUND(bc.month_amount - bc.country_month_avg_amount, 2) AS deviation_from_country_avg
-FROM (
-  SELECT
-    b.customer_id,
-    cg.first_name,
-    cg.last_name,
-    b.country_id,
-    b.country,
-    b.store_id,
-    b.staff_id,
-    b.month_start,
-    b.month_amount,
-    b.payment_count,
-    b.country_month_amount_rank,
-    b.country_month_avg_amount,
-    b.prev_month_amount
-  FROM best_customer_per_staff_month b
-  JOIN customer_geo cg
-    ON cg.customer_id = b.customer_id
-  WHERE b.rn_staff_best = 1
-) AS bc
+  r.country_name,
+  r.city_dummy AS city_name,
+  r.store_id,
+  r.staff_id,
+  r.staff_first_name || ' ' || r.staff_last_name AS staff_name,
+  r.customer_id,
+  r.first_name,
+  r.last_name,
+  r.month_start,
+  ROUND(r.month_amount, 2) AS month_amount,
+  r.payment_count,
+  r.rank_in_country,
+  ROUND(r.prev_month_amount_same_entity, 2) AS prev_month_amount,
+  ROUND(r.month_amount - r.prev_month_amount_same_entity, 2) AS deviation_from_prev_month,
+  ROUND(r.month_amount - r.country_avg_month_amount, 2) AS deviation_from_country_avg,
+  ROUND(r.country_avg_month_amount, 2) AS country_avg_month_amount
+FROM ranked_by_country AS r
 ORDER BY
-  bc.country,
-  bc.month_start,
-  bc.store_id,
-  bc.staff_id,
-  bc.country_month_amount_rank;
+  r.country_name,
+  r.month_start,
+  r.rank_in_country,
+  r.customer_id,
+  r.store_id,
+  r.staff_id;

@@ -1,69 +1,83 @@
-SELECT AVG(prev.day_amount)
-            FROM daily_base AS prev
-            WHERE prev.customer_id = db.customer_id
-              AND prev.payment_day >= DATE(db.payment_day, '-30 days')
-              AND prev.payment_day < db.payment_day
+WITH payment_daily AS (
+    SELECT
+        c.h01 AS customer_id,
+        c.h06 AS customer_address_id,
+        c.h02 AS customer_store_id,
+        cnt.c02 AS country_name,
+        cty.d02 AS city_name,
+        DATE(p.p06) AS payment_day,
+        COUNT(*) AS payment_count,
+        SUM(CAST(p.p05 AS REAL)) AS day_amount,
+        COUNT(DISTINCT p.p03) AS distinct_staff_count,
+        COUNT(DISTINCT inv.n03) AS distinct_store_count
+    FROM pay AS p
+    JOIN cus AS c
+        ON c.h01 = p.p02
+    JOIN adr AS a
+        ON a.e01 = c.h06
+    JOIN cty AS cty
+        ON cty.d01 = a.e05
+    JOIN cnt AS cnt
+        ON cnt.c01 = cty.d03
+    LEFT JOIN ren AS r
+        ON r.q01 = p.p04
+    LEFT JOIN inv AS inv
+        ON inv.n01 = r.q03
+    WHERE p.p06 IS NOT NULL
+    GROUP BY
+        c.h01, cnt.c02, cty.d02,
+        DATE(p.p06)
+),
+daily_with_baselines AS (
+    SELECT
+        pd.*,
+        (
+            SELECT AVG(pd_prev.day_amount)
+            FROM payment_daily AS pd_prev
+            WHERE pd_prev.customer_id = pd.customer_id
+              AND pd_prev.payment_day >= DATE(pd.payment_day, '-30 days')
+              AND pd_prev.payment_day < pd.payment_day
         ) AS personal_avg_prev_30d,
         (
-            SELECT AVG(prev_country.day_amount)
-            FROM daily_base AS prev_country
-            WHERE prev_country.country_name = db.country_name
-              AND prev_country.payment_day >= DATE(db.payment_day, '-30 days')
-              AND prev_country.payment_day < db.payment_day
+            SELECT AVG(pd_country.day_amount)
+            FROM payment_daily AS pd_country
+            WHERE pd_country.country_name = pd.country_name
+              AND pd_country.payment_day >= DATE(pd.payment_day, '-30 days')
+              AND pd_country.payment_day < pd.payment_day
         ) AS country_avg_prev_30d
-    FROM daily_base AS db
+    FROM payment_daily AS pd
 ),
-suspicious_days AS (
+filtered AS (
     SELECT
-        d.*,
-        (d.day_amount / NULLIF(d.personal_avg_prev_30d, 0)) AS personal_exceed_ratio,
-        (d.day_amount - d.personal_avg_prev_30d) AS personal_deviation,
-        (d.day_amount - d.country_avg_prev_30d) AS country_deviation
-    FROM daily_with_personal_and_country AS d
-    WHERE d.personal_avg_prev_30d IS NOT NULL
-      AND d.personal_avg_prev_30d > 0
-      AND d.country_avg_prev_30d IS NOT NULL
-      AND d.country_avg_prev_30d > 0
-      AND d.day_amount > 3 * d.personal_avg_prev_30d
-      AND d.day_amount > d.country_avg_prev_30d
-),
-final_ranked AS (
-    SELECT
-        sd.*,
-        SUM(sd.day_amount) OVER (
-            PARTITION BY sd.customer_id, sd.country_name
-        ) AS customer_total_suspicious_amount
-    FROM suspicious_days AS sd
-),
-distinct_customer_rank AS (
-    SELECT
-        customer_id,
-        country_name,
-        DENSE_RANK() OVER (
-            PARTITION BY country_name
-            ORDER BY customer_total_suspicious_amount DESC
-        ) AS customer_rank_in_country
-    FROM final_ranked
-    GROUP BY customer_id, country_name, customer_total_suspicious_amount
+        dwb.*,
+        (dwb.day_amount - dwb.personal_avg_prev_30d) AS deviation_personal,
+        (dwb.day_amount - dwb.country_avg_prev_30d) AS deviation_country
+    FROM daily_with_baselines AS dwb
+    WHERE dwb.personal_avg_prev_30d IS NOT NULL
+      AND dwb.country_avg_prev_30d IS NOT NULL
+      AND dwb.personal_avg_prev_30d > 0
+      AND dwb.country_avg_prev_30d > 0
+      AND dwb.day_amount > 3.0 * dwb.personal_avg_prev_30d
+      AND dwb.day_amount > dwb.country_avg_prev_30d
 )
 SELECT
-    sd.customer_id,
-    sd.country_name,
-    sd.city_name,
-    sd.payment_day,
-    sd.day_amount AS total_amount,
-    sd.payment_count,
-    ROUND(sd.personal_deviation, 2) AS personal_deviation,
-    ROUND(sd.country_deviation, 2) AS country_deviation,
-    sd.staff_count AS distinct_staff_count,
-    sd.store_count AS distinct_store_count,
-    dcr.customer_rank_in_country
-FROM suspicious_days AS sd
-JOIN distinct_customer_rank AS dcr
-    ON dcr.customer_id = sd.customer_id
-   AND dcr.country_name = sd.country_name
+    f.customer_id AS h01,
+    f.country_name AS c02,
+    f.city_name AS d02,
+    f.payment_day AS payment_date,
+    ROUND(f.day_amount, 2) AS day_amount,
+    f.payment_count AS payment_count,
+    ROUND(f.deviation_personal, 2) AS deviation_personal_avg,
+    ROUND(f.deviation_country, 2) AS deviation_country_avg,
+    f.distinct_staff_count AS distinct_staff_o01,
+    f.distinct_store_count AS distinct_stores_j01,
+    RANK() OVER (
+        PARTITION BY f.country_name
+        ORDER BY f.day_amount DESC, f.customer_id
+    ) AS suspicion_rank_in_country
+FROM filtered AS f
 ORDER BY
-    sd.country_name,
-    dcr.customer_rank_in_country,
-    sd.payment_day,
-    sd.customer_id;
+    f.country_name,
+    suspicion_rank_in_country,
+    f.payment_date,
+    f.customer_id;

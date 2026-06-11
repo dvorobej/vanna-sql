@@ -10,7 +10,7 @@ SELECT
   CASE
     WHEN COUNT(p.p01) > 10 THEN 'High Frequency'
     ELSE 'Standard'
-  END AS frequency_flag
+  END AS frequency_label
 FROM cus AS c
 JOIN pay AS p
   ON p.p02 = c.h01

@@ -10,12 +10,12 @@ SELECT
   AVG(p.p05) AS average_payment,
   MAX(p.p05) AS max_payment,
   CASE
-    WHEN SUM(p.p05) > 100 OR AVG(p.p05) > 8.00 OR MAX(p.p05) > 20.00 THEN 1
+    WHEN MAX(p.p05) > 20 OR AVG(p.p05) > 8.00 OR SUM(p.p05) > 100 THEN 1
     ELSE 0
   END AS high_risk_flag
-FROM cus AS c
-JOIN pay AS p
-  ON p.p02 = c.h01
+FROM pay AS p
+JOIN cus AS c
+  ON c.h01 = p.p02
 JOIN stf AS s
   ON s.o01 = p.p03
 WHERE p.p06 >= '2005-07-01'

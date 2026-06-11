@@ -8,9 +8,9 @@ SELECT
   CASE
     WHEN SUM(p.p05) > 50 THEN 1
     ELSE 0
-  END AS attention_flag
-FROM pay AS p
-JOIN cus AS c
+  END AS increased_attention_flag
+FROM cus AS c
+JOIN pay AS p
   ON c.h01 = p.p02
 WHERE p.p06 >= '2005-07-01'
   AND p.p06 < '2005-08-01'

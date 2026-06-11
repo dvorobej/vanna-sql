@@ -7,7 +7,7 @@ SELECT
   CASE
     WHEN SUM(p.p05) > 50 OR AVG(p.p05) > 8 THEN 1
     ELSE 0
-  END AS high_attention_flag
+  END AS attention_flag
 FROM pay AS p
 JOIN cus AS c
   ON c.h01 = p.p02
@@ -22,5 +22,5 @@ HAVING COUNT(p.p01) >= 5
 ORDER BY
   total_amount DESC,
   payment_count DESC,
-  customer_id,
-  staff_id;
+  p.p02,
+  p.p03;

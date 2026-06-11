@@ -21,5 +21,5 @@ HAVING COUNT(p.p01) >= 3
 ORDER BY
   total_amount DESC,
   payment_count DESC,
-  last_name,
-  first_name;
+  c.h04,
+  c.h03;

@@ -3,7 +3,7 @@ SELECT
   c.h03 AS first_name,
   c.h04 AS last_name,
   COUNT(p.p01) AS payment_count,
-  ROUND(SUM(p.p05), 2) AS total_payment_amount,
+  ROUND(SUM(p.p05), 2) AS total_amount,
   ROUND(AVG(p.p05), 2) AS avg_payment_amount,
   ROUND(
     SUM(CASE WHEN s.o07 <> c.h02 THEN p.p05 ELSE 0 END),
@@ -21,4 +21,6 @@ GROUP BY
   c.h03,
   c.h04
 HAVING SUM(p.p05) > 50
-ORDER BY total_payment_amount DESC;
+ORDER BY
+  total_amount DESC,
+  customer_id;

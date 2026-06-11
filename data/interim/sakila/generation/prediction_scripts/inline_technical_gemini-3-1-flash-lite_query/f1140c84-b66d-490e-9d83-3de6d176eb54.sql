@@ -4,8 +4,7 @@ SELECT
   p03,
   p04,
   p05,
-  p06,
-  p07
+  p06
 FROM pay
 WHERE p05 > 8.00
 ORDER BY p06 DESC

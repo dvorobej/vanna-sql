@@ -2,117 +2,135 @@ WITH customer_geo AS (
     SELECT
         c.h01 AS customer_id,
         c.h02 AS home_store_id,
-        cnt.c02 AS country,
-        cty.d02 AS city
+        cnt.c01 AS country_id,
+        cnt.c02 AS country_name
     FROM cus AS c
-    JOIN adr AS a ON a.e01 = c.h06
-    JOIN cty ON cty.d01 = a.e05
-    JOIN cnt ON cnt.c01 = cty.d03
+    JOIN sto AS s_home ON s_home.j01 = c.h02
+    JOIN adr AS a_home ON a_home.e01 = s_home.j03
+    JOIN cty AS ci_home ON ci_home.d01 = a_home.e05
+    JOIN cnt AS cnt ON cnt.c01 = ci_home.d03
 ),
-pay_base AS (
+monthly_payments AS (
     SELECT
         p.p02 AS customer_id,
-        date(p.p06, 'start of month') AS month_start,
-        CAST(p.p05 AS REAL) AS amount,
-        p.p03 AS staff_id,
-        stf.o07 AS staff_store_id
-    FROM pay AS p
-    JOIN stf ON stf.o01 = p.p03
-),
-monthly_customer AS (
-    SELECT
-        cb.customer_id,
-        cb.month_start,
-        cg.country,
+        strftime('%Y-%m', p.p06) AS month_ym,
         COUNT(*) AS payment_count,
-        SUM(cb.amount) AS payment_sum,
-        COUNT(DISTINCT cb.staff_id) AS staff_count_distinct,
-        SUM(CASE WHEN cb.staff_store_id <> cg.home_store_id THEN 1 ELSE 0 END) * 1.0 / COUNT(*) AS off_home_staff_payment_share
-    FROM pay_base AS cb
-    JOIN customer_geo AS cg ON cg.customer_id = cb.customer_id
+        SUM(CAST(p.p05 AS REAL)) AS payment_sum,
+        COUNT(DISTINCT p.p03) AS distinct_staff_count,
+        SUM(CASE WHEN p.p04 IS NULL THEN 1 ELSE 0 END) AS dummy_payments_cnt,
+        SUM(CASE
+                WHEN p.p04 IS NOT NULL AND p.p03 IS NOT NULL AND s_staff.j01 <> cg.home_store_id
+                THEN CAST(1 AS REAL)
+                ELSE CAST(0 AS REAL)
+            END) AS off_home_staff_payment_count,
+        SUM(CASE
+                WHEN p.p04 IS NOT NULL AND s_staff.j01 <> cg.home_store_id
+                THEN CAST(p.p05 AS REAL)
+                ELSE CAST(0 AS REAL)
+            END) AS off_home_staff_payment_sum
+    FROM pay AS p
+    JOIN customer_geo AS cg ON cg.customer_id = p.p02
+    JOIN stf AS s_staff ON s_staff.o01 = p.p03
     GROUP BY
-        cb.customer_id,
-        cb.month_start,
-        cg.country
+        p.p02,
+        strftime('%Y-%m', p.p06)
 ),
-with_personal_prev2 AS (
+monthly_with_history AS (
     SELECT
-        mc.*,
-        AVG(prev.payment_sum) AS personal_avg_prev2_months_sum
-    FROM monthly_customer AS mc
-    LEFT JOIN monthly_customer AS prev
-        ON prev.customer_id = mc.customer_id
-       AND prev.month_start >= date(mc.month_start, '-2 months')
-       AND prev.month_start <  date(mc.month_start, '-1 months')
-    GROUP BY
-        mc.customer_id,
-        mc.month_start,
-        mc.country,
-        mc.payment_count,
-        mc.payment_sum,
-        mc.staff_count_distinct,
-        mc.off_home_staff_payment_share
+        mp.*,
+        AVG(mp.payment_sum) OVER (
+            PARTITION BY mp.customer_id
+            ORDER BY mp.month_ym
+            ROWS BETWEEN 2 PRECEDING AND 1 PRECEDING
+        ) AS personal_avg_prev_2_months
+    FROM monthly_payments AS mp
 ),
-country_month_values AS (
+country_month_ranked AS (
     SELECT
-        country,
-        month_start,
+        month_ym,
+        country_id,
+        customer_id,
         payment_sum,
         payment_count,
-        RANK() OVER (
-            PARTITION BY country, month_start
-            ORDER BY payment_sum DESC
-        ) AS payment_sum_rank_in_country_month,
-        COUNT(*) OVER (PARTITION BY country, month_start) AS cnt_customers_in_month
-    FROM monthly_customer
+        distinct_staff_count,
+        personal_avg_prev_2_months,
+        off_home_staff_payment_count,
+        off_home_staff_payment_sum,
+        ROW_NUMBER() OVER (
+            PARTITION BY country_id, month_ym
+            ORDER BY payment_sum
+        ) AS rn_asc,
+        COUNT(*) OVER (PARTITION BY country_id, month_ym) AS cnt_in_country_month
+    FROM (
+        SELECT
+            mwh.*,
+            cg.country_id
+        FROM monthly_with_history AS mwh
+        JOIN customer_geo AS cg
+          ON cg.customer_id = mwh.customer_id
+    ) AS x
 ),
 country_p95 AS (
     SELECT
-        country,
-        month_start,
-        MIN(payment_sum) AS country_p95_payment_sum
-    FROM country_month_values
-    WHERE payment_sum_rank_in_country_month >= CAST(0.05 * (cnt_customers_in_month - 1) + 1 AS INTEGER)
-    GROUP BY country, month_start
+        month_ym,
+        country_id,
+        MAX(CASE
+                WHEN rn_asc = CAST(((95.0 * cnt_in_country_month) + 1) / 100 AS INTEGER)
+                THEN payment_sum
+            END) AS country_p95_payment_sum
+    FROM country_month_ranked
+    GROUP BY month_ym, country_id
 ),
-scored AS (
+qualified AS (
     SELECT
-        w.*,
+        mwh.month_ym,
+        mwh.customer_id,
+        cg.country_name,
+        mwh.payment_count,
+        mwh.payment_sum,
+        mwh.personal_avg_prev_2_months,
         cp.country_p95_payment_sum,
-        (w.payment_sum / NULLIF(w.personal_avg_prev2_months_sum, 0)) AS personal_ratio,
-        (w.payment_sum / NULLIF(cp.country_p95_payment_sum, 0)) AS vs_country_p95_ratio,
+        mwh.off_home_staff_payment_count,
+        mwh.distinct_staff_count,
+        (mwh.off_home_staff_payment_count * 1.0 / NULLIF(mwh.payment_count, 0)) AS off_home_staff_payment_share,
         RANK() OVER (
-            PARTITION BY w.country, w.month_start
-            ORDER BY w.payment_sum DESC
-        ) AS country_month_amount_rank
-    FROM with_personal_prev2 AS w
+            PARTITION BY cg.country_id, mwh.month_ym
+            ORDER BY mwh.payment_sum DESC
+        ) AS customer_rank_in_country_month
+    FROM monthly_with_history AS mwh
+    JOIN customer_geo AS cg
+      ON cg.customer_id = mwh.customer_id
     JOIN country_p95 AS cp
-      ON cp.country = w.country
-     AND cp.month_start = w.month_start
+      ON cp.month_ym = mwh.month_ym
+     AND cp.country_id = cg.country_id
+    WHERE
+        mwh.personal_avg_prev_2_months IS NOT NULL
+        AND mwh.personal_avg_prev_2_months > 0
+        AND mwh.payment_sum >= 3.0 * mwh.personal_avg_prev_2_months
+        AND mwh.payment_sum > cp.country_p95_payment_sum
 )
 SELECT
-    s.customer_id,
-    cg.country,
-    cg.city,
-    strftime('%Y-%m', s.month_start) AS payment_month,
-    s.payment_count,
-    ROUND(s.payment_sum, 2) AS payment_sum,
-    ROUND(s.personal_avg_prev2_months_sum, 2) AS personal_avg_prev2_months_sum,
-    ROUND(s.personal_ratio, 3) AS personal_ratio_vs_prev2_avg,
-    ROUND(s.country_p95_payment_sum, 2) AS country_p95_payment_sum,
-    ROUND(s.off_home_staff_payment_share, 4) AS off_home_staff_payment_share,
-    s.staff_count_distinct AS distinct_staff_count,
-    s.country_month_amount_rank AS country_month_amount_rank
-FROM scored AS s
-JOIN customer_geo AS cg
-  ON cg.customer_id = s.customer_id
-WHERE s.personal_avg_prev2_months_sum IS NOT NULL
-  AND s.personal_avg_prev2_months_sum > 0
-  AND s.payment_sum >= 3.0 * s.personal_avg_prev2_months_sum
-  AND s.payment_sum > s.country_p95_payment_sum
+    month_ym AS month,
+    customer_id,
+    country_name,
+    payment_count,
+    ROUND(payment_sum, 2) AS payment_sum,
+    ROUND(personal_avg_prev_2_months, 2) AS personal_avg_prev_2_months,
+    ROUND(cp.country_p95_payment_sum, 2) AS country_p95_payment_sum,
+    ROUND(off_home_staff_payment_share, 4) AS off_home_staff_payment_share,
+    distinct_staff_count AS distinct_staff_accepting_payment_count,
+    customer_rank_in_country_month
+FROM (
+    SELECT q.*, cg2.country_id, q.country_name, cp.country_p95_payment_sum
+    FROM qualified AS q
+    JOIN customer_geo AS cg2 ON cg2.customer_id = q.customer_id
+    JOIN country_p95 AS cp
+      ON cp.month_ym = q.month_ym
+     AND cp.country_id = cg2.country_id
+) AS out
 ORDER BY
-    cg.country,
-    payment_month,
-    s.country_month_amount_rank,
-    s.payment_sum DESC,
-    s.customer_id;
+    month,
+    country_name,
+    customer_rank_in_country_month,
+    payment_sum DESC,
+    customer_id;

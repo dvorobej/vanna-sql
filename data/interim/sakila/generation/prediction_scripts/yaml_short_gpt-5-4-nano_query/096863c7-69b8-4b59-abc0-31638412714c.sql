@@ -1,123 +1,114 @@
-WITH payment_enriched AS (
+WITH customer_geo AS (
+    SELECT
+        c.h01 AS customer_id,
+        c.h03 AS first_name,
+        c.h04 AS last_name,
+        cty.d02 AS city_name,
+        co.c01 AS country_id,
+        co.c02 AS country_name
+    FROM cus AS c
+    JOIN adr AS a
+        ON a.e01 = c.h06
+    JOIN cty AS cty
+        ON cty.d01 = a.e05
+    JOIN cnt AS co
+        ON co.c01 = cty.d03
+),
+pay_daily AS (
     SELECT
         p.p02 AS customer_id,
         date(p.p06) AS payment_date,
-        CAST(p.p05 AS REAL) AS payment_amount,
-        p.p03 AS staff_id,
-        s.o07 AS store_id
+        SUM(CAST(p.p05 AS REAL)) AS day_amount,
+        COUNT(*) AS payment_count,
+        COUNT(DISTINCT p.p03) AS staff_count,
+        COUNT(DISTINCT s.o07) AS store_count
     FROM pay AS p
     JOIN stf AS s
         ON s.o01 = p.p03
-),
-customer_geo AS (
-    SELECT
-        cu.h01 AS customer_id,
-        ct.c02 AS country,
-        cty.d02 AS city
-    FROM cus AS cu
-    JOIN adr AS a
-        ON a.e01 = cu.h06
-    JOIN cty
-        ON cty.d01 = a.e05
-    JOIN cnt AS ct
-        ON ct.c01 = cty.d03
-),
-daily_by_customer AS (
-    SELECT
-        pe.customer_id,
-        pe.payment_date,
-        SUM(pe.payment_amount) AS daily_amount,
-        COUNT(*) AS payment_count,
-        COUNT(DISTINCT pe.staff_id) AS staff_count,
-        COUNT(DISTINCT pe.store_id) AS store_count
-    FROM payment_enriched AS pe
     GROUP BY
-        pe.customer_id,
-        pe.payment_date
+        p.p02,
+        date(p.p06)
 ),
-daily_with_avgs AS (
+customer_daily_extended AS (
     SELECT
-        dbc.*,
+        pd.*,
+        cg.country_id,
+        cg.country_name,
+        cg.city_name,
         (
-            SELECT AVG(dbc_prev.daily_amount)
-            FROM daily_by_customer AS dbc_prev
-            WHERE dbc_prev.customer_id = dbc.customer_id
-              AND dbc_prev.payment_date >= date(dbc.payment_date, '-30 day')
-              AND dbc_prev.payment_date < dbc.payment_date
+            SELECT AVG(prev.day_amount)
+            FROM pay_daily AS prev
+            WHERE prev.customer_id = pd.customer_id
+              AND prev.payment_date >= date(pd.payment_date, '-30 day')
+              AND prev.payment_date < pd.payment_date
         ) AS personal_avg_prev_30d
-    FROM daily_by_customer AS dbc
-),
-country_daily_stats AS (
-    SELECT
-        d.customer_id,
-        cg.country,
-        d.payment_date,
-        d.daily_amount
-    FROM daily_with_avgs AS d
+    FROM pay_daily AS pd
     JOIN customer_geo AS cg
-        ON cg.customer_id = d.customer_id
+        ON cg.customer_id = pd.customer_id
 ),
-country_avg_prev_30d AS (
+country_daily_avgs AS (
     SELECT
-        cds.customer_id,
-        cds.country,
-        cds.payment_date,
-        (
-            SELECT AVG(cds_prev.daily_amount)
-            FROM country_daily_stats AS cds_prev
-            WHERE cds_prev.country = cds.country
-              AND cds_prev.payment_date >= date(cds.payment_date, '-30 day')
-              AND cds_prev.payment_date < cds.payment_date
-        ) AS country_avg_prev_30d_daily
-    FROM country_daily_stats AS cds
+        cde.country_id,
+        cde.payment_date,
+        AVG(cde.day_amount) AS country_avg_day_amount
+    FROM customer_daily_extended AS cde
+    GROUP BY
+        cde.country_id,
+        cde.payment_date
 ),
-final_cases AS (
+scored AS (
     SELECT
-        d.customer_id,
-        cg.country,
-        cg.city,
-        d.payment_date,
-        d.payment_count,
-        d.daily_amount,
-        d.staff_count,
-        d.store_count,
-        d.daily_amount - d.personal_avg_prev_30d AS deviation_personal_avg,
-        d.daily_amount - cavg.country_avg_prev_30d_daily AS deviation_country_avg,
+        cde.customer_id,
+        cde.country_id,
+        cde.country_name,
+        cde.city_name,
+        cde.payment_date,
+        cde.day_amount,
+        cde.payment_count,
+        cde.staff_count,
+        cde.store_count,
+        cde.personal_avg_prev_30d,
+        cda.country_avg_day_amount,
+        (cde.day_amount - cde.personal_avg_prev_30d) AS deviation_from_personal_avg,
+        (cde.day_amount - cda.country_avg_day_amount) AS deviation_from_country_avg
+    FROM customer_daily_extended AS cde
+    JOIN country_daily_avgs AS cda
+        ON cda.country_id = cde.country_id
+       AND cda.payment_date = cde.payment_date
+),
+suspicious AS (
+    SELECT
+        s.*,
         DENSE_RANK() OVER (
-            PARTITION BY cg.country, d.payment_date
-            ORDER BY d.daily_amount DESC
-        ) AS country_suspicious_rank
-    FROM daily_with_avgs AS d
-    JOIN customer_geo AS cg
-        ON cg.customer_id = d.customer_id
-    JOIN country_avg_prev_30d AS cavg
-        ON cavg.customer_id = d.customer_id
-       AND cavg.payment_date = d.payment_date
-       AND cavg.country = cg.country
-    WHERE d.personal_avg_prev_30d IS NOT NULL
-      AND cavg.country_avg_prev_30d_daily IS NOT NULL
-      AND d.personal_avg_prev_30d > 0
-      AND cavg.country_avg_prev_30d_daily > 0
-      AND d.daily_amount > 3.0 * d.personal_avg_prev_30d
-      AND d.daily_amount > cavg.country_avg_prev_30d_daily
-      AND (d.staff_count >= 2 OR d.store_count >= 2)
+            PARTITION BY s.country_id, s.payment_date
+            ORDER BY s.day_amount DESC
+        ) AS suspicious_amount_rank_in_country
+    FROM scored AS s
+    WHERE s.personal_avg_prev_30d IS NOT NULL
+      AND s.personal_avg_prev_30d > 0
+      AND s.day_amount > 3.0 * s.personal_avg_prev_30d
+      AND s.day_amount > s.country_avg_day_amount
+      AND (s.staff_count > 1 OR s.store_count > 1)
 )
 SELECT
-    customer_id,
-    country,
-    city,
-    payment_date AS date,
-    ROUND(daily_amount, 2) AS daily_sum,
-    payment_count,
-    ROUND(deviation_personal_avg, 2) AS deviation_from_personal_avg,
-    ROUND(deviation_country_avg, 2) AS deviation_from_country_avg,
-    staff_count,
-    store_count,
-    country_suspicious_rank AS country_rank_by_suspicious_sum
-FROM final_cases
+    sy.customer_id,
+    cg.first_name,
+    cg.last_name,
+    sy.country_name,
+    sy.city_name,
+    sy.payment_date,
+    sy.day_amount AS day_sum,
+    sy.payment_count,
+    sy.deviation_from_personal_avg,
+    sy.deviation_from_country_avg,
+    sy.staff_count,
+    sy.store_count,
+    sy.suspicious_amount_rank_in_country
+FROM suspicious AS sy
+JOIN customer_geo AS cg
+    ON cg.customer_id = sy.customer_id
 ORDER BY
-    country,
-    payment_date,
-    country_suspicious_rank,
-    daily_sum DESC,
-    customer_id;
+    sy.country_name,
+    sy.payment_date,
+    sy.suspicious_amount_rank_in_country,
+    sy.day_sum DESC;

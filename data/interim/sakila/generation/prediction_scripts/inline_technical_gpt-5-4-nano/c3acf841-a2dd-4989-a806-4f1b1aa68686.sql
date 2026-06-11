@@ -20,7 +20,11 @@ JOIN stf AS s
 WHERE p.p06 >= '2005-07-01'
   AND p.p06 < '2005-08-01'
 GROUP BY
-  c.h01, c.h03, c.h04,
-  s.o01, s.o02, s.o03
+  c.h01,
+  c.h03,
+  c.h04,
+  s.o01,
+  s.o02,
+  s.o03
 HAVING COUNT(p.p01) >= 5
-ORDER BY total_amount DESC, payment_count DESC;
+ORDER BY total_amount DESC, payment_count DESC, customer_id, staff_id;

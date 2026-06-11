@@ -1,144 +1,101 @@
-WITH customer_geo AS (
+WITH payment_enriched AS (
     SELECT
-        c.h01 AS customer_id,
-        c.h03 AS first_name,
-        c.h04 AS last_name,
-        c.h02 AS registration_store_id,
-        cnt.c01 AS country_id,
-        cnt.c02 AS country_name,
-        ci.d02 AS city_name
-    FROM cus AS c
-    JOIN adr AS a ON a.e01 = c.h06
-    JOIN cty AS ci ON ci.d01 = a.e05
-    JOIN cnt ON cnt.c01 = ci.d03
-),
-monthly_payments AS (
-    SELECT
+        p.p01 AS payment_id,
         p.p02 AS customer_id,
         date(p.p06, 'start of month') AS month_start,
-        SUM(p.p05) AS monthly_amount,
-        COUNT(*) AS payment_count,
-        AVG(p.p05) AS avg_check,
-        SUM(CASE WHEN strftime('%d', p.p06) IN ('01','02','03','04','05','06','07','08','09','10','11','12','13','14','15','16','17','18','19','20') THEN 1 ELSE 0 END) AS day_bucket_1_20_count,
-        SUM(CASE WHEN strftime('%d', p.p06) IN ('21','22','23','24','25','26','27','28','29','30','31') THEN 1 ELSE 0 END) AS day_bucket_21_31_count,
-        SUM(CASE WHEN strftime('%d', p.p06) IN ('01','02','03','04','05','06','07','08','09','10','11','12','13','14','15','16','17','18','19','20') THEN p.p05 ELSE 0 END) AS day_bucket_1_20_amount,
-        SUM(CASE WHEN strftime('%d', p.p06) IN ('21','22','23','24','25','26','27','28','29','30','31') THEN p.p05 ELSE 0 END) AS day_bucket_21_31_amount
+        CAST(p.p05 AS REAL) AS payment_amount,
+        p.p03 AS staff_id,
+        sf.o07 AS staff_store_id,
+        c.h02 AS customer_home_store_id,
+        cn.c01 AS country_id
     FROM pay AS p
+    JOIN cus AS c
+        ON c.h01 = p.p02
+    JOIN adr AS a
+        ON a.e01 = c.h06
+    JOIN cty AS ci
+        ON ci.d01 = a.e05
+    JOIN cnt AS cn
+        ON cn.c01 = ci.d03
+    JOIN stf AS sf
+        ON sf.o01 = p.p03
+),
+monthly_customer AS (
+    SELECT
+        pe.customer_id,
+        pe.month_start,
+        pe.country_id,
+        COUNT(pe.payment_id) AS payment_count,
+        SUM(pe.payment_amount) AS monthly_amount,
+        AVG(pe.payment_amount) AS avg_check,
+        SUM(CASE WHEN strftime('%d', pe.month_start, '+0 day') IS NOT NULL THEN 0 ELSE 0 END) AS dummy,
+        GROUP_CONCAT(
+            DISTINCT strftime('%Y-%m-%d', pe.month_start)
+        ) AS dummy2
+    FROM payment_enriched AS pe
     GROUP BY
-        p.p02,
-        date(p.p06, 'start of month')
+        pe.customer_id,
+        pe.month_start,
+        pe.country_id
+),
+monthly_customer_days AS (
+    SELECT
+        pe.customer_id,
+        pe.month_start,
+        GROUP_CONCAT(
+            strftime('%Y-%m-%d', pe.month_start) || ':' || CAST(cnt_day.day_amount AS TEXT)
+        ) AS payments_by_day
+    FROM (
+        SELECT
+            p.p02 AS customer_id,
+            date(p.p06, 'start of month') AS month_start,
+            date(p.p06) AS day_start,
+            SUM(CAST(p.p05 AS REAL)) AS day_amount
+        FROM pay p
+        GROUP BY p.p02, date(p.p06, 'start of month'), date(p.p06)
+    ) AS cnt_day
+    JOIN payment_enriched pe
+      ON pe.customer_id = cnt_day.customer_id
+     AND pe.month_start = cnt_day.month_start
+    GROUP BY pe.customer_id, pe.month_start
 ),
 monthly_with_history AS (
     SELECT
-        mp.*,
-        cg.first_name,
-        cg.last_name,
-        cg.registration_store_id,
-        cg.country_id,
-        cg.country_name,
-        cg.city_name,
-        LAG(mp.monthly_amount) OVER (
-            PARTITION BY mp.customer_id
-            ORDER BY mp.month_start
+        mc.*,
+        LAG(mc.monthly_amount) OVER (
+            PARTITION BY mc.customer_id
+            ORDER BY mc.month_start
         ) AS prev_month_amount
-    FROM monthly_payments AS mp
-    JOIN customer_geo AS cg
-      ON cg.customer_id = mp.customer_id
+    FROM monthly_customer mc
 ),
 country_month_avg AS (
     SELECT
-        month_start,
-        country_id,
-        AVG(monthly_amount) AS country_avg_monthly_amount
-    FROM monthly_with_history
-    GROUP BY
-        month_start,
-        country_id
+        mwh.country_id,
+        mwh.month_start,
+        AVG(mwh.monthly_amount) AS country_avg_monthly_amount
+    FROM monthly_with_history mwh
+    GROUP BY mwh.country_id, mwh.month_start
 ),
-with_country_and_staff AS (
+candidate_months AS (
     SELECT
         mwh.*,
-        cmaa.country_avg_monthly_amount
-    FROM monthly_with_history AS mwh
-    JOIN country_month_avg AS cmaa
-      ON cmaa.month_start = mwh.month_start
-     AND cmaa.country_id = mwh.country_id
+        cma.country_avg_monthly_amount,
+        (mwh.monthly_amount - mwh.prev_month_amount) AS delta_from_prev,
+        CASE
+            WHEN mwh.prev_month_amount IS NULL OR mwh.prev_month_amount = 0 THEN NULL
+            ELSE mwh.monthly_amount / mwh.prev_month_amount
+        END AS ratio_to_prev_month,
+        CASE
+            WHEN cma.country_avg_monthly_amount IS NULL OR cma.country_avg_monthly_amount = 0 THEN NULL
+            ELSE mwh.monthly_amount / cma.country_avg_monthly_amount
+        END AS ratio_to_country_avg
+    FROM monthly_with_history mwh
+    JOIN country_month_avg cma
+      ON cma.country_id = mwh.country_id
+     AND cma.month_start = mwh.month_start
+    WHERE mwh.prev_month_amount IS NOT NULL
 ),
-top_staff_in_month AS (
-    SELECT
-        x.customer_id,
-        x.month_start,
-        x.staff_id,
-        x.staff_payment_amount,
-        x.staff_payment_count,
-        ROW_NUMBER() OVER (
-            PARTITION BY x.customer_id, x.month_start
-            ORDER BY x.staff_payment_amount DESC, x.staff_payment_count DESC, x.staff_id
-        ) AS rn
-    FROM (
-        SELECT
-            p.p02 AS customer_id,
-            date(p.p06, 'start of month') AS month_start,
-            p.p03 AS staff_id,
-            SUM(p.p05) AS staff_payment_amount,
-            COUNT(*) AS staff_payment_count
-        FROM pay AS p
-        GROUP BY
-            p.p02,
-            date(p.p06, 'start of month'),
-            p.p03
-    ) AS x
-),
-top_staff_details AS (
-    SELECT
-        tsim.customer_id,
-        tsim.month_start,
-        tsim.staff_id,
-        s.o02 || ' ' || s.o03 AS staff_name,
-        tsim.staff_payment_amount,
-        tsim.staff_payment_count
-    FROM top_staff_in_month AS tsim
-    JOIN stf AS s
-      ON s.o01 = tsim.staff_id
-    WHERE tsim.rn = 1
-),
-top_store_in_month AS (
-    SELECT
-        x.customer_id,
-        x.month_start,
-        x.staff_store_id,
-        x.store_payment_amount,
-        x.store_payment_count,
-        ROW_NUMBER() OVER (
-            PARTITION BY x.customer_id, x.month_start
-            ORDER BY x.store_payment_amount DESC, x.store_payment_count DESC, x.staff_store_id
-        ) AS rn
-    FROM (
-        SELECT
-            p.p02 AS customer_id,
-            date(p.p06, 'start of month') AS month_start,
-            sf.o07 AS staff_store_id,
-            SUM(p.p05) AS store_payment_amount,
-            COUNT(*) AS store_payment_count
-        FROM pay AS p
-        JOIN stf AS sf ON sf.o01 = p.p03
-        GROUP BY
-            p.p02,
-            date(p.p06, 'start of month'),
-            sf.o07
-    ) AS x
-),
-top_store_details AS (
-    SELECT
-        tstd.customer_id,
-        tstd.month_start,
-        tstd.staff_store_id AS store_id,
-        tstd.store_payment_amount,
-        tstd.store_payment_count
-    FROM top_store_in_month AS tstd
-    WHERE tstd.rn = 1
-),
-country_rank_month AS (
+monthly_rank AS (
     SELECT
         mwh.country_id,
         mwh.month_start,
@@ -146,61 +103,87 @@ country_rank_month AS (
         RANK() OVER (
             PARTITION BY mwh.country_id, mwh.month_start
             ORDER BY mwh.monthly_amount DESC
-        ) AS customer_country_month_rank
-    FROM monthly_with_history AS mwh
+        ) AS country_month_amount_rank
+    FROM monthly_with_history mwh
+),
+top_staff_in_month AS (
+    SELECT
+        pe.customer_id,
+        pe.month_start,
+        pe.country_id,
+        pe.staff_id,
+        SUM(pe.payment_amount) AS staff_month_amount,
+        ROW_NUMBER() OVER (
+            PARTITION BY pe.customer_id, pe.month_start
+            ORDER BY SUM(pe.payment_amount) DESC, pe.staff_id
+        ) AS rn
+    FROM payment_enriched pe
+    GROUP BY pe.customer_id, pe.month_start, pe.country_id, pe.staff_id
+),
+joined AS (
+    SELECT
+        cm.country_id,
+        cm.month_start,
+        cm.customer_id,
+        c.h02 AS customer_store_id,
+        c.h06 AS customer_address_id,
+        c.h03,
+        c.h04,
+        ci.d02 AS customer_city,
+        cn.c02 AS customer_country,
+        ms.country_month_amount_rank,
+        cm.payment_count,
+        cm.monthly_amount,
+        cm.avg_check,
+        cm.ratio_to_prev_month,
+        cm.ratio_to_country_avg,
+        cm.country_avg_monthly_amount,
+        ts.staff_id AS top_staff_id,
+        ts_staff.o02 || ' ' || ts_staff.o03 AS top_staff_name
+    FROM candidate_months cm
+    JOIN cus c
+      ON c.h01 = cm.customer_id
+    JOIN adr a
+      ON a.e01 = c.h06
+    JOIN cty ci
+      ON ci.d01 = a.e05
+    JOIN cnt cn
+      ON cn.c01 = ci.d03
+    JOIN monthly_rank ms
+      ON ms.country_id = cm.country_id
+     AND ms.month_start = cm.month_start
+     AND ms.customer_id = cm.customer_id
+    LEFT JOIN top_staff_in_month ts
+      ON ts.customer_id = cm.customer_id
+     AND ts.month_start = cm.month_start
+     AND ts.country_id = cm.country_id
+     AND ts.rn = 1
+    LEFT JOIN stf ts_staff
+      ON ts_staff.o01 = ts.staff_id
 )
 SELECT
-    wcc.customer_id,
-    wcc.first_name,
-    wcc.last_name,
-    wcc.country_id,
-    wcc.country_name,
-    wcc.city_name,
-    wcc.month_start AS month,
-    ROUND(wcc.monthly_amount, 2) AS monthly_amount,
-    wcc.payment_count,
-    ROUND(wcc.avg_check, 2) AS avg_check,
-    ROUND(CASE WHEN wcc.payment_count > 0 THEN 1.0 * wcc.day_bucket_1_20_count / wcc.payment_count ELSE 0 END, 4) AS day_bucket_1_20_share_count,
-    ROUND(CASE WHEN wcc.monthly_amount > 0 THEN 1.0 * wcc.day_bucket_1_20_amount / wcc.monthly_amount ELSE 0 END, 4) AS day_bucket_1_20_share_amount,
-    ROUND(CASE WHEN wcc.prev_month_amount IS NULL THEN NULL ELSE wcc.monthly_amount - wcc.prev_month_amount END, 2) AS change_vs_prev_month_amount,
-    ROUND(CASE
-        WHEN wcc.prev_month_amount IS NULL OR wcc.prev_month_amount = 0 THEN NULL
-        ELSE wcc.monthly_amount / wcc.prev_month_amount
-    END, 4) AS ratio_to_prev_month,
-    ROUND(wcc.country_avg_monthly_amount, 2) AS country_avg_monthly_amount,
-    ROUND(CASE
-        WHEN wcc.country_avg_monthly_amount IS NULL OR wcc.country_avg_monthly_amount = 0 THEN NULL
-        ELSE wcc.monthly_amount / wcc.country_avg_monthly_amount
-    END, 4) AS ratio_to_country_avg,
-    crmr.customer_country_month_rank AS country_month_amount_rank,
-    ts.staff_id AS top_staff_id,
-    ts.staff_name AS top_staff_name,
-    ts.staff_payment_count AS top_staff_payment_count,
-    ROUND(ts.staff_payment_amount, 2) AS top_staff_payment_amount,
-    td.store_id AS top_store_id,
-    td.store_payment_count AS top_store_payment_count,
-    ROUND(td.store_payment_amount, 2) AS top_store_payment_amount,
-    wcc.registration_store_id AS registration_store_id
-FROM with_country_and_staff AS wcc
-JOIN country_rank_month AS crmr
-  ON crmr.country_id = wcc.country_id
- AND crmr.month_start = wcc.month_start
- AND crmr.customer_id = wcc.customer_id
-JOIN top_staff_details AS ts
-  ON ts.customer_id = wcc.customer_id
- AND ts.month_start = wcc.month_start
-JOIN top_store_details AS td
-  ON td.customer_id = wcc.customer_id
- AND td.month_start = wcc.month_start
-WHERE
-    wcc.prev_month_amount IS NOT NULL
-    AND (
-        wcc.monthly_amount >= 3.0 * wcc.prev_month_amount
-        OR wcc.monthly_amount >= 1.5 * wcc.country_avg_monthly_amount
-    )
+    j.customer_id,
+    j.h03 AS first_name,
+    j.h04 AS last_name,
+    j.customer_store_id AS store_id,
+    j.customer_country,
+    j.customer_city,
+    j.month_start AS payment_month,
+    ROUND(j.monthly_amount, 2) AS monthly_amount,
+    j.payment_count,
+    ROUND(j.avg_check, 2) AS avg_check,
+    ROUND(j.country_avg_monthly_amount, 2) AS country_avg_monthly_amount,
+    ROUND(j.ratio_to_prev_month, 4) AS ratio_to_prev_month_amount,
+    ROUND(j.ratio_to_country_avg, 4) AS ratio_to_country_avg,
+    j.country_month_amount_rank,
+    j.top_staff_id,
+    j.top_staff_name
+FROM joined j
+WHERE (j.ratio_to_prev_month >= 2.0)
+   OR (j.ratio_to_country_avg >= 1.5)
 ORDER BY
-    wcc.month_start,
-    wcc.country_name,
-    crmr.customer_country_month_rank,
-    wcc.monthly_amount DESC,
-    wcc.customer_id;
+    j.customer_country,
+    j.payment_month,
+    j.country_month_amount_rank,
+    j.monthly_amount DESC,
+    j.customer_id;

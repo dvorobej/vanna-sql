@@ -1,147 +1,178 @@
-WITH monthly_payments AS (
-    SELECT
-        p.p02 AS customer_id,
-        date(p.p06, 'start of month') AS month_start,
-        COUNT(p.p01) AS payment_count,
-        SUM(p.p05) AS monthly_amount
-    FROM pay AS p
-    GROUP BY
-        p.p02,
-        date(p.p06, 'start of month')
+WITH
+monthly_pay AS (
+  SELECT
+    p.p02 AS customer_id,
+    date(p.p06, 'start of month') AS month_start,
+    COUNT(p.p01) AS payment_count,
+    SUM(p.p05) AS monthly_amount
+  FROM pay AS p
+  GROUP BY
+    p.p02,
+    date(p.p06, 'start of month')
 ),
-customer_geo AS (
-    SELECT
-        c.h01 AS customer_id,
-        cn.c01 AS country_id,
-        cn.c02 AS country_name,
-        ct.d01 AS city_id,
-        ct.d02 AS city_name,
-        c.h02 AS store_id,
-        sto.j01 AS store_dummy_id
-    FROM cus AS c
-    JOIN adr AS a
-        ON a.e01 = c.h06
-    JOIN cty AS ct
-        ON ct.d01 = a.e05
-    JOIN cnt AS cn
-        ON cn.c01 = ct.d03
-    JOIN sto
-        ON sto.j01 = c.h02
+monthly_with_personal_avg AS (
+  SELECT
+    mp.*,
+    AVG(mp.monthly_amount) OVER (
+      PARTITION BY mp.customer_id
+      ORDER BY mp.month_start
+      ROWS BETWEEN UNBOUNDED PRECEDING AND 1 PRECEDING
+    ) AS personal_avg_amount
+  FROM monthly_pay AS mp
 ),
-monthly_with_history AS (
-    SELECT
-        mp.customer_id,
-        mp.month_start,
-        mp.payment_count,
-        mp.monthly_amount,
-        AVG(mp.monthly_amount) OVER (
-            PARTITION BY mp.customer_id
-            ORDER BY mp.month_start
-            ROWS BETWEEN UNBOUNDED PRECEDING AND 1 PRECEDING
-        ) AS personal_avg_prev_amount,
-        MEDIAN(mp.payment_count) OVER (
-            PARTITION BY cg.country_id, mp.month_start
-        ) AS country_median_payment_count
-    FROM monthly_payments AS mp
-    JOIN customer_geo AS cg
-        ON cg.customer_id = mp.customer_id
+customer_month_median_country AS (
+  SELECT
+    mpa.*,
+    PERCENT_RANK() OVER () AS dummy
+  FROM monthly_with_personal_avg AS mpa
 ),
-selected_months AS (
-    SELECT
-        mwh.*
-    FROM monthly_with_history AS mwh
-    WHERE mwh.personal_avg_prev_amount IS NOT NULL
-      AND mwh.monthly_amount > 3.0 * mwh.personal_avg_prev_amount
-      AND mwh.payment_count > mwh.country_median_payment_count
+country_month_stats AS (
+  SELECT
+    cty.c01 AS country_id,
+    mpa.month_start,
+    mpa.payment_count,
+    -- approximate median as the value at the middle rank
+    ROW_NUMBER() OVER (
+      PARTITION BY cty.c01, mpa.month_start
+      ORDER BY mpa.payment_count
+    ) AS rn,
+    COUNT(*) OVER (
+      PARTITION BY cty.c01, mpa.month_start
+    ) AS cnt
+  FROM monthly_with_personal_avg AS mpa
+  JOIN cus AS c
+    ON c.h01 = mpa.customer_id
+  JOIN adr AS a
+    ON a.e01 = c.h06
+  JOIN cty
+    ON cty.d01 = a.e05
 ),
-rental_facts AS (
+country_month_median AS (
+  SELECT
+    country_id,
+    month_start,
+    AVG(payment_count) AS median_payment_count
+  FROM (
     SELECT
-        p.p02 AS customer_id,
-        date(p.p06, 'start of month') AS month_start,
-        p.p01 AS payment_id,
-        p.p05 AS payment_amount,
-        p.p04 AS rental_id,
-        r.q01 AS rental_pk,
-        i.n02 AS film_id,
-        fc.l02 AS category_id,
-        cat.g02 AS category_name,
-        p.p04 AS rental_id_fk
-    FROM pay AS p
-    JOIN ren AS r
-        ON r.q01 = p.p04
-    JOIN inv AS i
-        ON i.n01 = r.q03
-    JOIN flc AS fc
-        ON fc.l01 = i.n02
-    JOIN cat
-        ON cat.g01 = fc.l02
+      country_id,
+      month_start,
+      payment_count,
+      cnt,
+      rn
+    FROM country_month_stats
+  ) t
+  WHERE t.rn IN (CAST((t.cnt + 1) / 2 AS INTEGER), CAST((t.cnt + 2) / 2 AS INTEGER))
+  GROUP BY
+    country_id,
+    month_start
 ),
-category_payments AS (
-    SELECT
-        rf.customer_id,
-        rf.month_start,
-        SUM(rf.payment_amount) AS total_payment_amount,
-        MAX(rf.payment_amount) AS max_single_payment,
-        SUM(CASE
-              WHEN rf.category_name IN ('Action', 'New') THEN 1.0 * rf.payment_amount
-              ELSE 0.0
-            END) AS action_new_payment_amount
-    FROM rental_facts AS rf
-    GROUP BY
-        rf.customer_id,
-        rf.month_start
+qualified_months AS (
+  SELECT
+    mpa.customer_id,
+    mpa.month_start,
+    mpa.payment_count,
+    mpa.monthly_amount,
+    cty.c01 AS country_id,
+    cmm.median_payment_count
+  FROM monthly_with_personal_avg AS mpa
+  JOIN cus AS c
+    ON c.h01 = mpa.customer_id
+  JOIN adr AS a
+    ON a.e01 = c.h06
+  JOIN cty
+    ON cty.d01 = a.e05
+  JOIN country_month_median AS cmm
+    ON cmm.country_id = cty.c01
+   AND cmm.month_start = mpa.month_start
+  WHERE mpa.personal_avg_amount IS NOT NULL
+    AND mpa.monthly_amount > 3 * mpa.personal_avg_amount
+    AND mpa.payment_count > cmm.median_payment_count
 ),
-ranked_customers AS (
-    SELECT
-        sm.customer_id,
-        sm.month_start,
-        RANK() OVER (
-            PARTITION BY cg.city_id, cg.city_name, sm.month_start
-            ORDER BY sm.monthly_amount DESC
-        ) AS city_customer_rank
-    FROM selected_months AS sm
-    JOIN customer_geo AS cg
-        ON cg.customer_id = sm.customer_id
+customer_month_summary AS (
+  SELECT
+    qm.customer_id,
+    qm.month_start,
+    qm.country_id,
+    COUNT(p.p01) AS payment_count,
+    SUM(p.p05) AS total_amount,
+    MAX(p.p05) AS max_payment_amount
+  FROM qualified_months AS qm
+  JOIN pay AS p
+    ON p.p02 = qm.customer_id
+   AND date(p.p06, 'start of month') = qm.month_start
+  GROUP BY
+    qm.customer_id,
+    qm.month_start,
+    qm.country_id
 ),
-final_agg AS (
-    SELECT
-        sm.customer_id,
-        cg.country_name,
-        cg.city_name,
-        cg.store_id,
-        sm.month_start,
-        sm.payment_count,
-        sm.monthly_amount,
-        cp.max_single_payment,
-        CASE
-            WHEN cp.total_payment_amount = 0 THEN 0.0
-            ELSE cp.action_new_payment_amount / cp.total_payment_amount
-        END AS action_new_payment_share_amount
-    FROM selected_months sm
-    JOIN customer_geo cg
-        ON cg.customer_id = sm.customer_id
-    LEFT JOIN category_payments cp
-        ON cp.customer_id = sm.customer_id
-       AND cp.month_start = sm.month_start
+store_city_country AS (
+  SELECT
+    c.h01 AS customer_id,
+    st.j01 AS store_id,
+    adr.e01 AS customer_address_id,
+    ct.d02 AS city_name,
+    cnt.c02 AS country_name,
+    cnt.c01 AS country_id
+  FROM cus AS c
+  JOIN sto AS st
+    ON st.j01 = c.h02
+  JOIN adr
+    ON adr.e01 = c.h06
+  JOIN cty AS ct
+    ON ct.d01 = adr.e05
+  JOIN cnt
+    ON cnt.c01 = ct.d03
+),
+action_new_category_share AS (
+  SELECT
+    qm.customer_id,
+    qm.month_start,
+    SUM(CASE WHEN ca.category_name IN ('Action', 'New') THEN p.p05 ELSE 0 END) * 1.0
+      / NULLIF(SUM(p.p05), 0) AS action_new_payment_share
+  FROM qualified_months AS qm
+  JOIN pay AS p
+    ON p.p02 = qm.customer_id
+   AND date(p.p06, 'start of month') = qm.month_start
+  JOIN ren AS r
+    ON r.q01 = p.p04
+  JOIN inv AS inv
+    ON inv.n01 = r.q03
+  JOIN flm AS f
+    ON f.i01 = inv.n02
+  JOIN flc AS fc
+    ON fc.l01 = f.i01
+  JOIN cat AS ca
+    ON ca.g01 = fc.l02
+  GROUP BY
+    qm.customer_id,
+    qm.month_start
 )
 SELECT
-    fa.customer_id AS h01,
-    fa.country_name,
-    fa.city_name,
-    fa.store_id AS j01,
-    strftime('%Y-%m', fa.month_start) AS month,
-    fa.payment_count,
-    ROUND(fa.monthly_amount, 2) AS total_payment_amount,
-    ROUND(fa.max_single_payment, 2) AS max_single_payment,
-    ROUND(fa.action_new_payment_share_amount, 4) AS action_new_payment_share,
-    rc.city_customer_rank AS city_customer_rank
-FROM final_agg fa
-JOIN ranked_customers rc
-  ON rc.customer_id = fa.customer_id
- AND rc.month_start = fa.month_start
+  cms.customer_id AS h01,
+  sc.country_name,
+  sc.city_name,
+  sc.store_id AS j01,
+  cms.month_start AS month,
+  cms.payment_count,
+  ROUND(cms.total_amount, 2) AS total_amount,
+  ROUND(cms.max_payment_amount, 2) AS max_payment_amount,
+  ROUND(cms.total_amount - 0, 2) AS total_amount_check,
+  RANK() OVER (
+    PARTITION BY sc.country_id, sc.city_name
+    ORDER BY cms.total_amount DESC
+  ) AS country_city_rank,
+  COALESCE(share.action_new_payment_share, 0) AS action_new_payment_share
+FROM customer_month_summary AS cms
+JOIN store_city_country AS sc
+  ON sc.customer_id = cms.customer_id
+JOIN qualified_months AS qm
+  ON qm.customer_id = cms.customer_id
+ AND qm.month_start = cms.month_start
+LEFT JOIN action_new_category_share AS share
+  ON share.customer_id = cms.customer_id
+ AND share.month_start = cms.month_start
 ORDER BY
-    fa.country_name,
-    fa.city_name,
-    fa.month_start,
-    fa.monthly_amount DESC,
-    fa.customer_id;
+  sc.country_name,
+  month,
+  cms.total_amount DESC,
+  cms.customer_id;

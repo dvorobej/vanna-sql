@@ -4,31 +4,28 @@ WITH payment_enriched AS (
     c.h03 AS first_name,
     c.h04 AS last_name,
     date(p.p06) AS payment_day,
-    CAST(p.p05 AS REAL) AS payment_amount,
+    CAST(p.p05 AS REAL) AS amount,
     p.p03 AS staff_id,
     s.o07 AS store_id,
-    cn.c01 AS country_id
-  FROM pay AS p
-  JOIN cus AS c
-    ON c.h01 = p.p02
-  JOIN adr AS a
-    ON a.e01 = c.h06
-  JOIN cty AS ct
-    ON ct.d01 = a.e05
-  JOIN cnt AS cn
-    ON cn.c01 = ct.d03
-  JOIN stf AS s
-    ON s.o01 = p.p03
+    cnt.c02 AS country_name,
+    cnt.c01 AS country_id
+  FROM pay p
+  JOIN cus c ON c.h01 = p.p02
+  JOIN stf s ON s.o01 = p.p03
+  JOIN adr a ON a.e01 = c.h06
+  JOIN cty ci ON ci.d01 = a.e05
+  JOIN cnt ON cnt.c01 = ci.d03
 ),
-daily_customer AS (
+daily AS (
   SELECT
     customer_id,
     first_name,
     last_name,
-    country_id,
     payment_day,
+    country_id,
+    country_name,
     COUNT(*) AS payment_count,
-    SUM(payment_amount) AS day_total_amount,
+    SUM(amount) AS day_amount,
     COUNT(DISTINCT staff_id) AS distinct_staff_count,
     COUNT(DISTINCT store_id) AS distinct_store_count
   FROM payment_enriched
@@ -36,77 +33,55 @@ daily_customer AS (
     customer_id,
     first_name,
     last_name,
+    payment_day,
     country_id,
-    payment_day
+    country_name
 ),
-daily_with_baseline AS (
+daily_with_prev_avg AS (
   SELECT
-    dc.*,
-    (
-      SELECT AVG(dc2.day_total_amount)
-      FROM daily_customer AS dc2
-      WHERE dc2.customer_id = dc.customer_id
-        AND dc2.payment_day >= date(dc.payment_day, '-30 days')
-        AND dc2.payment_day < dc.payment_day
-    ) AS avg_prev_30d_customer
-  FROM daily_customer AS dc
+    d.*,
+    COALESCE((
+      SELECT AVG(d2.day_amount)
+      FROM daily d2
+      WHERE d2.customer_id = d.customer_id
+        AND d2.payment_day >= date(d.payment_day, '-30 days')
+        AND d2.payment_day < d.payment_day
+    ), 0.0) AS avg_prev_30d
+  FROM daily d
 ),
-country_daily_avg AS (
+country_daily_ranked AS (
   SELECT
-    dd.country_id,
-    dd.payment_day,
-    AVG(dd.day_total_amount) AS country_avg_daily_amount
-  FROM (
-    SELECT
-      customer_id,
-      country_id,
-      payment_day,
-      day_total_amount
-    FROM daily_customer
-  ) AS dd
-  GROUP BY
-    dd.country_id,
-    dd.payment_day
-),
-scored AS (
-  SELECT
-    dwb.*,
-    cda.country_avg_daily_amount,
-    dwb.day_total_amount / NULLIF(dwb.avg_prev_30d_customer, 0) AS customer_ratio_to_prev_avg
-  FROM daily_with_baseline AS dwb
-  JOIN country_daily_avg AS cda
-    ON cda.country_id = dwb.country_id
-   AND cda.payment_day = dwb.payment_day
+    dw.*,
+    RANK() OVER (
+      PARTITION BY dw.country_id
+      ORDER BY dw.day_amount DESC
+    ) AS day_amount_rank_in_country
+  FROM daily_with_prev_avg dw
 )
 SELECT
-  s.customer_id,
-  s.first_name,
-  s.last_name,
-  s.country_id,
-  s.payment_day AS date,
-  s.payment_count AS payments_in_day,
-  ROUND(s.day_total_amount, 2) AS day_total_amount,
-  ROUND(s.avg_prev_30d_customer, 2) AS avg_prev_30d_customer,
-  ROUND(s.country_avg_daily_amount, 2) AS avg_country_daily_amount,
-  ROUND(s.customer_ratio_to_prev_avg, 2) AS ratio_to_prev_avg,
-  RANK() OVER (
-    PARTITION BY s.country_id
-    ORDER BY s.day_total_amount DESC
-  ) AS amount_rank_in_country,
-  CASE
-    WHEN (s.distinct_staff_count > 1 OR s.distinct_store_count > 1) THEN 1
-    ELSE 0
-  END AS has_multiple_staff_or_stores,
-  CASE
-    WHEN s.customer_ratio_to_prev_avg > 3
-     AND s.day_total_amount > s.country_avg_daily_amount
-    THEN 1 ELSE 0
-  END AS suspicious_activity
-FROM scored AS s
-WHERE s.avg_prev_30d_customer IS NOT NULL
-  AND s.customer_ratio_to_prev_avg > 3
-  AND s.day_total_amount > s.country_avg_daily_amount
+  customer_id,
+  first_name,
+  last_name,
+  payment_day,
+  payment_count,
+  ROUND(day_amount, 2) AS day_amount,
+  ROUND(avg_prev_30d, 2) AS avg_prev_30d,
+  ROUND(day_amount / NULLIF(avg_prev_30d, 0.0), 2) AS exceed_ratio_over_customer_avg,
+  country_id,
+  country_name,
+  distinct_staff_count,
+  distinct_store_count,
+  day_amount_rank_in_country
+FROM country_daily_ranked
+WHERE avg_prev_30d > 0
+  AND day_amount > 3.0 * avg_prev_30d
+  AND (
+    distinct_staff_count > 1
+    OR distinct_store_count > 1
+  )
 ORDER BY
-  s.country_id,
-  amount_rank_in_country,
-  s.day_total_amount DESC;
+  country_name,
+  day_amount_rank_in_country,
+  day_amount DESC,
+  payment_day,
+  customer_id;

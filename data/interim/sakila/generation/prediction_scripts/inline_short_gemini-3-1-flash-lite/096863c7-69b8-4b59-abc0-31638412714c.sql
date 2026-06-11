@@ -17,9 +17,9 @@ customer_geo AS (
         cnt.c01 AS country_id,
         cnt.c02 AS country_name
     FROM cus AS c
-    JOIN adr ON adr.e01 = c.h06
-    JOIN cty ON cty.d01 = adr.e05
-    JOIN cnt ON cnt.c01 = cty.d03
+    JOIN adr AS a ON a.e01 = c.h06
+    JOIN cty AS cty ON cty.d01 = a.e05
+    JOIN cnt AS cnt ON cnt.c01 = cty.d03
 ),
 daily_with_baseline AS (
     SELECT
@@ -33,14 +33,14 @@ daily_with_baseline AS (
             WHERE prev.customer_id = dcs.customer_id
               AND prev.payment_day >= DATE(dcs.payment_day, '-30 days')
               AND prev.payment_day < dcs.payment_day
-        ) AS avg_prev_30d,
+        ) AS avg_30d_personal,
         (
             SELECT AVG(all_c.daily_amount)
             FROM daily_customer_stats AS all_c
             JOIN customer_geo AS cg2 ON cg2.customer_id = all_c.customer_id
             WHERE cg2.country_id = cg.country_id
               AND all_c.payment_day = dcs.payment_day
-        ) AS country_avg_daily
+        ) AS avg_daily_country
     FROM daily_customer_stats AS dcs
     JOIN customer_geo AS cg ON cg.customer_id = dcs.customer_id
 ),
@@ -49,9 +49,9 @@ suspicious_days AS (
         *,
         RANK() OVER (PARTITION BY country_id ORDER BY daily_amount DESC) AS country_rank
     FROM daily_with_baseline
-    WHERE avg_prev_30d > 0
-      AND daily_amount > (3 * avg_prev_30d)
-      AND daily_amount > country_avg_daily
+    WHERE avg_30d_personal > 0
+      AND daily_amount > (3 * avg_30d_personal)
+      AND daily_amount > avg_daily_country
       AND (staff_count > 1 OR store_count > 1)
 )
 SELECT
@@ -59,8 +59,9 @@ SELECT
     country_name,
     payment_day,
     ROUND(daily_amount, 2) AS daily_amount,
-    ROUND(avg_prev_30d, 2) AS avg_prev_30d,
-    ROUND(country_avg_daily, 2) AS country_avg_daily,
+    ROUND(avg_30d_personal, 2) AS avg_30d_personal,
+    ROUND(avg_daily_country, 2) AS avg_daily_country,
+    payment_count,
     staff_count,
     store_count,
     country_rank

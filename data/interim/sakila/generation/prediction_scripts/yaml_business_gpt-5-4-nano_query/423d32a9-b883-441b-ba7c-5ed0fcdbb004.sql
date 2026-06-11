@@ -1,96 +1,105 @@
-WITH payment_base AS (
+WITH RECURSIVE
+months(month_start) AS (
+  SELECT '2005-01-01'
+  UNION ALL
+  SELECT date(month_start, '+1 month')
+  FROM months
+  WHERE month_start < '2005-12-01'
+),
+customer_geo AS (
   SELECT
-    p.p01 AS payment_id,
-    p.p02 AS customer_id,
+    c.h01 AS customer_id,
     c.h03 AS first_name,
     c.h04 AS last_name,
-    co.c02 AS country_name,
-    ci.d02 AS city_name,
+    cn.c02 AS country,
+    ci.d02 AS city
+  FROM cus AS c
+  JOIN adr AS a ON a.e01 = c.h06
+  JOIN cty AS ci ON ci.d01 = a.e05
+  JOIN cnt AS cn ON cn.c01 = ci.d03
+),
+monthly_payments AS (
+  SELECT
+    p.p02 AS customer_id,
     date(p.p06, 'start of month') AS month_start,
-    CAST(p.p05 AS REAL) AS payment_amount,
-    p.p03 AS staff_id,
-    s.o07 AS staff_store_id
-  FROM pay p
-  JOIN cus c
-    ON c.h01 = p.p02
-  JOIN adr ca
-    ON ca.e01 = c.h06
-  JOIN cty ci
-    ON ci.d01 = ca.e05
-  JOIN cnt co
-    ON co.c01 = ci.d03
-  JOIN stf s
-    ON s.o01 = p.p03
-),
-monthly AS (
-  SELECT
-    customer_id,
-    first_name,
-    last_name,
-    country_name,
-    city_name,
-    month_start,
-    COUNT(*) AS payment_count,
-    SUM(payment_amount) AS month_sum,
-    AVG(payment_amount) AS avg_payment,
-    COUNT(DISTINCT staff_id) AS distinct_staff_count,
-    COUNT(DISTINCT staff_store_id) AS distinct_store_count
-  FROM payment_base
+    COUNT(p.p01) AS payment_count,
+    SUM(p.p05) AS payment_sum,
+    COUNT(DISTINCT p.p03) AS distinct_staff_count,
+    COUNT(DISTINCT s.o07) AS distinct_store_count
+  FROM pay AS p
+  LEFT JOIN stf AS s ON s.o01 = p.p03
+  WHERE p.p06 >= '2005-01-01'
+    AND p.p06 <  '2006-01-01'
   GROUP BY
-    customer_id, first_name, last_name, country_name, city_name, month_start
+    p.p02,
+    date(p.p06, 'start of month')
 ),
-with_prev_avg AS (
+monthly_full AS (
   SELECT
-    m.*,
-    AVG(month_sum) OVER (
-      PARTITION BY customer_id
-      ORDER BY month_start
+    cg.customer_id,
+    cg.first_name,
+    cg.last_name,
+    cg.country,
+    cg.city,
+    m.month_start,
+    COALESCE(mp.payment_count, 0) AS payment_count,
+    COALESCE(mp.payment_sum, 0.0) AS payment_sum,
+    COALESCE(mp.distinct_staff_count, 0) AS distinct_staff_count,
+    COALESCE(mp.distinct_store_count, 0) AS distinct_store_count
+  FROM customer_geo AS cg
+  CROSS JOIN months AS m
+  LEFT JOIN monthly_payments AS mp
+    ON mp.customer_id = cg.customer_id
+   AND mp.month_start = m.month_start
+),
+monthly_with_avgs AS (
+  SELECT
+    mf.*,
+    AVG(mf.payment_sum) OVER (
+      PARTITION BY mf.customer_id
+      ORDER BY mf.month_start
       ROWS BETWEEN UNBOUNDED PRECEDING AND 1 PRECEDING
-    ) AS prev_avg_month_sum
-  FROM monthly m
+    ) AS prev_avg_monthly_sum
+  FROM monthly_full AS mf
 ),
-candidates AS (
+qualifying_months AS (
   SELECT
-    w.*,
-    (w.month_sum - w.prev_avg_month_sum) AS deviation_from_prev_avg,
+    mw.*,
+    (mw.payment_sum - mw.prev_avg_monthly_sum) AS deviation_from_prev_avg,
     RANK() OVER (
-      PARTITION BY w.country_name, w.month_start
-      ORDER BY (w.month_sum - w.prev_avg_month_sum) DESC
+      PARTITION BY mw.country
+      ORDER BY (mw.payment_sum - mw.prev_avg_monthly_sum) DESC
     ) AS country_deviation_rank
-  FROM with_prev_avg w
-  WHERE w.prev_avg_month_sum IS NOT NULL
-    AND w.payment_count >= 5
-    AND (w.distinct_staff_count >= 2 OR w.distinct_store_count >= 2)
-    AND w.month_sum >= 2.0 * w.prev_avg_month_sum
+  FROM monthly_with_avgs AS mw
+  WHERE mw.prev_avg_monthly_sum IS NOT NULL
+    AND mw.payment_count >= 5
+    AND mw.payment_sum >= 2.0 * mw.prev_avg_monthly_sum
+    AND (
+      mw.distinct_staff_count >= 2
+      OR mw.distinct_store_count >= 2
+    )
 ),
-qualifying_clients AS (
-  -- for each client, require that ALL months in 2005 satisfy the condition above
+qualifying_customers AS (
   SELECT
     customer_id
-  FROM (
-    SELECT
-      customer_id,
-      COUNT(*) AS ok_month_count,
-      COUNT(CASE WHEN month_start IS NOT NULL THEN 1 END) AS total_months
-    FROM candidates
-    WHERE month_start >= '2005-01-01' AND month_start < '2006-01-01'
-    GROUP BY customer_id
-  ) x
-  WHERE ok_month_count = 12
+  FROM qualifying_months
+  GROUP BY customer_id
+  HAVING COUNT(*) = 11
 )
 SELECT
-  c.month_start AS month,
-  c.customer_id,
-  c.first_name,
-  c.last_name,
-  c.country_name,
-  c.city_name,
-  ROUND(c.month_sum, 2) AS month_payment_sum,
-  c.payment_count,
-  ROUND(c.deviation_from_prev_avg, 2) AS deviation_from_prev_avg,
-  c.country_deviation_rank
-FROM candidates c
-JOIN qualifying_clients q
-  ON q.customer_id = c.customer_id
-WHERE c.month_start >= '2005-01-01' AND c.month_start < '2006-01-01'
-ORDER BY c.customer_id, c.month_start;
+  qm.customer_id,
+  qm.first_name,
+  qm.last_name,
+  qm.country,
+  qm.city,
+  strftime('%Y-%m', qm.month_start) AS payment_month,
+  ROUND(qm.payment_sum, 2) AS payment_sum,
+  qm.payment_count,
+  ROUND(qm.deviation_from_prev_avg, 2) AS deviation_from_prev_avg,
+  qm.country_deviation_rank
+FROM qualifying_months AS qm
+JOIN qualifying_customers AS qc
+  ON qc.customer_id = qm.customer_id
+ORDER BY
+  qm.customer_id,
+  qm.month_start;

@@ -1,4 +1,4 @@
-month,customer_fio,country,city,payments_count,total_amount,max_payment,max_payment_share,different_staff_count,different_store_count,country_month_rank
+month,customer_name,country,city,payment_count,monthly_amount,max_payment,max_payment_share,distinct_staff_count,distinct_store_count,country_month_rank
 2005-07,VERA MCCOY,Afghanistan,Kabul,8,37.92,8.99,0.2371,2,2,1
 2005-07,MARIO CHEATHAM,Algeria,Batna,17,66.83,10.99,0.1644,2,2,1
 2005-07,JUDY GRAY,Algeria,Bchar,11,47.89,8.99,0.1877,2,2,2
@@ -7,6 +7,8 @@ month,customer_fio,country,city,payments_count,total_amount,max_payment,max_paym
 2005-06,JASON MORRISSEY,Argentina,Baha Blanca,7,40.93,8.99,0.2196,2,2,1
 2005-06,JULIA FLORES,Argentina,La Plata,5,30.95,8.99,0.2905,2,2,2
 2005-06,LEONARD SCHOFIELD,Argentina,Tandil,6,26.94,5.99,0.2223,2,2,3
+2005-06,ERIC ROBERT,Argentina,Santa F,3,12.97,6.99,0.5389,2,2,4
+2005-06,DARRYL ASHCRAFT,Argentina,Ezeiza,3,5.97,2.99,0.5008,2,2,5
 2005-07,PERRY SWAFFORD,Argentina,Quilmes,13,70.87,9.99,0.141,2,2,1
 2005-07,JULIA FLORES,Argentina,La Plata,17,68.83,8.99,0.1306,2,2,2
 2005-07,WILLIE HOWELL,Argentina,Vicente Lpez,15,64.85,7.99,0.1232,2,2,3
@@ -82,6 +84,8 @@ month,customer_fio,country,city,payments_count,total_amount,max_payment,max_paym
 2005-06,EUGENE CULPEPPER,China,Shenzhen,4,23.96,7.99,0.3335,2,2,6
 2005-06,CHESTER BENNER,China,Suihua,4,21.96,10.99,0.5005,2,2,7
 2005-06,AUSTIN CINTRON,China,Tieli,4,20.96,6.99,0.3335,2,2,8
+2005-06,MELVIN ELLINGTON,China,Laohekou,4,14.96,5.99,0.4004,2,2,9
+2005-06,KYLE SPURLOCK,China,Shanwei,3,12.97,6.99,0.5389,2,2,10
 2005-07,TERRENCE GUNDERSON,China,Jinzhou,19,86.81,10.99,0.1266,2,2,1
 2005-07,ROBERTO VU,China,Yinchuan,15,77.85,9.99,0.1283,2,2,2
 2005-07,REGINA BERRY,China,Jinchang,17,70.83,6.99,0.0987,2,2,3
@@ -106,7 +110,7 @@ month,customer_fio,country,city,payments_count,total_amount,max_payment,max_paym
 2005-07,HUGH WALDROP,China,Haining,9,48.91,8.99,0.1838,2,2,22
 2005-07,HAZEL WARREN,China,Hohhot,15,47.85,9.99,0.2088,2,2,23
 2005-07,RICKY SHELBY,China,Junan,10,43.9,8.99,0.2048,2,2,24
-2005-07,KELLY KNOTT,China,Sanya,10,39.9,9.99,0.2504,2,2,25
+2005-07,KELLY KNOTT,China,Sanya,11,43.89,9.99,0.2276,2,2,25
 2005-07,BOB PFEIFFER,China,Xintai,9,37.91,10.99,0.2899,2,2,26
 2005-07,PAMELA BAKER,China,Nanyang,6,36.94,9.99,0.2704,2,2,27
 2005-07,ROLAND SOUTH,China,Yingkou,9,31.91,7.99,0.2504,2,2,28
@@ -124,6 +128,7 @@ month,customer_fio,country,city,payments_count,total_amount,max_payment,max_paym
 2005-07,LEON BOSTIC,Colombia,Florencia,8,41.92,7.99,0.1906,2,2,4
 2005-07,STACY CUNNINGHAM,Colombia,Pereira,10,40.9,9.99,0.2443,2,2,5
 2005-08,LEON BOSTIC,Colombia,Florencia,12,54.88,10.99,0.2003,2,2,1
+2005-06,JENNIE TERRY,Czech Republic,Olomouc,3,15.97,7.99,0.5003,2,2,1
 2005-07,JENNIE TERRY,Czech Republic,Olomouc,16,70.84,9.99,0.141,2,2,1
 2005-07,JEFF EAST,Dominican Republic,San Felipe de Puerto Plata,10,45.9,10.99,0.2394,2,2,1
 2005-07,RANDALL NEUMANN,Dominican Republic,La Romana,10,44.9,8.99,0.2002,2,2,2
@@ -233,8 +238,9 @@ month,customer_fio,country,city,payments_count,total_amount,max_payment,max_paym
 2005-07,CRYSTAL FORD,Israel,Ashdod,21,84.79,6.99,0.0824,2,2,1
 2005-07,KENNETH GOODEN,Israel,Bat Yam,8,47.92,9.99,0.2085,2,2,2
 2005-07,GERALDINE PERKINS,Israel,Tel Aviv-Jaffa,10,41.9,6.99,0.1668,2,2,3
-2005-06,BESSIE MORRISON,Italy,Syrakusa,5,23.95,10.99,0.4589,2,2,1
-2005-06,MARC OUTLAW,Italy,Brindisi,4,14.96,4.99,0.3336,2,2,2
+2005-06,CHRISTOPHER GRECO,Italy,Brescia,4,25.96,9.99,0.3848,2,2,1
+2005-06,BESSIE MORRISON,Italy,Syrakusa,5,23.95,10.99,0.4589,2,2,2
+2005-06,MARC OUTLAW,Italy,Brindisi,4,14.96,4.99,0.3336,2,2,3
 2005-07,CHRISTOPHER GRECO,Italy,Brescia,16,76.84,8.99,0.117,2,2,1
 2005-07,BESSIE MORRISON,Italy,Syrakusa,12,58.88,8.99,0.1527,2,2,2
 2005-07,ADRIAN CLARY,Italy,Udine,11,49.89,7.99,0.1602,2,2,3
@@ -264,7 +270,7 @@ month,customer_fio,country,city,payments_count,total_amount,max_payment,max_paym
 2005-07,KURT EMMONS,Japan,Kanazawa,10,41.9,4.99,0.1191,2,2,16
 2005-07,DEBBIE REYES,Japan,Fukuyama,11,41.89,7.99,0.1907,2,2,17
 2005-07,EARL SHANKS,Japan,Iwatsuki,12,39.88,6.99,0.1753,2,2,18
-2005-07,TONY CARRANZA,Japan,Koriyama,9,35.91,8.99,0.2503,2,2,19
+2005-07,TONY CARRANZA,Japan,Koriyama,10,36.9,8.99,0.2436,2,2,19
 2005-07,JOANNE ROBERTSON,Japan,Urawa,13,31.87,7.99,0.2507,2,2,20
 2005-08,JOANNE ROBERTSON,Japan,Urawa,15,76.85,8.99,0.117,2,2,1
 2005-08,TERESA ROGERS,Japan,Iwakuni,14,64.86,10.99,0.1694,2,2,2
@@ -382,14 +388,16 @@ month,customer_fio,country,city,payments_count,total_amount,max_payment,max_paym
 2005-06,JOY GEORGE,Romania,Botosani,6,20.94,8.99,0.4293,2,2,1
 2005-07,KEN PREWITT,Romania,Bucuresti,16,60.84,7.99,0.1313,2,2,1
 2005-07,JOY GEORGE,Romania,Botosani,15,58.85,9.99,0.1698,2,2,2
+2005-06,ELEANOR HUNT,Runion,Saint-Denis,5,22.95,6.99,0.3046,2,2,1
 2005-07,ELEANOR HUNT,Runion,Saint-Denis,22,100.78,10.99,0.109,2,2,1
 2005-06,CATHERINE CAMPBELL,Russian Federation,Moscow,7,32.93,8.99,0.273,2,2,1
 2005-06,DAISY BATES,Russian Federation,Kolpino,9,32.91,8.99,0.2732,2,2,2
 2005-06,WARREN SHERROD,Russian Federation,Usolje-Sibirskoje,3,20.97,9.99,0.4764,2,2,3
 2005-06,PHILIP CAUSEY,Russian Federation,Korolev,5,19.95,6.99,0.3504,2,2,4
-2005-06,CLIFFORD BOWENS,Russian Federation,Nabereznyje Telny,4,13.96,4.99,0.3574,2,2,5
-2005-06,ELAINE STEVENS,Russian Federation,Smolensk,3,11.97,4.99,0.4169,2,2,6
-2005-06,JACK FOUST,Russian Federation,Zeleznogorsk,3,9.97,5.99,0.6008,2,2,7
+2005-06,ROBIN HAYES,Russian Federation,Jelets,4,18.96,6.99,0.3687,2,2,5
+2005-06,CLIFFORD BOWENS,Russian Federation,Nabereznyje Telny,4,13.96,4.99,0.3574,2,2,6
+2005-06,ELAINE STEVENS,Russian Federation,Smolensk,3,11.97,4.99,0.4169,2,2,7
+2005-06,JACK FOUST,Russian Federation,Zeleznogorsk,3,9.97,5.99,0.6008,2,2,8
 2005-07,DAISY BATES,Russian Federation,Kolpino,18,87.82,9.99,0.1138,2,2,1
 2005-07,ARTHUR SIMPKINS,Russian Federation,Maikop,15,83.85,8.99,0.1072,2,2,2
 2005-07,WARREN SHERROD,Russian Federation,Usolje-Sibirskoje,16,74.84,8.99,0.1201,2,2,3
@@ -500,9 +508,10 @@ month,customer_fio,country,city,payments_count,total_amount,max_payment,max_paym
 2005-06,BILL GAVIN,United States,Rockford,9,30.91,7.99,0.2585,2,2,4
 2005-06,JOAN COOPER,United States,Saint Louis,7,24.93,6.99,0.2804,2,2,5
 2005-06,CLINTON BUFORD,United States,Aurora,4,23.96,8.99,0.3752,2,2,6
-2005-06,RICHARD MCCRARY,United States,Arlington,4,18.96,11.99,0.6324,2,2,7
-2005-06,ROSA REYNOLDS,United States,Lancaster,4,15.96,4.99,0.3127,2,2,8
-2005-06,CAROLE BARNETT,United States,Peoria,4,12.96,4.99,0.385,2,2,9
+2005-06,THOMAS GRIGSBY,United States,Kansas City,5,19.95,7.99,0.4005,2,2,7
+2005-06,RICHARD MCCRARY,United States,Arlington,4,18.96,11.99,0.6324,2,2,8
+2005-06,ROSA REYNOLDS,United States,Lancaster,4,15.96,4.99,0.3127,2,2,9
+2005-06,CAROLE BARNETT,United States,Peoria,4,12.96,4.99,0.385,2,2,10
 2005-07,KARL SEAL,United States,Cape Coral,19,86.81,7.99,0.092,2,2,1
 2005-07,ZACHARY HITE,United States,Akron,15,79.85,8.99,0.1126,2,2,2
 2005-07,PATRICIA JOHNSON,United States,San Bernardino,14,75.86,10.99,0.1449,2,2,3
@@ -540,6 +549,7 @@ month,customer_fio,country,city,payments_count,total_amount,max_payment,max_paym
 2005-06,NATHAN RUNYON,"Virgin Islands, U.S.",Charlotte Amalie,7,26.93,7.99,0.2967,2,2,1
 2005-07,NATHAN RUNYON,"Virgin Islands, U.S.",Charlotte Amalie,18,68.82,8.99,0.1306,2,2,1
 2005-06,GINA WILLIAMSON,Yemen,Taizz,9,35.91,6.99,0.1947,2,2,1
+2005-06,GORDON ALLARD,Yemen,Hodeida,3,9.97,7.99,0.8014,2,2,2
 2005-07,GORDON ALLARD,Yemen,Hodeida,17,96.83,10.99,0.1135,2,2,1
 2005-07,ELLA OLIVER,Yemen,Aden,18,73.82,8.99,0.1218,2,2,2
 2005-06,MAX PITT,Yugoslavia,Novi Sad,3,19.97,8.99,0.4502,2,2,1

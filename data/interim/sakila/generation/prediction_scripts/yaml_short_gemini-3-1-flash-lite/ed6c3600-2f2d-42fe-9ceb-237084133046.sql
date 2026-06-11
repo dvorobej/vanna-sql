@@ -2,7 +2,7 @@ WITH daily_stats AS (
     SELECT
         p.p02 AS customer_id,
         date(p.p06) AS payment_date,
-        COUNT(*) AS daily_payment_count,
+        COUNT(p.p01) AS daily_payment_count,
         SUM(CAST(p.p05 AS REAL)) AS daily_payment_sum,
         COUNT(DISTINCT p.p03) AS staff_count,
         COUNT(DISTINCT i.n03) AS store_count
@@ -11,7 +11,7 @@ WITH daily_stats AS (
     LEFT JOIN inv AS i ON i.n01 = r.q03
     GROUP BY p.p02, date(p.p06)
 ),
-moving_averages AS (
+moving_avg AS (
     SELECT
         ds.*,
         AVG(ds.daily_payment_sum) OVER (
@@ -21,25 +21,39 @@ moving_averages AS (
         ) AS avg_30d_sum
     FROM daily_stats AS ds
 ),
-suspicious_cases AS (
+risk_scoring AS (
     SELECT
         ma.*,
         (ma.daily_payment_sum / NULLIF(ma.avg_30d_sum, 0)) AS spike_ratio,
-        (ma.daily_payment_count * 0.5 + ma.staff_count * 2 + ma.store_count * 3) AS risk_score
-    FROM moving_averages AS ma
+        CASE 
+            WHEN ma.daily_payment_count >= 5 THEN 3
+            WHEN ma.daily_payment_count >= 3 THEN 2
+            ELSE 1
+        END + 
+        CASE 
+            WHEN ma.staff_count > 1 OR ma.store_count > 1 THEN 2
+            ELSE 0
+        END +
+        CASE 
+            WHEN (ma.daily_payment_sum / NULLIF(ma.avg_30d_sum, 0)) > 5 THEN 3
+            WHEN (ma.daily_payment_sum / NULLIF(ma.avg_30d_sum, 0)) > 2 THEN 1
+            ELSE 0
+        END AS risk_score
+    FROM moving_avg AS ma
     WHERE ma.avg_30d_sum > 0
-      AND (ma.daily_payment_sum > 3 * ma.avg_30d_sum OR ma.daily_payment_count > 10)
+      AND ma.daily_payment_sum > (2 * ma.avg_30d_sum)
 )
 SELECT
     c.h03 || ' ' || c.h04 AS customer_name,
-    sc.payment_date,
-    sc.daily_payment_count,
-    ROUND(sc.daily_payment_sum, 2) AS daily_payment_sum,
-    ROUND(sc.avg_30d_sum, 2) AS avg_30d_sum,
-    sc.staff_count,
-    sc.store_count,
-    ROUND(sc.spike_ratio, 2) AS spike_ratio,
-    RANK() OVER (ORDER BY sc.risk_score DESC, sc.daily_payment_sum DESC) AS risk_rank
-FROM suspicious_cases AS sc
-JOIN cus AS c ON c.h01 = sc.customer_id
-ORDER BY risk_rank ASC;
+    rs.payment_date,
+    rs.daily_payment_count,
+    ROUND(rs.daily_payment_sum, 2) AS daily_payment_sum,
+    ROUND(rs.avg_30d_sum, 2) AS avg_30d_sum,
+    ROUND(rs.spike_ratio, 2) AS spike_ratio,
+    rs.staff_count,
+    rs.store_count,
+    rs.risk_score,
+    RANK() OVER (ORDER BY rs.risk_score DESC, rs.daily_payment_sum DESC) AS global_risk_rank
+FROM risk_scoring AS rs
+JOIN cus AS c ON c.h01 = rs.customer_id
+ORDER BY rs.risk_score DESC, rs.daily_payment_sum DESC;

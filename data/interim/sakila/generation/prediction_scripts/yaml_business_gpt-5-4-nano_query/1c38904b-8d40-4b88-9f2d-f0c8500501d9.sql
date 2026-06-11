@@ -6,12 +6,12 @@ SELECT
   ROUND(SUM(p.p05), 2) AS total_amount,
   ROUND(AVG(p.p05), 2) AS average_payment_amount,
   ROUND(
-    1.0 * SUM(CASE WHEN s.o07 <> c.h02 THEN p.p05 ELSE 0 END) / SUM(p.p05),
+    1.0 * SUM(CASE WHEN s.o07 <> c.h02 THEN 1 ELSE 0 END) / COUNT(p.p01),
     4
-  ) AS share_other_store_staff_amount
-FROM pay AS p
-JOIN cus AS c
-  ON c.h01 = p.p02
+  ) AS share_other_store_staff_payments
+FROM cus AS c
+JOIN pay AS p
+  ON p.p02 = c.h01
 JOIN stf AS s
   ON s.o01 = p.p03
 WHERE p.p06 >= '2005-06-01'
@@ -22,7 +22,4 @@ GROUP BY
   c.h04
 HAVING COUNT(p.p01) > 5
    AND SUM(p.p05) > 30
-ORDER BY
-  total_amount DESC,
-  payment_count DESC,
-  customer_id;
+ORDER BY total_amount DESC, payment_count DESC, customer_id;

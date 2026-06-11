@@ -24,4 +24,4 @@ HAVING
 ORDER BY
   total_amount DESC,
   payment_count DESC,
-  customer_id;
+  c.h01;

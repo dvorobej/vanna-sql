@@ -1,113 +1,142 @@
-WITH customer_geo AS (
+WITH
+customer_geo AS (
   SELECT
     c.h01 AS customer_id,
-    adr_cty.d02 AS city_name,
     cnt.c02 AS country_name,
-    c.h02 AS home_store_id
+    ci.d02 AS city_name
   FROM cus AS c
-  JOIN adr AS a_cus ON a_cus.e01 = c.h06
-  JOIN cty AS adr_cty ON adr_cty.d01 = a_cus.e05
-  JOIN cnt ON cnt.c01 = adr_cty.d03
+  JOIN adr AS a ON a.e01 = c.h06
+  JOIN cty AS ci ON ci.d01 = a.e05
+  JOIN cnt ON cnt.c01 = ci.d03
 ),
 payments_base AS (
   SELECT
-    p.p02 AS customer_id,
-    p.p06 AS payment_date,
+    p.p04 AS rental_id,
+    r.q04 AS customer_id,
     date(p.p06, 'start of month') AS month_start,
     CAST(p.p05 AS REAL) AS payment_amount,
     p.p01 AS payment_id,
-    p.p03 AS staff_id,
-    r.q01 AS rental_id,
-    r.q05 AS return_date,
-    rg.country_name,
-    rg.city_name,
-    rg.home_store_id,
-    COALESCE(i.n03, rg.home_store_id) AS store_id
+    p.p03 AS staff_id
   FROM pay AS p
-  LEFT JOIN ren AS r
-    ON r.q01 = p.p04
-  LEFT JOIN inv AS i
-    ON i.n01 = r.q03
-  JOIN customer_geo AS rg
-    ON rg.customer_id = p.p02
+  JOIN ren AS r ON r.q01 = p.p04
 ),
-monthly_customer_store AS (
+rental_store AS (
   SELECT
-    store_id,
+    r.q01 AS rental_id,
+    i.n03 AS store_id,
+    r.q06 AS staff_return_id
+  FROM ren AS r
+  JOIN inv AS i ON i.n01 = r.q03
+),
+payments_enriched AS (
+  SELECT
+    pb.month_start,
+    cg.country_name,
+    cg.city_name,
+    rs.store_id,
+    pb.customer_id,
+    pb.payment_id,
+    pb.payment_amount,
+    pb.staff_id
+  FROM payments_base AS pb
+  JOIN rental_store AS rs ON rs.rental_id = pb.rental_id
+  JOIN customer_geo AS cg ON cg.customer_id = pb.customer_id
+),
+monthly_agg AS (
+  SELECT
+    month_start,
     country_name,
     city_name,
-    month_start,
-    COUNT(payment_id) AS payment_count,
-    SUM(payment_amount) AS month_payment_sum,
-    COUNT(DISTINCT staff_id) AS staff_count,
-    AVG(
-      CASE
-        WHEN return_date IS NOT NULL AND return_date > payment_date THEN 1.0
-        WHEN return_date IS NULL THEN NULL
-        ELSE 0.0
-      END
-    ) AS avg_overdue_return_share
-  FROM payments_base
-  GROUP BY
-    store_id, country_name, city_name, month_start
-),
-store_country_p95 AS (
-  SELECT
     store_id,
-    country_name,
-    month_start,
-    month_payment_sum,
+    customer_id,
+    COUNT(payment_id) AS payment_count,
+    SUM(payment_amount) AS payment_sum,
+    COUNT(DISTINCT staff_id) AS distinct_staff_count
+  FROM payments_enriched
+  GROUP BY
+    month_start, country_name, city_name, store_id, customer_id
+),
+monthly_with_prev_avg AS (
+  SELECT
+    ma.*,
+    AVG(payment_sum) OVER (
+      PARTITION BY customer_id, store_id
+      ORDER BY month_start
+      ROWS BETWEEN UNBOUNDED PRECEDING AND 1 PRECEDING
+    ) AS avg_prev_amount
+  FROM monthly_agg AS ma
+),
+store_country_client_stats AS (
+  SELECT
+    mwpa.*,
     PERCENT_RANK() OVER (
       PARTITION BY store_id, country_name, month_start
-      ORDER BY month_payment_sum
-    ) AS pr_asc
-  FROM monthly_customer_store
+      ORDER BY payment_sum DESC
+    ) AS pr_top_by_client_amount
+  FROM monthly_with_prev_avg AS mwpa
 ),
-monthly_ranked AS (
+monthly_overdue_returns AS (
   SELECT
-    m.*,
-    AVG(m.month_payment_sum) OVER (
-      PARTITION BY m.store_id, m.country_name, m.city_name
-      ORDER BY m.month_start
-      ROWS BETWEEN UNBOUNDED PRECEDING AND 1 PRECEDING
-    ) AS avg_prev_amount,
-    PERCENT_RANK() OVER (
-      PARTITION BY m.store_id, m.country_name
-      ORDER BY m.month_payment_sum DESC
-    ) AS payment_sum_rank_pct
-  FROM monthly_customer_store AS m
+    date(r.q05, 'start of month') AS month_start,
+    cg.country_name,
+    cg.city_name,
+    i.n03 AS store_id,
+    r.q04 AS customer_id,
+    SUM(CASE WHEN r.q05 IS NOT NULL AND r.q05 > r.q02 THEN 1 ELSE 0 END) AS overdue_return_count,
+    COUNT(*) AS rental_count
+  FROM ren AS r
+  JOIN inv AS i ON i.n01 = r.q03
+  JOIN cus AS c ON c.h01 = r.q04
+  JOIN adr AS a ON a.e01 = c.h06
+  JOIN cty AS ci ON ci.d01 = a.e05
+  JOIN cnt ON cnt.c01 = ci.d03
+  JOIN customer_geo AS cg ON cg.customer_id = c.h01
+  GROUP BY
+    date(r.q05, 'start of month'),
+    cg.country_name, cg.city_name, i.n03, r.q04
+),
+final_join AS (
+  SELECT
+    sccs.month_start,
+    sccs.country_name,
+    sccs.city_name,
+    sccs.store_id,
+    sccs.customer_id,
+    sccs.payment_sum,
+    sccs.payment_count,
+    sccs.distinct_staff_count,
+    COALESCE(
+      1.0 * mor.overdue_return_count / NULLIF(mor.rental_count, 0),
+      0.0
+    ) AS overdue_return_share,
+    sccs.pr_top_by_client_amount AS client_amount_rank_by_store_country
+  FROM store_country_client_stats AS sccs
+  LEFT JOIN monthly_overdue_returns AS mor
+    ON mor.month_start = sccs.month_start
+   AND mor.country_name = sccs.country_name
+   AND mor.city_name = sccs.city_name
+   AND mor.store_id = sccs.store_id
+   AND mor.customer_id = sccs.customer_id
 )
 SELECT
-  mr.country_name,
-  mr.city_name,
-  mr.store_id AS store_id,
-  strftime('%Y-%m', mr.month_start) AS payment_month,
-  ROUND(mr.month_payment_sum, 2) AS month_payment_sum,
-  mr.payment_count,
-  mr.staff_count AS staff_count,
-  ROUND(COALESCE(mr.avg_overdue_return_share, 0.0), 4) AS overdue_return_share,
-  mr.payment_sum_rank_pct AS payment_sum_rank
-FROM monthly_ranked AS mr
-LEFT JOIN store_country_p95 AS p95
-  ON p95.store_id = mr.store_id
- AND p95.country_name = mr.country_name
- AND p95.month_start = mr.month_start
- AND p95.month_payment_sum = mr.month_payment_sum
+  country_name,
+  city_name,
+  store_id AS store,
+  strftime('%Y-%m', month_start) AS month,
+  ROUND(payment_sum, 2) AS rental_payment_sum,
+  payment_count,
+  distinct_staff_count AS staff_count,
+  ROUND(overdue_return_share, 4) AS overdue_return_share,
+  client_amount_rank_by_store_country AS amount_rank
+FROM final_join
 WHERE
-  mr.avg_prev_amount IS NOT NULL
-  AND mr.avg_prev_amount > 0
-  AND mr.month_payment_sum > 3.0 * mr.avg_prev_amount
-  AND mr.month_payment_sum >= (
-    SELECT
-      MAX(m2.month_payment_sum)
-    FROM store_country_p95 AS m2
-    WHERE m2.store_id = mr.store_id
-      AND m2.country_name = mr.country_name
-      AND m2.month_start = mr.month_start
-      AND m2.pr_asc >= 0.95
-  )
+  avg_prev_amount IS NOT NULL
+  AND avg_prev_amount > 0
+  AND payment_sum > 3.0 * avg_prev_amount
+  AND client_amount_rank_by_store_country <= 0.05
 ORDER BY
-  mr.country_name,
-  mr.store_id,
-  mr.month_start,
-  mr.month_payment_sum DESC;
+  month_start,
+  country_name,
+  store_id,
+  payment_sum DESC,
+  customer_id;

@@ -19,12 +19,9 @@ GROUP BY
   c.h03,
   c.h04,
   date(p.p06)
-HAVING
-  COUNT(p.p01) >= 3
-  OR SUM(p.p05) > 20
+HAVING COUNT(p.p01) >= 3
+   OR SUM(p.p05) > 20
 ORDER BY
-  payment_date,
+  payment_date DESC,
   total_amount DESC,
-  max_payment DESC,
-  last_name,
-  first_name;
+  payment_count DESC;

@@ -1,4 +1,4 @@
-customer_id,country,city,activity_date,daily_amount,payment_count,staff_count,avg_prev_30d,global_suspicion_rank
+customer_id,country,city,activity_date,daily_amount,payment_count,staff_count,avg_prev_30d,global_exceed_rank
 412,India,Hoshiarpur,2005-07-29,18.97,3,2,0.99,1
 480,Turkey,Gaziantep,2005-05-29,16.98,2,2,0.99,2
 124,Turkey,Ktahya,2005-05-31,14.97,3,1,0.99,3

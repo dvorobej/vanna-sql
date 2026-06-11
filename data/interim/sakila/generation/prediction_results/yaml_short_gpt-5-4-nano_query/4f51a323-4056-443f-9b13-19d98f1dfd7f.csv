@@ -1,4 +1,4 @@
-customer_id,customer_full_name,payment_count,total_amount,average_payment_amount,large_payment_count
+customer_id,customer_full_name,payment_count,total_amount,average_payment_amount,large_payments_count
 148,ELEANOR HUNT,22,100.77999999999997,4.580909090909089,3
 470,GORDON ALLARD,17,96.82999999999998,5.695882352941176,2
 522,ARNOLD HAVENS,18,96.82,5.378888888888889,1

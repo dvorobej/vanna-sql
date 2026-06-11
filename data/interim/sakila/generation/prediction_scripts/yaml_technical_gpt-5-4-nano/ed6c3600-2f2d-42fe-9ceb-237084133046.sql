@@ -1,229 +1,215 @@
-SELECT AVG(db2.day_sum)
-            FROM daily_base AS db2
-            WHERE db2.customer_id = db.customer_id
-              AND db2.payment_day >= date(db.payment_day, '-30 days')
-              AND db2.payment_day < db.payment_day
-        ) AS avg_prev_30d,
+WITH daily AS (
+    SELECT
+        c.h01 AS customer_id,
+        c.h02 AS customer_store_id,
+        c.h03 AS customer_first_name,
+        c.h04 AS customer_last_name,
+        date(p.p06) AS day_date,
+        COUNT(p.p01) AS payment_count,
+        SUM(CAST(p.p05 AS REAL)) AS daily_amount,
+        AVG(CAST(p.p05 AS REAL)) AS daily_avg_payment
+    FROM cus AS c
+    JOIN pay AS p
+        ON p.p02 = c.h01
+    WHERE p.p06 IS NOT NULL
+    GROUP BY
+        c.h01, c.h02, c.h03, c.h04, date(p.p06)
+),
+history_calc AS (
+    SELECT
+        d.*,
+        (
+            SELECT AVG(d2.daily_amount)
+            FROM daily AS d2
+            WHERE d2.customer_id = d.customer_id
+              AND d2.day_date >= date(d.day_date, '-30 day')
+              AND d2.day_date < d.day_date
+        ) AS avg_daily_amount_prev_30d,
+        (
+            SELECT AVG(d2.payment_count)
+            FROM daily AS d2
+            WHERE d2.customer_id = d.customer_id
+              AND d2.day_date >= date(d.day_date, '-30 day')
+              AND d2.day_date < d.day_date
+        ) AS avg_payment_count_prev_30d,
         (
             SELECT
                 CASE
-                    WHEN COUNT(*) > 0 THEN
-                        sqrt(
-                            AVG(db2.day_sum * db2.day_sum) - AVG(db2.day_sum) * AVG(db2.day_sum)
-                        )
-                ELSE NULL
+                    WHEN COUNT(*) < 2 THEN NULL
+                    ELSE
+                        sqrt(AVG(d2.daily_amount * d2.daily_amount) - AVG(d2.daily_amount) * AVG(d2.daily_amount))
                 END
-            FROM daily_base AS db2
-            WHERE db2.customer_id = db.customer_id
-              AND db2.payment_day >= date(db.payment_day, '-30 days')
-              AND db2.payment_day < db.payment_day
-        ) AS std_prev_30d,
+            FROM daily AS d2
+            WHERE d2.customer_id = d.customer_id
+              AND d2.day_date >= date(d.day_date, '-30 day')
+              AND d2.day_date < d.day_date
+        ) AS std_daily_amount_prev_30d,
         (
-            SELECT AVG(db2.payment_count)
-            FROM daily_base AS db2
-            WHERE db2.customer_id = db.customer_id
-              AND db2.payment_day >= date(db.payment_day, '-30 days')
-              AND db2.payment_day < db.payment_day
-        ) AS avg_prev_30d_payment_count,
+            SELECT
+                CASE
+                    WHEN COUNT(*) < 2 THEN NULL
+                    ELSE
+                        sqrt(AVG(d2.payment_count * d2.payment_count) - AVG(d2.payment_count) * AVG(d2.payment_count))
+                END
+            FROM daily AS d2
+            WHERE d2.customer_id = d.customer_id
+              AND d2.day_date >= date(d.day_date, '-30 day')
+              AND d2.day_date < d.day_date
+        ) AS std_payment_count_prev_30d,
         (
-            SELECT COUNT(*) 
-            FROM daily_base AS db2
-            WHERE db2.customer_id = db.customer_id
-              AND db2.payment_day >= date(db.payment_day, '-30 days')
-              AND db2.payment_day < db.payment_day
-        ) AS prev_days_cnt
-    FROM daily_base AS db
+            SELECT COUNT(*)
+            FROM daily AS d2
+            WHERE d2.customer_id = d.customer_id
+              AND d2.day_date >= date(d.day_date, '-30 day')
+              AND d2.day_date < d.day_date
+        ) AS history_days_count
+    FROM daily AS d
 ),
-flagged_days AS (
+flags AS (
     SELECT
-        rs.*,
+        hc.*,
         CASE
-            WHEN rs.prev_days_cnt >= 10
-             AND rs.std_prev_30d IS NOT NULL
-             AND rs.day_sum > rs.avg_prev_30d + 3.0 * rs.std_prev_30d
-            THEN 1 ELSE 0
-        END AS is_sum_anomaly,
+            WHEN hc.std_daily_amount_prev_30d IS NOT NULL
+             AND hc.avg_daily_amount_prev_30d IS NOT NULL
+             AND hc.daily_amount > hc.avg_daily_amount_prev_30d + 3 * hc.std_daily_amount_prev_30d
+                THEN 1 ELSE 0
+        END AS flag_amount_gt_3std,
         CASE
-            WHEN rs.prev_days_cnt >= 10
-             AND rs.avg_prev_30d_payment_count IS NOT NULL
-             AND rs.payment_count >= 2.0 * rs.avg_prev_30d_payment_count
-            THEN 1 ELSE 0
-        END AS is_count_spike,
+            WHEN hc.std_payment_count_prev_30d IS NOT NULL
+             AND hc.avg_payment_count_prev_30d IS NOT NULL
+             AND hc.payment_count > hc.avg_payment_count_prev_30d + 3 * hc.std_payment_count_prev_30d
+                THEN 1 ELSE 0
+        END AS flag_count_gt_3std,
         CASE
-            WHEN rs.prev_days_cnt >= 10
-             AND rs.std_prev_30d IS NOT NULL
-             AND rs.avg_prev_30d IS NOT NULL
-            THEN (rs.day_sum - rs.avg_prev_30d) / NULLIF(rs.std_prev_30d, 0)
-        END AS z_score_sum
-    FROM rolling_stats AS rs
-    WHERE rs.prev_days_cnt >= 10
+            WHEN hc.avg_daily_amount_prev_30d IS NOT NULL AND hc.avg_daily_amount_prev_30d > 0
+                THEN (hc.daily_amount - hc.avg_daily_amount_prev_30d) / hc.avg_daily_amount_prev_30d
+            ELSE NULL
+        END AS deviation_ratio_amount,
+        CASE
+            WHEN hc.avg_payment_count_prev_30d IS NOT NULL AND hc.avg_payment_count_prev_30d > 0
+                THEN (hc.payment_count - hc.avg_payment_count_prev_30d) / hc.avg_payment_count_prev_30d
+            ELSE NULL
+        END AS deviation_ratio_count
+    FROM history_calc AS hc
+    WHERE hc.history_days_count >= 30
 ),
-risk_base AS (
-    SELECT
-        p.p01 AS payment_id,
-        p.p02 AS customer_id,
-        p.p03 AS staff_id,
-        p.p04 AS rental_id,
-        p.p05 AS payment_amount,
-        date(p.p06) AS payment_day,
-        ren.q03 AS inventory_id,
-        inv.n02 AS film_id,
-        inv.n03 AS store_id_issuing,
-        rstock.film_category_id,
-        flc.l02 AS category_id,
-        flc_main.cat_main
-    FROM pay AS p
-    LEFT JOIN ren
-        ON ren.q01 = p.p04
-    LEFT JOIN inv
-        ON inv.n01 = ren.q03
-    LEFT JOIN (
-        SELECT NULL AS film_category_id
-    ) AS rstock
-        ON 1=0
-    LEFT JOIN flc
-        ON flc.l01 = inv.n02
-    LEFT JOIN (
-        SELECT
-            l01 AS film_id,
-            MAX(l02) AS cat_main
-        FROM flc
-        GROUP BY l01
-    ) AS flc_main
-        ON flc_main.film_id = inv.n02
-    WHERE p.p06 IS NOT NULL
-),
-day_staff_country_ratio AS (
+non_customer_store_share AS (
     SELECT
         c.h01 AS customer_id,
-        date(p.p06) AS payment_day,
-        SUM(CASE WHEN p.p03 <> NULL AND s.o07 <> c.h02 THEN CAST(p.p05 AS REAL) ELSE 0 END) AS foreign_store_staff_sum,
-        SUM(CAST(p.p05 AS REAL)) AS total_day_sum_for_ratio,
+        date(p.p06) AS day_date,
+        SUM(CASE WHEN stf.o07 <> c.h02 THEN CAST(p.p05 AS REAL) ELSE 0 END) AS amount_from_other_stores,
+        SUM(CAST(p.p05 AS REAL)) AS amount_total,
         CASE
             WHEN SUM(CAST(p.p05 AS REAL)) > 0
-            THEN 1.0 * SUM(CASE WHEN s.o07 <> c.h02 THEN CAST(p.p05 AS REAL) ELSE 0 END) / SUM(CAST(p.p05 AS REAL))
-        END AS foreign_store_staff_share
+                THEN 1.0 * SUM(CASE WHEN stf.o07 <> c.h02 THEN CAST(p.p05 AS REAL) ELSE 0 END)
+                     / SUM(CAST(p.p05 AS REAL))
+            ELSE NULL
+        END AS other_store_share
     FROM pay AS p
     JOIN cus AS c
         ON c.h01 = p.p02
-    JOIN stf AS s
-        ON s.o01 = p.p03
-    GROUP BY c.h01, date(p.p06)
+    JOIN stf
+        ON stf.o01 = p.p03
+    GROUP BY
+        c.h01, date(p.p06)
 ),
 day_top_staff AS (
     SELECT
-        x.customer_id,
-        x.payment_day,
-        x.staff_id,
-        x.staff_sum,
+        p.p02 AS customer_id,
+        date(p.p06) AS day_date,
+        p.p03 AS staff_id,
+        SUM(CAST(p.p05 AS REAL)) AS staff_amount,
         ROW_NUMBER() OVER (
-            PARTITION BY x.customer_id, x.payment_day
-            ORDER BY x.staff_sum DESC, x.staff_id
+            PARTITION BY p.p02, date(p.p06)
+            ORDER BY SUM(CAST(p.p05 AS REAL)) DESC, COUNT(*) DESC, p.p03
         ) AS rn
-    FROM (
-        SELECT
-            p.p02 AS customer_id,
-            date(p.p06) AS payment_day,
-            p.p03 AS staff_id,
-            SUM(CAST(p.p05 AS REAL)) AS staff_sum
-        FROM pay AS p
-        GROUP BY p.p02, date(p.p06), p.p03
-    ) AS x
+    FROM pay AS p
+    GROUP BY
+        p.p02, date(p.p06), p.p03
 ),
-day_top_category AS (
+day_main_category AS (
     SELECT
-        y.customer_id,
-        y.payment_day,
-        y.category_id,
-        y.category_sum,
+        p.p02 AS customer_id,
+        date(p.p06) AS day_date,
+        cat.g02 AS category_id,
+        SUM(CAST(p.p05 AS REAL)) AS category_amount,
         ROW_NUMBER() OVER (
-            PARTITION BY y.customer_id, y.payment_day
-            ORDER BY y.category_sum DESC, y.category_id
+            PARTITION BY p.p02, date(p.p06)
+            ORDER BY SUM(CAST(p.p05 AS REAL)) DESC, cat.g02
         ) AS rn
-    FROM (
-        SELECT
-            p.p02 AS customer_id,
-            date(p.p06) AS payment_day,
-            flc.l02 AS category_id,
-            SUM(CAST(p.p05 AS REAL)) AS category_sum
-        FROM pay AS p
-        JOIN ren
-            ON ren.q01 = p.p04
-        JOIN inv
-            ON inv.n01 = ren.q03
-        JOIN flc
-            ON flc.l01 = inv.n02
-        GROUP BY p.p02, date(p.p06), flc.l02
-    ) AS y
+    FROM pay AS p
+    JOIN ren
+        ON ren.q01 = p.p04
+    JOIN inv
+        ON inv.n01 = ren.q03
+    JOIN flc
+        ON flc.l01 = inv.n02
+    JOIN cat
+        ON cat.g01 = flc.l02
+    GROUP BY
+        p.p02, date(p.p06), cat.g02
 )
 SELECT
-    fd.customer_id AS h01_customer_id,
+    f.customer_id AS h01,
     c.h03 AS customer_first_name,
     c.h04 AS customer_last_name,
-    cnt.c02 AS customer_country,
-    cty.d02 AS customer_city,
-    fd.payment_day AS suspicious_date,
-    fd.payment_count,
-    fd.day_sum,
-    fd.avg_prev_30d AS personal_avg_prev_30d,
-    fd.std_prev_30d AS personal_std_prev_30d,
-    fd.z_score_sum,
+    cnt.c02 AS country,
+    cty.d02 AS city,
+    f.day_date AS p06_day,
+    ROUND(f.daily_amount, 2) AS daily_amount,
+    f.payment_count,
+    ROUND(f.avg_daily_amount_prev_30d, 2) AS avg_daily_amount_prev_30d,
+    ROUND(f.std_daily_amount_prev_30d, 2) AS std_daily_amount_prev_30d,
+    ROUND(f.avg_payment_count_prev_30d, 2) AS avg_payment_count_prev_30d,
+    ROUND(f.std_payment_count_prev_30d, 2) AS std_payment_count_prev_30d,
+    f.flag_amount_gt_3std,
+    f.flag_count_gt_3std,
+    ROUND(f.deviation_ratio_amount, 4) AS deviation_ratio_amount,
+    ROUND(f.deviation_ratio_count, 4) AS deviation_ratio_count,
+    ROUND(ncs.other_store_share, 4) AS other_store_share_amount,
+    ts.o01 AS top_staff_id,
+    ts.o02 AS top_staff_first_name,
+    ts.o03 AS top_staff_last_name,
+    sto.j01 AS top_staff_store_id,
+    dmc.category_id AS main_category_id,
     CASE
-        WHEN fd.is_sum_anomaly = 1 AND fd.is_count_spike = 1 THEN 1
-        WHEN fd.is_sum_anomaly = 1 THEN 0.8
-        WHEN fd.is_count_spike = 1 THEN 0.6
-        ELSE 0
-    END AS risk_level_score,
-    MAX(CASE WHEN ds.rn = 1 THEN ds.staff_id END) AS top_staff_id,
-    MAX(CASE WHEN ds.rn = 1 THEN st.o02 END) AS top_staff_first_name,
-    MAX(CASE WHEN ds.rn = 1 THEN st.o03 END) AS top_staff_last_name,
-    MAX(CASE WHEN dc.rn = 1 THEN dc.category_id END) AS top_category_id,
-    MAX(cat.g02) AS top_category_name,
-    dscr.foreign_store_staff_share AS foreign_store_staff_share,
-    RANK() OVER (
-        PARTITION BY fd.customer_id
+        WHEN (f.flag_amount_gt_3std = 1 AND f.flag_count_gt_3std = 1) THEN 3
+        WHEN (f.flag_amount_gt_3std = 1 OR f.flag_count_gt_3std = 1) THEN 2
+        ELSE 1
+    END AS risk_level,
+    DENSE_RANK() OVER (
+        PARTITION BY cnt.c01
         ORDER BY
-            (CASE
-                WHEN fd.is_sum_anomaly = 1 AND fd.is_count_spike = 1 THEN 1
-                WHEN fd.is_sum_anomaly = 1 THEN 0.8
-                WHEN fd.is_count_spike = 1 THEN 0.6
-                ELSE 0
-             END) DESC,
-            fd.day_sum DESC
-    ) AS suspicion_rank_within_customer
-FROM flagged_days AS fd
+            (f.flag_amount_gt_3std * 3 + f.flag_count_gt_3std * 2) DESC,
+            f.daily_amount DESC
+    ) AS suspicion_rank_in_country
+FROM flags AS f
 JOIN cus AS c
-    ON c.h01 = fd.customer_id
-JOIN adr AS a
-    ON a.e01 = c.h06
-JOIN cty AS cty
-    ON cty.d01 = a.e05
+    ON c.h01 = f.customer_id
+JOIN adr
+    ON adr.e01 = c.h06
+JOIN cty
+    ON cty.d01 = adr.e05
 JOIN cnt
     ON cnt.c01 = cty.d03
-LEFT JOIN day_staff_country_ratio AS dscr
-    ON dscr.customer_id = fd.customer_id
-   AND dscr.payment_day = fd.payment_day
-LEFT JOIN day_top_staff AS ds
-    ON ds.customer_id = fd.customer_id
-   AND ds.payment_day = fd.payment_day
-   AND ds.rn = 1
-LEFT JOIN stf AS st
-    ON st.o01 = ds.staff_id
-LEFT JOIN day_top_category AS dc
-    ON dc.customer_id = fd.customer_id
-   AND dc.payment_day = fd.payment_day
-   AND dc.rn = 1
-LEFT JOIN cat
-    ON cat.g01 = dc.category_id
-WHERE fd.is_sum_anomaly = 1 OR fd.is_count_spike = 1
-GROUP BY
-    fd.customer_id, c.h03, c.h04, cnt.c02, cty.d02,
-    fd.payment_day, fd.payment_count, fd.day_sum,
-    fd.avg_prev_30d, fd.std_prev_30d, fd.z_score_sum,
-    fd.is_sum_anomaly, fd.is_count_spike,
-    dscr.foreign_store_staff_share
+LEFT JOIN non_customer_store_share AS ncs
+    ON ncs.customer_id = f.customer_id
+   AND ncs.day_date = f.day_date
+LEFT JOIN day_top_staff AS dts
+    ON dts.customer_id = f.customer_id
+   AND dts.day_date = f.day_date
+   AND dts.rn = 1
+LEFT JOIN stf AS ts
+    ON ts.o01 = dts.staff_id
+LEFT JOIN sto
+    ON sto.j01 = ts.o07
+LEFT JOIN day_main_category AS dmc
+    ON dmc.customer_id = f.customer_id
+   AND dmc.day_date = f.day_date
+   AND dmc.rn = 1
+WHERE (f.flag_amount_gt_3std = 1 OR f.flag_count_gt_3std = 1)
 ORDER BY
-    foreign_store_staff_share DESC,
-    fd.day_sum DESC,
-    fd.customer_id,
-    fd.payment_day;
+    suspicion_rank_in_country,
+    f.daily_amount DESC,
+    f.customer_id,
+    f.day_date;

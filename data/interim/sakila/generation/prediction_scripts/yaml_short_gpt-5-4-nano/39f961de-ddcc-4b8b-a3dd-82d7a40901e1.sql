@@ -1,97 +1,104 @@
-WITH payment_enriched AS (
-    SELECT
-        p.p01 AS payment_id,
-        p.p02 AS customer_id,
-        date(p.p06) AS payment_date,
-        CAST(p.p05 AS REAL) AS payment_amount,
-        p.p03 AS staff_id,
-        st.o07 AS staff_store_id,
-        cty.d01 AS customer_city_id,
-        cty.d02 AS customer_city,
-        cnt.c01 AS customer_country_id,
-        cnt.c02 AS customer_country,
-        CASE
-            WHEN f.i11 IN ('R','NC-17') THEN 1
-            ELSE 0
-        END AS is_r_or_nc17_rental
-    FROM pay AS p
-    JOIN cus AS cu
-        ON cu.h01 = p.p02
-    JOIN adr AS a
-        ON a.e01 = cu.h06
-    JOIN cty
-        ON cty.d01 = a.e05
-    JOIN cnt
-        ON cnt.c01 = cty.d03
-    JOIN stf AS st
-        ON st.o01 = p.p03
-    JOIN ren AS r
-        ON r.q01 = p.p04
-    JOIN inv AS iinv
-        ON iinv.n01 = r.q03
-    JOIN flm AS f
-        ON f.i01 = iinv.n02
+WITH customer_geo AS (
+  SELECT
+    c.h01 AS customer_id,
+    c.h03 AS first_name,
+    c.h04 AS last_name,
+    cnt.c02 AS country,
+    cty.d02 AS city
+  FROM cus AS c
+  JOIN adr AS a ON a.e01 = c.h06
+  JOIN cty AS cty ON cty.d01 = a.e05
+  JOIN cnt AS cnt ON cnt.c01 = cty.d03
 ),
-daily_customer AS (
-    SELECT
-        customer_id,
-        payment_date,
-        customer_city,
-        customer_country_id,
-        customer_country,
-        COUNT(*) AS day_payment_count,
-        SUM(payment_amount) AS day_payment_sum,
-        MAX(payment_amount) AS max_payment,
-        COUNT(DISTINCT staff_id) AS distinct_staff_count,
-        COUNT(DISTINCT staff_store_id) AS distinct_store_count,
-        SUM(CASE WHEN is_r_or_nc17_rental = 1 THEN payment_amount ELSE 0 END) AS r_or_nc17_payment_sum
-    FROM payment_enriched
-    GROUP BY
-        customer_id,
-        payment_date,
-        customer_city,
-        customer_country_id,
-        customer_country
+daily_customer_payments AS (
+  SELECT
+    p.p02 AS customer_id,
+    date(p.p06) AS payment_date,
+    COUNT(*) AS payment_count,
+    SUM(CAST(p.p05 AS REAL)) AS day_payment_sum,
+    COUNT(DISTINCT p.p03) AS staff_count,
+    COUNT(DISTINCT s.o07) AS store_count,
+    MAX(CAST(p.p05 AS REAL)) AS max_payment_amount
+  FROM pay AS p
+  JOIN stf AS s ON s.o01 = p.p03
+  WHERE p.p06 IS NOT NULL
+  GROUP BY p.p02, date(p.p06)
 ),
-daily_with_avg AS (
-    SELECT
-        dc.*,
-        (
-            SELECT AVG(d2.day_payment_sum)
-            FROM daily_customer AS d2
-            WHERE d2.customer_id = dc.customer_id
-              AND d2.payment_date >= date(dc.payment_date, '-30 days')
-              AND d2.payment_date < dc.payment_date
-        ) AS avg_prev_30d_day_sum
-    FROM daily_customer AS dc
+daily_customer_with_prev AS (
+  SELECT
+    d.*,
+    (
+      SELECT AVG(CAST(prev.day_payment_sum AS REAL))
+      FROM daily_customer_payments AS prev
+      WHERE prev.customer_id = d.customer_id
+        AND prev.payment_date >= date(d.payment_date, '-30 days')
+        AND prev.payment_date < d.payment_date
+    ) AS avg_prev_30_day_amount
+  FROM daily_customer_payments AS d
 ),
-candidates AS (
-    SELECT
-        d.*,
-        (d.day_payment_sum / NULLIF(d.avg_prev_30d_day_sum, 0)) AS ratio_to_prev_avg,
-        (d.r_or_nc17_payment_sum / NULLIF(d.day_payment_sum, 0)) AS r_or_nc17_share,
-        RANK() OVER (
-            PARTITION BY d.customer_country_id
-            ORDER BY d.day_payment_sum DESC
-        ) AS daily_rank_in_country
-    FROM daily_with_avg AS d
-    WHERE d.avg_prev_30d_day_sum IS NOT NULL
-      AND d.avg_prev_30d_day_sum > 0
-      AND d.day_payment_sum >= 3 * d.avg_prev_30d_day_sum
-      AND (d.distinct_staff_count >= 3 OR d.distinct_store_count >= 3)
+daily_customer_with_rclass_share AS (
+  SELECT
+    dcp.customer_id,
+    dcp.payment_date,
+    SUM(
+      CASE
+        WHEN f.i11 IN ('R','NC-17') THEN CAST(p.p05 AS REAL)
+        ELSE 0.0
+      END
+    ) AS amount_r_or_nc17,
+    dcp.day_payment_sum AS day_payment_sum
+  FROM daily_customer_with_prev AS dcp
+  JOIN pay AS p
+    ON p.p02 = dcp.customer_id
+   AND date(p.p06) = dcp.payment_date
+  JOIN ren AS r ON r.q01 = p.p04
+  JOIN inv AS i ON i.n01 = r.q03
+  JOIN flm AS f ON f.i01 = i.n02
+  GROUP BY dcp.customer_id, dcp.payment_date, dcp.day_payment_sum
+),
+daily_suspicious AS (
+  SELECT
+    dcp.customer_id,
+    dcp.payment_date,
+    dcp.payment_count,
+    dcp.day_payment_sum,
+    dcp.staff_count,
+    dcp.store_count,
+    dcp.max_payment_amount,
+    dcp.avg_prev_30_day_amount,
+    rc.amount_r_or_nc17,
+    CASE
+      WHEN dcp.day_payment_sum > 0 THEN rc.amount_r_or_nc17 / dcp.day_payment_sum
+      ELSE 0.0
+    END AS r_or_nc17_share,
+    (dcp.day_payment_sum - 3.0 * dcp.avg_prev_30_day_amount) AS excess_over_threshold
+  FROM daily_customer_with_prev AS dcp
+  JOIN daily_customer_with_rclass_share AS rc
+    ON rc.customer_id = dcp.customer_id
+   AND rc.payment_date = dcp.payment_date
+  WHERE dcp.avg_prev_30_day_amount IS NOT NULL
+    AND dcp.avg_prev_30_day_amount > 0
+    AND dcp.day_payment_sum >= 3.0 * dcp.avg_prev_30_day_amount
+    AND dcp.payment_count >= 3
+    AND (dcp.staff_count >= 3 OR dcp.store_count >= 3)
 )
 SELECT
-    customer_city,
-    customer_country,
-    payment_date,
-    day_payment_count AS payment_count,
-    ROUND(day_payment_sum, 2) AS day_payment_sum,
-    ROUND(max_payment, 2) AS max_payment,
-    ROUND(r_or_nc17_share, 4) AS r_or_nc17_rental_share,
-    daily_rank_in_country AS day_rank_by_country
-FROM candidates
+  cg.city,
+  cg.country,
+  ds.payment_date AS suspicious_date,
+  ds.payment_count,
+  ROUND(ds.day_payment_sum, 2) AS day_payment_sum,
+  ROUND(ds.max_payment_amount, 2) AS max_payment_amount,
+  ROUND(ds.r_or_nc17_share, 4) AS r_or_nc17_share,
+  RANK() OVER (
+    PARTITION BY cg.country
+    ORDER BY ds.excess_over_threshold DESC
+  ) AS day_rank_in_country
+FROM daily_suspicious AS ds
+JOIN customer_geo AS cg
+  ON cg.customer_id = ds.customer_id
 ORDER BY
-    customer_country,
-    daily_rank_in_country,
-    payment_date,
-    customer_city;
+  cg.country,
+  day_rank_in_country,
+  ds.payment_date,
+  ds.customer_id;

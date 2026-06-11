@@ -1,4 +1,4 @@
-customer_id,customer_name,payment_date,customer_country,payment_count,day_amount,avg_prev_30d,staff_count,store_count,store_countries,suspicion_rank_in_country
+customer_id,customer_name,payment_date,customer_country,payment_count,day_amount,avg_daily_amount_30d,staff_count,store_count,store_countries,suspicion_rank_in_country
 441,MARIO CHEATHAM,2005-07-29,Algeria,5,18.95,1.06,2,2,"Australia,Canada",1
 176,JUNE CARROLL,2005-07-27,Algeria,4,13.96,0.87,2,2,"Canada,Australia",2
 176,JUNE CARROLL,2005-06-18,Algeria,4,16.96,1.43,2,2,"Canada,Australia",3
@@ -94,6 +94,14 @@ customer_id,customer_name,payment_date,customer_country,payment_count,day_amount
 361,LAWRENCE LAWTON,2005-08-02,Cameroon,4,15.96,1.03,2,2,"Australia,Canada",2
 361,LAWRENCE LAWTON,2005-07-12,Cameroon,3,7.97,0.56,2,2,"Australia,Canada",3
 352,ALBERT CROUSE,2005-08-17,Cameroon,3,13.97,1.1,2,2,"Canada,Australia",4
+410,CURTIS IRBY,2005-07-09,Canada,4,17.96,0.83,2,2,"Canada,Australia",1
+436,TROY QUIGLEY,2005-07-08,Canada,3,8.97,0.5,2,2,"Australia,Canada",2
+410,CURTIS IRBY,2005-07-27,Canada,3,15.97,1.03,2,2,"Australia,Canada",3
+436,TROY QUIGLEY,2005-08-17,Canada,3,13.97,1.43,2,2,"Canada,Australia",4
+410,CURTIS IRBY,2005-08-20,Canada,3,14.97,2.23,2,2,"Canada,Australia",5
+410,CURTIS IRBY,2005-08-21,Canada,3,13.97,2.73,2,2,"Canada,Australia",6
+436,TROY QUIGLEY,2005-08-20,Canada,4,13.96,2.76,2,2,"Canada,Australia",7
+410,CURTIS IRBY,2005-08-22,Canada,3,9.97,3.19,2,2,"Australia,Canada",8
 535,JAVIER ELROD,2005-07-08,Chad,3,16.97,0.5,2,2,"Canada,Australia",1
 535,JAVIER ELROD,2005-08-18,Chad,5,11.95,1.36,2,2,"Australia,Canada",2
 515,ANDRE RAPP,2005-08-17,Chile,3,15.97,0.63,2,2,"Australia,Canada",1

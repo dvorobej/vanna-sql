@@ -5,5 +5,4 @@ SELECT
   p06 AS payment_date
 FROM pay
 WHERE p05 > 9.00
-ORDER BY p06 DESC
-LIMIT 20;
+ORDER BY p06 DESC;

@@ -40,30 +40,32 @@ details AS (
         c.h03 || ' ' || c.h04 AS customer_name,
         cnt.c02 AS country,
         cty.d02 AS city,
-        (SELECT COUNT(*) FROM pay p 
-         JOIN stf s ON p.p03 = s.o01 
-         WHERE p.p02 = sd.customer_id AND date(p.p06) = sd.payment_date AND s.o07 <> c.h02) * 1.0 / sd.daily_count AS off_home_store_share,
-        (SELECT cat.g02 FROM ren r 
-         JOIN inv i ON r.q03 = i.n01 
-         JOIN flc fc ON i.n02 = fc.l01 
-         JOIN cat ON fc.l02 = cat.g01 
-         WHERE r.q01 IN (SELECT value FROM json_each('[' || sd.rental_ids || ']')) 
-         GROUP BY cat.g02 ORDER BY COUNT(*) DESC LIMIT 1) AS top_category
+        (SELECT st.o02 || ' ' || st.o03 FROM stf st WHERE st.o01 = (SELECT p.p03 FROM pay p WHERE p.p02 = sd.customer_id AND date(p.p06) = sd.payment_date GROUP BY p.p03 ORDER BY COUNT(*) DESC LIMIT 1)) AS top_staff,
+        (SELECT cat.g02 FROM cat 
+         JOIN flc ON flc.l02 = cat.g01 
+         JOIN inv ON inv.n02 = flc.l01 
+         JOIN ren ON ren.q03 = inv.n01 
+         WHERE ren.q04 = sd.customer_id AND date(ren.q02) = sd.payment_date 
+         GROUP BY cat.g02 ORDER BY COUNT(*) DESC LIMIT 1) AS top_category,
+        (SELECT CAST(SUM(CASE WHEN stf.o07 <> c.h02 THEN 1 ELSE 0 END) AS REAL) / COUNT(*) 
+         FROM pay p JOIN stf ON stf.o01 = p.p03 
+         WHERE p.p02 = sd.customer_id AND date(p.p06) = sd.payment_date) AS off_home_store_share
     FROM suspicious_days sd
-    JOIN cus c ON sd.customer_id = c.h01
-    JOIN adr a ON c.h06 = a.e01
-    JOIN cty ON a.e05 = cty.d01
-    JOIN cnt ON cty.d03 = cnt.c01
+    JOIN cus c ON c.h01 = sd.customer_id
+    JOIN adr ON adr.e01 = c.h06
+    JOIN cty ON cty.d01 = adr.e05
+    JOIN cnt ON cnt.c01 = cty.d03
 )
 SELECT
+    payment_date,
     customer_name,
     country,
     city,
-    payment_date,
     daily_sum,
     daily_count,
     off_home_store_share,
+    top_staff,
     top_category,
-    RANK() OVER (ORDER BY (daily_sum / NULLIF(avg_sum_30d, 0)) DESC) AS risk_rank
+    DENSE_RANK() OVER (ORDER BY (daily_sum / NULLIF(avg_sum_30d, 0)) DESC) AS risk_rank
 FROM details
-ORDER BY risk_rank;
+ORDER BY risk_rank ASC;

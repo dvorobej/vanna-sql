@@ -7,7 +7,7 @@ SELECT
   AVG(p.p05) AS average_payment,
   CASE
     WHEN SUM(p.p05) > 100 OR AVG(p.p05) > 8.00 THEN 'повышенный риск'
-    ELSE 'обычный'
+    ELSE 'нормальный'
   END AS risk_flag
 FROM cus AS c
 JOIN pay AS p

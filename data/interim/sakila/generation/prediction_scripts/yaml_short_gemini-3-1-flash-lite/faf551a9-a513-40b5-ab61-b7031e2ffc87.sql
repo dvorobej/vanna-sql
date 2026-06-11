@@ -3,7 +3,7 @@ WITH daily_customer_payments AS (
         p.p02 AS customer_id,
         DATE(p.p06) AS payment_date,
         SUM(p.p05) AS day_amount,
-        COUNT(p.p01) AS payment_count,
+        COUNT(*) AS payment_count,
         c.h02 AS store_id,
         cnt.c01 AS country_id,
         cnt.c02 AS country_name,
@@ -11,28 +11,16 @@ WITH daily_customer_payments AS (
         c.h03 AS first_name,
         c.h04 AS last_name
     FROM pay AS p
-    JOIN cus AS c ON p.p02 = c.h01
-    JOIN adr AS a ON c.h06 = a.e01
-    JOIN cty ON a.e05 = cty.d01
-    JOIN cnt ON cty.d03 = cnt.c01
+    JOIN cus AS c ON c.h01 = p.p02
+    JOIN adr AS a ON a.e01 = c.h06
+    JOIN cty ON cty.d01 = a.e05
+    JOIN cnt ON cnt.c01 = cty.d03
     GROUP BY p.p02, DATE(p.p06)
 ),
-daily_stats AS (
-    SELECT
-        dcp.*,
-        (
-            SELECT AVG(dcp2.day_amount)
-            FROM daily_customer_payments AS dcp2
-            WHERE dcp2.customer_id = dcp.customer_id
-              AND dcp2.payment_date >= DATE(dcp.payment_date, '-30 days')
-              AND dcp2.payment_date < dcp.payment_date
-        ) AS avg_30d
-    FROM daily_customer_payments AS dcp
-),
-country_p95 AS (
+country_percentiles AS (
     SELECT
         country_id,
-        MAX(day_amount) AS p95_val
+        MAX(day_amount) AS p95_threshold
     FROM (
         SELECT
             country_id,
@@ -43,16 +31,28 @@ country_p95 AS (
     WHERE pr <= 0.95
     GROUP BY country_id
 ),
-suspicious_days AS (
+daily_with_baseline AS (
     SELECT
-        ds.*,
-        cp.p95_val,
-        (ds.day_amount - ds.avg_30d) AS deviation
-    FROM daily_stats AS ds
-    JOIN country_p95 AS cp ON ds.country_id = cp.country_id
-    WHERE ds.avg_30d > 0
-      AND ds.day_amount >= (ds.avg_30d * 3)
-      AND ds.day_amount >= cp.p95_val
+        dcp.*,
+        (
+            SELECT AVG(prev.day_amount)
+            FROM daily_customer_payments AS prev
+            WHERE prev.customer_id = dcp.customer_id
+              AND prev.payment_date >= DATE(dcp.payment_date, '-30 days')
+              AND prev.payment_date < dcp.payment_date
+        ) AS avg_30d
+    FROM daily_customer_payments AS dcp
+),
+suspicious_events AS (
+    SELECT
+        dwb.*,
+        cp.p95_threshold,
+        (dwb.day_amount - dwb.avg_30d) AS deviation
+    FROM daily_with_baseline AS dwb
+    JOIN country_percentiles AS cp ON cp.country_id = dwb.country_id
+    WHERE dwb.avg_30d > 0
+      AND dwb.day_amount >= dwb.avg_30d * 3
+      AND dwb.day_amount > cp.p95_threshold
 )
 SELECT
     payment_date,
@@ -65,6 +65,6 @@ SELECT
     ROUND(day_amount, 2) AS day_amount,
     ROUND(avg_30d, 2) AS avg_30d,
     ROUND(deviation, 2) AS deviation,
-    RANK() OVER (ORDER BY day_amount DESC) AS spike_rank
-FROM suspicious_days
-ORDER BY spike_rank;
+    RANK() OVER (PARTITION BY country_id ORDER BY day_amount DESC) AS rank_in_country
+FROM suspicious_events
+ORDER BY country_name, rank_in_country;

@@ -8,7 +8,7 @@ SELECT
   CASE
     WHEN COUNT(p.p01) > 10 OR SUM(p.p05) > 80 THEN 1
     ELSE 0
-  END AS suspicious_activity
+  END AS is_suspicious
 FROM cus AS c
 JOIN pay AS p
   ON p.p02 = c.h01
